@@ -16,5 +16,8 @@ For every skill:
 5. The loop has an explicit no-sleep rule and duplicate/no-work break condition.
 6. All three copies have identical SHA-256 hashes.
 
+For creating or maintaining a skill, follow `loop-skill-create` and run both
+the validator and validator tests before requesting review.
+
 Do not install packages, extensions, plugins, or MCP servers as part of a skill
 change unless the user explicitly authorizes it.

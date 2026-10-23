@@ -8,11 +8,23 @@ repository root:
 python scripts/validate.py
 ```
 
-Use `python scripts/validate.py --write-summary` to generate
-`docs/VALIDATION-RESULT.md` for a local evidence snapshot. The GitHub Actions
-workflow runs the validator on pushes and pull requests.
+Use `python scripts/validate.py --write-summary --tests-status PASS` to generate
+`docs/VALIDATION-RESULT.md` after the validator tests pass. The GitHub Actions
+workflow runs the validator and tests on pushes and pull requests. Do not mark
+CI or runtime checks as `PASS` unless their actual evidence exists.
 
-Expected skill count: 14.
+Run the focused validator tests as well:
+
+```text
+python -m unittest discover -s tests -v
+```
+
+On Windows where `python` is not on `PATH`, use `py -3` instead. The validator
+report records the exact clean commit or a working-tree fingerprint, and keeps
+structural validation, validator tests, CI, and agent runtime checks separate.
+`NOT_RUN`, `BLOCKED`, `FAIL`, and `PASS` are not interchangeable.
+
+Expected skill count: 15.
 
 For each skill, verify:
 

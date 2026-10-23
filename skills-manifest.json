@@ -15,7 +15,8 @@
     "loop-test-unit",
     "loop-test-integration",
     "loop-test-coverage",
-    "loop-docs"
+    "loop-docs",
+    "loop-skill-create"
   ],
   "project_skill_roots": [
     ".github/skills",

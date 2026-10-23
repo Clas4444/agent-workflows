@@ -20,6 +20,7 @@ Microsoft, OpenAI, Anthropic, or the maintainers of any referenced tool.
 | `loop-research*` | Research repositories, tools, extensions, plugins, skills, and MCP |
 | `loop-test*` | Run unit, integration, coverage, or general testing loops |
 | `loop-docs` | Audit and improve documentation |
+| `loop-skill-create` | Create and maintain skills with synchronized evidence |
 
 ## Layout
 
@@ -33,10 +34,11 @@ native installations are not moved or deleted by this repository.
 
 ## Verification status
 
-- Structural validation: checked for 14 skills, valid metadata, matching names,
+- Structural validation: checked for 15 skills, valid metadata, matching names,
   and identical copies across the three project roots.
-- Repeatable validation: run `python scripts/validate.py`; the same check runs
-  on pushes and pull requests through GitHub Actions.
+- Repeatable validation: run `python scripts/validate.py` and
+  `python -m unittest discover -s tests -v`; the same checks run on pushes and
+  pull requests through GitHub Actions.
 - Host runtime validation: **not yet comprehensively tested** across all three
   agent products and versions.
 - Treat each skill as a starting workflow. Review commands, permissions, data
