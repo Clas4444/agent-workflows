@@ -13,6 +13,13 @@ disable-model-invocation: false
 Create or maintain a synchronized `SKILL.md` workflow without duplicating an
 existing responsibility.
 
+## Inputs
+
+Requested workflow, target hosts, responsibility boundary and acceptance criteria.
+If no duration is supplied, use the task scope as the bound and stop when it is complete.
+Reuse authorization already given in the session; clarify only missing information
+that prevents safe progress.
+
 ## Workflow
 
 Extract behavior, target hosts, scope, authorization, acceptance criteria, and
@@ -25,6 +32,13 @@ bounded work, verification, stop conditions, and all four statuses. Add focused
 positive and negative tests when the validator supports them. Update
 documentation and generated evidence only when the verification surface changes.
 
+## Output
+
+Canonical skill, synchronized copies, focused checks and documented runtime limitations.
+For each check distinguish PASS (verified), FAIL (check failed), BLOCKED (a
+required prerequisite prevents progress) and NOT_RUN (not executed). Include
+what was observed, what changed and what remains unverified.
+
 ## Boundaries and evidence
 
 Do not add a duplicate workflow, dependency, host-compatibility claim, or
@@ -36,3 +50,12 @@ Stop when no suitable work remains, the deadline or user request ends the run,
 a safety boundary is reached, or materially identical findings recur more than
 three times. Never sleep to consume time or sleep to consume duration; write a
 consolidated report.
+
+## Example
+
+```text
+/loop-skill-create 15m improve the release skill evidence contract
+```
+
+Use the host's supported skill invocation syntax; the example expresses intent,
+not a guarantee that every host supports slash commands.

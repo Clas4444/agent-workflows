@@ -1,6 +1,6 @@
 # Contributing
 
-This repository distributes one portable set of 17 workflow skills in three
+This repository distributes one portable set of 22 workflow skills in three
 native project layouts. Contributions should improve clarity or correctness
 without changing a workflow's responsibility or silently widening its scope.
 
@@ -17,6 +17,10 @@ The manifest in `skills-manifest.json` is the authoritative skill list. Do not
 add a skill directory without adding its name and all three copies.
 
 ## Skill requirements
+
+Follow [the writing guide](docs/AUTHORING.md): Use when, Inputs, Workflow,
+Output, Boundaries and evidence, and a concrete Example. Keep the description
+specific enough to select the right workflow without loading every skill.
 
 Each skill must:
 

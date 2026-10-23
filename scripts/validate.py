@@ -139,6 +139,14 @@ def validate(repo: Path) -> list[str]:
             hashes = {sha256(path) for path in existing}
             if len(hashes) != 1:
                 errors.append(f"copies of {skill}/SKILL.md are not identical")
+        if skill in ("loop-orchestrate", "loop-prompt"):
+            runner = repo / "scripts" / "run_loop.py"
+            for root in manifest.roots:
+                bundled = repo / root / skill / "scripts" / "run_loop.py"
+                if not runner.is_file() or not bundled.is_file():
+                    errors.append(f"missing runner for {root}/{skill}")
+                elif runner.read_bytes() != bundled.read_bytes():
+                    errors.append(f"stale runner for {root}/{skill}")
 
     return errors
 

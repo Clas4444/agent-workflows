@@ -25,8 +25,20 @@ clear target and desired outcome; let the host apply its normal approval rules.
 | `loop-skill-create` | Create or maintain a synchronized skill | `/loop-skill-create 20m release workflow` |
 | `loop-orchestrate` | Run an explicitly configured headless command | `py -3 scripts/run_loop.py ...` |
 | `loop-prompt` | Run an initial prompt and bounded follow-ups | `/loop-prompt 3 review this change` |
+| `loop-debug` | Reproduce, repair and regression-test a specific bug | `/loop-debug 15m fix parser rejecting valid input` |
+| `loop-security` | Review trust boundaries and verify scoped defensive fixes | `/loop-security 20m local file upload handler` |
+| `loop-refactor` | Improve structure while preserving behavior | `/loop-refactor 15m simplify parser without API changes` |
+| `loop-ci` | Trace and repair a failed CI job | `/loop-ci 15m failed Windows test job` |
+| `loop-release` | Prepare and smoke-test a release candidate | `/loop-release 20m verify candidate version 1.1.0` |
 
 ## Recommended sequences
+
+`loop-debug` closes a bug with a verified repair; `loop-diagnose` may finish with
+an isolated cause and no code change. `loop-security`, `loop-refactor`, `loop-ci`
+and `loop-release` each target a different acceptance gate rather than repeating
+a general implementation loop. None grants permission to publish or deploy.
+See [SKILL-SCENARIOS.md](./SKILL-SCENARIOS.md) for positive and negative manual
+acceptance cases. Contract-text tests do not prove an agent follows a skill.
 
 For a code change:
 

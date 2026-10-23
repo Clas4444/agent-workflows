@@ -1,8 +1,11 @@
 # Validation
 
 The validator checks the manifest, skill metadata, three-root synchronization,
-required safety/reporting rules, and the generated evidence fingerprint. It
-uses only the Python standard library.
+named statuses, and recognizable stop instructions. It uses only the Python
+standard library. Metadata extraction uses regular expressions for the supported
+fields; it is not a general YAML parser or a semantic safety-policy checker.
+Report generation computes a fingerprint; validation does not compare a saved
+report's fingerprint with the current source.
 
 Run from the repository root:
 
@@ -35,12 +38,14 @@ report directory or a workspace-relative `Markdown` directory instead.
 
 ## Skill checks
 
-The expected skill count is 17. For each skill, the validator checks:
+The expected skill count is 22. For each skill, the validator checks:
 
 - `SKILL.md` exists in all three native roots;
 - frontmatter `name` matches the directory and `description` is present;
 - the file stays below 500 lines;
 - all copies have identical SHA-256 hashes;
-- instructions name all four statuses and define bounded stop conditions.
+- instructions name all four statuses, contain an explicit stop instruction,
+  and match at least one recognized break-condition pattern. This does not
+  prove every stop policy is present or that a host will follow it.
 
 Host-runtime tests and CI remain `NOT_RUN` unless their evidence is recorded.

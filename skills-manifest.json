@@ -1,6 +1,6 @@
 {
   "name": "portable-loop-skills",
-  "version": "1.0.2-experimental",
+  "version": "1.1.0-experimental",
   "skills": [
     "loop-review",
     "loop-code",
@@ -18,7 +18,12 @@
     "loop-docs",
     "loop-skill-create",
     "loop-orchestrate",
-    "loop-prompt"
+    "loop-prompt",
+    "loop-debug",
+    "loop-security",
+    "loop-refactor",
+    "loop-ci",
+    "loop-release"
   ],
   "project_skill_roots": [
     ".github/skills",

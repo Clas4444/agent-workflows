@@ -13,6 +13,13 @@ disable-model-invocation: false
 Evaluate a file, folder, project, repository, or workspace and report verified
 findings. This workflow may make only explicitly authorized safe edits.
 
+## Inputs
+
+Target path or revision, review criteria and authorized changes.
+If no duration is supplied, use the task scope as the bound and stop when it is complete.
+Reuse authorization already given in the session; clarify only missing information
+that prevents safe progress.
+
 ## Workflow
 
 1. Parse one positive duration and the review target; create a run ID and
@@ -22,6 +29,13 @@ findings. This workflow may make only explicitly authorized safe edits.
    build/release, integrations, security/privacy, usability, or hygiene.
 4. Record evidence, risk, priority (`P0`–`P3`), authorization, action, and
    verification. Inspect every diff.
+
+## Output
+
+Prioritized findings with source locations, risk, checked evidence and unresolved gaps.
+For each check distinguish PASS (verified), FAIL (check failed), BLOCKED (a
+required prerequisite prevents progress) and NOT_RUN (not executed). Include
+what was observed, what changed and what remains unverified.
 
 ## Boundaries and evidence
 
@@ -34,3 +48,12 @@ Stop when no suitable work remains, the deadline or user request ends the run, a
 safety boundary is reached, or materially identical results recur more than
 three times. Never sleep to consume time. Write the consolidated report under
 the configured report directory, or `<workspace>/Markdown` when none exists.
+
+## Example
+
+```text
+/loop-review 10m review this repository before adoption
+```
+
+Use the host's supported skill invocation syntax; the example expresses intent,
+not a guarantee that every host supports slash commands.
