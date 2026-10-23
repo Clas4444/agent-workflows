@@ -1,0 +1,26 @@
+{
+  "name": "portable-loop-skills",
+  "version": "1.0.0",
+  "skills": [
+    "loop-review",
+    "loop-code",
+    "loop-diagnose",
+    "loop-diagnose-repro",
+    "loop-diagnose-performance",
+    "loop-diagnose-regression",
+    "loop-research",
+    "loop-research-repo",
+    "loop-research-tools",
+    "loop-test",
+    "loop-test-unit",
+    "loop-test-integration",
+    "loop-test-coverage",
+    "loop-docs"
+  ],
+  "project_skill_roots": [
+    ".github/skills",
+    ".agents/skills",
+    ".claude/skills"
+  ],
+  "source_policy": "Edit .github/skills first, then synchronize exact copies to the other native project roots."
+}

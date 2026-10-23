@@ -1,0 +1,14 @@
+# Build, cache, and local editor state
+build/
+dist/
+coverage/
+.pytest_cache/
+__pycache__/
+.venv/
+.env
+.env.*
+.vscode/
+
+# Reports and temporary files
+*.log
+*.tmp
