@@ -35,6 +35,8 @@ native installations are not moved or deleted by this repository.
 
 - Structural validation: checked for 14 skills, valid metadata, matching names,
   and identical copies across the three project roots.
+- Repeatable validation: run `python scripts/validate.py`; the same check runs
+  on pushes and pull requests through GitHub Actions.
 - Host runtime validation: **not yet comprehensively tested** across all three
   agent products and versions.
 - Treat each skill as a starting workflow. Review commands, permissions, data
@@ -57,3 +59,5 @@ install tools and integrations automatically.
 
 See [CONTRIBUTING.md](./CONTRIBUTING.md) for synchronization and validation.
 See [SECURITY.md](./SECURITY.md) for responsible vulnerability reporting.
+See [docs/VALIDATION.md](./docs/VALIDATION.md) for the reproducible validation
+command and evidence format.

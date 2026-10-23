@@ -1,0 +1,17 @@
+name: Validate skills
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  structural-validation:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+      - name: Validate skill structure and synchronization
+        run: python3 scripts/validate.py

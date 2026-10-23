@@ -23,4 +23,6 @@ findings occur more than three consecutive times, write the consolidated report
 and stop. Never sleep just to consume duration. Stop also on user request,
 missing authorization/decision, or a safety/privacy boundary.
 
-For targets under `C:\Code`, write primary reports under `C:\Code\Markdown`.
+Write primary reports under a configured report directory when one is
+available; otherwise use `<workspace>/Markdown`. On the original Windows
+workspace, `C:\Code\Markdown` remains the default for targets under `C:\Code`.
