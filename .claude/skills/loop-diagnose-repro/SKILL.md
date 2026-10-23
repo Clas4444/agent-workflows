@@ -8,9 +8,22 @@ disable-model-invocation: false
 
 # Loop Diagnose Repro
 
-Capture symptom, environment, exact command, expected/actual result, logs, and
-reproduction rate. Minimize the reproducer without hiding the failure and vary
-one factor at a time. Record hypothesis, evidence, confidence, and
-`PASS`, `FAIL`, `BLOCKED`, or `NOT_RUN`. Do not fix target code unless
-authorized. Consolidate and stop when no new experiment remains or materially
-identical evidence repeats more than three times; never sleep.
+## Use when
+
+Turn a bug or failure into a small, repeatable reproducer for later diagnosis
+or repair.
+
+## Workflow
+
+Record the symptom, environment, exact command, expected and actual results,
+logs, and reproduction rate. Minimize the case without hiding the failure and
+vary one factor at a time. Record each hypothesis, evidence, and confidence.
+
+## Boundaries and evidence
+
+Do not fix target code unless authorized. Protect sensitive logs and preserve
+the exact reproducer. Report `PASS`, `FAIL`, `BLOCKED`, or `NOT_RUN`.
+
+Stop when no suitable work remains, the deadline or user request ends the run,
+a safety boundary is reached, or materially identical results recur more than
+three times. Never sleep to consume time; write a consolidated report.

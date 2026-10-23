@@ -2,29 +2,31 @@
 
 ## Scope
 
-This repository contains Markdown workflow instructions and no runtime service.
-Reports are still welcome for:
+This repository contains Markdown workflow instructions, a local Python runner,
+and validation scripts; it is not a hosted service. Report:
 
 - instructions that could cause unsafe or unauthorized changes;
-- accidental requests to expose credentials or private data;
-- misleading permission, installation, or verification guidance;
+- guidance that could expose credentials or private data;
+- misleading permission, installation, or verification claims;
 - committed secrets or unsafe repository configuration.
+
+The runner writes captured agent output to local state and report files. Treat
+that output as sensitive until reviewed.
 
 ## Reporting
 
-Please use GitHub's private security advisory/reporting flow for sensitive
-vulnerabilities when it is available. For non-sensitive documentation issues,
-open a public issue with:
+Use GitHub's private security advisory flow for sensitive vulnerabilities when
+available. For a non-sensitive documentation issue, open a public issue with:
 
-1. the affected skill and version/commit;
+1. the affected file, skill, and version or commit;
 2. the exact instruction or behavior;
-3. a minimal reproduction or evidence;
-4. the expected safer behavior.
+3. a minimal reproduction or supporting evidence;
+4. the safer expected behavior.
 
-Do not include credentials, tokens, private source code, or personal data in a
-public issue.
+Never include credentials, tokens, private source code, or personal data in a
+public report.
 
-## Response expectations
+## Response
 
-This is an experimental personal project. Reports will be reviewed on a
+This is an experimental independent project. Reports are reviewed on a
 best-effort basis; no response-time or remediation guarantee is provided.

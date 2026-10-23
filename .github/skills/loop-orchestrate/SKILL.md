@@ -8,36 +8,33 @@ disable-model-invocation: false
 
 # Loop Orchestrate
 
-Use `scripts/run_loop.py` only when the user authorizes external agent
-invocations. Configure the host-specific headless command explicitly; do not
-assume Copilot, Codex, and Claude Code share flags. Use `{prompt}` in the
-command to pass the generated prompt as an argument, or omit it to send the
-prompt on stdin. Never use shell execution, hidden credentials, or automatic
-permission escalation.
+## Use when
 
-Set a positive timeout and finite `--max-iterations`. Each invocation must
-review the previous output, make one useful bounded batch, verify it, and end
-with exactly one `LOOP_STATUS: PASS`, `FAIL`, `BLOCKED`, or `NOT_RUN` marker.
-The runner stops on that marker, a timeout, a start failure, repeated prompt or
-result, malformed/duplicate marker, or the iteration limit. It writes state and
-a report including the prompt count and stop reason; inspect both and treat
-captured output as potentially sensitive. Do not use this runner to bypass user
-approval, safety boundaries, tests, or repository instructions.
+Run bounded process-level continuation through an explicitly configured
+headless coding-agent command after the user authorizes that invocation.
 
-Example shape (adapt flags for the installed host):
+## Workflow
 
-```text
-python scripts/run_loop.py --prompt "Review the target and continue safely" --max-iterations 3 --timeout-seconds 600 -- copilot -sp {prompt}
-```
+Use `scripts/run_loop.py` with a positive timeout and finite limit. Configure
+the installed host's command explicitly; do not assume Copilot, Codex, and
+Claude Code share flags. Use `{prompt}` as an argument or omit it to send the
+prompt on stdin. Each invocation must verify one useful batch and emit exactly
+one `LOOP_STATUS: PASS`, `FAIL`, `BLOCKED`, or `NOT_RUN` marker.
 
-This harness provides process-level continuation, not universal runtime
-compatibility. Record the host, command/version, limits, evidence, and
-`PASS`/`FAIL`/`BLOCKED`/`NOT_RUN` result. Stop and report when no useful work
-remains, results repeat materially more than three times, the deadline is
-reached, or authorization is missing. Never sleep to consume duration.
+## Boundaries and evidence
 
-The runner streams stdout and stderr concurrently, keeps only a bounded
-combined tail for evidence, and parses markers while reading. It hashes
-complete raw streams without retaining them. Invalid UTF-8 is replaced in
-evidence; timeout cleanup guarantees
-the direct child only, and descendant cleanup on Windows is host-specific.
+Never use shell execution, hidden credentials, automatic permission escalation,
+or this runner to bypass repository instructions or approval. The runner stops
+on a terminal marker, timeout, startup failure, repeated prompt/result,
+malformed marker, or iteration limit. It writes state and a report with prompt
+count and stop reason; treat captured output as sensitive.
+
+The runner streams both outputs in bounded chunks, keeps a bounded combined
+tail, and hashes complete raw streams. Invalid UTF-8 is replaced in evidence.
+Timeout cleanup guarantees the direct child only; Windows descendant cleanup is
+host-specific. Record host, command/version, limits, evidence, and
+`PASS`/`FAIL`/`BLOCKED`/`NOT_RUN`.
+
+Stop when no suitable work remains, authorization is missing, the deadline ends,
+a safety boundary is reached, or materially identical results recur more than
+three times. Never sleep to consume time.

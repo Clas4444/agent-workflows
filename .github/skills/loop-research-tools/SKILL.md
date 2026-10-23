@@ -8,10 +8,24 @@ disable-model-invocation: false
 
 # Loop Research Tools
 
-State the capability gap and decision criteria. Inspect existing local tools and
-configuration before searching official documentation and primary repositories.
+## Use when
+
+Evaluate a tool, extension, plugin, skill, or MCP server before recommending or
+installing it.
+
+## Workflow
+
+State the capability gap and decision criteria. Inspect local tools and
+configuration before checking official documentation and primary repositories.
 Record capability, permissions, data flow, maintenance, compatibility, cost,
-license, evidence, and verification plan. Do not install or authenticate without
-explicit authorization. Mark every candidate `PASS`, `FAIL`, `BLOCKED`, or
-`NOT_RUN`. Stop with a consolidated report when no candidate/angle remains or
-materially identical results occur more than three times; never sleep.
+license, evidence, and a verification plan.
+
+## Boundaries and evidence
+
+Do not install or authenticate without explicit authorization. Mark every
+candidate `PASS`, `FAIL`, `BLOCKED`, or `NOT_RUN`.
+
+Stop when no suitable work remains, the deadline or user request
+ends the run, a safety boundary is reached, or materially identical results
+recur more than three times. Never sleep to consume time; write a consolidated
+report.

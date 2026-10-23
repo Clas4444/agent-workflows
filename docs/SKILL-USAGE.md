@@ -1,70 +1,63 @@
-# Skill Usage Guide
+# Skill usage
 
-These skills are workflows for coding agents, not autonomous permissions. Invoke
-one explicitly, describe the target and desired outcome, and let the host apply
-the repository's normal approval rules.
+These skills provide bounded workflows for coding agents. They do not grant
+permissions or replace project-specific instructions. Invoke one skill with a
+clear target and desired outcome; let the host apply its normal approval rules.
 
-## Choose a skill
+## Select a skill
 
-| Skill | Use it when you need to | Typical invocation |
+| Skill | Use it for | Typical invocation |
 |---|---|---|
-| `loop-review` | inspect a repository, change, or design and report findings | `/loop-review 10m repository` |
-| `loop-code` | implement a feature, fix, refactor, or configuration change | `/loop-code 15m fix the failing parser tests` |
-| `loop-test` | select, run, or improve a bounded test strategy | `/loop-test 10m validate the API change` |
-| `loop-test-unit` | isolate behavior in one module or function | `/loop-test-unit 10m parser module` |
-| `loop-test-integration` | verify boundaries between processes, files, services, or databases | `/loop-test-integration 15m upload flow` |
-| `loop-test-coverage` | identify meaningful untested risk and add focused coverage | `/loop-test-coverage 15m authentication` |
-| `loop-diagnose` | reproduce and isolate an unexpected failure | `/loop-diagnose 15m failing command` |
-| `loop-diagnose-repro` | minimize a bug to a repeatable reproducer | `/loop-diagnose-repro 15m crash on import` |
-| `loop-diagnose-regression` | compare a known-good and failing revision | `/loop-diagnose-regression 20m recent regression` |
-| `loop-diagnose-performance` | measure and isolate a slow or resource-heavy path | `/loop-diagnose-performance 20m slow endpoint` |
-| `loop-research` | research a technical question or implementation option | `/loop-research 10m compare validation libraries` |
-| `loop-research-repo` | evaluate repositories before adopting code or tools | `/loop-research-repo 15m candidate repositories` |
-| `loop-research-tools` | evaluate extensions, skills, MCP servers, or agent tools | `/loop-research-tools 15m testing tools` |
-| `loop-docs` | audit, update, and verify project documentation | `/loop-docs 10m usage documentation` |
-| `loop-skill-create` | create or maintain a synchronized `SKILL.md` workflow | `/loop-skill-create 20m new release workflow` |
-| `loop-orchestrate` | run bounded prompts through an explicitly configured headless CLI | `py -3 scripts/run_loop.py ...` |
-| `loop-prompt` | run one prompt followed by agent-generated follow-ups | `/loop-prompt 3 review and test this change` |
+| `loop-review` | Scope, evaluate, and report on a change or repository | `/loop-review 10m repository` |
+| `loop-code` | Implement an authorized feature, fix, refactor, or configuration change | `/loop-code 15m fix the parser tests` |
+| `loop-diagnose` | Reproduce and isolate an unexpected failure | `/loop-diagnose 15m failing command` |
+| `loop-diagnose-repro` | Minimize a repeatable reproducer | `/loop-diagnose-repro 15m import crash` |
+| `loop-diagnose-performance` | Measure a slow or resource-heavy path | `/loop-diagnose-performance 20m slow endpoint` |
+| `loop-diagnose-regression` | Compare known-good and failing states | `/loop-diagnose-regression 20m recent regression` |
+| `loop-research` | Investigate a technical question | `/loop-research 10m validation options` |
+| `loop-research-repo` | Evaluate repositories before adoption | `/loop-research-repo 15m candidate repositories` |
+| `loop-research-tools` | Evaluate tools, extensions, skills, or MCP servers | `/loop-research-tools 15m testing tools` |
+| `loop-test` | Select and run a bounded project test strategy | `/loop-test 10m API change` |
+| `loop-test-unit` | Test one module or function | `/loop-test-unit 10m parser module` |
+| `loop-test-integration` | Test process, file, service, or database boundaries | `/loop-test-integration 15m upload flow` |
+| `loop-test-coverage` | Improve meaningful coverage | `/loop-test-coverage 15m authentication` |
+| `loop-docs` | Audit and update documentation | `/loop-docs 10m usage guide` |
+| `loop-skill-create` | Create or maintain a synchronized skill | `/loop-skill-create 20m release workflow` |
+| `loop-orchestrate` | Run an explicitly configured headless command | `py -3 scripts/run_loop.py ...` |
+| `loop-prompt` | Run an initial prompt and bounded follow-ups | `/loop-prompt 3 review this change` |
 
-Durations are work budgets, not sleep timers. The exact syntax for slash
-commands can vary by host; the intent, target, and requested count are the
-important inputs.
+## Recommended sequences
 
-## A practical sequence
+For a code change:
 
-For a code change, use:
+1. `loop-review` — define scope, risks, and acceptance criteria.
+2. `loop-code` — implement one small authorized batch.
+3. `loop-test` or a focused testing skill — verify behavior.
+4. `loop-docs` — update commands or user-facing behavior.
+5. `loop-review` — inspect the final diff and evidence.
 
-1. `loop-review` to establish scope, risks, and acceptance criteria.
-2. `loop-code` to implement one small batch at a time.
-3. `loop-test` or a focused `loop-test-*` skill to verify behavior.
-4. `loop-docs` when user-facing behavior or commands changed.
-5. `loop-review` again to inspect the final diff and evidence.
+For a diagnosis, use the narrowest diagnosis skill that fits. For adoption
+decisions, use `loop-research-repo` or `loop-research-tools` before
+`loop-review`. Do not install or authenticate anything without authorization.
 
-For a repository or tool evaluation, use `loop-research-repo` or
-`loop-research-tools`, then `loop-review`; do not install or adopt anything
-without explicit authorization.
+Every loop reports `PASS`, `FAIL`, `BLOCKED`, or `NOT_RUN`, plus commands or
+evidence, changed files, remaining gaps, and the next action. Stop when useful
+authorized work ends, a safety boundary is reached, the deadline expires, or
+materially identical results repeat more than three times.
 
-## Required reporting
+## `/loop-prompt`
 
-Every loop must distinguish `PASS`, `FAIL`, `BLOCKED`, and `NOT_RUN`. Report the
-commands or evidence used, files changed, remaining gaps, and the next bounded
-action. Stop when there is no authorized useful work, a safety boundary is
-reached, or materially identical findings recur more than three times.
+`/loop-prompt 3 task` means one initial invocation followed by at most three
+agent-generated follow-ups. It does not guarantee four invocations. A timeout,
+failure, block, startup error, missing or malformed marker, duplicate prompt or
+result, safety boundary, or missing evidence stops the run.
 
-## `/loop-prompt` and headless orchestration
-
-`/loop-prompt 3 task` means one initial invocation plus at most three
-agent-generated follow-ups. It does not guarantee four invocations: a timeout,
-failure, block, missing `NEXT_PROMPT:`, or safety boundary stops the run.
-
-For direct process-level orchestration, use an explicit command and quote the
-placeholder as one argument on Windows:
+For direct orchestration, quote `{prompt}` as one argument on Windows:
 
 ```text
-py -3 scripts/run_loop.py --prompt "Review and test this change" --follow-up-count 3 --timeout-seconds 600 -- copilot -p "{prompt}"
+py -3 scripts/run_loop.py --prompt "Review and test this change" --follow-up-count 3 --timeout-seconds 600 --self-prompt -- copilot -p "{prompt}"
 ```
 
-The runner writes JSON state and a Markdown report. Review captured output for
-secrets before sharing it. Fake-agent tests prove only the runner protocol;
-they do not prove that a particular Copilot, Codex, or Claude Code version is
-runtime-compatible.
+Inspect local JSON state and Markdown reports before sharing captured output.
+Fake-agent tests verify the runner protocol only; they do not prove runtime
+compatibility with a particular host or host version.

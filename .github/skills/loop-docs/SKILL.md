@@ -8,14 +8,23 @@ disable-model-invocation: false
 
 # Loop Docs
 
-Map the documentation surface and audience, then inspect one angle at a time:
-accuracy, completeness, examples, links, terminology, localization, and
-generated-output consistency. Trace claims to source code or authoritative
-references. Make only scoped authorized edits and verify links, formatting, and
-commands where possible.
+## Use when
 
-Checkpoint evidence, changed files, verification, and next angle. If no useful
-angle remains, or materially identical findings occur more than three consecutive
-times, write the consolidated report and stop. Never sleep to consume duration.
-Record documentation checks as `PASS`, `FAIL`, `BLOCKED`, or `NOT_RUN`; missing
-link or rendering tools are not PASS.
+Audit or improve a README, guide, API reference, example, localization, or
+generated document.
+
+## Workflow
+
+Map the audience and documentation surface. Check accuracy, completeness,
+examples, links, terminology, localization, and generated-output consistency.
+Trace claims to source code or authoritative references. Make only scoped
+authorized edits and verify commands, links, and formatting where possible.
+
+## Boundaries and evidence
+
+Preserve uncertainty and distinguish `PASS`, `FAIL`, `BLOCKED`, and `NOT_RUN`.
+Record evidence, changed files, verification, and the next angle.
+
+Stop when no useful angle remains, the deadline or user request ends the run, a
+safety boundary is reached, or materially identical findings recur more than
+three times. Never sleep to consume time; write a consolidated report.

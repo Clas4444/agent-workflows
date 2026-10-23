@@ -8,9 +8,23 @@ disable-model-invocation: false
 
 # Loop Diagnose Performance
 
-Define measurable latency, throughput, memory, CPU, or I/O criteria and capture
-a baseline. Use bounded profiling with representative inputs and protect
-credentials/private data. Compare one change at a time; do not claim improvement
-without repeated comparable measurements. Record tool, metric, variance,
-`PASS`, `FAIL`, `BLOCKED`, or `NOT_RUN`. Stop and consolidate when no new
-measurement angle remains or results repeat more than three times; never sleep.
+## Use when
+
+Investigate slow, memory-heavy, CPU-heavy, or I/O-heavy behavior with measurable
+evidence.
+
+## Workflow
+
+Define latency, throughput, memory, CPU, or I/O criteria and capture a baseline.
+Use bounded profiling with representative inputs. Compare one change at a time,
+recording the tool, metric, variance, and result. Do not claim improvement
+without repeated comparable measurements.
+
+## Boundaries and evidence
+
+Protect credentials and private data. Report `PASS`, `FAIL`, `BLOCKED`, or
+`NOT_RUN`; distinguish missing measurements from a failed measurement.
+
+Stop when no suitable work remains, the deadline or user request ends
+the run, a safety boundary is reached, or materially identical results recur
+more than three times. Never sleep to consume time; write a consolidated report.

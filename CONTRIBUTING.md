@@ -1,23 +1,48 @@
 # Contributing
 
-## Source of truth
+This repository distributes one portable set of 17 workflow skills in three
+native project layouts. Contributions should improve clarity or correctness
+without changing a workflow's responsibility or silently widening its scope.
 
-Edit a skill in `.github/skills/<skill-name>/SKILL.md` first. Then copy the exact
-file to the matching `.agents/skills/` and `.claude/skills/` directories.
+## Source and synchronization
 
-## Required checks
+1. Edit `.github/skills/<skill-name>/SKILL.md`.
+2. Copy that exact file to the matching `.agents/skills/` and `.claude/skills/`
+   directories.
+3. Confirm all three SHA-256 hashes match.
+4. Update documentation when the workflow, command, output, or limitation
+   changes.
 
-For every skill:
+The manifest in `skills-manifest.json` is the authoritative skill list. Do not
+add a skill directory without adding its name and all three copies.
 
-1. The directory name matches the frontmatter `name`.
-2. `description` is present and describes what and when to use.
-3. The file has YAML frontmatter and remains below 500 lines.
-4. The content records `PASS`, `FAIL`, `BLOCKED`, and `NOT_RUN`.
-5. The loop has an explicit no-sleep rule and duplicate/no-work break condition.
-6. All three copies have identical SHA-256 hashes.
+## Skill requirements
 
-For creating or maintaining a skill, follow `loop-skill-create` and run both
-the validator and validator tests before requesting review.
+Each skill must:
 
-Do not install packages, extensions, plugins, or MCP servers as part of a skill
-change unless the user explicitly authorizes it.
+- use the existing YAML frontmatter fields and a lowercase hyphenated name;
+- explain when to use it, what it accepts, what it may change, and what it
+  reports;
+- preserve bounded work, explicit verification, safety boundaries, and
+  `PASS`, `FAIL`, `BLOCKED`, and `NOT_RUN` states;
+- stop on no useful work, a deadline, a safety boundary, or materially repeated
+  results, and never sleep to consume time;
+- remain below 500 lines and pass the repository validator.
+
+Do not add dependencies, tools, extensions, plugins, MCP servers, permissions,
+or host-compatibility claims without explicit authorization and evidence.
+
+## Validation
+
+From the repository root, run:
+
+```text
+py -3 -m unittest discover -s tests -v
+py -3 scripts\validate.py
+py -3 -m py_compile scripts\run_loop.py scripts\validate.py tests\test_validate.py
+git diff --check
+```
+
+Do not mark CI or host-runtime checks as `PASS` without recorded evidence.
+Keep generated validation evidence factual, and review the final diff for
+unrelated files or captured sensitive output.

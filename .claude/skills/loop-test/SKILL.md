@@ -8,13 +8,22 @@ disable-model-invocation: false
 
 # Loop Test
 
-Identify the project test gate, baseline command, environment, and target risk.
-Run the smallest relevant bounded test first, then broaden only when evidence
-requires it. Distinguish `PASS`, `FAIL`, `BLOCKED`, and `NOT_RUN`; missing tools
-are not PASS. Change tests or fixtures only with authorization and never weaken
-acceptance criteria.
+## Use when
 
-Checkpoint command, exit code, failure evidence, coverage/test gap, action, and
-next test. If no new test angle remains, or materially identical results occur
-more than three consecutive times, write the consolidated report and stop. Never
-sleep to consume duration.
+Select, run, or improve a bounded test strategy for a project or change.
+
+## Workflow
+
+Identify the project test gate, baseline command, environment, and target risk.
+Run the smallest relevant test first, then broaden only when evidence requires
+it. Record the command, exit code, failure evidence, coverage gap, action, and
+next test.
+
+## Boundaries and evidence
+
+Change tests or fixtures only with authorization. Never weaken assertions or
+accept a missing tool as `PASS`. Report `PASS`, `FAIL`, `BLOCKED`, or `NOT_RUN`.
+
+Stop when no suitable work remains, the deadline or user request ends the run,
+a safety boundary is reached, or materially identical results recur more than
+three times. Never sleep to consume time; write a consolidated report.

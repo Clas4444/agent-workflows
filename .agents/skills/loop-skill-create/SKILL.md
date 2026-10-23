@@ -8,28 +8,31 @@ disable-model-invocation: false
 
 # Loop Skill Create
 
-Extract the requested behavior, target hosts, scope, authorization, acceptance
-criteria, and expected evidence before editing. Inspect the manifest,
-`CONTRIBUTING.md`, validation docs, and existing skills for reusable patterns.
-Treat `.github/skills/<skill-name>/SKILL.md` as the canonical source and do not
-create a duplicate workflow when an existing skill can be improved.
+## Use when
 
-Implement one small batch at a time. Validate lowercase hyphenated naming,
-frontmatter boundaries, required fields, prerequisites, permitted actions,
-constraints, outputs, bounded work, no idle sleeping, deadline/no-work/
-repeated-result/blocked stop conditions, and explicit `PASS`, `FAIL`, `BLOCKED`,
-and `NOT_RUN` reporting. Add a representative positive test and a focused
-negative test using an isolated fixture when the workflow or validator supports
-it. Diagnose failures, fix the root cause, and rerun the relevant checks.
+Create or maintain a synchronized `SKILL.md` workflow without duplicating an
+existing responsibility.
 
-Synchronize the canonical file exactly to every project skill root declared in
-`skills-manifest.json`. Update documentation and reproducible evidence only
-when the behavior or verification surface changes. Review the final diff for
-unrelated edits, inspect generated reports, and record the command, result,
-revision, limitations, and next action.
+## Workflow
 
-Stop and write a consolidated report when no authorized useful work remains,
-the deadline is reached, work is blocked, a safety boundary is encountered, or
-materially identical findings recur more than three consecutive times. Never
-sleep to consume duration, and never claim host runtime compatibility without
-host-specific evidence.
+Extract behavior, target hosts, scope, authorization, acceptance criteria, and
+expected evidence. Inspect the manifest, `CONTRIBUTING.md`, validation docs,
+and related skills. Edit `.github/skills/<skill-name>/SKILL.md`, then copy it
+exactly to `.agents/skills/` and `.claude/skills/`.
+
+Validate metadata, prerequisites, permitted actions, constraints, outputs,
+bounded work, verification, stop conditions, and all four statuses. Add focused
+positive and negative tests when the validator supports them. Update
+documentation and generated evidence only when the verification surface changes.
+
+## Boundaries and evidence
+
+Do not add a duplicate workflow, dependency, host-compatibility claim, or
+permission without authorization and evidence. Review the final diff for
+unrelated edits. Record command, result, revision, limitations, and next action
+as `PASS`, `FAIL`, `BLOCKED`, or `NOT_RUN`.
+
+Stop when no suitable work remains, the deadline or user request ends the run,
+a safety boundary is reached, or materially identical findings recur more than
+three times. Never sleep to consume time or sleep to consume duration; write a
+consolidated report.

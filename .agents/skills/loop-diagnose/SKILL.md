@@ -8,14 +8,25 @@ disable-model-invocation: false
 
 # Loop Diagnose
 
-Capture the exact failure, environment, command, exit code, logs, and
-reproduction. Maintain a hypothesis table and change one variable at a time.
-Prefer the smallest reproducer and relevant regression test. Fix only with
-authorization, then rerun the reproducer and regression checks. Keep failures
-visible and record `PASS`, `FAIL`, `BLOCKED`, or `NOT_RUN`.
+## Use when
 
-Checkpoint every experiment with evidence, hypothesis, action, verification, and
-next test. If no new experiment remains, or materially identical evidence occurs
-more than three consecutive times, write the consolidated report and stop. Never
-sleep to consume duration; also stop on deadline, user request, missing
-authorization/decision, or a safety/privacy boundary.
+Investigate a bug, crash, failing test, regression, or slow behavior that needs
+reproduction and isolation.
+
+## Workflow
+
+Capture the exact symptom, environment, command, exit code, logs, and
+reproduction. Maintain a hypothesis table and change one variable at a time.
+Prefer the smallest reproducer and the most relevant regression test. Fix only
+when authorized, then rerun the reproducer and regression checks.
+
+## Boundaries and evidence
+
+Keep failures visible. Each experiment records its hypothesis, evidence, action,
+verification, and next test. Report `PASS`, `FAIL`, `BLOCKED`, or `NOT_RUN`.
+Protect credentials and private data; do not install tools or change unrelated
+files.
+
+Stop when no suitable work remains, the deadline or user request ends the run,
+a safety boundary is reached, or materially identical evidence recurs more than
+three times. Never sleep to consume time. Write a consolidated report.

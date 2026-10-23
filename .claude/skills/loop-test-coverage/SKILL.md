@@ -8,9 +8,21 @@ disable-model-invocation: false
 
 # Loop Test Coverage
 
+## Use when
+
+Find and reduce important untested risk with meaningful focused tests.
+
+## Workflow
+
 Identify the coverage tool, baseline, critical paths, and measurable threshold
 from project evidence. Separate line, branch, path, and mutation evidence.
-Add only authorized tests; do not change thresholds or exclude code to create a
-false PASS. Record command, metric, exit code, and `PASS`, `FAIL`, `BLOCKED`, or
-`NOT_RUN`. Stop and consolidate when no new risk remains or results repeat more
-than three times; never sleep.
+Add only authorized tests and record the command, metric, exit code, and result.
+
+## Boundaries and evidence
+
+Do not change thresholds or exclude code to create a false `PASS`. Report
+`PASS`, `FAIL`, `BLOCKED`, or `NOT_RUN`.
+
+Stop when no suitable work remains, the deadline or user request ends the run, a
+safety boundary is reached, or materially identical results recur more than
+three times. Never sleep to consume time; write a consolidated report.

@@ -8,24 +8,29 @@ disable-model-invocation: true
 
 # Loop Prompt
 
-Interpret `/loop-prompt N` as one initial user prompt followed by at most `N`
-agent-generated follow-up prompts. Use `scripts/run_loop.py --follow-up-count
-N --self-prompt` with an explicitly configured headless agent command. Never
-assume the current chat host can invoke itself, and never call a different
-agent without authorization.
+## Use when
 
-After each invocation, derive exactly one non-empty, non-duplicate, actionable
-`NEXT_PROMPT:` from the previous result and execute it. Every invocation must
-end with exactly one `LOOP_STATUS: PASS`, `FAIL`, `BLOCKED`, or `NOT_RUN`.
-`PASS` is terminal for a normal run; a self-prompt run may continue only when a
-valid new `NEXT_PROMPT:` explicitly supplies the next invocation. Stop early on
-failure, blocking, timeout, startup failure, missing/duplicate/malformed
-markers, repeated prompts or results, safety boundary, or user request. Keep
-the requested count as a hard upper bound, never sleep to consume it, and write
-state/report evidence for every prompt. Review captured output for sensitive
-data before sharing.
+The user explicitly requests `/loop-prompt N` and authorizes the configured
+headless agent command.
 
-The count means follow-up prompts after the initial prompt, not total prompts.
-For example, `/loop-prompt 5` permits six invocations: the user's prompt plus
-five inferred prompts. A fake-command test only verifies orchestration, not
-runtime compatibility or agent quality.
+## Workflow
+
+Interpret `N` as follow-ups after the initial prompt. Use
+`scripts/run_loop.py --follow-up-count N --self-prompt` with an explicit command.
+After each invocation, accept exactly one non-empty, non-duplicate,
+actionable `NEXT_PROMPT:` line and execute it. Every invocation must emit one
+exact `LOOP_STATUS: PASS`, `FAIL`, `BLOCKED`, or `NOT_RUN` marker.
+
+## Boundaries and evidence
+
+`PASS` is terminal for a normal run. Self-prompt mode continues only when a
+valid new next prompt exists and the hard limit permits it. Stop early when no suitable work remains, or on
+failure, block, timeout, startup failure, missing/duplicate/malformed marker,
+repeated prompt or result, safety boundary, or user request. Write state and
+report evidence for every invocation and review captured output for sensitive
+data.
+
+`/loop-prompt 5` permits six invocations: one initial prompt plus five
+follow-ups. It is a maximum, not a guarantee. Never assume the chat host can
+invoke itself or call a different agent without authorization. Fake-command
+tests verify orchestration only, not host runtime compatibility or agent quality.

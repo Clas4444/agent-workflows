@@ -1,43 +1,48 @@
-# Headless Loop Orchestration
+# Headless loop orchestration
 
-The repository can continue a loop in a new process through
-`scripts/run_loop.py`. This is process-level orchestration, not a guarantee
-that an agent host will automatically invoke itself.
+`scripts/run_loop.py` is an optional process-level harness. It invokes a
+configured command repeatedly; it does not install an agent, authenticate a
+host, grant permissions, or make the current chat host invoke itself.
 
-The runner requires an explicit headless command, a finite iteration limit, and
-a timeout. Use `{prompt}` when the agent accepts the prompt as an argument; if
-the token is absent, the prompt is sent on standard input.
+## Basic contract
 
-For multiple independent prompts, put one prompt per non-empty line in a UTF-8
-file. Lines beginning with `#` are ignored:
-
-```text
-python scripts/run_loop.py --prompt-file prompts.txt --batch-dir .loop/demo --max-iterations 3 --timeout-seconds 600 -- copilot -sp {prompt}
-```
-
-The batch writes one JSON/Markdown pair per prompt plus `summary.json` and
-`summary.md`. A batch passes only when every prompt finishes with `PASS`.
-
-To derive follow-up prompts automatically from the initial prompt:
+Provide a prompt, a finite limit, a positive timeout, and a command after `--`.
+Use `{prompt}` as one command argument when the host accepts the prompt as an
+argument. If the token is absent, the runner writes the prompt to stdin.
+Commands are passed without shell interpolation.
 
 ```text
-python scripts/run_loop.py --prompt "Develop a safe validation improvement" --follow-up-count 5 --timeout-seconds 600 -- copilot -sp {prompt}
+py -3 scripts/run_loop.py --prompt "Review this change" --max-iterations 3 --timeout-seconds 600 -- copilot -p "{prompt}"
 ```
 
-This permits one initial invocation plus five inferred follow-up invocations.
-Each result must contain `NEXT_PROMPT:`. The count is an upper bound, not a
-guarantee: failures, timeouts, missing next prompts, and safety boundaries stop
-the run early.
+Check the installed host's own flags before adapting the examples for Codex or
+Claude Code. The runner does not define a shared host CLI.
 
-Examples (verify flags against the installed version before use):
+## Follow-ups and batches
+
+`--follow-up-count N --self-prompt` permits one initial invocation and at most
+`N` inferred follow-ups. The next result must contain exactly one non-empty,
+non-duplicate `NEXT_PROMPT:` line. A failure, block, timeout, startup error,
+malformed or duplicate marker, repeated prompt/result, safety boundary, or
+missing evidence stops the run before another invocation.
 
 ```text
-python scripts/run_loop.py --prompt "Review and continue one bounded batch" --max-iterations 3 --timeout-seconds 600 -- copilot -sp {prompt}
-python scripts/run_loop.py --prompt "Review and continue one bounded batch" --max-iterations 3 --timeout-seconds 600 -- codex exec {prompt}
-python scripts/run_loop.py --prompt "Review and continue one bounded batch" --max-iterations 3 --timeout-seconds 600 -- claude -p {prompt}
+py -3 scripts/run_loop.py --prompt "Review and test this change" --follow-up-count 3 --timeout-seconds 600 --self-prompt -- copilot -p "{prompt}"
 ```
 
-Each invocation must end with one exact marker:
+For independent prompts, use a UTF-8 file with one non-empty prompt per line.
+Lines beginning with `#` are ignored:
+
+```text
+py -3 scripts/run_loop.py --prompt-file prompts.txt --batch-dir .loop/demo --max-iterations 3 --timeout-seconds 600 -- copilot -p "{prompt}"
+```
+
+The batch writes one JSON/Markdown pair per prompt and `summary.json` and
+`summary.md`. The batch is `PASS` only when every prompt is `PASS`.
+
+## Markers and evidence
+
+Each invocation must emit exactly one complete status marker:
 
 ```text
 LOOP_STATUS: PASS
@@ -46,25 +51,17 @@ LOOP_STATUS: BLOCKED
 LOOP_STATUS: NOT_RUN
 ```
 
-For a normal bounded run, `PASS`, `FAIL`, or `BLOCKED` stops the runner. A
-self-prompt run created with `--follow-up-count` continues after `PASS` only
-when the output contains a new valid `NEXT_PROMPT:` and the follow-up limit has
-not been reached. `NOT_RUN` also continues until the limit. Any missing or
-duplicate marker, timeout, process-start failure, or safety boundary stops the
-run. State is written as JSON and a short report is written to the configured
-paths. Captured output may contain sensitive data; inspect it before sharing.
-The runner does not install tools, authenticate, grant permissions, or use shell
-execution.
+In a normal run, `PASS`, `FAIL`, and `BLOCKED` are terminal. In self-prompt
+mode, `PASS` or `NOT_RUN` may continue only when a valid next prompt exists and
+the limit permits it. State JSON records every invocation, prompt count,
+status, and stop reason. The Markdown report is a short index; state and
+captured output may contain sensitive data.
 
-The runner reads stdout and stderr concurrently in bounded chunks. It retains
-only the last 100,000 combined decoded characters for state/report evidence,
-while streaming marker detection and SHA-256 hashing over the complete raw
-streams.
-Stdout is combined before stderr for the retained report; cross-stream timing
-is not represented. Invalid UTF-8 is decoded with replacement characters.
-Timeouts terminate the direct child. POSIX process-group cleanup is not
-guaranteed on Windows, where descendant cleanup remains host-specific.
+The runner reads stdout and stderr concurrently in bounded chunks, retains
+only a combined 100,000-character decoded tail, and parses markers while
+reading. It hashes complete raw streams without retaining them. Stdout is
+placed before stderr in retained evidence; cross-stream timing is not
+preserved. Invalid UTF-8 is replaced in retained text.
 
-Runtime compatibility remains host-specific. A successful fake-command test
-only proves the runner's continuation protocol, not that Copilot, Codex, or
-Claude Code works in a particular environment.
+Timeout handling terminates and waits for the direct child. Descendant cleanup
+on Windows is host-specific and is not guaranteed by this project.

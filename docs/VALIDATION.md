@@ -1,44 +1,46 @@
 # Validation
 
-This repository is valid when metadata, synchronization, behavior contracts, and
-documentation checks all pass. Run the dependency-free validator from the
-repository root:
+The validator checks the manifest, skill metadata, three-root synchronization,
+required safety/reporting rules, and the generated evidence fingerprint. It
+uses only the Python standard library.
+
+Run from the repository root:
 
 ```text
-python scripts/validate.py
+py -3 -m unittest discover -s tests -v
+py -3 scripts\validate.py
+py -3 -m py_compile scripts\run_loop.py scripts\validate.py tests\test_validate.py
+git diff --check
 ```
 
-Use `python scripts/validate.py --write-summary --tests-status PASS` to generate
-`docs/VALIDATION-RESULT.md` after the validator tests pass. The GitHub Actions
-workflow runs the validator and tests on pushes and pull requests. Do not mark
-CI or runtime checks as `PASS` unless their actual evidence exists.
+On systems where `py -3` is unavailable, use the installed Python command
+documented by that environment. A missing command is `NOT_RUN`, not `PASS`.
 
-Run the focused validator tests as well:
+## Evidence
+
+Generate the report after the tests and validator pass:
 
 ```text
-python -m unittest discover -s tests -v
+py -3 scripts\validate.py --write-summary --tests-status PASS --ci-status NOT_RUN --runtime-status NOT_RUN
 ```
 
-On Windows where `python` is not on `PATH`, use `py -3` instead. The validator
-report records the exact clean commit or a working-tree fingerprint, and keeps
-structural validation, validator tests, CI, and agent runtime checks separate.
-`NOT_RUN`, `BLOCKED`, `FAIL`, and `PASS` are not interchangeable.
-The generated `docs/VALIDATION-RESULT.md` is excluded from the working-tree
-fingerprint so rewriting evidence does not change the source fingerprint it
-records. Skills, source, tests, configuration, and other repository files
-remain included.
+`docs/VALIDATION-RESULT.md` records structural status, test/CI/runtime status,
+the clean commit or a working-tree fingerprint, and findings. `PASS`, `FAIL`,
+`BLOCKED`, and `NOT_RUN` are distinct and must reflect actual evidence.
 
-Expected skill count: 17.
+The generated report is excluded from the fingerprint to avoid self-reference.
+Source, tests, skills, configuration, and other repository files remain
+included. Reports about work outside this repository should use the configured
+report directory or a workspace-relative `Markdown` directory instead.
 
-For each skill, verify:
+## Skill checks
 
-- `SKILL.md` exists in all three native project trees.
-- `name` matches the containing directory.
-- `description` is present and the file is under 500 lines.
-- All copies have identical SHA-256 hashes.
-- Instructions distinguish `PASS`, `FAIL`, `BLOCKED`, and `NOT_RUN`.
-- Instructions prohibit idle sleep and define the no-work/duplicate-result break.
+The expected skill count is 17. For each skill, the validator checks:
 
-Generated validation results belong in this repository when they are intended
-to be shared. Reports about work performed outside this repository may use a
-configured report directory or a workspace-relative `Markdown` directory.
+- `SKILL.md` exists in all three native roots;
+- frontmatter `name` matches the directory and `description` is present;
+- the file stays below 500 lines;
+- all copies have identical SHA-256 hashes;
+- instructions name all four statuses and define bounded stop conditions.
+
+Host-runtime tests and CI remain `NOT_RUN` unless their evidence is recorded.

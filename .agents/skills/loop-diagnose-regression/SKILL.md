@@ -8,9 +8,23 @@ disable-model-invocation: false
 
 # Loop Diagnose Regression
 
-Record known-good and failing versions, environment, reproduction command, and
-expected behavior. Compare changes or bisect only when safe and authorized.
-Preserve unrelated worktree changes and avoid destructive history operations.
-Record candidate change, evidence, confidence, and `PASS`, `FAIL`, `BLOCKED`, or
-`NOT_RUN`. Consolidate and stop when no new comparison remains or materially
-identical evidence repeats more than three times; never sleep.
+## Use when
+
+Compare a known-good state with a failing state to isolate a regression and
+verify the smallest authorized fix.
+
+## Workflow
+
+Record both versions, the environment, reproduction command, and expected
+behavior. Narrow the change set or bisect only when safe and authorized. Record
+each candidate change, evidence, confidence, and verification.
+
+## Boundaries and evidence
+
+Preserve unrelated worktree changes and never use destructive history commands.
+Report `PASS`, `FAIL`, `BLOCKED`, or `NOT_RUN`. Do not claim a regression is
+fixed without rerunning the reproducer.
+
+Stop when no suitable work remains, the deadline or user request ends the run,
+a safety boundary is reached, or materially identical evidence recurs more than
+three times. Never sleep to consume time; write a consolidated report.

@@ -1,73 +1,107 @@
 # Portable Loop Skills
 
-Cross-agent loop skills for VS Code/Copilot, Codex, and Claude Code.
+Portable, bounded workflows for coding agents, plus a small Python runner for
+process-level continuation and a dependency-free validator.
 
-> **Status: experimental.** The repository contains portable workflow
-> instructions, not a guarantee that every host implements every field or
-> behavior identically. Compatibility means the files follow supported skill
-> layouts and metadata; host-level runtime behavior still needs testing.
+The repository is intended for projects that use agent instructions in VS Code
+with Copilot, Codex, or Claude Code. It standardizes how an agent plans a small
+batch, changes only authorized files, verifies the result, records evidence,
+and stops instead of looping indefinitely.
 
-This is an independent personal project and is not affiliated with GitHub,
-Microsoft, OpenAI, Anthropic, or the maintainers of any referenced tool.
+> **Experimental.** The files are portable instructions, not a promise that
+> every host interprets them or their metadata identically. Host-runtime
+> compatibility remains unverified unless the runtime matrix records evidence.
 
-## Skill families
+## What is included
 
-| Family | Purpose |
-|---|---|
-| `loop-review` | Review, evaluate, propose, verify, and report |
-| `loop-code` | Implement code or configuration in verified batches |
-| `loop-diagnose*` | Reproduce, isolate, and diagnose bugs, performance, and regressions |
-| `loop-research*` | Research repositories, tools, extensions, plugins, skills, and MCP |
-| `loop-test*` | Run unit, integration, coverage, or general testing loops |
-| `loop-docs` | Audit and improve documentation |
-| `loop-skill-create` | Create and maintain skills with synchronized evidence |
-| `loop-orchestrate` | Continue bounded work through a configured headless agent command |
-| `loop-prompt` | Infer and run a bounded number of follow-up prompts |
+The 17 skills are grouped by responsibility:
 
-## Layout
+| Family | Skills | Use for |
+|---|---|---|
+| Review and implementation | `loop-review`, `loop-code` | Scope a change, implement it, inspect the diff, and verify it |
+| Diagnosis | `loop-diagnose`, `loop-diagnose-repro`, `loop-diagnose-performance`, `loop-diagnose-regression` | Reproduce failures, isolate causes, measure regressions, and verify fixes |
+| Research | `loop-research`, `loop-research-repo`, `loop-research-tools` | Compare sources, repositories, tools, and adoption risks before acting |
+| Testing | `loop-test`, `loop-test-unit`, `loop-test-integration`, `loop-test-coverage` | Select and run bounded tests or improve meaningful coverage |
+| Documentation and skills | `loop-docs`, `loop-skill-create` | Maintain project documentation or synchronized agent workflows |
+| Orchestration | `loop-orchestrate`, `loop-prompt` | Run explicitly configured headless invocations with hard limits |
 
-- `.github/skills/` — VS Code/Copilot project skills
-- `.agents/skills/` — Codex-compatible project skills
-- `.claude/skills/` — Claude Code-compatible project skills
-- `docs/` — compatibility and verification records
+Every workflow distinguishes `PASS`, `FAIL`, `BLOCKED`, and `NOT_RUN`. A
+duration is a work budget, never a reason to wait or invent work.
 
-The same skill content is copied into each native project location. Personal
-native installations are not moved or deleted by this repository.
+## Repository layout
 
-## Verification status
+- `.github/skills/` — canonical source and VS Code/Copilot project skills
+- `.agents/skills/` — byte-identical Codex project copies
+- `.claude/skills/` — byte-identical Claude Code project copies
+- `docs/` — usage, compatibility, orchestration, validation, and runtime evidence
+- `scripts/run_loop.py` — optional process-level orchestration runner
+- `scripts/validate.py` — dependency-free structure and synchronization validator
+- `tests/` — deterministic validator and runner tests
 
-- Structural validation: checked for 17 skills, valid metadata, matching names,
-  and identical copies across the three project roots.
-- Repeatable validation: run `python scripts/validate.py` and
-  `python -m unittest discover -s tests -v`; the same checks run on pushes and
-  pull requests through GitHub Actions.
-- Host runtime validation: **not yet comprehensively tested** across all three
-  agent products and versions.
-- Treat each skill as a starting workflow. Review commands, permissions, data
-  handling, and project-specific instructions before use.
+Edit `.github/skills/` first, then synchronize the exact file to the other two
+skill roots. The manifest declares the 17 skills and the three supported
+project-root layouts.
 
-## Scope and non-goals
+## Installation and use
 
-These skills provide procedural guidance for coding-agent workflows. They do not
-provide a security guarantee, replace project tests, authorize changes, or
-install tools and integrations automatically.
+Clone or copy the repository into a project that supports one of the native
+skill layouts. Do not copy these files into a personal global installation
+unless the host's own documentation says to do so. The repository does not
+install tools, authenticate hosts, grant permissions, or move personal files.
 
-## Safety and loop policy
+Start with [the skill usage guide](./docs/SKILL-USAGE.md). A common code-change
+sequence is:
 
-- Duration is a work budget, never a reason to sleep.
-- Stop and write a consolidated report when no suitable work remains or materially
-  identical results occur more than three consecutive times.
-- Preserve unrelated changes; do not stage, commit, push, install, or delete
-  broadly without explicit authorization.
-- Record `PASS`, `FAIL`, `BLOCKED`, and `NOT_RUN` distinctly.
+1. `loop-review` — establish scope, risks, and acceptance criteria.
+2. `loop-code` — make one authorized implementation batch.
+3. `loop-test` or a focused testing skill — verify the behavior.
+4. `loop-docs` — update user-facing instructions when behavior or commands changed.
+5. `loop-review` — inspect the final diff and evidence.
 
-See [CONTRIBUTING.md](./CONTRIBUTING.md) for synchronization and validation.
-See [SECURITY.md](./SECURITY.md) for responsible vulnerability reporting.
-See [docs/VALIDATION.md](./docs/VALIDATION.md) for the reproducible validation
-command and evidence format.
-See [docs/SKILL-USAGE.md](./docs/SKILL-USAGE.md) for a skill selection guide,
-command examples, sequencing, and `/loop-prompt` limits.
-See [loop-orchestrate](./.github/skills/loop-orchestrate/SKILL.md) for the
-optional headless continuation harness and its safety limits.
-See [docs/ORCHESTRATION.md](./docs/ORCHESTRATION.md) for host command examples
-and the exact continuation protocol.
+Use the diagnosis or research families when the task needs them; do not invoke
+multiple overlapping loops merely to consume a budget.
+
+## Optional headless orchestration
+
+`loop-orchestrate` and `loop-prompt` wrap an explicitly configured command;
+they do not make a host self-invoking. For the runner contract and quoting
+examples, see [docs/ORCHESTRATION.md](./docs/ORCHESTRATION.md).
+
+`/loop-prompt 3 task` means one initial invocation and at most three
+agent-generated follow-ups. Failures, timeouts, malformed markers, repeated
+prompts or results, safety boundaries, and missing evidence stop the run early.
+Captured output can contain secrets; inspect local state and reports before
+sharing them.
+
+## Verification and limits
+
+Run the checks from the repository root:
+
+```text
+py -3 -m unittest discover -s tests -v
+py -3 scripts\validate.py
+py -3 -m py_compile scripts\run_loop.py scripts\validate.py tests\test_validate.py
+```
+
+The validator checks metadata, the manifest, all three skill roots, required
+stop/reporting rules, and the generated evidence fingerprint. The current
+validation report records structural tests as `PASS`, while CI and agent
+runtime tests remain `NOT_RUN` unless separately evidenced. See
+[docs/VALIDATION.md](./docs/VALIDATION.md) and
+[docs/RUNTIME-TEST-MATRIX.md](./docs/RUNTIME-TEST-MATRIX.md).
+
+The runner's tests use local fake commands. They verify the continuation
+protocol, bounded capture, marker handling, and persistence failures; they do
+not prove that a particular Copilot, Codex, or Claude Code version works.
+Timeout handling guarantees termination of the direct child only. Descendant
+cleanup on Windows is host-specific.
+
+## Safety and contribution
+
+Review commands, permissions, data handling, and project instructions before
+using a workflow. Preserve unrelated changes. Do not expose credentials or
+captured private output in issues or reports.
+
+See [CONTRIBUTING.md](./CONTRIBUTING.md) for the synchronization contract and
+[SECURITY.md](./SECURITY.md) for responsible reporting. This independent
+project is not affiliated with GitHub, Microsoft, OpenAI, or Anthropic.

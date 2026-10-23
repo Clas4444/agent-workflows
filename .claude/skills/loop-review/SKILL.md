@@ -8,21 +8,29 @@ disable-model-invocation: false
 
 # Loop Review
 
-Parse one positive duration and target, create a run ID/deadline, read applicable
-instructions and prior checkpoints, then review one angle per iteration:
-correctness, tests, docs/config, build/release, integrations, security/privacy,
-usability, and hygiene. Discover existing tools before proposing additions.
-Rank findings P0-P3, record evidence/risk/authorization/verification, edit only
-authorized files, inspect diffs, and record `PASS`, `FAIL`, `BLOCKED`, or
-`NOT_RUN`.
+## Use when
 
-Each iteration checkpoint includes run ID, status, elapsed/requested, angle,
-evidence, finding, action, verification, and next angle. Do not repeat an angle
-without new evidence. If no suitable work remains, or materially identical
-findings occur more than three consecutive times, write the consolidated report
-and stop. Never sleep just to consume duration. Stop also on user request,
-missing authorization/decision, or a safety/privacy boundary.
+Evaluate a file, folder, project, repository, or workspace and report verified
+findings. This workflow may make only explicitly authorized safe edits.
 
-Write primary reports under a configured report directory when one is
-available; otherwise use `<workspace>/Markdown`. On the original Windows
-workspace, `C:\Code\Markdown` remains the default for targets under `C:\Code`.
+## Workflow
+
+1. Parse one positive duration and the review target; create a run ID and
+   deadline.
+2. Read repository instructions, status, prior checkpoints, and relevant tests.
+3. Review one distinct angle at a time: correctness, tests, docs/config,
+   build/release, integrations, security/privacy, usability, or hygiene.
+4. Record evidence, risk, priority (`P0`–`P3`), authorization, action, and
+   verification. Inspect every diff.
+
+## Boundaries and evidence
+
+Do not invent support, install tools, expose private data, or change files
+outside the requested scope. Each checkpoint records elapsed/requested time,
+angle, evidence, finding, action, verification, and next angle. Report
+`PASS`, `FAIL`, `BLOCKED`, or `NOT_RUN`.
+
+Stop when no suitable work remains, the deadline or user request ends the run, a
+safety boundary is reached, or materially identical results recur more than
+three times. Never sleep to consume time. Write the consolidated report under
+the configured report directory, or `<workspace>/Markdown` when none exists.

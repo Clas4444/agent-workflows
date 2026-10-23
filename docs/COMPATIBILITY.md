@@ -1,30 +1,23 @@
 # Compatibility
 
-Compatibility claims in this document are structural, not a guarantee of
-identical runtime behavior. See [the runtime matrix](./RUNTIME-TEST-MATRIX.md).
+This document records structural compatibility only. It does not prove that
+all hosts interpret the skills or metadata in the same way. Runtime evidence is
+tracked separately in [RUNTIME-TEST-MATRIX.md](./RUNTIME-TEST-MATRIX.md).
 
-## Classification
+## Project layouts
 
-All 17 loop skills are structurally VS Code/Copilot-compatible. Each has:
+| Host target | Project skill root | Status |
+|---|---|---|
+| VS Code with Copilot | `.github/skills/` | Structural checks pass |
+| Codex | `.agents/skills/` | Files are synchronized; runtime is `NOT_RUN` |
+| Claude Code | `.claude/skills/` | Files are synchronized; runtime is `NOT_RUN` |
 
-- valid YAML frontmatter;
-- a matching lowercase hyphenated `name`;
-- `description`;
-- `argument-hint`;
-- `user-invocable: true`;
-- `disable-model-invocation: false`.
+All 17 skills have valid frontmatter, matching lowercase hyphenated names,
+descriptions, argument hints, and the existing invocation flags. Each copy is
+byte-identical to the canonical `.github/skills/` file.
 
-The same portable `SKILL.md` content is also copied to Codex and Claude Code
-project-native locations.
+To claim runtime support for a host, record the host version, discovered skill,
+invocation, result, and evidence in the runtime matrix. Do not generalize
+evidence from one host or version to another.
 
-## Native locations
-
-| Agent | Project skill directory |
-|---|---|
-| VS Code/Copilot | `.github/skills/` |
-| Codex | `.agents/skills/` |
-| Claude Code | `.claude/skills/` |
-
-No skill was classified as structurally VS Code-incompatible. Comprehensive
-runtime testing across all hosts and versions remains `NOT_RUN`. Existing
-personal copies under `C:\Users\tranh` remain untouched.
+The repository does not modify personal installations outside the worktree.
