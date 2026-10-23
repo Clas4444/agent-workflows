@@ -65,6 +65,8 @@ See [CONTRIBUTING.md](./CONTRIBUTING.md) for synchronization and validation.
 See [SECURITY.md](./SECURITY.md) for responsible vulnerability reporting.
 See [docs/VALIDATION.md](./docs/VALIDATION.md) for the reproducible validation
 command and evidence format.
+See [docs/SKILL-USAGE.md](./docs/SKILL-USAGE.md) for a skill selection guide,
+command examples, sequencing, and `/loop-prompt` limits.
 See [loop-orchestrate](./.github/skills/loop-orchestrate/SKILL.md) for the
 optional headless continuation harness and its safety limits.
 See [docs/ORCHESTRATION.md](./docs/ORCHESTRATION.md) for host command examples

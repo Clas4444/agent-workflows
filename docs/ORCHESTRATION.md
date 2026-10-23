@@ -46,12 +46,15 @@ LOOP_STATUS: BLOCKED
 LOOP_STATUS: NOT_RUN
 ```
 
-The runner stops on `PASS`, `FAIL`, or `BLOCKED`; a `NOT_RUN` result continues
-until the limit. It also stops on timeout, process-start failure, or the
-iteration limit. State is written as JSON and a short report is written to the
-configured paths. Captured output may contain sensitive data; inspect it
-before sharing. The runner does not install tools, authenticate, grant
-permissions, or use shell execution.
+For a normal bounded run, `PASS`, `FAIL`, or `BLOCKED` stops the runner. A
+self-prompt run created with `--follow-up-count` continues after `PASS` only
+when the output contains a new valid `NEXT_PROMPT:` and the follow-up limit has
+not been reached. `NOT_RUN` also continues until the limit. Any missing or
+duplicate marker, timeout, process-start failure, or safety boundary stops the
+run. State is written as JSON and a short report is written to the configured
+paths. Captured output may contain sensitive data; inspect it before sharing.
+The runner does not install tools, authenticate, grant permissions, or use shell
+execution.
 
 Runtime compatibility remains host-specific. A successful fake-command test
 only proves the runner's continuation protocol, not that Copilot, Codex, or
