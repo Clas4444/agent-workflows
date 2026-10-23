@@ -4,14 +4,139 @@
 from __future__ import annotations
 
 import argparse
+import hashlib
 import json
+import queue
 import subprocess
 import sys
+import threading
+from collections import deque
 from datetime import datetime, timezone
 from pathlib import Path
 
 STATUSES = ("PASS", "FAIL", "BLOCKED", "NOT_RUN")
 MAX_CAPTURE = 100_000
+READ_CHUNK = 8192
+
+
+class _StreamResult:
+    def __init__(self) -> None:
+        self.digest = hashlib.sha256()
+        self.tail: deque[str] = deque()
+        self.tail_size = 0
+        self.pending = ""
+        self.status_markers: list[str] = []
+        self.next_markers: list[str] = []
+
+    def add(self, chunk: bytes) -> None:
+        self.digest.update(chunk)
+        text = chunk.decode("utf-8", errors="replace")
+        self.tail.append(text)
+        self.tail_size += len(text)
+        while self.tail_size > MAX_CAPTURE:
+            self.tail_size -= len(self.tail.popleft())
+        self.pending = (self.pending + text)[-8192:]
+        while "\n" in self.pending:
+            line, self.pending = self.pending.split("\n", 1)
+            line = line.rstrip("\r")
+            stripped = line.strip()
+            if stripped.startswith("LOOP_STATUS:") and len(self.status_markers) < 2:
+                self.status_markers.append(stripped)
+            if stripped.startswith("NEXT_PROMPT:") and len(self.next_markers) < 2:
+                self.next_markers.append(stripped)
+
+    def finish(self) -> None:
+        stripped = self.pending.strip()
+        if stripped.startswith("LOOP_STATUS:") and len(self.status_markers) < 2:
+            self.status_markers.append(stripped)
+        if stripped.startswith("NEXT_PROMPT:") and len(self.next_markers) < 2:
+            self.next_markers.append(stripped)
+
+    def output(self) -> str:
+        return "".join(self.tail)
+
+
+def _read_stream(stream, name: str, events: queue.Queue) -> None:
+    try:
+        while True:
+            chunk = stream.read(READ_CHUNK)
+            if not chunk:
+                break
+            events.put((name, chunk))
+    finally:
+        stream.close()
+        events.put((name, None))
+
+
+def _write_stdin(stream, prompt: str) -> None:
+    try:
+        stream.write(prompt.encode("utf-8"))
+    finally:
+        stream.close()
+
+
+def _run_command(command_args: list[str], prompt: str, timeout: int) -> tuple[str, int | None, str, str, str]:
+    creationflags = getattr(subprocess, "CREATE_NEW_PROCESS_GROUP", 0)
+    process = subprocess.Popen(
+        command_args,
+        stdin=subprocess.PIPE,
+        stdout=subprocess.PIPE,
+        stderr=subprocess.PIPE,
+        text=False,
+        shell=False,
+        creationflags=creationflags,
+    )
+    events: queue.Queue = queue.Queue(maxsize=32)
+    results = {"stdout": _StreamResult(), "stderr": _StreamResult()}
+    threads = [
+        threading.Thread(target=_read_stream, args=(process.stdout, "stdout", events), daemon=True),
+        threading.Thread(target=_read_stream, args=(process.stderr, "stderr", events), daemon=True),
+    ]
+    for thread in threads:
+        thread.start()
+    stdin_thread = None
+    if "{prompt}" not in command_args:
+        stdin_thread = threading.Thread(target=_write_stdin, args=(process.stdin, prompt), daemon=True)
+        stdin_thread.start()
+    else:
+        process.stdin.close()
+    deadline = __import__("time").monotonic() + timeout
+    finished = 0
+    try:
+        while finished < 2:
+            remaining = deadline - __import__("time").monotonic()
+            if remaining <= 0:
+                raise subprocess.TimeoutExpired(command_args, timeout)
+            try:
+                name, chunk = events.get(timeout=remaining)
+            except queue.Empty as exc:
+                raise subprocess.TimeoutExpired(command_args, timeout) from exc
+            if chunk is None:
+                finished += 1
+            else:
+                results[name].add(chunk)
+    except subprocess.TimeoutExpired:
+        process.kill()
+        process.wait()
+        for thread in threads:
+            thread.join(timeout=1)
+        if stdin_thread:
+            stdin_thread.join(timeout=1)
+        raise
+    for result in results.values():
+        result.finish()
+    process.wait()
+    if stdin_thread:
+        stdin_thread.join(timeout=1)
+    status_markers = results["stdout"].status_markers + results["stderr"].status_markers
+    next_markers = results["stdout"].next_markers + results["stderr"].next_markers
+    return (
+        (results["stdout"].output() + results["stderr"].output())[-MAX_CAPTURE:],
+        process.returncode,
+        results["stdout"].digest.hexdigest() + results["stderr"].digest.hexdigest(),
+        "\n".join(status_markers),
+        "\n".join(next_markers),
+    )
 
 
 def make_prompt(base: str, iteration: int, previous: str) -> str:
@@ -39,12 +164,14 @@ def make_follow_up_prompt(previous: str, iteration: int) -> str:
 
 
 def extract_next_prompt(output: str) -> str | None:
-    for line in output.splitlines():
-        if line.startswith("NEXT_PROMPT:"):
-            prompt = line.removeprefix("NEXT_PROMPT:").strip()
-            if prompt:
-                return prompt
-    return None
+    markers = [
+        line.strip().removeprefix("NEXT_PROMPT:").strip()
+        for line in output.splitlines()
+        if line.strip().startswith("NEXT_PROMPT:")
+    ]
+    if len(markers) != 1 or not markers[0]:
+        return None
+    return markers[0]
 
 
 def status_from(output: str, returncode: int) -> str:
@@ -64,6 +191,17 @@ def status_from(output: str, returncode: int) -> str:
     return "NOT_RUN"
 
 
+def has_valid_status_marker(output: str) -> bool:
+    markers = [
+        line.strip()
+        for line in output.splitlines()
+        if line.strip().startswith("LOOP_STATUS:")
+    ]
+    return len(markers) == 1 and markers[0] in {
+        f"LOOP_STATUS: {status}" for status in STATUSES
+    }
+
+
 def run_loop(args: argparse.Namespace) -> int:
     command = list(args.command)
     if not command:
@@ -74,81 +212,124 @@ def run_loop(args: argparse.Namespace) -> int:
     current_prompt = args.prompt
     self_prompt = getattr(args, "self_prompt", False)
     iterations = []
+    seen_prompts = {current_prompt}
+    seen_outputs = set()
+    stop_reason = "iteration limit reached"
 
     for iteration in range(1, args.max_iterations + 1):
         prompt = (
             current_prompt
             if not self_prompt or iteration == 1
-            else make_follow_up_prompt(previous, iteration)
-        )
-        if self_prompt and iteration > 1 and (next_prompt := extract_next_prompt(previous)):
-            prompt = (
-                f"{next_prompt}\n\nAfter completing this prompt, infer the next "
+            else (
+                f"{current_prompt}\n\nAfter completing this prompt, infer the next "
                 "useful prompt if another iteration is allowed. Emit exactly one "
                 "NEXT_PROMPT: line and one LOOP_STATUS: marker."
             )
+        )
         command_args = [prompt if item == "{prompt}" else item for item in command]
+        full_output = ""
         try:
-            result = subprocess.run(
-                command_args,
-                input=None if "{prompt}" in command else prompt,
-                capture_output=True,
-                text=True,
-                encoding="utf-8",
-                errors="replace",
-                timeout=args.timeout_seconds,
-                check=False,
-                shell=False,
+            output, returncode, output_fingerprint, status_output, next_output = _run_command(
+                command_args, prompt, args.timeout_seconds
             )
-            output = (result.stdout + result.stderr)[-MAX_CAPTURE:]
-            returncode = result.returncode
-            status = status_from(output, returncode)
+            status = status_from(status_output, returncode)
         except subprocess.TimeoutExpired as exc:
             output = f"timeout after {args.timeout_seconds}s: {exc}"
             returncode = None
             status = "BLOCKED"
+            stop_reason = "agent command timed out"
+            status_output = ""
+            next_output = ""
+            output_fingerprint = hashlib.sha256(output.encode("utf-8")).hexdigest()
         except OSError as exc:
             output = f"unable to start configured agent command: {exc}"
             returncode = None
             status = "BLOCKED"
+            stop_reason = "agent command could not start"
+            status_output = ""
+            next_output = ""
+            output_fingerprint = hashlib.sha256(output.encode("utf-8")).hexdigest()
 
         iterations.append(
             {
                 "iteration": iteration,
+                "prompt_length": len(prompt),
                 "status": status,
                 "returncode": returncode,
                 "output": output,
             }
         )
+        if output_fingerprint in seen_outputs and status not in ("FAIL", "BLOCKED"):
+            status = "BLOCKED"
+            stop_reason = "repeated agent output"
+            iterations[-1]["status"] = status
+        seen_outputs.add(output_fingerprint)
         previous = output
+        if status in ("FAIL", "BLOCKED"):
+            if status == "FAIL":
+                stop_reason = "agent invocation failed"
+            elif stop_reason == "iteration limit reached":
+                stop_reason = "agent reported BLOCKED"
+            break
+        if self_prompt and status == "NOT_RUN" and not has_valid_status_marker(status_output):
+            status = "BLOCKED"
+            stop_reason = "missing or malformed LOOP_STATUS marker"
+            iterations[-1]["status"] = status
+            break
         if self_prompt and iteration < args.max_iterations:
-            current_prompt = extract_next_prompt(output)
+            current_prompt = extract_next_prompt(next_output)
             if not current_prompt:
                 status = "BLOCKED"
+                stop_reason = "missing, empty, malformed, or duplicate NEXT_PROMPT marker"
                 iterations[-1]["status"] = status
-        if status in ("FAIL", "BLOCKED") or (status == "PASS" and not self_prompt):
+                break
+            elif current_prompt in seen_prompts:
+                status = "BLOCKED"
+                stop_reason = "repeated follow-up prompt"
+                iterations[-1]["status"] = status
+                break
+            else:
+                seen_prompts.add(current_prompt)
+        if status == "PASS" and not self_prompt:
+            stop_reason = "agent reported terminal PASS"
             break
 
     state = {
         "started_at": datetime.now(timezone.utc).isoformat(),
         "requested_max_iterations": args.max_iterations,
         "timeout_seconds": args.timeout_seconds,
+        "prompt_count": len(iterations),
         "iterations": iterations,
         "final_status": iterations[-1]["status"] if iterations else "NOT_RUN",
+        "stop_reason": stop_reason,
     }
-    state_path.parent.mkdir(parents=True, exist_ok=True)
-    report_path.parent.mkdir(parents=True, exist_ok=True)
-    state_path.write_text(json.dumps(state, indent=2) + "\n", encoding="utf-8")
-    report_path.write_text(
+    persistence_errors = []
+    try:
+        state_path.parent.mkdir(parents=True, exist_ok=True)
+        report_path.parent.mkdir(parents=True, exist_ok=True)
+    except OSError as exc:
+        persistence_errors.append(f"evidence directory creation failed: {exc}")
+    try:
+        state_path.write_text(json.dumps(state, indent=2) + "\n", encoding="utf-8")
+    except OSError as exc:
+        persistence_errors.append(f"state write failed: {exc}")
+    report = (
         "# Loop Run Report\n\n"
         f"- Final status: `{state['final_status']}`\n"
         f"- Iterations: `{len(iterations)}`\n"
+        f"- Stop reason: `{state['stop_reason']}`\n"
         f"- State: `{state_path}`\n"
         f"- Report: `{report_path}`\n\n"
         "The report contains captured agent output. Review it for sensitive data "
-        "before sharing.\n",
-        encoding="utf-8",
+        "before sharing.\n"
     )
+    try:
+        report_path.write_text(report, encoding="utf-8")
+    except OSError as exc:
+        persistence_errors.append(f"report write failed: {exc}")
+    if persistence_errors:
+        print("; ".join(persistence_errors), file=sys.stderr)
+        return 1
     return 0 if state["final_status"] == "PASS" else 1
 
 

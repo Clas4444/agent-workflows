@@ -56,6 +56,15 @@ paths. Captured output may contain sensitive data; inspect it before sharing.
 The runner does not install tools, authenticate, grant permissions, or use shell
 execution.
 
+The runner reads stdout and stderr concurrently in bounded chunks. It retains
+only the last 100,000 combined decoded characters for state/report evidence,
+while streaming marker detection and SHA-256 hashing over the complete raw
+streams.
+Stdout is combined before stderr for the retained report; cross-stream timing
+is not represented. Invalid UTF-8 is decoded with replacement characters.
+Timeouts terminate the direct child. POSIX process-group cleanup is not
+guaranteed on Windows, where descendant cleanup remains host-specific.
+
 Runtime compatibility remains host-specific. A successful fake-command test
 only proves the runner's continuation protocol, not that Copilot, Codex, or
 Claude Code works in a particular environment.

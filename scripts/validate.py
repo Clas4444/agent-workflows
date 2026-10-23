@@ -14,6 +14,7 @@ from pathlib import Path
 
 
 DEFAULT_ROOTS = (".github/skills", ".agents/skills", ".claude/skills")
+GENERATED_FILES = ("docs/VALIDATION-RESULT.md",)
 REQUIRED_STATUSES = ("PASS", "FAIL", "BLOCKED", "NOT_RUN")
 NAME_PATTERN = re.compile(r"(?=.{1,64}$)[a-z0-9]+(?:-[a-z0-9]+)*$")
 BREAK_PATTERNS = (
@@ -151,6 +152,7 @@ def validation_fingerprint(repo: Path) -> str:
         and ".git" not in path.parts
         and ".loop" not in path.parts
         and "__pycache__" not in path.parts
+        and str(path.relative_to(repo)).replace("\\", "/") not in GENERATED_FILES
     ]
     for path in sorted(paths):
         digest.update(str(path.relative_to(repo)).encode("utf-8"))

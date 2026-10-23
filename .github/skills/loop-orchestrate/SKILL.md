@@ -18,10 +18,11 @@ permission escalation.
 Set a positive timeout and finite `--max-iterations`. Each invocation must
 review the previous output, make one useful bounded batch, verify it, and end
 with exactly one `LOOP_STATUS: PASS`, `FAIL`, `BLOCKED`, or `NOT_RUN` marker.
-The runner stops on that marker, a timeout, a start failure, or the iteration
-limit. It writes state and a report; inspect both and treat captured output as
-potentially sensitive. Do not use this runner to bypass user approval, safety
-boundaries, tests, or repository instructions.
+The runner stops on that marker, a timeout, a start failure, repeated prompt or
+result, malformed/duplicate marker, or the iteration limit. It writes state and
+a report including the prompt count and stop reason; inspect both and treat
+captured output as potentially sensitive. Do not use this runner to bypass user
+approval, safety boundaries, tests, or repository instructions.
 
 Example shape (adapt flags for the installed host):
 
@@ -34,3 +35,9 @@ compatibility. Record the host, command/version, limits, evidence, and
 `PASS`/`FAIL`/`BLOCKED`/`NOT_RUN` result. Stop and report when no useful work
 remains, results repeat materially more than three times, the deadline is
 reached, or authorization is missing. Never sleep to consume duration.
+
+The runner streams stdout and stderr concurrently, keeps only a bounded
+combined tail for evidence, and parses markers while reading. It hashes
+complete raw streams without retaining them. Invalid UTF-8 is replaced in
+evidence; timeout cleanup guarantees
+the direct child only, and descendant cleanup on Windows is host-specific.

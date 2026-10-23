@@ -23,6 +23,10 @@ On Windows where `python` is not on `PATH`, use `py -3` instead. The validator
 report records the exact clean commit or a working-tree fingerprint, and keeps
 structural validation, validator tests, CI, and agent runtime checks separate.
 `NOT_RUN`, `BLOCKED`, `FAIL`, and `PASS` are not interchangeable.
+The generated `docs/VALIDATION-RESULT.md` is excluded from the working-tree
+fingerprint so rewriting evidence does not change the source fingerprint it
+records. Skills, source, tests, configuration, and other repository files
+remain included.
 
 Expected skill count: 17.
 
