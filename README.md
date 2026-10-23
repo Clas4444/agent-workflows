@@ -2,6 +2,14 @@
 
 Cross-agent loop skills for VS Code/Copilot, Codex, and Claude Code.
 
+> **Status: experimental.** The repository contains portable workflow
+> instructions, not a guarantee that every host implements every field or
+> behavior identically. Compatibility means the files follow supported skill
+> layouts and metadata; host-level runtime behavior still needs testing.
+
+This is an independent personal project and is not affiliated with GitHub,
+Microsoft, OpenAI, Anthropic, or the maintainers of any referenced tool.
+
 ## Skill families
 
 | Family | Purpose |
@@ -23,6 +31,21 @@ Cross-agent loop skills for VS Code/Copilot, Codex, and Claude Code.
 The same skill content is copied into each native project location. Personal
 native installations are not moved or deleted by this repository.
 
+## Verification status
+
+- Structural validation: checked for 14 skills, valid metadata, matching names,
+  and identical copies across the three project roots.
+- Host runtime validation: **not yet comprehensively tested** across all three
+  agent products and versions.
+- Treat each skill as a starting workflow. Review commands, permissions, data
+  handling, and project-specific instructions before use.
+
+## Scope and non-goals
+
+These skills provide procedural guidance for coding-agent workflows. They do not
+provide a security guarantee, replace project tests, authorize changes, or
+install tools and integrations automatically.
+
 ## Safety and loop policy
 
 - Duration is a work budget, never a reason to sleep.
@@ -33,3 +56,4 @@ native installations are not moved or deleted by this repository.
 - Record `PASS`, `FAIL`, `BLOCKED`, and `NOT_RUN` distinctly.
 
 See [CONTRIBUTING.md](./CONTRIBUTING.md) for synchronization and validation.
+See [SECURITY.md](./SECURITY.md) for responsible vulnerability reporting.

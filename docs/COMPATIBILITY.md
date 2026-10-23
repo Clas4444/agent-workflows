@@ -1,5 +1,8 @@
 # Compatibility
 
+Compatibility claims in this document are structural, not a guarantee of
+identical runtime behavior. See [the runtime matrix](./RUNTIME-TEST-MATRIX.md).
+
 ## Classification
 
 All 14 loop skills are VS Code/Copilot-compatible. Each has:
@@ -22,5 +25,6 @@ project-native locations.
 | Codex | `.agents/skills/` |
 | Claude Code | `.claude/skills/` |
 
-No skill was classified as VS Code-incompatible. Existing personal copies under
-`C:\Users\tranh` remain untouched.
+No skill was classified as structurally VS Code-incompatible. Comprehensive
+runtime testing across all hosts and versions remains `NOT_RUN`. Existing
+personal copies under `C:\Users\tranh` remain untouched.
