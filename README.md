@@ -21,6 +21,8 @@ Microsoft, OpenAI, Anthropic, or the maintainers of any referenced tool.
 | `loop-test*` | Run unit, integration, coverage, or general testing loops |
 | `loop-docs` | Audit and improve documentation |
 | `loop-skill-create` | Create and maintain skills with synchronized evidence |
+| `loop-orchestrate` | Continue bounded work through a configured headless agent command |
+| `loop-prompt` | Infer and run a bounded number of follow-up prompts |
 
 ## Layout
 
@@ -34,7 +36,7 @@ native installations are not moved or deleted by this repository.
 
 ## Verification status
 
-- Structural validation: checked for 15 skills, valid metadata, matching names,
+- Structural validation: checked for 17 skills, valid metadata, matching names,
   and identical copies across the three project roots.
 - Repeatable validation: run `python scripts/validate.py` and
   `python -m unittest discover -s tests -v`; the same checks run on pushes and
@@ -63,3 +65,7 @@ See [CONTRIBUTING.md](./CONTRIBUTING.md) for synchronization and validation.
 See [SECURITY.md](./SECURITY.md) for responsible vulnerability reporting.
 See [docs/VALIDATION.md](./docs/VALIDATION.md) for the reproducible validation
 command and evidence format.
+See [loop-orchestrate](./.github/skills/loop-orchestrate/SKILL.md) for the
+optional headless continuation harness and its safety limits.
+See [docs/ORCHESTRATION.md](./docs/ORCHESTRATION.md) for host command examples
+and the exact continuation protocol.

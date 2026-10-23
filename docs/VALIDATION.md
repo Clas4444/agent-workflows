@@ -24,7 +24,7 @@ report records the exact clean commit or a working-tree fingerprint, and keeps
 structural validation, validator tests, CI, and agent runtime checks separate.
 `NOT_RUN`, `BLOCKED`, `FAIL`, and `PASS` are not interchangeable.
 
-Expected skill count: 15.
+Expected skill count: 17.
 
 For each skill, verify:
 

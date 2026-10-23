@@ -15,7 +15,7 @@ from pathlib import Path
 
 DEFAULT_ROOTS = (".github/skills", ".agents/skills", ".claude/skills")
 REQUIRED_STATUSES = ("PASS", "FAIL", "BLOCKED", "NOT_RUN")
-NAME_PATTERN = re.compile(r"^[a-z0-9]+(?:-[a-z0-9]+){0,63}$")
+NAME_PATTERN = re.compile(r"(?=.{1,64}$)[a-z0-9]+(?:-[a-z0-9]+)*$")
 BREAK_PATTERNS = (
     r"no (?:suitable )?work",
     r"no new .* remain",
@@ -142,10 +142,16 @@ def validate(repo: Path) -> list[str]:
     return errors
 
 
-def validation_fingerprint(repo: Path, manifest: Manifest) -> str:
+def validation_fingerprint(repo: Path) -> str:
     digest = hashlib.sha256()
-    paths = [repo / "skills-manifest.json", repo / "scripts" / "validate.py"]
-    paths.extend(repo / root / skill / "SKILL.md" for root in manifest.roots for skill in manifest.skills)
+    paths = [
+        path
+        for path in repo.rglob("*")
+        if path.is_file()
+        and ".git" not in path.parts
+        and ".loop" not in path.parts
+        and "__pycache__" not in path.parts
+    ]
     for path in sorted(paths):
         digest.update(str(path.relative_to(repo)).encode("utf-8"))
         digest.update(path.read_bytes() if path.is_file() else b"<missing>")
@@ -175,7 +181,7 @@ def write_summary(
     manifest, manifest_errors = load_manifest(repo)
     base_commit = git_value(repo, "rev-parse", "HEAD") or "unavailable"
     dirty = bool(git_value(repo, "status", "--porcelain"))
-    fingerprint = validation_fingerprint(repo, manifest) if manifest and not manifest_errors else "unavailable"
+    fingerprint = validation_fingerprint(repo) if manifest and not manifest_errors else "unavailable"
     revision = f"working-tree:{fingerprint} (base commit {base_commit})" if dirty else base_commit
     output = (
         "# Validation Result\n\n"

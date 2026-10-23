@@ -12,3 +12,4 @@ __pycache__/
 # Reports and temporary files
 *.log
 *.tmp
+.loop/

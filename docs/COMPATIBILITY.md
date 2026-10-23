@@ -5,7 +5,7 @@ identical runtime behavior. See [the runtime matrix](./RUNTIME-TEST-MATRIX.md).
 
 ## Classification
 
-All 15 loop skills are structurally VS Code/Copilot-compatible. Each has:
+All 17 loop skills are structurally VS Code/Copilot-compatible. Each has:
 
 - valid YAML frontmatter;
 - a matching lowercase hyphenated `name`;
