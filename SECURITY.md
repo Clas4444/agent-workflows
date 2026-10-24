@@ -13,6 +13,12 @@ and validation scripts; it is not a hosted service. Report:
 The runner writes captured agent output to local state and report files. Treat
 that output as sensitive until reviewed.
 
+The opt-in Codex runtime harness also retains prompts, responses and generated
+fixtures. It requires explicit model-call authorization, uses workspace-write
+sandboxing and does not run in CI. Inspect summaries before publishing; keep
+full logs and personal paths local. A skill does not authorize production data
+migrations, registry installations or broader account access by itself.
+
 ## Reporting
 
 Use GitHub's private security advisory flow for sensitive vulnerabilities when

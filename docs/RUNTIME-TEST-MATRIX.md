@@ -8,7 +8,8 @@ completed safely.
 | Host | Version | Skill | Invocation | Result | Evidence |
 |---|---|---|---|---|---|
 | VS Code/Copilot | not recorded | not recorded | not recorded | `NOT_RUN` | pending |
-| Codex CLI / Windows | 0.164.0-alpha.11.1 | All 22, one fixture workflow each | Explicit skill request + installed instruction read | `PASS` for bounded smoke scope | [2026-10-24 report](CODEX-SMOKE-2026-10-24.md) |
+| Codex CLI / Windows | 0.164.0-alpha.11.1 | Original 22 at recorded revision | Explicit skill request + installed instruction read | `PASS` for bounded smoke scope | [22-skill report](CODEX-SMOKE-2026-10-24.md) |
+| Codex CLI / Windows, 1.2 | 0.164.0-alpha.11.1 | 5 new + 3 changed skills; 19 prior byte-identical cases retained separately | Explicit skill request + installed instruction read | `PASS` for recorded fixture scope; not a fresh 27-case run | [1.2 report](RUNTIME-1.2-RESULT.md) |
 | Claude Code | not recorded | not recorded | not recorded | `NOT_RUN` | pending |
 
 Do not generalize one host's result to another host or version. Keep runtime
@@ -18,6 +19,8 @@ The Codex row records real local tool workflows, with 22 final passing cases
 after two retests and one checker-path correction. Automatic skill discovery
 without explicit name/path remains NOT_RUN. This row is not certification of
 all possible tasks. See the report's failure history and scope restrictions.
+Version 1.2 adds eight fresh case executions; evidence reuse for the other
+nineteen is checked against instruction identity and labeled in the index.
 
 ## Headless orchestration evidence (separate from native skill discovery)
 

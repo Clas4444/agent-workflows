@@ -11,6 +11,11 @@ Structural tests check metadata, synchronization and required contract text.
 | loop-refactor | Extract duplication while keeping public outputs, errors and side effects | Proposed change alters API or file format: stop that batch BLOCKED pending scope approval | Characterization baseline, equivalent outputs and affected callers |
 | loop-ci | A Windows quoting failure is traced to the job log and reproduced locally | Remote logs require unavailable access: remote inspection BLOCKED; local tests may still run | Revision, job/step, first actionable error, separate local/remote status |
 | loop-release | Build a local candidate, inspect contents and smoke-test it in a disposable folder | Candidate contains a private file or lacks a required runtime asset: readiness FAIL; do not publish | Candidate revision/version, checksums, package listing and smoke test |
+| loop-plan | Write dependency-ordered batches with acceptance and verification gates | A critical prerequisite is missing: mark that batch BLOCKED, do not silently implement | Scope, assumptions, gates, rollback |
+| loop-dependencies | Update an approved version in manifest and compatible lockfile | Resolver is required but unavailable: BLOCKED; do not invent hashes | Diff, compatibility, unchanged unrelated packages, rollback |
+| loop-migrate | Dry-run, migrate, rerun and roll back a copied fixture | Invalid record: FAIL without changing source or backup | Invariants, hashes, backup, idempotence, exercised rollback |
+| loop-test-e2e | Exercise actual CLI success and error journeys | Invalid input returns an error without unexpected writes | Entry-point output, exit, message and side effects |
+| loop-evaluate | Score baseline/candidate with a predeclared rubric | Unexpected PASS is a false positive; keep it in the denominator | Per-case scores, false positives/negatives, blocked/not-run counts |
 
 For each host, run the positive and negative scenario with disposable local
 fixtures and record the host/version, skill discovery/invocation, observed

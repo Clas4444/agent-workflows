@@ -45,3 +45,13 @@ then run tests and the structural validator. Keep user-facing documentation
 outside individual skill folders unless the workflow needs bundled references.
 Update the manifest when adding or removing a skill. Runtime support requires
 observed evidence in the runtime matrix, not just a matching folder structure.
+
+The validator enforces these six sections and rejects duplicated metadata keys,
+empty/overlong descriptions, invalid invocation booleans and missing no-sleep
+policies. Contract mutation tests must modify all synchronized copies together
+to demonstrate semantic checks rather than detecting only a hash mismatch.
+Use `runtime_smoke.py` for authorized fixture runs; retain failed attempts and
+grade actual artifacts against fixed criteria before updating runtime claims.
+Update the current runtime evidence index when changing instruction text;
+its normalized text hashes are checked in CI. Reuse historical case evidence
+only when instruction identity is demonstrated and the reuse is labeled.

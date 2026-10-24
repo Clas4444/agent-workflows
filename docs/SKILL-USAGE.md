@@ -29,7 +29,12 @@ clear target and desired outcome; let the host apply its normal approval rules.
 | `loop-security` | Review trust boundaries and verify scoped defensive fixes | `/loop-security 20m local file upload handler` |
 | `loop-refactor` | Improve structure while preserving behavior | `/loop-refactor 15m simplify parser without API changes` |
 | `loop-ci` | Trace and repair a failed CI job | `/loop-ci 15m failed Windows test job` |
-| `loop-release` | Prepare and smoke-test a release candidate | `/loop-release 20m verify candidate version 1.1.0` |
+| `loop-release` | Prepare and smoke-test a release candidate | `/loop-release 20m verify candidate version 1.2.0-experimental` |
+| `loop-plan` | Break a scoped request into verifiable dependent batches | `/loop-plan 10m plan a JSON export command` |
+| `loop-dependencies` | Maintain approved versions and lockfile consistency | `/loop-dependencies 15m update the approved package` |
+| `loop-migrate` | Change persisted formats with dry-run and rollback | `/loop-migrate 20m upgrade local JSON fixtures to schema v2` |
+| `loop-test-e2e` | Exercise a complete real entry-point journey | `/loop-test-e2e 15m test CLI success and invalid input` |
+| `loop-evaluate` | Score versioned workflows against a fixed rubric | `/loop-evaluate 15m compare supplied baseline and candidate outputs` |
 
 ## Recommended sequences
 
@@ -47,6 +52,12 @@ For a code change:
 3. `loop-test` or a focused testing skill — verify behavior.
 4. `loop-docs` — update commands or user-facing behavior.
 5. `loop-review` — inspect the final diff and evidence.
+
+For a larger change, precede this sequence with `loop-plan`. Choose
+`loop-migrate` when persisted state changes and `loop-dependencies` when a
+package/lockfile update is the target. `loop-test-e2e` checks the actual user
+journey; it is broader than an isolated integration boundary. `loop-evaluate`
+uses a fixed rubric and preserves failures, rather than measuring code lines.
 
 For a diagnosis, use the narrowest diagnosis skill that fits. For adoption
 decisions, use `loop-research-repo` or `loop-research-tools` before

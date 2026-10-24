@@ -26,7 +26,7 @@ class RunnerRegressionTests(unittest.TestCase):
             with mock.patch('scripts.run_loop._run_command', return_value=('done', 0, 'digest', 'LOOP_STATUS: PASS', '')):
                 with mock.patch.object(Path, 'write_text', fail_report):
                     self.assertEqual(run_loop(args), 1)
-            data = json.loads(state.read_text())
+            data = json.loads(state.read_text(encoding='utf-8'))
             self.assertEqual(data['final_status'], 'FAIL')
             self.assertEqual(data['invocation_status'], 'PASS')
             self.assertTrue(data['persistence_errors'])
@@ -44,7 +44,7 @@ class RunnerRegressionTests(unittest.TestCase):
             with mock.patch('scripts.run_loop._run_command', return_value=('done', 0, 'digest', 'LOOP_STATUS: PASS', '')):
                 with mock.patch.object(Path, 'write_text', fail_state):
                     self.assertEqual(run_loop(args), 1)
-            self.assertIn('Final status: `FAIL`', report.read_text())
+            self.assertIn('Final status: `FAIL`', report.read_text(encoding='utf-8'))
 
     def test_direct_api_rejects_nonpositive_limits_before_running(self):
         with tempfile.TemporaryDirectory() as directory:
@@ -73,7 +73,7 @@ class RunnerRegressionTests(unittest.TestCase):
                              batch_dir=directory, self_prompt=False)
             with mock.patch('scripts.run_loop._run_command', return_value=('need access', 0, 'digest', 'LOOP_STATUS: BLOCKED', '')):
                 self.assertEqual(run_batch(args, ['review']), 1)
-            data = json.loads((Path(directory) / 'summary.json').read_text())
+            data = json.loads((Path(directory) / 'summary.json').read_text(encoding='utf-8'))
             self.assertEqual(data['results'][0]['status'], 'BLOCKED')
             self.assertEqual(data['results'][0]['iterations'], 1)
 
@@ -85,7 +85,7 @@ class RunnerRegressionTests(unittest.TestCase):
                              report_file=str(Path(directory) / 'report.md'), self_prompt=False)
             with mock.patch('scripts.run_loop._run_command', return_value=('tail', 0, 'complete-stream-digest', 'LOOP_STATUS: PASS', '')):
                 self.assertEqual(run_loop(args), 0)
-            self.assertEqual(json.loads(state.read_text())['iterations'][0]['output_fingerprint'], 'complete-stream-digest')
+            self.assertEqual(json.loads(state.read_text(encoding='utf-8'))['iterations'][0]['output_fingerprint'], 'complete-stream-digest')
 
     def test_child_closing_stdin_is_handled_and_stream_closed(self):
         stream = mock.Mock()
@@ -138,7 +138,7 @@ class RunnerRegressionTests(unittest.TestCase):
             with mock.patch('scripts.run_loop._run_command', return_value=('done', 0, 'one', 'LOOP_STATUS: PASS', '')):
                 with mock.patch.object(Path, 'write_text', fail_report):
                     self.assertEqual(run_batch(args, ['review']), 1)
-            self.assertEqual(json.loads((root / 'summary.json').read_text())['final_status'], 'FAIL')
+            self.assertEqual(json.loads((root / 'summary.json').read_text(encoding='utf-8'))['final_status'], 'FAIL')
 
     def test_batch_state_failure_does_not_crash_or_read_stale_state(self):
         with tempfile.TemporaryDirectory() as directory:
@@ -168,7 +168,7 @@ class RunnerRegressionTests(unittest.TestCase):
                 sys.executable, '-c', "print('LOOP_STATUS: PASS')",
             ], capture_output=True, timeout=10)
             self.assertEqual(result.returncode, 0, result.stderr)
-            data = json.loads(state.read_text())
+            data = json.loads(state.read_text(encoding='utf-8'))
             self.assertEqual(data['requested_max_iterations'], 1)
             self.assertEqual(data['prompt_count'], 1)
 
@@ -224,7 +224,7 @@ class RunnerRegressionTests(unittest.TestCase):
             prompt = command.call_args_list[1].args[1]
             self.assertIn('progress evidence', prompt)
             self.assertIn('iteration 2', prompt)
-            data = json.loads(state.read_text())
+            data = json.loads(state.read_text(encoding='utf-8'))
             self.assertLessEqual(datetime.fromisoformat(data['started_at']),
                                  datetime.fromisoformat(data['finished_at']))
 
@@ -237,4 +237,4 @@ class RunnerRegressionTests(unittest.TestCase):
             with mock.patch('scripts.run_loop._run_command', return_value=('no marker', 0, 'one', '', '')) as command:
                 self.assertEqual(run_loop(args), 1)
             self.assertEqual(command.call_count, 1)
-            self.assertEqual(json.loads(state.read_text())['final_status'], 'BLOCKED')
+            self.assertEqual(json.loads(state.read_text(encoding='utf-8'))['final_status'], 'BLOCKED')

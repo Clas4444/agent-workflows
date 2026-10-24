@@ -22,8 +22,8 @@ that prevents safe progress.
 
 ## Workflow
 
-1. Parse the positive duration, target, requested outcome, run ID, and
-   authorization.
+1. Parse target, requested outcome, run ID, existing authorization and optional
+   positive duration. Omitted duration means stop at scoped task completion.
 2. Read project instructions, worktree status, existing patterns, tests, and
    acceptance criteria.
 3. Implement one small reversible batch while preserving unrelated changes.
@@ -40,7 +40,8 @@ what was observed, what changed and what remains unverified.
 
 ## Boundaries and evidence
 
-Ask before changing behavior, dependencies, permissions, or data scope. Do not
+Stay within authorized behavior, dependencies, permissions and data scope; ask
+only when the next action would exceed that existing authorization. Do not
 install tools or weaken tests without authorization. Report `PASS`, `FAIL`,
 `BLOCKED`, or `NOT_RUN`.
 

@@ -50,6 +50,7 @@ failure, block, timeout, startup failure, missing/duplicate/malformed marker,
 repeated prompt or result, safety boundary, or user request. Write state and
 report evidence for every invocation and review captured output for sensitive
 data.
+Never sleep to consume time. The invocation count is a hard maximum, not a quota.
 
 `/loop-prompt 5` permits six invocations: one initial prompt plus five
 follow-ups. It is a maximum, not a guarantee. Never assume the chat host can

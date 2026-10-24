@@ -1,6 +1,6 @@
 {
   "name": "portable-loop-skills",
-  "version": "1.1.0-experimental",
+  "version": "1.2.0-experimental",
   "skills": [
     "loop-review",
     "loop-code",
@@ -23,7 +23,12 @@
     "loop-security",
     "loop-refactor",
     "loop-ci",
-    "loop-release"
+    "loop-release",
+    "loop-plan",
+    "loop-dependencies",
+    "loop-migrate",
+    "loop-test-e2e",
+    "loop-evaluate"
   ],
   "project_skill_roots": [
     ".github/skills",

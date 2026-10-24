@@ -2,8 +2,8 @@
 
 - Structural validation: `PASS`
 - Validator: `scripts/validate.py`
-- Validated source revision: `working-tree:2416d32bd90583d3a1ac04570c8d1064c64f04e4e2a5b28b67ae1f4fcac951d0 (base commit 11e81c5b95ec96677ef922f9176fd2320a2e8776)`
-- Base commit: `11e81c5b95ec96677ef922f9176fd2320a2e8776`
+- Validated source revision: `working-tree:7f5160ede2aa72fd0149c70b3efef768e083567a2a5276e6b35669d577c4a10c (base commit 0884b73e235659b679b56f0e73184ee86d58e5f8)`
+- Base commit: `0884b73e235659b679b56f0e73184ee86d58e5f8`
 - Working tree changes present: `true`
 - Automated validator tests: `PASS`
 - CI result: `NOT_RUN`

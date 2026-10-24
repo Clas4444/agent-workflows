@@ -1,13 +1,13 @@
 # Portable Loop Skills
 
-**22 bounded workflows for coding agents.** Review a change, investigate a bug,
+**27 bounded workflows for coding agents.** Review a change, investigate a bug,
 write a fix, verify it and stop with evidence. Includes a Python continuation
 runner, a synchronization tool and a validator with no third-party dependencies.
 
 [Choose a skill](#skill-catalog) · [Get started](#quick-start) ·
 [Run checks](#verification) · [Contribute](CONTRIBUTING.md)
 
-> **Experimental · 1.1.0-experimental.** Shared instructions and matching files
+> **Experimental · 1.2.0-experimental.** Shared instructions and matching files
 > do not guarantee identical behavior across Codex, Copilot and Claude Code.
 > See the [runtime evidence](docs/RUNTIME-TEST-MATRIX.md) for what was tested.
 
@@ -62,6 +62,11 @@ applies throughout the task.
 | Prepare release | [loop-release](.github/skills/loop-release/SKILL.md) | Candidate readiness and unverified gates |
 | Orchestrate | [loop-orchestrate](.github/skills/loop-orchestrate/SKILL.md) | Bounded headless invocations and state |
 | Follow up | [loop-prompt](.github/skills/loop-prompt/SKILL.md) | Initial task plus limited inferred prompts |
+| Plan | [loop-plan](.github/skills/loop-plan/SKILL.md) | Dependency-ordered batches and acceptance gates |
+| Maintain dependencies | [loop-dependencies](.github/skills/loop-dependencies/SKILL.md) | Approved manifest/lockfile change and compatibility evidence |
+| Migrate state | [loop-migrate](.github/skills/loop-migrate/SKILL.md) | Dry-run, invariants, backup, idempotence and rollback |
+| Test a journey | [loop-test-e2e](.github/skills/loop-test-e2e/SKILL.md) | Real entry-point success/error journeys and side effects |
+| Evaluate workflows | [loop-evaluate](.github/skills/loop-evaluate/SKILL.md) | Fixed rubric, baseline comparison and false-positive counts |
 
 For selection advice and complete examples, see [Skill usage](docs/SKILL-USAGE.md).
 For a bug, start with `loop-debug`; for investigation without a repair, use
@@ -88,7 +93,7 @@ python scripts/sync_skills.py --target PATH_TO_SKILL_ROOT
 ```
 
 The first command reports differences without writing. The second copies the
-manifest's 22 skills, preserving unrelated skills and backing up overwritten
+manifest's 27 skills, preserving unrelated skills and backing up overwritten
 files under `.loop/backups/`. Select a personal installation root only when
 your host supports it and you intend to update it.
 
@@ -124,6 +129,11 @@ state files and Windows cleanup limitations.
 
 ## Verification
 
+For a new multi-step change, plan first with `loop-plan`, execute with
+`loop-code`, then select unit/integration/E2E checks that match the risk.
+Use `loop-migrate` for persisted formats and `loop-dependencies` for approved
+package updates. `loop-evaluate` measures workflow behavior, not code coverage.
+
 Requires Python 3.11 or newer. Use `py -3` on Windows if that launcher is
 available; otherwise use the Python executable installed in your environment.
 
@@ -142,21 +152,38 @@ git diff --check
 | `NOT_RUN` | The check was not executed |
 
 The validator checks supported metadata fields, manifest consistency, matching
-copies, stop instructions and bundled runners. It is not a general YAML parser
+copies, ordered input/output/example contracts, stop instructions and bundled runners. It is not a general YAML parser
 or proof of model behavior. Tests cover subprocess boundaries and failure paths;
 synthetic model decision tests have a narrower scope than complete workflows.
 The [CI workflow](.github/workflows/validate.yml) runs on Windows/Linux with
 Python 3.11/3.12; consult the actual run before claiming CI success.
+
+### Explicit model smoke tests
+
+The versioned fixture harness tests the five workflows added in 1.2. It never
+runs paid/model invocations in CI or without an explicit authorization flag:
+
+```text
+python scripts/runtime_smoke.py --allow-model-invocations --skill-root PATH_TO_INSTALLED_SKILLS --output-dir .loop/runtime-1.2
+```
+
+Select an existing Codex installation with `--codex` when needed. Output must
+be a new directory; logs and failed attempts are preserved. Verification uses
+fixture artifacts, not just model self-reported PASS, and a usage limit stops
+new invocations. See [the runtime harness guide](docs/RUNTIME-SMOKE.md).
 
 ## Documentation
 
 - [Usage and workflow selection](docs/SKILL-USAGE.md)
 - [Positive and negative acceptance scenarios](docs/SKILL-SCENARIOS.md)
 - [Validation commands and evidence](docs/VALIDATION.md)
-- [Latest recorded test results](docs/TEST-22-RESULT.md)
+- [Latest system and runtime results](docs/RUNTIME-1.2-RESULT.md)
+- [Earlier automated/decision test results](docs/TEST-22-RESULT.md)
 - [22 real Codex fixture workflows: results and retests](docs/CODEX-SMOKE-2026-10-24.md)
 - [Host compatibility and runtime evidence](docs/RUNTIME-TEST-MATRIX.md)
 - [Writing conventions and reference projects](docs/AUTHORING.md)
+- [1.2 gap assessment and system-wide changes](docs/EXPANSION-27.md)
+- [Changelog](CHANGELOG.md)
 - [Contributing](CONTRIBUTING.md) · [Security policy](SECURITY.md)
 
 ## License and ownership

@@ -9,12 +9,14 @@ tracked separately in [RUNTIME-TEST-MATRIX.md](./RUNTIME-TEST-MATRIX.md).
 | Host target | Project skill root | Status |
 |---|---|---|
 | VS Code with Copilot | `.github/skills/` | Structural checks pass |
-| Codex | `.agents/skills/` | Files are synchronized; runtime is `NOT_RUN` |
+| Codex | `.agents/skills/` | Files are synchronized; scoped runtime evidence is in the runtime matrix |
 | Claude Code | `.claude/skills/` | Files are synchronized; runtime is `NOT_RUN` |
 
-All 22 skills have valid frontmatter, matching lowercase hyphenated names,
+All 27 skills have valid frontmatter, matching lowercase hyphenated names,
 descriptions, argument hints, and the existing invocation flags. Each copy is
 byte-identical to the canonical `.github/skills/` file.
+The historical 22-skill smoke report applies to its recorded revision, not
+automatically to later instruction changes or the five 1.2 additions.
 
 To claim runtime support for a host, record the host version, discovered skill,
 invocation, result, and evidence in the runtime matrix. Do not generalize

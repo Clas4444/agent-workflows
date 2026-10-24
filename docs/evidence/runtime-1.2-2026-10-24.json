@@ -1,0 +1,368 @@
+{
+  "version": "1.2.0-experimental",
+  "date": "2026-10-24",
+  "codex_version": "0.164.0-alpha.11.1",
+  "scope": "27 instruction contracts: 8 current fixture executions plus 19 byte-identical historical instruction cases; not a fresh 27-case campaign",
+  "hash_normalization": "instruction_text_sha256 uses UTF-8 text with CRLF converted to LF for cross-platform comparison",
+  "new_fixture_executions": 8,
+  "reused_historical_cases": 19,
+  "initial_new_skill_results": {
+    "loop-plan": "FAIL",
+    "loop-dependencies": "PASS",
+    "loop-migrate": "PASS",
+    "loop-test-e2e": "PASS",
+    "loop-evaluate": "FAIL"
+  },
+  "retest_results": {
+    "loop-plan": "FAIL",
+    "loop-evaluate": "PASS"
+  },
+  "corrections": [
+    "Out-of-scope heading punctuation false negative",
+    "UTF-8 report read under Windows cp1252",
+    "Scorer must not require an existing report; fixed instruction and new-fixture retest"
+  ],
+  "results": [
+    {
+      "skill": "loop-review",
+      "status": "PASS",
+      "basis": "current_fixture_execution",
+      "instruction_text_sha256": "144aa38255d04648e0cea37c88f22c23968644caa2222eb741f0a7db7bbe69d2",
+      "instruction_read_command_observed": true,
+      "checks": {
+        "response_identity": true,
+        "installed_path": true,
+        "evidence_written": true,
+        "source_preserved": true,
+        "finding_evidence": true,
+        "failing_baseline": true,
+        "tests_preserved": true
+      },
+      "local_attempt": "runtime-1.2-regression",
+      "evidence_sha256": "3866b2e671e54131e781ac1e79701500a6ee98c7925310cf25f8b1ea911375d8",
+      "execution_log_sha256": "716ca5140666f7b4569931641edb5a9eb98b56a3ed630ddcd82d69931cf23403",
+      "checker_correction": null
+    },
+    {
+      "skill": "loop-code",
+      "status": "PASS",
+      "basis": "current_fixture_execution",
+      "instruction_text_sha256": "75716c701b57b62cba9ee1186adba56bb7caad997d5df7d3c4be787187f337aa",
+      "instruction_read_command_observed": true,
+      "checks": {
+        "response_identity": true,
+        "installed_path": true,
+        "evidence_written": true,
+        "source_changed": true,
+        "tests_preserved": true,
+        "regression_tests_pass": true
+      },
+      "local_attempt": "runtime-1.2-regression",
+      "evidence_sha256": "e0dd0f636eba8ca97939d55a3e679cff624726241e8c354e5755b080d637729f",
+      "execution_log_sha256": "e343d7205ac580fdc99afd627e7a9c53e8c707b53d8a4a03029d3ff719d6fbb4",
+      "checker_correction": null
+    },
+    {
+      "skill": "loop-diagnose",
+      "status": "PASS",
+      "basis": "historical_byte_identical_instruction",
+      "instruction_text_sha256": "c449c3018007c51ac0d2e6d7581690df9cdc4c896bdc594ebdc82081cab3c815",
+      "raw_instruction_matches_prior": true,
+      "prior_index": "codex-smoke-2026-10-24.json",
+      "prior_source_revision": "11e81c5b95ec96677ef922f9176fd2320a2e8776"
+    },
+    {
+      "skill": "loop-diagnose-repro",
+      "status": "PASS",
+      "basis": "historical_byte_identical_instruction",
+      "instruction_text_sha256": "f4e037065de7a0254d9e3ac1edca8e2e26e6d2974023401a5780e7896e959853",
+      "raw_instruction_matches_prior": true,
+      "prior_index": "codex-smoke-2026-10-24.json",
+      "prior_source_revision": "11e81c5b95ec96677ef922f9176fd2320a2e8776"
+    },
+    {
+      "skill": "loop-diagnose-performance",
+      "status": "PASS",
+      "basis": "historical_byte_identical_instruction",
+      "instruction_text_sha256": "4ad7081d207c301a39a42c24ca7e830533aef4c3a436644661128d1269e5cf2f",
+      "raw_instruction_matches_prior": true,
+      "prior_index": "codex-smoke-2026-10-24.json",
+      "prior_source_revision": "11e81c5b95ec96677ef922f9176fd2320a2e8776"
+    },
+    {
+      "skill": "loop-diagnose-regression",
+      "status": "PASS",
+      "basis": "historical_byte_identical_instruction",
+      "instruction_text_sha256": "8f49584d6a2956bb72b1149be2783f421f9163c7468df2f72632b05ae062293f",
+      "raw_instruction_matches_prior": true,
+      "prior_index": "codex-smoke-2026-10-24.json",
+      "prior_source_revision": "11e81c5b95ec96677ef922f9176fd2320a2e8776"
+    },
+    {
+      "skill": "loop-research",
+      "status": "PASS",
+      "basis": "historical_byte_identical_instruction",
+      "instruction_text_sha256": "35facf45698779134d0ea1be43937f9e918d87e71582c18badee18831c8f171a",
+      "raw_instruction_matches_prior": true,
+      "prior_index": "codex-smoke-2026-10-24.json",
+      "prior_source_revision": "11e81c5b95ec96677ef922f9176fd2320a2e8776"
+    },
+    {
+      "skill": "loop-research-repo",
+      "status": "PASS",
+      "basis": "historical_byte_identical_instruction",
+      "instruction_text_sha256": "3eb496f0860e99a971f49c2608409ee7701a7e2d08fc367ea61b6bf0c3bbe86c",
+      "raw_instruction_matches_prior": true,
+      "prior_index": "codex-smoke-2026-10-24.json",
+      "prior_source_revision": "11e81c5b95ec96677ef922f9176fd2320a2e8776"
+    },
+    {
+      "skill": "loop-research-tools",
+      "status": "PASS",
+      "basis": "historical_byte_identical_instruction",
+      "instruction_text_sha256": "f4084d3535630280b007ad6f9cace94af37417aa8f6a19ec3bba6a782603576e",
+      "raw_instruction_matches_prior": true,
+      "prior_index": "codex-smoke-2026-10-24.json",
+      "prior_source_revision": "11e81c5b95ec96677ef922f9176fd2320a2e8776"
+    },
+    {
+      "skill": "loop-test",
+      "status": "PASS",
+      "basis": "historical_byte_identical_instruction",
+      "instruction_text_sha256": "e0f5e0344daf7d382ff7420182cfa0db598b38b0a47dee306c0d78a339d9df34",
+      "raw_instruction_matches_prior": true,
+      "prior_index": "codex-smoke-2026-10-24.json",
+      "prior_source_revision": "11e81c5b95ec96677ef922f9176fd2320a2e8776"
+    },
+    {
+      "skill": "loop-test-unit",
+      "status": "PASS",
+      "basis": "historical_byte_identical_instruction",
+      "instruction_text_sha256": "becb0062b47eeac64e1eb15ea6b0a8d2b917075f0d14869171b0a5b3214791db",
+      "raw_instruction_matches_prior": true,
+      "prior_index": "codex-smoke-2026-10-24.json",
+      "prior_source_revision": "11e81c5b95ec96677ef922f9176fd2320a2e8776"
+    },
+    {
+      "skill": "loop-test-integration",
+      "status": "PASS",
+      "basis": "historical_byte_identical_instruction",
+      "instruction_text_sha256": "e440679ce5e5fec6414a72ed9b309e66a473213e53dafa1f3c52b7a6da7f6a9d",
+      "raw_instruction_matches_prior": true,
+      "prior_index": "codex-smoke-2026-10-24.json",
+      "prior_source_revision": "11e81c5b95ec96677ef922f9176fd2320a2e8776"
+    },
+    {
+      "skill": "loop-test-coverage",
+      "status": "PASS",
+      "basis": "historical_byte_identical_instruction",
+      "instruction_text_sha256": "37062d731f528df061c23558b770f26db1bbe484bd2a8fb35a373f5f9ccac96b",
+      "raw_instruction_matches_prior": true,
+      "prior_index": "codex-smoke-2026-10-24.json",
+      "prior_source_revision": "11e81c5b95ec96677ef922f9176fd2320a2e8776"
+    },
+    {
+      "skill": "loop-docs",
+      "status": "PASS",
+      "basis": "historical_byte_identical_instruction",
+      "instruction_text_sha256": "67ec82b728393cec500594b200eb900564f7eb77a0be3e4af41a706a4f6d5bd5",
+      "raw_instruction_matches_prior": true,
+      "prior_index": "codex-smoke-2026-10-24.json",
+      "prior_source_revision": "11e81c5b95ec96677ef922f9176fd2320a2e8776"
+    },
+    {
+      "skill": "loop-skill-create",
+      "status": "PASS",
+      "basis": "historical_byte_identical_instruction",
+      "instruction_text_sha256": "07115821734c46c24771087ca081d10981d8d7fc5eb4548e044e476ff7c48967",
+      "raw_instruction_matches_prior": true,
+      "prior_index": "codex-smoke-2026-10-24.json",
+      "prior_source_revision": "11e81c5b95ec96677ef922f9176fd2320a2e8776"
+    },
+    {
+      "skill": "loop-orchestrate",
+      "status": "PASS",
+      "basis": "historical_byte_identical_instruction",
+      "instruction_text_sha256": "069f8e5065cc0cbf2c52c5ee27ea53979fd62208f6ea7dc1bc78d2fd074721e3",
+      "raw_instruction_matches_prior": true,
+      "prior_index": "codex-smoke-2026-10-24.json",
+      "prior_source_revision": "11e81c5b95ec96677ef922f9176fd2320a2e8776"
+    },
+    {
+      "skill": "loop-prompt",
+      "status": "PASS",
+      "basis": "current_fixture_execution",
+      "instruction_text_sha256": "3e56a07b9a992253953a312d51e3e7b07cc0b8c7580a016cfc6ed6fcdad6ad1f",
+      "instruction_read_command_observed": true,
+      "checks": {
+        "response_identity": true,
+        "installed_path": true,
+        "evidence_written": true,
+        "source_preserved": true,
+        "two_invocations": true,
+        "successful_children": true,
+        "distinct_next_prompts": true,
+        "child_fixture_preserved": true
+      },
+      "local_attempt": "runtime-1.2-regression",
+      "evidence_sha256": "20b94725dc2b0c782d0789b2d31cc2661ece820780031aeec8aed0e9eb17657e",
+      "execution_log_sha256": "68e712aeb52e2730b1db2687016bd36b433a31ea38bd2fa6dd0cefc6eb57dd4d",
+      "checker_correction": null
+    },
+    {
+      "skill": "loop-debug",
+      "status": "PASS",
+      "basis": "historical_byte_identical_instruction",
+      "instruction_text_sha256": "7c2acb2953338e177b086b8954761093c1ea5dae064e8cd76a2ec5eb2005d667",
+      "raw_instruction_matches_prior": true,
+      "prior_index": "codex-smoke-2026-10-24.json",
+      "prior_source_revision": "11e81c5b95ec96677ef922f9176fd2320a2e8776"
+    },
+    {
+      "skill": "loop-security",
+      "status": "PASS",
+      "basis": "historical_byte_identical_instruction",
+      "instruction_text_sha256": "583f1fcbf6a1b4d9961686ed4cf7b7790f572cfd53c681b573a6aea637aaf7c4",
+      "raw_instruction_matches_prior": true,
+      "prior_index": "codex-smoke-2026-10-24.json",
+      "prior_source_revision": "11e81c5b95ec96677ef922f9176fd2320a2e8776"
+    },
+    {
+      "skill": "loop-refactor",
+      "status": "PASS",
+      "basis": "historical_byte_identical_instruction",
+      "instruction_text_sha256": "7cdf6eb63e9558ab0f953ea567a082dd2041c7275f01462fb8d14f8b3367600a",
+      "raw_instruction_matches_prior": true,
+      "prior_index": "codex-smoke-2026-10-24.json",
+      "prior_source_revision": "11e81c5b95ec96677ef922f9176fd2320a2e8776"
+    },
+    {
+      "skill": "loop-ci",
+      "status": "PASS",
+      "basis": "historical_byte_identical_instruction",
+      "instruction_text_sha256": "802661ce7ec76d5e26ffb2fad1ca859e0d5205f687f68c59a6fee3c11d99e5be",
+      "raw_instruction_matches_prior": true,
+      "prior_index": "codex-smoke-2026-10-24.json",
+      "prior_source_revision": "11e81c5b95ec96677ef922f9176fd2320a2e8776"
+    },
+    {
+      "skill": "loop-release",
+      "status": "PASS",
+      "basis": "historical_byte_identical_instruction",
+      "instruction_text_sha256": "02d51c8f77140c8d9c421653879a82b68381a2c46fd37f965c2534619eef816c",
+      "raw_instruction_matches_prior": true,
+      "prior_index": "codex-smoke-2026-10-24.json",
+      "prior_source_revision": "11e81c5b95ec96677ef922f9176fd2320a2e8776"
+    },
+    {
+      "skill": "loop-plan",
+      "status": "PASS",
+      "basis": "current_fixture_execution",
+      "instruction_text_sha256": "5bc9b45733a163c29bb65411b5af9d0912762b6f07a3b746c9beaafa2d020e01",
+      "instruction_read_command_observed": true,
+      "checks": {
+        "response_identity": true,
+        "installed_path": true,
+        "evidence_written": true,
+        "source_preserved": true,
+        "plan_contract": true,
+        "no_implementation": true,
+        "artifact_verification": true
+      },
+      "local_attempt": "runtime-1.2-retest",
+      "evidence_sha256": "23f6e4b24dfc9084f59b68c3110320ccc688c60cc5a23c30ed3920664b81b784",
+      "execution_log_sha256": "0e832a90c28a4ae097da2aa672f0b0cc48b255535c0f0c566c4b52d65ba3b7f4",
+      "checker_correction": "Independent regrade completed without exception after UTF-8 fix; original baseline hash preserved; old failure retained separately"
+    },
+    {
+      "skill": "loop-dependencies",
+      "status": "PASS",
+      "basis": "current_fixture_execution",
+      "instruction_text_sha256": "e41e6c6157b6f4918e8bc7e3cdd493eeacc19b654764db4b3156ac8ddc8f5671",
+      "instruction_read_command_observed": true,
+      "checks": {
+        "response_identity": true,
+        "installed_path": true,
+        "evidence_written": true,
+        "source_preserved": true,
+        "consistent_approved_versions": true,
+        "backup_exact": true,
+        "metadata_preserved": true
+      },
+      "local_attempt": "runtime-1.2-first",
+      "evidence_sha256": "b047d18911603b9000e2a8a17e657e8a52a2c9b90eea15866b03d39f886c7e98",
+      "execution_log_sha256": "444ebf6a5e03e5b2f46fee4921dcca11826ca45d2e77b7614527777712518eba",
+      "checker_correction": null
+    },
+    {
+      "skill": "loop-migrate",
+      "status": "PASS",
+      "basis": "current_fixture_execution",
+      "instruction_text_sha256": "531d73668f852065d7864825ce7f054a4a0da6f7faaf5ed2f5d90ee599bf6885",
+      "instruction_read_command_observed": true,
+      "checks": {
+        "response_identity": true,
+        "installed_path": true,
+        "evidence_written": true,
+        "source_preserved": true,
+        "demonstration_restored_source": true,
+        "dry_run": true,
+        "migration_invariants": true,
+        "backup_exact": true,
+        "idempotence": true,
+        "rollback": true,
+        "invalid_input_no_write": true
+      },
+      "local_attempt": "runtime-1.2-first",
+      "evidence_sha256": "4d580d3add1e6fead3a5ea432bbd6de0a2b8a28a8a75793e6f9104efaa8364f3",
+      "execution_log_sha256": "1822f1898490440f496f818a39d352fd0238ff84cb96baec5f8aafc35125d455",
+      "checker_correction": null
+    },
+    {
+      "skill": "loop-test-e2e",
+      "status": "PASS",
+      "basis": "current_fixture_execution",
+      "instruction_text_sha256": "950c5fab0960c74d345bfd2587c54de2170f727bb930f955dffae954bebc78ba",
+      "instruction_read_command_observed": true,
+      "checks": {
+        "response_identity": true,
+        "installed_path": true,
+        "evidence_written": true,
+        "source_preserved": true,
+        "entrypoint_preserved": true,
+        "agent_suite": true,
+        "journey_2_3": true,
+        "journey_0_0": true,
+        "journey_-2_-3": true,
+        "invalid_oops_3": true,
+        "invalid_2": true,
+        "no_side_effect": true
+      },
+      "local_attempt": "runtime-1.2-first",
+      "evidence_sha256": "676a4819c52b0e9e814d9e96392f220a0d3024fc804e45c51e167778703ea1ce",
+      "execution_log_sha256": "f8bbb3401e45cbb9d9a43fde1242f8ac3e16d46335de25808d46c1ee9ce50ef2",
+      "checker_correction": null
+    },
+    {
+      "skill": "loop-evaluate",
+      "status": "PASS",
+      "basis": "current_fixture_execution",
+      "instruction_text_sha256": "036a181c09dce1ac92abbd4e8b35c72d3b2a137415f3b9f74298433da2dea023",
+      "instruction_read_command_observed": true,
+      "checks": {
+        "response_identity": true,
+        "installed_path": true,
+        "evidence_written": true,
+        "source_preserved": true,
+        "inputs_preserved": true,
+        "scorer_runs": true,
+        "fixed_rubric_metrics": true,
+        "perturbed_outputs_scored": true
+      },
+      "local_attempt": "runtime-1.2-retest",
+      "evidence_sha256": "fcfc14661336246dd484c0a0edd1cf6cc551ca03e48bfa59f98b322b87b5d302",
+      "execution_log_sha256": "f20f280ba5fc85ca2d15752e96f389e67328ad792da6d64774d304e77c463b15",
+      "checker_correction": null
+    }
+  ]
+}

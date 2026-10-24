@@ -22,8 +22,8 @@ that prevents safe progress.
 
 ## Workflow
 
-1. Parse one positive duration and the review target; create a run ID and
-   deadline.
+1. Parse the review target and optional positive duration; create a run ID.
+   Set a deadline only when a duration was supplied; otherwise use task completion.
 2. Read repository instructions, status, prior checkpoints, and relevant tests.
 3. Review one distinct angle at a time: correctness, tests, docs/config,
    build/release, integrations, security/privacy, usability, or hygiene.

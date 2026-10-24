@@ -38,14 +38,24 @@ report directory or a workspace-relative `Markdown` directory instead.
 
 ## Skill checks
 
-The expected skill count is 22. For each skill, the validator checks:
+The expected skill count is 27. For each skill, the validator checks:
 
 - `SKILL.md` exists in all three native roots;
 - frontmatter `name` matches the directory and `description` is present;
+- supported metadata keys are not duplicated, descriptions fit 1024 characters,
+  and invocation flags are literal true/false;
+- the six input/workflow/output/boundary/example contract sections occur once
+  in order and the skill includes its own invocation example;
 - the file stays below 500 lines;
 - all copies have identical SHA-256 hashes;
 - instructions name all four statuses, contain an explicit stop instruction,
-  and match at least one recognized break-condition pattern. This does not
+  match at least one recognized break-condition pattern and explicitly prohibit
+  sleeping to consume time. This does not
   prove every stop policy is present or that a host will follow it.
 
 Host-runtime tests and CI remain `NOT_RUN` unless their evidence is recorded.
+
+`tests/test_contract_validation.py` mutates all copies together to verify the
+validator catches broken contracts even when their hashes still match.
+`tests/test_runtime_smoke.py` checks fixture graders and quota classification
+without invoking a model. Opt-in execution is documented in RUNTIME-SMOKE.md.

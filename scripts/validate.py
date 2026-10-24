@@ -16,6 +16,7 @@ from pathlib import Path
 DEFAULT_ROOTS = (".github/skills", ".agents/skills", ".claude/skills")
 GENERATED_FILES = ("docs/VALIDATION-RESULT.md",)
 REQUIRED_STATUSES = ("PASS", "FAIL", "BLOCKED", "NOT_RUN")
+REQUIRED_SECTIONS = ("Use when", "Inputs", "Workflow", "Output", "Boundaries and evidence", "Example")
 NAME_PATTERN = re.compile(r"(?=.{1,64}$)[a-z0-9]+(?:-[a-z0-9]+)*$")
 BREAK_PATTERNS = (
     r"no (?:suitable )?work",
@@ -41,8 +42,8 @@ def sha256(path: Path) -> str:
 
 
 def frontmatter_value(frontmatter: str, key: str) -> str | None:
-    match = re.search(rf"(?m)^{re.escape(key)}:\s*(.+?)\s*$", frontmatter)
-    return match.group(1).strip().strip('"') if match else None
+    match = re.search(rf"(?m)^{re.escape(key)}:[ \t]*([^\r\n]*)", frontmatter)
+    return (match.group(1).strip().strip('"').strip("'") or None) if match else None
 
 
 def load_manifest(repo: Path) -> tuple[Manifest | None, list[str]]:
@@ -90,7 +91,7 @@ def load_manifest(repo: Path) -> tuple[Manifest | None, list[str]]:
 
 def validate(repo: Path) -> list[str]:
     manifest, errors = load_manifest(repo)
-    if manifest is None:
+    if manifest is None or errors:
         return errors
 
     for root in manifest.roots:
@@ -124,15 +125,36 @@ def validate(repo: Path) -> list[str]:
             description = frontmatter_value(frontmatter_text, "description")
             if not description:
                 errors.append(f"{path.relative_to(repo)} has no description")
+            elif len(description) > 1024:
+                errors.append(f"{path.relative_to(repo)} description exceeds 1024 characters")
+            for key in ("name", "description", "argument-hint", "user-invocable", "disable-model-invocation"):
+                if len(re.findall(rf"(?m)^{re.escape(key)}:", frontmatter_text)) > 1:
+                    errors.append(f"{path.relative_to(repo)} has duplicate metadata key {key}")
+            for flag in ("user-invocable", "disable-model-invocation"):
+                if not re.search(rf"(?m)^{re.escape(flag)}:[ \t]*(true|false)[ \t]*$", frontmatter_text):
+                    errors.append(f"{path.relative_to(repo)} has invalid boolean {flag}")
+            positions = []
+            for section in REQUIRED_SECTIONS:
+                matches = list(re.finditer(rf"(?m)^## {re.escape(section)}\s*$", text))
+                if len(matches) != 1:
+                    errors.append(f"{path.relative_to(repo)} requires one {section} section")
+                else:
+                    positions.append(matches[0].start())
+            if positions != sorted(positions):
+                errors.append(f"{path.relative_to(repo)} has out-of-order contract sections")
+            if f"/{skill} " not in text:
+                errors.append(f"{path.relative_to(repo)} omits its invocation example")
             if len(lines) > 500:
                 errors.append(f"{path.relative_to(repo)} exceeds 500 lines")
             for status in REQUIRED_STATUSES:
-                if status not in text:
+                if not re.search(rf"\b{status}\b", text):
                     errors.append(f"{path.relative_to(repo)} omits {status}")
             if not any(re.search(pattern, text, re.IGNORECASE | re.DOTALL) for pattern in BREAK_PATTERNS):
                 errors.append(f"{path.relative_to(repo)} omits a recognizable break condition")
             if not STOP_PATTERN.search(text):
                 errors.append(f"{path.relative_to(repo)} omits an explicit stop instruction")
+            if not re.search(r"never\s+sleep", text, re.IGNORECASE):
+                errors.append(f"{path.relative_to(repo)} omits never-sleep policy")
 
         existing = [path for path in copies if path.is_file()]
         if existing:
