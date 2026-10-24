@@ -25,6 +25,8 @@ jobs:
           python-version: ${{ matrix.python }}
       - name: Validate skill structure and synchronization
         run: python scripts/validate.py
+      - name: Check separated metadata and integrity profile
+        run: python -m scripts.validate --profile format
       - name: Run validator tests
         run: python -m unittest discover -s tests -v
       - name: Verify bundled source runners

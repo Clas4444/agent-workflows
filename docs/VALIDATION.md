@@ -38,6 +38,18 @@ report directory or a workspace-relative `Markdown` directory instead.
 
 ## Skill checks
 
+The default `loop` profile remains the full project gate. For metadata and
+repository-integrity diagnosis only, run `python scripts/validate.py --profile
+format`. This keeps manifest, copy and bundled-runner checks but omits local
+Loop conventions. It cannot generate the full validation summary.
+
+The implementation separates manifest parsing, supported metadata checks and
+Loop policy under `scripts/validation/`; see [architecture](ARCHITECTURE.md).
+The six headings, four statuses, invocation flags, slash example, size limit
+and no-sleep rule below are project conventions, not universal Agent Skills
+format requirements. The [manifest schema](../schemas/README.md) documents
+the existing data shape without changing existing files.
+
 The expected skill count is 27. For each skill, the validator checks:
 
 - `SKILL.md` exists in all three native roots;

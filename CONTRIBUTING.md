@@ -38,6 +38,10 @@ or host-compatibility claims without explicit authorization and evidence.
 
 ## Validation
 
+Read [AGENTS.md](AGENTS.md) for the agent workflow and
+[architecture](docs/ARCHITECTURE.md) for module ownership. Use the full default
+validator gate for contributions; `--profile format` is diagnostic only.
+
 From the repository root, run:
 
 ```text

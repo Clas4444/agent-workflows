@@ -1,5 +1,15 @@
 # Changelog
 
+## Unreleased — verification architecture
+
+- Separate manifest parsing, supported skill metadata checks and Loop-specific
+  policy into `scripts/validation/`, preserving the default full validation gate.
+- Add an explicit diagnostic format profile with repository-integrity checks;
+  prevent it from producing a misleading full-gate summary.
+- Add agent-maintainer instructions, an architecture map and a versioned
+  manifest schema with contract parity tests. Skill instructions and runner
+  formats remain unchanged; no runtime evidence is relabeled.
+
 Repository updates are listed here; an entry does not imply a published package
 or release tag.
 

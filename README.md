@@ -7,6 +7,9 @@ runner, a synchronization tool and a validator with no third-party dependencies.
 [Choose a skill](#skill-catalog) · [Get started](#quick-start) ·
 [Run checks](#verification) · [Contribute](CONTRIBUTING.md)
 
+Repository maintainers: see [agent instructions](AGENTS.md),
+[architecture](docs/ARCHITECTURE.md) and [data contracts](schemas/README.md).
+
 > **Experimental · 1.2.0-experimental.** Shared instructions and matching files
 > do not guarantee identical behavior across Codex, Copilot and Claude Code.
 > See the [runtime evidence](docs/RUNTIME-TEST-MATRIX.md) for what was tested.
