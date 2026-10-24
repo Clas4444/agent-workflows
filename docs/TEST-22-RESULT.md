@@ -2,6 +2,15 @@
 
 Date: 2026-10-23 (Asia/Bangkok).
 
+Update 2026-10-24: real Codex fixture workflows are recorded separately in
+[the 22-skill smoke report](CODEX-SMOKE-2026-10-24.md), with a
+[sanitized evidence index](evidence/codex-smoke-2026-10-24.json).
+The decision-only checks below are historical and should not be confused with
+that later execution campaign.
+Documentation publication gate on 2026-10-24: 62/62 automated tests passed again
+in 10.176 seconds. Evidence records, source hashes, report links and redaction
+were checked independently before publication.
+
 ## Automated code and structure checks
 
 - PASS: `python -m unittest discover -s tests -q`: 62 tests, 7.912 seconds.
@@ -36,5 +45,5 @@ by Git and should be reviewed before sharing.
 This verifies decision behavior for those supplied scenarios after explicit
 instruction loading. It does not establish native skill discovery, actual
 bug repair, release installation, every positive case, or cross-host behavior.
-Those checks remain NOT_RUN. No new product defect was found in this run;
+Those checks were NOT_RUN in that decision-only run. No new product defect was found in that run;
 no acceptance assertion was weakened. No commit/push performed.

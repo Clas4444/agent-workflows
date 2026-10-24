@@ -154,6 +154,7 @@ Python 3.11/3.12; consult the actual run before claiming CI success.
 - [Positive and negative acceptance scenarios](docs/SKILL-SCENARIOS.md)
 - [Validation commands and evidence](docs/VALIDATION.md)
 - [Latest recorded test results](docs/TEST-22-RESULT.md)
+- [22 real Codex fixture workflows: results and retests](docs/CODEX-SMOKE-2026-10-24.md)
 - [Host compatibility and runtime evidence](docs/RUNTIME-TEST-MATRIX.md)
 - [Writing conventions and reference projects](docs/AUTHORING.md)
 - [Contributing](CONTRIBUTING.md) · [Security policy](SECURITY.md)
