@@ -1,5 +1,17 @@
 # Changelog
 
+## 1.5.0-experimental — 2026-10-24
+
+- Reorganize 34 skills into eight outcome-oriented groups; retain public names
+  and flat native layouts. Record keep/upgrade/add decisions for every skill.
+- Upgrade review, code, diagnose and test selection/workflow boundaries; retain
+  dedicated repair, refactor, evaluation and focused testing entry points.
+- Add loop-deploy and loop-observe for rollout/rollback and signal verification.
+- Add 37 curated cross-group route cases, including no-skill controls, with a
+  strict coverage/prediction checker and model-free CI tests.
+- Invalidate old runtime evidence for revised instruction contracts rather than
+  assigning historical PASS results to changed instructions.
+
 ## 1.4.0-experimental — 2026-10-24
 
 - Add the MCP integration and tool trust group: loop-mcp-design, loop-mcp-test

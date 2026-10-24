@@ -1,6 +1,6 @@
 ---
 name: loop-review
-description: "Run a bounded review loop over a file, folder, project, repository, or workspace: evaluate, discover integrations, propose, make authorized safe changes, verify, and report. Use when the user asks for repeated review or evaluation."
+description: "Inspect a scoped change or repository and report prioritized findings with source evidence. Use for review; use loop-plan for planning, loop-evaluate for fixed-rubric scoring and loop-research workflows for adoption decisions."
 argument-hint: "[duration and target]"
 user-invocable: true
 disable-model-invocation: false
@@ -29,6 +29,10 @@ that prevents safe progress.
    build/release, integrations, security/privacy, usability, or hygiene.
 4. Record evidence, risk, priority (`P0`–`P3`), authorization, action, and
    verification. Inspect every diff.
+5. Separate observed defects, design tradeoffs and untested hypotheses. Give
+   each actionable finding a source location and a verification path; do not
+   invent findings to fill a quota. Route implementation or research only when
+   the user's scope calls for it, and preserve read-only review requests.
 
 ## Output
 

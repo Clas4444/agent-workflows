@@ -1,6 +1,6 @@
 ---
 name: loop-code
-description: "Run a bounded code implementation loop for a feature, refactor, bug fix, or configuration change: plan a small batch, edit, verify, inspect the diff, and repeat. Use when the user asks to implement code iteratively."
+description: "Implement an authorized feature or configuration change in small verified batches. Prefer loop-debug when the main goal is repairing a reproducible bug and loop-refactor when the goal is restructuring without changing behavior."
 argument-hint: "[duration, target, and requested change]"
 user-invocable: true
 disable-model-invocation: false
@@ -12,6 +12,9 @@ disable-model-invocation: false
 
 Implement an authorized feature, fix, refactor, or configuration change in
 small verified batches.
+For a dedicated reproducible repair or behavior-preserving restructuring,
+prefer loop-debug or loop-refactor. An explicit invocation still keeps the
+user's authorized implementation scope; routing does not grant extra actions.
 
 ## Inputs
 

@@ -1,11 +1,11 @@
 {
-  "planning-review": {
-    "title": "Planning, review and security",
+  "discovery-planning": {
+    "title": "Discovery and scoped planning",
     "skills": [
-      "loop-plan",
-      "loop-review",
-      "loop-security",
-      "loop-evaluate"
+      "loop-research",
+      "loop-research-repo",
+      "loop-research-tools",
+      "loop-plan"
     ]
   },
   "implementation": {
@@ -27,16 +27,8 @@
       "loop-diagnose-regression"
     ]
   },
-  "research": {
-    "title": "Research and adoption",
-    "skills": [
-      "loop-research",
-      "loop-research-repo",
-      "loop-research-tools"
-    ]
-  },
   "verification": {
-    "title": "Testing and adversarial verification",
+    "title": "Testing and evidence evaluation",
     "skills": [
       "loop-test",
       "loop-test-unit",
@@ -44,15 +36,25 @@
       "loop-test-coverage",
       "loop-test-e2e",
       "loop-test-adversarial",
-      "loop-test-compatibility"
+      "loop-test-compatibility",
+      "loop-evaluate"
+    ]
+  },
+  "assurance": {
+    "title": "Review and security assurance",
+    "skills": [
+      "loop-review",
+      "loop-security"
     ]
   },
   "delivery": {
-    "title": "Documentation, CI and release",
+    "title": "Delivery and operational verification",
     "skills": [
       "loop-docs",
       "loop-ci",
-      "loop-release"
+      "loop-release",
+      "loop-deploy",
+      "loop-observe"
     ]
   },
   "automation": {

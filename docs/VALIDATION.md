@@ -55,7 +55,7 @@ and no-sleep rule below are project conventions, not universal Agent Skills
 format requirements. The [manifest schema](../schemas/README.md) documents
 the existing data shape without changing existing files.
 
-The expected skill count is 32. For each skill, the validator checks:
+The expected skill count is 34. For each skill, the validator checks:
 
 - `SKILL.md` exists in all three native roots;
 - frontmatter `name` matches the directory and `description` is present;
@@ -78,6 +78,13 @@ validator catches broken contracts even when their hashes still match.
 without invoking a model. Opt-in execution is documented in RUNTIME-SMOKE.md.
 
 ## Adversarial reproduction
+
+Cross-group selection cases and per-skill decisions are checked independently
+with `python scripts/routing_check.py`. The full validator also checks this
+metadata when skill-routing.json is present; CI invokes the checker explicitly
+so a missing file cannot silently skip the repository gate. Prediction grading
+requires all fixed IDs and includes no-skill controls. These checks do not prove
+automatic host discovery or runtime skill behavior.
 
 ```text
 python -m unittest discover -s tests -p test_adversarial.py -v

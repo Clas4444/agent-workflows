@@ -1,7 +1,8 @@
 # MCP integration and tool trust
 
-Added 2026-10-24 as a new group with **three skills**. The complete catalog now
-contains **32 skills in eight functional groups**.
+Added 2026-10-24 as a new group with **three skills**. At its 1.4 introduction,
+the catalog contained **32 skills in eight functional groups**. See the current
+[taxonomy review](TAXONOMY-1.5.md) for later changes.
 
 | Skill | Responsibility | Evidence required |
 |---|---|---|

@@ -1,6 +1,6 @@
 # Portable Loop Skills
 
-**32 bounded workflows for coding agents.** Review a change, investigate a bug,
+**34 bounded workflows for coding agents.** Review a change, investigate a bug,
 write a fix, verify it and stop with evidence. Includes a Python continuation
 runner, a synchronization tool and a validator with no third-party dependencies.
 
@@ -12,8 +12,10 @@ Repository maintainers: see [agent instructions](AGENTS.md),
 
 For group responsibilities and review criteria, see [functional groups](docs/SKILL-GROUPS.md).
 The new [MCP integration group](docs/MCP-GROUP.md) covers design, testing and tool trust.
+See the [cross-group review](docs/TAXONOMY-1.5.md) for upgrades, overlap decisions,
+deployment/observability additions and fixed routing cases.
 
-> **Experimental · 1.4.0-experimental.** Shared instructions and matching files
+> **Experimental · 1.5.0-experimental.** Shared instructions and matching files
 > do not guarantee identical behavior across Codex, Copilot and Claude Code.
 > See the [runtime evidence](docs/RUNTIME-TEST-MATRIX.md) for what was tested.
 
@@ -48,20 +50,20 @@ applies throughout the task.
 
 Groups are navigation metadata; native skill directories remain flat.
 
-### Planning, review and security
+### Discovery and scoped planning
 
 | Skill | Purpose |
 |---|---|
+| [loop-research](.github/skills/loop-research/SKILL.md) | Run a bounded evidence loop to research repositories, documentation, tools, extensions, plugins, skills, MCP servers, or implementation options |
+| [loop-research-repo](.github/skills/loop-research-repo/SKILL.md) | Research repositories and open-source projects in a bounded evidence loop |
+| [loop-research-tools](.github/skills/loop-research-tools/SKILL.md) | Research tools, extensions, plugins, skills, and MCP servers in a bounded evidence loop |
 | [loop-plan](.github/skills/loop-plan/SKILL.md) | Turn a scoped request into dependency-ordered, verifiable implementation batches without changing code |
-| [loop-review](.github/skills/loop-review/SKILL.md) | Run a bounded review loop over a file, folder, project, repository, or workspace: evaluate, discover integrations, propose, make authorized safe changes, verify, and report |
-| [loop-security](.github/skills/loop-security/SKILL.md) | Review authorized code and configuration for security risks using threat boundaries, source evidence and safe local tests |
-| [loop-evaluate](.github/skills/loop-evaluate/SKILL.md) | Evaluate a skill or agent workflow using predefined cases, an explicit rubric and independently checked outcomes |
 
 ### Implementation and maintenance
 
 | Skill | Purpose |
 |---|---|
-| [loop-code](.github/skills/loop-code/SKILL.md) | Run a bounded code implementation loop for a feature, refactor, bug fix, or configuration change: plan a small batch, edit, verify, inspect the diff, and repeat |
+| [loop-code](.github/skills/loop-code/SKILL.md) | Implement an authorized feature or configuration change in small verified batches |
 | [loop-refactor](.github/skills/loop-refactor/SKILL.md) | Improve a scoped code structure while preserving observable behavior through characterization tests, small reversible changes and regression checks |
 | [loop-dependencies](.github/skills/loop-dependencies/SKILL.md) | Assess and perform an authorized dependency change with manifest/lockfile consistency, compatibility checks and rollback evidence |
 | [loop-migrate](.github/skills/loop-migrate/SKILL.md) | Prepare and verify a scoped data, schema or configuration migration with dry-run, backup, invariants, idempotence and rollback |
@@ -71,38 +73,40 @@ Groups are navigation metadata; native skill directories remain flat.
 | Skill | Purpose |
 |---|---|
 | [loop-debug](.github/skills/loop-debug/SKILL.md) | Repair a reproducible bug end to end: capture a failing test, isolate the cause, apply the smallest authorized fix, and rerun regression checks |
-| [loop-diagnose](.github/skills/loop-diagnose/SKILL.md) | Run a bounded diagnosis loop for a bug, crash, failing test, regression, or slow behavior: reproduce, isolate, test hypotheses, fix when authorized, and re-test |
+| [loop-diagnose](.github/skills/loop-diagnose/SKILL.md) | Investigate an unexplained symptom using competing hypotheses and discriminating experiments |
 | [loop-diagnose-repro](.github/skills/loop-diagnose-repro/SKILL.md) | Run a bounded reproduction loop for a bug or failure: capture the environment, minimize the reproducer, vary one factor at a time, and preserve exact evidence for a later fix |
 | [loop-diagnose-performance](.github/skills/loop-diagnose-performance/SKILL.md) | Run a bounded performance-diagnosis loop for slow, memory-heavy, or resource-intensive behavior |
 | [loop-diagnose-regression](.github/skills/loop-diagnose-regression/SKILL.md) | Run a bounded regression-diagnosis loop: compare a known-good and failing state, bisect or narrow the change set, reproduce the regression, and verify the smallest authorized fix |
 
-### Research and adoption
+### Testing and evidence evaluation
 
 | Skill | Purpose |
 |---|---|
-| [loop-research](.github/skills/loop-research/SKILL.md) | Run a bounded evidence loop to research repositories, documentation, tools, extensions, plugins, skills, MCP servers, or implementation options |
-| [loop-research-repo](.github/skills/loop-research-repo/SKILL.md) | Research repositories and open-source projects in a bounded evidence loop |
-| [loop-research-tools](.github/skills/loop-research-tools/SKILL.md) | Research tools, extensions, plugins, skills, and MCP servers in a bounded evidence loop |
-
-### Testing and adversarial verification
-
-| Skill | Purpose |
-|---|---|
-| [loop-test](.github/skills/loop-test/SKILL.md) | Run a bounded testing loop for a project or change: select tests, reproduce failures, improve coverage or fixtures when authorized, run checks, and report results |
+| [loop-test](.github/skills/loop-test/SKILL.md) | Select and execute a risk-based test strategy for a project or change when the required test layer is not yet known |
 | [loop-test-unit](.github/skills/loop-test-unit/SKILL.md) | Run a bounded unit-test loop for a module or function: select focused tests, reproduce failures, improve authorized tests or fixtures, and verify isolated behavior without weakening acceptance criteria |
 | [loop-test-integration](.github/skills/loop-test-integration/SKILL.md) | Run a bounded integration-test loop across services, processes, files, databases, or external boundaries |
 | [loop-test-coverage](.github/skills/loop-test-coverage/SKILL.md) | Run a bounded test-coverage loop: identify untested risk, inspect coverage evidence, add authorized focused tests, and verify that coverage improvements are meaningful rather than cosmetic |
 | [loop-test-e2e](.github/skills/loop-test-e2e/SKILL.md) | Verify a complete user-visible journey through its real entry point, including success, invalid input and observable side effects |
 | [loop-test-adversarial](.github/skills/loop-test-adversarial/SKILL.md) | Challenge a declared contract with isolated adversarial inputs and independently observed outcomes |
 | [loop-test-compatibility](.github/skills/loop-test-compatibility/SKILL.md) | Verify a declared compatibility matrix across versions, platforms, host adapters or data formats |
+| [loop-evaluate](.github/skills/loop-evaluate/SKILL.md) | Evaluate a skill or agent workflow using predefined cases, an explicit rubric and independently checked outcomes |
 
-### Documentation, CI and release
+### Review and security assurance
+
+| Skill | Purpose |
+|---|---|
+| [loop-review](.github/skills/loop-review/SKILL.md) | Inspect a scoped change or repository and report prioritized findings with source evidence |
+| [loop-security](.github/skills/loop-security/SKILL.md) | Review authorized code and configuration for security risks using threat boundaries, source evidence and safe local tests |
+
+### Delivery and operational verification
 
 | Skill | Purpose |
 |---|---|
 | [loop-docs](.github/skills/loop-docs/SKILL.md) | Run a bounded documentation loop: audit README, guides, API references, examples, localization, and generated documentation; propose or make authorized updates; verify links and consistency |
 | [loop-ci](.github/skills/loop-ci/SKILL.md) | Diagnose and repair scoped CI failures by tracing a failed job to logs, reproducing locally where possible, and verifying workflow changes |
 | [loop-release](.github/skills/loop-release/SKILL.md) | Prepare and verify a scoped release candidate: version consistency, reproducible build, package contents, changelog and rollback notes |
+| [loop-deploy](.github/skills/loop-deploy/SKILL.md) | Execute or rehearse a scoped deployment of a known release with health gates and rollback evidence |
+| [loop-observe](.github/skills/loop-observe/SKILL.md) | Assess whether logs, metrics, traces and health signals can detect and explain an operational failure |
 
 ### Skill authoring and agent continuation
 
@@ -147,7 +151,7 @@ python scripts/sync_skills.py --target PATH_TO_SKILL_ROOT
 ```
 
 The first command reports differences without writing. The second copies the
-manifest's 32 skills, preserving unrelated skills and backing up overwritten
+manifest's 34 skills, preserving unrelated skills and backing up overwritten
 files under `.loop/backups/`. Select a personal installation root only when
 your host supports it and you intend to update it.
 
@@ -229,6 +233,8 @@ fixture artifacts, not just model self-reported PASS, and a usage limit stops
 new invocations. See [the runtime harness guide](docs/RUNTIME-SMOKE.md).
 
 ## Documentation
+
+- [Current cross-group review, upgrades and routing evidence](docs/TAXONOMY-1.5.md)
 
 - [Usage and workflow selection](docs/SKILL-USAGE.md)
 - [Positive and negative acceptance scenarios](docs/SKILL-SCENARIOS.md)

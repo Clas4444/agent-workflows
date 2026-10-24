@@ -52,6 +52,12 @@ generated README tables. Preserve native directory names and keep old runtime
 campaigns tied to their recorded manifest; new skills start at NOT_RUN until
 host execution is observed.
 
+When responsibilities change, update the curated skill-routing.json examples,
+overlap decisions and per-skill review record. Establish acceptable routes before
+testing model predictions; keep ambiguous real-world collaboration separate from
+the primary-route experiment. Regenerate the catalog and update invalidated
+instruction hashes rather than reusing a PASS for changed instructions.
+
 The validator enforces these six sections and rejects duplicated metadata keys,
 empty/overlong descriptions, invalid invocation booleans and missing no-sleep
 policies. Contract mutation tests must modify all synchronized copies together

@@ -1,18 +1,19 @@
 # Functional skill groups
 
-The catalog has **32 skills in eight groups**. `skill-groups.json` defines
+The catalog has **34 skills in eight groups**. `skill-groups.json` defines
 navigation membership; `skills-manifest.json` remains the installation inventory.
 Every manifest skill must occur in exactly one group. README tables are generated
 from this mapping and canonical descriptions.
 
 | Group | Reviewer checks |
 |---|---|
-| Planning, review and security | Scope, acceptance criteria, priorities, trust boundaries and evaluation rubric |
+| Discovery and scoped planning | Primary sources, adoption constraints, acceptance criteria and non-implementation planning |
 | Implementation and maintenance | Authorized edits, preserved behavior, dependency/data rollback |
 | Debugging and diagnosis | Failing baseline, discriminating experiments, cause and regression evidence |
 | Research and adoption | Primary sources, capability gaps, permissions and compatibility |
-| Testing and adversarial verification | Real entry points, independent oracles, negative controls and false PASS evidence |
-| Documentation, CI and release | Accurate commands, supported environments and publication authorization |
+| Testing and evidence evaluation | Real entry points, fixed rubrics, independent oracles and negative controls |
+| Review and security assurance | Located findings, reachable risks and preserved review scope |
+| Delivery and operational verification | Readiness, authorized rollout, health/rollback gates and observable failure signals |
 | Skill authoring and agent continuation | Distinct workflow, synchronized assets, limits and preserved task scope |
 | MCP integration and tool trust | Pinned interface versions, tool acceptance contracts and scoped authorization boundaries |
 
@@ -47,6 +48,9 @@ must not be presented as a fresh execution of all current skills.
 The three new MCP workflows and their current offline exercise are described in
 [MCP integration and tool trust](MCP-GROUP.md). Complete protocol/host support is
 not inferred from that fixture.
+
+For the current cross-group decisions, four upgrades and the deployment and
+observability additions, see [taxonomy review 1.5](TAXONOMY-1.5.md).
 
 ## Verification of this update
 

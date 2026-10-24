@@ -27,6 +27,8 @@ jobs:
         run: python scripts/validate.py
       - name: Verify grouped catalog coverage and rendering
         run: python scripts/catalog.py
+      - name: Verify curated cross-group routing review
+        run: python scripts/routing_check.py
       - name: Check separated metadata and integrity profile
         run: python -m scripts.validate --profile format
       - name: Run validator tests

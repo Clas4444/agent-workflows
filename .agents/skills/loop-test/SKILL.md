@@ -1,6 +1,6 @@
 ---
 name: loop-test
-description: "Run a bounded testing loop for a project or change: select tests, reproduce failures, improve coverage or fixtures when authorized, run checks, and report results. Use when the user asks to test repeatedly or improve verification."
+description: "Select and execute a risk-based test strategy for a project or change when the required test layer is not yet known. Use focused unit, integration, E2E, coverage, adversarial or compatibility skills when that layer is already the main request."
 argument-hint: "[duration and target]"
 user-invocable: true
 disable-model-invocation: false
@@ -21,10 +21,15 @@ that prevents safe progress.
 
 ## Workflow
 
-Identify the project test gate, baseline command, environment, and target risk.
-Run the smallest relevant test first, then broaden only when evidence requires
-it. Record the command, exit code, failure evidence, coverage gap, action, and
-next test.
+1. Identify acceptance criteria, project gates, environment and the risk that
+   each check must distinguish. Select the needed test layers before running.
+2. Establish the smallest relevant baseline and include valid/invalid controls
+   where applicable. Broaden when failures or untested boundaries justify it.
+3. Inspect actual assertions and artifacts, not only the command's self-reported
+   PASS. Keep unit, CLI, model/host and remote evidence separate.
+4. Record commands, exit codes, failures, changed assertions and next action.
+   Missing prerequisites are BLOCKED or NOT_RUN according to what was attempted;
+   do not install or weaken gates merely to obtain a green report.
 
 ## Output
 

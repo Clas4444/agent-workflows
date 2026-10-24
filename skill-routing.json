@@ -1,0 +1,503 @@
+{
+  "version": 1,
+  "scope": "Curated primary-route cases, not a mandatory runtime dispatcher or comprehensive discovery benchmark.",
+  "cases": [
+    {
+      "id": "route-01",
+      "prompt": "Inspect this repository for prioritized actionable findings with source locations. Do not implement, create a project plan or score a rubric.",
+      "acceptable": [
+        "loop-review"
+      ]
+    },
+    {
+      "id": "route-02",
+      "prompt": "Implement a new TSV export option in this existing application and verify its behavior.",
+      "acceptable": [
+        "loop-code"
+      ]
+    },
+    {
+      "id": "route-03",
+      "prompt": "Investigate an unexplained intermittent failure using competing hypotheses. No repair or code edits yet.",
+      "acceptable": [
+        "loop-diagnose"
+      ]
+    },
+    {
+      "id": "route-04",
+      "prompt": "Minimize this failing example into the smallest repeatable reproducer; do not fix it.",
+      "acceptable": [
+        "loop-diagnose-repro"
+      ]
+    },
+    {
+      "id": "route-05",
+      "prompt": "Profile CPU and memory and compare repeated measurements to isolate a performance bottleneck.",
+      "acceptable": [
+        "loop-diagnose-performance"
+      ]
+    },
+    {
+      "id": "route-06",
+      "prompt": "Find which change between these known-good and failing revisions introduced the regression.",
+      "acceptable": [
+        "loop-diagnose-regression"
+      ]
+    },
+    {
+      "id": "route-07",
+      "prompt": "Compare the technical tradeoffs of two parsing algorithms using primary sources; no repository or tool adoption decision.",
+      "acceptable": [
+        "loop-research"
+      ]
+    },
+    {
+      "id": "route-08",
+      "prompt": "Compare these two Git repositories for adoption using maintenance, license and compatibility evidence.",
+      "acceptable": [
+        "loop-research-repo"
+      ]
+    },
+    {
+      "id": "route-09",
+      "prompt": "Assess available tools or plugins for a missing capability, including permissions and costs; do not install.",
+      "acceptable": [
+        "loop-research-tools"
+      ]
+    },
+    {
+      "id": "route-10",
+      "prompt": "Choose the appropriate testing layers for this broad change, then run a risk-based test strategy; the needed layer is not yet known.",
+      "acceptable": [
+        "loop-test"
+      ]
+    },
+    {
+      "id": "route-11",
+      "prompt": "Write focused isolated assertions for this one pure function.",
+      "acceptable": [
+        "loop-test-unit"
+      ]
+    },
+    {
+      "id": "route-12",
+      "prompt": "Verify the contract at the runner-to-child-process boundary, including setup and cleanup.",
+      "acceptable": [
+        "loop-test-integration"
+      ]
+    },
+    {
+      "id": "route-13",
+      "prompt": "Use the existing coverage report to find meaningful untested behavior without changing thresholds.",
+      "acceptable": [
+        "loop-test-coverage"
+      ]
+    },
+    {
+      "id": "route-14",
+      "prompt": "Update the usage guide and check its examples against the implementation.",
+      "acceptable": [
+        "loop-docs"
+      ]
+    },
+    {
+      "id": "route-15",
+      "prompt": "Author a distinct new SKILL.md workflow with synchronized copies and acceptance evidence.",
+      "acceptable": [
+        "loop-skill-create"
+      ]
+    },
+    {
+      "id": "route-16",
+      "prompt": "Run the explicitly configured headless coding-agent command with a finite invocation limit, timeout and status markers.",
+      "acceptable": [
+        "loop-orchestrate"
+      ]
+    },
+    {
+      "id": "route-17",
+      "prompt": "Run my initial prompt and three inferred follow-up prompts using the already authorized local adapter.",
+      "acceptable": [
+        "loop-prompt"
+      ]
+    },
+    {
+      "id": "route-18",
+      "prompt": "Fix this reproducible off-by-one bug, preserving a failing baseline and verifying the regression.",
+      "acceptable": [
+        "loop-debug"
+      ]
+    },
+    {
+      "id": "route-19",
+      "prompt": "Review this local upload handler for reachable authorization and path-escape risks using defensive fixtures.",
+      "acceptable": [
+        "loop-security"
+      ]
+    },
+    {
+      "id": "route-20",
+      "prompt": "Restructure these modules while preserving all observable behavior and public APIs.",
+      "acceptable": [
+        "loop-refactor"
+      ]
+    },
+    {
+      "id": "route-21",
+      "prompt": "Repair the failed Windows CI job using its run logs, preserving required checks.",
+      "acceptable": [
+        "loop-ci"
+      ]
+    },
+    {
+      "id": "route-22",
+      "prompt": "Prepare a release candidate, verify package contents and checksums, and assess readiness without deploying.",
+      "acceptable": [
+        "loop-release"
+      ]
+    },
+    {
+      "id": "route-23",
+      "prompt": "Write a dependency-ordered implementation plan with acceptance gates and out-of-scope items; do not implement.",
+      "acceptable": [
+        "loop-plan"
+      ]
+    },
+    {
+      "id": "route-24",
+      "prompt": "Update this approved package version consistently in manifest and lockfile, checking compatibility and rollback.",
+      "acceptable": [
+        "loop-dependencies"
+      ]
+    },
+    {
+      "id": "route-25",
+      "prompt": "Migrate persisted schema on copied records with no-write dry-run, invariants, idempotence, backup and exercised rollback.",
+      "acceptable": [
+        "loop-migrate"
+      ]
+    },
+    {
+      "id": "route-26",
+      "prompt": "Test the complete CLI user journey from arguments to JSON output, invalid-input errors and side effects.",
+      "acceptable": [
+        "loop-test-e2e"
+      ]
+    },
+    {
+      "id": "route-27",
+      "prompt": "Score supplied baseline and candidate outputs against a predefined rubric and report false positives and denominators.",
+      "acceptable": [
+        "loop-evaluate"
+      ]
+    },
+    {
+      "id": "route-28",
+      "prompt": "Try to prove or disprove a false PASS in this validator using isolated invalid-data fixtures and independent oracles.",
+      "acceptable": [
+        "loop-test-adversarial"
+      ]
+    },
+    {
+      "id": "route-29",
+      "prompt": "Verify the declared platform/version/adapter support matrix, distinguishing unavailable cells from passed cells.",
+      "acceptable": [
+        "loop-test-compatibility"
+      ]
+    },
+    {
+      "id": "route-30",
+      "prompt": "Design an MCP tool interface pinned to the supplied protocol version before implementing any server.",
+      "acceptable": [
+        "loop-mcp-design"
+      ]
+    },
+    {
+      "id": "route-31",
+      "prompt": "Check these offline MCP tools/call fixtures for malformed arguments and response-correlation errors; no live server.",
+      "acceptable": [
+        "loop-mcp-test"
+      ]
+    },
+    {
+      "id": "route-32",
+      "prompt": "Review this MCP integration for token passthrough, tool poisoning and transport-specific authorization boundaries.",
+      "acceptable": [
+        "loop-mcp-security"
+      ]
+    },
+    {
+      "id": "route-33",
+      "prompt": "Rehearse rolling out this already prepared artifact with health gates and verify rollback to the previous version.",
+      "acceptable": [
+        "loop-deploy"
+      ]
+    },
+    {
+      "id": "route-34",
+      "prompt": "Check whether these existing logs and traces correlate a failure and whether the defined alert would detect it; do not send notifications.",
+      "acceptable": [
+        "loop-observe"
+      ]
+    },
+    {
+      "id": "route-35",
+      "prompt": "Write a birthday poem for my friend.",
+      "acceptable": [
+        "NONE"
+      ]
+    },
+    {
+      "id": "route-36",
+      "prompt": "Translate this ordinary sentence into Vietnamese.",
+      "acceptable": [
+        "NONE"
+      ]
+    },
+    {
+      "id": "route-37",
+      "prompt": "Calculate the area of a circle with radius three.",
+      "acceptable": [
+        "NONE"
+      ]
+    }
+  ],
+  "decisions": [
+    {
+      "skill": "loop-review",
+      "action": "upgrade",
+      "reason": "Remove catch-all planning/research/scoring language; require located findings and preserve read-only scope."
+    },
+    {
+      "skill": "loop-code",
+      "action": "upgrade",
+      "reason": "Clarify feature implementation versus dedicated repair/refactor routes; keep explicit invocation compatible."
+    },
+    {
+      "skill": "loop-diagnose",
+      "action": "upgrade",
+      "reason": "Replace generic fix loop with competing hypotheses and discriminating experiments; preserve investigation scope."
+    },
+    {
+      "skill": "loop-diagnose-repro",
+      "action": "keep",
+      "reason": "Retain a distinct acceptance gate and existing invocation identity; group placement does not change execution scope."
+    },
+    {
+      "skill": "loop-diagnose-performance",
+      "action": "keep",
+      "reason": "Retain a distinct acceptance gate and existing invocation identity; group placement does not change execution scope."
+    },
+    {
+      "skill": "loop-diagnose-regression",
+      "action": "keep",
+      "reason": "Retain a distinct acceptance gate and existing invocation identity; group placement does not change execution scope."
+    },
+    {
+      "skill": "loop-research",
+      "action": "keep",
+      "reason": "Retain a distinct acceptance gate and existing invocation identity; group placement does not change execution scope."
+    },
+    {
+      "skill": "loop-research-repo",
+      "action": "keep",
+      "reason": "Retain a distinct acceptance gate and existing invocation identity; group placement does not change execution scope."
+    },
+    {
+      "skill": "loop-research-tools",
+      "action": "keep",
+      "reason": "Retain a distinct acceptance gate and existing invocation identity; group placement does not change execution scope."
+    },
+    {
+      "skill": "loop-test",
+      "action": "upgrade",
+      "reason": "Select unknown test layers and actual acceptance oracles; direct known layers to focused workflows."
+    },
+    {
+      "skill": "loop-test-unit",
+      "action": "keep",
+      "reason": "Retain a distinct acceptance gate and existing invocation identity; group placement does not change execution scope."
+    },
+    {
+      "skill": "loop-test-integration",
+      "action": "keep",
+      "reason": "Retain a distinct acceptance gate and existing invocation identity; group placement does not change execution scope."
+    },
+    {
+      "skill": "loop-test-coverage",
+      "action": "keep",
+      "reason": "Retain a distinct acceptance gate and existing invocation identity; group placement does not change execution scope."
+    },
+    {
+      "skill": "loop-docs",
+      "action": "keep",
+      "reason": "Retain a distinct acceptance gate and existing invocation identity; group placement does not change execution scope."
+    },
+    {
+      "skill": "loop-skill-create",
+      "action": "keep",
+      "reason": "Retain a distinct acceptance gate and existing invocation identity; group placement does not change execution scope."
+    },
+    {
+      "skill": "loop-orchestrate",
+      "action": "keep",
+      "reason": "Retain a distinct acceptance gate and existing invocation identity; group placement does not change execution scope."
+    },
+    {
+      "skill": "loop-prompt",
+      "action": "keep",
+      "reason": "Retain a distinct acceptance gate and existing invocation identity; group placement does not change execution scope."
+    },
+    {
+      "skill": "loop-debug",
+      "action": "keep",
+      "reason": "Retain a distinct acceptance gate and existing invocation identity; group placement does not change execution scope."
+    },
+    {
+      "skill": "loop-security",
+      "action": "keep",
+      "reason": "Retain a distinct acceptance gate and existing invocation identity; group placement does not change execution scope."
+    },
+    {
+      "skill": "loop-refactor",
+      "action": "keep",
+      "reason": "Retain a distinct acceptance gate and existing invocation identity; group placement does not change execution scope."
+    },
+    {
+      "skill": "loop-ci",
+      "action": "keep",
+      "reason": "Retain a distinct acceptance gate and existing invocation identity; group placement does not change execution scope."
+    },
+    {
+      "skill": "loop-release",
+      "action": "keep",
+      "reason": "Retain a distinct acceptance gate and existing invocation identity; group placement does not change execution scope."
+    },
+    {
+      "skill": "loop-plan",
+      "action": "keep",
+      "reason": "Retain a distinct acceptance gate and existing invocation identity; group placement does not change execution scope."
+    },
+    {
+      "skill": "loop-dependencies",
+      "action": "keep",
+      "reason": "Retain a distinct acceptance gate and existing invocation identity; group placement does not change execution scope."
+    },
+    {
+      "skill": "loop-migrate",
+      "action": "keep",
+      "reason": "Retain a distinct acceptance gate and existing invocation identity; group placement does not change execution scope."
+    },
+    {
+      "skill": "loop-test-e2e",
+      "action": "keep",
+      "reason": "Retain a distinct acceptance gate and existing invocation identity; group placement does not change execution scope."
+    },
+    {
+      "skill": "loop-evaluate",
+      "action": "keep",
+      "reason": "Retain a distinct acceptance gate and existing invocation identity; group placement does not change execution scope."
+    },
+    {
+      "skill": "loop-test-adversarial",
+      "action": "keep",
+      "reason": "Retain a distinct acceptance gate and existing invocation identity; group placement does not change execution scope."
+    },
+    {
+      "skill": "loop-test-compatibility",
+      "action": "keep",
+      "reason": "Retain a distinct acceptance gate and existing invocation identity; group placement does not change execution scope."
+    },
+    {
+      "skill": "loop-mcp-design",
+      "action": "keep",
+      "reason": "Retain a distinct acceptance gate and existing invocation identity; group placement does not change execution scope."
+    },
+    {
+      "skill": "loop-mcp-test",
+      "action": "keep",
+      "reason": "Retain a distinct acceptance gate and existing invocation identity; group placement does not change execution scope."
+    },
+    {
+      "skill": "loop-mcp-security",
+      "action": "keep",
+      "reason": "Retain a distinct acceptance gate and existing invocation identity; group placement does not change execution scope."
+    },
+    {
+      "skill": "loop-deploy",
+      "action": "add",
+      "reason": "Fill the gap between release readiness and an authorized rollout with health gates and exercised rollback."
+    },
+    {
+      "skill": "loop-observe",
+      "action": "add",
+      "reason": "Fill the gap between executing a change and checking signal correlation/detection without persistent monitoring."
+    }
+  ],
+  "overlap_decisions": [
+    {
+      "skills": [
+        "loop-review",
+        "loop-plan",
+        "loop-evaluate"
+      ],
+      "decision": "Keep separate: prioritized findings, planned batches and fixed-rubric scoring have different outputs."
+    },
+    {
+      "skills": [
+        "loop-code",
+        "loop-debug",
+        "loop-refactor"
+      ],
+      "decision": "Keep separate: new behavior, demonstrated repair and behavior-preserving structure."
+    },
+    {
+      "skills": [
+        "loop-diagnose",
+        "loop-debug",
+        "loop-diagnose-repro"
+      ],
+      "decision": "Keep investigation, repair and minimization distinct; upgrade the umbrella description instead of adding aliases."
+    },
+    {
+      "skills": [
+        "loop-research",
+        "loop-research-repo",
+        "loop-research-tools"
+      ],
+      "decision": "Group navigation together, retain target-specific adoption criteria and existing names."
+    },
+    {
+      "skills": [
+        "loop-test",
+        "loop-test-unit",
+        "loop-test-integration",
+        "loop-test-e2e"
+      ],
+      "decision": "Keep strategy selector and focused boundaries; do not run every layer automatically."
+    },
+    {
+      "skills": [
+        "loop-orchestrate",
+        "loop-prompt"
+      ],
+      "decision": "Already share one runner implementation; keep distinct normal and inferred-follow-up protocols."
+    },
+    {
+      "skills": [
+        "loop-release",
+        "loop-deploy",
+        "loop-observe"
+      ],
+      "decision": "Keep readiness, authorized rollout and signal verification as separate acceptance gates."
+    },
+    {
+      "skills": [
+        "loop-security",
+        "loop-test-adversarial",
+        "loop-mcp-security"
+      ],
+      "decision": "Keep general threat review, false-PASS experiments and MCP-specific trust review."
+    }
+  ]
+}

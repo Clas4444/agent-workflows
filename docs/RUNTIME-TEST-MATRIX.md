@@ -7,6 +7,9 @@ completed safely.
 
 | Host | Version | Skill | Invocation | Result | Evidence |
 |---|---|---|---|---|---|
+| Revised 1.5 instruction contracts | not run | loop-review / loop-code / loop-diagnose / loop-test | Routing/workflow clarified | `NOT_RUN` | Historical evidence invalidated for current instruction text |
+| Native host workflow | not run | loop-deploy | Structural contract only | `NOT_RUN` | No real deployment or rollback execution |
+| Native host workflow | not run | loop-observe | Structural contract only | `NOT_RUN` | No live exporter/alert delivery or persistent monitor |
 | Full MCP transport/auth/discovery | not run | loop-mcp-design | Offline skill exercise only | `NOT_RUN` | No server was installed or started |
 | Full MCP transport/auth/discovery | not run | loop-mcp-test | Synthetic tool-acceptance subset only | `NOT_RUN` | Not an MCP conformance run |
 | Full MCP transport/auth/discovery | not run | loop-mcp-security | Synthetic catalog review only | `NOT_RUN` | Runtime enforcement remains untested |

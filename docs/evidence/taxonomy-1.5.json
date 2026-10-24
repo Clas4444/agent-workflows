@@ -1,0 +1,544 @@
+{
+  "version": "1.5.0-experimental",
+  "date": "2026-10-24",
+  "baseline_commit": "014fbc8991d0c8912fb0cd9c0882e148fb710e0e",
+  "baseline_skill_count": 32,
+  "current_skill_count": 34,
+  "group_count": 8,
+  "baseline_tests": {
+    "count": 125,
+    "seconds": 18.8,
+    "status": "PASS"
+  },
+  "final_tests": {
+    "count": 130,
+    "seconds": 19.182,
+    "status": "PASS"
+  },
+  "environment": "Windows / Python 3.12.14 / Codex CLI 0.164.0-alpha.11.1",
+  "routing_experiment": {
+    "process_returncode": 0,
+    "grade": {
+      "status": "PASS",
+      "total": 37,
+      "correct": 37,
+      "failed_case_ids": [],
+      "scope": "Curated route classification only, not host discovery or skill execution."
+    },
+    "predictions": {
+      "route-01": "loop-review",
+      "route-02": "loop-code",
+      "route-03": "loop-diagnose",
+      "route-04": "loop-diagnose-repro",
+      "route-05": "loop-diagnose-performance",
+      "route-06": "loop-diagnose-regression",
+      "route-07": "loop-research",
+      "route-08": "loop-research-repo",
+      "route-09": "loop-research-tools",
+      "route-10": "loop-test",
+      "route-11": "loop-test-unit",
+      "route-12": "loop-test-integration",
+      "route-13": "loop-test-coverage",
+      "route-14": "loop-docs",
+      "route-15": "loop-skill-create",
+      "route-16": "loop-orchestrate",
+      "route-17": "loop-prompt",
+      "route-18": "loop-debug",
+      "route-19": "loop-security",
+      "route-20": "loop-refactor",
+      "route-21": "loop-ci",
+      "route-22": "loop-release",
+      "route-23": "loop-plan",
+      "route-24": "loop-dependencies",
+      "route-25": "loop-migrate",
+      "route-26": "loop-test-e2e",
+      "route-27": "loop-evaluate",
+      "route-28": "loop-test-adversarial",
+      "route-29": "loop-test-compatibility",
+      "route-30": "loop-mcp-design",
+      "route-31": "loop-mcp-test",
+      "route-32": "loop-mcp-security",
+      "route-33": "loop-deploy",
+      "route-34": "loop-observe",
+      "route-35": "NONE",
+      "route-36": "NONE",
+      "route-37": "NONE"
+    },
+    "expected_routes_withheld": true,
+    "before_model_routing_baseline": "NOT_RUN",
+    "instruction_execution": "NOT_RUN",
+    "log_sha256": "83dfcea20496178d5618ebe946e17b3ebc2366d7dd43f39ec31c8afc4cb105f8",
+    "catalog_input_text_sha256": "48c6226352bdf69854dd6543053058fc68f2f26c3bb749ab07112907f3b350e0"
+  },
+  "decisions": [
+    {
+      "skill": "loop-review",
+      "action": "upgrade",
+      "reason": "Remove catch-all planning/research/scoring language; require located findings and preserve read-only scope.",
+      "old_group": "planning-review",
+      "new_group": "assurance",
+      "instruction_text_sha256": "12fab22fe6584b101bc83ed55ba4d68ccd8d80b8645d392cda211458f1b50b1d",
+      "structural_status": "PASS",
+      "new_host_execution": "NOT_RUN"
+    },
+    {
+      "skill": "loop-code",
+      "action": "upgrade",
+      "reason": "Clarify feature implementation versus dedicated repair/refactor routes; keep explicit invocation compatible.",
+      "old_group": "implementation",
+      "new_group": "implementation",
+      "instruction_text_sha256": "e069e63629423a6fa14cc13665347cc8c91ec985119fade87c1cb552fad6faaa",
+      "structural_status": "PASS",
+      "new_host_execution": "NOT_RUN"
+    },
+    {
+      "skill": "loop-diagnose",
+      "action": "upgrade",
+      "reason": "Replace generic fix loop with competing hypotheses and discriminating experiments; preserve investigation scope.",
+      "old_group": "diagnosis",
+      "new_group": "diagnosis",
+      "instruction_text_sha256": "3a5e3847407f58691f5aef87be58d4656ac86b55091016661f85c9f5452e892e",
+      "structural_status": "PASS",
+      "new_host_execution": "NOT_RUN"
+    },
+    {
+      "skill": "loop-diagnose-repro",
+      "action": "keep",
+      "reason": "Retain a distinct acceptance gate and existing invocation identity; group placement does not change execution scope.",
+      "old_group": "diagnosis",
+      "new_group": "diagnosis",
+      "instruction_text_sha256": "f4e037065de7a0254d9e3ac1edca8e2e26e6d2974023401a5780e7896e959853",
+      "structural_status": "PASS",
+      "new_host_execution": "NOT_RUN"
+    },
+    {
+      "skill": "loop-diagnose-performance",
+      "action": "keep",
+      "reason": "Retain a distinct acceptance gate and existing invocation identity; group placement does not change execution scope.",
+      "old_group": "diagnosis",
+      "new_group": "diagnosis",
+      "instruction_text_sha256": "4ad7081d207c301a39a42c24ca7e830533aef4c3a436644661128d1269e5cf2f",
+      "structural_status": "PASS",
+      "new_host_execution": "NOT_RUN"
+    },
+    {
+      "skill": "loop-diagnose-regression",
+      "action": "keep",
+      "reason": "Retain a distinct acceptance gate and existing invocation identity; group placement does not change execution scope.",
+      "old_group": "diagnosis",
+      "new_group": "diagnosis",
+      "instruction_text_sha256": "8f49584d6a2956bb72b1149be2783f421f9163c7468df2f72632b05ae062293f",
+      "structural_status": "PASS",
+      "new_host_execution": "NOT_RUN"
+    },
+    {
+      "skill": "loop-research",
+      "action": "keep",
+      "reason": "Retain a distinct acceptance gate and existing invocation identity; group placement does not change execution scope.",
+      "old_group": "research",
+      "new_group": "discovery-planning",
+      "instruction_text_sha256": "35facf45698779134d0ea1be43937f9e918d87e71582c18badee18831c8f171a",
+      "structural_status": "PASS",
+      "new_host_execution": "NOT_RUN"
+    },
+    {
+      "skill": "loop-research-repo",
+      "action": "keep",
+      "reason": "Retain a distinct acceptance gate and existing invocation identity; group placement does not change execution scope.",
+      "old_group": "research",
+      "new_group": "discovery-planning",
+      "instruction_text_sha256": "3eb496f0860e99a971f49c2608409ee7701a7e2d08fc367ea61b6bf0c3bbe86c",
+      "structural_status": "PASS",
+      "new_host_execution": "NOT_RUN"
+    },
+    {
+      "skill": "loop-research-tools",
+      "action": "keep",
+      "reason": "Retain a distinct acceptance gate and existing invocation identity; group placement does not change execution scope.",
+      "old_group": "research",
+      "new_group": "discovery-planning",
+      "instruction_text_sha256": "f4084d3535630280b007ad6f9cace94af37417aa8f6a19ec3bba6a782603576e",
+      "structural_status": "PASS",
+      "new_host_execution": "NOT_RUN"
+    },
+    {
+      "skill": "loop-test",
+      "action": "upgrade",
+      "reason": "Select unknown test layers and actual acceptance oracles; direct known layers to focused workflows.",
+      "old_group": "verification",
+      "new_group": "verification",
+      "instruction_text_sha256": "271ff1a6663c232d6c417b89525e92fb79f3f6e90b9ce130310317beff66a39b",
+      "structural_status": "PASS",
+      "new_host_execution": "NOT_RUN"
+    },
+    {
+      "skill": "loop-test-unit",
+      "action": "keep",
+      "reason": "Retain a distinct acceptance gate and existing invocation identity; group placement does not change execution scope.",
+      "old_group": "verification",
+      "new_group": "verification",
+      "instruction_text_sha256": "becb0062b47eeac64e1eb15ea6b0a8d2b917075f0d14869171b0a5b3214791db",
+      "structural_status": "PASS",
+      "new_host_execution": "NOT_RUN"
+    },
+    {
+      "skill": "loop-test-integration",
+      "action": "keep",
+      "reason": "Retain a distinct acceptance gate and existing invocation identity; group placement does not change execution scope.",
+      "old_group": "verification",
+      "new_group": "verification",
+      "instruction_text_sha256": "e440679ce5e5fec6414a72ed9b309e66a473213e53dafa1f3c52b7a6da7f6a9d",
+      "structural_status": "PASS",
+      "new_host_execution": "NOT_RUN"
+    },
+    {
+      "skill": "loop-test-coverage",
+      "action": "keep",
+      "reason": "Retain a distinct acceptance gate and existing invocation identity; group placement does not change execution scope.",
+      "old_group": "verification",
+      "new_group": "verification",
+      "instruction_text_sha256": "37062d731f528df061c23558b770f26db1bbe484bd2a8fb35a373f5f9ccac96b",
+      "structural_status": "PASS",
+      "new_host_execution": "NOT_RUN"
+    },
+    {
+      "skill": "loop-docs",
+      "action": "keep",
+      "reason": "Retain a distinct acceptance gate and existing invocation identity; group placement does not change execution scope.",
+      "old_group": "delivery",
+      "new_group": "delivery",
+      "instruction_text_sha256": "67ec82b728393cec500594b200eb900564f7eb77a0be3e4af41a706a4f6d5bd5",
+      "structural_status": "PASS",
+      "new_host_execution": "NOT_RUN"
+    },
+    {
+      "skill": "loop-skill-create",
+      "action": "keep",
+      "reason": "Retain a distinct acceptance gate and existing invocation identity; group placement does not change execution scope.",
+      "old_group": "automation",
+      "new_group": "automation",
+      "instruction_text_sha256": "07115821734c46c24771087ca081d10981d8d7fc5eb4548e044e476ff7c48967",
+      "structural_status": "PASS",
+      "new_host_execution": "NOT_RUN"
+    },
+    {
+      "skill": "loop-orchestrate",
+      "action": "keep",
+      "reason": "Retain a distinct acceptance gate and existing invocation identity; group placement does not change execution scope.",
+      "old_group": "automation",
+      "new_group": "automation",
+      "instruction_text_sha256": "21fa4f9c358fdf4f05af70288d66b9b9640131a6324ec3c94d95c60df9f991ef",
+      "structural_status": "PASS",
+      "new_host_execution": "NOT_RUN"
+    },
+    {
+      "skill": "loop-prompt",
+      "action": "keep",
+      "reason": "Retain a distinct acceptance gate and existing invocation identity; group placement does not change execution scope.",
+      "old_group": "automation",
+      "new_group": "automation",
+      "instruction_text_sha256": "4df11c0ec466c02d2c8b654d418df5f0d323d21b9e73d13abe089fbbf88ce2b5",
+      "structural_status": "PASS",
+      "new_host_execution": "NOT_RUN"
+    },
+    {
+      "skill": "loop-debug",
+      "action": "keep",
+      "reason": "Retain a distinct acceptance gate and existing invocation identity; group placement does not change execution scope.",
+      "old_group": "diagnosis",
+      "new_group": "diagnosis",
+      "instruction_text_sha256": "7c2acb2953338e177b086b8954761093c1ea5dae064e8cd76a2ec5eb2005d667",
+      "structural_status": "PASS",
+      "new_host_execution": "NOT_RUN"
+    },
+    {
+      "skill": "loop-security",
+      "action": "keep",
+      "reason": "Retain a distinct acceptance gate and existing invocation identity; group placement does not change execution scope.",
+      "old_group": "planning-review",
+      "new_group": "assurance",
+      "instruction_text_sha256": "583f1fcbf6a1b4d9961686ed4cf7b7790f572cfd53c681b573a6aea637aaf7c4",
+      "structural_status": "PASS",
+      "new_host_execution": "NOT_RUN"
+    },
+    {
+      "skill": "loop-refactor",
+      "action": "keep",
+      "reason": "Retain a distinct acceptance gate and existing invocation identity; group placement does not change execution scope.",
+      "old_group": "implementation",
+      "new_group": "implementation",
+      "instruction_text_sha256": "7cdf6eb63e9558ab0f953ea567a082dd2041c7275f01462fb8d14f8b3367600a",
+      "structural_status": "PASS",
+      "new_host_execution": "NOT_RUN"
+    },
+    {
+      "skill": "loop-ci",
+      "action": "keep",
+      "reason": "Retain a distinct acceptance gate and existing invocation identity; group placement does not change execution scope.",
+      "old_group": "delivery",
+      "new_group": "delivery",
+      "instruction_text_sha256": "802661ce7ec76d5e26ffb2fad1ca859e0d5205f687f68c59a6fee3c11d99e5be",
+      "structural_status": "PASS",
+      "new_host_execution": "NOT_RUN"
+    },
+    {
+      "skill": "loop-release",
+      "action": "keep",
+      "reason": "Retain a distinct acceptance gate and existing invocation identity; group placement does not change execution scope.",
+      "old_group": "delivery",
+      "new_group": "delivery",
+      "instruction_text_sha256": "02d51c8f77140c8d9c421653879a82b68381a2c46fd37f965c2534619eef816c",
+      "structural_status": "PASS",
+      "new_host_execution": "NOT_RUN"
+    },
+    {
+      "skill": "loop-plan",
+      "action": "keep",
+      "reason": "Retain a distinct acceptance gate and existing invocation identity; group placement does not change execution scope.",
+      "old_group": "planning-review",
+      "new_group": "discovery-planning",
+      "instruction_text_sha256": "5bc9b45733a163c29bb65411b5af9d0912762b6f07a3b746c9beaafa2d020e01",
+      "structural_status": "PASS",
+      "new_host_execution": "NOT_RUN"
+    },
+    {
+      "skill": "loop-dependencies",
+      "action": "keep",
+      "reason": "Retain a distinct acceptance gate and existing invocation identity; group placement does not change execution scope.",
+      "old_group": "implementation",
+      "new_group": "implementation",
+      "instruction_text_sha256": "e41e6c6157b6f4918e8bc7e3cdd493eeacc19b654764db4b3156ac8ddc8f5671",
+      "structural_status": "PASS",
+      "new_host_execution": "NOT_RUN"
+    },
+    {
+      "skill": "loop-migrate",
+      "action": "keep",
+      "reason": "Retain a distinct acceptance gate and existing invocation identity; group placement does not change execution scope.",
+      "old_group": "implementation",
+      "new_group": "implementation",
+      "instruction_text_sha256": "531d73668f852065d7864825ce7f054a4a0da6f7faaf5ed2f5d90ee599bf6885",
+      "structural_status": "PASS",
+      "new_host_execution": "NOT_RUN"
+    },
+    {
+      "skill": "loop-test-e2e",
+      "action": "keep",
+      "reason": "Retain a distinct acceptance gate and existing invocation identity; group placement does not change execution scope.",
+      "old_group": "verification",
+      "new_group": "verification",
+      "instruction_text_sha256": "950c5fab0960c74d345bfd2587c54de2170f727bb930f955dffae954bebc78ba",
+      "structural_status": "PASS",
+      "new_host_execution": "NOT_RUN"
+    },
+    {
+      "skill": "loop-evaluate",
+      "action": "keep",
+      "reason": "Retain a distinct acceptance gate and existing invocation identity; group placement does not change execution scope.",
+      "old_group": "planning-review",
+      "new_group": "verification",
+      "instruction_text_sha256": "036a181c09dce1ac92abbd4e8b35c72d3b2a137415f3b9f74298433da2dea023",
+      "structural_status": "PASS",
+      "new_host_execution": "NOT_RUN"
+    },
+    {
+      "skill": "loop-test-adversarial",
+      "action": "keep",
+      "reason": "Retain a distinct acceptance gate and existing invocation identity; group placement does not change execution scope.",
+      "old_group": "verification",
+      "new_group": "verification",
+      "instruction_text_sha256": "938d5f8f14b7bb74c17bd79c4948d346b2d998224e5f57e88561d55e9018f9fb",
+      "structural_status": "PASS",
+      "new_host_execution": "NOT_RUN"
+    },
+    {
+      "skill": "loop-test-compatibility",
+      "action": "keep",
+      "reason": "Retain a distinct acceptance gate and existing invocation identity; group placement does not change execution scope.",
+      "old_group": "verification",
+      "new_group": "verification",
+      "instruction_text_sha256": "f94f116ac80815ffb54a4679bbeb6667b07e1ed02b043186cce9e37f93c640e6",
+      "structural_status": "PASS",
+      "new_host_execution": "NOT_RUN"
+    },
+    {
+      "skill": "loop-mcp-design",
+      "action": "keep",
+      "reason": "Retain a distinct acceptance gate and existing invocation identity; group placement does not change execution scope.",
+      "old_group": "mcp-integration",
+      "new_group": "mcp-integration",
+      "instruction_text_sha256": "7b2cd975445425cde1faeafca99fef470901412445a25d6b77e39d37373c3b4d",
+      "structural_status": "PASS",
+      "new_host_execution": "NOT_RUN"
+    },
+    {
+      "skill": "loop-mcp-test",
+      "action": "keep",
+      "reason": "Retain a distinct acceptance gate and existing invocation identity; group placement does not change execution scope.",
+      "old_group": "mcp-integration",
+      "new_group": "mcp-integration",
+      "instruction_text_sha256": "95423acc31d6ced6433d537466f4a863ee21e973258d365245937de953826e78",
+      "structural_status": "PASS",
+      "new_host_execution": "NOT_RUN"
+    },
+    {
+      "skill": "loop-mcp-security",
+      "action": "keep",
+      "reason": "Retain a distinct acceptance gate and existing invocation identity; group placement does not change execution scope.",
+      "old_group": "mcp-integration",
+      "new_group": "mcp-integration",
+      "instruction_text_sha256": "85b71f20fa085182f4554366c2aa60e54fe3c65eba59b5260cf4e95147d76af6",
+      "structural_status": "PASS",
+      "new_host_execution": "NOT_RUN"
+    },
+    {
+      "skill": "loop-deploy",
+      "action": "add",
+      "reason": "Fill the gap between release readiness and an authorized rollout with health gates and exercised rollback.",
+      "old_group": null,
+      "new_group": "delivery",
+      "instruction_text_sha256": "2a085b2f76339a8564f55d97d2dde17303c3870c9fc801eba9360d1a77a155cd",
+      "structural_status": "PASS",
+      "new_host_execution": "NOT_RUN"
+    },
+    {
+      "skill": "loop-observe",
+      "action": "add",
+      "reason": "Fill the gap between executing a change and checking signal correlation/detection without persistent monitoring.",
+      "old_group": null,
+      "new_group": "delivery",
+      "instruction_text_sha256": "c23265c07ef22cd72975e546751a5a35a48f07117b063fc03b2fd1b81602db92",
+      "structural_status": "PASS",
+      "new_host_execution": "NOT_RUN"
+    }
+  ],
+  "overlap_decisions": [
+    {
+      "skills": [
+        "loop-review",
+        "loop-plan",
+        "loop-evaluate"
+      ],
+      "decision": "Keep separate: prioritized findings, planned batches and fixed-rubric scoring have different outputs."
+    },
+    {
+      "skills": [
+        "loop-code",
+        "loop-debug",
+        "loop-refactor"
+      ],
+      "decision": "Keep separate: new behavior, demonstrated repair and behavior-preserving structure."
+    },
+    {
+      "skills": [
+        "loop-diagnose",
+        "loop-debug",
+        "loop-diagnose-repro"
+      ],
+      "decision": "Keep investigation, repair and minimization distinct; upgrade the umbrella description instead of adding aliases."
+    },
+    {
+      "skills": [
+        "loop-research",
+        "loop-research-repo",
+        "loop-research-tools"
+      ],
+      "decision": "Group navigation together, retain target-specific adoption criteria and existing names."
+    },
+    {
+      "skills": [
+        "loop-test",
+        "loop-test-unit",
+        "loop-test-integration",
+        "loop-test-e2e"
+      ],
+      "decision": "Keep strategy selector and focused boundaries; do not run every layer automatically."
+    },
+    {
+      "skills": [
+        "loop-orchestrate",
+        "loop-prompt"
+      ],
+      "decision": "Already share one runner implementation; keep distinct normal and inferred-follow-up protocols."
+    },
+    {
+      "skills": [
+        "loop-release",
+        "loop-deploy",
+        "loop-observe"
+      ],
+      "decision": "Keep readiness, authorized rollout and signal verification as separate acceptance gates."
+    },
+    {
+      "skills": [
+        "loop-security",
+        "loop-test-adversarial",
+        "loop-mcp-security"
+      ],
+      "decision": "Keep general threat review, false-PASS experiments and MCP-specific trust review."
+    }
+  ],
+  "limitations": [
+    "One curated description-routing experiment is not a general benchmark or automatic host discovery test.",
+    "No old public skill was renamed/deleted; group navigation changed but native directories remain flat.",
+    "No real deployment, alert delivery or persistent monitoring was executed.",
+    "Revised instructions invalidate earlier host results; registry records the changed identities."
+  ],
+  "shuffled_routing_experiment": {
+    "process_returncode": 0,
+    "grade": {
+      "status": "PASS",
+      "total": 37,
+      "correct": 37,
+      "failed_case_ids": [],
+      "scope": "Curated route classification only, not host discovery or skill execution."
+    },
+    "predictions": {
+      "route-06": "loop-diagnose-regression",
+      "route-16": "loop-orchestrate",
+      "route-25": "loop-migrate",
+      "route-05": "loop-diagnose-performance",
+      "route-08": "loop-research-repo",
+      "route-29": "loop-test-compatibility",
+      "route-18": "loop-debug",
+      "route-21": "loop-ci",
+      "route-15": "loop-skill-create",
+      "route-03": "loop-diagnose",
+      "route-34": "loop-observe",
+      "route-27": "loop-evaluate",
+      "route-19": "loop-security",
+      "route-30": "loop-mcp-design",
+      "route-36": "NONE",
+      "route-35": "NONE",
+      "route-10": "loop-test",
+      "route-28": "loop-test-adversarial",
+      "route-32": "loop-mcp-security",
+      "route-26": "loop-test-e2e",
+      "route-14": "loop-docs",
+      "route-09": "loop-research-tools",
+      "route-22": "loop-release",
+      "route-37": "NONE",
+      "route-02": "loop-code",
+      "route-11": "loop-test-unit",
+      "route-17": "loop-prompt",
+      "route-01": "loop-review",
+      "route-33": "loop-deploy",
+      "route-23": "loop-plan",
+      "route-20": "loop-refactor",
+      "route-24": "loop-dependencies",
+      "route-13": "loop-test-coverage",
+      "route-07": "loop-research",
+      "route-04": "loop-diagnose-repro",
+      "route-31": "loop-mcp-test",
+      "route-12": "loop-test-integration"
+    },
+    "seeds": {
+      "catalog": 1505,
+      "requests": 1506
+    },
+    "case_set": "Same 37 cases as the first run, not an additional independent case set.",
+    "expected_routes_withheld": true,
+    "log_sha256": "4f94b9db75a3ba813c269e875301c3d987aaae5eaf251bcecb56cf4babe8d292",
+    "catalog_input_text_sha256": "79b4e456535686bdb2a0017585fecae87400ee8a71b7f5ade8cb8617e387c272"
+  }
+}

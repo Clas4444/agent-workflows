@@ -1,6 +1,6 @@
 ---
 name: loop-diagnose
-description: "Run a bounded diagnosis loop for a bug, crash, failing test, regression, or slow behavior: reproduce, isolate, test hypotheses, fix when authorized, and re-test. Use when the user asks to debug or diagnose repeatedly."
+description: "Investigate an unexplained symptom using competing hypotheses and discriminating experiments. Use for diagnosis without an assumed repair; prefer loop-debug for a requested fix, loop-diagnose-repro for minimization and the focused performance/regression routes when those are the goal."
 argument-hint: "[duration, symptom, and target]"
 user-invocable: true
 disable-model-invocation: false
@@ -24,10 +24,15 @@ that prevents safe progress.
 
 ## Workflow
 
-Capture the exact symptom, environment, command, exit code, logs, and
-reproduction. Maintain a hypothesis table and change one variable at a time.
-Prefer the smallest reproducer and the most relevant regression test. Fix only
-when authorized, then rerun the reproducer and regression checks.
+1. Capture the symptom, environment, exact command, exit code and logs. Record
+   reproduction frequency; an executed attempt without the symptom is not the
+   same as a command that was NOT_RUN.
+2. Maintain competing hypotheses with supporting/contradicting evidence and
+   choose the smallest experiment that distinguishes them. Change one variable
+   at a time and avoid prematurely treating correlation as cause.
+3. Stop with an isolated cause or the next useful experiment. If an authorized
+   repair becomes the goal, carry the failing baseline into loop-debug rather
+   than silently turning a read-only investigation into implementation.
 
 ## Output
 

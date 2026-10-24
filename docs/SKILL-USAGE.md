@@ -6,6 +6,11 @@ clear target and desired outcome; let the host apply its normal approval rules.
 
 ## Select a skill
 
+Use `loop-deploy` for an authorized rollout or local rehearsal after a candidate
+is prepared; use `loop-observe` to verify signal correlation and detection.
+`loop-release` remains readiness preparation, and profiling remains
+`loop-diagnose-performance`. See [cross-group decisions](TAXONOMY-1.5.md).
+
 The **MCP integration and tool trust** group adds `loop-mcp-design` for a pinned
 interface design, `loop-mcp-test` for offline or authorized live contract checks,
 and `loop-mcp-security` for MCP-specific trust/authorization review. A local
