@@ -7,6 +7,9 @@ completed safely.
 
 | Host | Version | Skill | Invocation | Result | Evidence |
 |---|---|---|---|---|---|
+| Full MCP transport/auth/discovery | not run | loop-mcp-design | Offline skill exercise only | `NOT_RUN` | No server was installed or started |
+| Full MCP transport/auth/discovery | not run | loop-mcp-test | Synthetic tool-acceptance subset only | `NOT_RUN` | Not an MCP conformance run |
+| Full MCP transport/auth/discovery | not run | loop-mcp-security | Synthetic catalog review only | `NOT_RUN` | Runtime enforcement remains untested |
 | Revised recovery contract | not run | loop-orchestrate / loop-prompt | Authorized-root recovery wording changed | `NOT_RUN` | Old 1.2 results remain historical; see runtime-invalidations-1.3.json |
 | Native host workflow | not run | loop-test-compatibility | Structural/text contract only | `NOT_RUN` | New 1.3 skill; actual cross-host execution pending |
 | Native host workflow | not run | loop-test-adversarial | Structural/text contract only | `NOT_RUN` | New 1.3 skill; adversarial CLI tests are not model runtime evidence |

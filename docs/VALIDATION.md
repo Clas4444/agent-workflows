@@ -55,7 +55,7 @@ and no-sleep rule below are project conventions, not universal Agent Skills
 format requirements. The [manifest schema](../schemas/README.md) documents
 the existing data shape without changing existing files.
 
-The expected skill count is 29. For each skill, the validator checks:
+The expected skill count is 32. For each skill, the validator checks:
 
 - `SKILL.md` exists in all three native roots;
 - frontmatter `name` matches the directory and `description` is present;

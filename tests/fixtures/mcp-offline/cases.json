@@ -1,0 +1,158 @@
+{
+  "scope": "Offline sum-tool acceptance subset, not a complete MCP envelope, transport, auth, metadata or conformance validator.",
+  "protocol_reference": "2026-07-28",
+  "tool_contract": {
+    "name": "sum",
+    "arguments": {
+      "a": "integer excluding boolean",
+      "b": "integer excluding boolean"
+    },
+    "result": "structuredContent.sum must equal a+b; request and response IDs must match including type"
+  },
+  "cases": [
+    {
+      "case_id": "valid-positive",
+      "request": {
+        "jsonrpc": "2.0",
+        "id": 1,
+        "method": "tools/call",
+        "params": {
+          "name": "sum",
+          "arguments": {
+            "a": 2,
+            "b": 3
+          }
+        }
+      },
+      "response": {
+        "jsonrpc": "2.0",
+        "id": 1,
+        "result": {
+          "structuredContent": {
+            "sum": 5
+          }
+        }
+      }
+    },
+    {
+      "case_id": "valid-negative",
+      "request": {
+        "jsonrpc": "2.0",
+        "id": 1,
+        "method": "tools/call",
+        "params": {
+          "name": "sum",
+          "arguments": {
+            "a": -2,
+            "b": -3
+          }
+        }
+      },
+      "response": {
+        "jsonrpc": "2.0",
+        "id": 1,
+        "result": {
+          "structuredContent": {
+            "sum": -5
+          }
+        }
+      }
+    },
+    {
+      "case_id": "wrong-id",
+      "request": {
+        "jsonrpc": "2.0",
+        "id": 1,
+        "method": "tools/call",
+        "params": {
+          "name": "sum",
+          "arguments": {
+            "a": 2,
+            "b": 3
+          }
+        }
+      },
+      "response": {
+        "jsonrpc": "2.0",
+        "id": 2,
+        "result": {
+          "structuredContent": {
+            "sum": 5
+          }
+        }
+      }
+    },
+    {
+      "case_id": "wrong-type",
+      "request": {
+        "jsonrpc": "2.0",
+        "id": 1,
+        "method": "tools/call",
+        "params": {
+          "name": "sum",
+          "arguments": {
+            "a": "2",
+            "b": 3
+          }
+        }
+      },
+      "response": {
+        "jsonrpc": "2.0",
+        "id": 1,
+        "result": {
+          "structuredContent": {
+            "sum": 5
+          }
+        }
+      }
+    },
+    {
+      "case_id": "bool-not-int",
+      "request": {
+        "jsonrpc": "2.0",
+        "id": 1,
+        "method": "tools/call",
+        "params": {
+          "name": "sum",
+          "arguments": {
+            "a": true,
+            "b": 3
+          }
+        }
+      },
+      "response": {
+        "jsonrpc": "2.0",
+        "id": 1,
+        "result": {
+          "structuredContent": {
+            "sum": 4
+          }
+        }
+      }
+    },
+    {
+      "case_id": "wrong-sum",
+      "request": {
+        "jsonrpc": "2.0",
+        "id": 1,
+        "method": "tools/call",
+        "params": {
+          "name": "sum",
+          "arguments": {
+            "a": 2,
+            "b": 3
+          }
+        }
+      },
+      "response": {
+        "jsonrpc": "2.0",
+        "id": 1,
+        "result": {
+          "structuredContent": {
+            "sum": 99
+          }
+        }
+      }
+    }
+  ]
+}

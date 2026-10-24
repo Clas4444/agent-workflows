@@ -12,7 +12,7 @@ tracked separately in [RUNTIME-TEST-MATRIX.md](./RUNTIME-TEST-MATRIX.md).
 | Codex | `.agents/skills/` | Files are synchronized; scoped runtime evidence is in the runtime matrix |
 | Claude Code | `.claude/skills/` | Files are synchronized; runtime is `NOT_RUN` |
 
-All 29 skills have valid frontmatter, matching lowercase hyphenated names,
+All 32 skills have valid frontmatter, matching lowercase hyphenated names,
 descriptions, argument hints, and the existing invocation flags. Each copy is
 byte-identical to the canonical `.github/skills/` file.
 The historical 22-skill smoke report applies to its recorded revision, not

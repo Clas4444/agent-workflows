@@ -1,0 +1,87 @@
+{
+  "version": "1.4.0-experimental",
+  "date": "2026-10-24",
+  "catalog_skill_count": 32,
+  "group_count": 8,
+  "selection_basis": "Current versioned MCP release and primary-source execution-governance guidance; no global popularity ranking claimed.",
+  "sources": [
+    "https://blog.modelcontextprotocol.io/posts/2026-07-28/",
+    "https://modelcontextprotocol.io/specification/2026-07-28/server/tools",
+    "https://modelcontextprotocol.io/docs/2026-07-28/tutorials/security/security_best_practices",
+    "https://developer.microsoft.com/blog/securing-mcp-a-control-plane-for-agent-tool-execution/"
+  ],
+  "baseline_tests": {
+    "count": 119,
+    "seconds": 17.661,
+    "status": "PASS"
+  },
+  "final_tests": {
+    "count": 125,
+    "seconds": 19.654,
+    "status": "PASS"
+  },
+  "environment": "Windows / Python 3.12.14 / Codex CLI 0.164.0-alpha.11.1",
+  "codex_process_exit": 0,
+  "scope": "One shared, explicit three-skill offline exercise, independently graded. Not full MCP conformance or three independent server acceptance runs.",
+  "independent_grade": {
+    "status": "PASS",
+    "checks": {
+      "inputs_preserved": true,
+      "design_scope": true,
+      "security_scope": true,
+      "nominal_computed_results": true,
+      "varied_computed_results": true
+    },
+    "scope": "Offline synthetic tool-acceptance subset only; live MCP transport/auth/discovery NOT_RUN."
+  },
+  "reported_commands": [
+    {
+      "command": "check_cases.py --cases cases.json --output results.json",
+      "exit_code": 0
+    },
+    {
+      "command": "python.exe -B verify_checks.py",
+      "exit_code": 0
+    }
+  ],
+  "reported_checker_assertions": "32 passed",
+  "raw_log_sha256": "fc8ea0ad71417393504ccc44800e89bc8ea1eaee94e0fb5d6f516e7ff41a9b9b",
+  "captured_artifact_text_sha256": {
+    "design.md": "dc81f17d49cf12c7896504e72b70b4d82179189277f538f28955f0f607ed6555",
+    "security.md": "4a177ae7ac0d6c03cb737bd96621c33c714b9afd0fd0e6a81be3f58c21713e15",
+    "check_cases.py": "1f709779e283939b469bb437d538984bbb262f9e5cf6c8c98a7757696536f356"
+  },
+  "results": [
+    {
+      "skill": "loop-mcp-design",
+      "instruction_text_sha256": "7b2cd975445425cde1faeafca99fef470901412445a25d6b77e39d37373c3b4d",
+      "structural_status": "PASS",
+      "shared_offline_exercise": "PASS",
+      "live_mcp_transport_auth_discovery": "NOT_RUN",
+      "implicit_host_discovery": "NOT_RUN"
+    },
+    {
+      "skill": "loop-mcp-test",
+      "instruction_text_sha256": "95423acc31d6ced6433d537466f4a863ee21e973258d365245937de953826e78",
+      "structural_status": "PASS",
+      "shared_offline_exercise": "PASS",
+      "live_mcp_transport_auth_discovery": "NOT_RUN",
+      "implicit_host_discovery": "NOT_RUN"
+    },
+    {
+      "skill": "loop-mcp-security",
+      "instruction_text_sha256": "85b71f20fa085182f4554366c2aa60e54fe3c65eba59b5260cf4e95147d76af6",
+      "structural_status": "PASS",
+      "shared_offline_exercise": "PASS",
+      "live_mcp_transport_auth_discovery": "NOT_RUN",
+      "implicit_host_discovery": "NOT_RUN"
+    }
+  ],
+  "license_copyright": "Copyright (c) 2026 Clas4444",
+  "limitations": [
+    "Synthetic acceptance oracle does not validate complete protocol envelopes, required metadata or all legal JSON-RPC ID types.",
+    "Security report and preserved sentinel do not prove runtime authorization enforcement.",
+    "Other host runtimes and real MCP servers were not exercised.",
+    "Raw Windows bytes may differ from Git-normalized files; published text hashes normalize newlines."
+  ]
+}

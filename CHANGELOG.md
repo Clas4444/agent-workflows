@@ -1,5 +1,14 @@
 # Changelog
 
+## 1.4.0-experimental — 2026-10-24
+
+- Add the MCP integration and tool trust group: loop-mcp-design, loop-mcp-test
+  and loop-mcp-security. The catalog now contains 32 skills in eight groups.
+- Pin protocol assumptions and separate offline fixture outcomes from actual
+  MCP transport, authentication and host discovery.
+- Add an independent offline smoke grader with changed-input challenges.
+- Complete the MIT copyright notice with the owner's GitHub name, Clas4444.
+
 ## 1.3.0-experimental — 2026-10-24
 
 - Add loop-test-compatibility for evidence-backed platform/version/adapter

@@ -1,6 +1,6 @@
 # Portable Loop Skills
 
-**29 bounded workflows for coding agents.** Review a change, investigate a bug,
+**32 bounded workflows for coding agents.** Review a change, investigate a bug,
 write a fix, verify it and stop with evidence. Includes a Python continuation
 runner, a synchronization tool and a validator with no third-party dependencies.
 
@@ -11,8 +11,9 @@ Repository maintainers: see [agent instructions](AGENTS.md),
 [architecture](docs/ARCHITECTURE.md) and [data contracts](schemas/README.md).
 
 For group responsibilities and review criteria, see [functional groups](docs/SKILL-GROUPS.md).
+The new [MCP integration group](docs/MCP-GROUP.md) covers design, testing and tool trust.
 
-> **Experimental · 1.3.0-experimental.** Shared instructions and matching files
+> **Experimental · 1.4.0-experimental.** Shared instructions and matching files
 > do not guarantee identical behavior across Codex, Copilot and Claude Code.
 > See the [runtime evidence](docs/RUNTIME-TEST-MATRIX.md) for what was tested.
 
@@ -111,6 +112,14 @@ Groups are navigation metadata; native skill directories remain flat.
 | [loop-orchestrate](.github/skills/loop-orchestrate/SKILL.md) | Run bounded follow-up prompts through a configured headless coding-agent command with state, timeout, stop markers, and evidence |
 | [loop-prompt](.github/skills/loop-prompt/SKILL.md) | Run an initial user prompt, have the agent infer the next useful prompt, and execute a bounded number of follow-up prompts with evidence |
 
+### MCP integration and tool trust
+
+| Skill | Purpose |
+|---|---|
+| [loop-mcp-design](.github/skills/loop-mcp-design/SKILL.md) | Design a scoped MCP client/server integration around a pinned protocol version, tool contracts and trust boundaries |
+| [loop-mcp-test](.github/skills/loop-mcp-test/SKILL.md) | Exercise a versioned MCP interface using bounded local fixtures or an explicitly authorized server |
+| [loop-mcp-security](.github/skills/loop-mcp-security/SKILL.md) | Review an authorized MCP integration for tool trust, scoped authorization, credential handling and data-exfiltration boundaries |
+
 <!-- END GENERATED SKILL GROUPS -->
 
 For selection advice and complete examples, see [Skill usage](docs/SKILL-USAGE.md).
@@ -138,7 +147,7 @@ python scripts/sync_skills.py --target PATH_TO_SKILL_ROOT
 ```
 
 The first command reports differences without writing. The second copies the
-manifest's 29 skills, preserving unrelated skills and backing up overwritten
+manifest's 32 skills, preserving unrelated skills and backing up overwritten
 files under `.loop/backups/`. Select a personal installation root only when
 your host supports it and you intend to update it.
 
@@ -224,7 +233,8 @@ new invocations. See [the runtime harness guide](docs/RUNTIME-SMOKE.md).
 - [Usage and workflow selection](docs/SKILL-USAGE.md)
 - [Positive and negative acceptance scenarios](docs/SKILL-SCENARIOS.md)
 - [Validation commands and evidence](docs/VALIDATION.md)
-- [Current verification and seven testing workflows](docs/VERIFICATION-1.3.md)
+- [MCP group, sources and scoped offline verification](docs/MCP-GROUP.md)
+- [Earlier 1.3 verification and seven testing workflows](docs/VERIFICATION-1.3.md)
 - [Historical 1.2 system and runtime results](docs/RUNTIME-1.2-RESULT.md)
 - [Earlier automated/decision test results](docs/TEST-22-RESULT.md)
 - [22 real Codex fixture workflows: results and retests](docs/CODEX-SMOKE-2026-10-24.md)

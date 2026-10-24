@@ -1,6 +1,6 @@
 # Functional skill groups
 
-The catalog has **29 skills in seven groups**. `skill-groups.json` defines
+The catalog has **32 skills in eight groups**. `skill-groups.json` defines
 navigation membership; `skills-manifest.json` remains the installation inventory.
 Every manifest skill must occur in exactly one group. README tables are generated
 from this mapping and canonical descriptions.
@@ -14,6 +14,7 @@ from this mapping and canonical descriptions.
 | Testing and adversarial verification | Real entry points, independent oracles, negative controls and false PASS evidence |
 | Documentation, CI and release | Accurate commands, supported environments and publication authorization |
 | Skill authoring and agent continuation | Distinct workflow, synchronized assets, limits and preserved task scope |
+| MCP integration and tool trust | Pinned interface versions, tool acceptance contracts and scoped authorization boundaries |
 
 ## Check or update the catalog
 
@@ -41,7 +42,11 @@ broader threat review; `loop-debug` starts from a demonstrated bug;
 
 Native host behavior and implicit discovery remain **NOT_RUN** for the two new
 skills. The 1.2 runtime campaign stays tied to its frozen 27-skill manifest and
-must not be presented as a fresh execution of all 29 skills.
+must not be presented as a fresh execution of all current skills.
+
+The three new MCP workflows and their current offline exercise are described in
+[MCP integration and tool trust](MCP-GROUP.md). Complete protocol/host support is
+not inferred from that fixture.
 
 ## Verification of this update
 

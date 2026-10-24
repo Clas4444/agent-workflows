@@ -62,5 +62,13 @@
       "loop-orchestrate",
       "loop-prompt"
     ]
+  },
+  "mcp-integration": {
+    "title": "MCP integration and tool trust",
+    "skills": [
+      "loop-mcp-design",
+      "loop-mcp-test",
+      "loop-mcp-security"
+    ]
   }
 }

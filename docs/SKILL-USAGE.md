@@ -6,7 +6,12 @@ clear target and desired outcome; let the host apply its normal approval rules.
 
 ## Select a skill
 
-Browse the seven functional groups in [the grouped catalog](SKILL-GROUPS.md)
+The **MCP integration and tool trust** group adds `loop-mcp-design` for a pinned
+interface design, `loop-mcp-test` for offline or authorized live contract checks,
+and `loop-mcp-security` for MCP-specific trust/authorization review. A local
+fixture PASS does not establish MCP transport or authentication conformance.
+
+Browse the eight functional groups in [the grouped catalog](SKILL-GROUPS.md)
 or the README. Installation paths remain unchanged.
 
 | Skill | Use it for | Typical invocation |

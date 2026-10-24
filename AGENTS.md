@@ -1,6 +1,6 @@
 # Working on Loop Skills
 
-This repository distributes 29 skill instructions and a local CLI runner. It
+This repository distributes 32 skill instructions and a local CLI runner. It
 does not implement an MCP or A2A service. Read README.md and the relevant guide
 in docs/ before changing a workflow.
 

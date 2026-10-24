@@ -1,6 +1,6 @@
 {
   "name": "portable-loop-skills",
-  "version": "1.3.0-experimental",
+  "version": "1.4.0-experimental",
   "skills": [
     "loop-review",
     "loop-code",
@@ -30,7 +30,10 @@
     "loop-test-e2e",
     "loop-evaluate",
     "loop-test-adversarial",
-    "loop-test-compatibility"
+    "loop-test-compatibility",
+    "loop-mcp-design",
+    "loop-mcp-test",
+    "loop-mcp-security"
   ],
   "project_skill_roots": [
     ".github/skills",

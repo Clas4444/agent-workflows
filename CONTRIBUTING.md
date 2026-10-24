@@ -1,6 +1,6 @@
 # Contributing
 
-This repository distributes one portable set of 27 workflow skills in three
+This repository distributes one portable set of 32 workflow skills in three
 native project layouts. Contributions should improve clarity or correctness
 without changing a workflow's responsibility or silently widening its scope.
 
