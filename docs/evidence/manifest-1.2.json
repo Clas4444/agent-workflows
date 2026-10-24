@@ -1,0 +1,39 @@
+{
+  "name": "portable-loop-skills",
+  "version": "1.2.0-experimental",
+  "skills": [
+    "loop-review",
+    "loop-code",
+    "loop-diagnose",
+    "loop-diagnose-repro",
+    "loop-diagnose-performance",
+    "loop-diagnose-regression",
+    "loop-research",
+    "loop-research-repo",
+    "loop-research-tools",
+    "loop-test",
+    "loop-test-unit",
+    "loop-test-integration",
+    "loop-test-coverage",
+    "loop-docs",
+    "loop-skill-create",
+    "loop-orchestrate",
+    "loop-prompt",
+    "loop-debug",
+    "loop-security",
+    "loop-refactor",
+    "loop-ci",
+    "loop-release",
+    "loop-plan",
+    "loop-dependencies",
+    "loop-migrate",
+    "loop-test-e2e",
+    "loop-evaluate"
+  ],
+  "project_skill_roots": [
+    ".github/skills",
+    ".agents/skills",
+    ".claude/skills"
+  ],
+  "source_policy": "Edit .github/skills first, then synchronize exact copies to the other native project roots."
+}

@@ -1,0 +1,66 @@
+{
+  "planning-review": {
+    "title": "Planning, review and security",
+    "skills": [
+      "loop-plan",
+      "loop-review",
+      "loop-security",
+      "loop-evaluate"
+    ]
+  },
+  "implementation": {
+    "title": "Implementation and maintenance",
+    "skills": [
+      "loop-code",
+      "loop-refactor",
+      "loop-dependencies",
+      "loop-migrate"
+    ]
+  },
+  "diagnosis": {
+    "title": "Debugging and diagnosis",
+    "skills": [
+      "loop-debug",
+      "loop-diagnose",
+      "loop-diagnose-repro",
+      "loop-diagnose-performance",
+      "loop-diagnose-regression"
+    ]
+  },
+  "research": {
+    "title": "Research and adoption",
+    "skills": [
+      "loop-research",
+      "loop-research-repo",
+      "loop-research-tools"
+    ]
+  },
+  "verification": {
+    "title": "Testing and adversarial verification",
+    "skills": [
+      "loop-test",
+      "loop-test-unit",
+      "loop-test-integration",
+      "loop-test-coverage",
+      "loop-test-e2e",
+      "loop-test-adversarial",
+      "loop-test-compatibility"
+    ]
+  },
+  "delivery": {
+    "title": "Documentation, CI and release",
+    "skills": [
+      "loop-docs",
+      "loop-ci",
+      "loop-release"
+    ]
+  },
+  "automation": {
+    "title": "Skill authoring and agent continuation",
+    "skills": [
+      "loop-skill-create",
+      "loop-orchestrate",
+      "loop-prompt"
+    ]
+  }
+}

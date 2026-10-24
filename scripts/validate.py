@@ -11,10 +11,12 @@ from pathlib import Path
 
 
 if __package__:
+    from .catalog import check_catalog
     from .validation.manifest import DEFAULT_ROOTS, NAME_PATTERN, Manifest, load_manifest
     from .validation.skill_format import FRONTMATTER_PATTERN, frontmatter_value, check_format
     from .validation.loop_policy import REQUIRED_STATUSES, REQUIRED_SECTIONS, check_loop_policy
 else:
+    from catalog import check_catalog
     from validation.manifest import DEFAULT_ROOTS, NAME_PATTERN, Manifest, load_manifest
     from validation.skill_format import FRONTMATTER_PATTERN, frontmatter_value, check_format
     from validation.loop_policy import REQUIRED_STATUSES, REQUIRED_SECTIONS, check_loop_policy
@@ -33,6 +35,9 @@ def validate(repo: Path, profile: str = "loop") -> list[str]:
     manifest, errors = load_manifest(repo)
     if manifest is None or errors:
         return errors
+
+    if (repo / 'skill-groups.json').exists():
+        errors.extend(check_catalog(repo))
 
     for root in manifest.roots:
         root_path = repo / root

@@ -1,7 +1,8 @@
 # Repository architecture
 
 The skill catalog, runner and verification tooling have separate contracts.
-This layout does not add an agent service or change the 27 skill instructions.
+This layout keeps the catalog, runner and verification tools separate. Native
+skill directories remain flat; historical evidence is versioned independently.
 
 | Location | Responsibility |
 |---|---|
@@ -9,6 +10,7 @@ This layout does not add an agent service or change the 27 skill instructions.
 | `.agents/skills/`, `.claude/skills/` | Synchronized host layouts |
 | `scripts/run_loop.py` | Standalone continuation runner; also distributed inside two skills |
 | `scripts/validate.py` | Repository integrity checks, CLI and validation report |
+| `scripts/catalog.py`, `skill-groups.json` | Functional group coverage and generated README catalog |
 | `scripts/validation/manifest.py` | Manifest model, names, version and safe native roots |
 | `scripts/validation/skill_format.py` | Core metadata checks for the supported single-line subset |
 | `scripts/validation/loop_policy.py` | Local headings, invocation flags, examples, statuses and stop conventions |

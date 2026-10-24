@@ -28,7 +28,7 @@ def load_manifest(repo: Path) -> tuple[Manifest | None, list[str]]:
     if not isinstance(manifest, dict):
         return None, ["manifest must be a JSON object"]
     version = manifest.get("version")
-    if not isinstance(version, str) or not re.fullmatch(r"\d+\.\d+\.\d+(?:-[a-z0-9.-]+)?", version):
+    if not isinstance(version, str) or not re.fullmatch(r"[0-9]+\.[0-9]+\.[0-9]+(?:-[a-z0-9.-]+)?", version):
         errors.append("manifest version must use semantic version syntax")
     skills = manifest.get("skills")
     if not isinstance(skills, list) or not all(isinstance(item, str) for item in skills):

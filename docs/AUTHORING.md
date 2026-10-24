@@ -46,6 +46,12 @@ outside individual skill folders unless the workflow needs bundled references.
 Update the manifest when adding or removing a skill. Runtime support requires
 observed evidence in the runtime matrix, not just a matching folder structure.
 
+Assign each new skill to one functional group in `skill-groups.json`, then run
+`python scripts/catalog.py --write`. The validator checks group partition and
+generated README tables. Preserve native directory names and keep old runtime
+campaigns tied to their recorded manifest; new skills start at NOT_RUN until
+host execution is observed.
+
 The validator enforces these six sections and rejects duplicated metadata keys,
 empty/overlong descriptions, invalid invocation booleans and missing no-sleep
 policies. Contract mutation tests must modify all synchronized copies together

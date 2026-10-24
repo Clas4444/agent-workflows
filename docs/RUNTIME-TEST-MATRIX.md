@@ -7,6 +7,9 @@ completed safely.
 
 | Host | Version | Skill | Invocation | Result | Evidence |
 |---|---|---|---|---|---|
+| Revised recovery contract | not run | loop-orchestrate / loop-prompt | Authorized-root recovery wording changed | `NOT_RUN` | Old 1.2 results remain historical; see runtime-invalidations-1.3.json |
+| Native host workflow | not run | loop-test-compatibility | Structural/text contract only | `NOT_RUN` | New 1.3 skill; actual cross-host execution pending |
+| Native host workflow | not run | loop-test-adversarial | Structural/text contract only | `NOT_RUN` | New 1.3 skill; adversarial CLI tests are not model runtime evidence |
 | VS Code/Copilot | not recorded | not recorded | not recorded | `NOT_RUN` | pending |
 | Codex CLI / Windows | 0.164.0-alpha.11.1 | Original 22 at recorded revision | Explicit skill request + installed instruction read | `PASS` for bounded smoke scope | [22-skill report](CODEX-SMOKE-2026-10-24.md) |
 | Codex CLI / Windows, 1.2 | 0.164.0-alpha.11.1 | 5 new + 3 changed skills; 19 prior byte-identical cases retained separately | Explicit skill request + installed instruction read | `PASS` for recorded fixture scope; not a fresh 27-case run | [1.2 report](RUNTIME-1.2-RESULT.md) |

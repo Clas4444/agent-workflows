@@ -4,6 +4,11 @@ The validator checks the manifest, skill metadata, three-root synchronization,
 named statuses, and recognizable stop instructions. It uses only the Python
 standard library. Metadata extraction uses regular expressions for the supported
 fields; it is not a general YAML parser or a semantic safety-policy checker.
+Required name/description values must decode to non-empty strings in the
+supported subset: plain strings, YAML single quotes with doubled apostrophes,
+or double quotes with JSON-compatible escapes. Collections, typed scalars,
+unclosed quotes and unsupported YAML constructs are rejected instead of being
+coerced into text. Duplicate supported keys include whitespace before `:`.
 Report generation computes a fingerprint; validation does not compare a saved
 report's fingerprint with the current source.
 
@@ -50,7 +55,7 @@ and no-sleep rule below are project conventions, not universal Agent Skills
 format requirements. The [manifest schema](../schemas/README.md) documents
 the existing data shape without changing existing files.
 
-The expected skill count is 27. For each skill, the validator checks:
+The expected skill count is 29. For each skill, the validator checks:
 
 - `SKILL.md` exists in all three native roots;
 - frontmatter `name` matches the directory and `description` is present;
@@ -71,3 +76,18 @@ Host-runtime tests and CI remain `NOT_RUN` unless their evidence is recorded.
 validator catches broken contracts even when their hashes still match.
 `tests/test_runtime_smoke.py` checks fixture graders and quota classification
 without invoking a model. Opt-in execution is documented in RUNTIME-SMOKE.md.
+
+## Adversarial reproduction
+
+```text
+python -m unittest discover -s tests -p test_adversarial.py -v
+python scripts/adversarial_repro.py --output-dir .loop/adversarial-fresh --expect fixed
+```
+
+The output directory must be new. The reproducer runs real local validator and
+sync CLIs on disposable fixtures, including a hardlink to another fixture file
+outside the selected installation root. It does not touch personal skills,
+invoke a model or access a network. `--repo` can point to a disposable snapshot
+of an older revision; `--expect vulnerable` tests the recorded old behavior.
+A matching expectation is not a claim that an invalid fixture passed validation
+correctly. Read the per-invocation exit codes and side effects in results.json.

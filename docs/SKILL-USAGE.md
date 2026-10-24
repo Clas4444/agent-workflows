@@ -6,6 +6,9 @@ clear target and desired outcome; let the host apply its normal approval rules.
 
 ## Select a skill
 
+Browse the seven functional groups in [the grouped catalog](SKILL-GROUPS.md)
+or the README. Installation paths remain unchanged.
+
 | Skill | Use it for | Typical invocation |
 |---|---|---|
 | `loop-review` | Scope, evaluate, and report on a change or repository | `/loop-review 10m repository` |
@@ -35,6 +38,8 @@ clear target and desired outcome; let the host apply its normal approval rules.
 | `loop-migrate` | Change persisted formats with dry-run and rollback | `/loop-migrate 20m upgrade local JSON fixtures to schema v2` |
 | `loop-test-e2e` | Exercise a complete real entry-point journey | `/loop-test-e2e 15m test CLI success and invalid input` |
 | `loop-evaluate` | Score versioned workflows against a fixed rubric | `/loop-evaluate 15m compare supplied baseline and candidate outputs` |
+| `loop-test-adversarial` | Challenge declared invariants and prove false PASS results in isolated fixtures | `/loop-test-adversarial test metadata and synchronization boundaries without touching real installations` |
+| `loop-test-compatibility` | Check a declared platform/version/adapter matrix without inventing support | `/loop-test-compatibility compare available CLI entry points and mark unavailable hosts NOT_RUN` |
 
 ## Recommended sequences
 

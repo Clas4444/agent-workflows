@@ -13,6 +13,11 @@ and validation scripts; it is not a hosted service. Report:
 The runner writes captured agent output to local state and report files. Treat
 that output as sensitive until reviewed.
 
+Synchronization rejects hardlinked destination files during preflight because
+an in-place copy could overwrite another alias outside the installation root.
+This does not make synchronization safe against an attacker concurrently
+replacing paths after preflight; use a trusted, non-concurrently-mutated root.
+
 The opt-in Codex runtime harness also retains prompts, responses and generated
 fixtures. It requires explicit model-call authorization, uses workspace-write
 sandboxing and does not run in CI. Inspect summaries before publishing; keep

@@ -1,6 +1,28 @@
 # Changelog
 
+## 1.3.0-experimental — 2026-10-24
+
+- Add loop-test-compatibility for evidence-backed platform/version/adapter
+  matrices, bringing the catalog to 29 skills. Cross-host execution remains
+  distinct from structural synchronization.
+
+- Add loop-test-adversarial for contract challenges with isolated fixtures,
+  independent oracles and red-before-fix regressions; native runtime NOT_RUN.
+- Organize the 28-skill catalog into seven functional groups with exact coverage
+  and stale-table checks. Keep native installation directories unchanged.
+- Preserve the 1.2 runtime campaign against its frozen 27-skill manifest.
+- Require an authorized installation root before missing-runner recovery in
+  both continuation skills; invalidate reuse of their prior runtime results.
+- Check the advertised README count and add real CLI regeneration/compatibility
+  journeys. Review all 29 instructions with the seven testing workflows.
+
 ## Unreleased — verification architecture
+
+- Adversarial fixtures exposed false acceptance of non-string/malformed skill
+  metadata, whitespace-disguised duplicate keys and Unicode version digits.
+  Decode the supported string subset and align version digits with the schema.
+- Reject hardlinked sync destinations before any writes to avoid modifying
+  unrelated aliases. Add retained-fixture reproduction and regression tests.
 
 - Separate manifest parsing, supported skill metadata checks and Loop-specific
   policy into `scripts/validation/`, preserving the default full validation gate.

@@ -35,6 +35,12 @@ def sync(target: Path, backup: Path, check: bool = False) -> list[str]:
                 raise ValueError(f'destination escapes target: {destination}')
             if destination.exists() and not destination.is_file():
                 raise ValueError(f'destination is not a file: {destination}')
+            # copy2 overwrites the existing inode. A second hardlink may live
+            # outside the selected root even when resolve() stays inside it.
+            # Reject in preflight (including check mode), before any backups or
+            # writes, rather than silently modifying an unrelated alias.
+            if destination.is_file() and destination.stat().st_nlink > 1:
+                raise ValueError(f'hardlinked destination is not supported: {destination}')
             for parent in destination.parents:
                 if parent.exists() and not parent.is_dir():
                     raise ValueError(f'destination parent is not a directory: {parent}')

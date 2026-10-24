@@ -17,8 +17,10 @@ headless coding-agent command after the user authorizes that invocation.
 
 Resolve scripts/run_loop.py relative to this SKILL.md directory, never the
 working directory of the target project. The synchronized skill includes its
-own runner. If that file is missing, report BLOCKED and synchronize the skill
-from its source repository before running it.
+own runner. If that file is missing, report BLOCKED. Restore it only when writes
+to an explicitly selected installation root are already authorized; otherwise
+stop without modifying the installation. Authorization to invoke a runner does
+not itself authorize synchronization or overwriting installed files.
 
 ## Inputs
 

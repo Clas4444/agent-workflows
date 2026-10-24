@@ -1,0 +1,14 @@
+{
+  "loop-orchestrate": {
+    "historical_instruction_text_sha256": "069f8e5065cc0cbf2c52c5ee27ea53979fd62208f6ea7dc1bc78d2fd074721e3",
+    "current_instruction_text_sha256": "21fa4f9c358fdf4f05af70288d66b9b9640131a6324ec3c94d95c60df9f991ef",
+    "current_runtime_status": "NOT_RUN",
+    "reason": "Instruction now requires authorized writes to an explicitly selected root before missing-runner restoration. The historical execution did not test this changed recovery contract."
+  },
+  "loop-prompt": {
+    "historical_instruction_text_sha256": "3e56a07b9a992253953a312d51e3e7b07cc0b8c7580a016cfc6ed6fcdad6ad1f",
+    "current_instruction_text_sha256": "4df11c0ec466c02d2c8b654d418df5f0d323d21b9e73d13abe089fbbf88ce2b5",
+    "current_runtime_status": "NOT_RUN",
+    "reason": "Instruction now requires authorized writes to an explicitly selected root before missing-runner restoration. The historical execution did not test this changed recovery contract."
+  }
+}

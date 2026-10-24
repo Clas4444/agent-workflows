@@ -1,0 +1,245 @@
+{
+  "baseline_commit": "216cd47561b005e73b59be73c7e899fc359b908e",
+  "platform": "Windows",
+  "python": "3.12.14",
+  "scope": "Real local validator/sync CLIs, fixture hardlinks and child Python processes; no model runtime or remote CI.",
+  "before": {
+    "expectation": "vulnerable",
+    "expectation_matched": true,
+    "validator_results": [
+      {
+        "case": "description-list",
+        "profile": "loop",
+        "exit_code": 0,
+        "stdout": "PASS: structural validation",
+        "stderr": ""
+      },
+      {
+        "case": "description-list",
+        "profile": "format",
+        "exit_code": 0,
+        "stdout": "PASS: structural validation",
+        "stderr": ""
+      },
+      {
+        "case": "description-null",
+        "profile": "loop",
+        "exit_code": 0,
+        "stdout": "PASS: structural validation",
+        "stderr": ""
+      },
+      {
+        "case": "description-null",
+        "profile": "format",
+        "exit_code": 0,
+        "stdout": "PASS: structural validation",
+        "stderr": ""
+      },
+      {
+        "case": "description-bool",
+        "profile": "loop",
+        "exit_code": 0,
+        "stdout": "PASS: structural validation",
+        "stderr": ""
+      },
+      {
+        "case": "description-bool",
+        "profile": "format",
+        "exit_code": 0,
+        "stdout": "PASS: structural validation",
+        "stderr": ""
+      },
+      {
+        "case": "description-unclosed",
+        "profile": "loop",
+        "exit_code": 0,
+        "stdout": "PASS: structural validation",
+        "stderr": ""
+      },
+      {
+        "case": "description-unclosed",
+        "profile": "format",
+        "exit_code": 0,
+        "stdout": "PASS: structural validation",
+        "stderr": ""
+      },
+      {
+        "case": "unicode-version",
+        "profile": "loop",
+        "exit_code": 0,
+        "stdout": "PASS: structural validation",
+        "stderr": ""
+      },
+      {
+        "case": "unicode-version",
+        "profile": "format",
+        "exit_code": 0,
+        "stdout": "PASS: structural validation",
+        "stderr": ""
+      },
+      {
+        "case": "valid-control",
+        "profile": "loop",
+        "exit_code": 0,
+        "stdout": "PASS: structural validation",
+        "stderr": ""
+      },
+      {
+        "case": "valid-control",
+        "profile": "format",
+        "exit_code": 0,
+        "stdout": "PASS: structural validation",
+        "stderr": ""
+      }
+    ],
+    "hardlink": {
+      "link_count": 2,
+      "sync": {
+        "exit_code": 0,
+        "hardlink_rejected": false
+      },
+      "check": {
+        "exit_code": 0,
+        "hardlink_rejected": false
+      },
+      "outside_target_modified": true,
+      "backup_created": true,
+      "status": "EXECUTED"
+    },
+    "source_hashes": {
+      "scripts/validate.py": "501e025a4117a809de174e09f0e41eebf1ebc98dab6b1e8d38b063e60f152087",
+      "scripts/validation/skill_format.py": "cdfb3a82a78a464e54897edafa7f6c8976fd50b36867e114ba0f5acc60a8e510",
+      "scripts/validation/manifest.py": "2e086186a30bfa3a15b95c123697e94e5c1b713edc1809b7ad8e5d53f50c2bf8",
+      "scripts/sync_skills.py": "8d24cb9ba8e92736d74e5fdb5347fb718b424c257aadd358237c40dc7260efad"
+    }
+  },
+  "after": {
+    "expectation": "fixed",
+    "expectation_matched": true,
+    "validator_results": [
+      {
+        "case": "description-list",
+        "profile": "loop",
+        "exit_code": 1,
+        "stdout": "FAIL\n- .github\\skills\\loop-review\\SKILL.md has no description\n- .agents\\skills\\loop-review\\SKILL.md has no description\n- .claude\\skills\\loop-review\\SKILL.md has no description",
+        "stderr": ""
+      },
+      {
+        "case": "description-list",
+        "profile": "format",
+        "exit_code": 1,
+        "stdout": "FAIL\n- .github\\skills\\loop-review\\SKILL.md has no description\n- .agents\\skills\\loop-review\\SKILL.md has no description\n- .claude\\skills\\loop-review\\SKILL.md has no description",
+        "stderr": ""
+      },
+      {
+        "case": "description-null",
+        "profile": "loop",
+        "exit_code": 1,
+        "stdout": "FAIL\n- .github\\skills\\loop-review\\SKILL.md has no description\n- .agents\\skills\\loop-review\\SKILL.md has no description\n- .claude\\skills\\loop-review\\SKILL.md has no description",
+        "stderr": ""
+      },
+      {
+        "case": "description-null",
+        "profile": "format",
+        "exit_code": 1,
+        "stdout": "FAIL\n- .github\\skills\\loop-review\\SKILL.md has no description\n- .agents\\skills\\loop-review\\SKILL.md has no description\n- .claude\\skills\\loop-review\\SKILL.md has no description",
+        "stderr": ""
+      },
+      {
+        "case": "description-bool",
+        "profile": "loop",
+        "exit_code": 1,
+        "stdout": "FAIL\n- .github\\skills\\loop-review\\SKILL.md has no description\n- .agents\\skills\\loop-review\\SKILL.md has no description\n- .claude\\skills\\loop-review\\SKILL.md has no description",
+        "stderr": ""
+      },
+      {
+        "case": "description-bool",
+        "profile": "format",
+        "exit_code": 1,
+        "stdout": "FAIL\n- .github\\skills\\loop-review\\SKILL.md has no description\n- .agents\\skills\\loop-review\\SKILL.md has no description\n- .claude\\skills\\loop-review\\SKILL.md has no description",
+        "stderr": ""
+      },
+      {
+        "case": "description-unclosed",
+        "profile": "loop",
+        "exit_code": 1,
+        "stdout": "FAIL\n- .github\\skills\\loop-review\\SKILL.md has no description\n- .agents\\skills\\loop-review\\SKILL.md has no description\n- .claude\\skills\\loop-review\\SKILL.md has no description",
+        "stderr": ""
+      },
+      {
+        "case": "description-unclosed",
+        "profile": "format",
+        "exit_code": 1,
+        "stdout": "FAIL\n- .github\\skills\\loop-review\\SKILL.md has no description\n- .agents\\skills\\loop-review\\SKILL.md has no description\n- .claude\\skills\\loop-review\\SKILL.md has no description",
+        "stderr": ""
+      },
+      {
+        "case": "unicode-version",
+        "profile": "loop",
+        "exit_code": 1,
+        "stdout": "FAIL\n- manifest version must use semantic version syntax",
+        "stderr": ""
+      },
+      {
+        "case": "unicode-version",
+        "profile": "format",
+        "exit_code": 1,
+        "stdout": "FAIL\n- manifest version must use semantic version syntax",
+        "stderr": ""
+      },
+      {
+        "case": "valid-control",
+        "profile": "loop",
+        "exit_code": 0,
+        "stdout": "PASS: structural validation",
+        "stderr": ""
+      },
+      {
+        "case": "valid-control",
+        "profile": "format",
+        "exit_code": 0,
+        "stdout": "PASS: structural validation",
+        "stderr": ""
+      }
+    ],
+    "hardlink": {
+      "link_count": 2,
+      "sync": {
+        "exit_code": 1,
+        "hardlink_rejected": true
+      },
+      "check": {
+        "exit_code": 1,
+        "hardlink_rejected": true
+      },
+      "outside_target_modified": false,
+      "backup_created": false,
+      "status": "EXECUTED"
+    },
+    "source_hashes": {
+      "scripts/validate.py": "239597affa7543fc32d0f4a05c37550b7c0d300d818b04cf896aae8d4865d98d",
+      "scripts/validation/skill_format.py": "33dd770ce80312f9b3ef26dba3b29079fd8afeb335d4ef869527db3438119da2",
+      "scripts/validation/manifest.py": "c0d5a0180c8b88dd2f894334693d4d6ec7e960034c4545f01f7b4077ec3ba0b6",
+      "scripts/sync_skills.py": "774e5388615631c33935aac3ffb88220927f31c2e1926076c5f395a6e0e1b7ae"
+    }
+  },
+  "tests": {
+    "baseline": {
+      "count": 101,
+      "seconds": 10.004
+    },
+    "initial_red": {
+      "count": 8,
+      "failures_and_subtest_failures": 12
+    },
+    "hardlink_red": {
+      "count": 9,
+      "failures_and_subtest_failures": 3
+    },
+    "final": {
+      "count": 112,
+      "seconds": 14.66
+    }
+  },
+  "reproducer_sha256": "05b4d63cc6eb6ca18f73667862ea93ac821a8a38f64e78c320268328b37726b6"
+}

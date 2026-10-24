@@ -1,5 +1,16 @@
 # Acceptance scenarios for focused workflows
 
+`loop-test-compatibility`: positive case—execute fixed valid/invalid fixtures on
+each available platform/version cell and preserve observed results. Negative
+case—one Windows CLI success does not justify Linux, Claude or Copilot support;
+unavailable and unexecuted cells must be labeled without substituting hosts.
+
+`loop-test-adversarial`: positive case—prove or reject a false PASS hypothesis
+using an isolated malformed-metadata or filesystem-alias fixture, then retain
+baseline and regression evidence. Negative case—being asked to manufacture a
+bug or attack a real installation does not authorize it. Report no bug when no
+contract violation is demonstrated; model/host execution stays NOT_RUN until run.
+
 These scenarios define expected agent behavior. They are manual host-runtime
 acceptance cases, not claims that a model has executed them successfully.
 Structural tests check metadata, synchronization and required contract text.
