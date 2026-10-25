@@ -1,0 +1,12 @@
+{
+  "algorithm": "sha256",
+  "scope": "Published observations, replay script and explanation; self excluded. Not authenticated execution attestation.",
+  "files": {
+    "all-payloads.json": "ff251931a4b79947a0ca34af116275709e9769b8d2d67d0bbbbf5fe8ee883f05",
+    "bundle-upgrades.json": "337f573839e55dcd7f0b7e4db5c171ea866935414cf4fc3c0052724c60546db3",
+    "installed-timeouts.json": "586b6a07095a116a62d8030ae4dd1b936fc7f0acef960922efc0254c8c5e2d9e",
+    "observed-ci-matrix.json": "04d4fb09cc8c3b59478189cd27482113c8c18a481f28c0c7fe40bccea1ef1226",
+    "README.md": "43bcd7bb47940b7a3d5c092b617345253abd48025693b2daada5e559a110233c",
+    "replay_all_payloads.py": "355e2b400930a9f8f0cc22e008a841cb97f8f48bd9cfded444defd76cfd2f9d1"
+  }
+}

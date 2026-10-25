@@ -1,8 +1,9 @@
-# Autonomous improvement session, 2026-10-25 (IN PROGRESS)
+# Autonomous improvement session, 2026-10-25
 
 Session `autonomous-3h-20261025T092231Z` starts at **09:22:31 UTC** and is scoped
 through **12:22:31 UTC**. Base `d5953f54717d0213a9f3d110cac2c46a7db483ad`, clean.
-This is an ongoing work ledger, not completion of the three-hour session.
+This report retains chronological checkpoints and their original scope.
+The final release receipt records the actual closing time and exact-head CI.
 Batch release checkpoints are recorded below; current-session raw evidence stays
 in `.loop/`. Exact commit/CI receipts are retained outside the self-referential
 release report and summarized in the final session update.
@@ -395,3 +396,99 @@ privilege skip and unchanged pins. [3.12 export](sessions/autonomous-3h-research
 indexes, historical invalidations and native instruction/resource copies passed.
 The next publication step compares these input pins with actual committed blobs
 before push, then checks exact-head CI; this is still a session checkpoint.
+
+## Final installation, CI and self-assessment checkpoint
+
+The 1.9.4 head `d4afbcd94f888667f5fcb0a4e7ddd7aece629c28` passed all four
+[exact-head CI jobs](https://github.com/Clas4444/loop-skills-repository/actions/runs/40190207867).
+Actual downloaded job logs show 305/305 PASS on both Windows jobs; Ubuntu has
+303 PASS plus two explicitly Windows-only skips. This resolves the earlier local
+file-symlink privilege gap for CI Windows, without claiming local execution.
+The final research-export pins were compared with all 513 committed input blobs:
+zero mismatches. Source and public evidence were clean at that checkpoint.
+
+Fresh disposable upgrades exercised all twelve bundles using original base Git
+payloads and the current real installer/check/doctor CLIs. All succeeded; every
+actual overwrite backup retained exact original bytes, and custom/unrelated files
+were preserved. Six separately installed continuation runners were invoked outside
+the checkout; all descendants started, all timeouts were nonzero/BLOCKED, and no
+late-write marker appeared within six seconds. These are installed CLI checks,
+not native activation or model-runtime tests. Compact scope-limited observations
+are [published here](../evidence/autonomous-3h-20261025/final-checks/).
+
+Self-assessment: keep the 49-skill catalog rather than add names to fill time.
+Two research leaves were upgraded with current-source checks and evidence-boundary
+instructions. Confirmed defects repaired during this session include descendant
+lifecycle/reader leaks, false-PASS arithmetic grading, backup-path alias corruption
+and the newly introduced Windows full-width exit compatibility regression. New
+features and development failures remain distinguished from base defects above.
+The read-only installation doctor and published-evidence gate close specific
+observability gaps; neither proves native runtime behavior.
+
+Actual model evidence is one two-stage handoff trial and two different research
+leaf exercises (one trial each), plus a capability preflight. They are not clean
+A/B trials and do not establish superiority or population reliability. Explicit
+instruction loading was used. The host's global metadata-budget warning prompted
+an installation-guide clarification, not deletion or rewriting of personal skills.
+The dated global diagnosis above is not refreshed or relabeled as a current count.
+
+Remaining limits: native discovery and behavioral coverage of all 49 skills are
+NOT_RUN; macOS and real connector workflows are NOT_RUN. The ordinary process-tree
+contract excludes escaped POSIX sessions, external jobs and abrupt host failure.
+The separate smoke harness has its own direct-child lifecycle limits. Backup
+preflight is not a filesystem lock, atomic transaction or automatic rollback.
+Hashes prove recorded byte identity, not authenticated execution. Finite arithmetic
+and artifact oracles cannot establish safety of arbitrary adversarial code. Model
+monetary cost is NOT_VERIFIED. The measured launcher overhead (about 50 ms in the
+paired short-command trial) is a concrete tradeoff, not a universal benchmark.
+
+Time accounting: work began at 09:22:31 UTC with a 12:22:31 UTC bound. A quota /
+automatic-review usage interruption occurred around 11:00-11:15, followed by the
+user's explicit request to resume. This is not three uninterrupted active hours.
+Final gate, publication and closing-time receipts follow separately; this ledger
+retains earlier checkpoints at their original scope instead of rewriting history.
+
+### Closing coverage gap: bundles do not cover all skill installations
+
+The twelve bundle union contains 25/49 skills, so its successful upgrade campaign
+could not justify a whole-catalog installation claim. A further frozen replay
+script independently enumerated all 49 instructions plus nine resource payloads.
+In each of three fresh layout fixtures it forced drift in all 58 managed files,
+verified check/doctor rejected the drift, ran the real installer, compared all
+installed bytes and all original backup bytes, checked CURRENT and ran a second
+idempotent install with no backup. Custom/unrelated sentinels were preserved.
+All three fixtures passed: 174 actual payload overwrite/backup comparisons.
+The [replay and source hashes](../evidence/autonomous-3h-20261025/final-checks/)
+are public; raw command logs remain private. This closes an installer-coverage gap,
+not native activation or behavioral testing for all 49 skills. No new defect was
+found by this sweep and no production code was changed to manufacture one.
+
+The first closure local/export campaigns passed thirteen gates but predate this
+additional replay publication. They remain historical checkpoints; new final
+export pins must cover the added script, summaries and byte index.
+
+## Final release verification
+
+Both final Git-export campaigns passed **13/13 gates** on Python 3.12 and 3.14,
+each discovering **305 tests: 304 PASS, one local Windows file-symlink privilege
+SKIP**. Reports: [3.12 final](sessions/autonomous-3h-final-export-312.json),
+[3.14 final](sessions/autonomous-3h-final-export-314.json). These supersede the
+closure checkpoints for current release-byte validation, without erasing them.
+The 520-file verification input pin stayed unchanged and was compared against
+staged Git blobs before commit. Session report prose and its report JSON files
+are outside that declared pin to avoid self-reference.
+
+A bounded publication scan found no personal-home/credential patterns in the
+session evidence, including all 20 entries of both raw ZIPs, and no unsafe archive
+member names. This is not an exhaustive secret detector. Original retained ZIP
+artifacts independently regraded with no errors for handoff stage 2 and both
+research leaves; the twelve frozen handoff controls also passed. Two restricted
+control attempts could not create the Windows hardlink fixture (WinError 5); the
+successful rerun used the same authorized Windows link-test permissions as the
+full suite. No historical model call was counted again as a fresh execution.
+
+Final commit, push, clean-tree observation and new-head CI are recorded in the
+external release receipt under `C:/Code/Markdown`, because a document cannot embed
+its own future commit hash. Earlier exact-head CI remains attributed to its actual
+SHA. The closing receipt also records the actual elapsed span and quota interruption;
+no uninterrupted three-hour active-time claim is made.

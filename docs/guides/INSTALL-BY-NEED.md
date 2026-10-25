@@ -138,6 +138,23 @@ discovery as BLOCKED/NOT_RUN and check the path and host configuration. A succes
 file-copy check is not proof of activation. See [everyday examples](EVERYDAY-WORK.md)
 and the [runtime matrix](../RUNTIME-TEST-MATRIX.md).
 
+## When a host omits installed skills
+
+A host can omit skill descriptions when its metadata/context budget is exceeded.
+In the 2026-10-25 Codex CLI exercises, the existing global installation emitted
+budget warnings and reported 372 omitted skills. That is an observation from this
+host configuration, not a universal Codex limit or proof that a selected skill was
+activated. Read-only doctor results still describe files only.
+
+Start with the smallest bundle needed for the task and inspect the fresh host's
+actual available names and paths. Check the host's documented precedence if both
+project and global installations exist; adding project copies alone may not reduce
+an oversized global catalog. Do not delete personal skills automatically. If the
+host supports explicitly reading an instruction file, record that as explicit
+loading, then verify the resulting artifacts separately from native discovery.
+See the [session evidence](../testing/AUTONOMOUS-3H-2026-10-25.md) for the observed
+configuration and limits.
+
 ## Supporting files and recovery
 
 Keep the entire selected folder when copying manually. Managed resources are listed in `skill-resources.json`; matching SKILL.md alone does not prove a complete install. Repository-native copies require the same managed inventory, while the installer preserves unrelated custom files. A failed or partial operation needs inspection of actual state; backups are recovery inputs, not automatic permission to overwrite newer work.

@@ -1,0 +1,52 @@
+{
+  "head_sha": "d4afbcd94f888667f5fcb0a4e7ddd7aece629c28",
+  "run_id": 40190207867,
+  "url": "https://github.com/Clas4444/loop-skills-repository/actions/runs/40190207867",
+  "observed_at": "2026-10-25T11:52:59.150983+00:00",
+  "jobs": [
+    {
+      "job_id": 121159387618,
+      "name": "structural-validation (ubuntu-latest, 3.11)",
+      "conclusion": "success",
+      "unit_discovered": 305,
+      "unit_summary": "OK (skipped=2)",
+      "skip_details": [
+        "test_assignment_failure_does_not_launch_target (test_process_lifecycle.ProcessLifecycleTests.test_assignment_failure_does_not_launch_target) ... skipped 'Windows job assignment boundary'",
+        "test_windows_full_width_exit_code_matches_direct_process (test_process_lifecycle.ProcessLifecycleTests.test_windows_full_width_exit_code_matches_direct_process) ... skipped 'Windows DWORD exit-code propagation'"
+      ],
+      "raw_private_log_sha256": "f5a26dbccbcba55b96a9b550bd9fd8899771bed71332102ad2209ae60f08fc90"
+    },
+    {
+      "job_id": 121159387762,
+      "name": "structural-validation (windows-latest, 3.12)",
+      "conclusion": "success",
+      "unit_discovered": 305,
+      "unit_summary": "OK",
+      "skip_details": [],
+      "raw_private_log_sha256": "b5063de52713b3c15e672696e4ec67e5f034fbc16d386f6b71495a39b29bc32b"
+    },
+    {
+      "job_id": 121159387769,
+      "name": "structural-validation (windows-latest, 3.11)",
+      "conclusion": "success",
+      "unit_discovered": 305,
+      "unit_summary": "OK",
+      "skip_details": [],
+      "raw_private_log_sha256": "2038ef6d42ae49e198f2d9f139150db67c5a5baeb6be5bc74ab4528f1239059d"
+    },
+    {
+      "job_id": 121159387795,
+      "name": "structural-validation (ubuntu-latest, 3.12)",
+      "conclusion": "success",
+      "unit_discovered": 305,
+      "unit_summary": "OK (skipped=2)",
+      "skip_details": [
+        "test_assignment_failure_does_not_launch_target (test_process_lifecycle.ProcessLifecycleTests.test_assignment_failure_does_not_launch_target) ... skipped 'Windows job assignment boundary'",
+        "test_windows_full_width_exit_code_matches_direct_process (test_process_lifecycle.ProcessLifecycleTests.test_windows_full_width_exit_code_matches_direct_process) ... skipped 'Windows DWORD exit-code propagation'"
+      ],
+      "raw_private_log_sha256": "aba210232e7f7b80984fca7e32120801d1e09064ba8cd84e69cfdcf6c89111d1"
+    }
+  ],
+  "scope": "Actual exact-head CI job logs; private raw logs retained, only bounded unit summaries and skip reasons published. Credential stays in memory and is never forwarded to signed-log storage.",
+  "status": "PASS"
+}

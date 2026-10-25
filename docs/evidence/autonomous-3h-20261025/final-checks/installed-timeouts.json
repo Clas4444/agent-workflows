@@ -1,0 +1,63 @@
+{
+  "session_id": "autonomous-3h-20261025T092231Z",
+  "observed_at": "2026-10-25T11:49:10.904397+00:00",
+  "scope": "Six separately installed runner payloads, invoked with Python -I -B outside the checkout. Layout labels identify maintained file layouts, not native host activation. Each descendant started; no marker appeared during the six-second observation window after a one-second runner timeout. No model calls.",
+  "results": [
+    {
+      "layout_label": "agents",
+      "skill": "loop-prompt",
+      "exit_code": 1,
+      "final_status": "BLOCKED",
+      "descendant_started": true,
+      "seconds": 1.141,
+      "post_timeout_write": false
+    },
+    {
+      "layout_label": "agents",
+      "skill": "loop-orchestrate",
+      "exit_code": 1,
+      "final_status": "BLOCKED",
+      "descendant_started": true,
+      "seconds": 1.141,
+      "post_timeout_write": false
+    },
+    {
+      "layout_label": "github",
+      "skill": "loop-prompt",
+      "exit_code": 1,
+      "final_status": "BLOCKED",
+      "descendant_started": true,
+      "seconds": 1.141,
+      "post_timeout_write": false
+    },
+    {
+      "layout_label": "github",
+      "skill": "loop-orchestrate",
+      "exit_code": 1,
+      "final_status": "BLOCKED",
+      "descendant_started": true,
+      "seconds": 1.125,
+      "post_timeout_write": false
+    },
+    {
+      "layout_label": "claude",
+      "skill": "loop-prompt",
+      "exit_code": 1,
+      "final_status": "BLOCKED",
+      "descendant_started": true,
+      "seconds": 1.125,
+      "post_timeout_write": false
+    },
+    {
+      "layout_label": "claude",
+      "skill": "loop-orchestrate",
+      "exit_code": 1,
+      "final_status": "BLOCKED",
+      "descendant_started": true,
+      "seconds": 1.125,
+      "post_timeout_write": false
+    }
+  ],
+  "status": "PASS",
+  "native_discovery": "NOT_RUN"
+}
