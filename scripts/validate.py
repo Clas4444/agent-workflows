@@ -59,8 +59,12 @@ def validate(repo: Path, profile: str = "loop") -> list[str]:
                 errors.append(f"missing {path.relative_to(repo)}")
                 continue
 
-            text = path.read_text(encoding="utf-8")
             label = str(path.relative_to(repo))
+            try:
+                text = path.read_text(encoding="utf-8")
+            except (OSError, UnicodeError) as exc:
+                errors.append(f"{label} cannot read UTF-8 instruction: {exc}")
+                continue
             errors.extend(check_format(text, skill, label))
             if profile == "loop":
                 errors.extend(check_loop_policy(text, skill, label))

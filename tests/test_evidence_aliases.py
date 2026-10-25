@@ -9,11 +9,45 @@ import tempfile
 import unittest
 from unittest import mock
 
-from scripts.run_loop import run_loop
+from scripts.run_loop import run_loop,run_batch
 from scripts.sync_skills import sync
 
 
 class EvidenceAliasTests(unittest.TestCase):
+    def test_child_created_batch_summary_alias_is_not_overwritten(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root=Path(directory); summary=root/'summary.json'; report=root/'summary.md'
+            summary.write_bytes(b'keep summary')
+            child_code="import os; os.link("+repr(str(summary))+','+repr(str(report))+"); print('LOOP_STATUS: PASS')"
+            args=Namespace(command=[sys.executable,'-c',child_code],max_iterations=1,
+                timeout_seconds=3,batch_dir=str(root),self_prompt=False)
+            self.assertEqual(run_batch(args,['review']),1)
+            self.assertEqual(summary.read_bytes(),b'keep summary')
+            self.assertEqual(report.read_bytes(),b'keep summary')
+            self.assertEqual(json.loads((root/'prompt-001.json').read_text(encoding='utf-8'))['final_status'],'PASS')
+
+    def test_batch_summary_hardlinks_rejected_before_any_child(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root=Path(directory); summary=root/'summary.json'; report=root/'summary.md'
+            summary.write_bytes(b'preserve summary'); os.link(summary,report)
+            args=Namespace(command=['must-not-execute'],max_iterations=1,timeout_seconds=3,
+                batch_dir=str(root),self_prompt=False)
+            with mock.patch('scripts.run_loop._run_command',return_value=('done',0,'digest','LOOP_STATUS: PASS','')) as child:
+                with self.assertRaisesRegex(ValueError,'hardlink|alias|same file'):
+                    run_batch(args,['review'])
+                child.assert_not_called()
+            self.assertEqual(summary.read_bytes(),b'preserve summary')
+
+    def test_batch_summary_link_to_unrelated_file_is_preserved(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root=Path(directory); unrelated=root/'retained.txt'; unrelated.write_bytes(b'keep this')
+            os.link(unrelated,root/'summary.json')
+            args=Namespace(command=[sys.executable,'-c',"print('LOOP_STATUS: PASS')"],
+                max_iterations=1,timeout_seconds=3,batch_dir=str(root),self_prompt=False)
+            with self.assertRaisesRegex(ValueError,'hardlink|alias|same file'):
+                run_batch(args,['review'])
+            self.assertEqual(unrelated.read_bytes(),b'keep this')
+
     def test_sync_rejects_internal_file_symlink_before_touching_unrelated_skill(self):
         with tempfile.TemporaryDirectory() as directory:
             root=Path(directory)

@@ -16,6 +16,14 @@ unclosed quotes and unsupported YAML constructs are rejected instead of being
 coerced into text. Duplicate supported keys include whitespace before `:`.
 Report generation computes a fingerprint; validation does not compare a saved
 report's fingerprint with the current source.
+Unreadable or invalid UTF-8 skill files produce per-file FAIL findings rather
+than an uncaught decoder traceback; later copies are still checked.
+
+Control-plane JSON readers share a duplicate-key policy: decoded keys must be
+unique at every object depth, including escape-equivalent spellings. The
+nonstandard NaN/Infinity literals are rejected. Quoted strings with those names
+remain ordinary strings. This is input-policy hardening, not a general JSON
+Schema engine or a cryptographic canonicalization format.
 
 Plain `-`/`?` indicators followed by separation are rejected; quoted literals and
 safe prefixes such as `-item` remain valid. The manifest version follows

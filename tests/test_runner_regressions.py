@@ -13,6 +13,22 @@ from scripts.run_loop import _StreamResult, _run_command, _write_stdin, run_loop
 
 
 class RunnerRegressionTests(unittest.TestCase):
+    def test_all_bundled_runners_work_without_repository_imports(self):
+        repo=Path(__file__).resolve().parents[1]
+        with tempfile.TemporaryDirectory() as directory:
+            root=Path(directory)
+            for native in ('.github/skills','.agents/skills','.claude/skills'):
+                for skill in ('loop-orchestrate','loop-prompt'):
+                    with self.subTest(native=native,skill=skill):
+                        folder=root/(native.split('/')[0]+skill);folder.mkdir()
+                        runner=repo/native/skill/'scripts/run_loop.py'
+                        completed=subprocess.run([sys.executable,'-I',str(runner),'--prompt','isolated bundled runner',
+                            '--max-iterations','1','--timeout-seconds','5','--state-file',str(folder/'state.json'),
+                            '--report-file',str(folder/'report.md'),'--',sys.executable,'-I','-c',"print('LOOP_STATUS: PASS')"],
+                            cwd=folder,capture_output=True,timeout=10)
+                        self.assertEqual(completed.returncode,0,completed.stderr)
+                        self.assertEqual(json.loads((folder/'state.json').read_text(encoding='utf-8'))['final_status'],'PASS')
+
     def test_report_failure_marks_saved_state_failed(self):
         with tempfile.TemporaryDirectory() as directory:
             state, report = Path(directory) / 'state.json', Path(directory) / 'report.md'

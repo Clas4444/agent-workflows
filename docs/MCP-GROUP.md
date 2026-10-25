@@ -82,6 +82,15 @@ a new subdirectory; it never invokes a model itself.
 Review a checker before replaying it: the grader executes local Python and is
 not a sandbox for arbitrary downloaded or model-generated programs.
 
+The hardened grader is specifically tied to the three public fixture inputs.
+It derives their expected hashes from `tests/fixtures/mcp-offline`, requires the
+fixture hash manifest to match that baseline exactly, and never reads arbitrary
+paths from a supplied manifest. An empty map is not evidence of preservation.
+It rechecks inputs, the manifest and checker bytes after verification. Prepare
+a fresh copy of the current public fixture before replay; this does not silently
+certify arbitrary custom corpora or retrofit old executions with stronger proof.
+JSON input/output uses the shared duplicate-key/non-finite-literal policy.
+
 ## Limits and ownership
 
 This is a **synthetic sum-tool acceptance subset**, not full MCP envelope,

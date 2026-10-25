@@ -11,8 +11,10 @@ from pathlib import Path
 
 if __package__:
     from .smoke_cases import NEW_SKILLS, SMOKE_SKILLS, TASKS, prepare, snapshot, grade
+    from .validation.json_data import loads_json
 else:
     from smoke_cases import NEW_SKILLS, SMOKE_SKILLS, TASKS, prepare, snapshot, grade
+    from validation.json_data import loads_json
 
 def classify(returncode: int, log: str, response: dict) -> str:
     if 'usage limit' in log.lower() or 'rate limit' in log.lower():
@@ -25,9 +27,12 @@ def classify(returncode: int, log: str, response: dict) -> str:
 def parse_response(text: str) -> dict:
     text=text.strip()
     if text.startswith('```'):
-        text='\n'.join(text.splitlines()[1:-1])
+        lines=text.splitlines()
+        if len(lines)<3 or lines[0].strip().lower() not in ('```','```json') or lines[-1].strip()!='```':
+            return {}
+        text='\n'.join(lines[1:-1])
     try:
-        value=json.loads(text)
+        value=loads_json(text)
         return value if isinstance(value,dict) else {}
     except ValueError:
         return {}

@@ -14,6 +14,7 @@ skill directories remain flat; historical evidence is versioned independently.
 | `scripts/catalog.py`, `skill-groups.json` | Functional group coverage and generated README catalog |
 | `scripts/routing_check.py`, `skill-routing.json` | Per-skill decisions, overlap review and fixed primary-route cases |
 | `scripts/validation/manifest.py` | Manifest model, names, version and safe native roots |
+| `scripts/validation/json_data.py` | Shared strict JSON input: reject duplicate decoded keys and NaN/Infinity literals |
 | `scripts/validation/skill_format.py` | Core metadata checks for the supported single-line subset |
 | `scripts/validation/loop_policy.py` | Local headings, invocation flags, examples, statuses and stop conventions |
 | `scripts/sync_skills.py` | Explicit-root synchronization, preflight and backups |

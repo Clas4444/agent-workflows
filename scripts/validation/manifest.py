@@ -1,8 +1,8 @@
 """Manifest parsing and repository path policy (not Agent Skills metadata)."""
-import json
 import re
 from dataclasses import dataclass
 from pathlib import Path
+from .json_data import loads_json
 
 DEFAULT_ROOTS = (".github/skills", ".agents/skills", ".claude/skills")
 NAME_PATTERN = re.compile(r"(?=.{1,64}$)[a-z0-9]+(?:-[a-z0-9]+)*$")
@@ -28,8 +28,8 @@ def load_manifest(repo: Path) -> tuple[Manifest | None, list[str]]:
         return None, ["missing skills-manifest.json"]
 
     try:
-        manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
-    except (OSError, json.JSONDecodeError) as exc:
+        manifest = loads_json(manifest_path.read_text(encoding="utf-8"))
+    except (OSError, ValueError) as exc:
         return None, [f"invalid skills-manifest.json: {exc}"]
 
     if not isinstance(manifest, dict):

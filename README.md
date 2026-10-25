@@ -20,6 +20,8 @@ See [upgrade verification](docs/ACCEPTANCE-2026-10-25.md) for the isolated CLI
 experiments, fingerprint regression and runtime limitations.
 The [30-minute hardening report](docs/UPDATE-30M-2026-10-25.md) records subsequent
 runner, synchronization, metadata and grading regressions with before/after evidence.
+The [post-push review](docs/POSTPUSH-2026-10-25.md) covers batch summaries,
+immutable inputs, artifact identity and shared JSON policy with full-suite results.
 
 > **Experimental · 1.5.0-experimental.** Shared instructions and matching files
 > do not guarantee identical behavior across Codex, Copilot and Claude Code.

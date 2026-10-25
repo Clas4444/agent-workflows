@@ -61,6 +61,36 @@ class McpSmokeGraderTests(unittest.TestCase):
         (self.folder/'protected.txt').write_text('changed', encoding='utf-8')
         self.assertFalse(grade(self.folder)['inputs_preserved'])
 
+    def test_empty_hash_manifest_cannot_hide_a_changed_protected_input(self):
+        (self.folder/'check_cases.py').write_text(SCORER,encoding='utf-8')
+        (self.folder/'protected.txt').write_text('changed',encoding='utf-8')
+        (self.folder/'input-hashes.json').write_text('{}',encoding='utf-8')
+        self.assertFalse(all(grade(self.folder).values()))
+
+    def test_checker_cannot_mutate_protected_file_during_verification(self):
+        code=SCORER+"Path(__file__).with_name('protected.txt').write_text('changed',encoding='utf-8')\n"
+        (self.folder/'check_cases.py').write_text(code,encoding='utf-8')
+        self.assertFalse(all(grade(self.folder).values()))
+
+    def test_untrusted_hash_paths_do_not_authorize_reading_outside_fixture(self):
+        (self.folder/'check_cases.py').write_text("raise RuntimeError('must not execute')\n",encoding='utf-8')
+        (self.folder/'input-hashes.json').write_text(json.dumps({'../outside.txt':'0'*64}),encoding='utf-8')
+        checks=grade(self.folder)
+        self.assertFalse(checks['hash_manifest_matches_baseline'])
+        self.assertFalse((self.folder/'independent-1').exists())
+
+    def test_deleted_hash_manifest_is_reported_as_failed_observation(self):
+        code=SCORER+"Path(__file__).with_name('input-hashes.json').unlink(missing_ok=True)\n"
+        (self.folder/'check_cases.py').write_text(code,encoding='utf-8')
+        checks=grade(self.folder)
+        self.assertFalse(checks['hash_manifest_preserved_after_verification'])
+        self.assertIn('varied_computed_results',checks)
+
+    def test_checker_source_cannot_change_between_nominal_and_varied_checks(self):
+        code=SCORER+"p=Path(__file__); p.write_text(p.read_text(encoding='utf-8')+'\\n# drift\\n',encoding='utf-8')\n"
+        (self.folder/'check_cases.py').write_text(code,encoding='utf-8')
+        self.assertFalse(all(grade(self.folder).values()))
+
     def test_empty_output_cannot_pass(self):
         (self.folder/'check_cases.py').write_text('pass\n', encoding='utf-8')
         checks = grade(self.folder)

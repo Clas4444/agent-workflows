@@ -8,6 +8,11 @@ import stat
 from datetime import datetime, timezone
 from pathlib import Path
 
+if __package__:
+    from .validation.json_data import loads_json
+else:
+    from validation.json_data import loads_json
+
 REPO = Path(__file__).resolve().parents[1]
 
 
@@ -27,7 +32,7 @@ def reject_destination_aliases(destination: Path, target: Path) -> None:
 
 
 def sync(target: Path, backup: Path, check: bool = False) -> list[str]:
-    manifest = json.loads((REPO / 'skills-manifest.json').read_text(encoding='utf-8'))
+    manifest = loads_json((REPO / 'skills-manifest.json').read_text(encoding='utf-8'))
     names = manifest.get('skills') if isinstance(manifest, dict) else None
     if (not isinstance(names, list) or not names
             or any(not isinstance(name, str) or not re.fullmatch(r'[a-z0-9]+(?:-[a-z0-9]+)*', name)

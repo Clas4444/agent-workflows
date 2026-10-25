@@ -406,6 +406,8 @@ def run_loop(args: argparse.Namespace) -> int:
 
 def run_batch(args: argparse.Namespace, prompts: list[str]) -> int:
     batch_dir = Path(args.batch_dir)
+    summary_path, summary_report = batch_dir / 'summary.json', batch_dir / 'summary.md'
+    _check_evidence_paths(summary_path, summary_report)
     batch_dir.mkdir(parents=True, exist_ok=True)
     results = []
     for index, prompt in enumerate(prompts, start=1):
@@ -438,8 +440,13 @@ def run_batch(args: argparse.Namespace, prompts: list[str]) -> int:
         "results": results,
         "final_status": "PASS" if results and all(item["status"] == "PASS" and item["exit_code"] == 0 for item in results) else "FAIL",
     }
-    (batch_dir / "summary.json").write_text(json.dumps(summary, indent=2) + "\n", encoding="utf-8")
-    (batch_dir / "summary.md").write_text(
+    try:
+        _check_evidence_paths(summary_path, summary_report)
+    except (OSError, ValueError) as exc:
+        print(f"unsafe batch summary destination after invocation: {exc}", file=sys.stderr)
+        return 1
+    summary_path.write_text(json.dumps(summary, indent=2) + "\n", encoding="utf-8")
+    summary_report.write_text(
         "# Loop Batch Report\n\n"
         f"- Prompt count: `{summary['prompt_count']}`\n"
         f"- Final status: `{summary['final_status']}`\n\n"

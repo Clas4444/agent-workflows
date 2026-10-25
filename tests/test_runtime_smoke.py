@@ -63,6 +63,22 @@ class RuntimeSmokeTests(unittest.TestCase):
         self.assertEqual(parse_response('bad json'),{})
         self.assertEqual(parse_response('```json\n{"status":"PASS"}\n```'),{'status':'PASS'})
 
+    def test_response_fence_must_be_closed_not_discard_arbitrary_last_line(self):
+        self.assertEqual(parse_response('```json\n{"status":"PASS"}\nnot a closing fence'),{})
+        self.assertEqual(parse_response('```unsupported\n{"status":"PASS"}\n```'),{})
+
+    def test_ambiguous_response_keys_and_nonfinite_json_are_rejected(self):
+        self.assertEqual(parse_response('{"status":"FAIL","status":"PASS"}'),{})
+        self.assertEqual(parse_response('{"status":"PASS","score":NaN}'),{})
+
+    def test_missing_source_artifact_is_a_failed_grade_not_an_exception(self):
+        with tempfile.TemporaryDirectory() as temp:
+            folder=Path(temp)/'case';prepare(folder,'loop-plan');before=snapshot(folder)
+            (folder/'plan.md').write_text('Acceptance; out of scope; batches; verification; rollback',encoding='utf-8')
+            (folder/'calc.py').unlink()
+            result=grade(folder,'loop-plan',before)
+            self.assertFalse(all(result.values()))
+
     def test_cli_requires_explicit_model_authorization(self):
         script=Path(__file__).resolve().parents[1]/'scripts/runtime_smoke.py'
         result=subprocess.run([sys.executable,str(script),'--skill-root','.','--output-dir','unused'],capture_output=True,timeout=15)

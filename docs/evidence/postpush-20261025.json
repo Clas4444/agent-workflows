@@ -1,0 +1,304 @@
+{
+  "date": "2026-10-25",
+  "phase_started_at": "2026-10-25T02:42:32Z",
+  "phase_finished_at": "2026-10-25T03:12:42.707255+00:00",
+  "elapsed_seconds": 1810.707,
+  "base_commit": "055a74cf373ddf4edf357bbfabb8fe5c620ed4bf",
+  "first_push_ci": {
+    "commit": "055a74cf373ddf4edf357bbfabb8fe5c620ed4bf",
+    "run_id": 40155472695,
+    "jobs": [
+      {
+        "id": 121055839469,
+        "name": "structural-validation (ubuntu-latest, 3.11)",
+        "conclusion": "success",
+        "tests_step": [
+          "success"
+        ]
+      },
+      {
+        "id": 121055839707,
+        "name": "structural-validation (ubuntu-latest, 3.12)",
+        "conclusion": "success",
+        "tests_step": [
+          "success"
+        ]
+      },
+      {
+        "id": 121055839722,
+        "name": "structural-validation (windows-latest, 3.12)",
+        "conclusion": "success",
+        "tests_step": [
+          "success"
+        ]
+      },
+      {
+        "id": 121055839800,
+        "name": "structural-validation (windows-latest, 3.11)",
+        "conclusion": "success",
+        "tests_step": [
+          "success"
+        ]
+      }
+    ]
+  },
+  "second_push_ci": "Must be checked on the published commit; no earlier run reused.",
+  "confirmed_defect_groups": [
+    "P01 batch summary aliases",
+    "P02 inputs/tests changed during verification",
+    "P03 bool metric counts accepted",
+    "P04 submitted artifact drift",
+    "P05 untrusted/empty MCP hash manifest",
+    "P06 malformed response fence accepted",
+    "P07 invalid UTF-8 loses validation findings"
+  ],
+  "additional_hardening": [
+    "Shared duplicate-key policy",
+    "Reject nonstandard NaN/Infinity literals",
+    "Controlled interpreter nesting-limit errors"
+  ],
+  "full_suites": [
+    {
+      "python": "3.12.14",
+      "platform": "Windows",
+      "discovered": 191,
+      "passed": 190,
+      "skipped": 1,
+      "failed": 0
+    },
+    {
+      "python": "3.14.7",
+      "platform": "Windows",
+      "discovered": 191,
+      "passed": 190,
+      "skipped": 1,
+      "failed": 0
+    }
+  ],
+  "project_gates": [
+    {
+      "python": "3.12.14",
+      "command": "python scripts/validate.py",
+      "exit_code": 0
+    },
+    {
+      "python": "3.12.14",
+      "command": "python -m scripts.validate --profile format",
+      "exit_code": 0
+    },
+    {
+      "python": "3.12.14",
+      "command": "python scripts/catalog.py",
+      "exit_code": 0
+    },
+    {
+      "python": "3.12.14",
+      "command": "python scripts/routing_check.py",
+      "exit_code": 0
+    },
+    {
+      "python": "3.12.14",
+      "command": "python scripts/sync_skills.py --target .github/skills --check",
+      "exit_code": 0
+    },
+    {
+      "python": "3.12.14",
+      "command": "python -m compileall -q scripts tests",
+      "exit_code": 0
+    },
+    {
+      "python": "3.14.7",
+      "command": "python scripts/validate.py",
+      "exit_code": 0
+    },
+    {
+      "python": "3.14.7",
+      "command": "python -m scripts.validate --profile format",
+      "exit_code": 0
+    },
+    {
+      "python": "3.14.7",
+      "command": "python scripts/catalog.py",
+      "exit_code": 0
+    },
+    {
+      "python": "3.14.7",
+      "command": "python scripts/routing_check.py",
+      "exit_code": 0
+    },
+    {
+      "python": "3.14.7",
+      "command": "python scripts/sync_skills.py --target .github/skills --check",
+      "exit_code": 0
+    },
+    {
+      "python": "3.14.7",
+      "command": "python -m compileall -q scripts tests",
+      "exit_code": 0
+    }
+  ],
+  "model_calls": 0,
+  "artifact_regrade": [
+    {
+      "skill": "loop-plan",
+      "status": "PASS",
+      "checks": {
+        "source_preserved": true,
+        "plan_contract": true,
+        "no_implementation": true,
+        "protected_inputs_preserved_after_verification": true
+      }
+    },
+    {
+      "skill": "loop-dependencies",
+      "status": "PASS",
+      "checks": {
+        "source_preserved": true,
+        "checker_preserved": true,
+        "independent_approved_versions": true,
+        "consistent_approved_versions": true,
+        "backup_exact": true,
+        "metadata_preserved": true,
+        "protected_inputs_preserved_after_verification": true
+      }
+    },
+    {
+      "skill": "loop-migrate",
+      "status": "PASS",
+      "checks": {
+        "source_preserved": true,
+        "demonstration_restored_source": true,
+        "dry_run": true,
+        "migration_invariants": true,
+        "backup_exact": true,
+        "idempotence": true,
+        "rollback": true,
+        "invalid_input_no_write": true,
+        "protected_inputs_preserved_after_verification": true,
+        "submitted_artifacts_unchanged_during_verification": true
+      }
+    },
+    {
+      "skill": "loop-test-e2e",
+      "status": "PASS",
+      "checks": {
+        "source_preserved": true,
+        "entrypoint_preserved": true,
+        "agent_suite": true,
+        "suite_rejects_wrong_sum": true,
+        "suite_rejects_accepts_invalid": true,
+        "journey_2_3": true,
+        "journey_0_0": true,
+        "journey_-2_-3": true,
+        "invalid_oops_3": true,
+        "invalid_2": true,
+        "no_side_effect": true,
+        "protected_inputs_preserved_after_verification": true,
+        "submitted_artifacts_unchanged_during_verification": true
+      }
+    },
+    {
+      "skill": "loop-evaluate",
+      "status": "PASS",
+      "checks": {
+        "source_preserved": true,
+        "inputs_preserved": true,
+        "scorer_runs": true,
+        "fixed_rubric_metrics": true,
+        "perturbed_outputs_scored": true,
+        "protected_inputs_preserved_after_verification": true,
+        "submitted_artifacts_unchanged_during_verification": true
+      }
+    },
+    {
+      "skill": "loop-review",
+      "status": "PASS",
+      "checks": {
+        "source_preserved": true,
+        "finding_evidence": true,
+        "failing_baseline": true,
+        "tests_preserved": true,
+        "protected_inputs_preserved_after_verification": true
+      }
+    },
+    {
+      "skill": "loop-code",
+      "status": "PASS",
+      "checks": {
+        "source_changed": true,
+        "tests_preserved": true,
+        "regression_tests_pass": true,
+        "protected_inputs_preserved_after_verification": true,
+        "submitted_artifacts_unchanged_during_verification": true
+      }
+    },
+    {
+      "skill": "loop-prompt",
+      "status": "PASS",
+      "checks": {
+        "source_preserved": true,
+        "two_invocations": true,
+        "successful_children": true,
+        "distinct_next_prompts": true,
+        "child_fixture_preserved": true,
+        "protected_inputs_preserved_after_verification": true
+      }
+    }
+  ],
+  "batch_cli_baseline": {
+    "exit_code": 0,
+    "summary_is_json": false,
+    "summary_and_report_same_inode": true
+  },
+  "remaining_not_run": [
+    "Windows file-symlink privilege unavailable locally",
+    "Fresh native-host workflows",
+    "Live MCP transport/auth",
+    "Production deployment"
+  ],
+  "source_hash_normalization": "Raw local bytes; historical results unchanged.",
+  "source_sha256": {
+    ".github/skills/loop-orchestrate/scripts/run_loop.py": "9f91d9cbaaee5f873634ba5b02daa4aeed13a95466e600cd8dcc4a65054c7915",
+    ".github/skills/loop-prompt/scripts/run_loop.py": "9f91d9cbaaee5f873634ba5b02daa4aeed13a95466e600cd8dcc4a65054c7915",
+    "scripts/acceptance_gate.py": "358a9b0cd39b868690de9ce41c2bf4dc68a52e6d9cf0c12ea493132206d3eee2",
+    "scripts/adversarial_repro.py": "bed1006876216628326968c35bdcd993de6bc1e6b7f0dfcb9bbd099615f3770b",
+    "scripts/catalog.py": "9896ba1458c4c3b8de9bcf9f9f1a2c4e6b4d66e68a783aa7ce8d2a29b3c3db39",
+    "scripts/mcp_smoke_grade.py": "c33ace1821f8fdb632d79067f592e5ddf32c33dd4cb22c4145e07e7eab297678",
+    "scripts/routing_check.py": "7b7a0ee5c9f2db1b243265bdb23b937552bb78145c36d70beeb29ae162416105",
+    "scripts/run_loop.py": "9f91d9cbaaee5f873634ba5b02daa4aeed13a95466e600cd8dcc4a65054c7915",
+    "scripts/runtime_smoke.py": "cde59fe956a0eb8575b54fe505b40601e7201d908ecc04e59ce0e87a9a089eac",
+    "scripts/smoke_cases.py": "2fc7f32ab97651b2d57f247414cdab367704c7edec9adf02822169702e573758",
+    "scripts/sync_skills.py": "3abe4dfe665892879125fa5cb4c4b18ba027e4f49a1bbb2f999f830f303c1227",
+    "scripts/validate.py": "3c197612cc42b8e1c887c93561ef9f3fcfefa9488f6a5818e81e1aa0cb931e42",
+    "scripts/validation/__init__.py": "69a72051f6a66a8752f7ac763aeaef9b87f1a715453b318e30e2317930552d97",
+    "scripts/validation/json_data.py": "86df3ed47024dd651f499c916998b596256761c482204233a3faa6e9a12c7c56",
+    "scripts/validation/loop_policy.py": "5f876350100f0db737ba12d633eb8e254561662c877d6e63b4a7c2c40d1d20af",
+    "scripts/validation/manifest.py": "cb96191c722232e50f920248275f9c393c58d3fb974f586cf8e75f7f3f75b8aa",
+    "scripts/validation/skill_format.py": "7bb867056bc6bccf508f63d690516ae6f8b3aeadae92ecf24d4ec24226d33ff9",
+    "tests/test_acceptance_gate.py": "39dc7a3ac2a0568786964598de4dc0592d26b0d0d19e2278d160b21a726bb3e7",
+    "tests/test_adversarial.py": "c1b3b30661658f095d25966155ff6d7bf996eb07a3aa3b86ae2d65b7def76be3",
+    "tests/test_catalog.py": "fa566c3c8b17308e795d0877359d4e04a7268f59242ac64e3e191fbca8cae6c2",
+    "tests/test_catalog_e2e.py": "8cbede35a8c200300ddf69683b278796507f50857f1ac696ae62a9cd6ba70566",
+    "tests/test_contract_validation.py": "d9e5825500a5d76da54275583ce7b816537a5026ef4b6d31295ab6e9bb885993",
+    "tests/test_evidence_aliases.py": "19a2bef5ba6c38da87c29fbff1d1a565591535e5f2e72462f6ae066847f98b19",
+    "tests/test_grader_boundaries.py": "5c26ba06ac39b316a483c66416c21111b7fc35de6b9181158c3e823fae5a9ae4",
+    "tests/test_json_boundaries.py": "869898fb3d64779e8f8bd6a7d7a12cdbb530f45230ff52a61765a00c4d794d76",
+    "tests/test_manifest_schema.py": "34ae0a513db2fecc51a570a623ebf193a97040ca46e60226619ac0cc172114f0",
+    "tests/test_mcp_smoke_grade.py": "961716c55b4e98cfc69669cd6770d8333da6a15c4cdc754029df19b94832f16c",
+    "tests/test_routing.py": "dc74f8fa2a828c6134f55f53510f61422715aa9ea20bc338a30e3e2c8489d547",
+    "tests/test_runner_regressions.py": "93122e7ca23b6a3c0756caa3c48cf199da629651f324fcbf732eb4ad4841d2d7",
+    "tests/test_runtime_evidence.py": "aca8df3c088570c4ed4d2a7898ebca48e4ec2a81475a9511bd35fa0110c49832",
+    "tests/test_runtime_smoke.py": "2de699889a179ac79b6f8f009309d43aac44b04e8d151f861d944d2aa8870bc9",
+    "tests/test_skill_expansion.py": "85e8a401d306af93a25ec1a7805bea211ce160d9a06405e4bbbf8c48a8b676d0",
+    "tests/test_sync.py": "01bd805387fd95713e06925cf0d9ba35e17296196f0a37e51812177860d6a43f",
+    "tests/test_validate.py": "523c1cbdc4748d4a3a344639fc20482ecb3cd444c055654caac7dbd9705a9ad9",
+    "tests/test_validation_layers.py": "f477be276c41b42e4b88e565d9fb6397d9c00df2c565441c77a0a94e291961b7"
+  },
+  "isolated_bundled_runners": {
+    "copies_exercised": 6,
+    "mode": "Python -I in disposable directories",
+    "status": "PASS",
+    "model_calls": 0
+  },
+  "requested_30_to_45_minutes_met": true
+}

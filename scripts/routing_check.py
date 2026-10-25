@@ -5,10 +5,15 @@ from collections import Counter
 import json
 from pathlib import Path
 
+if __package__:
+    from .validation.json_data import loads_json
+else:
+    from validation.json_data import loads_json
+
 
 def load_routes(repo: Path):
-    names = json.loads((repo/'skills-manifest.json').read_text(encoding='utf-8'))['skills']
-    data = json.loads((repo/'skill-routing.json').read_text(encoding='utf-8'))
+    names = loads_json((repo/'skills-manifest.json').read_text(encoding='utf-8'))['skills']
+    data = loads_json((repo/'skill-routing.json').read_text(encoding='utf-8'))
     decisions = data['decisions']
     if Counter(row['skill'] for row in decisions) != Counter(names):
         raise ValueError('routing decisions must cover every skill exactly once')
@@ -68,7 +73,7 @@ def main():
     try:
         data = load_routes(args.repo.resolve())
         if args.predictions:
-            result = grade_predictions(data, json.loads(args.predictions.read_text(encoding='utf-8')))
+            result = grade_predictions(data, loads_json(args.predictions.read_text(encoding='utf-8')))
             print(json.dumps(result))
             return int(result['status'] != 'PASS')
     except (OSError, ValueError, KeyError, TypeError, AttributeError) as exc:

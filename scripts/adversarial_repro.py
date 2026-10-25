@@ -49,6 +49,13 @@ def main():
     folder = output/'hardlink-sync'
     (folder/'scripts').mkdir(parents=True)
     shutil.copy2(repo/'scripts/sync_skills.py', folder/'scripts/sync_skills.py')
+    # Newer sync readers share strict JSON parsing; old snapshot scripts remain
+    # supported when they do not have this module.
+    helper=repo/'scripts/validation/json_data.py'
+    if helper.is_file():
+        (folder/'scripts/validation').mkdir()
+        shutil.copy2(helper,folder/'scripts/validation/json_data.py')
+        shutil.copy2(repo/'scripts/validation/__init__.py',folder/'scripts/validation/__init__.py')
     source = folder/'.github/skills/loop-review/SKILL.md'
     source.parent.mkdir(parents=True)
     source.write_text(text, encoding='utf-8')
@@ -88,7 +95,8 @@ def main():
               'validator_results': rows, 'hardlink': proof,
               'source_hashes': {name: hashlib.sha256((repo/name).read_bytes()).hexdigest()
                                 for name in ('scripts/validate.py', 'scripts/validation/skill_format.py',
-                                             'scripts/validation/manifest.py', 'scripts/sync_skills.py')}}
+                                             'scripts/validation/manifest.py', 'scripts/sync_skills.py')
+                                + (('scripts/validation/json_data.py',) if helper.is_file() else ())}}
     (output/'results.json').write_text(json.dumps(result, indent=2)+'\n', encoding='utf-8')
     print(json.dumps({'expectation': args.expect, 'expectation_matched': matched,
                       'validator_invocations': len(rows), 'hardlink': proof}))

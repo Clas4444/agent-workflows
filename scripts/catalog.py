@@ -2,22 +2,23 @@
 """Maintain the grouped README catalog without moving native skill folders."""
 import argparse
 from collections import Counter
-import json
 import re
 from pathlib import Path
 
 if __package__:
     from .validation.skill_format import FRONTMATTER_PATTERN, frontmatter_value
+    from .validation.json_data import loads_json
 else:
     from validation.skill_format import FRONTMATTER_PATTERN, frontmatter_value
+    from validation.json_data import loads_json
 
 START = '<!-- BEGIN GENERATED SKILL GROUPS -->'
 END = '<!-- END GENERATED SKILL GROUPS -->'
 
 
 def render(repo: Path) -> str:
-    manifest = json.loads((repo/'skills-manifest.json').read_text(encoding='utf-8'))
-    groups = json.loads((repo/'skill-groups.json').read_text(encoding='utf-8'))
+    manifest = loads_json((repo/'skills-manifest.json').read_text(encoding='utf-8'))
+    groups = loads_json((repo/'skill-groups.json').read_text(encoding='utf-8'))
     if not isinstance(groups, dict) or not groups:
         raise ValueError('skill groups must be a non-empty object')
     names = []
@@ -48,7 +49,7 @@ def check_catalog(repo: Path) -> list[str]:
     try:
         expected = render(repo)
         text = (repo/'README.md').read_text(encoding='utf-8')
-        manifest = json.loads((repo/'skills-manifest.json').read_text(encoding='utf-8'))
+        manifest = loads_json((repo/'skills-manifest.json').read_text(encoding='utf-8'))
         count = re.search(r'\*\*([0-9]+) bounded workflows', text)
         if not count or int(count.group(1)) != len(manifest['skills']):
             return ['README advertised skill count does not match manifest']

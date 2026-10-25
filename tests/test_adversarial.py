@@ -75,6 +75,16 @@ class AdversarialTests(unittest.TestCase):
                 self.description(value)
                 self.assertEqual(validate(self.root),[])
 
+    def test_invalid_utf8_instruction_returns_findings_without_traceback(self):
+        for native in DEFAULT_ROOTS:
+            (self.root/native/'loop-review/SKILL.md').write_bytes(b'---\nname: loop-review\ndescription: \xff\n---\n')
+        for profile in ('loop','format'):
+            with self.subTest(profile=profile):
+                result=self.cli(profile)
+                self.assertEqual(result.returncode,1)
+                self.assertIn('UTF-8',result.stdout)
+                self.assertNotIn('Traceback',result.stderr)
+
     def test_scalar_decoding_counts_actual_description_length(self):
         # JSON's double-quoted escape subset is also valid YAML. Escaped syntax
         # length must not replace the length of the decoded description.

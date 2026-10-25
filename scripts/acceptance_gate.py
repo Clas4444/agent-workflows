@@ -16,6 +16,11 @@ import subprocess
 import sys
 from datetime import datetime, timezone
 
+if __package__:
+    from .validation.json_data import loads_json,unique_object
+else:
+    from validation.json_data import loads_json,unique_object
+
 
 def confined(root: Path, value: object) -> Path:
     if not isinstance(value, str) or not value.strip() or Path(value).is_absolute():
@@ -165,15 +170,6 @@ def run_contract(data: dict, root: Path, *, execute: bool = False) -> dict:
     return result
 
 
-def unique_object(pairs):
-    result = {}
-    for key, value in pairs:
-        if key in result:
-            raise ValueError(f'duplicate JSON key: {key}')
-        result[key] = value
-    return result
-
-
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('contract', type=Path)
@@ -181,7 +177,7 @@ def main():
     parser.add_argument('--execute', action='store_true', help='run commands already reviewed and authorized')
     args = parser.parse_args()
     try:
-        data = json.loads(args.contract.read_text(encoding='utf-8'), object_pairs_hook=unique_object)
+        data = loads_json(args.contract.read_text(encoding='utf-8'))
         result = run_contract(data, args.root, execute=args.execute)
     except (ValueError, OSError) as exc:
         result = {'status': 'FAIL', 'error': str(exc), 'checks': [], 'criteria': []}

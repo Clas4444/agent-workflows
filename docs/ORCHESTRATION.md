@@ -50,6 +50,10 @@ verified iterations when fresh state cannot be trusted.
 When evidence is saved successfully, per-prompt summaries preserve `BLOCKED`
 and `NOT_RUN` with their actual invocation counts. The overall batch still
 fails unless every invocation succeeds.
+The batch-level `summary.json`/`summary.md` pair receives the same hardlink and
+collision preflight as each invocation, before launching children and before
+summary writes. Unsafe aliases created by a child fail the batch without
+overwriting either summary; already saved per-prompt evidence remains separate.
 
 ## Markers and evidence
 

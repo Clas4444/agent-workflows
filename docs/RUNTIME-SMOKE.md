@@ -59,6 +59,17 @@ returns. Drift or disappearance prevents a PASS; both hashes and the original
 response are retained. Historical records with only a post-run hash do not gain
 this guarantee retrospectively. This check does not defeat change-and-restore
 races or prove that the host actually read the instruction.
+The grader also rechecks immutable fixture inputs after executing submissions.
+The implementation/scorer/test artifacts themselves must stay byte-identical
+during verification. Allowed implementation/dependency edits are distinguished
+from files declared immutable by the task. Missing artifacts become failed
+checks; completed observations are retained. Metric counts must be actual Python
+integers (excluding bool/float), and the full expected metric maps are checked
+for both nominal and perturbed inputs.
+
+Response JSON may be bare or enclosed in a complete JSON code fence; an
+arbitrary final line is not treated as a closing fence. Duplicate keys and
+nonstandard non-finite literals are rejected before reading a claimed PASS.
 All harness text I/O uses explicit UTF-8, including model-generated plans and
 reports. This avoids Windows cp1252 failures for smart quotes or non-English text.
 Independent verification directories are unique, so repeat grading preserves
