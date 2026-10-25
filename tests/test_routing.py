@@ -20,7 +20,8 @@ class RoutingReviewTests(unittest.TestCase):
         self.assertEqual(len(self.data['decisions']), 34)
         self.assertEqual(len(self.data['cases']), 37)
         self.assertEqual({row['skill'] for row in self.data['decisions'] if row['action']=='upgrade'},
-                         {'loop-review', 'loop-code', 'loop-diagnose', 'loop-test'})
+                         {'loop-review', 'loop-code', 'loop-diagnose', 'loop-test',
+                          'loop-plan', 'loop-research'})
         self.assertEqual({row['skill'] for row in self.data['decisions'] if row['action']=='add'},
                          {'loop-deploy', 'loop-observe'})
 
@@ -49,6 +50,17 @@ class RoutingReviewTests(unittest.TestCase):
                     data['cases'][1]['id'] = data['cases'][0]['id']
                 (root/'skill-routing.json').write_text(json.dumps(data), encoding='utf-8')
                 self.assertTrue(check_routes(root))
+
+    def test_broad_acceptable_sets_cannot_erase_primary_and_none_controls(self):
+        with tempfile.TemporaryDirectory() as temp:
+            root=Path(temp)
+            manifest=json.loads((ROOT/'skills-manifest.json').read_text(encoding='utf-8'))
+            (root/'skills-manifest.json').write_text(json.dumps(manifest),encoding='utf-8')
+            data=copy.deepcopy(self.data)
+            for row in data['cases']:
+                row['acceptable']=manifest['skills']+['NONE']
+            (root/'skill-routing.json').write_text(json.dumps(data),encoding='utf-8')
+            self.assertTrue(check_routes(root))
 
     def test_prediction_grader_counts_failures_and_never_drops_cases(self):
         predictions = {row['id']: row['acceptable'][0] for row in self.data['cases']}

@@ -1,5 +1,10 @@
 # Writing and maintaining loop skills
 
+Planning, research, implementation and testing handoffs should follow the
+[acceptance/context contract](ACCEPTANCE-GATE.md): stable criteria, evidence for
+requirements, pinned sources, positive/negative controls and separate statuses.
+Keep product intent distinct from technical decisions; leave unknowns explicit.
+
 Keep the task easy to select, the workflow short and the evidence explicit.
 Each skill should answer six questions in order:
 

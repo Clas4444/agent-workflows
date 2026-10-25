@@ -38,6 +38,7 @@ def string_scalar(raw: str) -> str | None:
     else:
         value = re.split(r"[ \t]+#", raw, maxsplit=1)[0].strip()
         if (not value or value[0] in "#[]{}&*!|>@`%"
+                or re.match(r"[-?:](?:[ \t]|$)", value)
                 or re.search(r":[ \t]|:$", value)
                 or value.lower() in ('null', '~', 'true', 'false', 'yes', 'no', 'on', 'off',
                                      '.inf', '+.inf', '-.inf', '.nan')

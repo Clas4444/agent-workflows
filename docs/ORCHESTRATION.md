@@ -77,7 +77,13 @@ Each iteration saves `output_fingerprint`: concatenated SHA-256 digests of
 the complete stdout and stderr streams. Timeout/startup errors instead hash
 the recorded diagnostic message; their partial child streams are unavailable.
 The state and report paths must differ; the runner rejects a collision before
-starting the command. Self-prompt follow-ups retain the original scope and the
+starting the command. Existing hardlinked evidence destinations are rejected as
+well, including links to unrelated files. The pair is checked again after the
+child exits and before either write. This is preflight protection, not a lock
+against a concurrent alias change between checking and writing. If an unsafe
+alias appears during the child run, the runner exits nonzero without overwriting
+either destination; any old evidence is stale and stderr is authoritative.
+Self-prompt follow-ups retain the original scope and the
 bounded previous output, labeled as reference rather than new authorization.
 
 The runner reads stdout and stderr concurrently in bounded chunks, retains

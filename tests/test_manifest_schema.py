@@ -29,6 +29,12 @@ class ManifestSchemaTests(unittest.TestCase):
             expected = spec['minLength'] <= len(name) <= spec['maxLength'] and bool(re.fullmatch(spec['pattern'], name))
             self.assertEqual(bool(NAME_PATTERN.fullmatch(name)), expected, name)
 
+    def test_schema_pattern_search_rejects_trailing_newline_in_skill_names(self):
+        # JSON Schema pattern uses search semantics, not Python fullmatch().
+        pattern=self.schema['properties']['skills']['items']['pattern']
+        self.assertIsNone(re.search(pattern,'loop-code\n'))
+        self.assertIsNone(NAME_PATTERN.fullmatch('loop-code\n'))
+
     def test_manifest_mutations_follow_published_constraints(self):
         base = json.loads((ROOT/'skills-manifest.json').read_text(encoding='utf-8'))
         cases = [({}, True), ({'skills': []}, False), ({'skills': ['a', 'a']}, False),
@@ -41,3 +47,18 @@ class ManifestSchemaTests(unittest.TestCase):
                 (root/'skills-manifest.json').write_text(json.dumps(base | changes), encoding='utf-8')
                 manifest, errors = load_manifest(root)
                 self.assertEqual(manifest is not None and not errors, valid, changes)
+
+    def test_semver_boundary_cases_are_independently_specified(self):
+        base=json.loads((ROOT/'skills-manifest.json').read_text(encoding='utf-8'))
+        valid=('0.0.0','1.2.3','1.2.3-alpha.0','1.2.3-0','1.2.3-a01','1.2.3-RC.1+Build.001')
+        invalid=('01.2.3','1.02.3','1.2.03','1.2.3-..','1.2.3-alpha..1','1.2.3-01',
+                 '1.2.3-alpha.01','1.2.3-','1.2.3+','1.2.3+build..id','1.2.3\n')
+        with tempfile.TemporaryDirectory() as temp:
+            root=Path(temp)
+            for version in valid+invalid:
+                with self.subTest(version=version):
+                    (root/'skills-manifest.json').write_text(json.dumps(base|{'version':version}),encoding='utf-8')
+                    manifest,errors=load_manifest(root)
+                    expected=version in valid
+                    self.assertEqual(manifest is not None and not errors,expected)
+                    self.assertEqual(bool(re.search(self.schema['properties']['version']['pattern'],version)),expected)

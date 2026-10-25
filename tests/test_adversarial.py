@@ -60,6 +60,21 @@ class AdversarialTests(unittest.TestCase):
                 self.description(value)
                 self.assertEqual(validate(self.root), [])
 
+    def test_plain_yaml_collection_indicators_rejected_by_both_cli_profiles(self):
+        for value in ('- item', '? item', '-', '?'):
+            self.description(value)
+            for profile in ('loop', 'format'):
+                with self.subTest(value=value,profile=profile):
+                    result=self.cli(profile)
+                    self.assertEqual(result.returncode,1,(value,profile,result.stdout))
+                    self.assertIn('description',result.stdout)
+
+    def test_plain_safe_indicator_prefixes_and_quoted_indicators_remain_valid(self):
+        for value in ('-item', '?item', '"- item"', '"? item"'):
+            with self.subTest(value=value):
+                self.description(value)
+                self.assertEqual(validate(self.root),[])
+
     def test_scalar_decoding_counts_actual_description_length(self):
         # JSON's double-quoted escape subset is also valid YAML. Escaped syntax
         # length must not replace the length of the decoded description.

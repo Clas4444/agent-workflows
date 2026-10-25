@@ -19,9 +19,9 @@
   },
   "loop-code": {
     "historical_instruction_text_sha256": "75716c701b57b62cba9ee1186adba56bb7caad997d5df7d3c4be787187f337aa",
-    "current_instruction_text_sha256": "e069e63629423a6fa14cc13665347cc8c91ec985119fade87c1cb552fad6faaa",
+    "current_instruction_text_sha256": "c254a06f6af5b9aa9aae46d17ce6e32d4e92d200386d3606af4d48b6360ed012",
     "current_runtime_status": "NOT_RUN",
-    "reason": "1.5 separates review/planning/evaluation, implementation/repair, diagnosis/repair or test-strategy/focused testing routes. Previous host execution did not test this revised contract."
+    "reason": "2026-10-25 acceptance/context handoff revision: stable criteria, pinned context and positive/negative controls. Previous executions did not exercise these instructions."
   },
   "loop-diagnose": {
     "historical_instruction_text_sha256": "c449c3018007c51ac0d2e6d7581690df9cdc4c896bdc594ebdc82081cab3c815",
@@ -31,8 +31,20 @@
   },
   "loop-test": {
     "historical_instruction_text_sha256": "e0f5e0344daf7d382ff7420182cfa0db598b38b0a47dee306c0d78a339d9df34",
-    "current_instruction_text_sha256": "271ff1a6663c232d6c417b89525e92fb79f3f6e90b9ce130310317beff66a39b",
+    "current_instruction_text_sha256": "b76611ed2c6a56db53fff6762065e70de8410407aa8c834102c2207575a54cb7",
     "current_runtime_status": "NOT_RUN",
-    "reason": "1.5 separates review/planning/evaluation, implementation/repair, diagnosis/repair or test-strategy/focused testing routes. Previous host execution did not test this revised contract."
+    "reason": "2026-10-25 acceptance/context handoff revision: stable criteria, pinned context and positive/negative controls. Previous executions did not exercise these instructions."
+  },
+  "loop-plan": {
+    "historical_instruction_text_sha256": "5bc9b45733a163c29bb65411b5af9d0912762b6f07a3b746c9beaafa2d020e01",
+    "current_instruction_text_sha256": "6a833bf4257899d9c1a660c9fe6f08922e39929e10da013be3bac4328438fcd6",
+    "current_runtime_status": "NOT_RUN",
+    "reason": "2026-10-25 acceptance/context handoff revision: stable criteria, pinned context and positive/negative controls. Previous executions did not exercise these instructions."
+  },
+  "loop-research": {
+    "historical_instruction_text_sha256": "35facf45698779134d0ea1be43937f9e918d87e71582c18badee18831c8f171a",
+    "current_instruction_text_sha256": "a751bad256a7827c6ef8fc2fa97a10fc3123fb385455ddf05aa29139141fda85",
+    "current_runtime_status": "NOT_RUN",
+    "reason": "2026-10-25 acceptance/context handoff revision: stable criteria, pinned context and positive/negative controls. Previous executions did not exercise these instructions."
   }
 }

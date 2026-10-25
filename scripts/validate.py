@@ -5,6 +5,7 @@ from __future__ import annotations
 
 import argparse
 import hashlib
+import json
 import subprocess
 import sys
 from pathlib import Path
@@ -83,18 +84,22 @@ def validate(repo: Path, profile: str = "loop") -> list[str]:
 
 def validation_fingerprint(repo: Path) -> str:
     digest = hashlib.sha256()
+    digest.update(b"loop-validation-tree-v2\n")
     paths = [
         path
         for path in repo.rglob("*")
         if path.is_file()
-        and ".git" not in path.parts
-        and ".loop" not in path.parts
-        and "__pycache__" not in path.parts
+        and ".git" not in path.relative_to(repo).parts
+        and ".loop" not in path.relative_to(repo).parts
+        and "__pycache__" not in path.relative_to(repo).parts
         and str(path.relative_to(repo)).replace("\\", "/") not in GENERATED_FILES
     ]
-    for path in sorted(paths):
-        digest.update(str(path.relative_to(repo)).encode("utf-8"))
-        digest.update(path.read_bytes() if path.is_file() else b"<missing>")
+    for path in sorted(paths, key=lambda item: item.relative_to(repo).as_posix()):
+        # Frame records so filename/content boundaries cannot collide, e.g.
+        # a='bc' versus ab='c'. JSON escapes filenames containing newlines.
+        record = [path.relative_to(repo).as_posix(), sha256(path)]
+        digest.update(json.dumps(record, ensure_ascii=True, separators=(",", ":")).encode("ascii"))
+        digest.update(b"\n")
     return digest.hexdigest()
 
 

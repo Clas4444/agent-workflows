@@ -1,0 +1,126 @@
+{
+  "scope": "Actual local CLI subprocess scenarios; not native agent/skill runtime or remote CI.",
+  "date": "2026-10-25",
+  "scenarios": [
+    {
+      "scenario": "working",
+      "expected": "PASS",
+      "observed": "PASS",
+      "exit_code": 0,
+      "checks": [
+        {
+          "id": "valid",
+          "status": "PASS",
+          "exit_code": 0
+        },
+        {
+          "id": "invalid",
+          "status": "PASS",
+          "exit_code": 2
+        }
+      ]
+    },
+    {
+      "scenario": "broken-rejection",
+      "expected": "FAIL",
+      "observed": "FAIL",
+      "exit_code": 1,
+      "checks": [
+        {
+          "id": "valid",
+          "status": "PASS",
+          "exit_code": 0
+        },
+        {
+          "id": "invalid",
+          "status": "FAIL",
+          "exit_code": 0
+        }
+      ]
+    },
+    {
+      "scenario": "stale-context",
+      "expected": "BLOCKED",
+      "observed": "BLOCKED",
+      "exit_code": 1,
+      "checks": [
+        {
+          "id": "valid",
+          "status": "NOT_RUN",
+          "exit_code": null
+        },
+        {
+          "id": "invalid",
+          "status": "NOT_RUN",
+          "exit_code": null
+        }
+      ]
+    },
+    {
+      "scenario": "planned",
+      "expected": "NOT_RUN",
+      "observed": "NOT_RUN",
+      "exit_code": 1,
+      "checks": [
+        {
+          "id": "valid",
+          "status": "NOT_RUN",
+          "exit_code": null
+        },
+        {
+          "id": "invalid",
+          "status": "NOT_RUN",
+          "exit_code": null
+        }
+      ]
+    }
+  ],
+  "all_expectations_matched": true,
+  "verification": {
+    "python": "3.12.14",
+    "platform": "Windows",
+    "full_suite": {
+      "status": "PASS",
+      "tests": 146
+    },
+    "gates": [
+      {
+        "command": "python scripts/validate.py",
+        "exit_code": 0,
+        "status": "PASS"
+      },
+      {
+        "command": "python -m scripts.validate --profile format",
+        "exit_code": 0,
+        "status": "PASS"
+      },
+      {
+        "command": "python scripts/catalog.py",
+        "exit_code": 0,
+        "status": "PASS"
+      },
+      {
+        "command": "python scripts/routing_check.py",
+        "exit_code": 0,
+        "status": "PASS"
+      },
+      {
+        "command": "python scripts/sync_skills.py --target .github/skills --check",
+        "exit_code": 0,
+        "status": "PASS"
+      },
+      {
+        "command": "python -m compileall -q scripts tests",
+        "exit_code": 0,
+        "status": "PASS"
+      },
+      {
+        "command": "git diff --check",
+        "exit_code": 0,
+        "status": "PASS"
+      }
+    ],
+    "native_revised_skill_runtime": "NOT_RUN",
+    "remote_ci": "NOT_RUN"
+  }
+}

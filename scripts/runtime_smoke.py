@@ -36,6 +36,7 @@ def run_case(folder: Path, skill: str, skill_root: Path, codex: str, timeout: in
     instruction=(skill_root/skill/'SKILL.md').resolve()
     if not instruction.is_file():
         return {'skill':skill,'status':'BLOCKED','reason':'installed instruction missing','checks':{}}
+    instruction_before=hashlib.sha256(instruction.read_bytes()).hexdigest()
     prepare(folder,skill); original=snapshot(folder)
     (folder/'input-hashes.json').write_text(json.dumps({name:hashlib.sha256(value).hexdigest() for name,value in original.items()},indent=2)+'\n', encoding='utf-8')
     prompt=f'''${skill}
@@ -62,17 +63,26 @@ findings, limitations. A workflow PASS does not imply every external check ran.
     log=log_path.read_text(encoding='utf-8',errors='replace')
     response=parse_response(final.read_text(encoding='utf-8')) if final.exists() else {}
     status=classify(returncode,log,response)
-    checks={}
-    if status=='PASS':
-        checks={'response_identity':response.get('skill')==skill,
+    try:
+        instruction_after=hashlib.sha256(instruction.read_bytes()).hexdigest()
+    except OSError:
+        instruction_after=None
+    checks={'instruction_unchanged':instruction_before==instruction_after}
+    if status=='PASS' and not checks['instruction_unchanged']:
+        status='BLOCKED'
+    elif status=='PASS':
+        checks.update({'response_identity':response.get('skill')==skill,
                 'installed_path':str(response.get('loaded_skill_path','')).replace('\\','/').lower()==str(instruction).replace('\\','/').lower(),
-                'evidence_written':(folder/'evidence.md').is_file()}
+                'evidence_written':(folder/'evidence.md').is_file()})
         checks.update(grade(folder,skill,original))
         if not all(checks.values()):status='FAIL'
     row={'skill':skill,'status':status,'returncode':returncode,'folder':str(folder),'checks':checks,
          'quota_limited':'usage limit' in log.lower() or 'rate limit' in log.lower(),
-         'instruction_sha256':hashlib.sha256(instruction.read_bytes()).hexdigest(),
+         'instruction_sha256':instruction_before,
+         'instruction_sha256_after':instruction_after,
          'response':response}
+    if not checks['instruction_unchanged']:
+        row['reason']='installed instruction changed or became unavailable during execution'
     (folder/'verified.json').write_text(json.dumps(row,indent=2)+'\n',encoding='utf-8')
     return row
 

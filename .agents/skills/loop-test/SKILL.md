@@ -30,6 +30,12 @@ that prevents safe progress.
 4. Record commands, exit codes, failures, changed assertions and next action.
    Missing prerequisites are BLOCKED or NOT_RUN according to what was attempted;
    do not install or weaken gates merely to obtain a green report.
+5. Trace results to stable acceptance IDs and the context revision/hash used.
+   For executable contracts use the repository's `docs/ACCEPTANCE-GATE.md` when
+   available. A zero exit alone, zero collected tests, an expected rejection
+   caused by a missing executable, or a timeout cannot prove acceptance. Keep
+   planned checks NOT_RUN and stale/missing context BLOCKED. After changing a
+   checker, exercise a controlled failure to show it can reject bad behavior.
 
 ## Output
 

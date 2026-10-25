@@ -271,7 +271,7 @@
     {
       "skill": "loop-code",
       "action": "upgrade",
-      "reason": "Clarify feature implementation versus dedicated repair/refactor routes; keep explicit invocation compatible."
+      "reason": "Preserve existing primary route; add acceptance/context handoff: stable criteria, source identity and explicit execution evidence. Native runtime for revised text is NOT_RUN."
     },
     {
       "skill": "loop-diagnose",
@@ -295,8 +295,8 @@
     },
     {
       "skill": "loop-research",
-      "action": "keep",
-      "reason": "Retain a distinct acceptance gate and existing invocation identity; group placement does not change execution scope."
+      "action": "upgrade",
+      "reason": "Preserve existing primary route; add acceptance/context handoff: stable criteria, source identity and explicit execution evidence. Native runtime for revised text is NOT_RUN."
     },
     {
       "skill": "loop-research-repo",
@@ -311,7 +311,7 @@
     {
       "skill": "loop-test",
       "action": "upgrade",
-      "reason": "Select unknown test layers and actual acceptance oracles; direct known layers to focused workflows."
+      "reason": "Preserve existing primary route; add acceptance/context handoff: stable criteria, source identity and explicit execution evidence. Native runtime for revised text is NOT_RUN."
     },
     {
       "skill": "loop-test-unit",
@@ -375,8 +375,8 @@
     },
     {
       "skill": "loop-plan",
-      "action": "keep",
-      "reason": "Retain a distinct acceptance gate and existing invocation identity; group placement does not change execution scope."
+      "action": "upgrade",
+      "reason": "Preserve existing primary route; add acceptance/context handoff: stable criteria, source identity and explicit execution evidence. Native runtime for revised text is NOT_RUN."
     },
     {
       "skill": "loop-dependencies",

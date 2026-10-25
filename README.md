@@ -14,6 +14,12 @@ For group responsibilities and review criteria, see [functional groups](docs/SKI
 The new [MCP integration group](docs/MCP-GROUP.md) covers design, testing and tool trust.
 See the [cross-group review](docs/TAXONOMY-1.5.md) for upgrades, overlap decisions,
 deployment/observability additions and fixed routing cases.
+Use the opt-in [acceptance and context gate](docs/ACCEPTANCE-GATE.md) to map
+criteria to positive/negative checks with pinned sources and explicit NOT_RUN.
+See [upgrade verification](docs/ACCEPTANCE-2026-10-25.md) for the isolated CLI
+experiments, fingerprint regression and runtime limitations.
+The [30-minute hardening report](docs/UPDATE-30M-2026-10-25.md) records subsequent
+runner, synchronization, metadata and grading regressions with before/after evidence.
 
 > **Experimental · 1.5.0-experimental.** Shared instructions and matching files
 > do not guarantee identical behavior across Codex, Copilot and Claude Code.

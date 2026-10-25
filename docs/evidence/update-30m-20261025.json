@@ -1,0 +1,305 @@
+{
+  "date": "2026-10-25",
+  "started_at": "2026-10-24T18:24:27Z",
+  "finished_at": "2026-10-24T18:54:44.312166+00:00",
+  "elapsed_seconds": 1817.312,
+  "base_commit": "9ff1fe7035081f1235934cf7fe494877089b42e8",
+  "initial_worktree_dirty": true,
+  "scope": "Local repository hardening; 34 skills retained. No global install, dependency install, commit or push.",
+  "orchestration": {
+    "host": "codex-cli 0.164.0-alpha.11.1",
+    "runner": "installed loop-prompt bundled runner; shared orchestration protocol",
+    "runner_sha256": "edae421caf14efcaaac09b3e2e9167d691eef34a4f3f632bb4126c2ea2742414",
+    "initial_prompts": 1,
+    "follow_ups": 2,
+    "prompt_count": 3,
+    "final_status": "PASS",
+    "stop_reason": "iteration limit reached",
+    "timeout_seconds": 300,
+    "audit_started_at": "2026-10-24T18:26:42.513317+00:00",
+    "audit_finished_at": "2026-10-24T18:29:38.512159+00:00",
+    "startup_failures_preserved": 1,
+    "automatic_review_rejections_resolved_by_user_authorization": 1,
+    "claims": "Read-only audit completion only; not final-source certification or 34-skill native runtime."
+  },
+  "new_project_runner_replay": {
+    "prompt_count": 3,
+    "status": "PASS",
+    "model_calls": 0
+  },
+  "findings": [
+    {
+      "id": "F01",
+      "severity": "P2",
+      "issue": "runner hardlink aliases",
+      "regression_file": "tests/test_evidence_aliases.py",
+      "test_selector": "state_and_report_hardlink",
+      "baseline": "Observed failing regression before repair",
+      "after": "PASS"
+    },
+    {
+      "id": "F02",
+      "severity": "P2",
+      "issue": "unsupported YAML indicators accepted",
+      "regression_file": "tests/test_adversarial.py",
+      "test_selector": "plain_yaml",
+      "baseline": "Observed failing regression before repair",
+      "after": "PASS"
+    },
+    {
+      "id": "F03",
+      "severity": "P3",
+      "issue": "invalid semantic versions accepted",
+      "regression_file": "tests/test_manifest_schema.py",
+      "test_selector": "semver_boundary",
+      "baseline": "Observed failing regression before repair",
+      "after": "PASS"
+    },
+    {
+      "id": "F04",
+      "severity": "P2",
+      "issue": "ambiguous tree fingerprint serialization",
+      "regression_file": "tests/test_validate.py",
+      "test_selector": "frames_names",
+      "baseline": "Observed failing regression before repair",
+      "after": "PASS"
+    },
+    {
+      "id": "F05",
+      "severity": "P2",
+      "issue": "sync internal junction overwrites unrelated skill",
+      "regression_file": "tests/test_evidence_aliases.py",
+      "test_selector": "sync_rejects_internal_directory",
+      "baseline": "Observed failing regression before repair",
+      "after": "PASS"
+    },
+    {
+      "id": "F06",
+      "severity": "P2",
+      "issue": "mutable dependency checker false PASS",
+      "regression_file": "tests/test_runtime_smoke.py",
+      "test_selector": "replaced_checker",
+      "baseline": "Observed failing regression before repair",
+      "after": "PASS"
+    },
+    {
+      "id": "F07",
+      "severity": "P2",
+      "issue": "non-discriminating routing coverage",
+      "regression_file": "tests/test_routing.py",
+      "test_selector": "broad_acceptable",
+      "baseline": "Observed failing regression before repair",
+      "after": "PASS"
+    },
+    {
+      "id": "F08",
+      "severity": "P2",
+      "issue": "post-run-only instruction identity",
+      "regression_file": "tests/test_runtime_smoke.py",
+      "test_selector": "instruction_change",
+      "baseline": "Observed failing regression before repair",
+      "after": "PASS"
+    },
+    {
+      "id": "F09",
+      "severity": "P2",
+      "issue": "context retarget loses completed observations",
+      "regression_file": "tests/test_acceptance_gate.py",
+      "test_selector": "context_retarget",
+      "baseline": "Observed failing regression before repair",
+      "after": "PASS"
+    },
+    {
+      "id": "F10",
+      "severity": "P3",
+      "issue": "timeout drops partial diagnostics",
+      "regression_file": "tests/test_acceptance_gate.py",
+      "test_selector": "timeout_preserves",
+      "baseline": "Observed failing regression before repair",
+      "after": "PASS"
+    },
+    {
+      "id": "F11",
+      "severity": "P3",
+      "issue": "large numeric timeout crashes validation",
+      "regression_file": "tests/test_acceptance_gate.py",
+      "test_selector": "oversized_numeric",
+      "baseline": "Observed failing regression before repair",
+      "after": "PASS"
+    },
+    {
+      "id": "F12",
+      "severity": "P2",
+      "issue": "meaningless E2E suite accepted",
+      "regression_file": "tests/test_runtime_smoke.py",
+      "test_selector": "meaningless_passing",
+      "baseline": "Observed failing regression before repair",
+      "after": "PASS"
+    }
+  ],
+  "unit_integration_suites": [
+    {
+      "python": "3.12.14",
+      "platform": "Windows",
+      "discovered": 165,
+      "passed": 164,
+      "skipped": 1,
+      "failed": 0,
+      "status": "PASS_WITH_SKIP"
+    },
+    {
+      "python": "3.14.7",
+      "platform": "Windows",
+      "discovered": 165,
+      "passed": 164,
+      "skipped": 1,
+      "failed": 0,
+      "status": "PASS_WITH_SKIP"
+    }
+  ],
+  "project_gates": [
+    {
+      "python": "3.12.14",
+      "command": "python scripts/validate.py",
+      "exit_code": 0
+    },
+    {
+      "python": "3.12.14",
+      "command": "python -m scripts.validate --profile format",
+      "exit_code": 0
+    },
+    {
+      "python": "3.12.14",
+      "command": "python scripts/catalog.py",
+      "exit_code": 0
+    },
+    {
+      "python": "3.12.14",
+      "command": "python scripts/routing_check.py",
+      "exit_code": 0
+    },
+    {
+      "python": "3.12.14",
+      "command": "python scripts/sync_skills.py --target .github/skills --check",
+      "exit_code": 0
+    },
+    {
+      "python": "3.12.14",
+      "command": "python -m compileall -q scripts tests",
+      "exit_code": 0
+    },
+    {
+      "python": "3.14.7",
+      "command": "python scripts/validate.py",
+      "exit_code": 0
+    },
+    {
+      "python": "3.14.7",
+      "command": "python -m scripts.validate --profile format",
+      "exit_code": 0
+    },
+    {
+      "python": "3.14.7",
+      "command": "python scripts/catalog.py",
+      "exit_code": 0
+    },
+    {
+      "python": "3.14.7",
+      "command": "python scripts/routing_check.py",
+      "exit_code": 0
+    },
+    {
+      "python": "3.14.7",
+      "command": "python scripts/sync_skills.py --target .github/skills --check",
+      "exit_code": 0
+    },
+    {
+      "python": "3.14.7",
+      "command": "python -m compileall -q scripts tests",
+      "exit_code": 0
+    }
+  ],
+  "semver_controls": {
+    "scope": "Generated SemVer syntax controls; Python reader and pattern search versus Node ECMAScript RegExp. Not a full JSON Schema engine or host runtime test.",
+    "cases": 595,
+    "valid": 567,
+    "invalid": 28,
+    "failures": []
+  },
+  "junction_cli_before_after": [
+    {
+      "revision": "before",
+      "exit_code": 0,
+      "unrelated_modified": true,
+      "source_sha256": "774e5388615631c33935aac3ffb88220927f31c2e1926076c5f395a6e0e1b7ae"
+    },
+    {
+      "revision": "after",
+      "exit_code": 1,
+      "unrelated_modified": false,
+      "source_sha256": "3fbf69f55badcb01249475a5d32eb63dc3d2b4b20bbe92a04d9c77e5d189b93c"
+    }
+  ],
+  "historical_artifact_regrade": {
+    "basis": "Copied retained artifacts, no fresh model call",
+    "dependency_positive": "PASS",
+    "dependency_mutated_checker": "FAIL",
+    "e2e_positive": "PASS",
+    "e2e_mutated_empty_suite": "FAIL",
+    "e2e_positive_rejects_both_mutants": true
+  },
+  "not_run": [
+    "Windows file symlink privilege unavailable",
+    "Python 3.11 execution",
+    "Ubuntu/macOS execution",
+    "Full JSON Schema engine",
+    "remote CI",
+    "native workflows for revised acceptance/context instructions",
+    "new model campaign using patched project runner"
+  ],
+  "additional_hardening_not_counted_as_confirmed_universal_bug": [
+    "Explicit zero-test rejection on runtimes where unittest might return zero",
+    "Regex end-of-input portability; Node already rejected trailing LF"
+  ],
+  "source_hash_normalization": "Raw bytes; paths relative to repository. Historical records unchanged.",
+  "source_sha256": {
+    ".github/skills/loop-orchestrate/scripts/run_loop.py": "9a49933650c26760a5f05fa3212bdee44a36a43b4c2ae59ecd06b9e136cdf9c7",
+    ".github/skills/loop-prompt/scripts/run_loop.py": "9a49933650c26760a5f05fa3212bdee44a36a43b4c2ae59ecd06b9e136cdf9c7",
+    "schemas/manifest-v1.schema.json": "8f39d18da5151d6fe4316e7eb22584a191244ff149209caa55b765d55b79c76f",
+    "scripts/acceptance_gate.py": "75008984a6b7a8a91852de5659d4ec7073a3c7fe5103c5d30cc0fbf5427c9adf",
+    "scripts/adversarial_repro.py": "05b4d63cc6eb6ca18f73667862ea93ac821a8a38f64e78c320268328b37726b6",
+    "scripts/catalog.py": "d965b19c9e97272b0c6740c944b8d93f82439858bd4a79935891ce0b6b67ffa7",
+    "scripts/mcp_smoke_grade.py": "19bf42b81ab407acd65148b034c599b45f54d160e4212c3b578fbdaf1b25d2ff",
+    "scripts/routing_check.py": "777787c13c88013227bd45475e051a0b51446d35ad5b3e81f6511346e346c7d6",
+    "scripts/run_loop.py": "9a49933650c26760a5f05fa3212bdee44a36a43b4c2ae59ecd06b9e136cdf9c7",
+    "scripts/runtime_smoke.py": "1c5b10722d9fd2f6bce11a064937cf0047c474953f0a40042a027908ea8b0bb2",
+    "scripts/smoke_cases.py": "22a2f8e41aa72903b240e2ff69a2b3e78d35efda2e23cb6d15fc3794c990eeeb",
+    "scripts/sync_skills.py": "3fbf69f55badcb01249475a5d32eb63dc3d2b4b20bbe92a04d9c77e5d189b93c",
+    "scripts/validate.py": "8f778cf22d1d2f3abd8b79999a811d2d07a815cf1c6d231ec332c4d710886ab2",
+    "scripts/validation/__init__.py": "69a72051f6a66a8752f7ac763aeaef9b87f1a715453b318e30e2317930552d97",
+    "scripts/validation/loop_policy.py": "5f876350100f0db737ba12d633eb8e254561662c877d6e63b4a7c2c40d1d20af",
+    "scripts/validation/manifest.py": "e584852f7e64790b4f7531481e646e1c3c3efaec4e1dce140fc634fc6705d203",
+    "scripts/validation/skill_format.py": "7bb867056bc6bccf508f63d690516ae6f8b3aeadae92ecf24d4ec24226d33ff9",
+    "tests/test_acceptance_gate.py": "39dc7a3ac2a0568786964598de4dc0592d26b0d0d19e2278d160b21a726bb3e7",
+    "tests/test_adversarial.py": "e61947e1c7aa8d507e67afbd46a2638f833e261e46ef6fb14dc97b098b7128e9",
+    "tests/test_catalog.py": "fa566c3c8b17308e795d0877359d4e04a7268f59242ac64e3e191fbca8cae6c2",
+    "tests/test_catalog_e2e.py": "8cbede35a8c200300ddf69683b278796507f50857f1ac696ae62a9cd6ba70566",
+    "tests/test_contract_validation.py": "d9e5825500a5d76da54275583ce7b816537a5026ef4b6d31295ab6e9bb885993",
+    "tests/test_evidence_aliases.py": "081755b835ea29230ca16a20182c16158aeac3d1b6894ca121f0ddd13498c499",
+    "tests/test_manifest_schema.py": "34ae0a513db2fecc51a570a623ebf193a97040ca46e60226619ac0cc172114f0",
+    "tests/test_mcp_smoke_grade.py": "90ed70e04b94d95c3c21b3cd3bad04d1b0621b037a93201f99ed1d40cebc5541",
+    "tests/test_routing.py": "dc74f8fa2a828c6134f55f53510f61422715aa9ea20bc338a30e3e2c8489d547",
+    "tests/test_runner_regressions.py": "c62701e1f7a3ab2a3a95d33015056e1ba4c1e86152a92dd7f90f50f28618c8ab",
+    "tests/test_runtime_evidence.py": "aca8df3c088570c4ed4d2a7898ebca48e4ec2a81475a9511bd35fa0110c49832",
+    "tests/test_runtime_smoke.py": "0dd42f6144257a515c01d8c628941fcdde55a41fb82dd26785d8609401e5a7d1",
+    "tests/test_skill_expansion.py": "85e8a401d306af93a25ec1a7805bea211ce160d9a06405e4bbbf8c48a8b676d0",
+    "tests/test_sync.py": "01bd805387fd95713e06925cf0d9ba35e17296196f0a37e51812177860d6a43f",
+    "tests/test_validate.py": "523c1cbdc4748d4a3a344639fc20482ecb3cd444c055654caac7dbd9705a9ad9",
+    "tests/test_validation_layers.py": "f477be276c41b42e4b88e565d9fb6397d9c00df2c565441c77a0a94e291961b7"
+  },
+  "minimum_30_minutes_met": true,
+  "diff_check": {
+    "status": "PASS",
+    "exit_code": 0
+  }
+}

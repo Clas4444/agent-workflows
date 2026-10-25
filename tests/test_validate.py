@@ -451,6 +451,30 @@ class ValidateRepositoryTests(unittest.TestCase):
         source.write_text(source.read_text(encoding="utf-8") + "\nchanged\n", encoding="utf-8")
         self.assertNotEqual(second, validation_fingerprint(self.temp))
 
+    def test_fingerprint_ignores_only_repo_relative_exclusions(self) -> None:
+        for ancestor in ('.loop', '.git', '__pycache__'):
+            with self.subTest(ancestor=ancestor):
+                nested = self.temp / ancestor / 'isolated-repo'
+                nested.mkdir(parents=True)
+                source = nested / 'source.txt'
+                source.write_text('before', encoding='utf-8')
+                before = validation_fingerprint(nested)
+                source.write_text('after', encoding='utf-8')
+                self.assertNotEqual(before, validation_fingerprint(nested))
+                # Excluded directories inside that repository must still be ignored.
+                after = validation_fingerprint(nested)
+                ignored = nested / '.loop'
+                ignored.mkdir()
+                (ignored / 'private.log').write_text('ignored', encoding='utf-8')
+                self.assertEqual(after, validation_fingerprint(nested))
+
+    def test_fingerprint_frames_names_and_contents_unambiguously(self) -> None:
+        left, right = self.temp/'tree-left', self.temp/'tree-right'
+        left.mkdir(); right.mkdir()
+        (left/'a').write_bytes(b'bc')
+        (right/'ab').write_bytes(b'c')
+        self.assertNotEqual(validation_fingerprint(left), validation_fingerprint(right))
+
     def test_runner_records_nonzero_exit_and_report_metadata(self) -> None:
         from argparse import Namespace
 

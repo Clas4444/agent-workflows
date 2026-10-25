@@ -53,7 +53,8 @@ def prepare(folder: Path, skill: str) -> None:
             (folder/name).write_text(json.dumps(value,indent=2)+'\n', encoding='utf-8')
 
 def command(folder: Path, *args: str) -> subprocess.CompletedProcess:
-    return subprocess.run([sys.executable,'-B',*args],cwd=folder,capture_output=True,text=True,timeout=15)
+    return subprocess.run([sys.executable,'-B',*args],cwd=folder,capture_output=True,text=True,
+                          encoding='utf-8',errors='replace',timeout=15)
 
 def snapshot(folder: Path) -> dict[str, bytes]:
     return {path.name:path.read_bytes() for path in folder.iterdir() if path.is_file()}
@@ -95,7 +96,16 @@ def grade(folder: Path, skill: str, original: dict[str, bytes]) -> dict[str, boo
                                      and bool(re.search(r'\bout[-\s]+of[-\s]+scope\b',text)))
             checks['no_implementation']=not (folder/'app.py').exists()
         elif skill == 'loop-dependencies':
-            checks['consistent_approved_versions']=command(folder,'check_dependency.py').returncode==0
+            checks['checker_preserved']=(folder/'check_dependency.py').read_bytes()==original['check_dependency.py']
+            expected_manifest=json.loads(original['manifest.json'])
+            expected_lock=json.loads(original['lock.json'])
+            approved=json.loads(original['metadata.json'])['fixture-lib']['approved']
+            expected_manifest['dependencies']['fixture-lib']=approved
+            expected_lock['packages']['fixture-lib']=approved
+            checks['independent_approved_versions']=(json.loads((folder/'manifest.json').read_text(encoding='utf-8'))==expected_manifest
+                and json.loads((folder/'lock.json').read_text(encoding='utf-8'))==expected_lock)
+            checks['consistent_approved_versions']=(checks['checker_preserved']
+                and command(folder,'check_dependency.py').returncode==0)
             checks['backup_exact']=(folder/'manifest.before.json').read_bytes()==original['manifest.json']
             checks['metadata_preserved']=(folder/'metadata.json').read_bytes()==original['metadata.json']
         elif skill == 'loop-migrate':
@@ -117,7 +127,28 @@ def grade(folder: Path, skill: str, original: dict[str, bytes]) -> dict[str, boo
             checks['invalid_input_no_write']=command(folder,script,path).returncode!=0 and target.read_bytes()==invalid and backup.read_bytes()==old_backup
         elif skill == 'loop-test-e2e':
             checks['entrypoint_preserved']=(folder/'app.py').read_bytes()==original['app.py']
-            checks['agent_suite']=command(folder,'-m','unittest','discover','-p','test_e2e.py','-v').returncode==0 and (folder/'test_e2e.py').exists()
+            suite=command(folder,'-m','unittest','discover','-p','test_e2e.py','-v')
+            count=re.search(r'(?m)^Ran ([0-9]+) tests?\b',suite.stdout+'\n'+suite.stderr)
+            checks['agent_suite']=(suite.returncode==0 and (folder/'test_e2e.py').exists()
+                                   and count is not None and int(count.group(1))>0)
+            # A passing suite can still contain only assertTrue(True). Challenge
+            # the submitted tests on isolated mutants, without changing its inputs.
+            mutants={
+                'wrong_sum':"import argparse,json\np=argparse.ArgumentParser(); p.add_argument('a',type=int); p.add_argument('b',type=int); a=p.parse_args(); print(json.dumps({'sum':a.a+a.b+1}))\n",
+                'accepts_invalid':"import json,sys\ntry:\n    a,b=map(int,sys.argv[1:]); total=a+b\nexcept ValueError:\n    total=0\nprint(json.dumps({'sum':total}))\n",
+            }
+            for label,mutant in mutants.items():
+                rejected=False
+                if checks['agent_suite']:
+                    challenge=verification_directory(folder,'independent-e2e-'+label)
+                    shutil.copy2(folder/'test_e2e.py',challenge/'test_e2e.py')
+                    (challenge/'app.py').write_text(mutant,encoding='utf-8')
+                    (challenge/'calc.py').write_bytes(original['calc.py'])
+                    (challenge/'sentinel.txt').write_bytes(original['sentinel.txt'])
+                    challenged=command(challenge,'-m','unittest','discover','-p','test_e2e.py','-v')
+                    (challenge/'suite-execution.log').write_text(challenged.stdout+challenged.stderr,encoding='utf-8')
+                    rejected=challenged.returncode!=0 and 'AssertionError' in challenged.stdout+challenged.stderr
+                checks['suite_rejects_'+label]=rejected
             for a,b in [(2,3),(0,0),(-2,-3)]:
                 result=command(folder,'app.py',str(a),str(b))
                 checks[f'journey_{a}_{b}']=result.returncode==0 and json.loads(result.stdout)=={'sum':a+b}

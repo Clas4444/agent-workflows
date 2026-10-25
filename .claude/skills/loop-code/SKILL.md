@@ -29,8 +29,14 @@ that prevents safe progress.
    positive duration. Omitted duration means stop at scoped task completion.
 2. Read project instructions, worktree status, existing patterns, tests, and
    acceptance criteria.
+   Keep stable criterion IDs and distinguish user intent from design choices.
+   Recheck the source ledger at handoff; changed context requires reassessment,
+   not reuse of old PASS. Preserve TBD requirements instead of inventing them.
 3. Implement one small reversible batch while preserving unrelated changes.
 4. Run the smallest relevant checks, then the project gate when needed.
+   Map results to the agreed criteria, including positive and negative controls.
+   For executable contracts use the repository's `docs/ACCEPTANCE-GATE.md` when
+   available. Do not change expected outcomes merely to match observed output.
 5. Inspect the diff and record changed files, evidence, verification, and the
    next batch.
 

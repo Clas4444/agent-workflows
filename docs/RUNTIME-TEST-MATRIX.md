@@ -7,6 +7,7 @@ completed safely.
 
 | Host | Version | Skill | Invocation | Result | Evidence |
 |---|---|---|---|---|---|
+| Acceptance/context instruction revision | not run | loop-plan / loop-research / loop-code / loop-test | Pinned sources and mapped acceptance controls | `NOT_RUN` | Local CLI tests are separate from native model execution; old instruction results invalidated |
 | Revised 1.5 instruction contracts | not run | loop-review / loop-code / loop-diagnose / loop-test | Routing/workflow clarified | `NOT_RUN` | Historical evidence invalidated for current instruction text |
 | Native host workflow | not run | loop-deploy | Structural contract only | `NOT_RUN` | No real deployment or rollback execution |
 | Native host workflow | not run | loop-observe | Structural contract only | `NOT_RUN` | No live exporter/alert delivery or persistent monitor |

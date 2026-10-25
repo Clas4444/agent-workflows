@@ -1,5 +1,10 @@
 # Data contracts
 
+The opt-in acceptance CLI has a separately documented version-1 contract in
+[ACCEPTANCE-GATE.md](../docs/ACCEPTANCE-GATE.md), enforced by its dependency-free
+Python reader. It does not change the repository manifest or runner state and
+does not yet have a published JSON Schema.
+
 `manifest-v1.schema.json` describes the existing repository manifest using
 JSON Schema Draft 2020-12. The schema version describes the data shape, not the
 skill release number. It permits existing additional metadata and preserves the
@@ -10,6 +15,13 @@ Production validation remains the dependency-free Python reader in
 fields, name constraints and representative valid/invalid mutations; they are
 not a general JSON Schema validator or proof of every possible input. Consumers
 using a JSON Schema engine should select Draft 2020-12 explicitly.
+
+Version strings now enforce SemVer core/prerelease/build syntax rather than
+merely three digit groups. Version and skill-name patterns use explicit
+end-of-input checks to avoid regex-engine differences around a final newline.
+The 2026-10-25 campaign compared Python and Node regex behavior; a complete
+third-party JSON Schema engine was NOT_RUN. See the
+[hardening evidence](../docs/UPDATE-30M-2026-10-25.md).
 
 Runner state and runtime evidence retain their current formats. They do not
 yet have published schemas; adding those requires characterizing error-path

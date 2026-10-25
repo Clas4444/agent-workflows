@@ -10,6 +10,7 @@ skill directories remain flat; historical evidence is versioned independently.
 | `.agents/skills/`, `.claude/skills/` | Synchronized host layouts |
 | `scripts/run_loop.py` | Standalone continuation runner; also distributed inside two skills |
 | `scripts/validate.py` | Repository integrity checks, CLI and validation report |
+| `scripts/acceptance_gate.py` | Opt-in acceptance/source identity contract and local subprocess evidence |
 | `scripts/catalog.py`, `skill-groups.json` | Functional group coverage and generated README catalog |
 | `scripts/routing_check.py`, `skill-routing.json` | Per-skill decisions, overlap review and fixed primary-route cases |
 | `scripts/validation/manifest.py` | Manifest model, names, version and safe native roots |
@@ -40,10 +41,12 @@ of invocation metadata is distinct from either profile.
 
 ## Compatibility and scope
 
-The refactor does not alter runner output or existing skill instructions.
-Historical runtime evidence therefore retains its original scope; deterministic
-regression tests characterize the verification changes separately. The runner
-stays self-contained so copied skills do not depend on repository-only modules.
+Historical refactors and runtime campaigns retain their recorded scope; later
+instruction changes are tracked in the invalidation index. The 2026-10-25
+hardening rejects unsafe evidence aliases and strengthens graders without
+changing marker names or existing CLI flags. Deterministic regression tests
+characterize those changes separately from model runtime. The runner stays
+self-contained so copied skills do not depend on repository-only modules.
 
 MCP/A2A/API adapters, OAuth flows, telemetry exporters and runtime policy
 enforcement require separate scoped implementation and tests. Markdown guidance

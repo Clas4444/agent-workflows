@@ -230,6 +230,16 @@ def has_valid_status_marker(output: str) -> bool:
     }
 
 
+def _check_evidence_paths(state_path: Path, report_path: Path) -> None:
+    if state_path.resolve() == report_path.resolve():
+        raise ValueError("state-file and report-file must be different paths")
+    for path in (state_path, report_path):
+        # resolve() cannot detect hardlinks. write_text() truncates their shared
+        # inode, which can destroy the other report or unrelated fixture data.
+        if path.is_file() and path.stat().st_nlink > 1:
+            raise ValueError(f"hardlinked evidence destination is not supported: {path}")
+
+
 def run_loop(args: argparse.Namespace) -> int:
     args._verified_state = None
     if args.max_iterations < 1 or args.timeout_seconds < 1:
@@ -240,8 +250,7 @@ def run_loop(args: argparse.Namespace) -> int:
         raise ValueError("an agent command is required after --")
     state_path = Path(args.state_file)
     report_path = Path(args.report_file)
-    if state_path.resolve() == report_path.resolve():
-        raise ValueError("state-file and report-file must be different paths")
+    _check_evidence_paths(state_path, report_path)
     previous = ""
     current_prompt = args.prompt
     self_prompt = getattr(args, "self_prompt", False)
@@ -350,6 +359,13 @@ def run_loop(args: argparse.Namespace) -> int:
     persistence_errors = []
     state["invocation_status"] = state["final_status"]
     state["persistence_errors"] = persistence_errors
+    # A child may create an alias after the initial preflight. Reject the pair
+    # again before either write, preserving the original bytes on both paths.
+    try:
+        _check_evidence_paths(state_path, report_path)
+    except (OSError, ValueError) as exc:
+        print(f"unsafe evidence destination after invocation: {exc}", file=sys.stderr)
+        return 1
     try:
         state_path.parent.mkdir(parents=True, exist_ok=True)
         report_path.parent.mkdir(parents=True, exist_ok=True)

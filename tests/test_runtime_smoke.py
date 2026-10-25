@@ -1,16 +1,40 @@
 import json
 import ast
+import hashlib
 import subprocess
 import sys
 import tempfile
 import unittest
 from pathlib import Path
+from unittest import mock
 
 sys.path.insert(0,str(Path(__file__).resolve().parents[1]))
-from scripts.runtime_smoke import classify,parse_response
+from scripts.runtime_smoke import classify,parse_response,run_case
 from scripts.smoke_cases import prepare,snapshot,grade,NEW_SKILLS
 
 class RuntimeSmokeTests(unittest.TestCase):
+    def test_instruction_change_during_host_call_cannot_receive_pass(self):
+        with tempfile.TemporaryDirectory() as temp:
+            root=Path(temp); skill_root=root/'instructions'; folder=root/'case'
+            instruction=skill_root/'loop-plan/SKILL.md'
+            instruction.parent.mkdir(parents=True); instruction.write_bytes(b'original instructions')
+            before=hashlib.sha256(instruction.read_bytes()).hexdigest()
+            def host_boundary(argv,**kwargs):
+                # A deterministic host stub, not a model call: emulate an install update.
+                instruction.write_bytes(b'changed while host was running')
+                (folder/'plan.md').write_text('Acceptance; out of scope; batches; verification; rollback',encoding='utf-8')
+                (folder/'evidence.md').write_text('retained observation',encoding='utf-8')
+                (folder/'response.json').write_text(json.dumps({'skill':'loop-plan','status':'PASS',
+                    'loaded_skill_path':str(instruction.resolve())}),encoding='utf-8')
+                return subprocess.CompletedProcess(argv,0)
+            with mock.patch('scripts.runtime_smoke.subprocess.run',side_effect=host_boundary):
+                row=run_case(folder,'loop-plan',skill_root,'host-stub',10)
+            self.assertEqual(row['status'],'BLOCKED')
+            self.assertEqual(row['instruction_sha256'],before)
+            self.assertFalse(row['checks']['instruction_unchanged'])
+            self.assertEqual(row['response']['status'],'PASS')
+            self.assertTrue((folder/'verified.json').is_file())
+
     def test_production_text_io_declares_encoding(self):
         scripts=Path(__file__).resolve().parents[1]/'scripts'
         missing=[]
@@ -95,6 +119,54 @@ class RuntimeSmokeTests(unittest.TestCase):
             versions['keep-lib']='3.0.0'
             (folder/'lock.json').write_text(json.dumps({'packages':versions}), encoding='utf-8')
             self.assertFalse(all(grade(folder,'loop-dependencies',before).values()))
+
+    def test_dependency_grader_rejects_replaced_checker_with_no_update(self):
+        with tempfile.TemporaryDirectory() as temp:
+            folder=Path(temp)/'case';prepare(folder,'loop-dependencies');before=snapshot(folder)
+            (folder/'manifest.before.json').write_bytes(before['manifest.json'])
+            (folder/'check_dependency.py').write_text("print('DEPENDENCIES_PASS')\n",encoding='utf-8')
+            self.assertFalse(all(grade(folder,'loop-dependencies',before).values()))
+
+    def test_e2e_grader_rejects_empty_suite(self):
+        with tempfile.TemporaryDirectory() as temp:
+            folder=Path(temp)/'case';prepare(folder,'loop-test-e2e');before=snapshot(folder)
+            (folder/'test_e2e.py').write_text('# no tests\n',encoding='utf-8')
+            self.assertFalse(all(grade(folder,'loop-test-e2e',before).values()))
+
+    def test_e2e_grader_rejects_meaningless_passing_suite(self):
+        with tempfile.TemporaryDirectory() as temp:
+            folder=Path(temp)/'case';prepare(folder,'loop-test-e2e');before=snapshot(folder)
+            (folder/'test_e2e.py').write_text('import unittest\nclass Tests(unittest.TestCase):\n    def test_green(self): self.assertTrue(True)\n',encoding='utf-8')
+            self.assertFalse(all(grade(folder,'loop-test-e2e',before).values()))
+
+    def test_e2e_grader_accepts_portable_behavioral_suite_and_regrades(self):
+        suite='''import json,subprocess,sys,unittest
+from pathlib import Path
+class Journey(unittest.TestCase):
+    def call(self,*args):
+        before=Path('sentinel.txt').read_bytes()
+        result=subprocess.run([sys.executable,'app.py',*args],capture_output=True,text=True,timeout=3)
+        self.assertEqual(Path('sentinel.txt').read_bytes(),before)
+        return result
+    def test_valid(self):
+        for a,b in ((2,3),(0,0),(-2,-3)):
+            result=self.call(str(a),str(b))
+            self.assertEqual(result.returncode,0)
+            self.assertEqual(json.loads(result.stdout),{'sum':a+b})
+    def test_invalid(self):
+        for args in (('oops','3'),('2',)):
+            result=self.call(*args)
+            self.assertEqual(result.returncode,2)
+            self.assertTrue(result.stderr)
+            self.assertFalse(result.stdout.strip())
+'''
+        with tempfile.TemporaryDirectory() as temp:
+            folder=Path(temp)/'case';prepare(folder,'loop-test-e2e');before=snapshot(folder)
+            (folder/'test_e2e.py').write_text(suite,encoding='utf-8')
+            self.assertTrue(all(grade(folder,'loop-test-e2e',before).values()))
+            self.assertTrue(all(grade(folder,'loop-test-e2e',before).values()))
+            self.assertTrue((folder/'independent-e2e-wrong_sum-2').is_dir())
+            self.assertEqual((folder/'app.py').read_bytes(),before['app.py'])
 
     def test_evaluation_grader_rejects_hardcoded_totals(self):
         with tempfile.TemporaryDirectory() as temp:

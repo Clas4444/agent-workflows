@@ -6,6 +6,13 @@ from pathlib import Path
 
 DEFAULT_ROOTS = (".github/skills", ".agents/skills", ".claude/skills")
 NAME_PATTERN = re.compile(r"(?=.{1,64}$)[a-z0-9]+(?:-[a-z0-9]+)*$")
+_NUMBER = r"(?:0|[1-9][0-9]*)"
+_PRERELEASE = r"(?:0|[1-9][0-9]*|[0-9A-Za-z-]*[A-Za-z-][0-9A-Za-z-]*)"
+_BUILD = r"[0-9A-Za-z-]+"
+VERSION_PATTERN = re.compile(
+    rf"{_NUMBER}\.{_NUMBER}\.{_NUMBER}(?:-{_PRERELEASE}(?:\.{_PRERELEASE})*)?"
+    rf"(?:\+{_BUILD}(?:\.{_BUILD})*)?"
+)
 
 @dataclass(frozen=True)
 class Manifest:
@@ -28,7 +35,7 @@ def load_manifest(repo: Path) -> tuple[Manifest | None, list[str]]:
     if not isinstance(manifest, dict):
         return None, ["manifest must be a JSON object"]
     version = manifest.get("version")
-    if not isinstance(version, str) or not re.fullmatch(r"[0-9]+\.[0-9]+\.[0-9]+(?:-[a-z0-9.-]+)?", version):
+    if not isinstance(version, str) or not VERSION_PATTERN.fullmatch(version):
         errors.append("manifest version must use semantic version syntax")
     skills = manifest.get("skills")
     if not isinstance(skills, list) or not all(isinstance(item, str) for item in skills):

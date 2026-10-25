@@ -25,3 +25,8 @@ evidence from one host or version to another.
 The repository does not modify personal installations automatically. The
 explicit `scripts/sync_skills.py --target ...` command can update an authorized
 personal skill root with backups. See the README synchronization instructions.
+Managed destinations reject hardlinks and symlink/reparse-point components
+below the selected root, even aliases resolving within that root. This prevents
+an internal alias from overwriting an unrelated skill. Windows junctions are
+checked via reparse attributes on Python 3.11 as well. The explicitly selected
+root itself is resolved first. Concurrent alias changes are not locked out.

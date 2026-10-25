@@ -4,10 +4,26 @@ import argparse
 import json
 import re
 import shutil
+import stat
 from datetime import datetime, timezone
 from pathlib import Path
 
 REPO = Path(__file__).resolve().parents[1]
+
+
+def reject_destination_aliases(destination: Path, target: Path) -> None:
+    for component in (destination, *destination.parents):
+        if component == target:
+            break
+        try:
+            metadata = component.lstat()
+        except FileNotFoundError:
+            continue
+        # Windows junctions are reparse points, but are not is_symlink() on
+        # Python 3.11. Inspect attributes as well as POSIX symlink mode.
+        reparse = getattr(metadata, 'st_file_attributes', 0) & getattr(stat, 'FILE_ATTRIBUTE_REPARSE_POINT', 0)
+        if stat.S_ISLNK(metadata.st_mode) or reparse:
+            raise ValueError(f'symlink/reparse destination alias is not supported: {component}')
 
 
 def sync(target: Path, backup: Path, check: bool = False) -> list[str]:
@@ -33,6 +49,7 @@ def sync(target: Path, backup: Path, check: bool = False) -> list[str]:
                 raise ValueError(f'missing source file: {original}')
             if not destination.resolve().is_relative_to(target):
                 raise ValueError(f'destination escapes target: {destination}')
+            reject_destination_aliases(destination, target)
             if destination.exists() and not destination.is_file():
                 raise ValueError(f'destination is not a file: {destination}')
             # copy2 overwrites the existing inode. A second hardlink may live

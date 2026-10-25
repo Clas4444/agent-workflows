@@ -1,5 +1,10 @@
 # Validation
 
+For executable acceptance criteria and context freshness, see the separate
+[acceptance gate](ACCEPTANCE-GATE.md). Structural PASS here does not execute that
+contract or imply its checks passed. The gate is opt-in, dry-run by default and
+does not change existing runner protocols or `validate.py` CLI behavior.
+
 The validator checks the manifest, skill metadata, three-root synchronization,
 named statuses, and recognizable stop instructions. It uses only the Python
 standard library. Metadata extraction uses regular expressions for the supported
@@ -11,6 +16,13 @@ unclosed quotes and unsupported YAML constructs are rejected instead of being
 coerced into text. Duplicate supported keys include whitespace before `:`.
 Report generation computes a fingerprint; validation does not compare a saved
 report's fingerprint with the current source.
+
+Plain `-`/`?` indicators followed by separation are rejected; quoted literals and
+safe prefixes such as `-item` remain valid. The manifest version follows
+[SemVer 2.0 syntax](https://semver.org/), including nonempty prerelease/build
+identifiers and numeric leading-zero restrictions. The metadata subset follows
+the [YAML plain-scalar restrictions](https://yaml.org/spec/1.2.2/#733-plain-style);
+this is still not a general YAML parser.
 
 Run from the repository root:
 
@@ -37,6 +49,9 @@ the clean commit or a working-tree fingerprint, and findings. `PASS`, `FAIL`,
 `BLOCKED`, and `NOT_RUN` are distinct and must reflect actual evidence.
 
 The generated report is excluded from the fingerprint to avoid self-reference.
+Fingerprint encoding v2 uses framed filename/content-hash records and POSIX
+relative path spelling. This removes filename/content boundary ambiguity;
+historical fingerprints use their historical encoding and are not rewritten.
 Source, tests, skills, configuration, and other repository files remain
 included. Reports about work outside this repository should use the configured
 report directory or a workspace-relative `Markdown` directory instead.
@@ -85,6 +100,9 @@ metadata when skill-routing.json is present; CI invokes the checker explicitly
 so a missing file cannot silently skip the repository gate. Prediction grading
 requires all fixed IDs and includes no-skill controls. These checks do not prove
 automatic host discovery or runtime skill behavior.
+Each skill must also have a single-answer primary case, and NONE needs a
+dedicated single-answer control. Broadening every answer set cannot manufacture
+coverage. Additional explicitly ambiguous cases remain permitted.
 
 ```text
 python -m unittest discover -s tests -p test_adversarial.py -v

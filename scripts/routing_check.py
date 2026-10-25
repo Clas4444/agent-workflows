@@ -30,6 +30,9 @@ def load_routes(repo: Path):
         covered.update(allowed)
     if not set(names+['NONE']).issubset(covered):
         raise ValueError('routing cases must cover every skill and a no-skill control')
+    discriminating = {row['acceptable'][0] for row in cases if len(row['acceptable']) == 1}
+    if not set(names+['NONE']).issubset(discriminating):
+        raise ValueError('routing requires a single-answer primary case per skill and a dedicated NONE control')
     for row in data['overlap_decisions']:
         related = row['skills']
         if (not isinstance(related, list) or len(related) < 2

@@ -38,6 +38,15 @@ identity cannot be PASS. An account usage limit is BLOCKED and stops new calls;
 remaining cases are NOT_RUN. A missing required instruction or executable is
 reported as unavailable rather than silently using another account/model.
 
+Dependency grading independently reads the actual JSON versions against the
+original approval metadata and requires the original checker bytes. A replaced
+checker is not executed as an oracle. E2E grading requires a nonempty passing
+unittest suite, then runs that suite in fresh directories against wrong-sum and
+invalid-input-acceptance mutants. Both must be rejected by assertions. Keep the
+suite self-contained in `test_e2e.py`, using its own directory for fixture paths;
+the original application and sentinel remain untouched. These two mutations do
+not prove complete coverage.
+
 ## Evidence and limitations
 
 Each case keeps request.txt, execution.log, response.json, evidence.md and
@@ -45,6 +54,11 @@ verified.json when available. results.json records statuses incrementally.
 Logs may contain private paths/output; publish only reviewed summaries and
 sanitized evidence. Hashes refer to local raw bytes (including line endings),
 not necessarily Git's normalized blobs.
+The instruction hash is captured before execution and compared after the host
+returns. Drift or disappearance prevents a PASS; both hashes and the original
+response are retained. Historical records with only a post-run hash do not gain
+this guarantee retrospectively. This check does not defeat change-and-restore
+races or prove that the host actually read the instruction.
 All harness text I/O uses explicit UTF-8, including model-generated plans and
 reports. This avoids Windows cp1252 failures for smart quotes or non-English text.
 Independent verification directories are unique, so repeat grading preserves

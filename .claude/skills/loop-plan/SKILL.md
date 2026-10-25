@@ -23,12 +23,20 @@ authorization; clarify only prerequisites that prevent safe progress.
 1. Inspect the target and project instructions; distinguish stated requirements
    from assumptions. Reuse existing authorization rather than asking again.
 2. Define observable acceptance criteria and explicit out-of-scope behavior.
+   Give criteria stable IDs; separate the problem, supporting evidence and
+   falsifiable outcome (what/why) from architecture and implementation (how).
+   Keep unknown requirements as TBD; conflicting requirements stay unresolved
+   until the user or authoritative evidence resolves them. Never invent answers.
 3. Break work into small dependency-ordered batches. For each batch name files
    or components, expected behavior, verification command and completion gate.
 4. Identify uncertain prerequisites, risky state changes, rollback points and
    the smallest experiment needed before dependent work can begin.
 5. Write a plan with priorities and next action. Do not silently implement it.
    Mark assumptions and prerequisites separately from executed verification.
+6. Map each criterion to positive and negative controls before implementation.
+   Record context paths, revisions and hashes; recheck them at handoff. For
+   executable contracts use the repository's `docs/ACCEPTANCE-GATE.md` when
+   available; planned checks remain NOT_RUN, not evidence of working behavior.
 
 ## Output
 
