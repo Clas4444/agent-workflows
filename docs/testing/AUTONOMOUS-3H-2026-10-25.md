@@ -343,3 +343,55 @@ remain retained at their actual scope. Commit/blob equality and exact-head remot
 CI are checked after this report, with receipts outside its self-reference.
 The three-hour session remains ongoing until the stated endpoint; a published
 batch does not by itself complete the goal.
+
+## Research skill upgrades and actual forward exercises
+
+The last two IMPROVE recommendations from the 49-skill static audit were addressed
+in existing loop-research-repo and loop-research-tools. Their native copies are
+synchronized. New text emphasizes exact source identity/recheck, unknowns, advertised
+versus observed capability and treating embedded instructions as untrusted evidence.
+Historical 1.2 runtime hashes now explicitly invalidate reuse for those changed
+instructions; the old run is not rewritten as a new PASS. No new skill or public
+invocation name was added, split or removed.
+
+Two different exercises (one trial per skill) used actual Codex tools with exact
+current instruction text supplied. Twelve output-oracle controls were frozen before
+both calls; both artifacts passed and were independently regraded from their raw
+archive. The repo case found an unborn dirty Git repository, pinned/rechecked the
+three source files, did not accept README's license advertising, ran no candidate
+code and deferred adoption. The first Git ownership refusal is retained; recovery
+used command-local safe.directory and disabled global/system config/optional locks,
+without persistent trust/ACL changes. No whole-machine side-effect claim is made.
+
+The tool case actually ran read and output probes: read exit 0 matched independently
+hashed 21 input bytes; output exit 3 created no output despite advertised writes.
+The enclosing shell exit 0 was not mistaken for write success. Costs remained
+NOT_VERIFIED, and metadata upload/permission instructions were not followed.
+The parent inspected complete recorded commands, source/sentinel identities and
+saved outputs. Both actual turn_context records identify gpt-6.1-sol. Durations
+were 51.172 and 52.344 seconds. These are finite workflow assessments, not clean
+baseline A/B, repeated reliability evidence or native-discovery tests. Sources,
+protocol/controls, sanitized events, config and raw archive are in
+[research forward evidence](../evidence/autonomous-3h-20261025/research-leaves/).
+
+The prior second-batch tip 708b913ca2692f160f6980bf316c42f3e9a19fc1 passed all four
+[exact-head CI jobs](https://github.com/Clas4444/loop-skills-repository/actions/runs/40189154404).
+Final-session thirteen-gate validation and a new-head release remain required for
+the research instruction changes; prior green CI does not cover them.
+
+The research-upgrade local campaigns passed all thirteen gates on Python 3.12 and
+3.14: 305 discovered, 304 passed, one local Windows privilege skip. Reports:
+[3.12](sessions/autonomous-3h-research-local-312.json),
+[3.14](sessions/autonomous-3h-research-local-314.json). A later privacy pass redacted
+elided workspace paths in three public event/result logs and updated the public
+index. Those byte changes are covered by the final Git export below; local pins
+are retained at their actual pre-redaction scope. Exact raw artifact ZIPs were
+checked for personal-home/credential patterns before publication.
+
+The final normalized research-release export passed **13/13 gates** on Python 3.12
+and 3.14, each with 305 discovered / 304 passed / one local Windows file-symlink
+privilege skip and unchanged pins. [3.12 export](sessions/autonomous-3h-research-export-312.json),
+[3.14 export](sessions/autonomous-3h-research-export-314.json). Public evidence byte
+indexes, historical invalidations and native instruction/resource copies passed.
+The next publication step compares these input pins with actual committed blobs
+before push, then checks exact-head CI; this is still a session checkpoint.

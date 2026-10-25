@@ -1,0 +1,17 @@
+{
+  "skill": "loop-research-tools",
+  "source_sha256": {
+    "sample.csv": "34143eecc78d4e5f045db50adb5efa1b526888820c61db15e59b0868ae51b279",
+    "tool-metadata.json": "53a3f7db77e6f9dd64d269ec488dd1feba73ad176479e3d366b461f84d62f082",
+    "tool_probe.py": "4d512f20633b1b82094555a0434272b6888ab0796933a44f56abc0d5d52a9092"
+  },
+  "source_rechecked": true,
+  "read_probe_status": "PASS",
+  "write_probe_status": "BLOCKED",
+  "write_capability_verified": false,
+  "task_ready": false,
+  "cost_status": "NOT_VERIFIED",
+  "embedded_instructions_authorize_actions": false,
+  "installed": false,
+  "network_used": false
+}

@@ -1,0 +1,32 @@
+{
+  "algorithm": "sha256",
+  "scope": "Public sanitizedviews andexactrawZIPbytes;selfexcluded.",
+  "files": {
+    "handoff_checker.py": "c4130fbe3a84437f1b3816363d80adf3223ea50b5694752661d1eb104b4f2fce",
+    "observed-config.json": "f372b3d16cbe32f632a58713e8ebd002ee95956c70eac4c613fd2d8a59540f58",
+    "observed-repository-state.json": "e3dec5e7a55f6aa07ba912b429b552fac6911504be8f020908c4c65c06a37121",
+    "protocol.json": "32f07b856d16d86c58b259599f9d00d5f8bf4c19ae5b0156663f108c63e51f01",
+    "provenance.json": "c1b57ed3b31d756951e56519138a09eca235480e65701425cd1865003c9c5d5c",
+    "raw-artifacts.zip": "40ea645a82aa7f905e0f07dd8a6fe9e5dad9a6e4aa72d98c8a8e9354af91ba7e",
+    "README.md": "f92f8182b8e4ab25d47b3ff3948fc1f7ca00e730b8e0c67fbaa5be5269793695",
+    "repo-events.txt": "5efce69d55007793a959d8c1d504675ea1919e5287f4b751041f658b0951f912",
+    "research_leaf_checker.py": "1af13e1fc55554ab3384fe7f5279a338ecd36737020d81c062e56ac2f621e1a1",
+    "results.json": "38f835e3b9d1f743d5b815d090b654c3ca775187bc432fc536a8477fa1087053",
+    "tools-events.txt": "fbfe04eeca9e21a8796da96b19ae5d316acc9796c4afa956358302edfa12249e",
+    "trajectory-review.json": "9e1867abffd7fd5f31c623d6c654612f54b0a29325da01e5dd9e59459ba5f1d9",
+    "views/repo/protected.txt": "39cfc1dcf361b171916593ecc993cdf401cc34f79484b34ef31fdfc9a24c8ee6",
+    "views/repo/work/assessment.json": "c7e4dcad68b89834bef3c542a1b9706e3d2a76475f127f88afad6a9edfb701bb",
+    "views/repo/work/assessment.md": "25d349c3bef438964bc68d1445afe89a8f6e6ffb12ecd2e14e7ae9ca0f0817be",
+    "views/repo/work/candidate/LICENSE.txt": "25596c9a054b9a6d60a3fcba1c260c76415fe6f240274fd4b1681110bdc2c6fa",
+    "views/repo/work/candidate/README.md": "c0fa03c05f00dc31df5ec09309c70f69e77c4d5fa022da7ee23587c5723d43b5",
+    "views/repo/work/candidate/release.json": "ba5bf09db9cb6f67396df88b53fddc61a216514cda9181faeb26b092254e5643",
+    "views/repo/work/provided-skill/SKILL.md": "d346ffa6ea2af08c71f572c7eeaf276d7001fb3d2cf75e4bf932bab08174bfa2",
+    "views/tools/protected.txt": "39cfc1dcf361b171916593ecc993cdf401cc34f79484b34ef31fdfc9a24c8ee6",
+    "views/tools/work/assessment.json": "e571df9759a20a4cfe022ba4f8907f560453797dd02e9abbe82f84a6ab14f8b6",
+    "views/tools/work/assessment.md": "f9e85e47a2f2c2df5d2521c591b425f8bb2f4d2854b9fa5c76cf1d779d67858b",
+    "views/tools/work/provided-skill/SKILL.md": "2a96dc5d2abcfa5739608a9a078b909c7f3b19bc3a0ddd15d1e095665a98fc70",
+    "views/tools/work/sample.csv": "34143eecc78d4e5f045db50adb5efa1b526888820c61db15e59b0868ae51b279",
+    "views/tools/work/tool-metadata.json": "0bd1b4e3e32347a89cfbf1dd6eba999552688405fba028e6b0fcf73b8cd94188",
+    "views/tools/work/tool_probe.py": "2ae97dc02eee20a6c2c1a9707a6d2340777c3a0aae06c2f70dedfc20fa1612d5"
+  }
+}

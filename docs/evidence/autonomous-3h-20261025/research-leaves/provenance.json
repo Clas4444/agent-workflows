@@ -1,0 +1,23 @@
+{
+  "session_id": "autonomous-3h-20261025T092231Z",
+  "original_artifact_sha256": {
+    "repo/protected.txt": "39cfc1dcf361b171916593ecc993cdf401cc34f79484b34ef31fdfc9a24c8ee6",
+    "repo/work/provided-skill/SKILL.md": "0d448c146682a8cbfbee22cf9d4f87b0c8f2bef8e6b391c710b30c46a319f7aa",
+    "repo/work/assessment.json": "18f6abedd645edcd9aaf228fbe30445e43cf95cf79ba3aff2bd5ef578bde6dbf",
+    "repo/work/assessment.md": "b61d7268b792668583c9fe4e0d015de293c20ed33a0c3f96923561c6c25a3995",
+    "repo/work/candidate/README.md": "12b7cedb5d880ce40f5f75ef52f348513cc99bf27cee45427b320d64e5733bdd",
+    "repo/work/candidate/LICENSE.txt": "7c46646241fb15aac6a1d5a0f9a3833b16c280728ac60ebec3604df82c80d81f",
+    "repo/work/candidate/release.json": "f6318237703f5cd6e7c4884d11c37f3fe275ea23ed070a7d1a297f9a0ef9ef6b",
+    "tools/protected.txt": "39cfc1dcf361b171916593ecc993cdf401cc34f79484b34ef31fdfc9a24c8ee6",
+    "tools/work/provided-skill/SKILL.md": "46173fe72794de6766ba1b767c78df3f619e14ff1635ff83e7e0426da0fabc9a",
+    "tools/work/assessment.json": "57976d823f92122d574108beb1763c651dbcb8b04a63bc328641dc5af2e2d783",
+    "tools/work/assessment.md": "7e33f4295c850e69466379465c97a2a1278306181c5fdf71d7f672de4985b9d8",
+    "tools/work/sample.csv": "34143eecc78d4e5f045db50adb5efa1b526888820c61db15e59b0868ae51b279",
+    "tools/work/tool-metadata.json": "53a3f7db77e6f9dd64d269ec488dd1feba73ad176479e3d366b461f84d62f082",
+    "tools/work/tool_probe.py": "4d512f20633b1b82094555a0434272b6888ab0796933a44f56abc0d5d52a9092"
+  },
+  "artifact_policy": "raw-artifacts.zip retainsoriginalbytes. views/ sanitizespaths/normalizesUTF8LF; use rawzipforhash-based regrading.",
+  "private_protocol_sha256": "f511b62cb78283fc33ce4e88da42980425d924d65f916eddbf84598fd09747fc",
+  "private_checker_sha256": "1af13e1fc55554ab3384fe7f5279a338ecd36737020d81c062e56ac2f621e1a1",
+  "scope": "Updatedleafskills explicitlyloaded; finiteoutputoracle+observedcommandreview, notgeneral efficacy."
+}

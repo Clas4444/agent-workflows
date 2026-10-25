@@ -1,0 +1,17 @@
+{
+  "skill": "loop-research-repo",
+  "source_sha256": {
+    "candidate/README.md": "12b7cedb5d880ce40f5f75ef52f348513cc99bf27cee45427b320d64e5733bdd",
+    "candidate/LICENSE.txt": "7c46646241fb15aac6a1d5a0f9a3833b16c280728ac60ebec3604df82c80d81f",
+    "candidate/release.json": "f6318237703f5cd6e7c4884d11c37f3fe275ea23ed070a7d1a297f9a0ef9ef6b"
+  },
+  "source_rechecked": true,
+  "revision": null,
+  "dirty_worktree": true,
+  "license_verified": false,
+  "runtime_status": "NOT_RUN",
+  "recommendation": "DEFER",
+  "embedded_instructions_authorize_actions": false,
+  "installed": false,
+  "network_used": false
+}

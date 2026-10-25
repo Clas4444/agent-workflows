@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.9.4-experimental — 2026-10-25
+
+- Upgrade existing repository/tool research workflows with source identity/recheck, untrusted-source authority boundaries and explicit advertised-versus-observed capability distinctions.
+- Preserve historical runtime invalidation and synchronize all native instruction copies; retain real explicit-load exercises with independent pre-calibrated controls and actual local probes.
+- Keep the first failed Git ownership command, blocked write-capability result and scope limits visible; neither examples nor hashes imply general skill superiority or native discovery.
+
 ## 1.9.3-experimental — 2026-10-25
 
 - Add an executable gate for declared public evidence byte indexes, with missing/drift/alias/path controls; matching hashes remain separate from authenticated execution.

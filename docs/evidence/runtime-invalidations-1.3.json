@@ -58,5 +58,17 @@
     "current_instruction_text_sha256": "7e14f9df43616ec87d567a533be8fed85992aa7c9c3cb57c81aaf962ff01fb16",
     "current_runtime_status": "NOT_RUN",
     "reason": "1.9 artifact/resource delivery and evidence-scope upgrade; old runtime observations do not apply to the new instruction text."
+  },
+  "loop-research-repo": {
+    "historical_instruction_text_sha256": "3eb496f0860e99a971f49c2608409ee7701a7e2d08fc367ea61b6bf0c3bbe86c",
+    "current_instruction_text_sha256": "d346ffa6ea2af08c71f572c7eeaf276d7001fb3d2cf75e4bf932bab08174bfa2",
+    "current_runtime_status": "NOT_RUN",
+    "reason": "Three-hour 2026-10-25 audit adds source identity/recheck, evidence-vs-capability distinctions and untrusted-source authority boundaries. Historical 1.2 executions do not exercise revised instructions."
+  },
+  "loop-research-tools": {
+    "historical_instruction_text_sha256": "f4084d3535630280b007ad6f9cace94af37417aa8f6a19ec3bba6a782603576e",
+    "current_instruction_text_sha256": "2a96dc5d2abcfa5739608a9a078b909c7f3b19bc3a0ddd15d1e095665a98fc70",
+    "current_runtime_status": "NOT_RUN",
+    "reason": "Three-hour 2026-10-25 audit adds source identity/recheck, evidence-vs-capability distinctions and untrusted-source authority boundaries. Historical 1.2 executions do not exercise revised instructions."
   }
 }

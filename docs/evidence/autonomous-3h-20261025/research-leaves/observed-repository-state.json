@@ -1,0 +1,12 @@
+{
+  "revision": {
+    "exit_code": 128,
+    "stdout": "",
+    "stderr": "fatal: Needed a single revision\n"
+  },
+  "dirty": {
+    "exit_code": 0,
+    "stdout": "?? LICENSE.txt\n?? README.md\n?? release.json\n",
+    "stderr": ""
+  }
+}

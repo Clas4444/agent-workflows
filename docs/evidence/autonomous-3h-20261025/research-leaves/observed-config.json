@@ -1,0 +1,56 @@
+[
+  {
+    "case": "repo",
+    "config": [
+      {
+        "model": "gpt-6.1-sol",
+        "sandbox_policy": {
+          "type": "workspace-write",
+          "network_access": false,
+          "exclude_tmpdir_env_var": false,
+          "exclude_slash_tmp": false
+        },
+        "approval_policy": "never",
+        "summary": "none"
+      }
+    ],
+    "usage": [
+      {
+        "input_tokens": 146260,
+        "cached_input_tokens": 109312,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 1717,
+        "reasoning_output_tokens": 40
+      }
+    ],
+    "seconds": 51.172,
+    "instruction_delivery": "explicit promptpayload; native discoveryNOT_RUN"
+  },
+  {
+    "case": "tools",
+    "config": [
+      {
+        "model": "gpt-6.1-sol",
+        "sandbox_policy": {
+          "type": "workspace-write",
+          "network_access": false,
+          "exclude_tmpdir_env_var": false,
+          "exclude_slash_tmp": false
+        },
+        "approval_policy": "never",
+        "summary": "none"
+      }
+    ],
+    "usage": [
+      {
+        "input_tokens": 115143,
+        "cached_input_tokens": 97536,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 1599,
+        "reasoning_output_tokens": 15
+      }
+    ],
+    "seconds": 52.344,
+    "instruction_delivery": "explicit promptpayload; native discoveryNOT_RUN"
+  }
+]
