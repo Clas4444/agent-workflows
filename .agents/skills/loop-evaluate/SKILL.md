@@ -31,6 +31,11 @@ authorization; clarify only prerequisites that prevent safe progress.
 5. Compare baseline/candidate only on comparable cases and conditions. Report
    denominators, per-case outcomes, failure categories and uncertainty. Do not
    extrapolate a small smoke result into universal compatibility.
+   For repeated trials, predefine attempts per case and retain every result,
+   including blocked/not-run attempts. Report per-case sequences and the declared
+   consistency rule; one successful sample is not reliability. Do not confuse
+   pass@k (at least one success) with pass^k (all k succeed), or assume trials
+   are independent. Name any estimator and its assumptions before using it.
 6. If producing a scorer, verify it runs in a fresh directory from only its
    documented inputs. Machine-readable metrics must not depend on a pre-existing
    human report; create optional reports when absent. Exercise changed outputs

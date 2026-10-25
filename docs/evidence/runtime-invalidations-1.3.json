@@ -46,5 +46,17 @@
     "current_instruction_text_sha256": "a751bad256a7827c6ef8fc2fa97a10fc3123fb385455ddf05aa29139141fda85",
     "current_runtime_status": "NOT_RUN",
     "reason": "2026-10-25 acceptance/context handoff revision: stable criteria, pinned context and positive/negative controls. Previous executions did not exercise these instructions."
+  },
+  "loop-evaluate": {
+    "historical_instruction_text_sha256": "036a181c09dce1ac92abbd4e8b35c72d3b2a137415f3b9f74298433da2dea023",
+    "current_instruction_text_sha256": "36562697e5c76132e92eafc07193ee12508559abbfdbded0cdb4342b030edc03",
+    "current_runtime_status": "NOT_RUN",
+    "reason": "1.6 research-backed repeated trials or forward-testing contract; historical runs did not exercise revised text."
+  },
+  "loop-skill-create": {
+    "historical_instruction_text_sha256": "07115821734c46c24771087ca081d10981d8d7fc5eb4548e044e476ff7c48967",
+    "current_instruction_text_sha256": "af7018e1151755e5157581de6042cef66d6f6f59e0afd3f463ce71787b28e5dc",
+    "current_runtime_status": "NOT_RUN",
+    "reason": "1.6 research-backed repeated trials or forward-testing contract; historical runs did not exercise revised text."
   }
 }

@@ -7,6 +7,10 @@ completed safely.
 
 | Host | Version | Skill | Invocation | Result | Evidence |
 |---|---|---|---|---|---|
+| Codex subagent / Windows, explicit canonical files | host version not recorded | loop-context + loop-handoff | Two independent synthetic preparation/cold-resume tasks | `PASS` for stated fixture scope only | [1.6 research/evidence](RESEARCH-1.6.md); no automatic discovery or product tests |
+| Native automatic discovery / other hosts | not run | loop-context | New 1.6 contract | `NOT_RUN` | Explicit synthetic forward-test recorded separately |
+| Native automatic discovery / other hosts | not run | loop-handoff | New 1.6 contract | `NOT_RUN` | Explicit synthetic cold-resume recorded separately |
+| Revised 1.6 instruction contracts | not run | loop-evaluate / loop-skill-create | Research/repeated-trial upgrade | `NOT_RUN` | Historical instruction results invalidated |
 | Acceptance/context instruction revision | not run | loop-plan / loop-research / loop-code / loop-test | Pinned sources and mapped acceptance controls | `NOT_RUN` | Local CLI tests are separate from native model execution; old instruction results invalidated |
 | Revised 1.5 instruction contracts | not run | loop-review / loop-code / loop-diagnose / loop-test | Routing/workflow clarified | `NOT_RUN` | Historical evidence invalidated for current instruction text |
 | Native host workflow | not run | loop-deploy | Structural contract only | `NOT_RUN` | No real deployment or rollback execution |

@@ -27,10 +27,19 @@ expected evidence. Inspect the manifest, `CONTRIBUTING.md`, validation docs,
 and related skills. Edit `.github/skills/<skill-name>/SKILL.md`, then copy it
 exactly to `.agents/skills/` and `.claude/skills/`.
 
+When research informs a change, keep primary-source links, inspected revision
+and the specific design decision they support. Separate reported experimental
+results from applicability to this repository; do not copy benchmark claims into
+runtime support claims. Compare nearby skill responsibilities before adding one.
+
 Validate metadata, prerequisites, permitted actions, constraints, outputs,
 bounded work, verification, stop conditions, and all four statuses. Add focused
 positive and negative tests when the validator supports them. Update
 documentation and generated evidence only when the verification surface changes.
+For substantial behavior changes, freeze realistic tasks and acceptance oracles
+before forward-testing. Include an off-target case and a cold/stale-context case
+when relevant. Judge produced artifacts and side effects, not wording alone;
+retain failures and distinguish explicit instruction loading from native discovery.
 
 ## Output
 

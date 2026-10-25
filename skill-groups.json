@@ -5,7 +5,8 @@
       "loop-research",
       "loop-research-repo",
       "loop-research-tools",
-      "loop-plan"
+      "loop-plan",
+      "loop-context"
     ]
   },
   "implementation": {
@@ -62,7 +63,8 @@
     "skills": [
       "loop-skill-create",
       "loop-orchestrate",
-      "loop-prompt"
+      "loop-prompt",
+      "loop-handoff"
     ]
   },
   "mcp-integration": {

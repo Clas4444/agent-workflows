@@ -15,8 +15,8 @@ class CatalogTests(unittest.TestCase):
         groups = json.loads((ROOT/'skill-groups.json').read_text(encoding='utf-8'))
         self.assertEqual(len(groups), 8)
         names = [name for group in groups.values() for name in group['skills']]
-        self.assertEqual(len(names), 34)
-        self.assertEqual(len(set(names)), 34)
+        self.assertEqual(len(names), 36)
+        self.assertEqual(len(set(names)), 36)
 
     def test_duplicate_and_missing_routes_fail_even_with_valid_skill_files(self):
         from test_validate import make_fixture
@@ -40,9 +40,9 @@ class CatalogTests(unittest.TestCase):
         historical = json.loads((ROOT/'docs/evidence/manifest-1.2.json').read_text(encoding='utf-8'))
         current = json.loads((ROOT/'skills-manifest.json').read_text(encoding='utf-8'))
         self.assertEqual(len(historical['skills']), 27)
-        self.assertEqual(set(current['skills'])-set(historical['skills']), {'loop-test-adversarial', 'loop-test-compatibility', 'loop-mcp-design', 'loop-mcp-test', 'loop-mcp-security', 'loop-deploy', 'loop-observe'})
+        self.assertEqual(set(current['skills'])-set(historical['skills']), {'loop-test-adversarial', 'loop-test-compatibility', 'loop-mcp-design', 'loop-mcp-test', 'loop-mcp-security', 'loop-deploy', 'loop-observe', 'loop-context', 'loop-handoff'})
         text = (ROOT/'docs/RUNTIME-TEST-MATRIX.md').read_text(encoding='utf-8')
-        for name in ('loop-test-adversarial', 'loop-test-compatibility', 'loop-mcp-design', 'loop-mcp-test', 'loop-mcp-security', 'loop-deploy', 'loop-observe'):
+        for name in ('loop-test-adversarial', 'loop-test-compatibility', 'loop-mcp-design', 'loop-mcp-test', 'loop-mcp-security', 'loop-deploy', 'loop-observe', 'loop-context', 'loop-handoff'):
             row = next(line for line in text.splitlines() if f'| {name} |' in line)
             self.assertIn('NOT_RUN', row)
 

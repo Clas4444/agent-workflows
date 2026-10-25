@@ -1,0 +1,122 @@
+{
+  "date": "2026-10-25",
+  "scope": "Explicit canonical skill loading in two independent Codex subagent fixture tasks; not automatic discovery or cross-host certification.",
+  "primary_repositories": [
+    {
+      "repo": "anthropics/claude-quickstarts",
+      "path": "autonomous-coding/README.md",
+      "last_path_commit": "25023412396a0bd082d50b4b4f39a864d35a3a73",
+      "committed_at": "2025-11-26T00:32:05Z"
+    },
+    {
+      "repo": "sierra-research/tau-bench",
+      "path": "README.md",
+      "last_path_commit": "e44ef653b577ed2c4884a3c9a44d13e8b2b52b4a",
+      "committed_at": "2026-03-18T16:40:42Z"
+    }
+  ],
+  "forward_checks": {
+    "all_source_hashes_match": true,
+    "sentinel_preserved": true,
+    "no_product_pass_claims": true,
+    "authority_and_conflicts": "parent semantic review PASS"
+  },
+  "cold_resume": {
+    "approved_source_drift_detected": true,
+    "current_hashes_verified": true,
+    "sentinel_preserved": true,
+    "product_checks_rerun": [],
+    "A1": "NOT_RUN",
+    "A2": "NOT_RUN",
+    "A3": "PASS for resolved requirement only"
+  },
+  "instruction_text_sha256": {
+    "loop-context": "4f346249334469257dc41f65343edf44b0df43805e1d6ba28dcbc287f33f7e2a",
+    "loop-handoff": "c3868c4316de7bcc7c5a3fc481e474c2c9de781c120dd5547a12b974cddc7ba5",
+    "loop-evaluate": "36562697e5c76132e92eafc07193ee12508559abbfdbded0cdb4342b030edc03",
+    "loop-skill-create": "af7018e1151755e5157581de6042cef66d6f6f59e0afd3f463ce71787b28e5dc"
+  },
+  "new_skill_native_discovery": "NOT_RUN",
+  "revised_evaluate_authoring_host_campaign": "NOT_RUN",
+  "unit_and_ci": "Local verification recorded; remote CI must be checked on published commit.",
+  "local_verification": {
+    "full_suites": [
+      {
+        "python": "3.12.14",
+        "discovered": 194,
+        "passed": 193,
+        "skipped": 1
+      },
+      {
+        "python": "3.14.7",
+        "discovered": 194,
+        "passed": 193,
+        "skipped": 1
+      }
+    ],
+    "project_gates": [
+      {
+        "python": "3.12.14",
+        "command": "python scripts/validate.py",
+        "exit_code": 0
+      },
+      {
+        "python": "3.12.14",
+        "command": "python -m scripts.validate --profile format",
+        "exit_code": 0
+      },
+      {
+        "python": "3.12.14",
+        "command": "python scripts/catalog.py",
+        "exit_code": 0
+      },
+      {
+        "python": "3.12.14",
+        "command": "python scripts/routing_check.py",
+        "exit_code": 0
+      },
+      {
+        "python": "3.12.14",
+        "command": "python scripts/sync_skills.py --target .github/skills --check",
+        "exit_code": 0
+      },
+      {
+        "python": "3.12.14",
+        "command": "python -m compileall -q scripts tests",
+        "exit_code": 0
+      },
+      {
+        "python": "3.14.7",
+        "command": "python scripts/validate.py",
+        "exit_code": 0
+      },
+      {
+        "python": "3.14.7",
+        "command": "python -m scripts.validate --profile format",
+        "exit_code": 0
+      },
+      {
+        "python": "3.14.7",
+        "command": "python scripts/catalog.py",
+        "exit_code": 0
+      },
+      {
+        "python": "3.14.7",
+        "command": "python scripts/routing_check.py",
+        "exit_code": 0
+      },
+      {
+        "python": "3.14.7",
+        "command": "python scripts/sync_skills.py --target .github/skills --check",
+        "exit_code": 0
+      },
+      {
+        "python": "3.14.7",
+        "command": "python -m compileall -q scripts tests",
+        "exit_code": 0
+      }
+    ],
+    "supplemental_skill_creator_validator": "NOT_RUN: missing PyYAML; attempted on bundled Python, package absent in two other existing interpreters"
+  },
+  "supplemental_validator_source_review": "Its allowed frontmatter keys exclude existing Loop host extensions; not a drop-in checker for this profile."
+}

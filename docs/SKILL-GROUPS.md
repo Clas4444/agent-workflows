@@ -1,6 +1,6 @@
 # Functional skill groups
 
-The catalog has **34 skills in eight groups**. `skill-groups.json` defines
+The catalog has **36 skills in eight groups**. `skill-groups.json` defines
 navigation membership; `skills-manifest.json` remains the installation inventory.
 Every manifest skill must occur in exactly one group. README tables are generated
 from this mapping and canonical descriptions.
@@ -10,7 +10,6 @@ from this mapping and canonical descriptions.
 | Discovery and scoped planning | Primary sources, adoption constraints, acceptance criteria and non-implementation planning |
 | Implementation and maintenance | Authorized edits, preserved behavior, dependency/data rollback |
 | Debugging and diagnosis | Failing baseline, discriminating experiments, cause and regression evidence |
-| Research and adoption | Primary sources, capability gaps, permissions and compatibility |
 | Testing and evidence evaluation | Real entry points, fixed rubrics, independent oracles and negative controls |
 | Review and security assurance | Located findings, reachable risks and preserved review scope |
 | Delivery and operational verification | Readiness, authorized rollout, health/rollback gates and observable failure signals |
@@ -42,7 +41,7 @@ broader threat review; `loop-debug` starts from a demonstrated bug;
 `loop-evaluate` measures quality against a fixed rubric.
 
 Native host behavior and implicit discovery remain **NOT_RUN** for the two new
-skills. The 1.2 runtime campaign stays tied to its frozen 27-skill manifest and
+1.3 adversarial/compatibility skills. The 1.2 runtime campaign stays tied to its frozen 27-skill manifest and
 must not be presented as a fresh execution of all current skills.
 
 The three new MCP workflows and their current offline exercise are described in
@@ -51,6 +50,8 @@ not inferred from that fixture.
 
 For the current cross-group decisions, four upgrades and the deployment and
 observability additions, see [taxonomy review 1.5](TAXONOMY-1.5.md).
+For context preparation, handoff and research-backed evaluation upgrades, see
+[research update 1.6](RESEARCH-1.6.md).
 
 ## Verification of this update
 

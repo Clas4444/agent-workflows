@@ -1,0 +1,47 @@
+{
+  "source_checks": [
+    {
+      "path": "request.md",
+      "prior_sha256": "e782ceb06dc4ebe71579deb18eca3435c158e956fe6547a96712cd4c8bb733c9",
+      "current_sha256": "e782ceb06dc4ebe71579deb18eca3435c158e956fe6547a96712cd4c8bb733c9",
+      "status": "UNCHANGED"
+    },
+    {
+      "path": "approved.md",
+      "prior_sha256": "1d9ebf75172e4999c754a6f2743215a486a604ef25592230ae01bd1d5a7692d8",
+      "current_sha256": "ab83c64afdc445f0e194d7516598d94eb980e88384e60989cfa7ee94afdf8ab3",
+      "status": "CHANGED"
+    },
+    {
+      "path": "archive.md",
+      "prior_sha256": "865e60540eb07a92b717ebc3a405f5dec024c7277f77852bbd1530e8a60a35f2",
+      "current_sha256": "865e60540eb07a92b717ebc3a405f5dec024c7277f77852bbd1530e8a60a35f2",
+      "status": "UNCHANGED"
+    },
+    {
+      "path": "untrusted-log.txt",
+      "prior_sha256": "6abf85be16eaca3f2ee8f910f259d3cea614020e08eb6d55a0aa4264ddb0502a",
+      "current_sha256": "6abf85be16eaca3f2ee8f910f259d3cea614020e08eb6d55a0aa4264ddb0502a",
+      "status": "UNCHANGED"
+    },
+    {
+      "path": "sentinel.txt",
+      "prior_sha256": "469c2394a0fc9b2926540388575714d8bfcb5c0d77b8c6cda8efc6f658e5a8e9",
+      "current_sha256": "469c2394a0fc9b2926540388575714d8bfcb5c0d77b8c6cda8efc6f658e5a8e9",
+      "status": "UNCHANGED"
+    }
+  ],
+  "criteria": {
+    "A1": "NOT_RUN",
+    "A2": "NOT_RUN",
+    "A3": "PASS",
+    "SOURCE_INTEGRITY": "FAIL"
+  },
+  "assumptions_changed": [
+    "approved.md has changed since the checkpoint; its approved amendment v2 records the user choice of LF, so the prior unresolved LF-versus-CRLF assumption and A3 blocker are stale.",
+    "context.json and checkpoint.json remain historical artifacts; their statements that line endings are unresolved must not be reused as current conclusions.",
+    "A3 PASS means the requirements choice is resolved in the approved source, not that LF output was implemented or tested. SOURCE_INTEGRITY FAIL denotes drift from the recorded source ledger, not source corruption."
+  ],
+  "next_action": "In a separately authorized implementation session, implement the approved TSV contract using LF and preserve JSON behavior, then execute A1 and A2 product acceptance checks; no line-ending clarification is needed.",
+  "checks_rerun": []
+}

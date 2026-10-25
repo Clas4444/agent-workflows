@@ -99,3 +99,10 @@ py -3 scripts/run_loop.py --prompt "Review and test this change" --follow-up-cou
 Inspect local JSON state and Markdown reports before sharing captured output.
 Fake-agent tests verify the runner protocol only; they do not prove runtime
 compatibility with a particular host or host version.
+
+## Context and session transfer (1.6)
+
+- `loop-context`: select relevant existing sources, preserve critical constraints and record conflicts/identities.
+- `loop-handoff`: checkpoint unfinished work or validate a saved checkpoint before resuming. It does not launch another process.
+
+See [research and verification](RESEARCH-1.6.md).

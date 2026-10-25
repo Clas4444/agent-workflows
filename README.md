@@ -1,6 +1,6 @@
 # Portable Loop Skills
 
-**34 bounded workflows for coding agents.** Review a change, investigate a bug,
+**36 bounded workflows for coding agents.** Review a change, investigate a bug,
 write a fix, verify it and stop with evidence. Includes a Python continuation
 runner, a synchronization tool and a validator with no third-party dependencies.
 
@@ -22,8 +22,10 @@ The [30-minute hardening report](docs/UPDATE-30M-2026-10-25.md) records subseque
 runner, synchronization, metadata and grading regressions with before/after evidence.
 The [post-push review](docs/POSTPUSH-2026-10-25.md) covers batch summaries,
 immutable inputs, artifact identity and shared JSON policy with full-suite results.
+See [research update 1.6](docs/RESEARCH-1.6.md) for context/handoff workflows,
+evaluation upgrades, primary sources and independent fixture exercises.
 
-> **Experimental · 1.5.0-experimental.** Shared instructions and matching files
+> **Experimental · 1.6.0-experimental.** Shared instructions and matching files
 > do not guarantee identical behavior across Codex, Copilot and Claude Code.
 > See the [runtime evidence](docs/RUNTIME-TEST-MATRIX.md) for what was tested.
 
@@ -66,6 +68,7 @@ Groups are navigation metadata; native skill directories remain flat.
 | [loop-research-repo](.github/skills/loop-research-repo/SKILL.md) | Research repositories and open-source projects in a bounded evidence loop |
 | [loop-research-tools](.github/skills/loop-research-tools/SKILL.md) | Research tools, extensions, plugins, skills, and MCP servers in a bounded evidence loop |
 | [loop-plan](.github/skills/loop-plan/SKILL.md) | Turn a scoped request into dependency-ordered, verifiable implementation batches without changing code |
+| [loop-context](.github/skills/loop-context/SKILL.md) | Prepare a compact, source-linked context packet for a specific task from existing artifacts |
 
 ### Implementation and maintenance
 
@@ -123,6 +126,7 @@ Groups are navigation metadata; native skill directories remain flat.
 | [loop-skill-create](.github/skills/loop-skill-create/SKILL.md) | Create or maintain an agent skill through requirements, reusable-pattern inspection, synchronized editing, focused tests, documentation, and evidence review |
 | [loop-orchestrate](.github/skills/loop-orchestrate/SKILL.md) | Run bounded follow-up prompts through a configured headless coding-agent command with state, timeout, stop markers, and evidence |
 | [loop-prompt](.github/skills/loop-prompt/SKILL.md) | Run an initial user prompt, have the agent infer the next useful prompt, and execute a bounded number of follow-up prompts with evidence |
+| [loop-handoff](.github/skills/loop-handoff/SKILL.md) | Create or validate a resumable checkpoint for unfinished agent work across sessions |
 
 ### MCP integration and tool trust
 
@@ -159,7 +163,7 @@ python scripts/sync_skills.py --target PATH_TO_SKILL_ROOT
 ```
 
 The first command reports differences without writing. The second copies the
-manifest's 34 skills, preserving unrelated skills and backing up overwritten
+manifest's 36 skills, preserving unrelated skills and backing up overwritten
 files under `.loop/backups/`. Select a personal installation root only when
 your host supports it and you intend to update it.
 

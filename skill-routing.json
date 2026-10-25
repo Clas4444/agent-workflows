@@ -260,6 +260,20 @@
       "acceptable": [
         "NONE"
       ]
+    },
+    {
+      "id": "route-38",
+      "prompt": "Select a compact source-linked context packet from these existing notes, preserving critical constraints and unresolved conflicts. Do not discover new sources or create a project plan.",
+      "acceptable": [
+        "loop-context"
+      ]
+    },
+    {
+      "id": "route-39",
+      "prompt": "Resume an unfinished task from a saved checkpoint; verify current source identities and identify which evidence is stale. Do not launch another process or implement the next step.",
+      "acceptable": [
+        "loop-handoff"
+      ]
     }
   ],
   "decisions": [
@@ -335,8 +349,8 @@
     },
     {
       "skill": "loop-skill-create",
-      "action": "keep",
-      "reason": "Retain a distinct acceptance gate and existing invocation identity; group placement does not change execution scope."
+      "action": "upgrade",
+      "reason": "Add repeated-trial evidence discipline or source-backed skill development with frozen forward-test oracles."
     },
     {
       "skill": "loop-orchestrate",
@@ -395,8 +409,8 @@
     },
     {
       "skill": "loop-evaluate",
-      "action": "keep",
-      "reason": "Retain a distinct acceptance gate and existing invocation identity; group placement does not change execution scope."
+      "action": "upgrade",
+      "reason": "Add repeated-trial evidence discipline or source-backed skill development with frozen forward-test oracles."
     },
     {
       "skill": "loop-test-adversarial",
@@ -432,6 +446,16 @@
       "skill": "loop-observe",
       "action": "add",
       "reason": "Fill the gap between executing a change and checking signal correlation/detection without persistent monitoring."
+    },
+    {
+      "skill": "loop-context",
+      "action": "add",
+      "reason": "Research-backed distinct context selection or cross-session checkpoint contract; native discovery remains NOT_RUN."
+    },
+    {
+      "skill": "loop-handoff",
+      "action": "add",
+      "reason": "Research-backed distinct context selection or cross-session checkpoint contract; native discovery remains NOT_RUN."
     }
   ],
   "overlap_decisions": [
@@ -498,6 +522,22 @@
         "loop-mcp-security"
       ],
       "decision": "Keep general threat review, false-PASS experiments and MCP-specific trust review."
+    },
+    {
+      "skills": [
+        "loop-context",
+        "loop-research",
+        "loop-plan"
+      ],
+      "decision": "Keep selection of existing task context distinct from discovering sources and planning implementation."
+    },
+    {
+      "skills": [
+        "loop-handoff",
+        "loop-orchestrate",
+        "loop-prompt"
+      ],
+      "decision": "Checkpoint integrity and cold resume do not launch processes or infer a sequence of new prompts."
     }
   ]
 }
