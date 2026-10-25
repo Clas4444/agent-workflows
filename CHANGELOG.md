@@ -1,5 +1,14 @@
 # Changelog
 
+## 1.9.3-experimental — 2026-10-25
+
+- Add an executable gate for declared public evidence byte indexes, with missing/drift/alias/path controls; matching hashes remain separate from authenticated execution.
+- Preserve full-width Windows target exit codes through the contained launcher, with direct-versus-runner regression evidence.
+
+- Reject internal backup aliases and invalid backup parent types before any sync copies, preventing distinct originals from collapsing into one backup file.
+- Preserve real two-session handoff evidence with source drift and forged checkpoint authority, independently calibrated controls and explicit discovery/reliability limits.
+- Retain the preceding failed Windows CI and its path-portability test repair; do not reuse that failed head's status for the corrected release.
+
 ## 1.9.2-experimental — 2026-10-25
 
 - Contain ordinary continuation-command descendants with Windows jobs or POSIX process groups; cancel blocked stream readers during timeout cleanup. Keep standalone packaged runners synchronized.

@@ -186,7 +186,8 @@ def _run_command(command_args: list[str], prompt: str, timeout: int, *, prompt_i
             '    record={"errno":error.errno,"message":str(error)}\n'
             '    os.write(2,(sys.argv[1]+json.dumps(record)+"\\n").encode("utf-8"))\n'
             '    sys.exit(125)\n'
-            'sys.exit(target.wait())\n'
+            'code=target.wait()\n'
+            'os._exit(code if code<0x80000000 else code-0x100000000)\n'
         )
         actual_command = [sys.executable,'-I','-S','-c',bootstrap,launch_error_prefix,
                           executable,*command_args[1:]]

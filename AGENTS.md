@@ -29,6 +29,7 @@ python scripts/workflows.py
 python scripts/install_skills.py --list
 python scripts/doctor_skills.py --all --target .github/skills
 python scripts/skill_resources.py
+python scripts/evidence_indexes.py
 python scripts/sync_skills.py --target .github/skills --check
 python -m compileall -q scripts tests
 git diff --check

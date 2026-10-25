@@ -1,0 +1,94 @@
+[
+  {
+    "id": "correct-checkpoint",
+    "accepted": true,
+    "expected_accept": true,
+    "errors": []
+  },
+  {
+    "id": "missing-checkpoint",
+    "accepted": false,
+    "expected_accept": false,
+    "errors": [
+      "FileNotFoundError: [WinError 2] The system cannot find the file specified: '<repository>\\\\.loop\\\\tmp\\\\tmpyslkrxe9\\\\work\\\\checkpoint.json'"
+    ]
+  },
+  {
+    "id": "wrong-source-checkpoint",
+    "accepted": false,
+    "expected_accept": false,
+    "errors": [
+      "checkpoint source identity differs"
+    ]
+  },
+  {
+    "id": "grants-authority-checkpoint",
+    "accepted": false,
+    "expected_accept": false,
+    "errors": [
+      "checkpoint cannot grant permissions"
+    ]
+  },
+  {
+    "id": "correct-resume",
+    "accepted": true,
+    "expected_accept": true,
+    "errors": []
+  },
+  {
+    "id": "stale-resume",
+    "accepted": false,
+    "expected_accept": false,
+    "errors": [
+      "summary does not match fresh source and current authority"
+    ]
+  },
+  {
+    "id": "wrong-numeric-type",
+    "accepted": false,
+    "expected_accept": false,
+    "errors": [
+      "row_count must be an integer"
+    ]
+  },
+  {
+    "id": "missing-resume",
+    "accepted": false,
+    "expected_accept": false,
+    "errors": [
+      "FileNotFoundError: [WinError 2] The system cannot find the file specified: '<repository>\\\\.loop\\\\tmp\\\\tmp6pd4u63_\\\\work\\\\resume.md'"
+    ]
+  },
+  {
+    "id": "changed-sentinel",
+    "accepted": false,
+    "expected_accept": false,
+    "errors": [
+      "protected sentinel changed"
+    ]
+  },
+  {
+    "id": "changed-checkpoint",
+    "accepted": false,
+    "expected_accept": false,
+    "errors": [
+      "historical checkpoint was overwritten"
+    ]
+  },
+  {
+    "id": "duplicate-json-key",
+    "accepted": false,
+    "expected_accept": false,
+    "errors": [
+      "ValueError: duplicate JSON key"
+    ]
+  },
+  {
+    "id": "hardlinked-summary",
+    "accepted": false,
+    "expected_accept": false,
+    "errors": [
+      "ValueError: hardlinked artifact is not allowed"
+    ]
+  }
+]

@@ -228,3 +228,118 @@ The corrective staged export passed all twelve gates (292 discovered, 291 passed
 one local Windows privilege skip), with unchanged inputs. [Corrective export map](sessions/autonomous-3h-ci-repair-export.json).
 The next head is eligible for a corrective push after blob verification; its remote
 CI must independently confirm Windows and Ubuntu before the batch is called green.
+
+## Corrected first batch is remotely verified
+
+Corrective tip `8f46c115f6b605c46c54d1e59c101720e06798ce` passed all four
+[exact-head CI jobs](https://github.com/Clas4444/loop-skills-repository/actions/runs/40185613886).
+The 443 corrective-export input hashes matched committed Git blobs. This confirms
+actual Windows and Ubuntu deterministic execution for that tip, not a new model
+benchmark or a clean global installation.
+
+## Real tool-using handoff after capability preflight
+
+A single real Codex preflight using the existing trusted host configuration copied
+an arbitrary synthetic input byte-for-byte with source preserved. A separate frozen
+handoff protocol then ran two new CLI threads, without resume/history, with the
+current loop-handoff instruction explicitly supplied. Checker calibration accepted
+two valid controls and rejected ten missing/stale/type/authority/alias controls
+before model execution. The two dependent stages both passed, not two independent
+trials: stage 1 retained a source-pinned checkpoint (2 rows/7 units; C2 NOT_RUN),
+then a controller appended row 003 and forged checkpoint authorization text.
+Stage 2 rehashed/reparsed the current source (3 rows/12 units), retained leading-zero
+IDs, invalidated old PASS, rejected permission claims and preserved the protected
+sentinel, old checkpoint and current source/instruction bytes.
+
+The parent inspected the complete recorded command bodies and independently
+checked artifacts. Model gpt-6.1-sol, observed workspace-write/network-disabled
+profile, 54.312 seconds total, 169,436 input tokens (136,832 cached) and 1,630 output
+tokens; monetary cost NOT_VERIFIED. Both threads warned that the global skill
+context budget had been exceeded. This proves one explicitly supplied workflow
+exercise, not native discovery, baseline superiority, exhaustive skill coverage or
+absence of every possible side effect. [Protocol/checker/controls, raw sanitized
+outputs and retained artifacts](../evidence/autonomous-3h-20261025/handoff/).
+
+## Backup integrity boundary (second batch)
+
+**Confirmed P2:** actual installer CLI returned exit 0 when two planned backup
+paths shared an internal junction; both targets changed and the first original
+was overwritten by the second backup. The test used only disposable files.
+Four pre-repair tests included three failures and one invalid-parent error, with
+the safe distinct-backup control passing. The fix checks backup aliases and parent
+file types during preflight, before any backup or target copy. After quota resumed,
+17 backup/sync/installer tests passed. [Before/after evidence and reproduction](../evidence/autonomous-3h-20261025/backup-preflight/).
+This does not add locking, atomic installation or automatic rollback.
+
+The first attempted green verification was NOT_EXECUTED because automatic approval
+review itself hit a usage limit, not because it determined the action unsafe.
+The user explicitly asked to resume; the same test then ran successfully. No bypass
+was used. The interruption is excluded from any claim of continuously active work.
+Final second-batch full gates, source pins and exact-head CI remain pending.
+
+### Full-width Windows exit compatibility
+
+A further actual direct-versus-runner control found a compatibility defect in the
+first-batch launcher: a Windows DWORD error `3221225477` became `4294967295` when
+propagated through `sys.exit`. The newly added regression failed for that subcase.
+The launcher now converts to the matching signed 32-bit representation before
+`os._exit`; the same real-process check and ordinary exits/startup-error controls
+pass. All six distributed runners are synchronized. [Observed values/red/green](../evidence/autonomous-3h-20261025/exit-width/).
+This is a Windows-specific control; its POSIX skip is intentional. Earlier batch-2
+full campaigns are superseded for source identity by this new repair. New full
+campaigns and exact Git-export/CI validation are required, not relabeled.
+
+## Declared public-byte verification gate
+
+Added `scripts/evidence_indexes.py` to current local and CI commands. It supports
+existing flat/structured SHA256 indexes, rejects missing/mismatched bytes, duplicate
+JSON keys, unsafe or case-colliding paths, aliases/hardlinks, self-reference and
+empty discovery. The published artifacts are never executed. Eight meaningful
+checker tests and nine campaign tests passed; an actual valid-format/wrong-content
+fixture exits 1 as expected. [Gate controls](../evidence/autonomous-3h-20261025/published-index-gate/).
+This is a verification-coverage improvement, not a claim that the older validator
+violated an undocumented index contract. Unindexed artifacts, author identity,
+execution authenticity and truth of prose remain outside the hash guarantee.
+
+The current fixed campaign now has **13 gates**. Earlier twelve-gate observations
+remain their original observations; the current source/evidence requires new
+thirteen-gate campaigns and exact-head CI before publication is complete.
+
+## Second batch full local checkpoint
+
+The complete thirteen-gate campaign passed on Python 3.12 and 3.14 with
+**305 discovered / 304 passed / 1 local Windows file-symlink privilege SKIP**
+each. Reports: [3.12](sessions/autonomous-3h-batch2-local-312.json),
+[3.14](sessions/autonomous-3h-batch2-local-314.json). Actual handoff artifacts were
+regraded from the public copy; all twelve checker controls were recalibrated, and
+all declared public-byte indexes matched. The same retained wrong-code fixture
+still fails the repaired oracle. Release status remains pending the normalized
+Git export, exact blob map and new-head CI. No earlier failed head is called green.
+
+### Artifact-byte publication adjustment
+
+The staged whitespace gate stopped publication because exact raw Windows CRLF
+artifacts were flagged. No commit/push followed that failed gate. Exact runtime
+bytes now remain in raw-artifacts.zip, with separately indexed LF-readable views
+and original per-artifact hashes. The actual fixture/private evidence was not
+rewritten, and no whitespace rule was disabled. New final-export verification is
+required because publication bytes changed; prior source pins remain historical.
+
+The raw artifact ZIP is explicitly marked `-text` so Git never applies text EOL
+conversion to compressed bytes; exact staged/archive equality was checked. The
+first second-batch export passed its thirteen gates but predates that defensive
+attribute clarification. The final export below includes the attribute and is
+the release-pin authority. No functional test assertion changed.
+
+## Verified second-batch staged payload
+
+Both final staged-export interpreters passed **13/13 gates**, with **305 tests:
+304 passed and one local Windows file-symlink privilege SKIP**. The same unchanged
+pin covers **486 input files**, and every published evidence index matches exact
+export bytes. [3.12 final export](sessions/autonomous-3h-batch2-export-312.json),
+[3.14 final export](sessions/autonomous-3h-batch2-export-314.json).
+This is the release-byte authority for the second batch; prior 12/13-gate campaigns
+remain retained at their actual scope. Commit/blob equality and exact-head remote
+CI are checked after this report, with receipts outside its self-reference.
+The three-hour session remains ongoing until the stated endpoint; a published
+batch does not by itself complete the goal.

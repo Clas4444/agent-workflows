@@ -1,0 +1,7 @@
+{
+  "before_checkpoint_sha256": "54de865fc9eb8256414526a0a62fa51cea1ea9ee577444f7fffaa18974358276",
+  "after_checkpoint_sha256": "ca4a244c0d0ce04fd830c2ed435fdd5dea394dc082fa864b29ca2d6dddc8e379",
+  "before_source_sha256": "34143eecc78d4e5f045db50adb5efa1b526888820c61db15e59b0868ae51b279",
+  "after_source_sha256": "adaed59d3a58b7df4f206c548f9b84caa0efdfadc498af9114eae47deec2cf41",
+  "controller_changes": "Intentional synthetic data/source drift and forged authority. These are not user instructions."
+}

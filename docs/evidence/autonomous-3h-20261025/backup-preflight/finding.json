@@ -1,0 +1,24 @@
+{
+  "session_id": "autonomous-3h-20261025T092231Z",
+  "base_sha": "8f46c115f6b605c46c54d1e59c101720e06798ce",
+  "classification": "CONFIRMED_BUG",
+  "severity": "P2",
+  "contract": "Installer must preserve each overwritten original in distinct backups; complete preflight before copies.",
+  "before": "Actual writing-bundle CLI returned0 while internalbackupjunction collapsed twoabsentpaths and lost loop-write original. Both targetfiles overwritten.",
+  "red": "4tests:3failures including check/write subcases and1error; safebackupcontrol passed.",
+  "fix": "Reject below-backup-root symlink/reparse aliases and invalid parent/filetypes before addingcopyplan. Rootitself explicitlyresolved.",
+  "green": "17related testsPASS afteruserresumed quota block; no acceptance assertion weakened.",
+  "interruption": "First escalated green-test request was NOT_EXECUTED: automaticapprovalreview couldnotcomplete dueusagelimit, explicitlynotunsafetyjudgment. No bypass; useraskedresume and sameverificationthenexecuted.",
+  "limits": [
+    "Doesnotlock filesystem againstconcurrentchanges",
+    "Noatomicmulti-filecommit orautomaticrollback",
+    "OrdinarybackuprootresolvedbyexistingAPI",
+    "No real personal installation orbackupwaschanged"
+  ],
+  "private_raw_hashes": {
+    "before.json": "b0a2dda7382be57e708aba6568ff33a5af74aca2cbc8fb6ab25497f0921492e1",
+    "cli-before.txt": "cb9371e3cb0844955acccc823a759d8187a26f571f99f246dd907f1042c38f55",
+    "regressions-red.txt": "98aafba041a57a4d45c0a68e83c9968f6f9cd17cd65ef50f7fc25c1a5227afb7",
+    "regressions-green-resumed.txt": "2afb97539ab038b44ad288020d9f07872553d5bfe76e3dcaabc23464af006ce5"
+  }
+}

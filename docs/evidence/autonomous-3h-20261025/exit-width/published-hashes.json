@@ -1,0 +1,10 @@
+{
+  "algorithm": "sha256",
+  "files": {
+    "exit-width-green.txt": "8165c6f55e8b9fe1ce0356bff5b75b4ee94f627c230feb3fcc614bd2cf3fd18d",
+    "exit-width-red.txt": "77cb477196cc0de162b2767dce29b9481eeb0cb6193575a7afd06585476bd310",
+    "finding.json": "e2b02b241b0747150957bfadd1cd0f63cf066c855ef4b659f76028813f01ed45",
+    "windows-exit-width.json": "7222191e3d3171ecb23d97ea7bc35343c94c61a3eaf10bc1bb13a1fed6dfca40"
+  },
+  "scope": "Sanitized publicUTF8LFbytes, selfexcluded."
+}

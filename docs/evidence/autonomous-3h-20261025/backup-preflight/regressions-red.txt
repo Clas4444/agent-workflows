@@ -1,0 +1,63 @@
+test_backup_parent_file_is_rejected_before_earlier_backups_are_written (tests.test_backup_preflight.BackupPreflightTests.test_backup_parent_file_is_rejected_before_earlier_backups_are_written) ... ERROR
+test_installer_cli_rejects_internal_backup_alias_without_overwriting (tests.test_backup_preflight.BackupPreflightTests.test_installer_cli_rejects_internal_backup_alias_without_overwriting) ... FAIL
+test_internal_backup_alias_is_rejected_before_any_copy (tests.test_backup_preflight.BackupPreflightTests.test_internal_backup_alias_is_rejected_before_any_copy) ...
+  test_internal_backup_alias_is_rejected_before_any_copy (tests.test_backup_preflight.BackupPreflightTests.test_internal_backup_alias_is_rejected_before_any_copy) (check=False) ... FAIL
+  test_internal_backup_alias_is_rejected_before_any_copy (tests.test_backup_preflight.BackupPreflightTests.test_internal_backup_alias_is_rejected_before_any_copy) (check=True) ... FAIL
+test_safe_distinct_backup_paths_preserve_every_original (tests.test_backup_preflight.BackupPreflightTests.test_safe_distinct_backup_paths_preserve_every_original) ... ok
+
+======================================================================
+ERROR: test_backup_parent_file_is_rejected_before_earlier_backups_are_written (tests.test_backup_preflight.BackupPreflightTests.test_backup_parent_file_is_rejected_before_earlier_backups_are_written)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<repository>\tests\test_backup_preflight.py", line 54, in test_backup_parent_file_is_rejected_before_earlier_backups_are_written
+    with self.assertRaises(ValueError):sync(self.target,self.backup,selected=list(self.old))
+                                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<repository>\scripts\sync_skills.py", line 90, in sync
+    saved.parent.mkdir(parents=True, exist_ok=True)
+  File "<user-home>\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\pathlib.py", line 1311, in mkdir
+    os.mkdir(self, mode)
+FileExistsError: [WinError 183] Cannot create a file when that file already exists: '<repository>\\.loop\\tmp\\tmprohjaw6l\\backup\\loop-summarize'
+
+======================================================================
+FAIL: test_installer_cli_rejects_internal_backup_alias_without_overwriting (tests.test_backup_preflight.BackupPreflightTests.test_installer_cli_rejects_internal_backup_alias_without_overwriting)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<repository>\tests\test_backup_preflight.py", line 71, in test_installer_cli_rejects_internal_backup_alias_without_overwriting
+    self.assertNotEqual(result.returncode,0,result.stdout)
+AssertionError: 0 == 0 : {
+  "target": "<repository>\\.loop\\tmp\\tmpjsvr97u5\\skills",
+  "selected_skills": [
+    "loop-write",
+    "loop-summarize"
+  ],
+  "check": false,
+  "differences": [
+    "<repository>\\.loop\\tmp\\tmpjsvr97u5\\skills\\loop-write\\SKILL.md",
+    "<repository>\\.loop\\tmp\\tmpjsvr97u5\\skills\\loop-summarize\\SKILL.md"
+  ],
+  "backup": "<repository>\\.loop\\tmp\\tmpjsvr97u5\\backup"
+}
+
+
+======================================================================
+FAIL: test_internal_backup_alias_is_rejected_before_any_copy (tests.test_backup_preflight.BackupPreflightTests.test_internal_backup_alias_is_rejected_before_any_copy) (check=False)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<repository>\tests\test_backup_preflight.py", line 45, in test_internal_backup_alias_is_rejected_before_any_copy
+    with self.assertRaises(ValueError):
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_internal_backup_alias_is_rejected_before_any_copy (tests.test_backup_preflight.BackupPreflightTests.test_internal_backup_alias_is_rejected_before_any_copy) (check=True)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<repository>\tests\test_backup_preflight.py", line 45, in test_internal_backup_alias_is_rejected_before_any_copy
+    with self.assertRaises(ValueError):
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+----------------------------------------------------------------------
+Ran 4 tests in 0.183s
+
+FAILED (failures=3, errors=1)

@@ -1,0 +1,10 @@
+{
+  "algorithm": "sha256",
+  "scope": "PublishedUTF8LFsanitizedbytes; selfexcluded.",
+  "files": {
+    "actual-cli-negative.json": "9677a1cdbbb8db83c88ac0d19f8a7d3c95052fa8ad8d62e03072fa41f87ab116",
+    "evidence-index-integration.txt": "6bfda2812ac646c187fd5adf17a8b5209bc058ec1ec5c49fb96ab0a92114d844",
+    "evidence-index-tests.txt": "4388139d9fe76575e8907a302a515c2869ee0426ce73d85005fe98d307192fe8",
+    "scope.json": "15e655b58bddcdc1a71429d9166fcbcea3d8836cc6854108b459e4b2e4016f49"
+  }
+}

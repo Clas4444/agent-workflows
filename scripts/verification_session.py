@@ -24,6 +24,7 @@ COMMANDS = (
     ('bundles', ('scripts/install_skills.py','--list')),
     ('install-diagnosis', ('scripts/doctor_skills.py','--all','--target','.github/skills')),
     ('resources', ('scripts/skill_resources.py',)),
+    ('published-evidence', ('scripts/evidence_indexes.py',)),
     ('sync', ('scripts/sync_skills.py','--target','.github/skills','--check')),
     ('smoke-interface', ('scripts/runtime_smoke.py','--help')),
     ('compile', ('-m','compileall','-q','scripts','tests')),

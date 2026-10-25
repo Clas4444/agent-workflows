@@ -1,0 +1,13 @@
+{
+  "classification": "CONFIRMED_COMPATIBILITY_BUG_IN_PRIOR_SESSION_BATCH",
+  "affected_head": "8f46c115f6b605c46c54d1e59c101720e06798ce",
+  "severity": "P2 diagnostic_exit_identity",
+  "root_cause": "Windows target.wait returns unsigned DWORD; Python sys.exit cannot preserve every such value via signed integer conversion.",
+  "before": {
+    "direct_exit": 3221225477,
+    "runner_exit": 4294967295
+  },
+  "fix": "Convert unsigned DWORD to signed32bit representation before os._exit in Windowslauncher. PublicCLIflags/statusmarkersunchanged.",
+  "verification": "Real direct-vsrunner subprocess equality red1subcase, then3focusedtestsPASS; allsixbundledcopiessynchronized.",
+  "limits": "Windowsonlycontrol; POSIXskip intentional, exactnewhead CIpending"
+}

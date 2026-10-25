@@ -1,0 +1,8 @@
+test_windows_full_width_exit_code_matches_direct_process (tests.test_process_lifecycle.ProcessLifecycleTests.test_windows_full_width_exit_code_matches_direct_process) ... ok
+test_nonzero_exit_is_preserved (tests.test_process_lifecycle.ProcessLifecycleTests.test_nonzero_exit_is_preserved) ... ok
+test_invalid_executable_preserves_launch_error (tests.test_process_lifecycle.ProcessLifecycleTests.test_invalid_executable_preserves_launch_error) ... ok
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.663s
+
+OK

@@ -14,6 +14,15 @@ from scripts.run_loop import _run_command, _StreamResult, _read_stream
 
 
 class ProcessLifecycleTests(unittest.TestCase):
+    @unittest.skipUnless(os.name=='nt','Windows DWORD exit-code propagation')
+    def test_windows_full_width_exit_code_matches_direct_process(self):
+        for requested in (-1,-1073741819,256,65535):
+            with self.subTest(requested=requested):
+                command=[sys.executable,'-I','-c',f'import os; os._exit({requested})']
+                direct=subprocess.run(command,capture_output=True,timeout=5).returncode
+                _,observed,*_=_run_command(command,'',5)
+                self.assertEqual(observed,direct)
+
     def test_successful_invocation_closes_owned_background_descendant(self):
         with tempfile.TemporaryDirectory() as directory:
             root = Path(directory)

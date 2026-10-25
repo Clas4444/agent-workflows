@@ -1,0 +1,11 @@
+{
+  "status": "FAIL",
+  "indexes": 1,
+  "indexed_artifacts": 1,
+  "errors": [
+    "published artifact hash differs: artifact.txt"
+  ],
+  "scope": "Declared published bytes only. Unindexed files are not covered; matching hashes do not authenticate authors, prove execution or validate claims.",
+  "runtime_validation": "NOT_RUN",
+  "writes": "NONE"
+}

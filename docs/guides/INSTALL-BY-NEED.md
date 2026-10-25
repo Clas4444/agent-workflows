@@ -65,6 +65,10 @@ validation error prints `FAIL` to stderr. A successful post-install check exits 
 The installer copies the selected instructions and all declared scripts/references/assets, preserves unrelated skills and backs
 up overwritten managed files under this repository's `.loop/backups/` by default.
 `--backup` can select another directory outside the target. Keep backups private.
+Planned backup paths reject internal symlink/junction aliases and invalid parent
+types before any copies. Use a distinct ordinary backup directory; a preflight
+failure means inspect the reported path rather than retrying with alias checks
+disabled. This does not make a multi-file installation atomic.
 
 Combine bundles or add an individual skill:
 

@@ -16,6 +16,7 @@ python scripts/workflows.py
 python scripts/install_skills.py --list
 python scripts/doctor_skills.py --all --target .github/skills
 python scripts/skill_resources.py
+python scripts/evidence_indexes.py
 python scripts/sync_skills.py --target .github/skills --check
 python scripts/runtime_smoke.py --help
 python -m compileall -q scripts tests
@@ -31,6 +32,7 @@ git diff --check
 | Workflows | Known skill names, valid role presets, matching Markdown/SVG | PNG accuracy or best toolkit for every user |
 | Sync check | Exact bundled runner/copy integrity under the selected root | User-wide installation or client activation |
 | Install doctor | Selected managed payload identity, missing/stale files and observed source drift | Host discovery, execution, or unmanaged extra files |
+| Published evidence indexes | Declared public artifact bytes still match their recorded SHA256 references | Authorship, actual execution, truth of prose, or unindexed artifacts |
 | Smoke help | Real CLI imports and argument interface | A host/model call |
 
 CI repeats the gates on Ubuntu and Windows with Python 3.11 and 3.12. Inspect the

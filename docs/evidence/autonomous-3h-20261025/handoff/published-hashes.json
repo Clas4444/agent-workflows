@@ -1,0 +1,28 @@
+{
+  "algorithm": "sha256",
+  "scope": "Public sanitizedtext/LFviews plus exact rawZIP bytes; selfexcluded.",
+  "files": {
+    "artifacts/protected.txt": "17ae09c2ab8c5d8d147723a2841c0ca6703a1ed409aa56a15994e23dc5f2e047",
+    "artifacts/work/checkpoint.json": "e1e426979438ae52b39f2247e262119d7e3b773584aef29ff1c3a3ef79d48351",
+    "artifacts/work/orders.csv": "adaed59d3a58b7df4f206c548f9b84caa0efdfadc498af9114eae47deec2cf41",
+    "artifacts/work/provided-skill/SKILL.md": "c3868c4316de7bcc7c5a3fc481e474c2c9de781c120dd5547a12b974cddc7ba5",
+    "artifacts/work/resume.md": "7f05bd5a7a0bd9aa3e4cb6f87dffa20b9cd7dfa2b64720060cb9439a25b61bfa",
+    "artifacts/work/summary.json": "06a981452283a4b637b55cb2febc412ab654327c42f61dd30a2344cd093f184f",
+    "assessment.json": "6b0df8e57cab38654ee51d1c7134da35a0aba5a0a98dceb818b20169bcfc847b",
+    "controller-mutation.json": "97ae235dd29df13d6d933db1d59b7ce96892c6478554699a22f0a71cbe922dd0",
+    "controls-runner.py": "790f99c2be6c4154e6c8e3f3bc37c18c0de700387aa990967513a1304a5fe001",
+    "controls.json": "f86140a429ee552521779a217ac6f1eb6dc31e1841aae089723d5f02edb94386",
+    "handoff_checker.py": "c4130fbe3a84437f1b3816363d80adf3223ea50b5694752661d1eb104b4f2fce",
+    "protocol.json": "73f3f91ff81e8c080002584f33cef6ef55fa523b49036747926f97cbd1311520",
+    "provenance.json": "a96eca0a704fe9f8a5fb7c3b82ef97aed6390f9125c4b45699c00e54e440fb52",
+    "raw-artifacts.zip": "76299fe0771dfd4b422b380bdd1e47e219f304ffc13da4ed97a1f63f8e9fb731",
+    "README.md": "71d5c6b197222552586e91b2a93c8c8fe3d91a8669c57afffd4b21ead23c5d9a",
+    "results.json": "8dae1cf7d91c07c0aa4eef0b9ced2efe178cc0a264bd3ddbbe760e2f4a1c3ed1",
+    "stage1-checkpoint.json": "e8485f0781355b3c7eba45bfb562d56a77132d4394e7452fad0f37af9c245f8c",
+    "stage1-events.txt": "757bd950eed0c8c1982e1d1dad528d8c1004db36e70d5c373b49b1a522cf2923",
+    "stage1-prompt.txt": "9bef5b0f7575b81117d91be0f55bf006f93f0087dc376fe7dece0b09350afbb7",
+    "stage2-events.txt": "fdc7d4b7f2556aedf5f07175ecccc0b24df6898cf9923eaacff3f61529e9edd4",
+    "stage2-prompt.txt": "6b2806b102bb7fef49490d3f283f0631e47ab186feeaf4da223de82a0203c87c",
+    "trajectory-review.json": "331dc3941257c4a82a9eeb841119933c64b639f5e0f5240fdcb60427cf71df6e"
+  }
+}

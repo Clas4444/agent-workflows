@@ -37,6 +37,8 @@ jobs:
         run: python scripts/doctor_skills.py --all --target .github/skills
       - name: Verify complete installed resource payloads
         run: python scripts/skill_resources.py
+      - name: Verify declared published evidence byte indexes
+        run: python scripts/evidence_indexes.py
       - name: Check separated metadata and integrity profile
         run: python -m scripts.validate --profile format
       - name: Run validator tests

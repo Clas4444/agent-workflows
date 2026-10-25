@@ -1,0 +1,13 @@
+test_bad_digest_algorithm_empty_and_self_reference_are_rejected (tests.test_evidence_indexes.EvidenceIndexTests.test_bad_digest_algorithm_empty_and_self_reference_are_rejected) ... ok
+test_changed_missing_and_wrong_content_artifacts_are_rejected (tests.test_evidence_indexes.EvidenceIndexTests.test_changed_missing_and_wrong_content_artifacts_are_rejected) ... ok
+test_duplicate_keys_and_nonfinite_json_are_rejected (tests.test_evidence_indexes.EvidenceIndexTests.test_duplicate_keys_and_nonfinite_json_are_rejected) ... ok
+test_flat_and_structured_indexes_accept_actual_bytes_without_writes (tests.test_evidence_indexes.EvidenceIndexTests.test_flat_and_structured_indexes_accept_actual_bytes_without_writes) ... ok
+test_hardlinked_artifact_and_index_are_rejected (tests.test_evidence_indexes.EvidenceIndexTests.test_hardlinked_artifact_and_index_are_rejected) ... ok
+test_no_indexes_is_not_a_pass_and_parent_cache_name_does_not_hide_it (tests.test_evidence_indexes.EvidenceIndexTests.test_no_indexes_is_not_a_pass_and_parent_cache_name_does_not_hide_it) ... ok
+test_unindexed_content_is_explicitly_outside_the_guarantee (tests.test_evidence_indexes.EvidenceIndexTests.test_unindexed_content_is_explicitly_outside_the_guarantee) ... ok
+test_unsafe_and_case_colliding_paths_fail_closed (tests.test_evidence_indexes.EvidenceIndexTests.test_unsafe_and_case_colliding_paths_fail_closed) ... ok
+
+----------------------------------------------------------------------
+Ran 8 tests in 0.141s
+
+OK

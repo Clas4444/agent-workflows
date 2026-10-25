@@ -1,0 +1,29 @@
+{
+  "session_id": "autonomous-3h-20261025T092231Z",
+  "published_at": "2026-10-25T11:16:29.670951+00:00",
+  "scope": "n1 actual two-session tool-using handoff; explicit instruction delivery; no native discovery/A-B/superiority claim",
+  "original_private_hashes": {
+    "protocol.json": "da89e13f7086f96186f23a8f56a70110e67e02bd7fabd40400dbdea08b39bd2d",
+    "checker.py": "c4130fbe3a84437f1b3816363d80adf3223ea50b5694752661d1eb104b4f2fce",
+    "controls-runner.py": "790f99c2be6c4154e6c8e3f3bc37c18c0de700387aa990967513a1304a5fe001",
+    "controls.json": "efa36bbe63c933afd6d2df9d4680c6fbd136c43d179161b2973ee80a90c00e72",
+    "assessment.json": "0b3acc9a8efc65de2fbc1291b241566f960650652025497f3bcda414c73ed7db",
+    "trajectory-review.json": "d28889edf6dc66287af6a31032b82f5fff0fa2fa60ffb18623c2c00c2901b7bc",
+    "results.json": "3115a6dbf6e960b88d11980f5d1bdb96dcef24d30870196df0c870e1696ace1c",
+    "controller-mutation.json": "49f622ae535056c5c2dc2eb0c3758070f54267591d676bedb268c4e839b0b123",
+    "stage1-checkpoint.json": "54de865fc9eb8256414526a0a62fa51cea1ea9ee577444f7fffaa18974358276",
+    "stage1-prompt.txt": "d97329b3e286038bda3763a1cce530b3ee785d6fdd41b36c07351f0cb4d33df6",
+    "stage1-events.txt": "23569578f56d37cabc0c93f62371cbb4400eea821d2f5658cc7ec45f5a47ea4b",
+    "stage2-prompt.txt": "4c67a35efbf6a4b2f1c3194f7960cf3511552cb68eaaff8f887d8fc122583408",
+    "stage2-events.txt": "f2d2c7ae49b83e402df10034698ce713bac6ec1872bcc52ad4872315913dff1b"
+  },
+  "artifact_bytes": "Exact originals retained in raw-artifacts.zip; artifacts/ is an LF-normalized view. Original fixture and private evidence unchanged.",
+  "raw_artifact_sha256": {
+    "protected.txt": "17ae09c2ab8c5d8d147723a2841c0ca6703a1ed409aa56a15994e23dc5f2e047",
+    "work/orders.csv": "adaed59d3a58b7df4f206c548f9b84caa0efdfadc498af9114eae47deec2cf41",
+    "work/checkpoint.json": "ca4a244c0d0ce04fd830c2ed435fdd5dea394dc082fa864b29ca2d6dddc8e379",
+    "work/summary.json": "29c65acab93cda93b62a0a692264692355b7dfcf99adb8123d7bd8c0e84015d6",
+    "work/resume.md": "d0a0e1fb9ceed1755868c5c9d18379579f5a7605754cc341de33d77f77120ef5",
+    "work/provided-skill/SKILL.md": "c3868c4316de7bcc7c5a3fc481e474c2c9de781c120dd5547a12b974cddc7ba5"
+  }
+}

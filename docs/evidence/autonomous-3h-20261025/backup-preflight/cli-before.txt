@@ -1,0 +1,13 @@
+{
+  "target": "<repository>\\.loop\\autonomous-3h-20261025T092231Z\\backup-alias-repro\\skills",
+  "selected_skills": [
+    "loop-write",
+    "loop-summarize"
+  ],
+  "check": false,
+  "differences": [
+    "<repository>\\.loop\\autonomous-3h-20261025T092231Z\\backup-alias-repro\\skills\\loop-write\\SKILL.md",
+    "<repository>\\.loop\\autonomous-3h-20261025T092231Z\\backup-alias-repro\\skills\\loop-summarize\\SKILL.md"
+  ],
+  "backup": "<repository>\\.loop\\autonomous-3h-20261025T092231Z\\backup-alias-repro\\backups"
+}

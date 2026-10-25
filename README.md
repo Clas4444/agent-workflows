@@ -2,7 +2,7 @@
 
 **49 bounded workflows for everyday work and coding agents.** Produce a useful
 result, verify what actually happened, and stop with a clear checkpoint.
-Experimental version **1.9.2-experimental**; instructions do not enforce permissions.
+Experimental version **1.9.3-experimental**; instructions do not enforce permissions.
 
 ## Quick start
 
@@ -70,6 +70,7 @@ python scripts/workflows.py
 python scripts/install_skills.py --list
 python scripts/doctor_skills.py --all --target .github/skills
 python scripts/skill_resources.py
+python scripts/evidence_indexes.py
 python scripts/sync_skills.py --target .github/skills --check
 python scripts/runtime_smoke.py --help
 python -m compileall -q scripts tests

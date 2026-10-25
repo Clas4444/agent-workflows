@@ -1,0 +1,8 @@
+{
+  "classification": "VERIFICATION_COVERAGE_IMPROVEMENT",
+  "not_claimed_as": "Prior validator falsePASSunderundeclaredindexcontract",
+  "purpose": "Execute current published-byte checks rather than onlymanual review; detect observedhashdrift, missingartifacts, invalidpaths, aliases andemptydiscovery.",
+  "runtime_or_authentication": "NOT_RUN; hashesnotauthenticexecutionattestation. Unindexedfilesexplicitlyexcluded.",
+  "controls": "8meaningfultests plus9campaigntests PASS; actualnegativeCLIexit1 asintended.",
+  "source_normalized_text_sha256": "c240ea069df61fc8dc9f6ece83fb4cfc26a765a36fbcd66197d286b0200dbccf"
+}

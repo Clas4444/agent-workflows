@@ -1,0 +1,22 @@
+{
+  "case": "two-session-handoff-v1",
+  "trials": 1,
+  "model_calls": 2,
+  "overall": "PASS",
+  "actual_model": "gpt-6.1-sol",
+  "same_config": true,
+  "fresh_threads": true,
+  "stage_successes": "2/2 stages inone trial, nottwoindependenttrials",
+  "seconds": 54.312,
+  "input_tokens": 169436,
+  "cached_input_tokens": 136832,
+  "output_tokens": 1630,
+  "context_budget_warning": true,
+  "controls": "12/12 calibrated beforemodelcalls",
+  "instruction_delivery": "Exactcurrentloop-handofftext explicitly supplied; stage2also readprovidedfile",
+  "native_discovery": "NOT_RUN",
+  "baseline_comparison": "NOT_RUN",
+  "monetary_cost": "NOT_VERIFIED",
+  "controller_interventions": "One planned source/checkpoint mutation betweenstages; zero human intervention duringcalls.",
+  "trajectory_review": "PASS onobservedcommands; namedprotectedfileunchanged; broadersecurityNOT_VERIFIED"
+}

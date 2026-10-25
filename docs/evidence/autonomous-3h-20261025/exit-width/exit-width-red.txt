@@ -1,0 +1,15 @@
+test_windows_full_width_exit_code_matches_direct_process (tests.test_process_lifecycle.ProcessLifecycleTests.test_windows_full_width_exit_code_matches_direct_process) ...
+  test_windows_full_width_exit_code_matches_direct_process (tests.test_process_lifecycle.ProcessLifecycleTests.test_windows_full_width_exit_code_matches_direct_process) (requested=-1073741819) ... FAIL
+
+======================================================================
+FAIL: test_windows_full_width_exit_code_matches_direct_process (tests.test_process_lifecycle.ProcessLifecycleTests.test_windows_full_width_exit_code_matches_direct_process) (requested=-1073741819)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<repository>\tests\test_process_lifecycle.py", line 24, in test_windows_full_width_exit_code_matches_direct_process
+    self.assertEqual(observed,direct)
+AssertionError: 4294967295 != 3221225477
+
+----------------------------------------------------------------------
+Ran 1 test in 0.409s
+
+FAILED (failures=1)

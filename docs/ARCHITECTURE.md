@@ -26,6 +26,7 @@ skill directories remain flat; historical evidence is versioned independently.
 | `scripts/install_skills.py`, `scripts/skill_bundles.py`, `skill-bundles.json` | Explicit need-based selection using the existing sync engine |
 | `scripts/doctor_skills.py` | Read-only selected-install diagnosis with observed before/after reference pins; no host discovery or writes |
 | `scripts/verification_session.py` | Fixed gate campaign with session identity and before/after verification-input hashes |
+| `scripts/evidence_indexes.py` | Declared published-byte index integrity; strict relative paths and aliases, no artifact execution or attestation |
 | `tests/` | Deterministic local tests; no model calls |
 | `schemas/` | Versioned machine-readable descriptions of existing data contracts |
 | `docs/evidence/` | Reviewed public execution summaries with provenance |

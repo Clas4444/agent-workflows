@@ -1,0 +1,14 @@
+{
+  "base_sha": "8f46c115f6b605c46c54d1e59c101720e06798ce",
+  "cli_exit": 0,
+  "backup_paths_resolve_to_same_file": true,
+  "backup_preserves_each_original": {
+    "loop-write": false,
+    "loop-summarize": true
+  },
+  "targets_were_overwritten": {
+    "loop-write": true,
+    "loop-summarize": true
+  },
+  "scope": "Two disposable skill files and internal backup junction only; no user installation or real backup changed."
+}

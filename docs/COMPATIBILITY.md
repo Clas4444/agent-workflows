@@ -30,3 +30,10 @@ below the selected root, even aliases resolving within that root. This prevents
 an internal alias from overwriting an unrelated skill. Windows junctions are
 checked via reparse attributes on Python 3.11 as well. The explicitly selected
 root itself is resolved first. Concurrent alias changes are not locked out.
+
+The same below-root alias policy applies to planned backup payloads. A junction
+inside a backup root can otherwise make two absent backup paths collapse to one
+file and lose an original during a successful install. Backup parent file types
+are checked during preflight, before any backup or target copy begins. Explicit
+backup roots are resolved first; this does not provide filesystem locking or
+automatic rollback after later I/O failure.

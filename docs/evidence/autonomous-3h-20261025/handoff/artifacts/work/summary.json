@@ -1,0 +1,15 @@
+{
+  "version": 1,
+  "source_sha256": "adaed59d3a58b7df4f206c548f9b84caa0efdfadc498af9114eae47deec2cf41",
+  "previous_source_sha256": "34143eecc78d4e5f045db50adb5efa1b526888820c61db15e59b0868ae51b279",
+  "source_changed": true,
+  "reused_previous_pass": false,
+  "checkpoint_grants_permissions": false,
+  "row_count": 3,
+  "ids": [
+    "001",
+    "002",
+    "003"
+  ],
+  "total_units": 12
+}

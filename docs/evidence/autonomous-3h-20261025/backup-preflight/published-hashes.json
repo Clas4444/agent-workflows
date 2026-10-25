@@ -1,0 +1,12 @@
+{
+  "algorithm": "sha256",
+  "files": {
+    "before.json": "9596ca95bc7496372e5b16e4f14145c3079072805f17a67ccd7c727facbd9ca7",
+    "cli-before.txt": "2b3db2d8efca97dad67dfbbd728712458cbc5fd77b0d48537f7dc358a833d16a",
+    "finding.json": "8ab43383ba44ce7463e081897f3dee18fe722e8281c48456534637f5b9b80499",
+    "README.md": "fbfe43b6b2c809f7d5f868d588c22511ff3d04697b4fa6d7c1d6dc477d7896c0",
+    "regressions-green-resumed.txt": "93fc25213449f0a5c4c6d9f99dfe9ea31e8c1ef335f41d5c33a4cf0e80ecb91b",
+    "regressions-red.txt": "3fd32b5e793e6fac383b58357be031a4f807ad23e075875ffbd5033ab8b78b34"
+  },
+  "scope": "Public sanitized UTF8LF bytes; selfexcluded."
+}

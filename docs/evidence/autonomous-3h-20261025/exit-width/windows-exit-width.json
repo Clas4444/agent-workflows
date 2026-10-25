@@ -1,0 +1,26 @@
+[
+  {
+    "requested_exit": -1,
+    "direct_exit": 4294967295,
+    "runner_exit": 4294967295,
+    "same": true
+  },
+  {
+    "requested_exit": -1073741819,
+    "direct_exit": 3221225477,
+    "runner_exit": 4294967295,
+    "same": false
+  },
+  {
+    "requested_exit": 256,
+    "direct_exit": 256,
+    "runner_exit": 256,
+    "same": true
+  },
+  {
+    "requested_exit": 65535,
+    "direct_exit": 65535,
+    "runner_exit": 65535,
+    "same": true
+  }
+]

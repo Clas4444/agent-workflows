@@ -78,6 +78,15 @@ def sync(target: Path, backup: Path, check: bool = False, *, selected: list[str]
             saved = backup / destination.relative_to(target)
             if not saved.resolve().is_relative_to(backup):
                 raise ValueError(f'backup escapes backup root: {saved}')
+            # Missing backup files can still share an inode later through an
+            # internal directory alias. Reject aliases before planning either
+            # backup; otherwise a later save can overwrite an earlier original.
+            for parent in saved.parents:
+                if parent.exists() and not parent.is_dir():
+                    raise ValueError(f'backup parent is not a directory: {parent}')
+            reject_destination_aliases(saved, backup)
+            if saved.exists() and not saved.is_file():
+                raise ValueError(f'backup destination is not a file: {saved}')
             if destination.exists() and saved.exists() and not check:
                 raise ValueError(f'backup already exists: {saved}')
             plan.append((original, destination, saved))

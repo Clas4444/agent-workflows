@@ -1,0 +1,22 @@
+test_backup_parent_file_is_rejected_before_earlier_backups_are_written (tests.test_backup_preflight.BackupPreflightTests.test_backup_parent_file_is_rejected_before_earlier_backups_are_written) ... ok
+test_installer_cli_rejects_internal_backup_alias_without_overwriting (tests.test_backup_preflight.BackupPreflightTests.test_installer_cli_rejects_internal_backup_alias_without_overwriting) ... ok
+test_internal_backup_alias_is_rejected_before_any_copy (tests.test_backup_preflight.BackupPreflightTests.test_internal_backup_alias_is_rejected_before_any_copy) ... ok
+test_safe_distinct_backup_paths_preserve_every_original (tests.test_backup_preflight.BackupPreflightTests.test_safe_distinct_backup_paths_preserve_every_original) ... ok
+test_backup_conflict_is_detected_before_any_target_changes (tests.test_sync.SyncTests.test_backup_conflict_is_detected_before_any_target_changes) ... ok
+test_check_backup_sync_and_idempotence (tests.test_sync.SyncTests.test_check_backup_sync_and_idempotence) ... ok
+test_manifest_rejects_path_traversal_before_creating_target (tests.test_sync.SyncTests.test_manifest_rejects_path_traversal_before_creating_target) ... ok
+test_missing_source_is_detected_before_creating_target (tests.test_sync.SyncTests.test_missing_source_is_detected_before_creating_target) ... ok
+test_rejects_backup_inside_target (tests.test_sync.SyncTests.test_rejects_backup_inside_target) ... ok
+test_individual_selection_does_not_require_an_unrequested_bundle_registry (tests.test_install_skills.NeedBasedInstallTests.test_individual_selection_does_not_require_an_unrequested_bundle_registry) ... ok
+test_invalid_or_empty_selection_never_creates_destination (tests.test_install_skills.NeedBasedInstallTests.test_invalid_or_empty_selection_never_creates_destination) ... ok
+test_list_is_read_only_and_rejects_conflicting_options (tests.test_install_skills.NeedBasedInstallTests.test_list_is_read_only_and_rejects_conflicting_options) ... ok
+test_read_only_check_then_real_install_does_not_install_unselected_skills (tests.test_install_skills.NeedBasedInstallTests.test_read_only_check_then_real_install_does_not_install_unselected_skills) ... ok
+test_selected_overwrite_is_backed_up_and_unselected_files_are_preserved (tests.test_install_skills.NeedBasedInstallTests.test_selected_overwrite_is_backed_up_and_unselected_files_are_preserved) ... ok
+test_selected_runner_is_self_contained_without_installing_other_skills (tests.test_install_skills.NeedBasedInstallTests.test_selected_runner_is_self_contained_without_installing_other_skills) ... ok
+test_unknown_bundle_members_fail_before_selection (tests.test_install_skills.NeedBasedInstallTests.test_unknown_bundle_members_fail_before_selection) ... ok
+test_writing_bundle_is_small_and_union_is_manifest_ordered (tests.test_install_skills.NeedBasedInstallTests.test_writing_bundle_is_small_and_union_is_manifest_ordered) ... ok
+
+----------------------------------------------------------------------
+Ran 17 tests in 1.465s
+
+OK
