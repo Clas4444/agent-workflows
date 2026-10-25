@@ -181,3 +181,21 @@ no earlier PASS is relabeled as the final bytes. Source/document/report scope is
 explicit in each map. The next publication check compares every map entry with
 the committed Git blob, then pushes the verified batch and inspects exact-SHA CI.
 This batch does not complete the remaining three-hour autonomous work.
+
+### Publication correction retained before push
+
+The staged whitespace gate detected a trailing space in a published unittest log.
+The PowerShell command sequence nevertheless continued into a local commit
+(`b16b59a`) because a native nonzero exit did not stop subsequent commands. That
+commit was not pushed at the time of detection. The public text log was normalized,
+its public-byte index updated, and a fresh export campaign was required; the raw
+private failure log and its hash were preserved. The local intermediate commit is
+retained rather than rewritten to hide this workflow error. Future publication
+commands explicitly test native exit codes before committing or pushing.
+
+After public-log normalization, fresh publication export campaigns again passed
+all 12 gates on Python 3.12 and 3.14: 291 discovered, 290 passed, one Windows
+privilege skip, unchanged inputs. These publication reports supersede the
+pre-normalization maps: [3.12](sessions/autonomous-3h-batch1-publish-312.json),
+[3.14](sessions/autonomous-3h-batch1-publish-314.json). The staged whitespace gate
+now returns zero, and published hash indexes match the exact export bytes.

@@ -1,6 +1,6 @@
 {
   "algorithm": "sha256",
-  "scope": "Published UTF8LF bytes; this index excludes itself. Raw private originals are separate.",
+  "scope": "Published UTF8LF text; trailing whitespace normalized in text logs. Index excludes itself. Raw private originals remain separately hashed.",
   "files": {
     "backpressure-green.txt": "272d848180936072f6acf708814d5d9ae23184050f2d45cfda182978f4f0e0e4",
     "backpressure-red.txt": "8aa7fea9836ecb5d21b3355dc6d3680240c590c4a93dd69516de68dae18a7773",
@@ -15,7 +15,7 @@
     "grader-logging-compat-green.txt": "274dc6f016cc61d3d63cc3d285b5850f673fe683ced4c5e79f0cb2bfd0c309d8",
     "grader-logging-compat-red.txt": "a6760ffe764a173ff0d9ce54adfb9ddb1e5dd220a1c5e38bb93c50e4f23196c8",
     "grader-numeric-compat-green.txt": "19908e714bd09aff9fcfc1311280a83bfcc31ec972c93dc2096e798c2ab09511",
-    "grader-numeric-compat-red.txt": "2c7cee76315cb99619d95730f1cc4e20fdc70f7f6b4b31e67afc691a7a67bbad",
+    "grader-numeric-compat-red.txt": "16cc2ece04a5331bd1e58f1f56810fc5cefcbacc1be095bd4db071a59bca19ed",
     "grader-oracle-green.txt": "d123025bb33c8bb03e6e0fffeee92d068114db080de6dbd43b6c9e4d14bcc24c",
     "grader-oracle-red.txt": "025b2727f553319e428d5e994909baf554e3c1630675c3700716dee6d1f0da5e",
     "grader-shadow-after.json": "28c497b9eac34826eaf93fbecb32cf06fdf1ee66659cad39d65479947b9b11f3",
