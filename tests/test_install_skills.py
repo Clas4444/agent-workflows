@@ -19,7 +19,7 @@ class NeedBasedInstallTests(unittest.TestCase):
     def test_writing_bundle_is_small_and_union_is_manifest_ordered(self):
         self.assertEqual(set(load_bundles(ROOT)['writing']['skills']), {'loop-write','loop-summarize'})
         chosen = select_skills(ROOT, ['writing','office','writing'], ['loop-write'])
-        self.assertEqual(set(chosen), {'loop-write','loop-summarize','loop-meeting','loop-organize'})
+        self.assertEqual(set(chosen), {'loop-write','loop-summarize','loop-meeting','loop-organize','loop-work','loop-document'})
         manifest = json.loads((ROOT/'skills-manifest.json').read_text(encoding='utf-8'))['skills']
         self.assertEqual(chosen, [name for name in manifest if name in chosen])
 
@@ -86,3 +86,10 @@ class NeedBasedInstallTests(unittest.TestCase):
                 'writing':{'purpose':'Writing','skills':['loop-write','unknown']}}}),encoding='utf-8')
             with self.assertRaises(ValueError):
                 select_skills(root,['writing'],[])
+
+    def test_individual_selection_does_not_require_an_unrequested_bundle_registry(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root=Path(directory)
+            (root/'skills-manifest.json').write_text(json.dumps({'skills':['loop-demo']}),encoding='utf-8')
+            self.assertEqual(select_skills(root,[],['loop-demo']),['loop-demo'])
+            with self.assertRaises(OSError):select_skills(root,['writing'],[])

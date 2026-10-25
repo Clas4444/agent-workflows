@@ -1,0 +1,37 @@
+{
+  "version": 1,
+  "root_token": "b1c2a2105b52e4e49fbfa2be74f6c34dae91e727d716189aedbb4ed6a6ddaff8",
+  "source_inventory": {
+    "Finance/A-receipt.txt": {
+      "sha256": "b80d351294e254473c55f71a5393fe41efdea9607db2ee728650916c1d5977ee",
+      "bytes": 21
+    },
+    "Finance/B-receipt.txt": {
+      "sha256": "18b3ac80978d7a2f0616bc02735cbe71905e3f942e6793d44d291e3af53b6e00",
+      "bytes": 56
+    },
+    "Finance/receipt.txt": {
+      "sha256": "f8deab8163e66dd30e773b02b3e59e22c65928705b9a6c4c5e3746c43f221ea8",
+      "bytes": 31
+    },
+    "Project/note.txt": {
+      "sha256": "d235e470005794f2c493e56876fd26174624f9858a58903d0fc4b403e851d67f",
+      "bytes": 14
+    }
+  },
+  "moves": [
+    {
+      "source": "Finance/A-receipt.txt",
+      "destination": "A/receipt.txt"
+    },
+    {
+      "source": "Finance/B-receipt.txt",
+      "destination": "B/receipt.txt"
+    },
+    {
+      "source": "Project/note.txt",
+      "destination": "note.txt"
+    }
+  ],
+  "scope": "Regular files only; plan/check/verify never move or delete anything."
+}

@@ -1,0 +1,79 @@
+{
+  "status": "PASS",
+  "acceptance": {
+    "AC1": "PASS",
+    "AC2": "PASS",
+    "AC3": "PASS",
+    "AC4": "PASS",
+    "AC5": "PASS"
+  },
+  "baseline": "baseline.json",
+  "checks": [
+    {
+      "surface": "source",
+      "command": [
+        "<user-home>\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+        "-m",
+        "unittest",
+        "-v",
+        "test_base",
+        "test_cli.CLI.test_source"
+      ],
+      "exit_code": 0,
+      "status": "PASS",
+      "stdout": "",
+      "stderr": "test_values (test_base.Base.test_values) ... ok\ntest_source (test_cli.CLI.test_source) ... ok\n\n----------------------------------------------------------------------\nRan 2 tests in 0.457s\n\nOK\n"
+    },
+    {
+      "surface": "installed",
+      "command": [
+        "<user-home>\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+        "-m",
+        "unittest",
+        "-v",
+        "test_cli.CLI.test_package"
+      ],
+      "exit_code": 0,
+      "status": "PASS",
+      "stdout": "",
+      "stderr": "test_package (test_cli.CLI.test_package) ... ok\n\n----------------------------------------------------------------------\nRan 1 test in 0.538s\n\nOK\n"
+    },
+    {
+      "surface": "checker negative control",
+      "status": "PASS",
+      "observation": "Assertions reject package with missing formatting.py",
+      "failure": "1 != 0 : Traceback (most recent call last):\n  File \"C:\\Code\\AgentSkills\\loop-skills-repository\\.loop\\work-1.9\\code\\tmp73bq2j6l\\app.py\", line 3, in <module>\n    from formatting import rows, tsv\nModuleNotFoundError: No module named 'formatting'\n"
+    }
+  ],
+  "source_hashes": {
+    "app.py": "a068109ac0006ac8205056779b8885acbacf0bd240d7740ca6db477df0c93f6c",
+    "formatting.py": "eea48707bdbaabb7631672479400c1c7934953cd5c99dbf9c0c0074fd5caf187",
+    "package.py": "818911437436ae81b71ba9c41fe1630cc8ce23e1ac8121b49a2e644f8e823bcd",
+    "test_base.py": "412074e542d7623b089585970bb0c3947965a13685418fafffa46771c5898980",
+    "test_cli.py": "420de0eac2422421ceeed475a6ae7c416872eb017f45d8463b06c1a7d6d9d0d8"
+  },
+  "installed_hashes": {
+    "app.py": "a068109ac0006ac8205056779b8885acbacf0bd240d7740ca6db477df0c93f6c",
+    "formatting.py": "eea48707bdbaabb7631672479400c1c7934953cd5c99dbf9c0c0074fd5caf187"
+  },
+  "final_diff": "final.diff",
+  "final_diff_findings": [],
+  "review": {
+    "correctness": "TSV header, order, duplicates, negative and zero values verified; JSON preserved.",
+    "delivery": "Package now copies formatting.py; fresh-directory subprocess checks passed with PYTHONPATH removed.",
+    "protected_input": "test_base.py unchanged by SHA256."
+  },
+  "limitations": [
+    "No remote or host discovery checks requested or performed.",
+    "Tested with bundled Python on Windows only.",
+    "Baseline isolated-mode import failure is not itself a valid proof of ordinary script behavior; missing shipped module confirmed directly from packaging source."
+  ],
+  "artifacts": [
+    "plan.txt",
+    "baseline.json",
+    "final.diff",
+    "test_cli.py",
+    "dist/app.py",
+    "dist/formatting.py"
+  ]
+}

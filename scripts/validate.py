@@ -14,12 +14,16 @@ from pathlib import Path
 if __package__:
     from .routing_check import check_routes
     from .catalog import check_catalog
+    from .skill_resources import check_resources, plain_chain
+    from .instruction_history import check_history
     from .validation.manifest import DEFAULT_ROOTS, NAME_PATTERN, Manifest, load_manifest
     from .validation.skill_format import FRONTMATTER_PATTERN, frontmatter_value, check_format
     from .validation.loop_policy import REQUIRED_STATUSES, REQUIRED_SECTIONS, check_loop_policy
 else:
     from routing_check import check_routes
     from catalog import check_catalog
+    from skill_resources import check_resources, plain_chain
+    from instruction_history import check_history
     from validation.manifest import DEFAULT_ROOTS, NAME_PATTERN, Manifest, load_manifest
     from validation.skill_format import FRONTMATTER_PATTERN, frontmatter_value, check_format
     from validation.loop_policy import REQUIRED_STATUSES, REQUIRED_SECTIONS, check_loop_policy
@@ -55,6 +59,11 @@ def validate(repo: Path, profile: str = "loop") -> list[str]:
         for root in manifest.roots:
             path = repo / root / skill / "SKILL.md"
             copies.append(path)
+            try:
+                plain_chain(repo,path)
+            except (OSError,ValueError) as exc:
+                errors.append(f"unsafe skill source {root}/{skill}: {exc}")
+                continue
             if not path.is_file():
                 errors.append(f"missing {path.relative_to(repo)}")
                 continue
@@ -69,7 +78,14 @@ def validate(repo: Path, profile: str = "loop") -> list[str]:
             if profile == "loop":
                 errors.extend(check_loop_policy(text, skill, label))
 
-        existing = [path for path in copies if path.is_file()]
+        existing = []
+        for path in copies:
+            try:
+                plain_chain(repo,path)
+                if path.is_file():
+                    existing.append(path)
+            except (OSError,ValueError):
+                pass  # Already reported before reading the instruction.
         if existing:
             hashes = {sha256(path) for path in existing}
             if len(hashes) != 1:
@@ -78,11 +94,19 @@ def validate(repo: Path, profile: str = "loop") -> list[str]:
             runner = repo / "scripts" / "run_loop.py"
             for root in manifest.roots:
                 bundled = repo / root / skill / "scripts" / "run_loop.py"
+                try:
+                    plain_chain(repo,runner)
+                    plain_chain(repo,bundled)
+                except (OSError,ValueError) as exc:
+                    errors.append(f"unsafe runner for {root}/{skill}: {exc}")
+                    continue
                 if not runner.is_file() or not bundled.is_file():
                     errors.append(f"missing runner for {root}/{skill}")
                 elif runner.read_bytes() != bundled.read_bytes():
                     errors.append(f"stale runner for {root}/{skill}")
 
+    errors.extend(check_resources(repo,list(manifest.skills),list(manifest.roots)))
+    errors.extend(check_history(repo))
     return errors
 
 

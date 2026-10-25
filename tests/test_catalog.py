@@ -13,10 +13,10 @@ class CatalogTests(unittest.TestCase):
     def test_group_partition_and_generated_readme_match(self):
         self.assertEqual(check_catalog(ROOT), [])
         groups = json.loads((ROOT/'skill-groups.json').read_text(encoding='utf-8'))
-        self.assertEqual(len(groups), 12)
+        self.assertEqual(len(groups), 13)
         names = [name for group in groups.values() for name in group['skills']]
-        self.assertEqual(len(names), 45)
-        self.assertEqual(len(set(names)), 45)
+        self.assertEqual(len(names), 49)
+        self.assertEqual(len(set(names)), 49)
 
     def test_duplicate_and_missing_routes_fail_even_with_valid_skill_files(self):
         from test_validate import make_fixture
@@ -40,9 +40,9 @@ class CatalogTests(unittest.TestCase):
         historical = json.loads((ROOT/'docs/evidence/manifest-1.2.json').read_text(encoding='utf-8'))
         current = json.loads((ROOT/'skills-manifest.json').read_text(encoding='utf-8'))
         self.assertEqual(len(historical['skills']), 27)
-        self.assertEqual(set(current['skills'])-set(historical['skills']), {'loop-test-adversarial', 'loop-test-compatibility', 'loop-mcp-design', 'loop-mcp-test', 'loop-mcp-security', 'loop-deploy', 'loop-observe', 'loop-context', 'loop-handoff', 'loop-workflow-project', 'loop-workflow-pr', 'loop-workflow-incident', 'loop-write', 'loop-summarize', 'loop-meeting', 'loop-organize', 'loop-decide', 'loop-learn'})
+        self.assertEqual(set(current['skills'])-set(historical['skills']), {'loop-test-adversarial', 'loop-test-compatibility', 'loop-mcp-design', 'loop-mcp-test', 'loop-mcp-security', 'loop-deploy', 'loop-observe', 'loop-context', 'loop-handoff', 'loop-workflow-project', 'loop-workflow-pr', 'loop-workflow-incident', 'loop-write', 'loop-summarize', 'loop-meeting', 'loop-organize', 'loop-decide', 'loop-learn', 'loop-work', 'loop-files', 'loop-table', 'loop-document'})
         text = (ROOT/'docs/RUNTIME-TEST-MATRIX.md').read_text(encoding='utf-8')
-        for name in ('loop-test-adversarial', 'loop-test-compatibility', 'loop-mcp-design', 'loop-mcp-test', 'loop-mcp-security', 'loop-deploy', 'loop-observe', 'loop-context', 'loop-handoff', 'loop-workflow-project', 'loop-workflow-pr', 'loop-workflow-incident', 'loop-write', 'loop-summarize', 'loop-meeting', 'loop-organize', 'loop-decide', 'loop-learn'):
+        for name in ('loop-test-adversarial', 'loop-test-compatibility', 'loop-mcp-design', 'loop-mcp-test', 'loop-mcp-security', 'loop-deploy', 'loop-observe', 'loop-context', 'loop-handoff', 'loop-workflow-project', 'loop-workflow-pr', 'loop-workflow-incident', 'loop-write', 'loop-summarize', 'loop-meeting', 'loop-organize', 'loop-decide', 'loop-learn', 'loop-work', 'loop-files', 'loop-table', 'loop-document'):
             row = next(line for line in text.splitlines() if f'| {name} |' in line)
             self.assertIn('NOT_RUN', row)
 

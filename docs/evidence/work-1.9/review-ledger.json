@@ -1,0 +1,355 @@
+{
+  "session_id": "work-1.9-20261025T062809Z",
+  "base_revision": "80c7b1d0b61fd8fd44df47e7dac659513fde2988",
+  "counts": {
+    "KEEP": 32,
+    "UPGRADE": 12,
+    "SPLIT_ROUTER": 1,
+    "ADD": 4
+  },
+  "skills": [
+    {
+      "skill": "loop-review",
+      "decision": "UPGRADE",
+      "reason": "Strengthen artifact, source, capacity, delivery or evidence boundary without merging distinct outcomes.",
+      "instruction_text_sha256": "fd77f2fc1f49b40af545b8fb62cc15368e257a07bf703dff2a59a273d65c70f7",
+      "review_scope": "Contract/routing inventory plus targeted runtime checks; not an exhaustive runtime test of every skill."
+    },
+    {
+      "skill": "loop-code",
+      "decision": "UPGRADE",
+      "reason": "Strengthen artifact, source, capacity, delivery or evidence boundary without merging distinct outcomes.",
+      "instruction_text_sha256": "d7e2a9be0e8331c0e92c26b89630a02914e53a879aa9dab1fd3cc00d1a5c1b1c",
+      "review_scope": "Contract/routing inventory plus targeted runtime checks; not an exhaustive runtime test of every skill."
+    },
+    {
+      "skill": "loop-diagnose",
+      "decision": "KEEP",
+      "reason": "Existing responsibility/acceptance boundary retained; no demonstrated need for instruction churn.",
+      "instruction_text_sha256": "3a5e3847407f58691f5aef87be58d4656ac86b55091016661f85c9f5452e892e",
+      "review_scope": "Contract/routing inventory plus targeted runtime checks; not an exhaustive runtime test of every skill."
+    },
+    {
+      "skill": "loop-diagnose-repro",
+      "decision": "KEEP",
+      "reason": "Existing responsibility/acceptance boundary retained; no demonstrated need for instruction churn.",
+      "instruction_text_sha256": "f4e037065de7a0254d9e3ac1edca8e2e26e6d2974023401a5780e7896e959853",
+      "review_scope": "Contract/routing inventory plus targeted runtime checks; not an exhaustive runtime test of every skill."
+    },
+    {
+      "skill": "loop-diagnose-performance",
+      "decision": "KEEP",
+      "reason": "Existing responsibility/acceptance boundary retained; no demonstrated need for instruction churn.",
+      "instruction_text_sha256": "4ad7081d207c301a39a42c24ca7e830533aef4c3a436644661128d1269e5cf2f",
+      "review_scope": "Contract/routing inventory plus targeted runtime checks; not an exhaustive runtime test of every skill."
+    },
+    {
+      "skill": "loop-diagnose-regression",
+      "decision": "KEEP",
+      "reason": "Existing responsibility/acceptance boundary retained; no demonstrated need for instruction churn.",
+      "instruction_text_sha256": "8f49584d6a2956bb72b1149be2783f421f9163c7468df2f72632b05ae062293f",
+      "review_scope": "Contract/routing inventory plus targeted runtime checks; not an exhaustive runtime test of every skill."
+    },
+    {
+      "skill": "loop-research",
+      "decision": "UPGRADE",
+      "reason": "Strengthen artifact, source, capacity, delivery or evidence boundary without merging distinct outcomes.",
+      "instruction_text_sha256": "de7c44ee288766805e7853c75f19fe185bb0e9f554c43515456187325b1155f3",
+      "review_scope": "Contract/routing inventory plus targeted runtime checks; not an exhaustive runtime test of every skill."
+    },
+    {
+      "skill": "loop-research-repo",
+      "decision": "KEEP",
+      "reason": "Existing responsibility/acceptance boundary retained; no demonstrated need for instruction churn.",
+      "instruction_text_sha256": "3eb496f0860e99a971f49c2608409ee7701a7e2d08fc367ea61b6bf0c3bbe86c",
+      "review_scope": "Contract/routing inventory plus targeted runtime checks; not an exhaustive runtime test of every skill."
+    },
+    {
+      "skill": "loop-research-tools",
+      "decision": "KEEP",
+      "reason": "Existing responsibility/acceptance boundary retained; no demonstrated need for instruction churn.",
+      "instruction_text_sha256": "f4084d3535630280b007ad6f9cace94af37417aa8f6a19ec3bba6a782603576e",
+      "review_scope": "Contract/routing inventory plus targeted runtime checks; not an exhaustive runtime test of every skill."
+    },
+    {
+      "skill": "loop-test",
+      "decision": "UPGRADE",
+      "reason": "Strengthen artifact, source, capacity, delivery or evidence boundary without merging distinct outcomes.",
+      "instruction_text_sha256": "26f5e9e1c0e6e1e7189a9c6cdc54f3c4fef26512d918a365f8d242fa0c33bded",
+      "review_scope": "Contract/routing inventory plus targeted runtime checks; not an exhaustive runtime test of every skill."
+    },
+    {
+      "skill": "loop-test-unit",
+      "decision": "KEEP",
+      "reason": "Existing responsibility/acceptance boundary retained; no demonstrated need for instruction churn.",
+      "instruction_text_sha256": "becb0062b47eeac64e1eb15ea6b0a8d2b917075f0d14869171b0a5b3214791db",
+      "review_scope": "Contract/routing inventory plus targeted runtime checks; not an exhaustive runtime test of every skill."
+    },
+    {
+      "skill": "loop-test-integration",
+      "decision": "KEEP",
+      "reason": "Existing responsibility/acceptance boundary retained; no demonstrated need for instruction churn.",
+      "instruction_text_sha256": "e440679ce5e5fec6414a72ed9b309e66a473213e53dafa1f3c52b7a6da7f6a9d",
+      "review_scope": "Contract/routing inventory plus targeted runtime checks; not an exhaustive runtime test of every skill."
+    },
+    {
+      "skill": "loop-test-coverage",
+      "decision": "KEEP",
+      "reason": "Existing responsibility/acceptance boundary retained; no demonstrated need for instruction churn.",
+      "instruction_text_sha256": "37062d731f528df061c23558b770f26db1bbe484bd2a8fb35a373f5f9ccac96b",
+      "review_scope": "Contract/routing inventory plus targeted runtime checks; not an exhaustive runtime test of every skill."
+    },
+    {
+      "skill": "loop-docs",
+      "decision": "KEEP",
+      "reason": "Existing responsibility/acceptance boundary retained; no demonstrated need for instruction churn.",
+      "instruction_text_sha256": "67ec82b728393cec500594b200eb900564f7eb77a0be3e4af41a706a4f6d5bd5",
+      "review_scope": "Contract/routing inventory plus targeted runtime checks; not an exhaustive runtime test of every skill."
+    },
+    {
+      "skill": "loop-skill-create",
+      "decision": "UPGRADE",
+      "reason": "Strengthen artifact, source, capacity, delivery or evidence boundary without merging distinct outcomes.",
+      "instruction_text_sha256": "7e14f9df43616ec87d567a533be8fed85992aa7c9c3cb57c81aaf962ff01fb16",
+      "review_scope": "Contract/routing inventory plus targeted runtime checks; not an exhaustive runtime test of every skill."
+    },
+    {
+      "skill": "loop-orchestrate",
+      "decision": "KEEP",
+      "reason": "Existing responsibility/acceptance boundary retained; no demonstrated need for instruction churn.",
+      "instruction_text_sha256": "21fa4f9c358fdf4f05af70288d66b9b9640131a6324ec3c94d95c60df9f991ef",
+      "review_scope": "Contract/routing inventory plus targeted runtime checks; not an exhaustive runtime test of every skill."
+    },
+    {
+      "skill": "loop-prompt",
+      "decision": "KEEP",
+      "reason": "Existing responsibility/acceptance boundary retained; no demonstrated need for instruction churn.",
+      "instruction_text_sha256": "4df11c0ec466c02d2c8b654d418df5f0d323d21b9e73d13abe089fbbf88ce2b5",
+      "review_scope": "Contract/routing inventory plus targeted runtime checks; not an exhaustive runtime test of every skill."
+    },
+    {
+      "skill": "loop-debug",
+      "decision": "KEEP",
+      "reason": "Existing responsibility/acceptance boundary retained; no demonstrated need for instruction churn.",
+      "instruction_text_sha256": "7c2acb2953338e177b086b8954761093c1ea5dae064e8cd76a2ec5eb2005d667",
+      "review_scope": "Contract/routing inventory plus targeted runtime checks; not an exhaustive runtime test of every skill."
+    },
+    {
+      "skill": "loop-security",
+      "decision": "KEEP",
+      "reason": "Existing responsibility/acceptance boundary retained; no demonstrated need for instruction churn.",
+      "instruction_text_sha256": "583f1fcbf6a1b4d9961686ed4cf7b7790f572cfd53c681b573a6aea637aaf7c4",
+      "review_scope": "Contract/routing inventory plus targeted runtime checks; not an exhaustive runtime test of every skill."
+    },
+    {
+      "skill": "loop-refactor",
+      "decision": "KEEP",
+      "reason": "Existing responsibility/acceptance boundary retained; no demonstrated need for instruction churn.",
+      "instruction_text_sha256": "7cdf6eb63e9558ab0f953ea567a082dd2041c7275f01462fb8d14f8b3367600a",
+      "review_scope": "Contract/routing inventory plus targeted runtime checks; not an exhaustive runtime test of every skill."
+    },
+    {
+      "skill": "loop-ci",
+      "decision": "KEEP",
+      "reason": "Existing responsibility/acceptance boundary retained; no demonstrated need for instruction churn.",
+      "instruction_text_sha256": "802661ce7ec76d5e26ffb2fad1ca859e0d5205f687f68c59a6fee3c11d99e5be",
+      "review_scope": "Contract/routing inventory plus targeted runtime checks; not an exhaustive runtime test of every skill."
+    },
+    {
+      "skill": "loop-release",
+      "decision": "KEEP",
+      "reason": "Existing responsibility/acceptance boundary retained; no demonstrated need for instruction churn.",
+      "instruction_text_sha256": "02d51c8f77140c8d9c421653879a82b68381a2c46fd37f965c2534619eef816c",
+      "review_scope": "Contract/routing inventory plus targeted runtime checks; not an exhaustive runtime test of every skill."
+    },
+    {
+      "skill": "loop-plan",
+      "decision": "UPGRADE",
+      "reason": "Strengthen artifact, source, capacity, delivery or evidence boundary without merging distinct outcomes.",
+      "instruction_text_sha256": "340e53253ce1d9f5019406a89e70a03c0cfdaa0ef22a98b5750e38298ed60e4e",
+      "review_scope": "Contract/routing inventory plus targeted runtime checks; not an exhaustive runtime test of every skill."
+    },
+    {
+      "skill": "loop-dependencies",
+      "decision": "KEEP",
+      "reason": "Existing responsibility/acceptance boundary retained; no demonstrated need for instruction churn.",
+      "instruction_text_sha256": "e41e6c6157b6f4918e8bc7e3cdd493eeacc19b654764db4b3156ac8ddc8f5671",
+      "review_scope": "Contract/routing inventory plus targeted runtime checks; not an exhaustive runtime test of every skill."
+    },
+    {
+      "skill": "loop-migrate",
+      "decision": "KEEP",
+      "reason": "Existing responsibility/acceptance boundary retained; no demonstrated need for instruction churn.",
+      "instruction_text_sha256": "531d73668f852065d7864825ce7f054a4a0da6f7faaf5ed2f5d90ee599bf6885",
+      "review_scope": "Contract/routing inventory plus targeted runtime checks; not an exhaustive runtime test of every skill."
+    },
+    {
+      "skill": "loop-test-e2e",
+      "decision": "KEEP",
+      "reason": "Existing responsibility/acceptance boundary retained; no demonstrated need for instruction churn.",
+      "instruction_text_sha256": "950c5fab0960c74d345bfd2587c54de2170f727bb930f955dffae954bebc78ba",
+      "review_scope": "Contract/routing inventory plus targeted runtime checks; not an exhaustive runtime test of every skill."
+    },
+    {
+      "skill": "loop-evaluate",
+      "decision": "KEEP",
+      "reason": "Existing responsibility/acceptance boundary retained; no demonstrated need for instruction churn.",
+      "instruction_text_sha256": "36562697e5c76132e92eafc07193ee12508559abbfdbded0cdb4342b030edc03",
+      "review_scope": "Contract/routing inventory plus targeted runtime checks; not an exhaustive runtime test of every skill."
+    },
+    {
+      "skill": "loop-test-adversarial",
+      "decision": "KEEP",
+      "reason": "Existing responsibility/acceptance boundary retained; no demonstrated need for instruction churn.",
+      "instruction_text_sha256": "938d5f8f14b7bb74c17bd79c4948d346b2d998224e5f57e88561d55e9018f9fb",
+      "review_scope": "Contract/routing inventory plus targeted runtime checks; not an exhaustive runtime test of every skill."
+    },
+    {
+      "skill": "loop-test-compatibility",
+      "decision": "KEEP",
+      "reason": "Existing responsibility/acceptance boundary retained; no demonstrated need for instruction churn.",
+      "instruction_text_sha256": "f94f116ac80815ffb54a4679bbeb6667b07e1ed02b043186cce9e37f93c640e6",
+      "review_scope": "Contract/routing inventory plus targeted runtime checks; not an exhaustive runtime test of every skill."
+    },
+    {
+      "skill": "loop-mcp-design",
+      "decision": "KEEP",
+      "reason": "Existing responsibility/acceptance boundary retained; no demonstrated need for instruction churn.",
+      "instruction_text_sha256": "7b2cd975445425cde1faeafca99fef470901412445a25d6b77e39d37373c3b4d",
+      "review_scope": "Contract/routing inventory plus targeted runtime checks; not an exhaustive runtime test of every skill."
+    },
+    {
+      "skill": "loop-mcp-test",
+      "decision": "KEEP",
+      "reason": "Existing responsibility/acceptance boundary retained; no demonstrated need for instruction churn.",
+      "instruction_text_sha256": "95423acc31d6ced6433d537466f4a863ee21e973258d365245937de953826e78",
+      "review_scope": "Contract/routing inventory plus targeted runtime checks; not an exhaustive runtime test of every skill."
+    },
+    {
+      "skill": "loop-mcp-security",
+      "decision": "KEEP",
+      "reason": "Existing responsibility/acceptance boundary retained; no demonstrated need for instruction churn.",
+      "instruction_text_sha256": "85b71f20fa085182f4554366c2aa60e54fe3c65eba59b5260cf4e95147d76af6",
+      "review_scope": "Contract/routing inventory plus targeted runtime checks; not an exhaustive runtime test of every skill."
+    },
+    {
+      "skill": "loop-deploy",
+      "decision": "KEEP",
+      "reason": "Existing responsibility/acceptance boundary retained; no demonstrated need for instruction churn.",
+      "instruction_text_sha256": "2a085b2f76339a8564f55d97d2dde17303c3870c9fc801eba9360d1a77a155cd",
+      "review_scope": "Contract/routing inventory plus targeted runtime checks; not an exhaustive runtime test of every skill."
+    },
+    {
+      "skill": "loop-observe",
+      "decision": "KEEP",
+      "reason": "Existing responsibility/acceptance boundary retained; no demonstrated need for instruction churn.",
+      "instruction_text_sha256": "c23265c07ef22cd72975e546751a5a35a48f07117b063fc03b2fd1b81602db92",
+      "review_scope": "Contract/routing inventory plus targeted runtime checks; not an exhaustive runtime test of every skill."
+    },
+    {
+      "skill": "loop-context",
+      "decision": "KEEP",
+      "reason": "Existing responsibility/acceptance boundary retained; no demonstrated need for instruction churn.",
+      "instruction_text_sha256": "4f346249334469257dc41f65343edf44b0df43805e1d6ba28dcbc287f33f7e2a",
+      "review_scope": "Contract/routing inventory plus targeted runtime checks; not an exhaustive runtime test of every skill."
+    },
+    {
+      "skill": "loop-handoff",
+      "decision": "KEEP",
+      "reason": "Existing responsibility/acceptance boundary retained; no demonstrated need for instruction churn.",
+      "instruction_text_sha256": "c3868c4316de7bcc7c5a3fc481e474c2c9de781c120dd5547a12b974cddc7ba5",
+      "review_scope": "Contract/routing inventory plus targeted runtime checks; not an exhaustive runtime test of every skill."
+    },
+    {
+      "skill": "loop-workflow-project",
+      "decision": "UPGRADE",
+      "reason": "Strengthen artifact, source, capacity, delivery or evidence boundary without merging distinct outcomes.",
+      "instruction_text_sha256": "4fa2b71ef49aaed113397dec4e61175e5d83c1103894cb039698173b3c86ae60",
+      "review_scope": "Contract/routing inventory plus targeted runtime checks; not an exhaustive runtime test of every skill."
+    },
+    {
+      "skill": "loop-workflow-pr",
+      "decision": "KEEP",
+      "reason": "Existing responsibility/acceptance boundary retained; no demonstrated need for instruction churn.",
+      "instruction_text_sha256": "7d3f83a9e9a2c912923ecc928d05e6bef03cb586fcc513c6ee3f96e6893801e8",
+      "review_scope": "Contract/routing inventory plus targeted runtime checks; not an exhaustive runtime test of every skill."
+    },
+    {
+      "skill": "loop-workflow-incident",
+      "decision": "KEEP",
+      "reason": "Existing responsibility/acceptance boundary retained; no demonstrated need for instruction churn.",
+      "instruction_text_sha256": "9ae80b5d85b66dd2b586e176acb9901bee3fbe6d63967cb404cce5b33f7b4864",
+      "review_scope": "Contract/routing inventory plus targeted runtime checks; not an exhaustive runtime test of every skill."
+    },
+    {
+      "skill": "loop-write",
+      "decision": "UPGRADE",
+      "reason": "Strengthen artifact, source, capacity, delivery or evidence boundary without merging distinct outcomes.",
+      "instruction_text_sha256": "96961742b9819830039e90beca14680cb8854768482918dbcb18e7f0f67379bd",
+      "review_scope": "Contract/routing inventory plus targeted runtime checks; not an exhaustive runtime test of every skill."
+    },
+    {
+      "skill": "loop-summarize",
+      "decision": "UPGRADE",
+      "reason": "Strengthen artifact, source, capacity, delivery or evidence boundary without merging distinct outcomes.",
+      "instruction_text_sha256": "f09d25beea324fe67529ef9261fe5c3244a882e4551e5e606b705b486c32d6b5",
+      "review_scope": "Contract/routing inventory plus targeted runtime checks; not an exhaustive runtime test of every skill."
+    },
+    {
+      "skill": "loop-meeting",
+      "decision": "UPGRADE",
+      "reason": "Strengthen artifact, source, capacity, delivery or evidence boundary without merging distinct outcomes.",
+      "instruction_text_sha256": "80760f6ba3011b4d45ac027b053f59c6bfa17a85e7bd7e73b81ac2ba6d815005",
+      "review_scope": "Contract/routing inventory plus targeted runtime checks; not an exhaustive runtime test of every skill."
+    },
+    {
+      "skill": "loop-organize",
+      "decision": "SPLIT_ROUTER",
+      "reason": "Separate file execution and everyday work; keep public entrypoint with safe fallback.",
+      "instruction_text_sha256": "32aebd2e873256ddd5627b025611af337a1ac935d7985b633f5a4f4827f0ed6a",
+      "review_scope": "Contract/routing inventory plus targeted runtime checks; not an exhaustive runtime test of every skill."
+    },
+    {
+      "skill": "loop-decide",
+      "decision": "UPGRADE",
+      "reason": "Strengthen artifact, source, capacity, delivery or evidence boundary without merging distinct outcomes.",
+      "instruction_text_sha256": "9f229026d9b12a842e98de57cbba40d566f05c80411847b721a8f12906713662",
+      "review_scope": "Contract/routing inventory plus targeted runtime checks; not an exhaustive runtime test of every skill."
+    },
+    {
+      "skill": "loop-learn",
+      "decision": "UPGRADE",
+      "reason": "Strengthen artifact, source, capacity, delivery or evidence boundary without merging distinct outcomes.",
+      "instruction_text_sha256": "6f0e3e322769b523dd82c24af04c447d93c54bfdc9867191b702f8074c4260ac",
+      "review_scope": "Contract/routing inventory plus targeted runtime checks; not an exhaustive runtime test of every skill."
+    },
+    {
+      "skill": "loop-work",
+      "decision": "ADD",
+      "reason": "New distinct work/artifact outcome with installed payload checks.",
+      "instruction_text_sha256": "a37a7d03e2a8b3a4eb296687c24bbf0a745e59b8d1ae147f6372c21bba6fb11f",
+      "review_scope": "Contract/routing inventory plus targeted runtime checks; not an exhaustive runtime test of every skill."
+    },
+    {
+      "skill": "loop-files",
+      "decision": "ADD",
+      "reason": "New distinct work/artifact outcome with installed payload checks.",
+      "instruction_text_sha256": "3058dacdb6bcd5fc9ba6a93b331aac965f359200b21b5933af691d9dd678a6e8",
+      "review_scope": "Contract/routing inventory plus targeted runtime checks; not an exhaustive runtime test of every skill."
+    },
+    {
+      "skill": "loop-table",
+      "decision": "ADD",
+      "reason": "New distinct work/artifact outcome with installed payload checks.",
+      "instruction_text_sha256": "b5eb9445af6828a9f723fa82c311010cad83ce10c83cae43b4c5f81ae09a0c4b",
+      "review_scope": "Contract/routing inventory plus targeted runtime checks; not an exhaustive runtime test of every skill."
+    },
+    {
+      "skill": "loop-document",
+      "decision": "ADD",
+      "reason": "New distinct work/artifact outcome with installed payload checks.",
+      "instruction_text_sha256": "d25d126ae69d34102f31a901a5c9fb611a64f0c05efd869b263923309890c0dd",
+      "review_scope": "Contract/routing inventory plus targeted runtime checks; not an exhaustive runtime test of every skill."
+    }
+  ]
+}

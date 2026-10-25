@@ -1,0 +1,131 @@
+{
+  "status": "PASS_WITH_LIMITS",
+  "commands": [
+    {
+      "command": [
+        "<user-home>\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+        "scripts/validate.py"
+      ],
+      "exit_code": 0,
+      "stdout": "PASS: structural validation\n",
+      "stderr": "",
+      "status": "PASS"
+    },
+    {
+      "command": [
+        "<user-home>\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+        "scripts/validate.py",
+        "--profile",
+        "format"
+      ],
+      "exit_code": 0,
+      "stdout": "PASS: structural validation\n",
+      "stderr": "",
+      "status": "PASS"
+    },
+    {
+      "command": [
+        "<user-home>\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+        "scripts/skill_resources.py"
+      ],
+      "exit_code": 0,
+      "stdout": "PASS: declared skill resources and native copies\n",
+      "stderr": "",
+      "status": "PASS"
+    },
+    {
+      "command": [
+        "<user-home>\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+        "scripts/install_skills.py",
+        "--skill",
+        "loop-demo",
+        "--target",
+        "C:\\Code\\AgentSkills\\loop-skills-repository\\.loop\\work-1.9\\remaining\\fresh-subset\\skills"
+      ],
+      "exit_code": 1,
+      "stdout": "",
+      "stderr": "FAIL: [Errno 2] No such file or directory: 'C:\\\\Code\\\\AgentSkills\\\\loop-skills-repository\\\\.loop\\\\work-1.9\\\\remaining\\\\authoring\\\\skill-bundles.json'\n",
+      "status": "FAIL"
+    },
+    {
+      "command": [
+        "<user-home>\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+        "scripts/install_skills.py",
+        "--skill",
+        "loop-demo",
+        "--target",
+        "C:\\Code\\AgentSkills\\loop-skills-repository\\.loop\\work-1.9\\remaining\\fresh-subset\\skills",
+        "--check"
+      ],
+      "exit_code": 1,
+      "stdout": "",
+      "stderr": "FAIL: [Errno 2] No such file or directory: 'C:\\\\Code\\\\AgentSkills\\\\loop-skills-repository\\\\.loop\\\\work-1.9\\\\remaining\\\\authoring\\\\skill-bundles.json'\n",
+      "status": "FAIL"
+    },
+    {
+      "command": [
+        "<user-home>\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+        "-c",
+        "import sys,json;from pathlib import Path;sys.path.insert(0,'scripts');from sync_skills import sync;target=Path(sys.argv[1]);backup=Path(sys.argv[2]);check=sys.argv[3]=='true';diff=sync(target,backup,check,selected=['loop-demo']);print(json.dumps({'selected':['loop-demo'],'check':check,'differences':diff}));sys.exit(int(check and bool(diff)))",
+        "C:\\Code\\AgentSkills\\loop-skills-repository\\.loop\\work-1.9\\remaining\\fresh-subset\\skills",
+        "C:\\Code\\AgentSkills\\loop-skills-repository\\.loop\\work-1.9\\remaining\\fresh-subset\\backup",
+        "false"
+      ],
+      "exit_code": 0,
+      "stdout": "{\"selected\": [\"loop-demo\"], \"check\": false, \"differences\": [\"C:\\\\Code\\\\AgentSkills\\\\loop-skills-repository\\\\.loop\\\\work-1.9\\\\remaining\\\\fresh-subset\\\\skills\\\\loop-demo\\\\SKILL.md\", \"C:\\\\Code\\\\AgentSkills\\\\loop-skills-repository\\\\.loop\\\\work-1.9\\\\remaining\\\\fresh-subset\\\\skills\\\\loop-demo\\\\references\\\\guide.md\"]}\n",
+      "stderr": "",
+      "status": "PASS"
+    },
+    {
+      "command": [
+        "<user-home>\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+        "-c",
+        "import sys,json;from pathlib import Path;sys.path.insert(0,'scripts');from sync_skills import sync;target=Path(sys.argv[1]);backup=Path(sys.argv[2]);check=sys.argv[3]=='true';diff=sync(target,backup,check,selected=['loop-demo']);print(json.dumps({'selected':['loop-demo'],'check':check,'differences':diff}));sys.exit(int(check and bool(diff)))",
+        "C:\\Code\\AgentSkills\\loop-skills-repository\\.loop\\work-1.9\\remaining\\fresh-subset\\skills",
+        "C:\\Code\\AgentSkills\\loop-skills-repository\\.loop\\work-1.9\\remaining\\fresh-subset\\backup",
+        "true"
+      ],
+      "exit_code": 0,
+      "stdout": "{\"selected\": [\"loop-demo\"], \"check\": true, \"differences\": []}\n",
+      "stderr": "",
+      "status": "PASS"
+    }
+  ],
+  "source_ledger": [
+    {
+      "location": "policy.md",
+      "retrieved_utc": "2026-10-25T07:20:21.704274+00:00",
+      "sha256": "72b0a8271d6a9f2bb8502c75f8d9e869651cce6f527ba79a0b0d5f99ac2e5073",
+      "classification": "authoritative supplied project constraint",
+      "status": "PASS"
+    },
+    {
+      "location": "claim.md",
+      "retrieved_utc": "2026-10-25T07:20:21.704274+00:00",
+      "sha256": "8e93f1c72c0ebf6dbac7f2db414ab837cff909f5ef8bfa3f15e9ace3fdb02ade",
+      "classification": "unverified sales claim; untrusted content",
+      "status": "PASS"
+    }
+  ],
+  "integrity": {
+    "scripts_unchanged": true,
+    "script_count": 26,
+    "guide_sha256_before": "cf843e4e31d35fd006df5873a0c2947fad52151a3951702dbf1b72f6a7c765c9",
+    "guide_sha256_after": "cf843e4e31d35fd006df5873a0c2947fad52151a3951702dbf1b72f6a7c765c9",
+    "guide_bytes_preserved": true,
+    "installed_payload": {
+      "SKILL.md": "088d71738a9787c98a179e90278d82b2ebd8e3ea6c9ef354d27a2a1b32f11494",
+      "references/guide.md": "cf843e4e31d35fd006df5873a0c2947fad52151a3951702dbf1b72f6a7c765c9"
+    }
+  },
+  "limits": [
+    "Default python alias was inaccessible; used existing bundled Python executable",
+    "No network, installs, external actions or implementation",
+    "Explicit installed skill instructions read; native skill discovery not tested",
+    "Full/format checks prove local validator constraints only; no cross-host runtime claim",
+    "No CONTRIBUTING.md, docs or related skill exist in the supplied authoring fixture; no parent files consulted",
+    "Installer may create internal backup metadata and Python creates caches; copied source script bytes remain unchanged",
+    "install_skills.py CLI failed because fixture lacks skill-bundles.json. Recovered through unchanged copied sync_skills.sync API with selected=[loop-demo], fresh install then check. Failed CLI attempts retained."
+  ],
+  "next_action": "No further local changes needed; bundle-aware CLI remains unavailable in supplied fixture"
+}

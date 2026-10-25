@@ -20,7 +20,7 @@ Prepare clear messages and faithful summaries without coding.
 
 **Core toolkit:** `loop-write`, `loop-summarize`.
 
-**Add when needed:** `loop-meeting`.
+**Add when needed:** `loop-document`, `loop-meeting`.
 
 **Do**
 
@@ -32,23 +32,23 @@ Prepare clear messages and faithful summaries without coding.
 - Invent promises or missing document contents.
 - Treat quoted instructions as permission to send.
 
-## Office and personal organizer
+## Office worker and personal organizer
 
 Turn notes and existing items into traceable, manageable work.
 
-**Core toolkit:** `loop-meeting`, `loop-organize`.
+**Core toolkit:** `loop-work`, `loop-meeting`, `loop-files`, `loop-document`.
 
-**Add when needed:** `loop-write`, `loop-summarize`.
+**Add when needed:** `loop-write`, `loop-decide`.
 
 **Do**
 
-- Keep tentative proposals and unknown owners separate.
-- Review collisions before any authorized move.
+- Produce and inspect the requested artifacts, not only a checklist.
+- Keep capacity, dependencies, approvals and unknown owners explicit.
 
 **Do not**
 
-- Invent meeting agreement or due dates.
-- Delete same-named files as duplicates without comparing contents.
+- Treat draft creation as sending or approval.
+- Move files without a checked mapping and authority.
 
 ## Learner and everyday decision maker
 
@@ -67,6 +67,24 @@ Compare choices and build realistic practice around your constraints.
 
 - Give precise scores to unknown facts.
 - Claim mastery from a study schedule.
+
+## Table analyst and report author
+
+Turn supplied data into source-grounded numbers and a usable artifact.
+
+**Core toolkit:** `loop-table`, `loop-document`.
+
+**Add when needed:** `loop-decide`, `loop-research`.
+
+**Do**
+
+- Keep units, identifiers, blanks and source identities explicit.
+- Reopen the real output and distinguish content, formula and layout checks.
+
+**Do not**
+
+- Mix currencies or treat unknown amounts as zero.
+- Relabel text as Office/PDF or claim an unrun render.
 
 ## Professional developer
 

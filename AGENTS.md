@@ -1,6 +1,6 @@
 # Working on Loop Skills
 
-This repository distributes 45 skill instructions and a local CLI runner. It
+This repository distributes 49 skill instructions and a local CLI runner. It
 does not implement an MCP or A2A service. Read README.md and the relevant guide
 in docs/ before changing a workflow.
 
@@ -27,6 +27,7 @@ python scripts/catalog.py
 python scripts/routing_check.py
 python scripts/workflows.py
 python scripts/install_skills.py --list
+python scripts/skill_resources.py
 python scripts/sync_skills.py --target .github/skills --check
 python -m compileall -q scripts tests
 git diff --check

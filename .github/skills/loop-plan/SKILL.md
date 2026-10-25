@@ -38,6 +38,10 @@ authorization; clarify only prerequisites that prevent safe progress.
    executable contracts use the repository's `docs/ACCEPTANCE-GATE.md` when
    available; planned checks remain NOT_RUN, not evidence of working behavior.
 
+For non-coding work packages, prefer loop-work when available. Keep implementation
+estimates, available capacity and external dependencies explicit; a dependency-ordered
+plan is not evidence that any batch ran.
+
 ## Output
 
 A dependency-ordered plan with acceptance criteria, verification gates, risks, rollback and scope.

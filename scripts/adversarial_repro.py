@@ -49,6 +49,9 @@ def main():
     folder = output/'hardlink-sync'
     (folder/'scripts').mkdir(parents=True)
     shutil.copy2(repo/'scripts/sync_skills.py', folder/'scripts/sync_skills.py')
+    resources=repo/'scripts/skill_resources.py'
+    if resources.is_file():
+        shutil.copy2(resources,folder/'scripts/skill_resources.py')
     # Newer sync readers share strict JSON parsing; old snapshot scripts remain
     # supported when they do not have this module.
     helper=repo/'scripts/validation/json_data.py'

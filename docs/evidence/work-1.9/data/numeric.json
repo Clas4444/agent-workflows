@@ -1,0 +1,79 @@
+{
+  "status": "PASS",
+  "source_sha256": "cdce1b44143780bc36e015e656d704fe0fff426d96e64d374b429e5e616f56b2",
+  "row_count": 4,
+  "complete": false,
+  "missing_value_records": [
+    4
+  ],
+  "subtotals": [
+    {
+      "group": "Food",
+      "unit": "USD",
+      "records": 1,
+      "known_values": 0,
+      "known_value_sum": null
+    },
+    {
+      "group": "Travel",
+      "unit": "EUR",
+      "records": 1,
+      "known_values": 1,
+      "known_value_sum": "5.00"
+    },
+    {
+      "group": "Travel",
+      "unit": "USD",
+      "records": 2,
+      "known_values": 2,
+      "known_value_sum": "10.30"
+    }
+  ],
+  "unit_policy": "separate exact labels; no conversion or assumed exchange rate",
+  "source_modification": "NOT_RUN",
+  "scope": "Known-value sums only; incomplete data is explicitly marked.",
+  "inspection": {
+    "status": "PASS",
+    "source_sha256": "cdce1b44143780bc36e015e656d704fe0fff426d96e64d374b429e5e616f56b2",
+    "headers": [
+      "id",
+      "category",
+      "amount",
+      "currency",
+      "note"
+    ],
+    "row_count": 4,
+    "blank_cells": {
+      "id": 0,
+      "category": 0,
+      "amount": 1,
+      "currency": 0,
+      "note": 0
+    },
+    "formula_like_text": [
+      {
+        "record": 2,
+        "column": "note"
+      }
+    ],
+    "formula_execution": "NOT_RUN",
+    "scope": "UTF-8 CSV structure only; cell strings are never executed or rewritten."
+  },
+  "identifiers": [
+    "001",
+    "002",
+    "003",
+    "004"
+  ],
+  "identifier_policy": "Strings preserved, including leading zeros.",
+  "amount_coverage": {
+    "known": 3,
+    "missing": 1,
+    "records": 4,
+    "fraction": "3/4",
+    "percent": "75%"
+  },
+  "duplicate_ids": [],
+  "duplicate_rows": 0,
+  "contract": "All four records; amount parsed as exact decimal; category and currency labels kept separate; blank amount excluded and never replaced by zero; note text is inert; no currency conversion."
+}

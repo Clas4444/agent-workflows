@@ -1,0 +1,187 @@
+{
+  "source": "request.txt item 4",
+  "mode": "study plan",
+  "level": "beginner, requested planning assumption; no demonstrated ability",
+  "goal": "Represent and compare simple fractions, convert common fractions and percentages, and solve simple percentage-of-quantity problems with explanations.",
+  "days": [
+    {
+      "day": 1,
+      "topic": "Fraction meaning and equal parts",
+      "minutes": {
+        "closed_book_retrieval_or_spaced_review": 4,
+        "worked_example_or_feedback_review": 4,
+        "independent_practice": 9,
+        "exit_question_and_error_log": 3
+      },
+      "total_minutes": 20
+    },
+    {
+      "day": 2,
+      "topic": "Equivalent fractions",
+      "minutes": {
+        "closed_book_retrieval_or_spaced_review": 4,
+        "worked_example_or_feedback_review": 4,
+        "independent_practice": 9,
+        "exit_question_and_error_log": 3
+      },
+      "total_minutes": 20
+    },
+    {
+      "day": 3,
+      "topic": "Simplify and compare fractions",
+      "minutes": {
+        "closed_book_retrieval_or_spaced_review": 4,
+        "worked_example_or_feedback_review": 4,
+        "independent_practice": 9,
+        "exit_question_and_error_log": 3
+      },
+      "total_minutes": 20
+    },
+    {
+      "day": 4,
+      "topic": "Fractions on a number line; review day 1",
+      "minutes": {
+        "closed_book_retrieval_or_spaced_review": 4,
+        "worked_example_or_feedback_review": 4,
+        "independent_practice": 9,
+        "exit_question_and_error_log": 3
+      },
+      "total_minutes": 20
+    },
+    {
+      "day": 5,
+      "topic": "Add fractions with equal denominators; review day 2",
+      "minutes": {
+        "closed_book_retrieval_or_spaced_review": 4,
+        "worked_example_or_feedback_review": 4,
+        "independent_practice": 9,
+        "exit_question_and_error_log": 3
+      },
+      "total_minutes": 20
+    },
+    {
+      "day": 6,
+      "topic": "Simple unlike denominators; review day 3",
+      "minutes": {
+        "closed_book_retrieval_or_spaced_review": 4,
+        "worked_example_or_feedback_review": 4,
+        "independent_practice": 9,
+        "exit_question_and_error_log": 3
+      },
+      "total_minutes": 20
+    },
+    {
+      "day": 7,
+      "topic": "Mixed fraction retrieval; review days 1–6",
+      "minutes": {
+        "closed_book_retrieval_or_spaced_review": 4,
+        "worked_example_or_feedback_review": 4,
+        "independent_practice": 9,
+        "exit_question_and_error_log": 3
+      },
+      "total_minutes": 20
+    },
+    {
+      "day": 8,
+      "topic": "Percent means per hundred; review day 4",
+      "minutes": {
+        "closed_book_retrieval_or_spaced_review": 4,
+        "worked_example_or_feedback_review": 4,
+        "independent_practice": 9,
+        "exit_question_and_error_log": 3
+      },
+      "total_minutes": 20
+    },
+    {
+      "day": 9,
+      "topic": "Convert simple fractions to percentages; review day 5",
+      "minutes": {
+        "closed_book_retrieval_or_spaced_review": 4,
+        "worked_example_or_feedback_review": 4,
+        "independent_practice": 9,
+        "exit_question_and_error_log": 3
+      },
+      "total_minutes": 20
+    },
+    {
+      "day": 10,
+      "topic": "Find 10%, 25%, 50% of quantities; review day 6",
+      "minutes": {
+        "closed_book_retrieval_or_spaced_review": 4,
+        "worked_example_or_feedback_review": 4,
+        "independent_practice": 9,
+        "exit_question_and_error_log": 3
+      },
+      "total_minutes": 20
+    },
+    {
+      "day": 11,
+      "topic": "Find 1% and other simple percentages; review day 8",
+      "minutes": {
+        "closed_book_retrieval_or_spaced_review": 4,
+        "worked_example_or_feedback_review": 4,
+        "independent_practice": 9,
+        "exit_question_and_error_log": 3
+      },
+      "total_minutes": 20
+    },
+    {
+      "day": 12,
+      "topic": "Everyday percentage problems; review day 9",
+      "minutes": {
+        "closed_book_retrieval_or_spaced_review": 4,
+        "worked_example_or_feedback_review": 4,
+        "independent_practice": 9,
+        "exit_question_and_error_log": 3
+      },
+      "total_minutes": 20
+    },
+    {
+      "day": 13,
+      "topic": "Mixed fraction/percentage application; review days 7 and 10",
+      "minutes": {
+        "closed_book_retrieval_or_spaced_review": 4,
+        "worked_example_or_feedback_review": 4,
+        "independent_practice": 9,
+        "exit_question_and_error_log": 3
+      },
+      "total_minutes": 20
+    },
+    {
+      "day": 14,
+      "topic": "Cumulative retrieval and self-assessment; review days 8–13",
+      "minutes": {
+        "closed_book_retrieval_or_spaced_review": 4,
+        "worked_example_or_feedback_review": 4,
+        "independent_practice": 9,
+        "exit_question_and_error_log": 3
+      },
+      "total_minutes": 20
+    }
+  ],
+  "total_minutes": 280,
+  "worked_example": "One quarter equals 25 out of 100, so 1/4 is 25%. A quarter of 20 is 5.",
+  "practice_prompts": [
+    "Draw 3/4 of a rectangle.",
+    "Explain why 1/2 and 2/4 are equal.",
+    "Convert 3/4 to a percentage.",
+    "Find 25% of 40 and explain your steps."
+  ],
+  "feedback_policy": "Attempt first, then compare with a worked solution; log actual errors and use the next review block for a similar problem. No feedback on nonexistent responses.",
+  "assessment": {
+    "state": "NOT_RUN",
+    "responses_supplied": 0,
+    "score": null,
+    "mastery": "unverified",
+    "planned_day_14": "Use the independent-practice block for unseen mixed questions, then check reasoning in the exit block; record actual results only."
+  },
+  "adaptation": "If an error appears, replace new practice within the same 20-minute budget with prerequisite work and revisit the error on later days.",
+  "next_exercise": "Day 1: draw equal halves and quarters, then explain what the denominator represents.",
+  "checks": {
+    "schedule_arithmetic": "PASS",
+    "practice_completion": "NOT_RUN",
+    "assessment": "NOT_RUN",
+    "durable_retention": "NOT_RUN",
+    "reminders": "NOT_RUN"
+  }
+}

@@ -18,6 +18,8 @@ def make_fixture() -> Path:
     for root in (".github", ".agents", ".claude", "scripts"):
         shutil.copytree(REPO / root, temp / root)
     shutil.copy2(REPO / "skills-manifest.json", temp / "skills-manifest.json")
+    if (REPO / 'skill-resources.json').is_file():
+        shutil.copy2(REPO / 'skill-resources.json', temp / 'skill-resources.json')
     return temp
 
 

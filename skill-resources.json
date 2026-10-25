@@ -1,0 +1,20 @@
+{
+  "version": 1,
+  "resources": {
+    "loop-work": [
+      "references/work-ledger.md",
+      "assets/work-checkpoint.json"
+    ],
+    "loop-files": [
+      "scripts/file_plan.py",
+      "references/file-plan.md"
+    ],
+    "loop-table": [
+      "scripts/table_check.py",
+      "references/table-contract.md"
+    ],
+    "loop-document": [
+      "references/format-gates.md"
+    ]
+  }
+}

@@ -1,5 +1,13 @@
 # Changelog
 
+## 1.9.0-experimental — 2026-10-25
+
+- Review all 45 existing instructions; upgrade twelve and split organize into a retained selector plus work/files execution. Add four work/artifact skills: 49 skills, thirteen groups, twelve install bundles.
+- Add self-contained read-only CSV and file-plan helpers, references and checkpoint assets; validate/copy complete declared payloads across native layouts and selected installs.
+- Preserve changed historical instructions with explicit invalidation records instead of assigning older PASS to new bytes.
+- Add regressions for resource drift/omission, case/source aliases, exact decimal scales, wrapped stop policy and individual installs without an unrelated bundle registry.
+- Rewrite onboarding around outcomes and installed artifacts; generate the need-bundle table and retain source-pinned actual test evidence.
+
 ## 1.8.0-experimental — 2026-10-25
 
 - Add six everyday utility skills in three groups for writing/summaries, meetings/organization and decisions/learning: 45 skills in twelve groups.

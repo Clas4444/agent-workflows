@@ -1,0 +1,46 @@
+--- baseline/app.py
++++ app.py
+@@ -1,7 +1,15 @@
+-import argparse,json
+-from formatting import rows
++import argparse
++import json
++from formatting import rows, tsv
++
+
+ def main():
+-    parser=argparse.ArgumentParser();parser.add_argument("values",nargs="+",type=int)
+-    args=parser.parse_args();print(json.dumps(rows(args.values)))
+-if __name__=="__main__":main()
++    parser = argparse.ArgumentParser()
++    parser.add_argument("values", nargs="+", type=int)
++    parser.add_argument("--format", choices=("json", "tsv"), default="json")
++    args = parser.parse_args()
++    print(tsv(args.values) if args.format == "tsv" else json.dumps(rows(args.values)))
++
++
++if __name__ == "__main__":
++    main()
+--- baseline/formatting.py
++++ formatting.py
+@@ -1,2 +1,6 @@
+ def rows(values):
+-    return [{"value":v,"square":v*v} for v in values]
++    return [{"value": v, "square": v * v} for v in values]
++
++
++def tsv(values):
++    return "\n".join(["value\tsquare"] + [f"{v}\t{v * v}" for v in values])
+--- baseline/package.py
++++ package.py
+@@ -1,4 +1,8 @@
+ from pathlib import Path
+ import shutil
+-Path("dist").mkdir(exist_ok=True)
+-shutil.copy2("app.py","dist/app.py")
++
++source = Path(__file__).resolve().parent
++destination = source / "dist"
++destination.mkdir(exist_ok=True)
++for name in ("app.py", "formatting.py"):
++    shutil.copy2(source / name, destination / name)

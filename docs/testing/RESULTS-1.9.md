@@ -1,0 +1,89 @@
+# Work and artifact delivery — 1.9 session results
+
+Session `work-1.9-20261025T062809Z` started at 2026-10-25 06:28:09 UTC for a
+70-minute review/update. Base: `80c7b1d0b61fd8fd44df47e7dac659513fde2988`.
+This session's baseline and current-source executions are separate from 1.8.
+
+## Scope
+
+Four skills were added: work delivery, files, tables and document artifacts.
+Thirteen old instructions changed, including six everyday skills, six shared
+implementation/evidence workflows and the software-project boundary. Organize
+retains its public name as a selector while file/work execution is split.
+The inventory is 49 skills in thirteen groups, with twelve install bundles.
+
+## Baseline and findings
+
+The base commit's own runner executed a fresh 221-test baseline in an isolated
+export. It passed with one Windows file-symlink privilege skip. An independent
+old-organize exercise successfully moved three fixture files, preserving all
+four byte identities; that successful behavior was not labeled a bug.
+
+| Finding | Before evidence | Correction |
+|---|---|---|
+| Supporting-resource gap | A fixture with a divergent reference still passed full validation; installation omitted the declared reference | Resource registry, complete payload validation and shared sync preflight; three regressions failed before integration |
+| Resource path aliases | Implicit SKILL.md and parent-directory case aliases were accepted in the new resource reader | Portable component/case checks; source hardlinks/junctions rejected before copying |
+| Decimal-scale loss in the new helper | A large integer plus a tiny fraction lost the latter | Precision accounts for integer and fractional spans; red-before/green-after arithmetic regression |
+| Wrapped stop policy | Line wrapping of “never sleep” was rejected, while a prefix word could satisfy the old regex | Whitespace-aware, word-bounded policy recognition; positive and negative regressions |
+| Individual installer coupled to bundles | A minimal authoring fixture's `--skill` attempt failed without an unrelated bundle registry | Load bundles only when requested; fresh individual CLI install/check passed after the regression-driven fix |
+
+The latter helper/reader issues were found during development; they are not
+presented as historical 1.8 security defects. The earlier authoring CLI failure
+is retained even though an API install/check completed the original exercise.
+
+## Actual behavioral checks
+
+Fresh contexts explicitly loaded the installed subset, with instruction and
+resource identities frozen before use. Source inputs and baseline assertions
+were preserved. Parent checks observed outcomes rather than only self-reported PASS:
+
+- Files: parent inspected the actual three moved paths before rollback, replayed
+  the post-check, then verified all four original file hashes after authorized recovery.
+- Office work: saved brief, agenda, email draft and checkpoint; checked 80/120
+  selected estimated minutes, 205 total estimated minutes and 85 overload; kept
+  date/approval, reviewer and external actions unresolved.
+- Data: USD 10.30 and EUR 5.00 stayed separate; a missing Food amount remained
+  unknown, IDs stayed strings and source bytes were unchanged. Study plan was
+  14 × 20 = 280 minutes, with no invented assessment; venue choice stayed conditional.
+- Coding: parent ran the shipped CLI in a fresh directory while the source helper
+  was unavailable, tested changed numbers/default JSON/TSV and real invalid input,
+  and confirmed a package missing its declared helper was rejected. The agent's
+  initial `-I` import attempt alone was not accepted as proof of ordinary script behavior.
+- Remaining workflows: software plan-only state, source-linked offline comparison
+  and maintenance of a temporary skill with supporting resources were exercised.
+  The minimal-fixture CLI failure and corrected fresh-tool retry remain distinct.
+
+[Reviewed packets and payload identity](../evidence/work-1.9/provenance.json) include [office artifacts](../evidence/work-1.9/work/brief.md), [table output](../evidence/work-1.9/data/brief.md), [observed moved state](../evidence/work-1.9/files-parent-moved.json) and the [fresh CLI retry](../evidence/work-1.9/individual-cli-retry.json). Raw
+prompts/logs/failures remain under the ignored `.loop/work-1.9` session directory.
+
+## Evidence identity
+
+Changed 1.7/1.8 instruction bodies are archived with exact original digests.
+Tests still validate those historical artifacts, but now require an explicit
+invalidation/current-hash record instead of pretending they prove current runtime.
+New negative tests reject missing invalidations, archive tampering and current drift.
+The older 1.2 invalidation ledger was updated without rewriting its historical results.
+
+## Limits
+
+Automatic discovery across hosts, live email/calendar/booking operations, Office
+render/export engines, learner mastery and the referenced research benchmarks
+remain NOT_RUN unless separately observed. Helpers do not execute formulas or
+perform moves. Markdown content checks do not imply visual rendering PASS.
+The supplemental PyYAML-dependent validator is separate from the standard-library
+repository gates and cannot run when its dependency is absent.
+
+## Final local campaigns
+
+Python 3.12.14 and 3.14.7 each discovered 246 tests: 245 passed, one existing
+Windows file-symlink privilege skip, zero failures. All eleven gates passed with
+unchanged inputs. [3.12](sessions/work-1.9-312.json) and
+[3.14](sessions/work-1.9-314.json) have matching input fingerprints and this session ID.
+The [superseded campaign](sessions/work-1.9-superseded-312.json) predates the last
+public-path redaction and is not reused for the final snapshot.
+
+[Description-only routing](sessions/work-1.9-routing.json) matched 53/53 fixed cases,
+including the documented file/router responsibility change. It is not automatic
+discovery or full skill execution. A real bundle-guide negative fixture returned
+exit 1 for stale content. Exact Git-export/commit binding and CI are checked after
+staging/push and recorded in the standalone report.

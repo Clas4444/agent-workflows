@@ -92,3 +92,9 @@ under `docs/testing/` are excluded to avoid a report hashing itself. A source
 change during the campaign yields STALE, and verification rejects another
 session ID, changed inputs or missing gate results. This is provenance checking,
 not cryptographic attestation of an untrusted report's execution.
+
+## Complete payloads and historical identity (1.9)
+
+`skill-resources.json` declares supporting files; `scripts/skill_resources.py` is shared by validation and sync. Repository-native inventories are exact; selected external installs preserve unmanaged extras. Source/destination aliases and resource case collisions fail preflight. Both validation profiles retain resource integrity. Helpers are self-contained and live inside their owning canonical skill, not duplicated root implementations.
+
+`instruction_history.py` verifies archived 1.7/1.8 bytes plus explicit current-hash invalidations. It does not turn historical runtime PASS into new execution. The generated install table uses the same registry as the CLI. Current full campaigns have eleven gates; old records retain their original recipe.

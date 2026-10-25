@@ -1,0 +1,37 @@
+[
+  [
+    "id",
+    "category",
+    "amount",
+    "currency",
+    "note"
+  ],
+  [
+    "001",
+    "Travel",
+    "10.10",
+    "USD",
+    "train, city"
+  ],
+  [
+    "002",
+    "Travel",
+    "0.20",
+    "USD",
+    "=HYPERLINK(\"https://invalid.example\")"
+  ],
+  [
+    "003",
+    "Travel",
+    "5.00",
+    "EUR",
+    "meeting"
+  ],
+  [
+    "004",
+    "Food",
+    "",
+    "USD",
+    "missing amount"
+  ]
+]

@@ -1,0 +1,62 @@
+{
+  "checks": [
+    {
+      "status": "PASS",
+      "criterion": "Reopened nonempty brief.md"
+    },
+    {
+      "status": "PASS",
+      "criterion": "Reopened nonempty agenda.md"
+    },
+    {
+      "status": "PASS",
+      "criterion": "Reopened nonempty draft-email.md"
+    },
+    {
+      "status": "PASS",
+      "criterion": "Reopened nonempty work.json"
+    },
+    {
+      "criterion": "Relative Markdown source links resolve",
+      "status": "PASS",
+      "evidence": [
+        "request.txt",
+        "inputs/policy.md"
+      ]
+    },
+    {
+      "status": "PASS",
+      "criterion": "work.json parses and capacity is consistent"
+    },
+    {
+      "criterion": "Source consistency reviewed",
+      "status": "PASS",
+      "evidence": [
+        "request.txt",
+        "inputs/policy.md"
+      ]
+    },
+    {
+      "status": "NOT_RUN",
+      "criterion": "Visual rendering"
+    },
+    {
+      "status": "NOT_RUN",
+      "criterion": "External actions"
+    }
+  ],
+  "outputs": [
+    "brief.md",
+    "agenda.md",
+    "draft-email.md",
+    "work.json"
+  ],
+  "limits": [
+    "Manager approval and event date unresolved",
+    "Tuesday reference date/time zone absent",
+    "FAQ reviewer unassigned",
+    "Email estimate unknown",
+    "No external actions performed"
+  ],
+  "status": "Local artifacts complete"
+}

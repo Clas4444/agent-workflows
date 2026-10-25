@@ -33,6 +33,8 @@ jobs:
         run: python scripts/workflows.py
       - name: Validate need-based installation bundles
         run: python scripts/install_skills.py --list
+      - name: Verify complete installed resource payloads
+        run: python scripts/skill_resources.py
       - name: Check separated metadata and integrity profile
         run: python -m scripts.validate --profile format
       - name: Run validator tests

@@ -1,6 +1,6 @@
 ---
 name: loop-workflow-project
-description: "Turn an authorized small-project idea into an incremental delivery workflow with an MVP boundary, acceptance backlog, first verified slice and resumable state. Use for a new project lifecycle, not a single code change."
+description: "Turn an authorized small software project idea into an incremental delivery workflow with an MVP boundary, acceptance backlog, first verified slice and resumable state. Use for a new project lifecycle, not a single code change."
 argument-hint: "[project goal, constraints, and permitted delivery scope]"
 user-invocable: true
 disable-model-invocation: false
@@ -10,8 +10,8 @@ disable-model-invocation: false
 
 ## Use when
 
-Coordinate a small project's path from an idea to independently verified slices.
-Use loop-plan when only a plan is wanted and loop-code for one implementation
+Coordinate a small software project's path from an idea to independently verified slices.
+Use loop-work for a non-software work package. Use loop-plan when only a plan is wanted and loop-code for one implementation
 batch. Do not expand a narrow feature request into a whole-project workflow.
 
 ## Inputs

@@ -37,6 +37,11 @@ that prevents safe progress.
    planned checks NOT_RUN and stale/missing context BLOCKED. After changing a
    checker, exercise a controlled failure to show it can reject bad behavior.
 
+Verify observable end states as well as logs: requested artifact contents, protected
+inputs, installed resources and relevant negative controls. Keep unit, CLI, model
+decision, host discovery and external action evidence separate; use changed-value
+challenges when a scorer could merely repeat an expected answer.
+
 ## Output
 
 Test selection, commands, exit codes, failure evidence and unverified risks.

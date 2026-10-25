@@ -1,95 +1,86 @@
 # Portable Loop Skills
 
-**45 bounded workflows for everyday work and coding agents.** Review a change, investigate a bug,
-write a fix, verify it and stop with evidence. Includes a Python continuation
-runner, a synchronization tool and a validator with no third-party dependencies.
-
-[Choose a skill](#skill-catalog) · [Get started](#quick-start) ·
-[Run checks](#verification) · [Contribute](CONTRIBUTING.md)
-
-Repository maintainers: see [agent instructions](AGENTS.md),
-[architecture](docs/ARCHITECTURE.md) and [data contracts](schemas/README.md).
-
-For group responsibilities and review criteria, see [functional groups](docs/SKILL-GROUPS.md).
-The new [MCP integration group](docs/MCP-GROUP.md) covers design, testing and tool trust.
-See the [cross-group review](docs/TAXONOMY-1.5.md) for upgrades, overlap decisions,
-deployment/observability additions and fixed routing cases.
-Use the opt-in [acceptance and context gate](docs/ACCEPTANCE-GATE.md) to map
-criteria to positive/negative checks with pinned sources and explicit NOT_RUN.
-See [upgrade verification](docs/ACCEPTANCE-2026-10-25.md) for the isolated CLI
-experiments, fingerprint regression and runtime limitations.
-The [30-minute hardening report](docs/UPDATE-30M-2026-10-25.md) records subsequent
-runner, synchronization, metadata and grading regressions with before/after evidence.
-The [post-push review](docs/POSTPUSH-2026-10-25.md) covers batch summaries,
-immutable inputs, artifact identity and shared JSON policy with full-suite results.
-See [research update 1.6](docs/RESEARCH-1.6.md) for context/handoff workflows,
-evaluation upgrades, primary sources and independent fixture exercises.
-
-> **Experimental · 1.8.0-experimental.** Shared instructions and matching files
-> do not guarantee identical behavior across Codex, Copilot and Claude Code.
-> See the [runtime evidence](docs/RUNTIME-TEST-MATRIX.md) for what was tested.
-
-## Everyday work without coding
-
-Use the new communication, organization and decision/learning groups for emails,
-source summaries, meeting records, file-organization proposals, everyday choices
-and study practice. Start with [everyday examples](docs/guides/EVERYDAY-WORK.md)
-and [install only what you need](docs/guides/INSTALL-BY-NEED.md).
-
-```text
-python scripts/install_skills.py --list
-python scripts/install_skills.py --bundle office --target "/path/to/project/.agents/skills"
-python scripts/install_skills.py --bundle office --target "/path/to/project/.agents/skills" --check
-```
-
-The `office` bundle installs four skills, not all 45. Use your actual project
-path. Non-programmers can ask their agent to do this; a manual folder-copy option
-is in the installation guide. New skills do not send messages, book venues or
-move files just because source text requests it. See [current 1.8 evidence](docs/testing/RESULTS-1.8.md).
-
-## Choose a focused workflow
-
-[Role toolkits and Do / Do not guidance](docs/guides/ROLE-WORKFLOWS.md) ·
-[Documentation map](docs/README.md) · [Test procedure](docs/testing/TESTING.md) ·
-[Restructuring results 1.7](docs/testing/RESULTS-1.7.md)
-
-For professional coding, start with research-repo, code **or** debug, test and
-review. Add planning or PR preparation when the task needs them. The new
-**End-to-end project workflows** group coordinates project delivery, PR packets
-and incident response; it does not require invoking every focused skill.
-
-![Developer skill workflow](docs/assets/developer-workflow.png)
-
-![Three project workflows](docs/assets/project-workflows.png)
-
-The English illustrations explain recommended use. Inventory-checked
-[Markdown and editable SVG](docs/guides/ROLE-WORKFLOWS.md) are the maintained
-reference. Instructions guide decisions; host permissions enforce access.
+**49 bounded workflows for everyday work and coding agents.** Produce a useful
+result, verify what actually happened, and stop with a clear checkpoint.
+Experimental version **1.9.0-experimental**; instructions do not enforce permissions.
 
 ## Quick start
 
-1. Clone this repository, or copy the relevant native skill layout into your
-   project. Keep the host's existing project instructions.
-2. Select one workflow and give it a concrete target and expected result.
-3. Inspect the result and its verification evidence before proceeding.
+Choose the outcome you need. You can ask your agent to install the selected bundle;
+you do not need to code to use the everyday workflows.
+
+| Your task | Start here | Small installation choice |
+|---|---|---|
+| Complete an office/personal work package | `loop-work` | `work` or `office` |
+| Draft or summarize text | `loop-write`, `loop-summarize` | `writing` |
+| Organize local files | `loop-files` | `files` |
+| Analyze a table and create a report | `loop-table`, `loop-document` | `data` |
+| Produce a document artifact | `loop-document` | `documents` |
+| Study or compare everyday options | `loop-learn`, `loop-decide` | `learning`, `decisions` |
+| Implement or repair software | `loop-code` or `loop-debug` | `developer` |
+| Coordinate a software project | `loop-workflow-project` | `project` |
 
 ```text
-git clone https://github.com/Clas4444/loop-skills-repository.git
-cd loop-skills-repository
+python scripts/install_skills.py --list
+python scripts/install_skills.py --bundle work --bundle documents --target "/my/project/.agents/skills"
+python scripts/install_skills.py --bundle work --bundle documents --target "/my/project/.agents/skills" --check
+```
+
+Replace the example with your selected project. Python 3.11+ is required for these
+commands; an agent can use an available interpreter. A manual full-folder copy
+option is in [install by need](docs/guides/INSTALL-BY-NEED.md). The installer includes
+declared helpers/references/assets, preserves unrelated files and backs up managed
+overwrites. An individual `--skill` selection does not require a bundle registry.
+
+Open the selected project in your host, start a fresh session and confirm actual
+skill discovery. `.agents/skills`, `.github/skills` and `.claude/skills` are the
+maintained native layouts; identical files do not prove equivalent host behavior.
+
+## Choose a focused workflow
+
+```text
+Use $loop-work to create the requested event brief and feasible task checkpoint
+from these notes. Preserve unknown dates and approvals. Create the local files,
+reopen them and report checks. Do not book, send or schedule anything.
+```
+
+For code, use research-repo when orientation is needed, code or debug for the
+requested change, relevant tests and review. For files/data/documents, verify
+actual paths, contents, units and outputs. Do not invoke every installed skill.
+`loop-organize` remains a selector for older/mixed requests; explicit file work
+now uses files, and personal/office deliverables use work.
+
+[Everyday examples](docs/guides/EVERYDAY-WORK.md) ·
+[Work and artifact guide](docs/guides/WORK-AND-ARTIFACTS.md) ·
+[Role toolkits and English visuals](docs/guides/ROLE-WORKFLOWS.md) ·
+[Practical prompts](docs/guides/WORKFLOW-EXAMPLES.md)
+
+## Verification
+
+```text
+python -m unittest discover -s tests -v
 python scripts/validate.py
+python -m scripts.validate --profile format
+python scripts/catalog.py
+python scripts/routing_check.py
+python scripts/workflows.py
+python scripts/install_skills.py --list
+python scripts/skill_resources.py
+python scripts/sync_skills.py --target .github/skills --check
+python scripts/runtime_smoke.py --help
+python -m compileall -q scripts tests
+git diff --check
 ```
 
-Example requests (adapt to your host's invocation syntax):
+Use a fresh [session-pinned campaign](docs/testing/TESTING.md) for consolidated
+results. PASS means the named check ran and met its criterion; FAIL is an observed
+violation, BLOCKED a missing prerequisite and NOT_RUN an unexecuted check.
+Unit tests, real CLI/artifact checks, model decisions, native discovery and external
+actions are separate layers. Missing tools and zero collected tests are not PASS.
 
-```text
-/loop-review 10m review the parser and identify actionable risks
-/loop-debug 15m fix valid markers being lost after large output
-/loop-test 10m verify the parser change and its failure paths
-```
-
-Durations are maximum work budgets. A task can finish early; the agent should
-never sleep or invent more work to fill the time. Existing user authorization
-applies throughout the task.
+[Current 1.9 tests](docs/testing/RESULTS-1.9.md) ·
+[Research and limits](docs/RESEARCH-1.9.md) · [All-skill review](docs/TAXONOMY-1.9.md) ·
+[Historical runtime matrix](docs/RUNTIME-TEST-MATRIX.md)
 
 ## Skill catalog
 
@@ -101,7 +92,7 @@ Groups are navigation metadata; native skill directories remain flat.
 
 | Skill | Purpose |
 |---|---|
-| [loop-research](.github/skills/loop-research/SKILL.md) | Run a bounded evidence loop to research repositories, documentation, tools, extensions, plugins, skills, MCP servers, or implementation options |
+| [loop-research](.github/skills/loop-research/SKILL.md) | Research a scoped everyday or technical question using primary sources, explicit criteria and a dated source ledger |
 | [loop-research-repo](.github/skills/loop-research-repo/SKILL.md) | Research repositories and open-source projects in a bounded evidence loop |
 | [loop-research-tools](.github/skills/loop-research-tools/SKILL.md) | Research tools, extensions, plugins, skills, and MCP servers in a bounded evidence loop |
 | [loop-plan](.github/skills/loop-plan/SKILL.md) | Turn a scoped request into dependency-ordered, verifiable implementation batches without changing code |
@@ -177,7 +168,7 @@ Groups are navigation metadata; native skill directories remain flat.
 
 | Skill | Purpose |
 |---|---|
-| [loop-workflow-project](.github/skills/loop-workflow-project/SKILL.md) | Turn an authorized small-project idea into an incremental delivery workflow with an MVP boundary, acceptance backlog, first verified slice and resumable state |
+| [loop-workflow-project](.github/skills/loop-workflow-project/SKILL.md) | Turn an authorized small software project idea into an incremental delivery workflow with an MVP boundary, acceptance backlog, first verified slice and resumable state |
 | [loop-workflow-pr](.github/skills/loop-workflow-pr/SKILL.md) | Prepare a reviewable pull-request delivery packet from a scoped branch or diff: establish the base, review changes, verify checks and write a truthful description |
 | [loop-workflow-incident](.github/skills/loop-workflow-incident/SKILL.md) | Coordinate an active service-incident assessment: establish impact, separate observations from hypotheses, choose authorized containment and verify recovery |
 
@@ -185,161 +176,52 @@ Groups are navigation metadata; native skill directories remain flat.
 
 | Skill | Purpose |
 |---|---|
-| [loop-write](.github/skills/loop-write/SKILL.md) | Draft or revise everyday emails, letters, announcements and short documents for a stated audience while preserving facts and intent |
-| [loop-summarize](.github/skills/loop-summarize/SKILL.md) | Condense supplied documents, notes or transcripts into a source-grounded summary with traceable claims and unresolved contradictions |
+| [loop-write](.github/skills/loop-write/SKILL.md) | Draft or revise factual everyday emails, letters and short communications for a stated reader, preserving source facts, intent and unresolved commitments |
+| [loop-summarize](.github/skills/loop-summarize/SKILL.md) | Condense supplied documents, notes or transcripts into a traceable summary while preserving material qualifiers, numbers, contradictions and source coverage |
 
-### Meetings and personal organization
+### Work delivery, meetings and file organization
 
 | Skill | Purpose |
 |---|---|
-| [loop-meeting](.github/skills/loop-meeting/SKILL.md) | Turn supplied meeting notes or transcripts into a traceable record of decisions, proposals, actions and open questions |
-| [loop-organize](.github/skills/loop-organize/SKILL.md) | Plan or perform an explicitly authorized organization of local files or personal work items using an inventory, collision-safe mapping and reversible verification |
+| [loop-work](.github/skills/loop-work/SKILL.md) | Complete a bounded everyday work package: turn a messy request into feasible priorities, produce the authorized deliverables, and leave a source-backed checkpoint |
+| [loop-meeting](.github/skills/loop-meeting/SKILL.md) | Prepare an agenda or turn supplied meeting material into source-linked decisions, proposals, actions and unresolved questions |
+| [loop-organize](.github/skills/loop-organize/SKILL.md) | Choose the right organization workflow for existing files or personal work items |
+| [loop-files](.github/skills/loop-files/SKILL.md) | Organize selected local files through a pinned inventory, collision-safe mapping, authorized native moves and verified recovery |
 
 ### Everyday decisions and learning
 
 | Skill | Purpose |
 |---|---|
-| [loop-decide](.github/skills/loop-decide/SKILL.md) | Compare everyday options against explicit priorities, costs, uncertainties and constraints, then give a conditional recommendation or decision record |
-| [loop-learn](.github/skills/loop-learn/SKILL.md) | Build a realistic learning plan and practice session around a learner's goal, current level and available time, using retrieval, feedback and spaced review |
+| [loop-decide](.github/skills/loop-decide/SKILL.md) | Compare everyday options against explicit constraints, evidence, priorities and uncertainty, then give a conditional choice or decision record |
+| [loop-learn](.github/skills/loop-learn/SKILL.md) | Create a feasible learning plan or conduct a practice session using observable goals, retrieval, feedback and spaced review |
+
+### Tables and document artifacts
+
+| Skill | Purpose |
+|---|---|
+| [loop-table](.github/skills/loop-table/SKILL.md) | Inspect, clean or analyze supplied tables with explicit types, units, missing-value rules and source-preserving output checks |
+| [loop-document](.github/skills/loop-document/SKILL.md) | Create or revise a usable document artifact with source-faithful content, requested file format and separate content/layout/export checks |
 
 <!-- END GENERATED SKILL GROUPS -->
 
-For selection advice and complete examples, see [Skill usage](docs/SKILL-USAGE.md).
-For a bug, start with `loop-debug`; for investigation without a repair, use
-`loop-diagnose`. Use focused testing or research workflows when their evidence
-is needed, rather than running every workflow on an unrelated task.
-
-## Installation and synchronization
-
-| Project layout | Intended host | Role |
-|---|---|---|
-| `.github/skills/` | VS Code/Copilot | Canonical source |
-| `.agents/skills/` | Codex | Identical project copies |
-| `.claude/skills/` | Claude Code | Identical project copies |
-
-Each skill contains its own `SKILL.md`. The two orchestration skills also carry
-`scripts/run_loop.py`; resolve that script relative to the skill directory.
-Host-specific discovery and invocation requirements still apply.
-
-To update an explicitly selected skill root:
-
-```text
-python scripts/sync_skills.py --target PATH_TO_SKILL_ROOT --check
-python scripts/sync_skills.py --target PATH_TO_SKILL_ROOT
-```
-
-The first command reports differences without writing. The second copies the
-manifest's 45 skills, preserving unrelated skills and backing up overwritten
-files under `.loop/backups/`. Select a personal installation root only when
-your host supports it and you intend to update it.
-
-Preflight checks catch invalid names, missing source files, paths escaping the
-selected root, hardlinked destination files and existing backup conflicts. Hardlinks
-are rejected even in check mode: overwriting their shared inode could modify
-unrelated files outside the selected root. Backups are created before source
-copies. Unexpected I/O failure can still leave a partial update; restore the
-saved files and rerun synchronization if necessary.
-
-After changing the central runner, refresh bundled source copies and then the
-other project roots:
-
-```text
-python scripts/sync_skills.py --target .github/skills
-python scripts/sync_skills.py --target .agents/skills
-python scripts/sync_skills.py --target .claude/skills
-```
-
 ## Optional headless loops
 
-The runner invokes an installed command with finite limits. It does not install
-an agent, authenticate, grant permission or bypass the host's safeguards.
-
-```text
-python scripts/run_loop.py --prompt "Review the local change" --follow-up-count 3 --timeout-seconds 120 -- YOUR_AGENT YOUR_PROMPT_FLAG "{prompt}"
-```
-
-Replace the command and flag with your host's documented headless invocation.
-`{prompt}` must be one argument; omit it to send the prompt through stdin.
-`--follow-up-count 3` permits at most **four invocations**: one initial task
-and three follow-ups. Failures, timeouts, invalid markers and repeated work
-stop the loop early. See [Orchestration](docs/ORCHESTRATION.md) for the protocol,
-state files and Windows cleanup limitations.
-
-## Verification
-
-For a new multi-step change, plan first with `loop-plan`, execute with
-`loop-code`, then select unit/integration/E2E checks that match the risk.
-Use `loop-migrate` for persisted formats and `loop-dependencies` for approved
-package updates. `loop-evaluate` measures workflow behavior, not code coverage.
-
-Requires Python 3.11 or newer. Use `py -3` on Windows if that launcher is
-available; otherwise use the Python executable installed in your environment.
-
-```text
-python -m unittest discover -s tests -v
-python scripts/validate.py
-python -m scripts.validate --profile format
-python scripts/catalog.py
-python scripts/routing_check.py
-python scripts/workflows.py
-python scripts/install_skills.py --list
-python scripts/sync_skills.py --target .github/skills --check
-python scripts/runtime_smoke.py --help
-python -m compileall -q scripts tests
-git diff --check
-```
-
-| Status | Meaning |
-|---|---|
-| `PASS` | The stated check was executed and verified |
-| `FAIL` | The check ran and its acceptance condition failed |
-| `BLOCKED` | A required prerequisite prevents progress |
-| `NOT_RUN` | The check was not executed |
-
-The validator checks supported metadata fields, manifest consistency, matching
-copies, ordered input/output/example contracts, stop instructions and bundled runners. It is not a general YAML parser
-or proof of model behavior. Tests cover subprocess boundaries and failure paths;
-synthetic model decision tests have a narrower scope than complete workflows.
-The [CI workflow](.github/workflows/validate.yml) runs on Windows/Linux with
-Python 3.11/3.12; consult the actual run before claiming CI success.
-
-### Explicit model smoke tests
-
-The versioned fixture harness tests the five workflows added in 1.2. It never
-runs paid/model invocations in CI or without an explicit authorization flag:
-
-```text
-python scripts/runtime_smoke.py --allow-model-invocations --skill-root PATH_TO_INSTALLED_SKILLS --output-dir .loop/runtime-1.2
-```
-
-Select an existing Codex installation with `--codex` when needed. Output must
-be a new directory; logs and failed attempts are preserved. Verification uses
-fixture artifacts, not just model self-reported PASS, and a usage limit stops
-new invocations. See [the runtime harness guide](docs/RUNTIME-SMOKE.md).
+The standalone continuation runner remains available through loop-orchestrate and
+loop-prompt. It does not install/authenticate an agent or grant permissions.
+See [protocol and finite limits](docs/ORCHESTRATION.md) before an authorized run.
+Model calls are not part of CI. New helpers are self-contained read-only checkers;
+they do not provide an office suite, messaging service or file transaction manager.
 
 ## Documentation
 
-- [Current cross-group review, upgrades and routing evidence](docs/TAXONOMY-1.5.md)
-
-- [Usage and workflow selection](docs/SKILL-USAGE.md)
-- [Positive and negative acceptance scenarios](docs/SKILL-SCENARIOS.md)
-- [Validation commands and evidence](docs/VALIDATION.md)
-- [MCP group, sources and scoped offline verification](docs/MCP-GROUP.md)
-- [Earlier 1.3 verification and seven testing workflows](docs/VERIFICATION-1.3.md)
-- [Historical 1.2 system and runtime results](docs/RUNTIME-1.2-RESULT.md)
-- [Earlier automated/decision test results](docs/TEST-22-RESULT.md)
-- [22 real Codex fixture workflows: results and retests](docs/CODEX-SMOKE-2026-10-24.md)
-- [Host compatibility and runtime evidence](docs/RUNTIME-TEST-MATRIX.md)
-- [Writing conventions and reference projects](docs/AUTHORING.md)
-- [1.2 gap assessment and system-wide changes](docs/EXPANSION-27.md)
-- [Changelog](CHANGELOG.md)
-- [Contributing](CONTRIBUTING.md) · [Security policy](SECURITY.md)
+[Documentation map](docs/README.md) · [Architecture](docs/ARCHITECTURE.md) ·
+[Authoring](docs/AUTHORING.md) · [Data contracts](schemas/README.md) ·
+[Contributing](CONTRIBUTING.md) · [Changelog](CHANGELOG.md) · [Security](SECURITY.md)
 
 ## License and ownership
 
 An independent project maintained at
 [Clas4444/loop-skills-repository](https://github.com/Clas4444/loop-skills-repository),
 distributed under the [MIT license](LICENSE). This repository is not a fork of
-the reference projects listed in the writing guide and is not affiliated with
-OpenAI, Anthropic, GitHub or Microsoft. Reference projects inform presentation;
-they do not imply copied implementations or verified host support.
+its research references and is not affiliated with OpenAI, Anthropic, GitHub or
+Microsoft. No external benchmark result is a performance claim for this project.

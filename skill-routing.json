@@ -321,7 +321,7 @@
       "id": "route-46",
       "prompt": "Propose a collision-safe organization of this selected local folder; matching filenames may have different contents. Do not move or delete files.",
       "acceptable": [
-        "loop-organize"
+        "loop-files"
       ]
     },
     {
@@ -337,18 +337,53 @@
       "acceptable": [
         "loop-learn"
       ]
+    },
+    {
+      "id": "route-49",
+      "prompt": "Complete this multi-step non-coding office work package: triage dependencies and capacity, create the authorized event brief and task ledger, then leave a verified checkpoint. No bookings or messages.",
+      "acceptable": [
+        "loop-work"
+      ]
+    },
+    {
+      "id": "route-50",
+      "prompt": "Inventory these selected local files, pin a collision-safe move mapping, perform the authorized native moves and verify protected content and recovery. This is filesystem work, not task prioritization.",
+      "acceptable": [
+        "loop-files"
+      ]
+    },
+    {
+      "id": "route-51",
+      "prompt": "Analyze this CSV by category and currency, preserve leading-zero identifiers, disclose missing amounts and use exact decimal arithmetic without modifying source data.",
+      "acceptable": [
+        "loop-table"
+      ]
+    },
+    {
+      "id": "route-52",
+      "prompt": "Create a requested formatted report artifact from these notes, reopen the saved file and separate content, layout and export checks; this is not just a chat draft or repository documentation.",
+      "acceptable": [
+        "loop-document"
+      ]
+    },
+    {
+      "id": "route-53",
+      "prompt": "Organize this mixed request containing local folders and personal task priorities. First choose the appropriate file/work modes and return a scoped compatibility handoff; do not perform moves or external actions.",
+      "acceptable": [
+        "loop-organize"
+      ]
     }
   ],
   "decisions": [
     {
       "skill": "loop-review",
       "action": "upgrade",
-      "reason": "Remove catch-all planning/research/scoring language; require located findings and preserve read-only scope."
+      "reason": "1.9 outcome/artifact/resource gate upgrade; loop-organize retains compatibility while file and work execution are split."
     },
     {
       "skill": "loop-code",
       "action": "upgrade",
-      "reason": "Preserve existing primary route; add acceptance/context handoff: stable criteria, source identity and explicit execution evidence. Native runtime for revised text is NOT_RUN."
+      "reason": "1.9 outcome/artifact/resource gate upgrade; loop-organize retains compatibility while file and work execution are split."
     },
     {
       "skill": "loop-diagnose",
@@ -373,7 +408,7 @@
     {
       "skill": "loop-research",
       "action": "upgrade",
-      "reason": "Preserve existing primary route; add acceptance/context handoff: stable criteria, source identity and explicit execution evidence. Native runtime for revised text is NOT_RUN."
+      "reason": "1.9 outcome/artifact/resource gate upgrade; loop-organize retains compatibility while file and work execution are split."
     },
     {
       "skill": "loop-research-repo",
@@ -388,7 +423,7 @@
     {
       "skill": "loop-test",
       "action": "upgrade",
-      "reason": "Preserve existing primary route; add acceptance/context handoff: stable criteria, source identity and explicit execution evidence. Native runtime for revised text is NOT_RUN."
+      "reason": "1.9 outcome/artifact/resource gate upgrade; loop-organize retains compatibility while file and work execution are split."
     },
     {
       "skill": "loop-test-unit",
@@ -413,7 +448,7 @@
     {
       "skill": "loop-skill-create",
       "action": "upgrade",
-      "reason": "Add repeated-trial evidence discipline or source-backed skill development with frozen forward-test oracles."
+      "reason": "1.9 outcome/artifact/resource gate upgrade; loop-organize retains compatibility while file and work execution are split."
     },
     {
       "skill": "loop-orchestrate",
@@ -453,7 +488,7 @@
     {
       "skill": "loop-plan",
       "action": "upgrade",
-      "reason": "Preserve existing primary route; add acceptance/context handoff: stable criteria, source identity and explicit execution evidence. Native runtime for revised text is NOT_RUN."
+      "reason": "1.9 outcome/artifact/resource gate upgrade; loop-organize retains compatibility while file and work execution are split."
     },
     {
       "skill": "loop-dependencies",
@@ -522,8 +557,8 @@
     },
     {
       "skill": "loop-workflow-project",
-      "action": "add",
-      "reason": "Coordinate an explicit lifecycle with distinct acceptance and authorization gates; focused skills remain independently usable."
+      "action": "upgrade",
+      "reason": "1.9 outcome/artifact/resource gate upgrade; loop-organize retains compatibility while file and work execution are split."
     },
     {
       "skill": "loop-workflow-pr",
@@ -537,33 +572,53 @@
     },
     {
       "skill": "loop-write",
-      "action": "add",
-      "reason": "Serve a distinct non-coding utility need with explicit source, outcome and side-effect boundaries."
+      "action": "upgrade",
+      "reason": "1.9 outcome/artifact/resource gate upgrade; loop-organize retains compatibility while file and work execution are split."
     },
     {
       "skill": "loop-summarize",
-      "action": "add",
-      "reason": "Serve a distinct non-coding utility need with explicit source, outcome and side-effect boundaries."
+      "action": "upgrade",
+      "reason": "1.9 outcome/artifact/resource gate upgrade; loop-organize retains compatibility while file and work execution are split."
     },
     {
       "skill": "loop-meeting",
-      "action": "add",
-      "reason": "Serve a distinct non-coding utility need with explicit source, outcome and side-effect boundaries."
+      "action": "upgrade",
+      "reason": "1.9 outcome/artifact/resource gate upgrade; loop-organize retains compatibility while file and work execution are split."
     },
     {
       "skill": "loop-organize",
-      "action": "add",
-      "reason": "Serve a distinct non-coding utility need with explicit source, outcome and side-effect boundaries."
+      "action": "upgrade",
+      "reason": "1.9 outcome/artifact/resource gate upgrade; loop-organize retains compatibility while file and work execution are split."
     },
     {
       "skill": "loop-decide",
-      "action": "add",
-      "reason": "Serve a distinct non-coding utility need with explicit source, outcome and side-effect boundaries."
+      "action": "upgrade",
+      "reason": "1.9 outcome/artifact/resource gate upgrade; loop-organize retains compatibility while file and work execution are split."
     },
     {
       "skill": "loop-learn",
+      "action": "upgrade",
+      "reason": "1.9 outcome/artifact/resource gate upgrade; loop-organize retains compatibility while file and work execution are split."
+    },
+    {
+      "skill": "loop-work",
       "action": "add",
-      "reason": "Serve a distinct non-coding utility need with explicit source, outcome and side-effect boundaries."
+      "reason": "Distinct outcome with artifact and side-effect gates; no mandatory pipeline or unsupported format claim."
+    },
+    {
+      "skill": "loop-files",
+      "action": "add",
+      "reason": "Distinct outcome with artifact and side-effect gates; no mandatory pipeline or unsupported format claim."
+    },
+    {
+      "skill": "loop-table",
+      "action": "add",
+      "reason": "Distinct outcome with artifact and side-effect gates; no mandatory pipeline or unsupported format claim."
+    },
+    {
+      "skill": "loop-document",
+      "action": "add",
+      "reason": "Distinct outcome with artifact and side-effect gates; no mandatory pipeline or unsupported format claim."
     }
   ],
   "overlap_decisions": [
@@ -682,6 +737,51 @@
         "loop-plan"
       ],
       "decision": "Personal option tradeoffs, fixed-rubric grading, learning practice and implementation planning have separate outcomes."
+    },
+    {
+      "skills": [
+        "loop-organize",
+        "loop-files",
+        "loop-work"
+      ],
+      "decision": "Split file and work execution; retain organize as a self-contained compatibility selector for generic/mixed requests."
+    },
+    {
+      "skills": [
+        "loop-work",
+        "loop-plan",
+        "loop-workflow-project"
+      ],
+      "decision": "Everyday work delivery, software implementation planning and software-project coordination remain separate."
+    },
+    {
+      "skills": [
+        "loop-write",
+        "loop-document",
+        "loop-docs"
+      ],
+      "decision": "Draft text, document artifacts and repository documentation have different completion gates."
+    },
+    {
+      "skills": [
+        "loop-table",
+        "loop-decide",
+        "loop-evaluate"
+      ],
+      "decision": "Tabular transformations, personal option choices and fixed-rubric grading are distinct."
+    }
+  ],
+  "routing_revisions": [
+    {
+      "case_id": "route-46",
+      "previous_acceptable": [
+        "loop-organize"
+      ],
+      "new_acceptable": [
+        "loop-files"
+      ],
+      "reason": "1.9 splits explicit filesystem execution from the organize compatibility selector; changed before classification.",
+      "historical_evidence": "docs/testing/sessions/noncode-1.8-routing.json"
     }
   ]
 }

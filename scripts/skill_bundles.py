@@ -20,7 +20,8 @@ def load_bundles(repo: Path):
     for key, row in bundles.items():
         if not re.fullmatch(r'[a-z][a-z0-9-]*', key) or not isinstance(row, dict):
             raise ValueError('bundle IDs must be slugs with object values')
-        if not isinstance(row.get('purpose'), str) or not row['purpose'].strip():
+        if (not isinstance(row.get('purpose'), str) or not row['purpose'].strip()
+                or any(c in row['purpose'] for c in '\r\n')):
             raise ValueError(f'{key}: bundle purpose is required')
         skills = row.get('skills')
         if (not isinstance(skills, list) or not skills
@@ -31,7 +32,7 @@ def load_bundles(repo: Path):
 
 
 def select_skills(repo, bundle_ids, extra_skills):
-    bundles = load_bundles(repo)
+    bundles = load_bundles(repo) if bundle_ids else {}
     names = loads_json((repo/'skills-manifest.json').read_text(encoding='utf-8'))['skills']
     chosen = set()
     for key in bundle_ids:

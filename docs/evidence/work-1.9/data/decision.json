@@ -1,0 +1,48 @@
+{
+  "source": "request.txt item 3; supplied claims only",
+  "constraints": {
+    "currency": "USD",
+    "maximum_cost": 300,
+    "step_free_required": true,
+    "minimum_capacity": 40
+  },
+  "options": [
+    {
+      "id": "V1",
+      "cost": 250,
+      "budget": "PASS",
+      "step_free": "PASS",
+      "capacity": null,
+      "capacity_check": "UNRESOLVED",
+      "feasibility": "UNRESOLVED"
+    },
+    {
+      "id": "V2",
+      "cost": 280,
+      "budget": "PASS",
+      "capacity": 50,
+      "capacity_check": "PASS",
+      "step_free": "FAIL",
+      "feasibility": "FAIL"
+    },
+    {
+      "id": "V3",
+      "cost": 310,
+      "budget": "FAIL",
+      "capacity": 45,
+      "capacity_check": "PASS",
+      "step_free": "PASS",
+      "feasibility": "FAIL"
+    }
+  ],
+  "decision": "No confirmed feasible option",
+  "conditional_recommendation": "V1 only if capacity of at least 40 is confirmed; otherwise none of the supplied options satisfies all hard constraints.",
+  "next_evidence": "Confirm V1 capacity.",
+  "sensitivity": "V1 capacity evidence determines feasibility. V3 requires an explicit budget change or a confirmed price at most USD 300; neither is assumed.",
+  "checks": {
+    "constraint_comparison": "PASS",
+    "external_verification": "NOT_RUN",
+    "booking": "NOT_RUN"
+  },
+  "commitment": null
+}

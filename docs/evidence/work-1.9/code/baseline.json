@@ -1,0 +1,30 @@
+{
+  "original_sources": {
+    "app.py": "import argparse,json\nfrom formatting import rows\n\ndef main():\n    parser=argparse.ArgumentParser();parser.add_argument(\"values\",nargs=\"+\",type=int)\n    args=parser.parse_args();print(json.dumps(rows(args.values)))\nif __name__==\"__main__\":main()\n",
+    "formatting.py": "def rows(values):\n    return [{\"value\":v,\"square\":v*v} for v in values]\n",
+    "package.py": "from pathlib import Path\nimport shutil\nPath(\"dist\").mkdir(exist_ok=True)\nshutil.copy2(\"app.py\",\"dist/app.py\")\n"
+  },
+  "checks": [
+    {
+      "command": "python -m unittest -v",
+      "status": "BLOCKED",
+      "observation": "WindowsApps python.exe unavailable"
+    },
+    {
+      "command": "<user-home>\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe -m unittest -v",
+      "status": "PASS",
+      "tests": 1
+    },
+    {
+      "command": "app.py --format tsv -2 0 3",
+      "status": "FAIL",
+      "exit_code": 2,
+      "stderr": "argument values: invalid int value: 'tsv'"
+    },
+    {
+      "command": "python -I dist/app.py -2 0 3",
+      "status": "FAIL",
+      "observation": "ModuleNotFoundError formatting; isolated mode also excludes script directory, so packaging defect independently verified by inspecting package.py copying app.py only"
+    }
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "status": "PASS",
+  "inventory": "PASS",
+  "fresh_inverse_plan": "PASS",
+  "preflight": "PASS",
+  "native_rollback_moves": "PASS",
+  "post_move_verification": "PASS",
+  "original_forward_plan_before_state_check": "PASS",
+  "protected_destination": "PASS",
+  "file_count": 4,
+  "forward_artifacts_preserved": true,
+  "directories_deleted": false,
+  "failed_checks": [],
+  "blocked_checks": [],
+  "moves": [
+    {
+      "source": "Finance/A-receipt.txt",
+      "destination": "A/receipt.txt"
+    },
+    {
+      "source": "Finance/B-receipt.txt",
+      "destination": "B/receipt.txt"
+    },
+    {
+      "source": "Project/note.txt",
+      "destination": "note.txt"
+    }
+  ],
+  "outputs": [
+    "rollback-mapping.json",
+    "rollback-plan.json",
+    "rollback-inventory.json",
+    "rollback-preflight.json",
+    "rollback-preflight-immediate.json",
+    "rollback-post-move.json",
+    "rollback-original-state-check.json"
+  ]
+}

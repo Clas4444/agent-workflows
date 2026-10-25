@@ -2,6 +2,7 @@ import hashlib
 import json
 from pathlib import Path
 import unittest
+from scripts.instruction_history import instruction_identity
 
 ROOT = Path(__file__).resolve().parents[1]
 FOLDER = ROOT/'docs/evidence/noncode-1.8'
@@ -16,7 +17,8 @@ class NonCodingEvidenceTests(unittest.TestCase):
         self.assertEqual(data['external_actions'],'NOT_RUN')
         self.assertEqual(len(data['assessment']),6)
         for name, expected in data['instruction_sha256'].items():
-            self.assertEqual(hashlib.sha256((ROOT/'.github/skills'/name/'SKILL.md').read_bytes()).hexdigest(),expected,name)
+            self.assertEqual(instruction_identity(ROOT,'noncode-1.8',name,expected),
+                             'HISTORICAL_ONLY_INVALIDATED',name)
         for name, expected in data['artifact_sha256'].items():
             self.assertEqual(hashlib.sha256((FOLDER/name).read_bytes()).hexdigest(),expected,name)
 

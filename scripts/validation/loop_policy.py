@@ -8,7 +8,7 @@ BREAK_PATTERNS = (
     r"no (?:suitable )?work",
     r"no new .* remain",
     r"(?:identical|materially identical|duplicate).{0,80}(?:three|3)",
-    r"never sleep",
+    r"never\s+sleep\b",
 )
 STOP_PATTERN = re.compile(r"stop|end|terminate", re.IGNORECASE)
 
@@ -39,6 +39,6 @@ def check_loop_policy(text: str, skill: str, label: str) -> list[str]:
         errors.append(f"{label} omits a recognizable break condition")
     if not STOP_PATTERN.search(text):
         errors.append(f"{label} omits an explicit stop instruction")
-    if not re.search(r"never\s+sleep", text, re.IGNORECASE):
+    if not re.search(r"never\s+sleep\b", text, re.IGNORECASE):
         errors.append(f"{label} omits never-sleep policy")
     return errors

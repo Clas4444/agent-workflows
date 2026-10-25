@@ -14,6 +14,7 @@ python scripts/catalog.py
 python scripts/routing_check.py
 python scripts/workflows.py
 python scripts/install_skills.py --list
+python scripts/skill_resources.py
 python scripts/sync_skills.py --target .github/skills --check
 python scripts/runtime_smoke.py --help
 python -m compileall -q scripts tests
@@ -85,7 +86,7 @@ python scripts/verification_session.py --session my-session-001 --output .loop/m
 python scripts/verification_session.py --session my-session-001 --verify .loop/my-session-001/verification.json
 ```
 
-The report records Python version, timestamps, all ten commands/exit codes,
+The report records Python version, timestamps, all eleven commands/exit codes,
 non-empty unittest discovery, log hashes and before/after input fingerprints.
 The exact input roots/files are included. A mismatched session or edited input
 cannot validate as current; a change during execution yields STALE and exit 1.

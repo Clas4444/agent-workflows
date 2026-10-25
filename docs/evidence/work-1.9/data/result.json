@@ -1,0 +1,65 @@
+{
+  "artifacts": [
+    "brief.md",
+    "numeric.json",
+    "summary.md",
+    "decision.json",
+    "learn.json",
+    "result.json"
+  ],
+  "commands": [
+    [
+      "<user-home>\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+      "../installed/loop-table/scripts/table_check.py",
+      "inspect",
+      "expenses.csv"
+    ],
+    [
+      "<user-home>\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+      "../installed/loop-table/scripts/table_check.py",
+      "aggregate",
+      "expenses.csv",
+      "--value",
+      "amount",
+      "--group",
+      "category",
+      "--unit",
+      "currency",
+      "--allow-missing"
+    ]
+  ],
+  "additional_commands": [
+    "python --version (failed: Windows Store alias inaccessible)",
+    "Get-Content request.txt, named installed SKILL.md files, helper contract and helper source, expenses.csv",
+    "Bundled runtime discovery via load_workspace_dependencies",
+    "Executed local artifact creation and validation script create_artifacts.py",
+    "Get-Content brief.md and summary.md; inspected saved text",
+    "Initial artifact script failed on UTF-8 BOM header; changed supplemental CSV reader to utf-8-sig and reran successfully"
+  ],
+  "checks": {
+    "helper_inspection": "PASS",
+    "helper_exact_subtotals": "PASS",
+    "saved_json_parse": "PASS",
+    "saved_markdown_readback": "PASS",
+    "source_hash_unchanged": "PASS",
+    "leading_zero_ids": "PASS",
+    "duplicate_check": "PASS",
+    "14_days_each_20_minutes_total_280": "PASS",
+    "summary_against_supplied_claims": "PASS",
+    "decision_constraints": "PASS",
+    "formulas_links": "NOT_RUN",
+    "external_actions": "NOT_RUN",
+    "learner_assessment": "NOT_RUN"
+  },
+  "source_sha256_before": "cdce1b44143780bc36e015e656d704fe0fff426d96e64d374b429e5e616f56b2",
+  "source_sha256_after": "cdce1b44143780bc36e015e656d704fe0fff426d96e64d374b429e5e616f56b2",
+  "limits": [
+    "One amount missing; no complete expense total.",
+    "Currencies not converted or combined.",
+    "Formula-like text not executed; future spreadsheet import safety unverified.",
+    "Original memos and appendix unavailable; no authoritative resolution of delivery/cancellation terms.",
+    "V1 capacity unknown; no confirmed feasible venue.",
+    "No learner responses, score, completion or mastery evidence.",
+    "No formulas, links, bookings, reminders, installations or external actions."
+  ]
+}

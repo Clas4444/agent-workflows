@@ -41,6 +41,11 @@ before forward-testing. Include an off-target case and a cold/stale-context case
 when relevant. Judge produced artifacts and side effects, not wording alone;
 retain failures and distinguish explicit instruction loading from native discovery.
 
+When adding supporting files, declare their managed payload in skill-resources.json,
+verify all native copies and test the helper from a fresh subset installation.
+Preserve old instruction snapshots/evidence when changing a tested contract;
+never rewrite a historical PASS as proof for new bytes.
+
 ## Output
 
 Canonical skill, synchronized copies, focused checks and documented runtime limitations.

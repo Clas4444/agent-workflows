@@ -1,0 +1,62 @@
+{
+  "noncode-1.8": {
+    "loop-write": {
+      "historical_sha256": "e77a0650acf3c39e5f427476573cde3d3faf89c2f99b4f49cad69a0afaec89d2",
+      "archive": "docs/evidence/instruction-history/noncode-1.8/loop-write/SKILL.md",
+      "reason": "1.9 responsibility/artifact-gate update; historical observations remain tied to their original instruction bytes.",
+      "historical_reuse_status": "INVALIDATED",
+      "automatic_discovery_status": "NOT_RUN",
+      "current_sha256": "96961742b9819830039e90beca14680cb8854768482918dbcb18e7f0f67379bd"
+    },
+    "loop-summarize": {
+      "historical_sha256": "6669353a41ab65e52de665db29be4edb9a90b5b48f8249c1f26282bac1249b34",
+      "archive": "docs/evidence/instruction-history/noncode-1.8/loop-summarize/SKILL.md",
+      "reason": "1.9 responsibility/artifact-gate update; historical observations remain tied to their original instruction bytes.",
+      "historical_reuse_status": "INVALIDATED",
+      "automatic_discovery_status": "NOT_RUN",
+      "current_sha256": "f09d25beea324fe67529ef9261fe5c3244a882e4551e5e606b705b486c32d6b5"
+    },
+    "loop-meeting": {
+      "historical_sha256": "575f446cb6e24f0847af5805489f8bfb0cf6fbb02b2cf32b68364b231fd9fd60",
+      "archive": "docs/evidence/instruction-history/noncode-1.8/loop-meeting/SKILL.md",
+      "reason": "1.9 responsibility/artifact-gate update; historical observations remain tied to their original instruction bytes.",
+      "historical_reuse_status": "INVALIDATED",
+      "automatic_discovery_status": "NOT_RUN",
+      "current_sha256": "80760f6ba3011b4d45ac027b053f59c6bfa17a85e7bd7e73b81ac2ba6d815005"
+    },
+    "loop-organize": {
+      "historical_sha256": "940d14ed5837c4b48e769b70a8627745efa01bfcd094fde849e8252a2b171572",
+      "archive": "docs/evidence/instruction-history/noncode-1.8/loop-organize/SKILL.md",
+      "reason": "1.9 responsibility/artifact-gate update; historical observations remain tied to their original instruction bytes.",
+      "historical_reuse_status": "INVALIDATED",
+      "automatic_discovery_status": "NOT_RUN",
+      "current_sha256": "32aebd2e873256ddd5627b025611af337a1ac935d7985b633f5a4f4827f0ed6a"
+    },
+    "loop-decide": {
+      "historical_sha256": "12fc03b6bd20f42d7bb51c781db7167590f108e2ef23e558698220fa77b7854c",
+      "archive": "docs/evidence/instruction-history/noncode-1.8/loop-decide/SKILL.md",
+      "reason": "1.9 responsibility/artifact-gate update; historical observations remain tied to their original instruction bytes.",
+      "historical_reuse_status": "INVALIDATED",
+      "automatic_discovery_status": "NOT_RUN",
+      "current_sha256": "9f229026d9b12a842e98de57cbba40d566f05c80411847b721a8f12906713662"
+    },
+    "loop-learn": {
+      "historical_sha256": "3badcf0fafcabcde60519e43327a668b55457e2668ec24563b705ad46cd27b66",
+      "archive": "docs/evidence/instruction-history/noncode-1.8/loop-learn/SKILL.md",
+      "reason": "1.9 responsibility/artifact-gate update; historical observations remain tied to their original instruction bytes.",
+      "historical_reuse_status": "INVALIDATED",
+      "automatic_discovery_status": "NOT_RUN",
+      "current_sha256": "6f0e3e322769b523dd82c24af04c447d93c54bfdc9867191b702f8074c4260ac"
+    }
+  },
+  "workflows-1.7": {
+    "loop-workflow-project": {
+      "historical_sha256": "ac2842fe881b17e5bd4211e2266acf5f2f8a67fbc06ae5509ff4ebcf05740f9b",
+      "archive": "docs/evidence/instruction-history/workflows-1.7/loop-workflow-project/SKILL.md",
+      "reason": "1.9 responsibility/artifact-gate update; historical observations remain tied to their original instruction bytes.",
+      "historical_reuse_status": "INVALIDATED",
+      "automatic_discovery_status": "NOT_RUN",
+      "current_sha256": "4fa2b71ef49aaed113397dec4e61175e5d83c1103894cb039698173b3c86ae60"
+    }
+  }
+}

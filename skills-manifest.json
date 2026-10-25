@@ -1,6 +1,6 @@
 {
   "name": "portable-loop-skills",
-  "version": "1.8.0-experimental",
+  "version": "1.9.0-experimental",
   "skills": [
     "loop-review",
     "loop-code",
@@ -46,12 +46,17 @@
     "loop-meeting",
     "loop-organize",
     "loop-decide",
-    "loop-learn"
+    "loop-learn",
+    "loop-work",
+    "loop-files",
+    "loop-table",
+    "loop-document"
   ],
   "project_skill_roots": [
     ".github/skills",
     ".agents/skills",
     ".claude/skills"
   ],
-  "source_policy": "Edit .github/skills first, then synchronize exact copies to the other native project roots."
+  "source_policy": "Edit .github/skills first, then synchronize exact copies to the other native project roots.",
+  "resource_manifest": "skill-resources.json"
 }

@@ -17,13 +17,12 @@ class RoutingReviewTests(unittest.TestCase):
 
     def test_every_skill_has_a_decision_and_an_accepted_primary_case(self):
         self.assertEqual(check_routes(ROOT), [])
-        self.assertEqual(len(self.data['decisions']), 45)
-        self.assertEqual(len(self.data['cases']), 48)
+        self.assertEqual(len(self.data['decisions']), 49)
+        self.assertEqual(len(self.data['cases']), 53)
         self.assertEqual({row['skill'] for row in self.data['decisions'] if row['action']=='upgrade'},
-                         {'loop-review', 'loop-code', 'loop-diagnose', 'loop-test',
-                          'loop-plan', 'loop-research', 'loop-evaluate', 'loop-skill-create'})
+                         {'loop-plan', 'loop-summarize', 'loop-test', 'loop-review', 'loop-skill-create', 'loop-workflow-project', 'loop-learn', 'loop-decide', 'loop-organize', 'loop-diagnose', 'loop-write', 'loop-code', 'loop-research', 'loop-evaluate', 'loop-meeting'})
         self.assertEqual({row['skill'] for row in self.data['decisions'] if row['action']=='add'},
-                         {'loop-deploy', 'loop-observe', 'loop-context', 'loop-handoff', 'loop-workflow-project', 'loop-workflow-pr', 'loop-workflow-incident', 'loop-write', 'loop-summarize', 'loop-meeting', 'loop-organize', 'loop-decide', 'loop-learn'})
+                         {'loop-table', 'loop-context', 'loop-handoff', 'loop-workflow-incident', 'loop-deploy', 'loop-work', 'loop-observe', 'loop-workflow-pr', 'loop-files', 'loop-document'})
 
     def test_missing_decision_or_no_skill_controls_cannot_pass(self):
         with tempfile.TemporaryDirectory() as temp:
@@ -64,10 +63,10 @@ class RoutingReviewTests(unittest.TestCase):
 
     def test_prediction_grader_counts_failures_and_never_drops_cases(self):
         predictions = {row['id']: row['acceptable'][0] for row in self.data['cases']}
-        self.assertEqual(grade_predictions(self.data, predictions)['correct'], 48)
+        self.assertEqual(grade_predictions(self.data, predictions)['correct'], 53)
         predictions[self.data['cases'][0]['id']] = 'NONE'
         result = grade_predictions(self.data, predictions)
-        self.assertEqual((result['status'], result['total'], result['correct']), ('FAIL', 48, 47))
+        self.assertEqual((result['status'], result['total'], result['correct']), ('FAIL', 53, 52))
         predictions.pop(self.data['cases'][1]['id'])
         with self.assertRaises(ValueError):
             grade_predictions(self.data, predictions)
@@ -80,4 +79,4 @@ class RoutingReviewTests(unittest.TestCase):
                                     capture_output=True, text=True, timeout=30)
             self.assertEqual(result.returncode, 1)
             observed = json.loads(result.stdout)
-            self.assertEqual((observed['total'], observed['correct']), (48, 3))
+            self.assertEqual((observed['total'], observed['correct']), (53, 3))

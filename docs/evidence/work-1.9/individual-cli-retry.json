@@ -1,0 +1,19 @@
+{
+  "new_tool_source": "current scripts copied to a new fixture; original attempted CLI failure retained",
+  "results": [
+    {
+      "mode": "install",
+      "exit": 0,
+      "selected": [
+        "loop-demo"
+      ]
+    },
+    {
+      "mode": "check",
+      "exit": 0,
+      "selected": [
+        "loop-demo"
+      ]
+    }
+  ]
+}

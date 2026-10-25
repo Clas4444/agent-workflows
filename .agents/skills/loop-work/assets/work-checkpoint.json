@@ -1,0 +1,14 @@
+{
+  "version": 1,
+  "task": "",
+  "scope": {"permitted_actions": [], "exclusions": []},
+  "done_criteria": [],
+  "sources": [],
+  "capacity": {"minutes_available": null, "reference_date": null, "time_zone": null},
+  "items": [],
+  "artifacts": [],
+  "checks": [],
+  "blockers": [],
+  "next_permitted_action": "",
+  "note": "Template only. Empty fields and saved text do not establish facts, authority or completion."
+}

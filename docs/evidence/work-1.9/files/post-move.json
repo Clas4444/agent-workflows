@@ -1,0 +1,7 @@
+{
+  "status": "PASS",
+  "phase": "after",
+  "file_count": 4,
+  "moves_executed_by_helper": "NOT_RUN",
+  "scope": "Observed path/content equality only, not a concurrency lock."
+}

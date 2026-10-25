@@ -1,0 +1,149 @@
+{
+  "session_id": "work-1.9-20261025T062809Z",
+  "base_revision": "80c7b1d0b61fd8fd44df47e7dac659513fde2988",
+  "criteria_frozen_before_models": true,
+  "payload_sha256": {
+    "loop-work": {
+      "SKILL.md": "a37a7d03e2a8b3a4eb296687c24bbf0a745e59b8d1ae147f6372c21bba6fb11f",
+      "assets/work-checkpoint.json": "0700311dbff32f811547e57c373eef873d57bcbbd601504b00b4994950afa675",
+      "references/work-ledger.md": "79bd735bd75a89a4b85158f0119fedbc57a3f40c570a602f45952d00ca5ae018"
+    },
+    "loop-files": {
+      "SKILL.md": "3058dacdb6bcd5fc9ba6a93b331aac965f359200b21b5933af691d9dd678a6e8",
+      "references/file-plan.md": "ca52ca88c469155b55e42db7a68012b1268f97eadeeb1063a094178a4ff49d19",
+      "scripts/file_plan.py": "84852e323ca2970f07b10f16d3b7035903383beb6dd5bcd59a994c202b7e4489"
+    },
+    "loop-table": {
+      "SKILL.md": "b5eb9445af6828a9f723fa82c311010cad83ce10c83cae43b4c5f81ae09a0c4b",
+      "references/table-contract.md": "7cd24c950476b064c86821a5e692134c1599be7fc2010466274192a17151e421",
+      "scripts/table_check.py": "18977d82eedb73f2629ee938dd0a0fc4b1fb96d934458e74b0b62e3be5d9b04c"
+    },
+    "loop-document": {
+      "SKILL.md": "d25d126ae69d34102f31a901a5c9fb611a64f0c05efd869b263923309890c0dd",
+      "references/format-gates.md": "d9fe510bfb3d52a2cffa3f339ab506e242502c41d950d0626969c935215ce163"
+    },
+    "loop-organize": {
+      "SKILL.md": "32aebd2e873256ddd5627b025611af337a1ac935d7985b633f5a4f4827f0ed6a"
+    },
+    "loop-write": {
+      "SKILL.md": "96961742b9819830039e90beca14680cb8854768482918dbcb18e7f0f67379bd"
+    },
+    "loop-summarize": {
+      "SKILL.md": "f09d25beea324fe67529ef9261fe5c3244a882e4551e5e606b705b486c32d6b5"
+    },
+    "loop-meeting": {
+      "SKILL.md": "80760f6ba3011b4d45ac027b053f59c6bfa17a85e7bd7e73b81ac2ba6d815005"
+    },
+    "loop-decide": {
+      "SKILL.md": "9f229026d9b12a842e98de57cbba40d566f05c80411847b721a8f12906713662"
+    },
+    "loop-learn": {
+      "SKILL.md": "6f0e3e322769b523dd82c24af04c447d93c54bfdc9867191b702f8074c4260ac"
+    },
+    "loop-plan": {
+      "SKILL.md": "340e53253ce1d9f5019406a89e70a03c0cfdaa0ef22a98b5750e38298ed60e4e"
+    },
+    "loop-code": {
+      "SKILL.md": "d7e2a9be0e8331c0e92c26b89630a02914e53a879aa9dab1fd3cc00d1a5c1b1c"
+    },
+    "loop-test": {
+      "SKILL.md": "26f5e9e1c0e6e1e7189a9c6cdc54f3c4fef26512d918a365f8d242fa0c33bded"
+    },
+    "loop-review": {
+      "SKILL.md": "fd77f2fc1f49b40af545b8fb62cc15368e257a07bf703dff2a59a273d65c70f7"
+    },
+    "loop-research": {
+      "SKILL.md": "de7c44ee288766805e7853c75f19fe185bb0e9f554c43515456187325b1155f3"
+    },
+    "loop-skill-create": {
+      "SKILL.md": "7e14f9df43616ec87d567a533be8fed85992aa7c9c3cb57c81aaf962ff01fb16"
+    },
+    "loop-workflow-project": {
+      "SKILL.md": "4fa2b71ef49aaed113397dec4e61175e5d83c1103894cb039698173b3c86ae60"
+    }
+  },
+  "protected_input_sha256": {
+    "data\\expenses.csv": "cdce1b44143780bc36e015e656d704fe0fff426d96e64d374b429e5e616f56b2",
+    "work\\inputs\\policy.md": "0476dbff92f2c354a74af01fb1490f224594347753b137df179ecebdcadfe025",
+    "code\\test_base.py": "412074e542d7623b089585970bb0c3947965a13685418fafffa46771c5898980"
+  },
+  "checks": {
+    "files": {
+      "status": "PASS",
+      "parent_observed_moved_state": true,
+      "rollback_restored_original_bytes": true,
+      "file_count": 4
+    },
+    "code": {
+      "status": "PASS",
+      "fresh_package_with_source_helper_unavailable": true,
+      "changed_value_challenge": true,
+      "invalid_input_reaches_real_parser": true,
+      "protected_baseline_test_preserved": true
+    },
+    "work": {
+      "status": "PASS",
+      "files_created_and_reopened": true
+    },
+    "data": {
+      "status": "PASS",
+      "unit_separation": true,
+      "missing_amount_not_zero": true,
+      "source_preserved": true,
+      "study_minutes": 280,
+      "assessment": "NOT_RUN"
+    },
+    "remaining": {
+      "status": "PASS_WITH_RETAINED_FAILED_CLI_ATTEMPT",
+      "fresh_fixed_individual_cli_exit_codes": [
+        0,
+        0
+      ],
+      "implementation": "NOT_RUN",
+      "external_research_verification": "NOT_RUN"
+    }
+  },
+  "baseline": {
+    "status": "PASS",
+    "discovered": 221,
+    "skipped": 1
+  },
+  "native_discovery": "NOT_RUN",
+  "live_services": "NOT_RUN",
+  "normalization": "Public text normalized to UTF-8/LF and workspace paths redacted; source-input digests describe original local bytes, not normalized copies. Raw attempts retained privately. Personal runtime-home paths redacted as <user-home>. Public diff is descriptive: blank context-line spaces trimmed; raw applicable diff remains private.",
+  "artifact_sha256": {
+    "code/baseline.json": "89a0563afeb55c080b94ed6947648e748c29098b7a7244634c0cc367a78d92c6",
+    "code/final.diff": "1a91c0e9d43a28cd3900a00e793a2903a4aff4bb31fd449cca0ea7b49bac71e6",
+    "code/request.txt": "4adeade54e0754f95ce7456f8bd0f491d88f4b66bdd7e4cf7aeedcd9b2b6c212",
+    "code/result.json": "73536aa2c51f412f858646e2773f15d6b5990af8f1c0789b7365d591fc8a9b52",
+    "data/brief.md": "3889cf49e7ffe6b18d964b00196cd4ab28af9848052d533d3044c2e9bc18cc0f",
+    "data/decision.json": "768919e4a776414bc9b8141d8337d20b5a90d964eb5b3eb2382a664b1c3563fd",
+    "data/input-rows.json": "4f25281f22c074583341dd99dad806e8dea696edd1458d98b7b4f80a8b43875d",
+    "data/learn.json": "45c0e843d4f408a75576bd7f20f996190eea7770acf92bc833f6640f01c709b4",
+    "data/numeric.json": "1774a8c8dde07cd438c20274eaceccedd6c9e7e7c883c58148e86d90f1af38d8",
+    "data/request.txt": "412477307bcdde441964d7f964bd6c4ddc07859032682af8ae631eb4edd52dd0",
+    "data/result.json": "39c46cc34fb6fb2b386b199018c401301d89d01ad4c3409134952fc411002575",
+    "data/summary.md": "e85e9991e1e5348a0ab94ecbaecbff68c7b22e7133d30dbdc550138d586dec61",
+    "files/mapping.json": "7ffce8c4c72554aa4b3a4c2192aac4657b2a3117b6e34a899e34b28984ccb93b",
+    "files/plan.json": "01b4bfeb1f6ae1a7bac76fcc3e2c96a5120f09fec74f96b6e5865c1f8475ca0e",
+    "files/post-move.json": "bd8ec03212b08f477f66bf65abe559570e78a8547eafc75b07646b80bdbad322",
+    "files/request.txt": "2e5dedae15c89c06097ece9e1d15e149c48a78d7947a1d18c42791998fab9e09",
+    "files/rollback-mapping.json": "6c9dcc2f6c4e67721f766fa58c543402b87df9d045f5a020c8d3f6b09479e34c",
+    "files/rollback-plan.json": "11b1c82bcc5c4694f0c97aa9393a1d2ddeb3e5d09f8f956c8dd97ceaa1bc9c5e",
+    "files/rollback-result.json": "d02356979ece8e7ad3f313e08bdfe81821692e615e6271c7e4cdfcf646c558f9",
+    "files-parent-moved.json": "6d0dc877b0e6545c86c9258d0c1c80c2660555b514f024dc6741d65f48d40858",
+    "individual-cli-retry.json": "e31cc809b263888ce9185e1dd731d0d9a13353b264e50daa146877e22cf08bda",
+    "remaining/request.txt": "a69d2d621a0e85d9952ecc8d0f9ec4f40f01595d2f410288a54a145ad25b7c02",
+    "remaining/research.md": "2155943c1d5bd578f4dd43faefe4aaa7db757991ec40e9e09fa75877474748dc",
+    "remaining/result.json": "e777c5e489ff1242eb52f26a55f8db9d44719e2e39cfa1dac75798eb4d627d60",
+    "remaining/software-plan.json": "735457bba0c8f32ae99396aec49cbde38bccd916434f37af15038d39a8ec245b",
+    "review-ledger.json": "f6d0fab91f0f14ecfac8c3dc8b6123b7c2a3e28a23f8ba518ae8169a321ffde0",
+    "work/agenda.md": "dbe40b67a89c2f12bbe0edd4034d5d39fdbc20727bbe4123dda28496536fac42",
+    "work/brief.md": "27a326c19376a1642d255e5ea6bf3531ebf6a5014ab3768428a65da1d20652cf",
+    "work/draft-email.md": "46fce0bcba1e77da8e4240e924002e6498e2bf309acab70b428bc2ce5a5e7ae8",
+    "work/inputs/policy.md": "cbb558a2315cd15f8748f96c5ef1b890e69a2cfee468abf42087c128a60e4118",
+    "work/request.txt": "31a331550d0cfc54f4cf41fd976ddd7ae20660d354fdb6f7f5208affdacb6d09",
+    "work/result.json": "1c038451e2beb0c5670b72d7232e9bce1b6f0ff7e4ee08912b044115932ae5d1",
+    "work/work.json": "35f8f6e01a7e714a51b64dd65b01089e9df9933b5d3f36e9c0304c73038368fe"
+  }
+}

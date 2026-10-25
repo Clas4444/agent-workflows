@@ -13,15 +13,15 @@
   },
   "loop-review": {
     "historical_instruction_text_sha256": "144aa38255d04648e0cea37c88f22c23968644caa2222eb741f0a7db7bbe69d2",
-    "current_instruction_text_sha256": "12fab22fe6584b101bc83ed55ba4d68ccd8d80b8645d392cda211458f1b50b1d",
+    "current_instruction_text_sha256": "fd77f2fc1f49b40af545b8fb62cc15368e257a07bf703dff2a59a273d65c70f7",
     "current_runtime_status": "NOT_RUN",
-    "reason": "1.5 separates review/planning/evaluation, implementation/repair, diagnosis/repair or test-strategy/focused testing routes. Previous host execution did not test this revised contract."
+    "reason": "1.9 artifact/resource delivery and evidence-scope upgrade; old runtime observations do not apply to the new instruction text."
   },
   "loop-code": {
     "historical_instruction_text_sha256": "75716c701b57b62cba9ee1186adba56bb7caad997d5df7d3c4be787187f337aa",
-    "current_instruction_text_sha256": "c254a06f6af5b9aa9aae46d17ce6e32d4e92d200386d3606af4d48b6360ed012",
+    "current_instruction_text_sha256": "d7e2a9be0e8331c0e92c26b89630a02914e53a879aa9dab1fd3cc00d1a5c1b1c",
     "current_runtime_status": "NOT_RUN",
-    "reason": "2026-10-25 acceptance/context handoff revision: stable criteria, pinned context and positive/negative controls. Previous executions did not exercise these instructions."
+    "reason": "1.9 artifact/resource delivery and evidence-scope upgrade; old runtime observations do not apply to the new instruction text."
   },
   "loop-diagnose": {
     "historical_instruction_text_sha256": "c449c3018007c51ac0d2e6d7581690df9cdc4c896bdc594ebdc82081cab3c815",
@@ -31,21 +31,21 @@
   },
   "loop-test": {
     "historical_instruction_text_sha256": "e0f5e0344daf7d382ff7420182cfa0db598b38b0a47dee306c0d78a339d9df34",
-    "current_instruction_text_sha256": "b76611ed2c6a56db53fff6762065e70de8410407aa8c834102c2207575a54cb7",
+    "current_instruction_text_sha256": "26f5e9e1c0e6e1e7189a9c6cdc54f3c4fef26512d918a365f8d242fa0c33bded",
     "current_runtime_status": "NOT_RUN",
-    "reason": "2026-10-25 acceptance/context handoff revision: stable criteria, pinned context and positive/negative controls. Previous executions did not exercise these instructions."
+    "reason": "1.9 artifact/resource delivery and evidence-scope upgrade; old runtime observations do not apply to the new instruction text."
   },
   "loop-plan": {
     "historical_instruction_text_sha256": "5bc9b45733a163c29bb65411b5af9d0912762b6f07a3b746c9beaafa2d020e01",
-    "current_instruction_text_sha256": "6a833bf4257899d9c1a660c9fe6f08922e39929e10da013be3bac4328438fcd6",
+    "current_instruction_text_sha256": "340e53253ce1d9f5019406a89e70a03c0cfdaa0ef22a98b5750e38298ed60e4e",
     "current_runtime_status": "NOT_RUN",
-    "reason": "2026-10-25 acceptance/context handoff revision: stable criteria, pinned context and positive/negative controls. Previous executions did not exercise these instructions."
+    "reason": "1.9 artifact/resource delivery and evidence-scope upgrade; old runtime observations do not apply to the new instruction text."
   },
   "loop-research": {
     "historical_instruction_text_sha256": "35facf45698779134d0ea1be43937f9e918d87e71582c18badee18831c8f171a",
-    "current_instruction_text_sha256": "a751bad256a7827c6ef8fc2fa97a10fc3123fb385455ddf05aa29139141fda85",
+    "current_instruction_text_sha256": "de7c44ee288766805e7853c75f19fe185bb0e9f554c43515456187325b1155f3",
     "current_runtime_status": "NOT_RUN",
-    "reason": "2026-10-25 acceptance/context handoff revision: stable criteria, pinned context and positive/negative controls. Previous executions did not exercise these instructions."
+    "reason": "1.9 artifact/resource delivery and evidence-scope upgrade; old runtime observations do not apply to the new instruction text."
   },
   "loop-evaluate": {
     "historical_instruction_text_sha256": "036a181c09dce1ac92abbd4e8b35c72d3b2a137415f3b9f74298433da2dea023",
@@ -55,8 +55,8 @@
   },
   "loop-skill-create": {
     "historical_instruction_text_sha256": "07115821734c46c24771087ca081d10981d8d7fc5eb4548e044e476ff7c48967",
-    "current_instruction_text_sha256": "af7018e1151755e5157581de6042cef66d6f6f59e0afd3f463ce71787b28e5dc",
+    "current_instruction_text_sha256": "7e14f9df43616ec87d567a533be8fed85992aa7c9c3cb57c81aaf962ff01fb16",
     "current_runtime_status": "NOT_RUN",
-    "reason": "1.6 research-backed repeated trials or forward-testing contract; historical runs did not exercise revised text."
+    "reason": "1.9 artifact/resource delivery and evidence-scope upgrade; old runtime observations do not apply to the new instruction text."
   }
 }

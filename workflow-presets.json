@@ -10,6 +10,7 @@
         "loop-summarize"
       ],
       "optional": [
+        "loop-document",
         "loop-meeting"
       ],
       "do": [
@@ -23,23 +24,25 @@
     },
     {
       "id": "office-organizer",
-      "title": "Office and personal organizer",
+      "title": "Office worker and personal organizer",
       "goal": "Turn notes and existing items into traceable, manageable work.",
       "core": [
+        "loop-work",
         "loop-meeting",
-        "loop-organize"
+        "loop-files",
+        "loop-document"
       ],
       "optional": [
         "loop-write",
-        "loop-summarize"
+        "loop-decide"
       ],
       "do": [
-        "Keep tentative proposals and unknown owners separate.",
-        "Review collisions before any authorized move."
+        "Produce and inspect the requested artifacts, not only a checklist.",
+        "Keep capacity, dependencies, approvals and unknown owners explicit."
       ],
       "dont": [
-        "Invent meeting agreement or due dates.",
-        "Delete same-named files as duplicates without comparing contents."
+        "Treat draft creation as sending or approval.",
+        "Move files without a checked mapping and authority."
       ]
     },
     {
@@ -61,6 +64,27 @@
       "dont": [
         "Give precise scores to unknown facts.",
         "Claim mastery from a study schedule."
+      ]
+    },
+    {
+      "id": "table-reporter",
+      "title": "Table analyst and report author",
+      "goal": "Turn supplied data into source-grounded numbers and a usable artifact.",
+      "core": [
+        "loop-table",
+        "loop-document"
+      ],
+      "optional": [
+        "loop-decide",
+        "loop-research"
+      ],
+      "do": [
+        "Keep units, identifiers, blanks and source identities explicit.",
+        "Reopen the real output and distinguish content, formula and layout checks."
+      ],
+      "dont": [
+        "Mix currencies or treat unknown amounts as zero.",
+        "Relabel text as Office/PDF or claim an unrun render."
       ]
     },
     {

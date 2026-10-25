@@ -1,0 +1,19 @@
+{
+  "session_id": "work-1.9-20261025T062809Z",
+  "phase": "parent_observed_after_native_moves_before_rollback",
+  "actual_file_hashes": {
+    "Finance/A-receipt.txt": "b80d351294e254473c55f71a5393fe41efdea9607db2ee728650916c1d5977ee",
+    "Finance/B-receipt.txt": "18b3ac80978d7a2f0616bc02735cbe71905e3f942e6793d44d291e3af53b6e00",
+    "Finance/receipt.txt": "f8deab8163e66dd30e773b02b3e59e22c65928705b9a6c4c5e3746c43f221ea8",
+    "Project/note.txt": "d235e470005794f2c493e56876fd26174624f9858a58903d0fc4b403e851d67f"
+  },
+  "expected_file_hashes": {
+    "Finance/receipt.txt": "f8deab8163e66dd30e773b02b3e59e22c65928705b9a6c4c5e3746c43f221ea8",
+    "Finance/A-receipt.txt": "b80d351294e254473c55f71a5393fe41efdea9607db2ee728650916c1d5977ee",
+    "Finance/B-receipt.txt": "18b3ac80978d7a2f0616bc02735cbe71905e3f942e6793d44d291e3af53b6e00",
+    "Project/note.txt": "d235e470005794f2c493e56876fd26174624f9858a58903d0fc4b403e851d67f"
+  },
+  "helper_replay_exit": 0,
+  "status": "PASS",
+  "path_normalization": "Windows separators normalized to forward slashes for comparison; identities unchanged."
+}

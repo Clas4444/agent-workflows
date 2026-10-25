@@ -34,6 +34,11 @@ that prevents safe progress.
    invent findings to fill a quota. Route implementation or research only when
    the user's scope calls for it, and preserve read-only review requests.
 
+Inspect the delivery surface as well as source: installed entry points, supporting
+resources, output artifacts and their consumer-visible behavior. A matching SKILL.md or
+green local suite alone does not prove that an installed workflow has everything it
+needs.
+
 ## Output
 
 Prioritized findings with source locations, risk, checked evidence and unresolved gaps.

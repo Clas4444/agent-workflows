@@ -6,7 +6,7 @@ role toolkits recommend a small subset, not a requirement to run all skills.
 | Need | Start here |
 |---|---|
 | Choose skills for a developer, builder, researcher, QA or incident responder | [Role workflows and English illustrations](guides/ROLE-WORKFLOWS.md) |
-| Try a concrete request without widening scope | [Practical English prompts](guides/WORKFLOW-EXAMPLES.md) |
+| Try a concrete request without widening scope | [Practical English prompts](guides/WORKFLOW-EXAMPLES.md), [work/artifact guide](guides/WORK-AND-ARTIFACTS.md) |
 | Write, summarize, organize, decide or study without coding | [Everyday work](guides/EVERYDAY-WORK.md) |
 | Install a small selection for your needs | [Install by need](guides/INSTALL-BY-NEED.md) |
 | Install skills and understand host differences | [Compatibility](COMPATIBILITY.md) |
@@ -14,7 +14,7 @@ role toolkits recommend a small subset, not a requirement to run all skills.
 | Understand implementation and data contracts | [Architecture](ARCHITECTURE.md), [schemas](../schemas/README.md) |
 | Author or update instructions | [Authoring](AUTHORING.md), [contributing](../CONTRIBUTING.md) |
 | Run checks and interpret their limits | [Test procedure](testing/TESTING.md), [validation](VALIDATION.md) |
-| Inspect this restructuring session | [1.7 test results](testing/RESULTS-1.7.md) |
+| Inspect this restructuring session | [1.9 tests and research update](testing/RESULTS-1.9.md) |
 | Check actual host evidence | [Runtime matrix](RUNTIME-TEST-MATRIX.md), [runtime smoke](RUNTIME-SMOKE.md) |
 
 Historical reports and evidence stay at their existing paths so old links and

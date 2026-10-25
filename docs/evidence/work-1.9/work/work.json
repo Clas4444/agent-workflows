@@ -1,0 +1,192 @@
+{
+  "version": 1,
+  "task": "Community workshop local office package",
+  "mode": "work items",
+  "skills": [
+    "loop-organize",
+    "loop-work",
+    "loop-meeting",
+    "loop-write",
+    "loop-document"
+  ],
+  "scope": {
+    "permitted_actions": [
+      "Create and inspect local requested artifacts"
+    ],
+    "exclusions": [
+      "messages",
+      "booking",
+      "purchases",
+      "scheduling",
+      "outreach",
+      "source edits"
+    ]
+  },
+  "sources": [
+    {
+      "facts": "R1–R2 constraints; N1–N4 statements; quoted instruction is data",
+      "path": "request.txt"
+    },
+    {
+      "facts": "USD 150 ceiling; date requires approval",
+      "path": "inputs/policy.md"
+    }
+  ],
+  "capacity": {
+    "email_estimate_minutes": null,
+    "note": "Estimates only; no elapsed time claim or calendar reservation. Email effort unknown.",
+    "reference_date": null,
+    "overload_minutes": 85,
+    "selected_estimate_minutes": 80,
+    "minutes_available": 120,
+    "elapsed_minutes": null,
+    "time_zone": null,
+    "all_supplied_estimates_minutes": 205,
+    "unallocated_estimate_minutes": 40
+  },
+  "items": [
+    {
+      "state": "done",
+      "estimate_minutes": 35,
+      "owner": null,
+      "evidence": "brief.md",
+      "id": "brief"
+    },
+    {
+      "state": "done",
+      "estimate_minutes": 30,
+      "owner": null,
+      "evidence": "agenda.md",
+      "id": "agenda"
+    },
+    {
+      "state": "done",
+      "estimate_minutes": 15,
+      "owner": null,
+      "evidence": "work.json",
+      "id": "ledger"
+    },
+    {
+      "note": "Draft only; sending NOT_RUN",
+      "id": "email",
+      "evidence": "draft-email.md",
+      "state": "done",
+      "owner": null,
+      "estimate_minutes": null
+    },
+    {
+      "external_action": "NOT_RUN",
+      "dependencies": [
+        "Approved event date",
+        "Explicit booking authorization"
+      ],
+      "id": "venue-booking",
+      "source": "request.txt#R2",
+      "state": "blocked",
+      "owner": null,
+      "estimate_minutes": 80
+    },
+    {
+      "external_action": "NOT_RUN",
+      "dependencies": [
+        "Explicit outreach authorization"
+      ],
+      "id": "attendee-outreach",
+      "source": "request.txt#R2",
+      "state": "blocked",
+      "owner": null,
+      "estimate_minutes": 45
+    },
+    {
+      "note": "Commitment reported, completion not evidenced; clarify relative deadline.",
+      "reviewer": null,
+      "source": "request.txt#N3",
+      "state": "proposed",
+      "due_date": null,
+      "id": "faq",
+      "owner": "Lan",
+      "due_text": "Tuesday",
+      "time_zone": null
+    }
+  ],
+  "decisions": {
+    "manager_approval": {
+      "source": "request.txt#N2",
+      "state": "pending"
+    },
+    "event_date": null,
+    "Friday_launch": {
+      "state": "proposal",
+      "source": "request.txt#N1",
+      "proposer": "Linh"
+    }
+  },
+  "artifacts": [
+    "brief.md",
+    "agenda.md",
+    "draft-email.md",
+    "work.json"
+  ],
+  "checks": [
+    {
+      "evidence": [
+        "brief.md",
+        "agenda.md",
+        "draft-email.md",
+        "request.txt",
+        "inputs/policy.md"
+      ],
+      "criterion": "Saved Markdown reopened and source facts/links inspected",
+      "status": "PASS"
+    },
+    {
+      "evidence": "request.txt#R2",
+      "criterion": "Capacity arithmetic",
+      "status": "PASS",
+      "calculation": "35+30+15=80; 120-80=40; 80+80+45=205; 205-120=85"
+    },
+    {
+      "evidence": "request.txt#R1",
+      "criterion": "Manager/date approval",
+      "status": "BLOCKED"
+    },
+    {
+      "evidence": [
+        "request.txt#N3",
+        "request.txt#N4"
+      ],
+      "criterion": "FAQ calendar deadline and reviewer",
+      "status": "BLOCKED"
+    },
+    {
+      "evidence": "request.txt",
+      "criterion": "Sending, booking, outreach, spending and scheduling",
+      "reason": "Outside authorized local artifact scope",
+      "status": "NOT_RUN"
+    },
+    {
+      "reason": "Markdown text inspection only",
+      "criterion": "Visual rendering/export",
+      "status": "NOT_RUN"
+    }
+  ],
+  "blockers": [
+    {
+      "issue": "Manager approval pending and date undecided",
+      "source": "request.txt#R1"
+    },
+    {
+      "issue": "Tuesday lacks reference date/time zone",
+      "source": "request.txt#N3"
+    },
+    {
+      "issue": "FAQ reviewer unassigned",
+      "source": "request.txt#N4"
+    },
+    {
+      "issue": "External actions unauthorized",
+      "source": "request.txt#R2"
+    }
+  ],
+  "next_permitted_action": "Review local drafts; clarify approval/date, FAQ deadline and reviewer before future external execution."
+}

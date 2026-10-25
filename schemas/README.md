@@ -33,3 +33,7 @@ third-party JSON Schema engine was NOT_RUN. See the
 Runner state and runtime evidence retain their current formats. They do not
 yet have published schemas; adding those requires characterizing error-path
 and historical records before freezing a compatibility contract.
+
+## Managed resources (1.9)
+
+The optional manifest field `resource_manifest` names `skill-resources.json`. Version 1 maps skill names to safe relative supporting-file paths; SKILL.md and the two existing runners remain implicit. Unregistered source resources, missing declared registries and divergent native copies fail validation. Legacy minimal sources without extra resources remain supported. Individual selection reads only the skill inventory when no bundle is requested.

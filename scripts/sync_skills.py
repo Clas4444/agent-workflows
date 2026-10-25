@@ -10,8 +10,10 @@ from pathlib import Path
 
 if __package__:
     from .validation.json_data import loads_json
+    from .skill_resources import load_resources, payload_files
 else:
     from validation.json_data import loads_json
+    from skill_resources import load_resources, payload_files
 
 REPO = Path(__file__).resolve().parents[1]
 
@@ -39,6 +41,7 @@ def sync(target: Path, backup: Path, check: bool = False, *, selected: list[str]
                    or len(name) > 64 for name in names)
             or len(names) != len(set(names))):
         raise ValueError('manifest skills must be unique, valid skill names')
+    resources = load_resources(REPO,names)
     if selected is not None:
         if (not isinstance(selected, list) or not selected
                 or any(not isinstance(name, str) or name not in names for name in selected)
@@ -46,15 +49,12 @@ def sync(target: Path, backup: Path, check: bool = False, *, selected: list[str]
             raise ValueError('selected skills must be a non-empty list of unique manifest names')
         names = [name for name in names if name in selected]
     target, backup = target.resolve(), backup.resolve()
-    source = REPO / '.github' / 'skills'
     if backup == target or target in backup.parents:
         raise ValueError('backup must be outside target')
     differences = []
     plan = []
     for name in names:
-        files = [(source / name / 'SKILL.md', target / name / 'SKILL.md')]
-        if name in ('loop-orchestrate', 'loop-prompt'):
-            files.append((REPO / 'scripts' / 'run_loop.py', target / name / 'scripts' / 'run_loop.py'))
+        files = [(original,target/name/relative) for relative,original in payload_files(REPO,name,resources)]
         for original, destination in files:
             if not original.is_file():
                 raise ValueError(f'missing source file: {original}')

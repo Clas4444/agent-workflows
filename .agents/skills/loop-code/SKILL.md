@@ -40,6 +40,11 @@ that prevents safe progress.
 5. Inspect the diff and record changed files, evidence, verification, and the
    next batch.
 
+For distributed code or skills, verify the installed/copied entry point and required
+resources, not only imports inside the source checkout. Tie each claim to the
+artifact/source identity actually exercised; test success does not imply deployment or
+user acceptance.
+
 ## Output
 
 Small implementation diff, verification commands and results, remaining work.

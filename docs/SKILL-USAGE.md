@@ -121,3 +121,12 @@ Use `loop-workflow-project` for MVP-to-slice delivery, `loop-workflow-pr` for a 
 - `loop-learn`: Feasible practice and learning plans without invented assessment.
 
 See [install by need](guides/INSTALL-BY-NEED.md) and [non-coding examples](guides/EVERYDAY-WORK.md).
+
+## Work and artifact delivery (1.9)
+
+- `loop-work`: coordinate and complete bounded everyday deliverables.
+- `loop-files`: file inventories, pinned mappings, authorized native moves and recovery checks.
+- `loop-table`: source-preserving table analysis with explicit units and missing-value rules.
+- `loop-document`: actual document artifacts and separate content/layout/export gates.
+
+`loop-organize` remains a compatibility selector; explicit filesystem requests now route to loop-files. Supporting resources are declared, synchronized and tested from fresh installations.

@@ -80,3 +80,14 @@ Explicit fixture exercises are recorded separately from automatic discovery and 
 | loop-organize | NOT_RUN | NOT_RUN |
 | loop-decide | NOT_RUN | NOT_RUN |
 | loop-learn | NOT_RUN | NOT_RUN |
+
+## Work/artifact update (1.9)
+
+Earlier noncode-1.8 and workflow-project-1.7 observations are retained against archived instructions; changed bytes cannot reuse their PASS. New exercises are recorded separately.
+
+| Skill | Automatic discovery | Full external-service execution |
+|---|---|---|
+| loop-work | NOT_RUN | NOT_RUN |
+| loop-files | NOT_RUN | NOT_RUN |
+| loop-table | NOT_RUN | NOT_RUN |
+| loop-document | NOT_RUN | NOT_RUN |

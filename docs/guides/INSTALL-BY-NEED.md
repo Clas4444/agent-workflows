@@ -6,20 +6,27 @@ Your host still needs its own tools, permissions and account access when applica
 
 ## Choose a small bundle
 
-| Need | Bundle | Included skills |
-|---|---|---|
-| Write emails, letters and short summaries | `writing` | write, summarize |
-| Meeting notes and personal organization | `office` | write, summarize, meeting, organize |
-| Study and understand material | `learning` | learn, summarize, decide |
-| Compare everyday options | `decisions` | decide, research, summarize |
-| Work on existing code | `developer` | research-repo, code, debug, test, review |
-| Deliver a small software project | `project` | workflow-project, plan, code, test, handoff |
-| Test/review repository guarantees | `qa` | test-adversarial, evaluate, ci, review |
-| Assess service incidents | `incident` | workflow-incident, diagnose, observe |
+<!-- BEGIN GENERATED NEED BUNDLES -->
 
-Names in the table omit the `loop-` prefix. The authoritative membership is
-`skill-bundles.json`; `python scripts/install_skills.py --list` validates and
-prints it. Bundles are convenient selections, not mandatory runtime pipelines.
+| Need | Bundle | Installed skills |
+|---|---|---|
+| Draft everyday communication and summarize supplied material | `writing` | `loop-write`, `loop-summarize` |
+| Complete everyday work packages with source-grounded drafts, records and document artifacts | `office` | `loop-work`, `loop-write`, `loop-summarize`, `loop-meeting`, `loop-organize`, `loop-document` |
+| Plan study, understand supplied material and compare learning choices | `learning` | `loop-learn`, `loop-summarize`, `loop-decide` |
+| Compare options with explicit priorities and source-grounded evidence | `decisions` | `loop-decide`, `loop-research`, `loop-summarize` |
+| Understand, implement or repair, test and review existing code | `developer` | `loop-research-repo`, `loop-code`, `loop-debug`, `loop-test`, `loop-review` |
+| Coordinate a small software project and verified implementation slices | `project` | `loop-workflow-project`, `loop-plan`, `loop-code`, `loop-test`, `loop-handoff` |
+| Challenge contracts, assess evidence and inspect CI/review results | `qa` | `loop-test-adversarial`, `loop-evaluate`, `loop-ci`, `loop-review` |
+| Assess impact, investigate and verify operational signals | `incident` | `loop-workflow-incident`, `loop-diagnose`, `loop-observe` |
+| Coordinate feasible everyday deliverables and checkpoints | `work` | `loop-work`, `loop-write`, `loop-meeting`, `loop-decide` |
+| Inventory and verify scoped local file organization | `files` | `loop-files` |
+| Draft, summarize and verify usable document files | `documents` | `loop-document`, `loop-write`, `loop-summarize` |
+| Analyze tables and create source-grounded report artifacts | `data` | `loop-table`, `loop-document` |
+
+<!-- END GENERATED NEED BUNDLES -->
+
+The table is generated from `skill-bundles.json`; the installer validates the same registry.
+Bundles are installation selections, not mandatory runtime pipelines.
 
 ## Ask your agent to install a bundle
 
@@ -27,7 +34,7 @@ After opening this repository, a non-programmer can ask:
 
 ```text
 Install the office bundle from this repository into my selected project's
-.agents/skills folder. Show the four selected skill names, preserve unrelated
+.agents/skills folder. Show the selected skill names, preserve unrelated
 skills and custom files, use the repository installer with backups, and run
 the same selected-bundle check afterward. Do not change my global installation.
 ```
@@ -55,7 +62,7 @@ use an installed interpreter path or `py -3` if that launcher is available.
 The first check is read-only. **Exit 1 with a differences list means the selected
 files need installation/update**, not that installation already happened. A
 validation error prints `FAIL` to stderr. A successful post-install check exits 0.
-The installer copies only the selection, preserves unrelated skills and backs
+The installer copies the selected instructions and all declared scripts/references/assets, preserves unrelated skills and backs
 up overwritten managed files under this repository's `.loop/backups/` by default.
 `--backup` can select another directory outside the target. Keep backups private.
 
@@ -92,3 +99,7 @@ Use the invocation syntax your host supports. If it cannot find the skill, repor
 discovery as BLOCKED/NOT_RUN and check the path and host configuration. A successful
 file-copy check is not proof of activation. See [everyday examples](EVERYDAY-WORK.md)
 and the [runtime matrix](../RUNTIME-TEST-MATRIX.md).
+
+## Supporting files and recovery
+
+Keep the entire selected folder when copying manually. Managed resources are listed in `skill-resources.json`; matching SKILL.md alone does not prove a complete install. Repository-native copies require the same managed inventory, while the installer preserves unrelated custom files. A failed or partial operation needs inspection of actual state; backups are recovery inputs, not automatic permission to overwrite newer work.

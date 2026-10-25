@@ -91,10 +91,12 @@
     ]
   },
   "work-organization": {
-    "title": "Meetings and personal organization",
+    "title": "Work delivery, meetings and file organization",
     "skills": [
+      "loop-work",
       "loop-meeting",
-      "loop-organize"
+      "loop-organize",
+      "loop-files"
     ]
   },
   "decision-learning": {
@@ -102,6 +104,13 @@
     "skills": [
       "loop-decide",
       "loop-learn"
+    ]
+  },
+  "data-documents": {
+    "title": "Tables and document artifacts",
+    "skills": [
+      "loop-table",
+      "loop-document"
     ]
   }
 }

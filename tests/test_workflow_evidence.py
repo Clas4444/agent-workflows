@@ -3,6 +3,7 @@ import hashlib
 import json
 from pathlib import Path
 import unittest
+from scripts.instruction_history import instruction_identity
 
 ROOT = Path(__file__).resolve().parents[1]
 EVIDENCE = ROOT/'docs/evidence/workflows-1.7'
@@ -40,4 +41,8 @@ class WorkflowEvidenceTests(unittest.TestCase):
                 if name=='loop-workflow-incident' and row['id']=='first-context':
                     continue
                 path = ROOT/'.github/skills'/name/'SKILL.md'
-                self.assertEqual(hashlib.sha256(path.read_bytes()).hexdigest(), expected, name)
+                if name=='loop-workflow-project':
+                    self.assertEqual(instruction_identity(ROOT,'workflows-1.7',name,expected),
+                                     'HISTORICAL_ONLY_INVALIDATED')
+                else:
+                    self.assertEqual(hashlib.sha256(path.read_bytes()).hexdigest(), expected, name)

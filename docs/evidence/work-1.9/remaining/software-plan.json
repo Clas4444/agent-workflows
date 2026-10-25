@@ -1,0 +1,94 @@
+{
+  "goal": "Store item names and quantities locally and export TSV",
+  "scope": "plan only",
+  "implementation_status": "NOT_RUN",
+  "baseline": "No application repository inspected or implementation baseline asserted",
+  "mvp": [
+    "Enter item name and quantity",
+    "Persist items locally",
+    "Export the stored item list as TSV"
+  ],
+  "non_goals": [
+    "Accounts",
+    "Cloud sync",
+    "Multi-user access",
+    "Deployment"
+  ],
+  "unknown_product_decisions": [
+    {
+      "id": "D1",
+      "decision": "UI: CLI, desktop or local browser",
+      "status": "TBD"
+    },
+    {
+      "id": "D2",
+      "decision": "Quantity type, negative values and bounds",
+      "status": "TBD"
+    },
+    {
+      "id": "D3",
+      "decision": "Duplicate names, edits and deletion",
+      "status": "TBD"
+    },
+    {
+      "id": "D4",
+      "decision": "Storage location and persistence format",
+      "status": "TBD"
+    },
+    {
+      "id": "D5",
+      "decision": "TSV headers, order, encoding and tab/newline handling",
+      "status": "TBD"
+    }
+  ],
+  "acceptance_backlog": [
+    {
+      "id": "A1",
+      "criterion": "After entering an agreed valid item name and quantity, list the same values",
+      "depends_on": [
+        "D1",
+        "D2"
+      ],
+      "status": "NOT_RUN"
+    },
+    {
+      "id": "A2",
+      "criterion": "After closing and reopening, list previously saved values unchanged",
+      "depends_on": [
+        "A1",
+        "D4"
+      ],
+      "status": "NOT_RUN"
+    },
+    {
+      "id": "A3",
+      "criterion": "Export all stored items into TSV with agreed column and escaping rules; verify parsed values match the stored list",
+      "depends_on": [
+        "A2",
+        "D5"
+      ],
+      "status": "NOT_RUN"
+    },
+    {
+      "id": "A4",
+      "criterion": "Invalid values and write failures produce a clear error without corrupting saved items",
+      "depends_on": [
+        "A2",
+        "D2"
+      ],
+      "status": "NOT_RUN"
+    }
+  ],
+  "completed_acceptance_ids": [],
+  "remaining_acceptance_ids": [
+    "A1",
+    "A2",
+    "A3",
+    "A4"
+  ],
+  "verification": "NOT_RUN: planning only, no application tests executed",
+  "next_bounded_action": "Resolve product decisions before authorizing the first A1 end-to-end implementation slice",
+  "risks": [
+    "Ambiguous quantity and TSV rules prevent final verification criteria"
+  ]
+}

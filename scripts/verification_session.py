@@ -22,6 +22,7 @@ COMMANDS = (
     ('routing', ('scripts/routing_check.py',)),
     ('workflows', ('scripts/workflows.py',)),
     ('bundles', ('scripts/install_skills.py','--list')),
+    ('resources', ('scripts/skill_resources.py',)),
     ('sync', ('scripts/sync_skills.py','--target','.github/skills','--check')),
     ('smoke-interface', ('scripts/runtime_smoke.py','--help')),
     ('compile', ('-m','compileall','-q','scripts','tests')),
@@ -30,6 +31,7 @@ ROOTS = ('.github/skills','.agents/skills','.claude/skills','scripts','tests','s
          '.github/workflows','docs/evidence','docs/guides','docs/assets')
 FILES = ('skills-manifest.json','skill-groups.json','skill-routing.json','workflow-presets.json',
          'skill-bundles.json','README.md','AGENTS.md','CONTRIBUTING.md','.gitattributes',
+         'skill-resources.json',
          'docs/SKILL-USAGE.md','docs/RUNTIME-TEST-MATRIX.md')
 
 
