@@ -1,0 +1,6 @@
+test_timeout_does_not_leave_readers_blocked_on_full_queue (tests.test_process_lifecycle.ProcessLifecycleTests.test_timeout_does_not_leave_readers_blocked_on_full_queue) ... ok
+
+----------------------------------------------------------------------
+Ran 1 test in 1.043s
+
+OK

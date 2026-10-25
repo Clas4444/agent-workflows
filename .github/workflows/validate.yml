@@ -33,6 +33,8 @@ jobs:
         run: python scripts/workflows.py
       - name: Validate need-based installation bundles
         run: python scripts/install_skills.py --list
+      - name: Diagnose managed canonical payloads without host activation
+        run: python scripts/doctor_skills.py --all --target .github/skills
       - name: Verify complete installed resource payloads
         run: python scripts/skill_resources.py
       - name: Check separated metadata and integrity profile

@@ -75,6 +75,18 @@ reports. This avoids Windows cp1252 failures for smart quotes or non-English tex
 Independent verification directories are unique, so repeat grading preserves
 previous challenge artifacts instead of colliding with or deleting them.
 
+Python verification starts with `-I -S -B -X utf8`: inherited Python import settings and
+site hooks cannot replace the grader's startup modules. The standard-library
+unittest framework is imported before the fixture directory is exposed to test
+discovery. Code/review grading selects the preserved `test_calc.py`, not arbitrary
+extra test modules. A code grade requires a nonempty observed suite and a separate
+arithmetic probe whose typed outputs are compared by the trusted parent. Merely
+printing an OK line, exiting zero during import, or replacing child assertions
+does not establish that behavior. This does not sandbox arbitrary submitted code
+or make a finite functional probe exhaustive; the remaining process/network/file
+permissions are still the caller's responsibility. No historical PASS is promoted
+to this new oracle guarantee.
+
 The current fixtures are synthetic and local. Dependency/advisory network
 checks, production migrations, browser journeys and new model-quality grading
 are outside scope. `loop-evaluate` scores supplied outputs; it does not launch

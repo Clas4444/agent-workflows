@@ -1,0 +1,6 @@
+test_timeout_stops_descendant_before_post_timeout_write (tests.test_process_lifecycle.ProcessLifecycleTests.test_timeout_stops_descendant_before_post_timeout_write) ... ok
+
+----------------------------------------------------------------------
+Ran 1 test in 7.047s
+
+OK

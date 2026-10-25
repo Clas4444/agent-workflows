@@ -1,0 +1,124 @@
+{
+  "session_id": "autonomous-3h-20261025T092231Z",
+  "base_sha": "d5953f54717d0213a9f3d110cac2c46a7db483ad",
+  "recorded_at": "2026-10-25T09:57:46.630794+00:00",
+  "scope": "Intermediate batch1 evidence, not completion of threehour session. Raw byte hashes identify private original logs; public hashes are separately indexed. Unit/process/CLI evidence, model runtime NOT_RUN.",
+  "raw_private_hashes": {
+    "timeout-repro-before.json": "e22861c33f2822a470f86a6c4cb3989dd7dec384124e5eee16f91affe77f3efe",
+    "lifecycle-red.txt": "1837c8a9e42605561a4ee36fbdd9d889699f9f70bb7d30e934255fca136a4754",
+    "lifecycle-green-first.txt": "ff883c60ae085ad6de5e86055781f97145afc997069f80c8058c83479d1a3a70",
+    "backpressure-red.txt": "75b0c3de5a6ba5c5854c36c261794d9f3d1c0d799b334567a1b5315438be0393",
+    "backpressure-green.txt": "c1a9d8b77cf65d8ebb4eb90c52e2c96e288e66f0f99b7351ec074f32536c4f60",
+    "exact-base-red.txt": "02c2e4612db8105cf6896ea8b6ba05b14edd9e7d708c1f1e6da9d273719236f0",
+    "launcher-compat-red.txt": "6335f51afa7a0637e6731824912d60b6bae9cdb32d12654ec5339fb75d471086",
+    "launcher-compat-green.txt": "61496def59d8ab045730470982dca73fe1afdcec1cf5b828f15a75b56155b6aa",
+    "normal-descendant-green.txt": "597f5346ffb86964325800feb3c51e7aed0aa5ec4daa383659be919d9a32eb4e",
+    "handle-stress.json": "ef439a6e1a358503a78fe42cd0b58169e51dadeb6c8ffb6455f57fb15e5fae63",
+    "launcher-overhead.json": "9aa6f054baf6c173d3472f388b64d37b3d5cdd8232cbdaba1cee9b63692207c3",
+    "doctor-drift-red.txt": "c7792b2bb1b0fb840f171933b55cefa0b12d908a25fd530fd0fcb361d39102ee",
+    "doctor-green.txt": "75a0879a55feb5c684456693d943e3a5af10f4f607e7cc8b4d09b473ce201bd8",
+    "doctor-integration.txt": "4693a3ebeb59814bebfe1934d9c085ad5e3963851864e14d790e6ddd2fbe7d53",
+    "grader-shadow-before.json": "713437b96423c98afb2c52205563e916fb59237475948f7d7bd705c56a3e90dd",
+    "grader-shadow-after.json": "7ae950df25a325e23d9914543c9fc3ef669a0a5aef6903290b16647f733d46b7",
+    "exact-base-grader-red.txt": "abfbd2056c761244ef758c02513654cc3d1166926fb57e0ca97666096c369e2e",
+    "grader-oracle-red.txt": "eb87cfcd7d09931af87df4a9c35710aa5b1514a691602748421d1b310ffe03ac",
+    "grader-exit-zero-red.txt": "b179b4abcb500328fd05833710cd5a4def4f98b95cf46d51d2af5511d9f66676",
+    "grader-oracle-green.txt": "9e9f9d6c40f4b68a81f601277ccaf5738826eaa9613a36eaa11ea9a4ab0f01a4",
+    "grader-unknown-red.txt": "daecfc0f676df666bb88c2f7a79ca13cf9d97c7dc257877a57d3ae44e150eb8a",
+    "grader-unknown-green.txt": "ce047b71d89a771a5a4c9ae47379cbab6a1d3d3a497f0b5c6ea404b0b3d03ebd",
+    "grader-numeric-compat-red.txt": "663edbc2baa7b44241a8f383061a43de5c713929dfeb85d15dbf484057554a0d",
+    "grader-numeric-compat-green.txt": "f8d49de473c75bbb0d58e5f1e5717007ae889f5363b935b4755b2895cc5d3bca",
+    "grader-logging-compat-red.txt": "6d4d1a130ac56919848e5b6238660b97c26d38d83f44abdedbdee29b2843b377",
+    "grader-logging-compat-green.txt": "6ce1250e0748e33a0c9008a59bd512161fe2e54b1ea263d0b8b068201b0c3878"
+  },
+  "source_identity_at_initial_evidence_checkpoint": {
+    "scripts/run_loop.py": {
+      "raw_local_sha256": "712b065dfc9ff108e3e310ef296ac2f405b14f363d6cb9330e7b41d46ed6a61f",
+      "normalized_text_sha256": "5ba6a4fc1f342992d0040d19811fff0ada815c23a1a27669350a4cd7aeb063d0"
+    },
+    "scripts/smoke/grading.py": {
+      "raw_local_sha256": "e6919449fddb78407dbe3cc279ac59a15e9a928499136d2ff9dfdf9190c0b41c",
+      "normalized_text_sha256": "a39600bf36d964b370140daedb32b4f70ce3a7b3b2d5415efb375f062bb24883"
+    },
+    "scripts/doctor_skills.py": {
+      "raw_local_sha256": "f99cdf90ea4cc6b4e8bd89f99ff0ed90fb1c020b69801ab0398c1b730583168e",
+      "normalized_text_sha256": "f99cdf90ea4cc6b4e8bd89f99ff0ed90fb1c020b69801ab0398c1b730583168e"
+    },
+    "scripts/verification_session.py": {
+      "raw_local_sha256": "bbefe566b1a8ad50c559532a981af8bb543edbc1a7b52b98adc9ca7c522e3b96",
+      "normalized_text_sha256": "bbefe566b1a8ad50c559532a981af8bb543edbc1a7b52b98adc9ca7c522e3b96"
+    },
+    "tests/test_process_lifecycle.py": {
+      "raw_local_sha256": "1f2515c5cb52d7b9d49736f49e7a77880d7c15974f4be7065507859ac12b979d",
+      "normalized_text_sha256": "1f2515c5cb52d7b9d49736f49e7a77880d7c15974f4be7065507859ac12b979d"
+    },
+    "tests/test_doctor_skills.py": {
+      "raw_local_sha256": "d18737a63ca038eb44aabb62a7e2f902c3682abbac30a53d2ee1cb7cb10f1c7f",
+      "normalized_text_sha256": "d18737a63ca038eb44aabb62a7e2f902c3682abbac30a53d2ee1cb7cb10f1c7f"
+    },
+    "tests/test_grader_boundaries.py": {
+      "raw_local_sha256": "14a712eaa90ca8ebbf88a30e632abffa347a91de80f61c87b8b3891655095811",
+      "normalized_text_sha256": "14a712eaa90ca8ebbf88a30e632abffa347a91de80f61c87b8b3891655095811"
+    }
+  },
+  "source_identity_at_numeric_compatibility_checkpoint": {
+    "scripts/run_loop.py": {
+      "raw_local_sha256": "712b065dfc9ff108e3e310ef296ac2f405b14f363d6cb9330e7b41d46ed6a61f",
+      "normalized_text_sha256": "5ba6a4fc1f342992d0040d19811fff0ada815c23a1a27669350a4cd7aeb063d0"
+    },
+    "scripts/smoke/grading.py": {
+      "raw_local_sha256": "16e7168ad3003c003acdc96e28a95a24d0331767ce4dd73a0922c3a007941403",
+      "normalized_text_sha256": "66e9d60d52162cfc880339fa546b293d6397744482af0621beb9e278ab8c66ed"
+    },
+    "scripts/doctor_skills.py": {
+      "raw_local_sha256": "f99cdf90ea4cc6b4e8bd89f99ff0ed90fb1c020b69801ab0398c1b730583168e",
+      "normalized_text_sha256": "f99cdf90ea4cc6b4e8bd89f99ff0ed90fb1c020b69801ab0398c1b730583168e"
+    },
+    "scripts/verification_session.py": {
+      "raw_local_sha256": "bbefe566b1a8ad50c559532a981af8bb543edbc1a7b52b98adc9ca7c522e3b96",
+      "normalized_text_sha256": "bbefe566b1a8ad50c559532a981af8bb543edbc1a7b52b98adc9ca7c522e3b96"
+    },
+    "tests/test_process_lifecycle.py": {
+      "raw_local_sha256": "1f2515c5cb52d7b9d49736f49e7a77880d7c15974f4be7065507859ac12b979d",
+      "normalized_text_sha256": "1f2515c5cb52d7b9d49736f49e7a77880d7c15974f4be7065507859ac12b979d"
+    },
+    "tests/test_doctor_skills.py": {
+      "raw_local_sha256": "d18737a63ca038eb44aabb62a7e2f902c3682abbac30a53d2ee1cb7cb10f1c7f",
+      "normalized_text_sha256": "d18737a63ca038eb44aabb62a7e2f902c3682abbac30a53d2ee1cb7cb10f1c7f"
+    },
+    "tests/test_grader_boundaries.py": {
+      "raw_local_sha256": "e1391369f500bd609aba8fb81af08d106e63b62d55bc646548e8b6daccc56c46",
+      "normalized_text_sha256": "e1391369f500bd609aba8fb81af08d106e63b62d55bc646548e8b6daccc56c46"
+    }
+  },
+  "source_identity_at_logging_compatibility_checkpoint": {
+    "scripts/run_loop.py": {
+      "raw_local_sha256": "712b065dfc9ff108e3e310ef296ac2f405b14f363d6cb9330e7b41d46ed6a61f",
+      "normalized_text_sha256": "5ba6a4fc1f342992d0040d19811fff0ada815c23a1a27669350a4cd7aeb063d0"
+    },
+    "scripts/smoke/grading.py": {
+      "raw_local_sha256": "0bc0d90d95a06a48ca1e019d17a7dd0d71418dae2494c6a8375a7f6169a30578",
+      "normalized_text_sha256": "3640c914662c6bb3cb2dae34774ee9d8cc5e889d98a37ba6dcc52d713def6a98"
+    },
+    "scripts/doctor_skills.py": {
+      "raw_local_sha256": "f99cdf90ea4cc6b4e8bd89f99ff0ed90fb1c020b69801ab0398c1b730583168e",
+      "normalized_text_sha256": "f99cdf90ea4cc6b4e8bd89f99ff0ed90fb1c020b69801ab0398c1b730583168e"
+    },
+    "scripts/verification_session.py": {
+      "raw_local_sha256": "bbefe566b1a8ad50c559532a981af8bb543edbc1a7b52b98adc9ca7c522e3b96",
+      "normalized_text_sha256": "bbefe566b1a8ad50c559532a981af8bb543edbc1a7b52b98adc9ca7c522e3b96"
+    },
+    "tests/test_process_lifecycle.py": {
+      "raw_local_sha256": "1f2515c5cb52d7b9d49736f49e7a77880d7c15974f4be7065507859ac12b979d",
+      "normalized_text_sha256": "1f2515c5cb52d7b9d49736f49e7a77880d7c15974f4be7065507859ac12b979d"
+    },
+    "tests/test_doctor_skills.py": {
+      "raw_local_sha256": "d18737a63ca038eb44aabb62a7e2f902c3682abbac30a53d2ee1cb7cb10f1c7f",
+      "normalized_text_sha256": "d18737a63ca038eb44aabb62a7e2f902c3682abbac30a53d2ee1cb7cb10f1c7f"
+    },
+    "tests/test_grader_boundaries.py": {
+      "raw_local_sha256": "0c94c7afd742904134b68e8999b0b11d98129c05f9cecd5aa9c2bfc4b68b79d2",
+      "normalized_text_sha256": "0c94c7afd742904134b68e8999b0b11d98129c05f9cecd5aa9c2bfc4b68b79d2"
+    }
+  }
+}

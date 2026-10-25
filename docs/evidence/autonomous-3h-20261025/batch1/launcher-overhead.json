@@ -1,0 +1,318 @@
+{
+  "scope": "Actual Windows short-command execution, same interpreter/input, 30paired alternatingorder trials; no modelcalls; performance diagnostic not universalbenchmark",
+  "base_sha": "d5953f54717d0213a9f3d110cac2c46a7db483ad",
+  "summary": {
+    "base": {
+      "n": 30,
+      "median_seconds": 0.022876449998875614,
+      "mean_seconds": 0.023105859999971775
+    },
+    "candidate": {
+      "n": 30,
+      "median_seconds": 0.07334434999211226,
+      "mean_seconds": 0.07440813666811058
+    }
+  },
+  "results": [
+    {
+      "trial": 1,
+      "arm": "base",
+      "seconds": 0.022777699996368028
+    },
+    {
+      "trial": 1,
+      "arm": "candidate",
+      "seconds": 0.0714468000078341
+    },
+    {
+      "trial": 2,
+      "arm": "candidate",
+      "seconds": 0.07260959999985062
+    },
+    {
+      "trial": 2,
+      "arm": "base",
+      "seconds": 0.0211604000069201
+    },
+    {
+      "trial": 3,
+      "arm": "base",
+      "seconds": 0.021052800002507865
+    },
+    {
+      "trial": 3,
+      "arm": "candidate",
+      "seconds": 0.0713679000036791
+    },
+    {
+      "trial": 4,
+      "arm": "candidate",
+      "seconds": 0.07279380000545643
+    },
+    {
+      "trial": 4,
+      "arm": "base",
+      "seconds": 0.02452880000055302
+    },
+    {
+      "trial": 5,
+      "arm": "base",
+      "seconds": 0.023492499996791594
+    },
+    {
+      "trial": 5,
+      "arm": "candidate",
+      "seconds": 0.07860229999641888
+    },
+    {
+      "trial": 6,
+      "arm": "candidate",
+      "seconds": 0.0811797999922419
+    },
+    {
+      "trial": 6,
+      "arm": "base",
+      "seconds": 0.023092100003850646
+    },
+    {
+      "trial": 7,
+      "arm": "base",
+      "seconds": 0.02277130000584293
+    },
+    {
+      "trial": 7,
+      "arm": "candidate",
+      "seconds": 0.07063770000240766
+    },
+    {
+      "trial": 8,
+      "arm": "candidate",
+      "seconds": 0.06991659999766853
+    },
+    {
+      "trial": 8,
+      "arm": "base",
+      "seconds": 0.02201729999796953
+    },
+    {
+      "trial": 9,
+      "arm": "base",
+      "seconds": 0.021212499996181577
+    },
+    {
+      "trial": 9,
+      "arm": "candidate",
+      "seconds": 0.07919519999995828
+    },
+    {
+      "trial": 10,
+      "arm": "candidate",
+      "seconds": 0.07305589999305084
+    },
+    {
+      "trial": 10,
+      "arm": "base",
+      "seconds": 0.02467080000496935
+    },
+    {
+      "trial": 11,
+      "arm": "base",
+      "seconds": 0.02221869998902548
+    },
+    {
+      "trial": 11,
+      "arm": "candidate",
+      "seconds": 0.07398689999536145
+    },
+    {
+      "trial": 12,
+      "arm": "candidate",
+      "seconds": 0.07692409999435768
+    },
+    {
+      "trial": 12,
+      "arm": "base",
+      "seconds": 0.026449299999512732
+    },
+    {
+      "trial": 13,
+      "arm": "base",
+      "seconds": 0.02348629999323748
+    },
+    {
+      "trial": 13,
+      "arm": "candidate",
+      "seconds": 0.07558940000308212
+    },
+    {
+      "trial": 14,
+      "arm": "candidate",
+      "seconds": 0.07222290000936482
+    },
+    {
+      "trial": 14,
+      "arm": "base",
+      "seconds": 0.0252866999944672
+    },
+    {
+      "trial": 15,
+      "arm": "base",
+      "seconds": 0.026537999990978278
+    },
+    {
+      "trial": 15,
+      "arm": "candidate",
+      "seconds": 0.07717679999768734
+    },
+    {
+      "trial": 16,
+      "arm": "candidate",
+      "seconds": 0.07044510000559967
+    },
+    {
+      "trial": 16,
+      "arm": "base",
+      "seconds": 0.023501699994085357
+    },
+    {
+      "trial": 17,
+      "arm": "base",
+      "seconds": 0.023044599991408177
+    },
+    {
+      "trial": 17,
+      "arm": "candidate",
+      "seconds": 0.08243239999865182
+    },
+    {
+      "trial": 18,
+      "arm": "candidate",
+      "seconds": 0.0699289000040153
+    },
+    {
+      "trial": 18,
+      "arm": "base",
+      "seconds": 0.021622799991746433
+    },
+    {
+      "trial": 19,
+      "arm": "base",
+      "seconds": 0.021292999997967854
+    },
+    {
+      "trial": 19,
+      "arm": "candidate",
+      "seconds": 0.07209109999530483
+    },
+    {
+      "trial": 20,
+      "arm": "candidate",
+      "seconds": 0.07370840001385659
+    },
+    {
+      "trial": 20,
+      "arm": "base",
+      "seconds": 0.024128699995344505
+    },
+    {
+      "trial": 21,
+      "arm": "base",
+      "seconds": 0.0229752000013832
+    },
+    {
+      "trial": 21,
+      "arm": "candidate",
+      "seconds": 0.08199400000739843
+    },
+    {
+      "trial": 22,
+      "arm": "candidate",
+      "seconds": 0.07163360000413377
+    },
+    {
+      "trial": 22,
+      "arm": "base",
+      "seconds": 0.02329400001326576
+    },
+    {
+      "trial": 23,
+      "arm": "base",
+      "seconds": 0.021651100003509782
+    },
+    {
+      "trial": 23,
+      "arm": "candidate",
+      "seconds": 0.07363279999117367
+    },
+    {
+      "trial": 24,
+      "arm": "candidate",
+      "seconds": 0.06901120000111405
+    },
+    {
+      "trial": 24,
+      "arm": "base",
+      "seconds": 0.022057800000766292
+    },
+    {
+      "trial": 25,
+      "arm": "base",
+      "seconds": 0.021742199998698197
+    },
+    {
+      "trial": 25,
+      "arm": "candidate",
+      "seconds": 0.06977880001068115
+    },
+    {
+      "trial": 26,
+      "arm": "candidate",
+      "seconds": 0.07723580001038499
+    },
+    {
+      "trial": 26,
+      "arm": "base",
+      "seconds": 0.023991300011402927
+    },
+    {
+      "trial": 27,
+      "arm": "base",
+      "seconds": 0.02625530000659637
+    },
+    {
+      "trial": 27,
+      "arm": "candidate",
+      "seconds": 0.07205010000325274
+    },
+    {
+      "trial": 28,
+      "arm": "candidate",
+      "seconds": 0.07643079999252222
+    },
+    {
+      "trial": 28,
+      "arm": "base",
+      "seconds": 0.022271500012720935
+    },
+    {
+      "trial": 29,
+      "arm": "base",
+      "seconds": 0.022569699998712167
+    },
+    {
+      "trial": 29,
+      "arm": "candidate",
+      "seconds": 0.07376040000235662
+    },
+    {
+      "trial": 30,
+      "arm": "candidate",
+      "seconds": 0.08140500000445172
+    },
+    {
+      "trial": 30,
+      "arm": "base",
+      "seconds": 0.02202170000236947
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "scope": "60 actual short invocations after warmup, Windows handle counts with explicitGC; diagnostic not proof of all kernel resource absence",
+  "trials": 60,
+  "failures": [],
+  "handles_before": 163,
+  "handles_after": 163,
+  "growth": 0,
+  "seconds": 4.312
+}

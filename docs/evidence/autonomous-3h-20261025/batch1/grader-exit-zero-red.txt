@@ -1,0 +1,14 @@
+test_process_exit_zero_cannot_bypass_the_oracle (tests.test_grader_boundaries.GraderBoundaryTests.test_process_exit_zero_cannot_bypass_the_oracle) ... FAIL
+
+======================================================================
+FAIL: test_process_exit_zero_cannot_bypass_the_oracle (tests.test_grader_boundaries.GraderBoundaryTests.test_process_exit_zero_cannot_bypass_the_oracle)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<repository>\tests\test_grader_boundaries.py", line 45, in test_process_exit_zero_cannot_bypass_the_oracle
+    self.assertFalse(all(grade(folder,'loop-code',original).values()))
+AssertionError: True is not false
+
+----------------------------------------------------------------------
+Ran 1 test in 0.089s
+
+FAILED (failures=1)

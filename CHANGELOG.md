@@ -1,5 +1,12 @@
 # Changelog
 
+## 1.9.2-experimental — 2026-10-25
+
+- Contain ordinary continuation-command descendants with Windows jobs or POSIX process groups; cancel blocked stream readers during timeout cleanup. Keep standalone packaged runners synchronized.
+- Harden runtime artifact grading against local test-framework shadowing, injected extra tests, assertion replacement and exit-zero bypasses; independently compare arithmetic results and reject unsupported grader tags.
+- Add a read-only installation doctor that distinguishes absent/incomplete/drifted/blocked managed payloads, detects observed reference drift and never claims native discovery from matching bytes.
+- Add canonical install diagnosis to local/CI gates and document lifecycle scope, launcher overhead and installation differences. The autonomous three-hour session report tracks partial batches separately from final completion.
+
 ## 1.9.1-experimental — 2026-10-25
 
 - Fix a false current-evidence PASS when the checkout has a `__pycache__` ancestor; keep source exclusions relative to the repository.

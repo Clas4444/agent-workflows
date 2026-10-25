@@ -2,7 +2,7 @@
 
 **49 bounded workflows for everyday work and coding agents.** Produce a useful
 result, verify what actually happened, and stop with a clear checkpoint.
-Experimental version **1.9.1-experimental**; instructions do not enforce permissions.
+Experimental version **1.9.2-experimental**; instructions do not enforce permissions.
 
 ## Quick start
 
@@ -22,6 +22,7 @@ you do not need to code to use the everyday workflows.
 
 ```text
 python scripts/install_skills.py --list
+python scripts/doctor_skills.py --bundle work --bundle documents --target "/my/project/.agents/skills"
 python scripts/install_skills.py --bundle work --bundle documents --target "/my/project/.agents/skills"
 python scripts/install_skills.py --bundle work --bundle documents --target "/my/project/.agents/skills" --check
 ```
@@ -31,6 +32,8 @@ commands; an agent can use an available interpreter. A manual full-folder copy
 option is in [install by need](docs/guides/INSTALL-BY-NEED.md). The installer includes
 declared helpers/references/assets, preserves unrelated files and backs up managed
 overwrites. An individual `--skill` selection does not require a bundle registry.
+The optional doctor is read-only: it separates absent, incomplete and changed
+managed payloads without claiming your host discovered or executed them.
 
 Open the selected project in your host, start a fresh session and confirm actual
 skill discovery. `.agents/skills`, `.github/skills` and `.claude/skills` are the
@@ -65,6 +68,7 @@ python scripts/catalog.py
 python scripts/routing_check.py
 python scripts/workflows.py
 python scripts/install_skills.py --list
+python scripts/doctor_skills.py --all --target .github/skills
 python scripts/skill_resources.py
 python scripts/sync_skills.py --target .github/skills --check
 python scripts/runtime_smoke.py --help

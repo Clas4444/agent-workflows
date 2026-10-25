@@ -24,6 +24,7 @@ skill directories remain flat; historical evidence is versioned independently.
 | `scripts/smoke/grading.py` | Artifact grading and bounded verification subprocesses |
 | `scripts/workflows.py`, `workflow-presets.json` | Inventory-checked role guidance and editable SVG |
 | `scripts/install_skills.py`, `scripts/skill_bundles.py`, `skill-bundles.json` | Explicit need-based selection using the existing sync engine |
+| `scripts/doctor_skills.py` | Read-only selected-install diagnosis with observed before/after reference pins; no host discovery or writes |
 | `scripts/verification_session.py` | Fixed gate campaign with session identity and before/after verification-input hashes |
 | `tests/` | Deterministic local tests; no model calls |
 | `schemas/` | Versioned machine-readable descriptions of existing data contracts |

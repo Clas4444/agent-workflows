@@ -1,0 +1,777 @@
+{
+  "version": 1,
+  "reference_version": "1.9.2-experimental",
+  "target": "<repository>\\.github\\skills",
+  "target_exists": true,
+  "selected_skills": [
+    "loop-review",
+    "loop-code",
+    "loop-diagnose",
+    "loop-diagnose-repro",
+    "loop-diagnose-performance",
+    "loop-diagnose-regression",
+    "loop-research",
+    "loop-research-repo",
+    "loop-research-tools",
+    "loop-test",
+    "loop-test-unit",
+    "loop-test-integration",
+    "loop-test-coverage",
+    "loop-docs",
+    "loop-skill-create",
+    "loop-orchestrate",
+    "loop-prompt",
+    "loop-debug",
+    "loop-security",
+    "loop-refactor",
+    "loop-ci",
+    "loop-release",
+    "loop-plan",
+    "loop-dependencies",
+    "loop-migrate",
+    "loop-test-e2e",
+    "loop-evaluate",
+    "loop-test-adversarial",
+    "loop-test-compatibility",
+    "loop-mcp-design",
+    "loop-mcp-test",
+    "loop-mcp-security",
+    "loop-deploy",
+    "loop-observe",
+    "loop-context",
+    "loop-handoff",
+    "loop-workflow-project",
+    "loop-workflow-pr",
+    "loop-workflow-incident",
+    "loop-write",
+    "loop-summarize",
+    "loop-meeting",
+    "loop-organize",
+    "loop-decide",
+    "loop-learn",
+    "loop-work",
+    "loop-files",
+    "loop-table",
+    "loop-document"
+  ],
+  "counts": {
+    "CURRENT": 49,
+    "NOT_INSTALLED": 0,
+    "INCOMPLETE": 0,
+    "DRIFTED": 0,
+    "BLOCKED": 0
+  },
+  "status": "PASS",
+  "reference_unchanged": true,
+  "reference_errors": [],
+  "reference_inputs": {
+    "skills-manifest.json": "665726d319cd4172de463647d2bca1f4eb8b369be81978963371e03ad5ce7755",
+    "skill-resources.json": "6b117d1fb8edc89fd7255d56b2c5bb2d359fbe66783e8b173489a8494e876197",
+    ".github/skills/loop-review/SKILL.md": "fd77f2fc1f49b40af545b8fb62cc15368e257a07bf703dff2a59a273d65c70f7",
+    ".github/skills/loop-code/SKILL.md": "d7e2a9be0e8331c0e92c26b89630a02914e53a879aa9dab1fd3cc00d1a5c1b1c",
+    ".github/skills/loop-diagnose/SKILL.md": "39ada952dfb052c0fa3ae5063a43f54ce8d03b58d92f7dadefa273b25d46ff2a",
+    ".github/skills/loop-diagnose-repro/SKILL.md": "c9ed4cae2798bdf3d1b2e0d5c200a65f549e432654eab1606a88bd1ee6c47497",
+    ".github/skills/loop-diagnose-performance/SKILL.md": "a5a814e6ec8acc4c01dc2eb4f8551f62de108ff84c63f40d731458f99e77fe50",
+    ".github/skills/loop-diagnose-regression/SKILL.md": "e62c4fae287007212e4e61b8941615d4b1378ba64814b5f1ab5884ac05cfd3c3",
+    ".github/skills/loop-research/SKILL.md": "de7c44ee288766805e7853c75f19fe185bb0e9f554c43515456187325b1155f3",
+    ".github/skills/loop-research-repo/SKILL.md": "c5c8f5fe40689d5270712f1ba9caede4809e60143614340cfb6b8cf9af4f681b",
+    ".github/skills/loop-research-tools/SKILL.md": "338b861e9d0e87b55cc2f06319f80434f5a81ce2df8eac6aad67ff1383505c07",
+    ".github/skills/loop-test/SKILL.md": "26f5e9e1c0e6e1e7189a9c6cdc54f3c4fef26512d918a365f8d242fa0c33bded",
+    ".github/skills/loop-test-unit/SKILL.md": "0d67534872978e57a64b7f3e7e27b50a45eef0a46a698300ddcd5bc74e0ba860",
+    ".github/skills/loop-test-integration/SKILL.md": "4400b6e7cfac60a4bf7937af12f1787e5403ae8c7e3a60240842d8ce8f7feeca",
+    ".github/skills/loop-test-coverage/SKILL.md": "62ce3d888a8993405781a60f89e77c50d768b3b722c563f55680d46df5a28fc4",
+    ".github/skills/loop-docs/SKILL.md": "1cd2b298658b65aa31a99b3e8f1b9707e6b7a8d0906eee937290c6a2563eeae5",
+    ".github/skills/loop-skill-create/SKILL.md": "7e14f9df43616ec87d567a533be8fed85992aa7c9c3cb57c81aaf962ff01fb16",
+    ".github/skills/loop-orchestrate/SKILL.md": "6de70c4db555697b4f4579e0b3c28aaddc457b9349ee0c88662052347ceca57f",
+    "scripts/run_loop.py": "712b065dfc9ff108e3e310ef296ac2f405b14f363d6cb9330e7b41d46ed6a61f",
+    ".github/skills/loop-prompt/SKILL.md": "5f15b28c67618c20e17cbec97594a1144772dd145dbd1c8ff759decf3b2e9343",
+    ".github/skills/loop-debug/SKILL.md": "b2d020f5f0a9d4f9405554162809f8687a843d9835c99b24bf4a645514b06254",
+    ".github/skills/loop-security/SKILL.md": "801ca595e4326d62f58f553a797bdeac4dacdb6c72f582d129749afb0b94acd9",
+    ".github/skills/loop-refactor/SKILL.md": "68089cdf37db0a6b418fcf90914281f0fccbba1d8f496dc0e1bdebc171f55909",
+    ".github/skills/loop-ci/SKILL.md": "a5e3f2bf27483036f31d7187b740751039a7f5425545a71a260512b79fa4133d",
+    ".github/skills/loop-release/SKILL.md": "a32d67afd5fd7389bdbc3dd5e2371ae47e98b253bbf1b030173f14b0b5640cc3",
+    ".github/skills/loop-plan/SKILL.md": "340e53253ce1d9f5019406a89e70a03c0cfdaa0ef22a98b5750e38298ed60e4e",
+    ".github/skills/loop-dependencies/SKILL.md": "b3774bb3fef47d32c3eca51a6379e73010bf85fb97b8aaca3e93cac2e4f481ee",
+    ".github/skills/loop-migrate/SKILL.md": "93647651f0cf60c3496e5afb14792ef037e5d179f0a9c1fc7411e3504f31faac",
+    ".github/skills/loop-test-e2e/SKILL.md": "11abd5eeae62ef4575c5445c0a066e36e6e393a17096b485a96075c66eecbb2a",
+    ".github/skills/loop-evaluate/SKILL.md": "f8c33737455384f4632a7c8252b8f37336832e05343a6e27be128dd025658465",
+    ".github/skills/loop-test-adversarial/SKILL.md": "938d5f8f14b7bb74c17bd79c4948d346b2d998224e5f57e88561d55e9018f9fb",
+    ".github/skills/loop-test-compatibility/SKILL.md": "f94f116ac80815ffb54a4679bbeb6667b07e1ed02b043186cce9e37f93c640e6",
+    ".github/skills/loop-mcp-design/SKILL.md": "7b2cd975445425cde1faeafca99fef470901412445a25d6b77e39d37373c3b4d",
+    ".github/skills/loop-mcp-test/SKILL.md": "95423acc31d6ced6433d537466f4a863ee21e973258d365245937de953826e78",
+    ".github/skills/loop-mcp-security/SKILL.md": "85b71f20fa085182f4554366c2aa60e54fe3c65eba59b5260cf4e95147d76af6",
+    ".github/skills/loop-deploy/SKILL.md": "2a085b2f76339a8564f55d97d2dde17303c3870c9fc801eba9360d1a77a155cd",
+    ".github/skills/loop-observe/SKILL.md": "c23265c07ef22cd72975e546751a5a35a48f07117b063fc03b2fd1b81602db92",
+    ".github/skills/loop-context/SKILL.md": "4f346249334469257dc41f65343edf44b0df43805e1d6ba28dcbc287f33f7e2a",
+    ".github/skills/loop-handoff/SKILL.md": "c3868c4316de7bcc7c5a3fc481e474c2c9de781c120dd5547a12b974cddc7ba5",
+    ".github/skills/loop-workflow-project/SKILL.md": "4fa2b71ef49aaed113397dec4e61175e5d83c1103894cb039698173b3c86ae60",
+    ".github/skills/loop-workflow-pr/SKILL.md": "7d3f83a9e9a2c912923ecc928d05e6bef03cb586fcc513c6ee3f96e6893801e8",
+    ".github/skills/loop-workflow-incident/SKILL.md": "9ae80b5d85b66dd2b586e176acb9901bee3fbe6d63967cb404cce5b33f7b4864",
+    ".github/skills/loop-write/SKILL.md": "96961742b9819830039e90beca14680cb8854768482918dbcb18e7f0f67379bd",
+    ".github/skills/loop-summarize/SKILL.md": "f09d25beea324fe67529ef9261fe5c3244a882e4551e5e606b705b486c32d6b5",
+    ".github/skills/loop-meeting/SKILL.md": "80760f6ba3011b4d45ac027b053f59c6bfa17a85e7bd7e73b81ac2ba6d815005",
+    ".github/skills/loop-organize/SKILL.md": "32aebd2e873256ddd5627b025611af337a1ac935d7985b633f5a4f4827f0ed6a",
+    ".github/skills/loop-decide/SKILL.md": "9f229026d9b12a842e98de57cbba40d566f05c80411847b721a8f12906713662",
+    ".github/skills/loop-learn/SKILL.md": "6f0e3e322769b523dd82c24af04c447d93c54bfdc9867191b702f8074c4260ac",
+    ".github/skills/loop-work/SKILL.md": "a37a7d03e2a8b3a4eb296687c24bbf0a745e59b8d1ae147f6372c21bba6fb11f",
+    ".github/skills/loop-work/assets/work-checkpoint.json": "0700311dbff32f811547e57c373eef873d57bcbbd601504b00b4994950afa675",
+    ".github/skills/loop-work/references/work-ledger.md": "79bd735bd75a89a4b85158f0119fedbc57a3f40c570a602f45952d00ca5ae018",
+    ".github/skills/loop-files/SKILL.md": "3058dacdb6bcd5fc9ba6a93b331aac965f359200b21b5933af691d9dd678a6e8",
+    ".github/skills/loop-files/references/file-plan.md": "ca52ca88c469155b55e42db7a68012b1268f97eadeeb1063a094178a4ff49d19",
+    ".github/skills/loop-files/scripts/file_plan.py": "84852e323ca2970f07b10f16d3b7035903383beb6dd5bcd59a994c202b7e4489",
+    ".github/skills/loop-table/SKILL.md": "b5eb9445af6828a9f723fa82c311010cad83ce10c83cae43b4c5f81ae09a0c4b",
+    ".github/skills/loop-table/references/table-contract.md": "7cd24c950476b064c86821a5e692134c1599be7fc2010466274192a17151e421",
+    ".github/skills/loop-table/scripts/table_check.py": "18977d82eedb73f2629ee938dd0a0fc4b1fb96d934458e74b0b62e3be5d9b04c",
+    ".github/skills/loop-document/SKILL.md": "d25d126ae69d34102f31a901a5c9fb611a64f0c05efd869b263923309890c0dd",
+    ".github/skills/loop-document/references/format-gates.md": "d9fe510bfb3d52a2cffa3f339ab506e242502c41d950d0626969c935215ce163"
+  },
+  "skills": [
+    {
+      "skill": "loop-review",
+      "status": "CURRENT",
+      "payloads": [
+        {
+          "path": "SKILL.md",
+          "status": "CURRENT",
+          "expected_sha256": "fd77f2fc1f49b40af545b8fb62cc15368e257a07bf703dff2a59a273d65c70f7",
+          "observed_sha256": "fd77f2fc1f49b40af545b8fb62cc15368e257a07bf703dff2a59a273d65c70f7"
+        }
+      ]
+    },
+    {
+      "skill": "loop-code",
+      "status": "CURRENT",
+      "payloads": [
+        {
+          "path": "SKILL.md",
+          "status": "CURRENT",
+          "expected_sha256": "d7e2a9be0e8331c0e92c26b89630a02914e53a879aa9dab1fd3cc00d1a5c1b1c",
+          "observed_sha256": "d7e2a9be0e8331c0e92c26b89630a02914e53a879aa9dab1fd3cc00d1a5c1b1c"
+        }
+      ]
+    },
+    {
+      "skill": "loop-diagnose",
+      "status": "CURRENT",
+      "payloads": [
+        {
+          "path": "SKILL.md",
+          "status": "CURRENT",
+          "expected_sha256": "39ada952dfb052c0fa3ae5063a43f54ce8d03b58d92f7dadefa273b25d46ff2a",
+          "observed_sha256": "39ada952dfb052c0fa3ae5063a43f54ce8d03b58d92f7dadefa273b25d46ff2a"
+        }
+      ]
+    },
+    {
+      "skill": "loop-diagnose-repro",
+      "status": "CURRENT",
+      "payloads": [
+        {
+          "path": "SKILL.md",
+          "status": "CURRENT",
+          "expected_sha256": "c9ed4cae2798bdf3d1b2e0d5c200a65f549e432654eab1606a88bd1ee6c47497",
+          "observed_sha256": "c9ed4cae2798bdf3d1b2e0d5c200a65f549e432654eab1606a88bd1ee6c47497"
+        }
+      ]
+    },
+    {
+      "skill": "loop-diagnose-performance",
+      "status": "CURRENT",
+      "payloads": [
+        {
+          "path": "SKILL.md",
+          "status": "CURRENT",
+          "expected_sha256": "a5a814e6ec8acc4c01dc2eb4f8551f62de108ff84c63f40d731458f99e77fe50",
+          "observed_sha256": "a5a814e6ec8acc4c01dc2eb4f8551f62de108ff84c63f40d731458f99e77fe50"
+        }
+      ]
+    },
+    {
+      "skill": "loop-diagnose-regression",
+      "status": "CURRENT",
+      "payloads": [
+        {
+          "path": "SKILL.md",
+          "status": "CURRENT",
+          "expected_sha256": "e62c4fae287007212e4e61b8941615d4b1378ba64814b5f1ab5884ac05cfd3c3",
+          "observed_sha256": "e62c4fae287007212e4e61b8941615d4b1378ba64814b5f1ab5884ac05cfd3c3"
+        }
+      ]
+    },
+    {
+      "skill": "loop-research",
+      "status": "CURRENT",
+      "payloads": [
+        {
+          "path": "SKILL.md",
+          "status": "CURRENT",
+          "expected_sha256": "de7c44ee288766805e7853c75f19fe185bb0e9f554c43515456187325b1155f3",
+          "observed_sha256": "de7c44ee288766805e7853c75f19fe185bb0e9f554c43515456187325b1155f3"
+        }
+      ]
+    },
+    {
+      "skill": "loop-research-repo",
+      "status": "CURRENT",
+      "payloads": [
+        {
+          "path": "SKILL.md",
+          "status": "CURRENT",
+          "expected_sha256": "c5c8f5fe40689d5270712f1ba9caede4809e60143614340cfb6b8cf9af4f681b",
+          "observed_sha256": "c5c8f5fe40689d5270712f1ba9caede4809e60143614340cfb6b8cf9af4f681b"
+        }
+      ]
+    },
+    {
+      "skill": "loop-research-tools",
+      "status": "CURRENT",
+      "payloads": [
+        {
+          "path": "SKILL.md",
+          "status": "CURRENT",
+          "expected_sha256": "338b861e9d0e87b55cc2f06319f80434f5a81ce2df8eac6aad67ff1383505c07",
+          "observed_sha256": "338b861e9d0e87b55cc2f06319f80434f5a81ce2df8eac6aad67ff1383505c07"
+        }
+      ]
+    },
+    {
+      "skill": "loop-test",
+      "status": "CURRENT",
+      "payloads": [
+        {
+          "path": "SKILL.md",
+          "status": "CURRENT",
+          "expected_sha256": "26f5e9e1c0e6e1e7189a9c6cdc54f3c4fef26512d918a365f8d242fa0c33bded",
+          "observed_sha256": "26f5e9e1c0e6e1e7189a9c6cdc54f3c4fef26512d918a365f8d242fa0c33bded"
+        }
+      ]
+    },
+    {
+      "skill": "loop-test-unit",
+      "status": "CURRENT",
+      "payloads": [
+        {
+          "path": "SKILL.md",
+          "status": "CURRENT",
+          "expected_sha256": "0d67534872978e57a64b7f3e7e27b50a45eef0a46a698300ddcd5bc74e0ba860",
+          "observed_sha256": "0d67534872978e57a64b7f3e7e27b50a45eef0a46a698300ddcd5bc74e0ba860"
+        }
+      ]
+    },
+    {
+      "skill": "loop-test-integration",
+      "status": "CURRENT",
+      "payloads": [
+        {
+          "path": "SKILL.md",
+          "status": "CURRENT",
+          "expected_sha256": "4400b6e7cfac60a4bf7937af12f1787e5403ae8c7e3a60240842d8ce8f7feeca",
+          "observed_sha256": "4400b6e7cfac60a4bf7937af12f1787e5403ae8c7e3a60240842d8ce8f7feeca"
+        }
+      ]
+    },
+    {
+      "skill": "loop-test-coverage",
+      "status": "CURRENT",
+      "payloads": [
+        {
+          "path": "SKILL.md",
+          "status": "CURRENT",
+          "expected_sha256": "62ce3d888a8993405781a60f89e77c50d768b3b722c563f55680d46df5a28fc4",
+          "observed_sha256": "62ce3d888a8993405781a60f89e77c50d768b3b722c563f55680d46df5a28fc4"
+        }
+      ]
+    },
+    {
+      "skill": "loop-docs",
+      "status": "CURRENT",
+      "payloads": [
+        {
+          "path": "SKILL.md",
+          "status": "CURRENT",
+          "expected_sha256": "1cd2b298658b65aa31a99b3e8f1b9707e6b7a8d0906eee937290c6a2563eeae5",
+          "observed_sha256": "1cd2b298658b65aa31a99b3e8f1b9707e6b7a8d0906eee937290c6a2563eeae5"
+        }
+      ]
+    },
+    {
+      "skill": "loop-skill-create",
+      "status": "CURRENT",
+      "payloads": [
+        {
+          "path": "SKILL.md",
+          "status": "CURRENT",
+          "expected_sha256": "7e14f9df43616ec87d567a533be8fed85992aa7c9c3cb57c81aaf962ff01fb16",
+          "observed_sha256": "7e14f9df43616ec87d567a533be8fed85992aa7c9c3cb57c81aaf962ff01fb16"
+        }
+      ]
+    },
+    {
+      "skill": "loop-orchestrate",
+      "status": "CURRENT",
+      "payloads": [
+        {
+          "path": "SKILL.md",
+          "status": "CURRENT",
+          "expected_sha256": "6de70c4db555697b4f4579e0b3c28aaddc457b9349ee0c88662052347ceca57f",
+          "observed_sha256": "6de70c4db555697b4f4579e0b3c28aaddc457b9349ee0c88662052347ceca57f"
+        },
+        {
+          "path": "scripts/run_loop.py",
+          "status": "CURRENT",
+          "expected_sha256": "712b065dfc9ff108e3e310ef296ac2f405b14f363d6cb9330e7b41d46ed6a61f",
+          "observed_sha256": "712b065dfc9ff108e3e310ef296ac2f405b14f363d6cb9330e7b41d46ed6a61f"
+        }
+      ]
+    },
+    {
+      "skill": "loop-prompt",
+      "status": "CURRENT",
+      "payloads": [
+        {
+          "path": "SKILL.md",
+          "status": "CURRENT",
+          "expected_sha256": "5f15b28c67618c20e17cbec97594a1144772dd145dbd1c8ff759decf3b2e9343",
+          "observed_sha256": "5f15b28c67618c20e17cbec97594a1144772dd145dbd1c8ff759decf3b2e9343"
+        },
+        {
+          "path": "scripts/run_loop.py",
+          "status": "CURRENT",
+          "expected_sha256": "712b065dfc9ff108e3e310ef296ac2f405b14f363d6cb9330e7b41d46ed6a61f",
+          "observed_sha256": "712b065dfc9ff108e3e310ef296ac2f405b14f363d6cb9330e7b41d46ed6a61f"
+        }
+      ]
+    },
+    {
+      "skill": "loop-debug",
+      "status": "CURRENT",
+      "payloads": [
+        {
+          "path": "SKILL.md",
+          "status": "CURRENT",
+          "expected_sha256": "b2d020f5f0a9d4f9405554162809f8687a843d9835c99b24bf4a645514b06254",
+          "observed_sha256": "b2d020f5f0a9d4f9405554162809f8687a843d9835c99b24bf4a645514b06254"
+        }
+      ]
+    },
+    {
+      "skill": "loop-security",
+      "status": "CURRENT",
+      "payloads": [
+        {
+          "path": "SKILL.md",
+          "status": "CURRENT",
+          "expected_sha256": "801ca595e4326d62f58f553a797bdeac4dacdb6c72f582d129749afb0b94acd9",
+          "observed_sha256": "801ca595e4326d62f58f553a797bdeac4dacdb6c72f582d129749afb0b94acd9"
+        }
+      ]
+    },
+    {
+      "skill": "loop-refactor",
+      "status": "CURRENT",
+      "payloads": [
+        {
+          "path": "SKILL.md",
+          "status": "CURRENT",
+          "expected_sha256": "68089cdf37db0a6b418fcf90914281f0fccbba1d8f496dc0e1bdebc171f55909",
+          "observed_sha256": "68089cdf37db0a6b418fcf90914281f0fccbba1d8f496dc0e1bdebc171f55909"
+        }
+      ]
+    },
+    {
+      "skill": "loop-ci",
+      "status": "CURRENT",
+      "payloads": [
+        {
+          "path": "SKILL.md",
+          "status": "CURRENT",
+          "expected_sha256": "a5e3f2bf27483036f31d7187b740751039a7f5425545a71a260512b79fa4133d",
+          "observed_sha256": "a5e3f2bf27483036f31d7187b740751039a7f5425545a71a260512b79fa4133d"
+        }
+      ]
+    },
+    {
+      "skill": "loop-release",
+      "status": "CURRENT",
+      "payloads": [
+        {
+          "path": "SKILL.md",
+          "status": "CURRENT",
+          "expected_sha256": "a32d67afd5fd7389bdbc3dd5e2371ae47e98b253bbf1b030173f14b0b5640cc3",
+          "observed_sha256": "a32d67afd5fd7389bdbc3dd5e2371ae47e98b253bbf1b030173f14b0b5640cc3"
+        }
+      ]
+    },
+    {
+      "skill": "loop-plan",
+      "status": "CURRENT",
+      "payloads": [
+        {
+          "path": "SKILL.md",
+          "status": "CURRENT",
+          "expected_sha256": "340e53253ce1d9f5019406a89e70a03c0cfdaa0ef22a98b5750e38298ed60e4e",
+          "observed_sha256": "340e53253ce1d9f5019406a89e70a03c0cfdaa0ef22a98b5750e38298ed60e4e"
+        }
+      ]
+    },
+    {
+      "skill": "loop-dependencies",
+      "status": "CURRENT",
+      "payloads": [
+        {
+          "path": "SKILL.md",
+          "status": "CURRENT",
+          "expected_sha256": "b3774bb3fef47d32c3eca51a6379e73010bf85fb97b8aaca3e93cac2e4f481ee",
+          "observed_sha256": "b3774bb3fef47d32c3eca51a6379e73010bf85fb97b8aaca3e93cac2e4f481ee"
+        }
+      ]
+    },
+    {
+      "skill": "loop-migrate",
+      "status": "CURRENT",
+      "payloads": [
+        {
+          "path": "SKILL.md",
+          "status": "CURRENT",
+          "expected_sha256": "93647651f0cf60c3496e5afb14792ef037e5d179f0a9c1fc7411e3504f31faac",
+          "observed_sha256": "93647651f0cf60c3496e5afb14792ef037e5d179f0a9c1fc7411e3504f31faac"
+        }
+      ]
+    },
+    {
+      "skill": "loop-test-e2e",
+      "status": "CURRENT",
+      "payloads": [
+        {
+          "path": "SKILL.md",
+          "status": "CURRENT",
+          "expected_sha256": "11abd5eeae62ef4575c5445c0a066e36e6e393a17096b485a96075c66eecbb2a",
+          "observed_sha256": "11abd5eeae62ef4575c5445c0a066e36e6e393a17096b485a96075c66eecbb2a"
+        }
+      ]
+    },
+    {
+      "skill": "loop-evaluate",
+      "status": "CURRENT",
+      "payloads": [
+        {
+          "path": "SKILL.md",
+          "status": "CURRENT",
+          "expected_sha256": "f8c33737455384f4632a7c8252b8f37336832e05343a6e27be128dd025658465",
+          "observed_sha256": "f8c33737455384f4632a7c8252b8f37336832e05343a6e27be128dd025658465"
+        }
+      ]
+    },
+    {
+      "skill": "loop-test-adversarial",
+      "status": "CURRENT",
+      "payloads": [
+        {
+          "path": "SKILL.md",
+          "status": "CURRENT",
+          "expected_sha256": "938d5f8f14b7bb74c17bd79c4948d346b2d998224e5f57e88561d55e9018f9fb",
+          "observed_sha256": "938d5f8f14b7bb74c17bd79c4948d346b2d998224e5f57e88561d55e9018f9fb"
+        }
+      ]
+    },
+    {
+      "skill": "loop-test-compatibility",
+      "status": "CURRENT",
+      "payloads": [
+        {
+          "path": "SKILL.md",
+          "status": "CURRENT",
+          "expected_sha256": "f94f116ac80815ffb54a4679bbeb6667b07e1ed02b043186cce9e37f93c640e6",
+          "observed_sha256": "f94f116ac80815ffb54a4679bbeb6667b07e1ed02b043186cce9e37f93c640e6"
+        }
+      ]
+    },
+    {
+      "skill": "loop-mcp-design",
+      "status": "CURRENT",
+      "payloads": [
+        {
+          "path": "SKILL.md",
+          "status": "CURRENT",
+          "expected_sha256": "7b2cd975445425cde1faeafca99fef470901412445a25d6b77e39d37373c3b4d",
+          "observed_sha256": "7b2cd975445425cde1faeafca99fef470901412445a25d6b77e39d37373c3b4d"
+        }
+      ]
+    },
+    {
+      "skill": "loop-mcp-test",
+      "status": "CURRENT",
+      "payloads": [
+        {
+          "path": "SKILL.md",
+          "status": "CURRENT",
+          "expected_sha256": "95423acc31d6ced6433d537466f4a863ee21e973258d365245937de953826e78",
+          "observed_sha256": "95423acc31d6ced6433d537466f4a863ee21e973258d365245937de953826e78"
+        }
+      ]
+    },
+    {
+      "skill": "loop-mcp-security",
+      "status": "CURRENT",
+      "payloads": [
+        {
+          "path": "SKILL.md",
+          "status": "CURRENT",
+          "expected_sha256": "85b71f20fa085182f4554366c2aa60e54fe3c65eba59b5260cf4e95147d76af6",
+          "observed_sha256": "85b71f20fa085182f4554366c2aa60e54fe3c65eba59b5260cf4e95147d76af6"
+        }
+      ]
+    },
+    {
+      "skill": "loop-deploy",
+      "status": "CURRENT",
+      "payloads": [
+        {
+          "path": "SKILL.md",
+          "status": "CURRENT",
+          "expected_sha256": "2a085b2f76339a8564f55d97d2dde17303c3870c9fc801eba9360d1a77a155cd",
+          "observed_sha256": "2a085b2f76339a8564f55d97d2dde17303c3870c9fc801eba9360d1a77a155cd"
+        }
+      ]
+    },
+    {
+      "skill": "loop-observe",
+      "status": "CURRENT",
+      "payloads": [
+        {
+          "path": "SKILL.md",
+          "status": "CURRENT",
+          "expected_sha256": "c23265c07ef22cd72975e546751a5a35a48f07117b063fc03b2fd1b81602db92",
+          "observed_sha256": "c23265c07ef22cd72975e546751a5a35a48f07117b063fc03b2fd1b81602db92"
+        }
+      ]
+    },
+    {
+      "skill": "loop-context",
+      "status": "CURRENT",
+      "payloads": [
+        {
+          "path": "SKILL.md",
+          "status": "CURRENT",
+          "expected_sha256": "4f346249334469257dc41f65343edf44b0df43805e1d6ba28dcbc287f33f7e2a",
+          "observed_sha256": "4f346249334469257dc41f65343edf44b0df43805e1d6ba28dcbc287f33f7e2a"
+        }
+      ]
+    },
+    {
+      "skill": "loop-handoff",
+      "status": "CURRENT",
+      "payloads": [
+        {
+          "path": "SKILL.md",
+          "status": "CURRENT",
+          "expected_sha256": "c3868c4316de7bcc7c5a3fc481e474c2c9de781c120dd5547a12b974cddc7ba5",
+          "observed_sha256": "c3868c4316de7bcc7c5a3fc481e474c2c9de781c120dd5547a12b974cddc7ba5"
+        }
+      ]
+    },
+    {
+      "skill": "loop-workflow-project",
+      "status": "CURRENT",
+      "payloads": [
+        {
+          "path": "SKILL.md",
+          "status": "CURRENT",
+          "expected_sha256": "4fa2b71ef49aaed113397dec4e61175e5d83c1103894cb039698173b3c86ae60",
+          "observed_sha256": "4fa2b71ef49aaed113397dec4e61175e5d83c1103894cb039698173b3c86ae60"
+        }
+      ]
+    },
+    {
+      "skill": "loop-workflow-pr",
+      "status": "CURRENT",
+      "payloads": [
+        {
+          "path": "SKILL.md",
+          "status": "CURRENT",
+          "expected_sha256": "7d3f83a9e9a2c912923ecc928d05e6bef03cb586fcc513c6ee3f96e6893801e8",
+          "observed_sha256": "7d3f83a9e9a2c912923ecc928d05e6bef03cb586fcc513c6ee3f96e6893801e8"
+        }
+      ]
+    },
+    {
+      "skill": "loop-workflow-incident",
+      "status": "CURRENT",
+      "payloads": [
+        {
+          "path": "SKILL.md",
+          "status": "CURRENT",
+          "expected_sha256": "9ae80b5d85b66dd2b586e176acb9901bee3fbe6d63967cb404cce5b33f7b4864",
+          "observed_sha256": "9ae80b5d85b66dd2b586e176acb9901bee3fbe6d63967cb404cce5b33f7b4864"
+        }
+      ]
+    },
+    {
+      "skill": "loop-write",
+      "status": "CURRENT",
+      "payloads": [
+        {
+          "path": "SKILL.md",
+          "status": "CURRENT",
+          "expected_sha256": "96961742b9819830039e90beca14680cb8854768482918dbcb18e7f0f67379bd",
+          "observed_sha256": "96961742b9819830039e90beca14680cb8854768482918dbcb18e7f0f67379bd"
+        }
+      ]
+    },
+    {
+      "skill": "loop-summarize",
+      "status": "CURRENT",
+      "payloads": [
+        {
+          "path": "SKILL.md",
+          "status": "CURRENT",
+          "expected_sha256": "f09d25beea324fe67529ef9261fe5c3244a882e4551e5e606b705b486c32d6b5",
+          "observed_sha256": "f09d25beea324fe67529ef9261fe5c3244a882e4551e5e606b705b486c32d6b5"
+        }
+      ]
+    },
+    {
+      "skill": "loop-meeting",
+      "status": "CURRENT",
+      "payloads": [
+        {
+          "path": "SKILL.md",
+          "status": "CURRENT",
+          "expected_sha256": "80760f6ba3011b4d45ac027b053f59c6bfa17a85e7bd7e73b81ac2ba6d815005",
+          "observed_sha256": "80760f6ba3011b4d45ac027b053f59c6bfa17a85e7bd7e73b81ac2ba6d815005"
+        }
+      ]
+    },
+    {
+      "skill": "loop-organize",
+      "status": "CURRENT",
+      "payloads": [
+        {
+          "path": "SKILL.md",
+          "status": "CURRENT",
+          "expected_sha256": "32aebd2e873256ddd5627b025611af337a1ac935d7985b633f5a4f4827f0ed6a",
+          "observed_sha256": "32aebd2e873256ddd5627b025611af337a1ac935d7985b633f5a4f4827f0ed6a"
+        }
+      ]
+    },
+    {
+      "skill": "loop-decide",
+      "status": "CURRENT",
+      "payloads": [
+        {
+          "path": "SKILL.md",
+          "status": "CURRENT",
+          "expected_sha256": "9f229026d9b12a842e98de57cbba40d566f05c80411847b721a8f12906713662",
+          "observed_sha256": "9f229026d9b12a842e98de57cbba40d566f05c80411847b721a8f12906713662"
+        }
+      ]
+    },
+    {
+      "skill": "loop-learn",
+      "status": "CURRENT",
+      "payloads": [
+        {
+          "path": "SKILL.md",
+          "status": "CURRENT",
+          "expected_sha256": "6f0e3e322769b523dd82c24af04c447d93c54bfdc9867191b702f8074c4260ac",
+          "observed_sha256": "6f0e3e322769b523dd82c24af04c447d93c54bfdc9867191b702f8074c4260ac"
+        }
+      ]
+    },
+    {
+      "skill": "loop-work",
+      "status": "CURRENT",
+      "payloads": [
+        {
+          "path": "SKILL.md",
+          "status": "CURRENT",
+          "expected_sha256": "a37a7d03e2a8b3a4eb296687c24bbf0a745e59b8d1ae147f6372c21bba6fb11f",
+          "observed_sha256": "a37a7d03e2a8b3a4eb296687c24bbf0a745e59b8d1ae147f6372c21bba6fb11f"
+        },
+        {
+          "path": "assets/work-checkpoint.json",
+          "status": "CURRENT",
+          "expected_sha256": "0700311dbff32f811547e57c373eef873d57bcbbd601504b00b4994950afa675",
+          "observed_sha256": "0700311dbff32f811547e57c373eef873d57bcbbd601504b00b4994950afa675"
+        },
+        {
+          "path": "references/work-ledger.md",
+          "status": "CURRENT",
+          "expected_sha256": "79bd735bd75a89a4b85158f0119fedbc57a3f40c570a602f45952d00ca5ae018",
+          "observed_sha256": "79bd735bd75a89a4b85158f0119fedbc57a3f40c570a602f45952d00ca5ae018"
+        }
+      ]
+    },
+    {
+      "skill": "loop-files",
+      "status": "CURRENT",
+      "payloads": [
+        {
+          "path": "SKILL.md",
+          "status": "CURRENT",
+          "expected_sha256": "3058dacdb6bcd5fc9ba6a93b331aac965f359200b21b5933af691d9dd678a6e8",
+          "observed_sha256": "3058dacdb6bcd5fc9ba6a93b331aac965f359200b21b5933af691d9dd678a6e8"
+        },
+        {
+          "path": "references/file-plan.md",
+          "status": "CURRENT",
+          "expected_sha256": "ca52ca88c469155b55e42db7a68012b1268f97eadeeb1063a094178a4ff49d19",
+          "observed_sha256": "ca52ca88c469155b55e42db7a68012b1268f97eadeeb1063a094178a4ff49d19"
+        },
+        {
+          "path": "scripts/file_plan.py",
+          "status": "CURRENT",
+          "expected_sha256": "84852e323ca2970f07b10f16d3b7035903383beb6dd5bcd59a994c202b7e4489",
+          "observed_sha256": "84852e323ca2970f07b10f16d3b7035903383beb6dd5bcd59a994c202b7e4489"
+        }
+      ]
+    },
+    {
+      "skill": "loop-table",
+      "status": "CURRENT",
+      "payloads": [
+        {
+          "path": "SKILL.md",
+          "status": "CURRENT",
+          "expected_sha256": "b5eb9445af6828a9f723fa82c311010cad83ce10c83cae43b4c5f81ae09a0c4b",
+          "observed_sha256": "b5eb9445af6828a9f723fa82c311010cad83ce10c83cae43b4c5f81ae09a0c4b"
+        },
+        {
+          "path": "references/table-contract.md",
+          "status": "CURRENT",
+          "expected_sha256": "7cd24c950476b064c86821a5e692134c1599be7fc2010466274192a17151e421",
+          "observed_sha256": "7cd24c950476b064c86821a5e692134c1599be7fc2010466274192a17151e421"
+        },
+        {
+          "path": "scripts/table_check.py",
+          "status": "CURRENT",
+          "expected_sha256": "18977d82eedb73f2629ee938dd0a0fc4b1fb96d934458e74b0b62e3be5d9b04c",
+          "observed_sha256": "18977d82eedb73f2629ee938dd0a0fc4b1fb96d934458e74b0b62e3be5d9b04c"
+        }
+      ]
+    },
+    {
+      "skill": "loop-document",
+      "status": "CURRENT",
+      "payloads": [
+        {
+          "path": "SKILL.md",
+          "status": "CURRENT",
+          "expected_sha256": "d25d126ae69d34102f31a901a5c9fb611a64f0c05efd869b263923309890c0dd",
+          "observed_sha256": "d25d126ae69d34102f31a901a5c9fb611a64f0c05efd869b263923309890c0dd"
+        },
+        {
+          "path": "references/format-gates.md",
+          "status": "CURRENT",
+          "expected_sha256": "d9fe510bfb3d52a2cffa3f339ab506e242502c41d950d0626969c935215ce163",
+          "observed_sha256": "d9fe510bfb3d52a2cffa3f339ab506e242502c41d950d0626969c935215ce163"
+        }
+      ]
+    }
+  ],
+  "native_discovery": "NOT_RUN",
+  "runtime_validation": "NOT_RUN",
+  "unmanaged_payloads": "NOT_INSPECTED",
+  "writes": "NONE",
+  "scope": "Only selected managed payload bytes. Root is explicitly resolved; aliases/hardlinks below it are blocked. Matching bytes do not prove host discovery, task success or absence of unrelated files. Before/after source checks detect observed drift; they are not filesystem locks."
+}

@@ -1,0 +1,33 @@
+test_fixture_unittest_module_cannot_forge_a_passing_code_grade (tests.test_grader_boundaries.GraderBoundaryTests.test_fixture_unittest_module_cannot_forge_a_passing_code_grade) ... FAIL
+test_import_exit_zero_cannot_skip_code_assertions_and_pass (tests.test_grader_boundaries.GraderBoundaryTests.test_import_exit_zero_cannot_skip_code_assertions_and_pass) ... ok
+test_extra_test_module_cannot_disable_the_preserved_suite (tests.test_grader_boundaries.GraderBoundaryTests.test_extra_test_module_cannot_disable_the_preserved_suite) ... FAIL
+test_code_cannot_monkeypatch_assertions_to_hide_wrong_results (tests.test_grader_boundaries.GraderBoundaryTests.test_code_cannot_monkeypatch_assertions_to_hide_wrong_results) ... FAIL
+
+======================================================================
+FAIL: test_fixture_unittest_module_cannot_forge_a_passing_code_grade (tests.test_grader_boundaries.GraderBoundaryTests.test_fixture_unittest_module_cannot_forge_a_passing_code_grade)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<repository>\tests\test_grader_boundaries.py", line 30, in test_fixture_unittest_module_cannot_forge_a_passing_code_grade
+    self.assertFalse(all(checks.values()),'local module shadowing must not replace the oracle')
+AssertionError: True is not false : local module shadowing must not replace the oracle
+
+======================================================================
+FAIL: test_extra_test_module_cannot_disable_the_preserved_suite (tests.test_grader_boundaries.GraderBoundaryTests.test_extra_test_module_cannot_disable_the_preserved_suite)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<repository>\tests\test_grader_boundaries.py", line 47, in test_extra_test_module_cannot_disable_the_preserved_suite
+    self.assertFalse(all(checks.values()),'untrusted extra tests must not change trusted assertions')
+AssertionError: True is not false : untrusted extra tests must not change trusted assertions
+
+======================================================================
+FAIL: test_code_cannot_monkeypatch_assertions_to_hide_wrong_results (tests.test_grader_boundaries.GraderBoundaryTests.test_code_cannot_monkeypatch_assertions_to_hide_wrong_results)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<repository>\tests\test_grader_boundaries.py", line 53, in test_code_cannot_monkeypatch_assertions_to_hide_wrong_results
+    self.assertFalse(all(grade(folder,'loop-code',original).values()))
+AssertionError: True is not false
+
+----------------------------------------------------------------------
+Ran 4 tests in 0.329s
+
+FAILED (failures=3)

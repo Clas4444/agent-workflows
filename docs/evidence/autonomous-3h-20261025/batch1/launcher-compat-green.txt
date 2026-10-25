@@ -1,0 +1,8 @@
+test_invalid_executable_preserves_launch_error (tests.test_process_lifecycle.ProcessLifecycleTests.test_invalid_executable_preserves_launch_error) ... ok
+test_nonzero_exit_is_preserved (tests.test_process_lifecycle.ProcessLifecycleTests.test_nonzero_exit_is_preserved) ... ok
+test_stdin_bytes_survive_windows_launcher_gate (tests.test_process_lifecycle.ProcessLifecycleTests.test_stdin_bytes_survive_windows_launcher_gate) ... ok
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.222s
+
+OK

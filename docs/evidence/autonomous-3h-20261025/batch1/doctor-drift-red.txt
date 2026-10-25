@@ -1,0 +1,17 @@
+test_source_change_during_diagnosis_cannot_finish_pass (tests.test_doctor_skills.DoctorSkillsTests.test_source_change_during_diagnosis_cannot_finish_pass) ... FAIL
+
+======================================================================
+FAIL: test_source_change_during_diagnosis_cannot_finish_pass (tests.test_doctor_skills.DoctorSkillsTests.test_source_change_during_diagnosis_cannot_finish_pass)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<repository>\tests\test_doctor_skills.py", line 87, in test_source_change_during_diagnosis_cannot_finish_pass
+    self.assertEqual(result['status'],'BLOCKED')
+AssertionError: 'PASS' != 'BLOCKED'
+- PASS
++ BLOCKED
+
+
+----------------------------------------------------------------------
+Ran 1 test in 0.017s
+
+FAILED (failures=1)

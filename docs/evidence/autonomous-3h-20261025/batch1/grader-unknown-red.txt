@@ -1,0 +1,14 @@
+test_unknown_grader_tag_cannot_pass_without_running_a_case (tests.test_grader_boundaries.GraderBoundaryTests.test_unknown_grader_tag_cannot_pass_without_running_a_case) ... FAIL
+
+======================================================================
+FAIL: test_unknown_grader_tag_cannot_pass_without_running_a_case (tests.test_grader_boundaries.GraderBoundaryTests.test_unknown_grader_tag_cannot_pass_without_running_a_case)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<repository>\tests\test_grader_boundaries.py", line 29, in test_unknown_grader_tag_cannot_pass_without_running_a_case
+    self.assertFalse(all(grade(folder,'not-a-supported-case',original).values()))
+AssertionError: True is not false
+
+----------------------------------------------------------------------
+Ran 1 test in 0.004s
+
+FAILED (failures=1)

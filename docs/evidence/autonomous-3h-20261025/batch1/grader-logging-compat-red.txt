@@ -1,0 +1,14 @@
+test_legitimate_import_logging_does_not_replace_functional_output (tests.test_grader_boundaries.GraderBoundaryTests.test_legitimate_import_logging_does_not_replace_functional_output) ... FAIL
+
+======================================================================
+FAIL: test_legitimate_import_logging_does_not_replace_functional_output (tests.test_grader_boundaries.GraderBoundaryTests.test_legitimate_import_logging_does_not_replace_functional_output)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<repository>\tests\test_grader_boundaries.py", line 30, in test_legitimate_import_logging_does_not_replace_functional_output
+    self.assertTrue(all(grade(folder,'loop-code',original).values()))
+AssertionError: False is not true
+
+----------------------------------------------------------------------
+Ran 1 test in 0.148s
+
+FAILED (failures=1)

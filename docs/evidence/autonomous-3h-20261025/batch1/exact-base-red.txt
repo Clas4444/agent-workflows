@@ -1,0 +1,31 @@
+test_timeout_does_not_leave_readers_blocked_on_full_queue (tests.test_process_lifecycle.ProcessLifecycleTests.test_timeout_does_not_leave_readers_blocked_on_full_queue) ... FAIL
+test_timeout_stops_descendant_before_post_timeout_write (tests.test_process_lifecycle.ProcessLifecycleTests.test_timeout_stops_descendant_before_post_timeout_write) ... FAIL
+
+======================================================================
+FAIL: test_timeout_does_not_leave_readers_blocked_on_full_queue (tests.test_process_lifecycle.ProcessLifecycleTests.test_timeout_does_not_leave_readers_blocked_on_full_queue)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<repository>\.loop\autonomous-3h-20261025T092231Z\base-lifecycle\tests\test_process_lifecycle.py", line 66, in test_timeout_does_not_leave_readers_blocked_on_full_queue
+    self.assertEqual(leaked,[], 'timeout left readers blocked on a full queue')
+AssertionError: Lists differ: [<Thread(Thread-1 (_read_stream), started [67 chars]12)>] != []
+
+First list contains 2 additional elements.
+First extra element 0:
+<Thread(Thread-1 (_read_stream), started daemon 20120)>
+
++ []
+- [<Thread(Thread-1 (_read_stream), started daemon 20120)>,
+-  <Thread(Thread-2 (_read_stream), started daemon 22412)>] : timeout left readers blocked on a full queue
+
+======================================================================
+FAIL: test_timeout_stops_descendant_before_post_timeout_write (tests.test_process_lifecycle.ProcessLifecycleTests.test_timeout_stops_descendant_before_post_timeout_write)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<repository>\.loop\autonomous-3h-20261025T092231Z\base-lifecycle\tests\test_process_lifecycle.py", line 146, in test_timeout_stops_descendant_before_post_timeout_write
+    self.assertFalse(marker.exists(), 'descendant wrote after runner timeout')
+AssertionError: True is not false : descendant wrote after runner timeout
+
+----------------------------------------------------------------------
+Ran 2 tests in 8.230s
+
+FAILED (failures=2)

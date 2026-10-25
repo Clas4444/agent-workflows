@@ -1,0 +1,16 @@
+test_cli_requires_explicit_selection_and_never_writes_missing_target (tests.test_doctor_skills.DoctorSkillsTests.test_cli_requires_explicit_selection_and_never_writes_missing_target) ... ok
+test_current_complete_payload_does_not_claim_native_or_runtime_success (tests.test_doctor_skills.DoctorSkillsTests.test_current_complete_payload_does_not_claim_native_or_runtime_success) ... ok
+test_directory_in_payload_position_and_file_parent_are_blocked (tests.test_doctor_skills.DoctorSkillsTests.test_directory_in_payload_position_and_file_parent_are_blocked) ... ok
+test_hardlinked_payload_is_blocked_without_reading_its_bytes (tests.test_doctor_skills.DoctorSkillsTests.test_hardlinked_payload_is_blocked_without_reading_its_bytes) ... ok
+test_invalid_manifest_is_rejected_before_constructing_destination_paths (tests.test_doctor_skills.DoctorSkillsTests.test_invalid_manifest_is_rejected_before_constructing_destination_paths) ... ok
+test_invalid_selection_never_falls_back_to_all (tests.test_doctor_skills.DoctorSkillsTests.test_invalid_selection_never_falls_back_to_all) ... ok
+test_missing_or_unregistered_source_resource_cannot_look_current (tests.test_doctor_skills.DoctorSkillsTests.test_missing_or_unregistered_source_resource_cannot_look_current) ... ok
+test_missing_resource_differs_from_absent_skill (tests.test_doctor_skills.DoctorSkillsTests.test_missing_resource_differs_from_absent_skill) ... ok
+test_missing_root_is_not_installed_and_no_directory_is_created (tests.test_doctor_skills.DoctorSkillsTests.test_missing_root_is_not_installed_and_no_directory_is_created) ... ok
+test_source_change_during_diagnosis_cannot_finish_pass (tests.test_doctor_skills.DoctorSkillsTests.test_source_change_during_diagnosis_cannot_finish_pass) ... ok
+test_stale_instructions_report_hashes_without_overwriting (tests.test_doctor_skills.DoctorSkillsTests.test_stale_instructions_report_hashes_without_overwriting) ... ok
+
+----------------------------------------------------------------------
+Ran 11 tests in 0.404s
+
+OK

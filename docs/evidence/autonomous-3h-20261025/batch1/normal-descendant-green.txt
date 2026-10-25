@@ -1,0 +1,6 @@
+test_successful_invocation_closes_owned_background_descendant (tests.test_process_lifecycle.ProcessLifecycleTests.test_successful_invocation_closes_owned_background_descendant) ... ok
+
+----------------------------------------------------------------------
+Ran 1 test in 5.992s
+
+OK

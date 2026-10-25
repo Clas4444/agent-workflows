@@ -1,0 +1,14 @@
+test_timeout_stops_descendant_before_post_timeout_write (tests.test_process_lifecycle.ProcessLifecycleTests.test_timeout_stops_descendant_before_post_timeout_write) ... FAIL
+
+======================================================================
+FAIL: test_timeout_stops_descendant_before_post_timeout_write (tests.test_process_lifecycle.ProcessLifecycleTests.test_timeout_stops_descendant_before_post_timeout_write)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<repository>\tests\test_process_lifecycle.py", line 35, in test_timeout_stops_descendant_before_post_timeout_write
+    self.assertFalse(marker.exists(), 'descendant wrote after runner timeout')
+AssertionError: True is not false : descendant wrote after runner timeout
+
+----------------------------------------------------------------------
+Ran 1 test in 5.106s
+
+FAILED (failures=1)

@@ -1,0 +1,215 @@
+{
+  "observed_at": "2026-10-25T09:57:46.629873+00:00",
+  "exit_code": 1,
+  "status": "FAIL",
+  "counts": {
+    "CURRENT": 17,
+    "NOT_INSTALLED": 22,
+    "INCOMPLETE": 0,
+    "DRIFTED": 10,
+    "BLOCKED": 0
+  },
+  "reference_version": "1.9.2-experimental",
+  "reference_unchanged": true,
+  "skills": [
+    {
+      "skill": "loop-review",
+      "status": "DRIFTED"
+    },
+    {
+      "skill": "loop-code",
+      "status": "DRIFTED"
+    },
+    {
+      "skill": "loop-diagnose",
+      "status": "DRIFTED"
+    },
+    {
+      "skill": "loop-diagnose-repro",
+      "status": "CURRENT"
+    },
+    {
+      "skill": "loop-diagnose-performance",
+      "status": "CURRENT"
+    },
+    {
+      "skill": "loop-diagnose-regression",
+      "status": "CURRENT"
+    },
+    {
+      "skill": "loop-research",
+      "status": "DRIFTED"
+    },
+    {
+      "skill": "loop-research-repo",
+      "status": "CURRENT"
+    },
+    {
+      "skill": "loop-research-tools",
+      "status": "CURRENT"
+    },
+    {
+      "skill": "loop-test",
+      "status": "DRIFTED"
+    },
+    {
+      "skill": "loop-test-unit",
+      "status": "CURRENT"
+    },
+    {
+      "skill": "loop-test-integration",
+      "status": "CURRENT"
+    },
+    {
+      "skill": "loop-test-coverage",
+      "status": "CURRENT"
+    },
+    {
+      "skill": "loop-docs",
+      "status": "CURRENT"
+    },
+    {
+      "skill": "loop-skill-create",
+      "status": "DRIFTED"
+    },
+    {
+      "skill": "loop-orchestrate",
+      "status": "DRIFTED"
+    },
+    {
+      "skill": "loop-prompt",
+      "status": "DRIFTED"
+    },
+    {
+      "skill": "loop-debug",
+      "status": "CURRENT"
+    },
+    {
+      "skill": "loop-security",
+      "status": "CURRENT"
+    },
+    {
+      "skill": "loop-refactor",
+      "status": "CURRENT"
+    },
+    {
+      "skill": "loop-ci",
+      "status": "CURRENT"
+    },
+    {
+      "skill": "loop-release",
+      "status": "CURRENT"
+    },
+    {
+      "skill": "loop-plan",
+      "status": "DRIFTED"
+    },
+    {
+      "skill": "loop-dependencies",
+      "status": "CURRENT"
+    },
+    {
+      "skill": "loop-migrate",
+      "status": "CURRENT"
+    },
+    {
+      "skill": "loop-test-e2e",
+      "status": "CURRENT"
+    },
+    {
+      "skill": "loop-evaluate",
+      "status": "DRIFTED"
+    },
+    {
+      "skill": "loop-test-adversarial",
+      "status": "NOT_INSTALLED"
+    },
+    {
+      "skill": "loop-test-compatibility",
+      "status": "NOT_INSTALLED"
+    },
+    {
+      "skill": "loop-mcp-design",
+      "status": "NOT_INSTALLED"
+    },
+    {
+      "skill": "loop-mcp-test",
+      "status": "NOT_INSTALLED"
+    },
+    {
+      "skill": "loop-mcp-security",
+      "status": "NOT_INSTALLED"
+    },
+    {
+      "skill": "loop-deploy",
+      "status": "NOT_INSTALLED"
+    },
+    {
+      "skill": "loop-observe",
+      "status": "NOT_INSTALLED"
+    },
+    {
+      "skill": "loop-context",
+      "status": "NOT_INSTALLED"
+    },
+    {
+      "skill": "loop-handoff",
+      "status": "NOT_INSTALLED"
+    },
+    {
+      "skill": "loop-workflow-project",
+      "status": "NOT_INSTALLED"
+    },
+    {
+      "skill": "loop-workflow-pr",
+      "status": "NOT_INSTALLED"
+    },
+    {
+      "skill": "loop-workflow-incident",
+      "status": "NOT_INSTALLED"
+    },
+    {
+      "skill": "loop-write",
+      "status": "NOT_INSTALLED"
+    },
+    {
+      "skill": "loop-summarize",
+      "status": "NOT_INSTALLED"
+    },
+    {
+      "skill": "loop-meeting",
+      "status": "NOT_INSTALLED"
+    },
+    {
+      "skill": "loop-organize",
+      "status": "NOT_INSTALLED"
+    },
+    {
+      "skill": "loop-decide",
+      "status": "NOT_INSTALLED"
+    },
+    {
+      "skill": "loop-learn",
+      "status": "NOT_INSTALLED"
+    },
+    {
+      "skill": "loop-work",
+      "status": "NOT_INSTALLED"
+    },
+    {
+      "skill": "loop-files",
+      "status": "NOT_INSTALLED"
+    },
+    {
+      "skill": "loop-table",
+      "status": "NOT_INSTALLED"
+    },
+    {
+      "skill": "loop-document",
+      "status": "NOT_INSTALLED"
+    }
+  ],
+  "writes": "NONE",
+  "native_discovery": "NOT_RUN",
+  "privacy": "Personal instruction contents and observed hashes omitted; raw retained privately."
+}

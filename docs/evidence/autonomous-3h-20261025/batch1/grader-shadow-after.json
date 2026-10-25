@@ -1,0 +1,12 @@
+{
+  "checks": {
+    "source_changed": true,
+    "tests_preserved": true,
+    "regression_tests_pass": false,
+    "independent_arithmetic": false,
+    "protected_inputs_preserved_after_verification": true,
+    "submitted_artifacts_unchanged_during_verification": true
+  },
+  "grader_all_pass": false,
+  "scope": "same retained wrong-code fixture, unchanged adversarial unittest.py; independent oracle repaired"
+}

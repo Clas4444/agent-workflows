@@ -77,6 +77,40 @@ selection fails before destination writes; it never falls back to installing all
 skills. Existing `scripts/sync_skills.py --target ...` still selects the **full**
 catalog, so use the need-based installer for a small subset.
 
+## Diagnose an existing installation without changing it
+
+If the repository has newer workflows but your host still lists old skills, ask:
+
+```text
+Diagnose my selected skill installation with scripts/doctor_skills.py. Compare
+the office bundle against this checkout, distinguish absent skills, missing
+resources and changed files, and report what a fresh host session still needs
+to verify. Do not install, overwrite, execute or delete anything.
+```
+
+Or run the read-only command yourself:
+
+```text
+python scripts/doctor_skills.py --bundle office --target "C:/My Project/.agents/skills"
+python scripts/doctor_skills.py --all --target "C:/My Project/.agents/skills"
+```
+
+An explicit selection is required: repeat `--bundle`/`--skill`, or choose `--all`.
+The tool reports `CURRENT`, `NOT_INSTALLED`, `INCOMPLETE`, `DRIFTED`, or `BLOCKED`
+per skill, with hashes for managed files. `reference_version` identifies this
+checkout's declared version; it is not a guessed installed version. Exit 0 means
+the selected bytes matched and the reference stayed unchanged during observation.
+Exit 1 means differences, a blocked path or an error. Always inspect overall
+`status` and `reference_errors`; an individual CURRENT row cannot override a
+changed reference. No directory, backup, installation receipt or cache is created.
+
+Unmanaged extras are preserved and not inspected. Native discovery and runtime
+are always `NOT_RUN`: matching bytes cannot prove your host has activated them.
+If the doctor finds drift, review custom changes and explicitly select an install
+target before using the installer. Restart or open a fresh host session afterward,
+then verify its actual available skill names and paths. The repository does not
+silently repair a personal/global installation.
+
 ## Without Python
 
 Copy the chosen **skill folders**, not only their `SKILL.md`, from `.github/skills`

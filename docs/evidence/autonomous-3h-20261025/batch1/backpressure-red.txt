@@ -1,0 +1,22 @@
+test_timeout_does_not_leave_readers_blocked_on_full_queue (tests.test_process_lifecycle.ProcessLifecycleTests.test_timeout_does_not_leave_readers_blocked_on_full_queue) ... FAIL
+
+======================================================================
+FAIL: test_timeout_does_not_leave_readers_blocked_on_full_queue (tests.test_process_lifecycle.ProcessLifecycleTests.test_timeout_does_not_leave_readers_blocked_on_full_queue)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<repository>\tests\test_process_lifecycle.py", line 37, in test_timeout_does_not_leave_readers_blocked_on_full_queue
+    self.assertEqual(leaked,[], 'timeout left readers blocked on a full queue')
+AssertionError: Lists differ: [<Thread(Thread-1 (_read_stream), started [66 chars]96)>] != []
+
+First list contains 2 additional elements.
+First extra element 0:
+<Thread(Thread-1 (_read_stream), started daemon 8164)>
+
++ []
+- [<Thread(Thread-1 (_read_stream), started daemon 8164)>,
+-  <Thread(Thread-2 (_read_stream), started daemon 16596)>] : timeout left readers blocked on a full queue
+
+----------------------------------------------------------------------
+Ran 1 test in 3.024s
+
+FAILED (failures=1)

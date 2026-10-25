@@ -14,6 +14,7 @@ python scripts/catalog.py
 python scripts/routing_check.py
 python scripts/workflows.py
 python scripts/install_skills.py --list
+python scripts/doctor_skills.py --all --target .github/skills
 python scripts/skill_resources.py
 python scripts/sync_skills.py --target .github/skills --check
 python scripts/runtime_smoke.py --help
@@ -29,6 +30,7 @@ git diff --check
 | Catalog/routing | Exact group coverage, generated catalog, fixed primary-route coverage | An actual model chose the correct skill |
 | Workflows | Known skill names, valid role presets, matching Markdown/SVG | PNG accuracy or best toolkit for every user |
 | Sync check | Exact bundled runner/copy integrity under the selected root | User-wide installation or client activation |
+| Install doctor | Selected managed payload identity, missing/stale files and observed source drift | Host discovery, execution, or unmanaged extra files |
 | Smoke help | Real CLI imports and argument interface | A host/model call |
 
 CI repeats the gates on Ubuntu and Windows with Python 3.11 and 3.12. Inspect the
@@ -86,7 +88,7 @@ python scripts/verification_session.py --session my-session-001 --output .loop/m
 python scripts/verification_session.py --session my-session-001 --verify .loop/my-session-001/verification.json
 ```
 
-The report records Python version, timestamps, all eleven commands/exit codes,
+The report records Python version, timestamps, the complete fixed command set/exit codes,
 non-empty unittest discovery, log hashes and before/after input fingerprints.
 The exact input roots/files are included. A mismatched session or edited input
 cannot validate as current; a change during execution yields STALE and exit 1.

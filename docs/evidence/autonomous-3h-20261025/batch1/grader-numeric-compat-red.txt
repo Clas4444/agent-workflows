@@ -1,0 +1,33 @@
+test_independent_probe_accepts_exact_real_numeric_results (tests.test_grader_boundaries.GraderBoundaryTests.test_independent_probe_accepts_exact_real_numeric_results) ... 
+  test_independent_probe_accepts_exact_real_numeric_results (tests.test_grader_boundaries.GraderBoundaryTests.test_independent_probe_accepts_exact_real_numeric_results) (numeric_type='float_where_exact') ... FAIL
+  test_independent_probe_accepts_exact_real_numeric_results (tests.test_grader_boundaries.GraderBoundaryTests.test_independent_probe_accepts_exact_real_numeric_results) (numeric_type='decimal') ... FAIL
+  test_independent_probe_accepts_exact_real_numeric_results (tests.test_grader_boundaries.GraderBoundaryTests.test_independent_probe_accepts_exact_real_numeric_results) (numeric_type='fraction') ... FAIL
+
+======================================================================
+FAIL: test_independent_probe_accepts_exact_real_numeric_results (tests.test_grader_boundaries.GraderBoundaryTests.test_independent_probe_accepts_exact_real_numeric_results) (numeric_type='float_where_exact')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<repository>\tests\test_grader_boundaries.py", line 38, in test_independent_probe_accepts_exact_real_numeric_results
+    self.assertTrue(all(checks.values()),checks)
+AssertionError: False is not true : {'source_changed': True, 'tests_preserved': True, 'regression_tests_pass': True, 'independent_arithmetic': False, 'protected_inputs_preserved_after_verification': True, 'submitted_artifacts_unchanged_during_verification': True}
+
+======================================================================
+FAIL: test_independent_probe_accepts_exact_real_numeric_results (tests.test_grader_boundaries.GraderBoundaryTests.test_independent_probe_accepts_exact_real_numeric_results) (numeric_type='decimal')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<repository>\tests\test_grader_boundaries.py", line 38, in test_independent_probe_accepts_exact_real_numeric_results
+    self.assertTrue(all(checks.values()),checks)
+AssertionError: False is not true : {'source_changed': True, 'tests_preserved': True, 'regression_tests_pass': True, 'independent_arithmetic': False, 'protected_inputs_preserved_after_verification': True, 'submitted_artifacts_unchanged_during_verification': True}
+
+======================================================================
+FAIL: test_independent_probe_accepts_exact_real_numeric_results (tests.test_grader_boundaries.GraderBoundaryTests.test_independent_probe_accepts_exact_real_numeric_results) (numeric_type='fraction')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<repository>\tests\test_grader_boundaries.py", line 38, in test_independent_probe_accepts_exact_real_numeric_results
+    self.assertTrue(all(checks.values()),checks)
+AssertionError: False is not true : {'source_changed': True, 'tests_preserved': True, 'regression_tests_pass': True, 'independent_arithmetic': False, 'protected_inputs_preserved_after_verification': True, 'submitted_artifacts_unchanged_during_verification': True}
+
+----------------------------------------------------------------------
+Ran 1 test in 0.452s
+
+FAILED (failures=3)

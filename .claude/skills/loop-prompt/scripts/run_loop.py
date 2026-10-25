@@ -7,7 +7,10 @@ import argparse
 import codecs
 import hashlib
 import json
+import os
 import queue
+import signal
+import shutil
 import subprocess
 import sys
 import threading
@@ -74,16 +77,26 @@ class _StreamResult:
         return "".join(self.tail)
 
 
-def _read_stream(stream, name: str, events: queue.Queue) -> None:
+def _read_stream(stream, name: str, events: queue.Queue, stop=None) -> None:
+    def enqueue(chunk):
+        if stop is None:
+            events.put((name,chunk))
+            return
+        while not stop.is_set():
+            try:
+                events.put((name,chunk),timeout=.05)
+                return
+            except queue.Full:
+                pass
     try:
-        while True:
+        while stop is None or not stop.is_set():
             chunk = stream.read(READ_CHUNK)
             if not chunk:
                 break
-            events.put((name, chunk))
+            enqueue(chunk)
     finally:
         stream.close()
-        events.put((name, None))
+        enqueue(None)
 
 
 def _write_stdin(stream, prompt: str) -> None:
@@ -100,22 +113,113 @@ def _write_stdin(stream, prompt: str) -> None:
             pass
 
 
+def _windows_job(process):
+    """Attach the waiting launcher to a kill-on-close job before it spawns work."""
+    import ctypes
+    from ctypes import wintypes
+
+    class BasicLimits(ctypes.Structure):
+        _fields_ = [('process_time',ctypes.c_longlong),('job_time',ctypes.c_longlong),
+                    ('flags',wintypes.DWORD),('min_ws',ctypes.c_size_t),
+                    ('max_ws',ctypes.c_size_t),('active',wintypes.DWORD),
+                    ('affinity',ctypes.c_size_t),('priority',wintypes.DWORD),
+                    ('scheduling',wintypes.DWORD)]
+    class IoCounters(ctypes.Structure):
+        _fields_ = [(name,ctypes.c_ulonglong) for name in
+                    ('read_ops','write_ops','other_ops','read_bytes','write_bytes','other_bytes')]
+    class ExtendedLimits(ctypes.Structure):
+        _fields_ = [('basic',BasicLimits),('io',IoCounters),
+                    ('process_memory',ctypes.c_size_t),('job_memory',ctypes.c_size_t),
+                    ('peak_process_memory',ctypes.c_size_t),('peak_job_memory',ctypes.c_size_t)]
+
+    api = ctypes.WinDLL('kernel32',use_last_error=True)
+    api.CreateJobObjectW.argtypes = [ctypes.c_void_p,wintypes.LPCWSTR]
+    api.CreateJobObjectW.restype = wintypes.HANDLE
+    api.SetInformationJobObject.argtypes = [wintypes.HANDLE,ctypes.c_int,ctypes.c_void_p,wintypes.DWORD]
+    api.SetInformationJobObject.restype = wintypes.BOOL
+    api.OpenProcess.argtypes = [wintypes.DWORD,wintypes.BOOL,wintypes.DWORD]
+    api.OpenProcess.restype = wintypes.HANDLE
+    api.AssignProcessToJobObject.argtypes = [wintypes.HANDLE,wintypes.HANDLE]
+    api.AssignProcessToJobObject.restype = wintypes.BOOL
+    api.CloseHandle.argtypes = [wintypes.HANDLE]
+    api.CloseHandle.restype = wintypes.BOOL
+    job = api.CreateJobObjectW(None,None)
+    if not job:
+        raise ctypes.WinError(ctypes.get_last_error())
+    try:
+        limits = ExtendedLimits()
+        limits.basic.flags = 0x2000  # JOB_OBJECT_LIMIT_KILL_ON_JOB_CLOSE
+        if not api.SetInformationJobObject(job,9,ctypes.byref(limits),ctypes.sizeof(limits)):
+            raise ctypes.WinError(ctypes.get_last_error())
+        handle = api.OpenProcess(0x0100 | 0x0001,False,process.pid)
+        if not handle:
+            raise ctypes.WinError(ctypes.get_last_error())
+        try:
+            if not api.AssignProcessToJobObject(job,handle):
+                raise ctypes.WinError(ctypes.get_last_error())
+        finally:
+            api.CloseHandle(handle)
+    except BaseException:
+        api.CloseHandle(job)
+        raise
+    return lambda: api.CloseHandle(job)
+
+
 def _run_command(command_args: list[str], prompt: str, timeout: int, *, prompt_in_args: bool = False) -> tuple[str, int | None, str, str, str]:
     creationflags = getattr(subprocess, "CREATE_NEW_PROCESS_GROUP", 0)
+    actual_command = command_args
+    launch_error_prefix = None
+    if os.name == 'nt':
+        # Resolve before wrapping, preserving missing-executable exception behavior.
+        executable = shutil.which(command_args[0])
+        if executable is None:
+            raise FileNotFoundError(f'command not found: {command_args[0]}')
+        # os.read consumes exactly the gate byte; buffered stdin would steal prompt
+        # bytes that must remain on the inherited pipe for the actual command.
+        launch_error_prefix = 'LOOP_LAUNCH_ERROR_'+os.urandom(16).hex()+':'
+        bootstrap = (
+            'import os,subprocess,sys,json\n'
+            'if os.read(0,1)!=b"G": sys.exit(125)\n'
+            'try:\n'
+            '    target=subprocess.Popen(sys.argv[2:])\n'
+            'except OSError as error:\n'
+            '    record={"errno":error.errno,"message":str(error)}\n'
+            '    os.write(2,(sys.argv[1]+json.dumps(record)+"\\n").encode("utf-8"))\n'
+            '    sys.exit(125)\n'
+            'sys.exit(target.wait())\n'
+        )
+        actual_command = [sys.executable,'-I','-S','-c',bootstrap,launch_error_prefix,
+                          executable,*command_args[1:]]
     process = subprocess.Popen(
-        command_args,
+        actual_command,
         stdin=subprocess.PIPE,
         stdout=subprocess.PIPE,
         stderr=subprocess.PIPE,
         text=False,
         shell=False,
         creationflags=creationflags,
+        start_new_session=os.name != 'nt',
     )
+    close_job = None
+    if os.name == 'nt':
+        try:
+            close_job = _windows_job(process)
+            process.stdin.write(b'G')
+            process.stdin.flush()
+        except BaseException:
+            process.kill()
+            process.wait()
+            for stream in (process.stdin,process.stdout,process.stderr):
+                stream.close()
+            if close_job:
+                close_job()
+            raise
     events: queue.Queue = queue.Queue(maxsize=32)
+    stop_readers = threading.Event()
     results = {"stdout": _StreamResult(), "stderr": _StreamResult()}
     threads = [
-        threading.Thread(target=_read_stream, args=(process.stdout, "stdout", events), daemon=True),
-        threading.Thread(target=_read_stream, args=(process.stderr, "stderr", events), daemon=True),
+        threading.Thread(target=_read_stream, args=(process.stdout, "stdout", events, stop_readers), daemon=True),
+        threading.Thread(target=_read_stream, args=(process.stderr, "stderr", events, stop_readers), daemon=True),
     ]
     for thread in threads:
         thread.start()
@@ -142,15 +246,42 @@ def _run_command(command_args: list[str], prompt: str, timeout: int, *, prompt_i
                 results[name].add(chunk)
         process.wait(timeout=max(0, deadline - time.monotonic()))
     except subprocess.TimeoutExpired:
-        process.kill()
+        stop_readers.set()
+        if close_job:
+            close_job()
+            close_job = None
+        else:
+            try:
+                os.killpg(process.pid,signal.SIGKILL)
+            except ProcessLookupError:
+                pass
         process.wait()
         for thread in threads:
             thread.join(timeout=1)
         if stdin_thread:
             stdin_thread.join(timeout=1)
         raise
+    finally:
+        stop_readers.set()
+        if close_job:
+            close_job()
+        elif os.name != 'nt':
+            try:
+                os.killpg(process.pid,signal.SIGKILL)
+            except ProcessLookupError:
+                pass
+        process.wait(timeout=5)
+        for thread in threads:
+            thread.join(timeout=1)
+        if stdin_thread:
+            stdin_thread.join(timeout=1)
     for result in results.values():
         result.finish()
+    if launch_error_prefix and process.returncode == 125:
+        for line in results['stderr'].output().splitlines():
+            if line.startswith(launch_error_prefix):
+                record = json.loads(line[len(launch_error_prefix):])
+                raise OSError(record['errno'],record['message'],command_args[0])
     if stdin_thread:
         stdin_thread.join(timeout=1)
     status_markers = results["stdout"].status_markers + results["stderr"].status_markers

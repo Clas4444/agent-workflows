@@ -1,0 +1,7 @@
+{
+  "descendant_started": true,
+  "post_timeout_write": true,
+  "elapsed_seconds": 6.17,
+  "classification": "CONFIRMED_LIFECYCLE_GAP",
+  "scope": "disposable marker under session fixture only; no user data"
+}

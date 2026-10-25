@@ -5,7 +5,7 @@ import shutil
 import subprocess
 import sys
 from pathlib import Path
-from .fixtures import RECORDS,RUBRIC
+from .fixtures import RECORDS,RUBRIC,SMOKE_SKILLS
 
 if '.' in __package__:
     from ..validation.json_data import loads_json
@@ -13,8 +13,54 @@ else:
     from validation.json_data import loads_json
 
 def command(folder: Path, *args: str) -> subprocess.CompletedProcess:
-    return subprocess.run([sys.executable,'-B',*args],cwd=folder,capture_output=True,text=True,
+    # Import the test framework before exposing fixture modules. A local unittest.py
+    # must not replace the independent runner. Direct scripts get no implicit
+    # fixture import path, user site hooks or PYTHONPATH injection.
+    bootstrap = (
+        'import sys,runpy,os\n'
+        'folder=sys.argv[1]; args=sys.argv[2:]\n'
+        'if args[:2]==["-m","unittest"]:\n'
+        '    import unittest\n'
+        '    sys.path.insert(0,folder)\n'
+        'if args[0]=="-m":\n'
+        '    sys.argv=[args[1],*args[2:]]\n'
+        '    runpy.run_module(args[1],run_name="__main__",alter_sys=True)\n'
+        'else:\n'
+        '    script=os.path.abspath(args[0]); sys.argv=[script,*args[1:]]\n'
+        '    runpy.run_path(script,run_name="__main__")\n'
+    )
+    return subprocess.run([sys.executable,'-I','-S','-B','-X','utf8','-c',bootstrap,str(folder.resolve()),*args],cwd=folder,capture_output=True,text=True,
                           encoding='utf-8',errors='replace',timeout=15)
+
+
+def nonempty_suite(result):
+    counts = re.findall(r'(?m)^Ran ([0-9]+) tests?\b',result.stdout+'\n'+result.stderr)
+    return bool(counts) and int(counts[-1])>0
+
+
+def arithmetic_probe(folder):
+    """Parent compares typed results; submitted code cannot replace parent assertions."""
+    cases = [(2,3),(0,0),(-2,-3),(9,-4),(10**30,1)]
+    probe = ('import json,runpy,sys,contextlib,os\nfrom decimal import Decimal\nfrom fractions import Fraction\n'
+             'cases=json.loads(sys.argv[2])\n'
+             'with open(os.devnull,"w",encoding="utf-8") as logs, contextlib.redirect_stdout(logs):\n'
+             '    function=runpy.run_path(sys.argv[1])["add"]\n'
+             '    values=[function(*pair) for pair in cases]\n'
+             'if not all(type(value) in (int,float,Decimal,Fraction) for value in values): raise ValueError("non-numeric result")\n'
+             'ratios=[value.as_integer_ratio() for value in values]\n'
+             'print(json.dumps([[str(n),str(d)] for n,d in ratios]))\n')
+    result = subprocess.run([sys.executable,'-I','-S','-B','-X','utf8','-c',probe,
+                            str((folder/'calc.py').resolve()),json.dumps(cases)],
+                            cwd=folder,capture_output=True,text=True,
+                            encoding='utf-8',errors='replace',timeout=15)
+    if result.returncode != 0:
+        return False
+    try:
+        actual = loads_json(result.stdout)
+    except ValueError:
+        return False
+    expected = [[str(a+b),'1'] for a,b in cases]
+    return actual==expected
 
 def verification_directory(folder: Path, label: str) -> Path:
     number=1
@@ -33,6 +79,8 @@ def metrics_match(actual, expected):
 
 
 def grade(folder: Path, skill: str, original: dict[str, bytes]) -> dict[str, bool]:
+    if skill not in SMOKE_SKILLS:
+        return {'supported_case':False}
     checks={}
     submitted_names={'loop-code':('calc.py',),'loop-migrate':('migrate.py',),
                      'loop-test-e2e':('test_e2e.py',),'loop-evaluate':('evaluate.py',)}.get(skill,())
@@ -44,11 +92,15 @@ def grade(folder: Path, skill: str, original: dict[str, bytes]) -> dict[str, boo
             checks.pop('source_preserved')
             checks['source_changed']=(folder/'calc.py').read_bytes()!=original['calc.py']
             checks['tests_preserved']=(folder/'test_calc.py').read_bytes()==original['test_calc.py']
-            checks['regression_tests_pass']=command(folder,'-m','unittest','-v').returncode==0
+            suite=command(folder,'-m','unittest','discover','-p','test_calc.py','-v')
+            checks['regression_tests_pass']=suite.returncode==0 and nonempty_suite(suite)
+            checks['independent_arithmetic']=arithmetic_probe(folder)
         elif skill == 'loop-review':
             text=(folder/'evidence.md').read_text(encoding='utf-8').lower()
             checks['finding_evidence']=all(term in text for term in ('calc.py','6','5'))
-            checks['failing_baseline']=command(folder,'-m','unittest','-v').returncode!=0
+            suite=command(folder,'-m','unittest','discover','-p','test_calc.py','-v')
+            checks['failing_baseline']=(suite.returncode!=0 and nonempty_suite(suite)
+                                        and 'AssertionError' in suite.stdout+suite.stderr)
             checks['tests_preserved']=(folder/'test_calc.py').read_bytes()==original['test_calc.py']
         elif skill == 'loop-prompt':
             state=loads_json((folder/'state.json').read_text(encoding='utf-8'))

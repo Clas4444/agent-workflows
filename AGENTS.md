@@ -27,6 +27,7 @@ python scripts/catalog.py
 python scripts/routing_check.py
 python scripts/workflows.py
 python scripts/install_skills.py --list
+python scripts/doctor_skills.py --all --target .github/skills
 python scripts/skill_resources.py
 python scripts/sync_skills.py --target .github/skills --check
 python -m compileall -q scripts tests

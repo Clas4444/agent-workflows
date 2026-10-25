@@ -1,0 +1,15 @@
+test_invalid_executable_preserves_launch_error (tests.test_process_lifecycle.ProcessLifecycleTests.test_invalid_executable_preserves_launch_error) ... FAIL
+
+======================================================================
+FAIL: test_invalid_executable_preserves_launch_error (tests.test_process_lifecycle.ProcessLifecycleTests.test_invalid_executable_preserves_launch_error)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<repository>\tests\test_process_lifecycle.py", line 22, in test_invalid_executable_preserves_launch_error
+    with self.assertRaises(OSError):
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: OSError not raised
+
+----------------------------------------------------------------------
+Ran 1 test in 0.075s
+
+FAILED (failures=1)

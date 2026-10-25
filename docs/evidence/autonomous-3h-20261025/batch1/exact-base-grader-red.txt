@@ -1,0 +1,51 @@
+test_fixture_unittest_module_cannot_forge_a_passing_code_grade (tests.test_grader_boundaries.GraderBoundaryTests.test_fixture_unittest_module_cannot_forge_a_passing_code_grade) ... FAIL
+test_extra_test_module_cannot_disable_the_preserved_suite (tests.test_grader_boundaries.GraderBoundaryTests.test_extra_test_module_cannot_disable_the_preserved_suite) ... FAIL
+test_code_cannot_monkeypatch_assertions_to_hide_wrong_results (tests.test_grader_boundaries.GraderBoundaryTests.test_code_cannot_monkeypatch_assertions_to_hide_wrong_results) ... FAIL
+test_process_exit_zero_cannot_bypass_the_oracle (tests.test_grader_boundaries.GraderBoundaryTests.test_process_exit_zero_cannot_bypass_the_oracle) ... FAIL
+test_unknown_grader_tag_cannot_pass_without_running_a_case (tests.test_grader_boundaries.GraderBoundaryTests.test_unknown_grader_tag_cannot_pass_without_running_a_case) ... FAIL
+test_import_exit_zero_cannot_skip_code_assertions_and_pass (tests.test_grader_boundaries.GraderBoundaryTests.test_import_exit_zero_cannot_skip_code_assertions_and_pass) ... ok
+
+======================================================================
+FAIL: test_fixture_unittest_module_cannot_forge_a_passing_code_grade (tests.test_grader_boundaries.GraderBoundaryTests.test_fixture_unittest_module_cannot_forge_a_passing_code_grade)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<repository>\.loop\autonomous-3h-20261025T092231Z\base-lifecycle\tests\test_grader_boundaries.py", line 55, in test_fixture_unittest_module_cannot_forge_a_passing_code_grade
+    self.assertFalse(all(checks.values()),'local module shadowing must not replace the oracle')
+AssertionError: True is not false : local module shadowing must not replace the oracle
+
+======================================================================
+FAIL: test_extra_test_module_cannot_disable_the_preserved_suite (tests.test_grader_boundaries.GraderBoundaryTests.test_extra_test_module_cannot_disable_the_preserved_suite)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<repository>\.loop\autonomous-3h-20261025T092231Z\base-lifecycle\tests\test_grader_boundaries.py", line 78, in test_extra_test_module_cannot_disable_the_preserved_suite
+    self.assertFalse(all(checks.values()),'untrusted extra tests must not change trusted assertions')
+AssertionError: True is not false : untrusted extra tests must not change trusted assertions
+
+======================================================================
+FAIL: test_code_cannot_monkeypatch_assertions_to_hide_wrong_results (tests.test_grader_boundaries.GraderBoundaryTests.test_code_cannot_monkeypatch_assertions_to_hide_wrong_results)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<repository>\.loop\autonomous-3h-20261025T092231Z\base-lifecycle\tests\test_grader_boundaries.py", line 84, in test_code_cannot_monkeypatch_assertions_to_hide_wrong_results
+    self.assertFalse(all(grade(folder,'loop-code',original).values()))
+AssertionError: True is not false
+
+======================================================================
+FAIL: test_process_exit_zero_cannot_bypass_the_oracle (tests.test_grader_boundaries.GraderBoundaryTests.test_process_exit_zero_cannot_bypass_the_oracle)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<repository>\.loop\autonomous-3h-20261025T092231Z\base-lifecycle\tests\test_grader_boundaries.py", line 70, in test_process_exit_zero_cannot_bypass_the_oracle
+    self.assertFalse(all(grade(folder,'loop-code',original).values()))
+AssertionError: True is not false
+
+======================================================================
+FAIL: test_unknown_grader_tag_cannot_pass_without_running_a_case (tests.test_grader_boundaries.GraderBoundaryTests.test_unknown_grader_tag_cannot_pass_without_running_a_case)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<repository>\.loop\autonomous-3h-20261025T092231Z\base-lifecycle\tests\test_grader_boundaries.py", line 29, in test_unknown_grader_tag_cannot_pass_without_running_a_case
+    self.assertFalse(all(grade(folder,'not-a-supported-case',original).values()))
+AssertionError: True is not false
+
+----------------------------------------------------------------------
+Ran 6 tests in 0.388s
+
+FAILED (failures=5)
