@@ -1,6 +1,6 @@
 # Working on Loop Skills
 
-This repository distributes 39 skill instructions and a local CLI runner. It
+This repository distributes 45 skill instructions and a local CLI runner. It
 does not implement an MCP or A2A service. Read README.md and the relevant guide
 in docs/ before changing a workflow.
 
@@ -26,6 +26,7 @@ python scripts/validate.py
 python scripts/catalog.py
 python scripts/routing_check.py
 python scripts/workflows.py
+python scripts/install_skills.py --list
 python scripts/sync_skills.py --target .github/skills --check
 python -m compileall -q scripts tests
 git diff --check
@@ -54,3 +55,9 @@ native installation paths. Keep historical runtime manifests separate from the
 current catalog; record new skills as NOT_RUN until actually exercised on a host.
 Update skill-routing.json when changing responsibilities; keep expected routes
 fixed before model classification and report host discovery separately.
+
+For a session-pinned full campaign, use `scripts/verification_session.py` with an
+explicit session ID and a new `.loop/` output directory. Verify the same report
+against the same session and unchanged input pin before citing it. The command
+records the exact verification input scope; documentation report prose and raw
+logs are outside that scope. Do not relabel earlier-session output as fresh.

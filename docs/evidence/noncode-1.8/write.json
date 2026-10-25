@@ -1,0 +1,20 @@
+{
+  "skill": "loop-write",
+  "draft": {
+    "subject": "Your order and shipping update",
+    "body": "Hello,\n\nYour order total is USD 120. The shipping date has not yet been decided. I can confirm the date tomorrow.\n\nThank you for your patience.\n\nBest regards"
+  },
+  "unresolved_facts": [
+    "The shipping date is undecided."
+  ],
+  "verification": {
+    "supplied_fact_consistency": "PASS",
+    "calm_tone": "PASS",
+    "under_120_words": "PASS",
+    "quoted_instruction_treated_as_data": "PASS",
+    "independent_factual_verification": "NOT_RUN",
+    "shipping_date_verification": "BLOCKED"
+  },
+  "draft_status": "PASS",
+  "delivery_status": "NOT_RUN"
+}

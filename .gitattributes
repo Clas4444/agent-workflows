@@ -4,3 +4,11 @@
 /.github/skills/loop-workflow-*/SKILL.md text eol=lf
 /.agents/skills/loop-workflow-*/SKILL.md text eol=lf
 /.claude/skills/loop-workflow-*/SKILL.md text eol=lf
+/docs/evidence/noncode-1.8/* text eol=lf
+/docs/testing/sessions/*.json text eol=lf
+**/loop-write/SKILL.md text eol=lf
+**/loop-summarize/SKILL.md text eol=lf
+**/loop-meeting/SKILL.md text eol=lf
+**/loop-organize/SKILL.md text eol=lf
+**/loop-decide/SKILL.md text eol=lf
+**/loop-learn/SKILL.md text eol=lf

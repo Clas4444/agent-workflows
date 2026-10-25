@@ -67,3 +67,16 @@ Native discovery and live operational execution are separate from explicit synth
 | loop-workflow-incident | NOT_RUN | NOT_RUN |
 
 The three 1.7 workflows were explicitly loaded in isolated Codex subagent packet exercises. See [results](testing/RESULTS-1.7.md) for one retained failed incident attempt and its corrected retry. This does not change the native-discovery or live-execution NOT_RUN entries above.
+
+## Everyday utility skills (1.8)
+
+Explicit fixture exercises are recorded separately from automatic discovery and external actions.
+
+| Skill | Native discovery | Live external actions |
+|---|---|---|
+| loop-write | NOT_RUN | NOT_RUN |
+| loop-summarize | NOT_RUN | NOT_RUN |
+| loop-meeting | NOT_RUN | NOT_RUN |
+| loop-organize | NOT_RUN | NOT_RUN |
+| loop-decide | NOT_RUN | NOT_RUN |
+| loop-learn | NOT_RUN | NOT_RUN |

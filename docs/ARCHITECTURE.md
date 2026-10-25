@@ -23,6 +23,8 @@ skill directories remain flat; historical evidence is versioned independently.
 | `scripts/smoke/fixtures.py` | Synthetic task inputs, preparation and source snapshots |
 | `scripts/smoke/grading.py` | Artifact grading and bounded verification subprocesses |
 | `scripts/workflows.py`, `workflow-presets.json` | Inventory-checked role guidance and editable SVG |
+| `scripts/install_skills.py`, `scripts/skill_bundles.py`, `skill-bundles.json` | Explicit need-based selection using the existing sync engine |
+| `scripts/verification_session.py` | Fixed gate campaign with session identity and before/after verification-input hashes |
 | `tests/` | Deterministic local tests; no model calls |
 | `schemas/` | Versioned machine-readable descriptions of existing data contracts |
 | `docs/evidence/` | Reviewed public execution summaries with provenance |
@@ -70,3 +72,23 @@ the direct `python scripts/runtime_smoke.py` entry point. Fixture preparation
 does not execute submissions; grading owns subprocess verification. The retained
 23 runtime-smoke characterization tests and boundary tests exercise both sides.
 See [test procedure](testing/TESTING.md) and [1.7 results](testing/RESULTS-1.7.md).
+
+## Everyday needs and session identity (1.8)
+
+Three new groups cover communication, organization and decision/learning tasks.
+They provide agent instructions, not mail/calendar/file-service integrations.
+Need bundles are overlapping installation selections; groups remain a disjoint
+navigation partition. Neither structure is a mandatory runtime dispatcher.
+
+The existing `sync(target, backup, check=False)` API retains full-catalog behavior.
+Its optional keyword-only `selected` list restricts the same preflight, backup and
+copy engine. Empty/unknown selections fail rather than silently selecting all.
+The need-based CLI resolves bundle unions before invoking that engine.
+
+Session verification pins production code, tests, schemas, host copies, CI,
+catalog/installation metadata, README and declared guide/evidence inputs.
+The exact scope is recorded in each report. Raw logs and session-report prose
+under `docs/testing/` are excluded to avoid a report hashing itself. A source
+change during the campaign yields STALE, and verification rejects another
+session ID, changed inputs or missing gate results. This is provenance checking,
+not cryptographic attestation of an untrusted report's execution.

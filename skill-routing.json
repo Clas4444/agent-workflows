@@ -295,6 +295,48 @@
       "acceptable": [
         "loop-workflow-incident"
       ]
+    },
+    {
+      "id": "route-43",
+      "prompt": "Draft a polite everyday email from these facts, keeping an undecided shipping date as a placeholder. Do not send it.",
+      "acceptable": [
+        "loop-write"
+      ]
+    },
+    {
+      "id": "route-44",
+      "prompt": "Condense these supplied memos with source pointers and unresolved contradictions; do not discover new external sources or extract a meeting action log.",
+      "acceptable": [
+        "loop-summarize"
+      ]
+    },
+    {
+      "id": "route-45",
+      "prompt": "Turn this meeting transcript into decisions, proposals and actions with only explicit owners and due dates. Do not notify attendees.",
+      "acceptable": [
+        "loop-meeting"
+      ]
+    },
+    {
+      "id": "route-46",
+      "prompt": "Propose a collision-safe organization of this selected local folder; matching filenames may have different contents. Do not move or delete files.",
+      "acceptable": [
+        "loop-organize"
+      ]
+    },
+    {
+      "id": "route-47",
+      "prompt": "Compare these everyday options against my budget and accessibility priorities, disclose missing facts and give a conditional choice. Do not book anything.",
+      "acceptable": [
+        "loop-decide"
+      ]
+    },
+    {
+      "id": "route-48",
+      "prompt": "Create a beginner study plan and retrieval exercises for 20 minutes per day; no learner answers are supplied, so do not invent assessment results.",
+      "acceptable": [
+        "loop-learn"
+      ]
     }
   ],
   "decisions": [
@@ -492,6 +534,36 @@
       "skill": "loop-workflow-incident",
       "action": "add",
       "reason": "Coordinate an explicit lifecycle with distinct acceptance and authorization gates; focused skills remain independently usable."
+    },
+    {
+      "skill": "loop-write",
+      "action": "add",
+      "reason": "Serve a distinct non-coding utility need with explicit source, outcome and side-effect boundaries."
+    },
+    {
+      "skill": "loop-summarize",
+      "action": "add",
+      "reason": "Serve a distinct non-coding utility need with explicit source, outcome and side-effect boundaries."
+    },
+    {
+      "skill": "loop-meeting",
+      "action": "add",
+      "reason": "Serve a distinct non-coding utility need with explicit source, outcome and side-effect boundaries."
+    },
+    {
+      "skill": "loop-organize",
+      "action": "add",
+      "reason": "Serve a distinct non-coding utility need with explicit source, outcome and side-effect boundaries."
+    },
+    {
+      "skill": "loop-decide",
+      "action": "add",
+      "reason": "Serve a distinct non-coding utility need with explicit source, outcome and side-effect boundaries."
+    },
+    {
+      "skill": "loop-learn",
+      "action": "add",
+      "reason": "Serve a distinct non-coding utility need with explicit source, outcome and side-effect boundaries."
     }
   ],
   "overlap_decisions": [
@@ -585,6 +657,31 @@
         "loop-debug"
       ],
       "decision": "Lifecycle workflows coordinate MVP delivery, PR evidence and incident recovery; focused planning, review and bug repair remain distinct and are not mandatory extra steps."
+    },
+    {
+      "skills": [
+        "loop-write",
+        "loop-docs",
+        "loop-summarize"
+      ],
+      "decision": "Everyday drafting differs from repository documentation maintenance and faithful source condensation."
+    },
+    {
+      "skills": [
+        "loop-meeting",
+        "loop-summarize",
+        "loop-organize"
+      ],
+      "decision": "Meeting decision/action provenance differs from general summaries and collision-safe item organization."
+    },
+    {
+      "skills": [
+        "loop-decide",
+        "loop-evaluate",
+        "loop-learn",
+        "loop-plan"
+      ],
+      "decision": "Personal option tradeoffs, fixed-rubric grading, learning practice and implementation planning have separate outcomes."
     }
   ]
 }

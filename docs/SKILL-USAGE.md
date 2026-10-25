@@ -110,3 +110,14 @@ See [research and verification](RESEARCH-1.6.md).
 ## Project workflows (1.7)
 
 Use `loop-workflow-project` for MVP-to-slice delivery, `loop-workflow-pr` for a review packet, and `loop-workflow-incident` for incident impact and recovery decisions. Do not invoke a whole lifecycle for a narrow code edit. See [role workflows](guides/ROLE-WORKFLOWS.md).
+
+## Everyday utility skills (1.8)
+
+- `loop-write`: Everyday drafts; delivery is separate.
+- `loop-summarize`: Source-grounded summaries and coverage limits.
+- `loop-meeting`: Meeting decisions/actions without invented ownership.
+- `loop-organize`: Collision-safe organization with explicit move scope.
+- `loop-decide`: Conditional choices under stated priorities.
+- `loop-learn`: Feasible practice and learning plans without invented assessment.
+
+See [install by need](guides/INSTALL-BY-NEED.md) and [non-coding examples](guides/EVERYDAY-WORK.md).

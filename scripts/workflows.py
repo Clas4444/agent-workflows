@@ -55,8 +55,7 @@ def markdown(profiles):
              'These are small recommended toolkits, not mandatory sequences. Install or invoke',
              'only what the task needs. A skill provides instructions; it does not enforce a sandbox.', '',
              'See [practical English prompts](WORKFLOW-EXAMPLES.md) for concrete role-specific requests.', '',
-             '![Developer workflow](../assets/developer-workflow.png)', '',
-             '![Project workflows](../assets/project-workflows.png)', '',
+             'For non-coding work, see [everyday examples](EVERYDAY-WORK.md) and [install by need](INSTALL-BY-NEED.md).', '',
              'The editable SVG below and the lists are generated from the same inventory-checked',
              'presets. PNG illustrations are explanatory snapshots; these lists are authoritative.', '',
              '![Recommended skill stacks](../assets/skill-stacks.svg)', '']
@@ -67,7 +66,11 @@ def markdown(profiles):
                   '**Do**', '']
         lines += ['- '+value for value in row['do']]
         lines += ['', '**Do not**', '']+['- '+value for value in row['dont']]+['']
-    lines += ['## Evidence and invocation', '',
+    lines += ['## Software workflow illustrations', '',
+              'These developer/project examples are optional for software work. Everyday tasks do not need a coding lifecycle.', '',
+              '![Developer workflow](../assets/developer-workflow.png)', '',
+              '![Project workflows](../assets/project-workflows.png)', '',
+              '## Evidence and invocation', '',
               'PASS means the named check actually met its criterion. FAIL means an observed',
               'violation. BLOCKED means a prerequisite prevented execution. NOT_RUN means the',
               'check was not executed. Unit-test PASS does not establish host discovery, live',

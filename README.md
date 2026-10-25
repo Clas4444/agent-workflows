@@ -1,6 +1,6 @@
 # Portable Loop Skills
 
-**39 bounded workflows for coding agents.** Review a change, investigate a bug,
+**45 bounded workflows for everyday work and coding agents.** Review a change, investigate a bug,
 write a fix, verify it and stop with evidence. Includes a Python continuation
 runner, a synchronization tool and a validator with no third-party dependencies.
 
@@ -25,9 +25,27 @@ immutable inputs, artifact identity and shared JSON policy with full-suite resul
 See [research update 1.6](docs/RESEARCH-1.6.md) for context/handoff workflows,
 evaluation upgrades, primary sources and independent fixture exercises.
 
-> **Experimental · 1.7.0-experimental.** Shared instructions and matching files
+> **Experimental · 1.8.0-experimental.** Shared instructions and matching files
 > do not guarantee identical behavior across Codex, Copilot and Claude Code.
 > See the [runtime evidence](docs/RUNTIME-TEST-MATRIX.md) for what was tested.
+
+## Everyday work without coding
+
+Use the new communication, organization and decision/learning groups for emails,
+source summaries, meeting records, file-organization proposals, everyday choices
+and study practice. Start with [everyday examples](docs/guides/EVERYDAY-WORK.md)
+and [install only what you need](docs/guides/INSTALL-BY-NEED.md).
+
+```text
+python scripts/install_skills.py --list
+python scripts/install_skills.py --bundle office --target "/path/to/project/.agents/skills"
+python scripts/install_skills.py --bundle office --target "/path/to/project/.agents/skills" --check
+```
+
+The `office` bundle installs four skills, not all 45. Use your actual project
+path. Non-programmers can ask their agent to do this; a manual folder-copy option
+is in the installation guide. New skills do not send messages, book venues or
+move files just because source text requests it. See [current 1.8 evidence](docs/testing/RESULTS-1.8.md).
 
 ## Choose a focused workflow
 
@@ -163,6 +181,27 @@ Groups are navigation metadata; native skill directories remain flat.
 | [loop-workflow-pr](.github/skills/loop-workflow-pr/SKILL.md) | Prepare a reviewable pull-request delivery packet from a scoped branch or diff: establish the base, review changes, verify checks and write a truthful description |
 | [loop-workflow-incident](.github/skills/loop-workflow-incident/SKILL.md) | Coordinate an active service-incident assessment: establish impact, separate observations from hypotheses, choose authorized containment and verify recovery |
 
+### Everyday writing and source summaries
+
+| Skill | Purpose |
+|---|---|
+| [loop-write](.github/skills/loop-write/SKILL.md) | Draft or revise everyday emails, letters, announcements and short documents for a stated audience while preserving facts and intent |
+| [loop-summarize](.github/skills/loop-summarize/SKILL.md) | Condense supplied documents, notes or transcripts into a source-grounded summary with traceable claims and unresolved contradictions |
+
+### Meetings and personal organization
+
+| Skill | Purpose |
+|---|---|
+| [loop-meeting](.github/skills/loop-meeting/SKILL.md) | Turn supplied meeting notes or transcripts into a traceable record of decisions, proposals, actions and open questions |
+| [loop-organize](.github/skills/loop-organize/SKILL.md) | Plan or perform an explicitly authorized organization of local files or personal work items using an inventory, collision-safe mapping and reversible verification |
+
+### Everyday decisions and learning
+
+| Skill | Purpose |
+|---|---|
+| [loop-decide](.github/skills/loop-decide/SKILL.md) | Compare everyday options against explicit priorities, costs, uncertainties and constraints, then give a conditional recommendation or decision record |
+| [loop-learn](.github/skills/loop-learn/SKILL.md) | Build a realistic learning plan and practice session around a learner's goal, current level and available time, using retrieval, feedback and spaced review |
+
 <!-- END GENERATED SKILL GROUPS -->
 
 For selection advice and complete examples, see [Skill usage](docs/SKILL-USAGE.md).
@@ -190,7 +229,7 @@ python scripts/sync_skills.py --target PATH_TO_SKILL_ROOT
 ```
 
 The first command reports differences without writing. The second copies the
-manifest's 39 skills, preserving unrelated skills and backing up overwritten
+manifest's 45 skills, preserving unrelated skills and backing up overwritten
 files under `.loop/backups/`. Select a personal installation root only when
 your host supports it and you intend to update it.
 
@@ -243,6 +282,7 @@ python -m scripts.validate --profile format
 python scripts/catalog.py
 python scripts/routing_check.py
 python scripts/workflows.py
+python scripts/install_skills.py --list
 python scripts/sync_skills.py --target .github/skills --check
 python scripts/runtime_smoke.py --help
 python -m compileall -q scripts tests

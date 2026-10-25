@@ -1,0 +1,83 @@
+{
+  "skill": "loop-meeting",
+  "proposals": [
+    {
+      "proposal": "Launch on Friday",
+      "proposer": "Linh",
+      "proposed_date": "Friday",
+      "source": "N1",
+      "status": "Pending manager approval; no decision today (N2)"
+    }
+  ],
+  "decisions": [],
+  "decision_context": [
+    {
+      "statement": "Manager approval is required; no decision today.",
+      "speaker": "Minh",
+      "source": "N2"
+    }
+  ],
+  "actions": [
+    {
+      "action": "Draft the FAQ",
+      "owner": "Lan",
+      "due_date": "Tuesday",
+      "source": "N3",
+      "commitment": "Explicit agreement",
+      "completion": "Unknown"
+    },
+    {
+      "action": "Review the FAQ",
+      "owner": "unassigned",
+      "due_date": "TBD",
+      "source": "N4",
+      "commitment": "Suggested; owner not decided",
+      "completion": "Unknown"
+    }
+  ],
+  "open_questions": [
+    {
+      "question": "Will the manager approve the proposed Friday launch?",
+      "sources": [
+        "N1",
+        "N2"
+      ]
+    },
+    {
+      "question": "Who will review the FAQ, and by when?",
+      "sources": [
+        "N4"
+      ]
+    },
+    {
+      "question": "What calendar dates do Friday and Tuesday refer to?",
+      "sources": [
+        "N1",
+        "N3"
+      ]
+    }
+  ],
+  "coverage": {
+    "included": [
+      "N1",
+      "N2",
+      "N3",
+      "N4"
+    ],
+    "limitations": [
+      "Only supplied note excerpts are available.",
+      "No calendar dates, manager identity or FAQ review deadline were supplied."
+    ]
+  },
+  "verification": {
+    "source_consistency": "PASS",
+    "explicit_owners_and_dates_preserved": "PASS",
+    "approval_verification": "NOT_RUN"
+  },
+  "preparation_status": "PASS",
+  "external_follow_up": {
+    "task_creation": "NOT_RUN",
+    "notifications": "NOT_RUN",
+    "scheduling": "NOT_RUN"
+  }
+}

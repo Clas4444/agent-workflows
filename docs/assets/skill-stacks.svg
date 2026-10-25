@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1315" viewBox="0 0 1200 1315" role="img" aria-labelledby="title desc">
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="2035" viewBox="0 0 1200 2035" role="img" aria-labelledby="title desc">
 <title id="title">Recommended Loop skill toolkits</title>
 <desc id="desc">Role-specific recommendations. Skills are optional instructions, not a sandbox.</desc>
 <rect width="1200" height="100%" fill="#f4f8fc"/>
@@ -6,34 +6,52 @@
 <text x="35" y="48" font-size="30" font-weight="bold">Choose a focused toolkit for your work</text>
 <text x="35" y="83" font-size="19">Recommendations, not mandatory sequences. Run only the skills your task needs.</text>
 <rect x="25" y="110" width="1150" height="225" rx="15" fill="white" stroke="#c4d9ed"/>
-<text x="45" y="144" font-size="25" font-weight="bold">Professional developer</text>
-<text x="45" y="176" font-size="18" fill="#18324f">Core: loop-research-repo, loop-code, loop-debug, loop-test, loop-review</text>
-<text x="45" y="200" font-size="18" fill="#385d85">Optional: loop-plan, loop-workflow-pr</text>
-<text x="45" y="224" font-size="18" fill="#126246">DO: Choose code for new behavior or debug for a demonstrated defect.</text>
-<text x="45" y="248" font-size="18" fill="#9c2941">DO NOT: Run every installed skill for every change.</text>
+<text x="45" y="144" font-size="25" font-weight="bold">Everyday writer</text>
+<text x="45" y="176" font-size="18" fill="#18324f">Core: loop-write, loop-summarize</text>
+<text x="45" y="200" font-size="18" fill="#385d85">Optional: loop-meeting</text>
+<text x="45" y="224" font-size="18" fill="#126246">DO: Keep facts, qualifiers and unknown dates visible.</text>
+<text x="45" y="248" font-size="18" fill="#9c2941">DO NOT: Invent promises or missing document contents.</text>
 <rect x="25" y="350" width="1150" height="225" rx="15" fill="white" stroke="#c4d9ed"/>
-<text x="45" y="384" font-size="25" font-weight="bold">Project builder</text>
-<text x="45" y="416" font-size="18" fill="#18324f">Core: loop-workflow-project, loop-plan, loop-code, loop-test, loop-handoff</text>
-<text x="45" y="440" font-size="18" fill="#385d85">Optional: loop-context, loop-review</text>
-<text x="45" y="464" font-size="18" fill="#126246">DO: Keep non-goals and undecided product choices visible.</text>
-<text x="45" y="488" font-size="18" fill="#9c2941">DO NOT: Treat a generated scaffold as a finished product.</text>
+<text x="45" y="384" font-size="25" font-weight="bold">Office and personal organizer</text>
+<text x="45" y="416" font-size="18" fill="#18324f">Core: loop-meeting, loop-organize</text>
+<text x="45" y="440" font-size="18" fill="#385d85">Optional: loop-write, loop-summarize</text>
+<text x="45" y="464" font-size="18" fill="#126246">DO: Keep tentative proposals and unknown owners separate.</text>
+<text x="45" y="488" font-size="18" fill="#9c2941">DO NOT: Invent meeting agreement or due dates.</text>
 <rect x="25" y="590" width="1150" height="225" rx="15" fill="white" stroke="#c4d9ed"/>
-<text x="45" y="624" font-size="25" font-weight="bold">Maintainer and QA engineer</text>
-<text x="45" y="656" font-size="18" fill="#18324f">Core: loop-test-adversarial, loop-evaluate, loop-ci, loop-review</text>
-<text x="45" y="680" font-size="18" fill="#385d85">Optional: loop-workflow-pr, loop-test-compatibility</text>
-<text x="45" y="704" font-size="18" fill="#126246">DO: Freeze the expected outcome before grading outputs.</text>
-<text x="45" y="728" font-size="18" fill="#9c2941">DO NOT: Change the oracle to make a failed case pass.</text>
+<text x="45" y="624" font-size="25" font-weight="bold">Learner and everyday decision maker</text>
+<text x="45" y="656" font-size="18" fill="#18324f">Core: loop-decide, loop-learn</text>
+<text x="45" y="680" font-size="18" fill="#385d85">Optional: loop-summarize, loop-research</text>
+<text x="45" y="704" font-size="18" fill="#126246">DO: Disclose missing evidence and test conditional recommendations.</text>
+<text x="45" y="728" font-size="18" fill="#9c2941">DO NOT: Give precise scores to unknown facts.</text>
 <rect x="25" y="830" width="1150" height="225" rx="15" fill="white" stroke="#c4d9ed"/>
-<text x="45" y="864" font-size="25" font-weight="bold">Researcher</text>
-<text x="45" y="896" font-size="18" fill="#18324f">Core: loop-research, loop-context, loop-evaluate</text>
-<text x="45" y="920" font-size="18" fill="#385d85">Optional: loop-research-repo, loop-research-tools, loop-handoff</text>
-<text x="45" y="944" font-size="18" fill="#126246">DO: Record source dates and distinguish evidence from inference.</text>
-<text x="45" y="968" font-size="18" fill="#9c2941">DO NOT: Treat a paper result as proof of this repository&#x27;s runtime behavior.</text>
+<text x="45" y="864" font-size="25" font-weight="bold">Professional developer</text>
+<text x="45" y="896" font-size="18" fill="#18324f">Core: loop-research-repo, loop-code, loop-debug, loop-test, loop-review</text>
+<text x="45" y="920" font-size="18" fill="#385d85">Optional: loop-plan, loop-workflow-pr</text>
+<text x="45" y="944" font-size="18" fill="#126246">DO: Choose code for new behavior or debug for a demonstrated defect.</text>
+<text x="45" y="968" font-size="18" fill="#9c2941">DO NOT: Run every installed skill for every change.</text>
 <rect x="25" y="1070" width="1150" height="225" rx="15" fill="white" stroke="#c4d9ed"/>
-<text x="45" y="1104" font-size="25" font-weight="bold">Incident responder</text>
-<text x="45" y="1136" font-size="18" fill="#18324f">Core: loop-workflow-incident, loop-diagnose, loop-observe</text>
-<text x="45" y="1160" font-size="18" fill="#385d85">Optional: loop-deploy, loop-security</text>
-<text x="45" y="1184" font-size="18" fill="#126246">DO: Prefer reversible actions inside existing authorization.</text>
-<text x="45" y="1208" font-size="18" fill="#9c2941">DO NOT: Treat one green probe as sustained recovery.</text>
+<text x="45" y="1104" font-size="25" font-weight="bold">Project builder</text>
+<text x="45" y="1136" font-size="18" fill="#18324f">Core: loop-workflow-project, loop-plan, loop-code, loop-test, loop-handoff</text>
+<text x="45" y="1160" font-size="18" fill="#385d85">Optional: loop-context, loop-review</text>
+<text x="45" y="1184" font-size="18" fill="#126246">DO: Keep non-goals and undecided product choices visible.</text>
+<text x="45" y="1208" font-size="18" fill="#9c2941">DO NOT: Treat a generated scaffold as a finished product.</text>
+<rect x="25" y="1310" width="1150" height="225" rx="15" fill="white" stroke="#c4d9ed"/>
+<text x="45" y="1344" font-size="25" font-weight="bold">Maintainer and QA engineer</text>
+<text x="45" y="1376" font-size="18" fill="#18324f">Core: loop-test-adversarial, loop-evaluate, loop-ci, loop-review</text>
+<text x="45" y="1400" font-size="18" fill="#385d85">Optional: loop-workflow-pr, loop-test-compatibility</text>
+<text x="45" y="1424" font-size="18" fill="#126246">DO: Freeze the expected outcome before grading outputs.</text>
+<text x="45" y="1448" font-size="18" fill="#9c2941">DO NOT: Change the oracle to make a failed case pass.</text>
+<rect x="25" y="1550" width="1150" height="225" rx="15" fill="white" stroke="#c4d9ed"/>
+<text x="45" y="1584" font-size="25" font-weight="bold">Researcher</text>
+<text x="45" y="1616" font-size="18" fill="#18324f">Core: loop-research, loop-context, loop-evaluate</text>
+<text x="45" y="1640" font-size="18" fill="#385d85">Optional: loop-research-repo, loop-research-tools, loop-handoff</text>
+<text x="45" y="1664" font-size="18" fill="#126246">DO: Record source dates and distinguish evidence from inference.</text>
+<text x="45" y="1688" font-size="18" fill="#9c2941">DO NOT: Treat a paper result as proof of this repository&#x27;s runtime behavior.</text>
+<rect x="25" y="1790" width="1150" height="225" rx="15" fill="white" stroke="#c4d9ed"/>
+<text x="45" y="1824" font-size="25" font-weight="bold">Incident responder</text>
+<text x="45" y="1856" font-size="18" fill="#18324f">Core: loop-workflow-incident, loop-diagnose, loop-observe</text>
+<text x="45" y="1880" font-size="18" fill="#385d85">Optional: loop-deploy, loop-security</text>
+<text x="45" y="1904" font-size="18" fill="#126246">DO: Prefer reversible actions inside existing authorization.</text>
+<text x="45" y="1928" font-size="18" fill="#9c2941">DO NOT: Treat one green probe as sustained recovery.</text>
 </g>
 </svg>

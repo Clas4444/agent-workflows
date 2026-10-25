@@ -1,0 +1,308 @@
+{
+  "session_id": "noncode-1.8-20261025T054823Z",
+  "input": {
+    "descriptions": {
+      "loop-review": "Inspect a scoped change or repository and report prioritized findings with source evidence. Use for review; use loop-plan for planning, loop-evaluate for fixed-rubric scoring and loop-research workflows for adoption decisions.",
+      "loop-code": "Implement an authorized feature or configuration change in small verified batches. Prefer loop-debug when the main goal is repairing a reproducible bug and loop-refactor when the goal is restructuring without changing behavior.",
+      "loop-diagnose": "Investigate an unexplained symptom using competing hypotheses and discriminating experiments. Use for diagnosis without an assumed repair; prefer loop-debug for a requested fix, loop-diagnose-repro for minimization and the focused performance/regression routes when those are the goal.",
+      "loop-diagnose-repro": "Run a bounded reproduction loop for a bug or failure: capture the environment, minimize the reproducer, vary one factor at a time, and preserve exact evidence for a later fix.",
+      "loop-diagnose-performance": "Run a bounded performance-diagnosis loop for slow, memory-heavy, or resource-intensive behavior. Establish a baseline, profile safely, isolate a bottleneck, and verify a targeted improvement.",
+      "loop-diagnose-regression": "Run a bounded regression-diagnosis loop: compare a known-good and failing state, bisect or narrow the change set, reproduce the regression, and verify the smallest authorized fix.",
+      "loop-research": "Run a bounded evidence loop to research repositories, documentation, tools, extensions, plugins, skills, MCP servers, or implementation options. Use when the user asks to search, compare, or investigate repeatedly.",
+      "loop-research-repo": "Research repositories and open-source projects in a bounded evidence loop. Compare relevance, activity, license, security, compatibility, and maintenance before recommending adoption.",
+      "loop-research-tools": "Research tools, extensions, plugins, skills, and MCP servers in a bounded evidence loop. Evaluate capability, permissions, maintenance, compatibility, cost, and adoption risk before recommending or installing anything.",
+      "loop-test": "Select and execute a risk-based test strategy for a project or change when the required test layer is not yet known. Use focused unit, integration, E2E, coverage, adversarial or compatibility skills when that layer is already the main request.",
+      "loop-test-unit": "Run a bounded unit-test loop for a module or function: select focused tests, reproduce failures, improve authorized tests or fixtures, and verify isolated behavior without weakening acceptance criteria.",
+      "loop-test-integration": "Run a bounded integration-test loop across services, processes, files, databases, or external boundaries. Verify setup, contracts, failure paths, cleanup, and reproducibility.",
+      "loop-test-coverage": "Run a bounded test-coverage loop: identify untested risk, inspect coverage evidence, add authorized focused tests, and verify that coverage improvements are meaningful rather than cosmetic.",
+      "loop-docs": "Run a bounded documentation loop: audit README, guides, API references, examples, localization, and generated documentation; propose or make authorized updates; verify links and consistency. Use when the user asks to improve docs repeatedly.",
+      "loop-skill-create": "Create or maintain an agent skill through requirements, reusable-pattern inspection, synchronized editing, focused tests, documentation, and evidence review. Use when adding or changing a SKILL.md workflow.",
+      "loop-orchestrate": "Run bounded follow-up prompts through a configured headless coding-agent command with state, timeout, stop markers, and evidence. Use when a loop must continue in a new agent invocation.",
+      "loop-prompt": "Run an initial user prompt, have the agent infer the next useful prompt, and execute a bounded number of follow-up prompts with evidence. Use when the user requests /loop-prompt N.",
+      "loop-debug": "Repair a reproducible bug end to end: capture a failing test, isolate the cause, apply the smallest authorized fix, and rerun regression checks. Use when the user wants a bug fixed, rather than diagnosis alone.",
+      "loop-security": "Review authorized code and configuration for security risks using threat boundaries, source evidence and safe local tests. Use for a defensive security review or scoped remediation, not unrestricted probing.",
+      "loop-refactor": "Improve a scoped code structure while preserving observable behavior through characterization tests, small reversible changes and regression checks. Use for maintainability work without a feature or bug-fix behavior change.",
+      "loop-ci": "Diagnose and repair scoped CI failures by tracing a failed job to logs, reproducing locally where possible, and verifying workflow changes. Use for CI pipelines rather than general application debugging.",
+      "loop-release": "Prepare and verify a scoped release candidate: version consistency, reproducible build, package contents, changelog and rollback notes. Use for release readiness; publishing remains a separately authorized action.",
+      "loop-plan": "Turn a scoped request into dependency-ordered, verifiable implementation batches without changing code. Use before multi-step work when acceptance criteria, risks or sequencing need definition.",
+      "loop-dependencies": "Assess and perform an authorized dependency change with manifest/lockfile consistency, compatibility checks and rollback evidence. Use for project dependency maintenance rather than tool adoption.",
+      "loop-migrate": "Prepare and verify a scoped data, schema or configuration migration with dry-run, backup, invariants, idempotence and rollback. Use when stored state or format changes, not for behavior-preserving refactors.",
+      "loop-test-e2e": "Verify a complete user-visible journey through its real entry point, including success, invalid input and observable side effects. Use for end-to-end acceptance, not isolated units or one integration boundary.",
+      "loop-evaluate": "Evaluate a skill or agent workflow using predefined cases, an explicit rubric and independently checked outcomes. Use for quality measurement, false-positive analysis and baseline comparison rather than code coverage.",
+      "loop-test-adversarial": "Challenge a declared contract with isolated adversarial inputs and independently observed outcomes. Use to find false PASS results or boundary violations; use loop-security for a general threat review and loop-debug for an already identified bug.",
+      "loop-test-compatibility": "Verify a declared compatibility matrix across versions, platforms, host adapters or data formats. Use to distinguish structural portability from executed behavior; use loop-test-integration for one boundary and loop-test-e2e for one complete journey.",
+      "loop-mcp-design": "Design a scoped MCP client/server integration around a pinned protocol version, tool contracts and trust boundaries. Use before implementing or changing an MCP interface; use loop-mcp-test for execution and loop-mcp-security for defensive review.",
+      "loop-mcp-test": "Exercise a versioned MCP interface using bounded local fixtures or an explicitly authorized server. Check tool contracts, correlation, error behavior and side effects; use loop-test-integration for non-MCP boundaries and loop-mcp-design for planning.",
+      "loop-mcp-security": "Review an authorized MCP integration for tool trust, scoped authorization, credential handling and data-exfiltration boundaries. Use for MCP-specific defensive analysis; use loop-security for general code review and loop-test-adversarial for generic false-PASS challenges.",
+      "loop-deploy": "Execute or rehearse a scoped deployment of a known release with health gates and rollback evidence. Use after release preparation when environment rollout is the goal; use loop-ci for pipeline repair and loop-migrate for persisted-data transformations.",
+      "loop-observe": "Assess whether logs, metrics, traces and health signals can detect and explain an operational failure. Use for observability and alert verification; use loop-diagnose-performance for profiling and loop-deploy for executing a rollout.",
+      "loop-context": "Prepare a compact, source-linked context packet for a specific task from existing artifacts. Use to select relevant constraints and resolve stale context before implementation; use loop-research to discover new sources.",
+      "loop-handoff": "Create or validate a resumable checkpoint for unfinished agent work across sessions. Use to transfer current state, evidence and the next bounded action; use loop-orchestrate to launch follow-up processes.",
+      "loop-workflow-project": "Turn an authorized small-project idea into an incremental delivery workflow with an MVP boundary, acceptance backlog, first verified slice and resumable state. Use for a new project lifecycle, not a single code change.",
+      "loop-workflow-pr": "Prepare a reviewable pull-request delivery packet from a scoped branch or diff: establish the base, review changes, verify checks and write a truthful description. Create or update the remote PR only when authorized.",
+      "loop-workflow-incident": "Coordinate an active service-incident assessment: establish impact, separate observations from hypotheses, choose authorized containment and verify recovery. Use for operational disruption, not an ordinary reproducible development bug.",
+      "loop-write": "Draft or revise everyday emails, letters, announcements and short documents for a stated audience while preserving facts and intent. Use for communication writing, not technical repository documentation or sending messages.",
+      "loop-summarize": "Condense supplied documents, notes or transcripts into a source-grounded summary with traceable claims and unresolved contradictions. Use for faithful compression, not open-ended research or inventing a decision record.",
+      "loop-meeting": "Turn supplied meeting notes or transcripts into a traceable record of decisions, proposals, actions and open questions. Use for meeting follow-through, not generic summarization or automatically scheduling and messaging attendees.",
+      "loop-organize": "Plan or perform an explicitly authorized organization of local files or personal work items using an inventory, collision-safe mapping and reversible verification. Use for organizing existing material, not silent deletion, cloud migration or software refactoring.",
+      "loop-decide": "Compare everyday options against explicit priorities, costs, uncertainties and constraints, then give a conditional recommendation or decision record. Use for choosing among options, not inventing missing facts or making a high-stakes decision on the user's behalf.",
+      "loop-learn": "Build a realistic learning plan and practice session around a learner's goal, current level and available time, using retrieval, feedback and spaced review. Use for tutoring and study planning, not claiming mastery from a generated plan."
+    },
+    "requests": [
+      {
+        "id": "route-01",
+        "prompt": "Inspect this repository for prioritized actionable findings with source locations. Do not implement, create a project plan or score a rubric."
+      },
+      {
+        "id": "route-02",
+        "prompt": "Implement a new TSV export option in this existing application and verify its behavior."
+      },
+      {
+        "id": "route-03",
+        "prompt": "Investigate an unexplained intermittent failure using competing hypotheses. No repair or code edits yet."
+      },
+      {
+        "id": "route-04",
+        "prompt": "Minimize this failing example into the smallest repeatable reproducer; do not fix it."
+      },
+      {
+        "id": "route-05",
+        "prompt": "Profile CPU and memory and compare repeated measurements to isolate a performance bottleneck."
+      },
+      {
+        "id": "route-06",
+        "prompt": "Find which change between these known-good and failing revisions introduced the regression."
+      },
+      {
+        "id": "route-07",
+        "prompt": "Compare the technical tradeoffs of two parsing algorithms using primary sources; no repository or tool adoption decision."
+      },
+      {
+        "id": "route-08",
+        "prompt": "Compare these two Git repositories for adoption using maintenance, license and compatibility evidence."
+      },
+      {
+        "id": "route-09",
+        "prompt": "Assess available tools or plugins for a missing capability, including permissions and costs; do not install."
+      },
+      {
+        "id": "route-10",
+        "prompt": "Choose the appropriate testing layers for this broad change, then run a risk-based test strategy; the needed layer is not yet known."
+      },
+      {
+        "id": "route-11",
+        "prompt": "Write focused isolated assertions for this one pure function."
+      },
+      {
+        "id": "route-12",
+        "prompt": "Verify the contract at the runner-to-child-process boundary, including setup and cleanup."
+      },
+      {
+        "id": "route-13",
+        "prompt": "Use the existing coverage report to find meaningful untested behavior without changing thresholds."
+      },
+      {
+        "id": "route-14",
+        "prompt": "Update the usage guide and check its examples against the implementation."
+      },
+      {
+        "id": "route-15",
+        "prompt": "Author a distinct new SKILL.md workflow with synchronized copies and acceptance evidence."
+      },
+      {
+        "id": "route-16",
+        "prompt": "Run the explicitly configured headless coding-agent command with a finite invocation limit, timeout and status markers."
+      },
+      {
+        "id": "route-17",
+        "prompt": "Run my initial prompt and three inferred follow-up prompts using the already authorized local adapter."
+      },
+      {
+        "id": "route-18",
+        "prompt": "Fix this reproducible off-by-one bug, preserving a failing baseline and verifying the regression."
+      },
+      {
+        "id": "route-19",
+        "prompt": "Review this local upload handler for reachable authorization and path-escape risks using defensive fixtures."
+      },
+      {
+        "id": "route-20",
+        "prompt": "Restructure these modules while preserving all observable behavior and public APIs."
+      },
+      {
+        "id": "route-21",
+        "prompt": "Repair the failed Windows CI job using its run logs, preserving required checks."
+      },
+      {
+        "id": "route-22",
+        "prompt": "Prepare a release candidate, verify package contents and checksums, and assess readiness without deploying."
+      },
+      {
+        "id": "route-23",
+        "prompt": "Write a dependency-ordered implementation plan with acceptance gates and out-of-scope items; do not implement."
+      },
+      {
+        "id": "route-24",
+        "prompt": "Update this approved package version consistently in manifest and lockfile, checking compatibility and rollback."
+      },
+      {
+        "id": "route-25",
+        "prompt": "Migrate persisted schema on copied records with no-write dry-run, invariants, idempotence, backup and exercised rollback."
+      },
+      {
+        "id": "route-26",
+        "prompt": "Test the complete CLI user journey from arguments to JSON output, invalid-input errors and side effects."
+      },
+      {
+        "id": "route-27",
+        "prompt": "Score supplied baseline and candidate outputs against a predefined rubric and report false positives and denominators."
+      },
+      {
+        "id": "route-28",
+        "prompt": "Try to prove or disprove a false PASS in this validator using isolated invalid-data fixtures and independent oracles."
+      },
+      {
+        "id": "route-29",
+        "prompt": "Verify the declared platform/version/adapter support matrix, distinguishing unavailable cells from passed cells."
+      },
+      {
+        "id": "route-30",
+        "prompt": "Design an MCP tool interface pinned to the supplied protocol version before implementing any server."
+      },
+      {
+        "id": "route-31",
+        "prompt": "Check these offline MCP tools/call fixtures for malformed arguments and response-correlation errors; no live server."
+      },
+      {
+        "id": "route-32",
+        "prompt": "Review this MCP integration for token passthrough, tool poisoning and transport-specific authorization boundaries."
+      },
+      {
+        "id": "route-33",
+        "prompt": "Rehearse rolling out this already prepared artifact with health gates and verify rollback to the previous version."
+      },
+      {
+        "id": "route-34",
+        "prompt": "Check whether these existing logs and traces correlate a failure and whether the defined alert would detect it; do not send notifications."
+      },
+      {
+        "id": "route-35",
+        "prompt": "Write a birthday poem for my friend."
+      },
+      {
+        "id": "route-36",
+        "prompt": "Translate this ordinary sentence into Vietnamese."
+      },
+      {
+        "id": "route-37",
+        "prompt": "Calculate the area of a circle with radius three."
+      },
+      {
+        "id": "route-38",
+        "prompt": "Select a compact source-linked context packet from these existing notes, preserving critical constraints and unresolved conflicts. Do not discover new sources or create a project plan."
+      },
+      {
+        "id": "route-39",
+        "prompt": "Resume an unfinished task from a saved checkpoint; verify current source identities and identify which evidence is stale. Do not launch another process or implement the next step."
+      },
+      {
+        "id": "route-40",
+        "prompt": "Scope a new offline inventory project into an MVP backlog and deliver its first authorized verified slice with a checkpoint."
+      },
+      {
+        "id": "route-41",
+        "prompt": "Prepare a pull-request delivery packet for these completed changes: resolve base/head, review the diff, record checks and draft a truthful title and description."
+      },
+      {
+        "id": "route-42",
+        "prompt": "Coordinate this active service outage: establish impact, assess permitted containment and verify sustained recovery."
+      },
+      {
+        "id": "route-43",
+        "prompt": "Draft a polite everyday email from these facts, keeping an undecided shipping date as a placeholder. Do not send it."
+      },
+      {
+        "id": "route-44",
+        "prompt": "Condense these supplied memos with source pointers and unresolved contradictions; do not discover new external sources or extract a meeting action log."
+      },
+      {
+        "id": "route-45",
+        "prompt": "Turn this meeting transcript into decisions, proposals and actions with only explicit owners and due dates. Do not notify attendees."
+      },
+      {
+        "id": "route-46",
+        "prompt": "Propose a collision-safe organization of this selected local folder; matching filenames may have different contents. Do not move or delete files."
+      },
+      {
+        "id": "route-47",
+        "prompt": "Compare these everyday options against my budget and accessibility priorities, disclose missing facts and give a conditional choice. Do not book anything."
+      },
+      {
+        "id": "route-48",
+        "prompt": "Create a beginner study plan and retrieval exercises for 20 minutes per day; no learner answers are supplied, so do not invent assessment results."
+      }
+    ]
+  },
+  "predictions": {
+    "route-01": "loop-review",
+    "route-02": "loop-code",
+    "route-03": "loop-diagnose",
+    "route-04": "loop-diagnose-repro",
+    "route-05": "loop-diagnose-performance",
+    "route-06": "loop-diagnose-regression",
+    "route-07": "loop-research",
+    "route-08": "loop-research-repo",
+    "route-09": "loop-research-tools",
+    "route-10": "loop-test",
+    "route-11": "loop-test-unit",
+    "route-12": "loop-test-integration",
+    "route-13": "loop-test-coverage",
+    "route-14": "loop-docs",
+    "route-15": "loop-skill-create",
+    "route-16": "loop-orchestrate",
+    "route-17": "loop-prompt",
+    "route-18": "loop-debug",
+    "route-19": "loop-security",
+    "route-20": "loop-refactor",
+    "route-21": "loop-ci",
+    "route-22": "loop-release",
+    "route-23": "loop-plan",
+    "route-24": "loop-dependencies",
+    "route-25": "loop-migrate",
+    "route-26": "loop-test-e2e",
+    "route-27": "loop-evaluate",
+    "route-28": "loop-test-adversarial",
+    "route-29": "loop-test-compatibility",
+    "route-30": "loop-mcp-design",
+    "route-31": "loop-mcp-test",
+    "route-32": "loop-mcp-security",
+    "route-33": "loop-deploy",
+    "route-34": "loop-observe",
+    "route-35": "NONE",
+    "route-36": "NONE",
+    "route-37": "NONE",
+    "route-38": "loop-context",
+    "route-39": "loop-handoff",
+    "route-40": "loop-workflow-project",
+    "route-41": "loop-workflow-pr",
+    "route-42": "loop-workflow-incident",
+    "route-43": "loop-write",
+    "route-44": "loop-summarize",
+    "route-45": "loop-meeting",
+    "route-46": "loop-organize",
+    "route-47": "loop-decide",
+    "route-48": "loop-learn"
+  },
+  "result": {
+    "status": "PASS",
+    "total": 48,
+    "correct": 48,
+    "failed_case_ids": [],
+    "scope": "Curated route classification only, not host discovery or skill execution."
+  },
+  "protocol": "Fresh context received descriptions and request prompts only; expected routes were withheld and fixed before classification.",
+  "ambiguity": "Birthday poetry could broadly resemble writing; this pass selected NONE because the description targets factual everyday communication.",
+  "native_discovery": "NOT_RUN",
+  "skill_execution": "NOT_RUN",
+  "scope": "One curated selection pass, not a general accuracy estimate."
+}

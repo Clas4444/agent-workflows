@@ -1,5 +1,12 @@
 # Data contracts
 
+Need-based installation has a version-1 registry in `skill-bundles.json`, enforced
+by `scripts/skill_bundles.py` without third-party dependencies. Each named bundle
+has a purpose and unique manifest skill names. Bundles may overlap; they are not
+the disjoint functional group partition or a runtime dispatcher. Explicit bundle
+unions resolve to manifest order before the sync engine runs. No JSON Schema
+compliance beyond the documented reader is claimed for this registry.
+
 The opt-in acceptance CLI has a separately documented version-1 contract in
 [ACCEPTANCE-GATE.md](../docs/ACCEPTANCE-GATE.md), enforced by its dependency-free
 Python reader. It does not change the repository manifest or runner state and

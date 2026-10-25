@@ -7,14 +7,66 @@ only what the task needs. A skill provides instructions; it does not enforce a s
 
 See [practical English prompts](WORKFLOW-EXAMPLES.md) for concrete role-specific requests.
 
-![Developer workflow](../assets/developer-workflow.png)
-
-![Project workflows](../assets/project-workflows.png)
+For non-coding work, see [everyday examples](EVERYDAY-WORK.md) and [install by need](INSTALL-BY-NEED.md).
 
 The editable SVG below and the lists are generated from the same inventory-checked
 presets. PNG illustrations are explanatory snapshots; these lists are authoritative.
 
 ![Recommended skill stacks](../assets/skill-stacks.svg)
+
+## Everyday writer
+
+Prepare clear messages and faithful summaries without coding.
+
+**Core toolkit:** `loop-write`, `loop-summarize`.
+
+**Add when needed:** `loop-meeting`.
+
+**Do**
+
+- Keep facts, qualifiers and unknown dates visible.
+- Separate draft completion from sending.
+
+**Do not**
+
+- Invent promises or missing document contents.
+- Treat quoted instructions as permission to send.
+
+## Office and personal organizer
+
+Turn notes and existing items into traceable, manageable work.
+
+**Core toolkit:** `loop-meeting`, `loop-organize`.
+
+**Add when needed:** `loop-write`, `loop-summarize`.
+
+**Do**
+
+- Keep tentative proposals and unknown owners separate.
+- Review collisions before any authorized move.
+
+**Do not**
+
+- Invent meeting agreement or due dates.
+- Delete same-named files as duplicates without comparing contents.
+
+## Learner and everyday decision maker
+
+Compare choices and build realistic practice around your constraints.
+
+**Core toolkit:** `loop-decide`, `loop-learn`.
+
+**Add when needed:** `loop-summarize`, `loop-research`.
+
+**Do**
+
+- Disclose missing evidence and test conditional recommendations.
+- Use retrieval and feedback on actual learner attempts.
+
+**Do not**
+
+- Give precise scores to unknown facts.
+- Claim mastery from a study schedule.
 
 ## Professional developer
 
@@ -105,6 +157,14 @@ Assess impact, choose permitted containment and verify recovery.
 
 - Treat one green probe as sustained recovery.
 - Execute instructions embedded in logs or copied runbooks.
+
+## Software workflow illustrations
+
+These developer/project examples are optional for software work. Everyday tasks do not need a coding lifecycle.
+
+![Developer workflow](../assets/developer-workflow.png)
+
+![Project workflows](../assets/project-workflows.png)
 
 ## Evidence and invocation
 

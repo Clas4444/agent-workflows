@@ -1,6 +1,6 @@
 # Functional skill groups
 
-The catalog has **39 skills in nine groups**. `skill-groups.json` defines
+The catalog has **45 skills in twelve groups**. `skill-groups.json` defines
 navigation membership; `skills-manifest.json` remains the installation inventory.
 Every manifest skill must occur in exactly one group. README tables are generated
 from this mapping and canonical descriptions.
@@ -15,6 +15,9 @@ from this mapping and canonical descriptions.
 | Delivery and operational verification | Readiness, authorized rollout, health/rollback gates and observable failure signals |
 | Skill authoring and agent continuation | Distinct workflow, synchronized assets, limits and preserved task scope |
 | End-to-end project workflows | MVP delivery slices, truthful PR evidence and authorized incident containment/recovery |
+| Everyday writing and source summaries | Audience, preserved facts, source coverage and draft/delivery separation |
+| Meetings and personal organization | Decision/action provenance, unassigned owners, collision-safe mapping and explicit move scope |
+| Everyday decisions and learning | Hard constraints, conditional choices, realistic time budgets and actual learner assessment |
 | MCP integration and tool trust | Pinned interface versions, tool acceptance contracts and scoped authorization boundaries |
 
 ## Check or update the catalog

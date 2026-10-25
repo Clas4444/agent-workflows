@@ -31,7 +31,7 @@ def reject_destination_aliases(destination: Path, target: Path) -> None:
             raise ValueError(f'symlink/reparse destination alias is not supported: {component}')
 
 
-def sync(target: Path, backup: Path, check: bool = False) -> list[str]:
+def sync(target: Path, backup: Path, check: bool = False, *, selected: list[str] | None = None) -> list[str]:
     manifest = loads_json((REPO / 'skills-manifest.json').read_text(encoding='utf-8'))
     names = manifest.get('skills') if isinstance(manifest, dict) else None
     if (not isinstance(names, list) or not names
@@ -39,6 +39,12 @@ def sync(target: Path, backup: Path, check: bool = False) -> list[str]:
                    or len(name) > 64 for name in names)
             or len(names) != len(set(names))):
         raise ValueError('manifest skills must be unique, valid skill names')
+    if selected is not None:
+        if (not isinstance(selected, list) or not selected
+                or any(not isinstance(name, str) or name not in names for name in selected)
+                or len(selected) != len(set(selected))):
+            raise ValueError('selected skills must be a non-empty list of unique manifest names')
+        names = [name for name in names if name in selected]
     target, backup = target.resolve(), backup.resolve()
     source = REPO / '.github' / 'skills'
     if backup == target or target in backup.parents:

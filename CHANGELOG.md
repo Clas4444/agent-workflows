@@ -1,5 +1,12 @@
 # Changelog
 
+## 1.8.0-experimental — 2026-10-25
+
+- Add six everyday utility skills in three groups for writing/summaries, meetings/organization and decisions/learning: 45 skills in twelve groups.
+- Add eight need-based install bundles, explicit subset selection and an installation guide for non-programmers; preserve full-sync defaults and existing alias/backup preflight.
+- Add session-pinned verification campaigns that reject wrong-session, changed-input, incomplete-gate and zero-discovery results.
+- Record fresh baseline, independent current-session packet exercises and their native-discovery/external-action limitations in the 1.8 evidence.
+
 ## 1.7.0-experimental — 2026-10-25
 
 - Add an end-to-end project workflows group with project, PR and incident

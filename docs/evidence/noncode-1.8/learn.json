@@ -1,0 +1,221 @@
+{
+  "next_session": "Day 1: complete the short diagnostic before adapting the plan.",
+  "mode": "PLAN_ONLY",
+  "prior_ability": "UNKNOWN",
+  "assumptions": [
+    "Beginner level is a planning assumption, not demonstrated ability.",
+    "English prompts; use paper or mental calculation."
+  ],
+  "reminders": "NOT_RUN",
+  "review_plan": "Use the first four minutes for closed-note retrieval of earlier material. Reviews occur on days 5, 8, 12 and 13; revisit errors after two days and again near day 14 within the daily cap.",
+  "total_planned_minutes": 280,
+  "schedule": [
+    {
+      "retrieval_prompt": "Without help: draw 1/2; what does 25% mean?",
+      "day": 1,
+      "minutes": {
+        "retrieval_or_diagnostic": 4,
+        "total": 20,
+        "explanation_or_feedback": 5,
+        "practice_or_assessment": 8,
+        "reflection_and_review_plan": 3
+      },
+      "focus": "Short diagnostic: represent 1/2 and explain 25%.",
+      "completion": "NOT_RUN"
+    },
+    {
+      "retrieval_prompt": "Draw 3/4 and identify numerator and denominator.",
+      "day": 2,
+      "minutes": {
+        "retrieval_or_diagnostic": 4,
+        "total": 20,
+        "explanation_or_feedback": 5,
+        "practice_or_assessment": 8,
+        "reflection_and_review_plan": 3
+      },
+      "focus": "Represent fractions as equal parts of a whole.",
+      "completion": "NOT_RUN"
+    },
+    {
+      "retrieval_prompt": "Write two fractions equal to 1/2 and explain why.",
+      "day": 3,
+      "minutes": {
+        "retrieval_or_diagnostic": 4,
+        "total": 20,
+        "explanation_or_feedback": 5,
+        "practice_or_assessment": 8,
+        "reflection_and_review_plan": 3
+      },
+      "focus": "Generate equivalent fractions using models.",
+      "completion": "NOT_RUN"
+    },
+    {
+      "retrieval_prompt": "Simplify 6/8 and show each step.",
+      "day": 4,
+      "minutes": {
+        "retrieval_or_diagnostic": 4,
+        "total": 20,
+        "explanation_or_feedback": 5,
+        "practice_or_assessment": 8,
+        "reflection_and_review_plan": 3
+      },
+      "focus": "Simplify fractions using common factors.",
+      "completion": "NOT_RUN"
+    },
+    {
+      "retrieval_prompt": "Which is larger, 1/2 or 3/4? Explain from memory.",
+      "day": 5,
+      "minutes": {
+        "retrieval_or_diagnostic": 4,
+        "total": 20,
+        "explanation_or_feedback": 5,
+        "practice_or_assessment": 8,
+        "reflection_and_review_plan": 3
+      },
+      "focus": "Retrieve days 2-4 and compare simple fractions.",
+      "completion": "NOT_RUN"
+    },
+    {
+      "retrieval_prompt": "Write 35% as a fraction out of 100.",
+      "day": 6,
+      "minutes": {
+        "retrieval_or_diagnostic": 4,
+        "total": 20,
+        "explanation_or_feedback": 5,
+        "practice_or_assessment": 8,
+        "reflection_and_review_plan": 3
+      },
+      "focus": "Represent percentages as parts per hundred.",
+      "completion": "NOT_RUN"
+    },
+    {
+      "retrieval_prompt": "Convert 1/2, 1/4 and 3/4 to percentages.",
+      "day": 7,
+      "minutes": {
+        "retrieval_or_diagnostic": 4,
+        "total": 20,
+        "explanation_or_feedback": 5,
+        "practice_or_assessment": 8,
+        "reflection_and_review_plan": 3
+      },
+      "focus": "Convert common fractions to percentages.",
+      "completion": "NOT_RUN"
+    },
+    {
+      "retrieval_prompt": "Convert 20%, 50% and 75% to simplest fractions.",
+      "day": 8,
+      "minutes": {
+        "retrieval_or_diagnostic": 4,
+        "total": 20,
+        "explanation_or_feedback": 5,
+        "practice_or_assessment": 8,
+        "reflection_and_review_plan": 3
+      },
+      "focus": "Retrieve days 3 and 6-7; convert percentages to fractions.",
+      "completion": "NOT_RUN"
+    },
+    {
+      "retrieval_prompt": "Find 10%, 25% and 50% of 80.",
+      "day": 9,
+      "minutes": {
+        "retrieval_or_diagnostic": 4,
+        "total": 20,
+        "explanation_or_feedback": 5,
+        "practice_or_assessment": 8,
+        "reflection_and_review_plan": 3
+      },
+      "focus": "Find 10%, 25% and 50% of quantities.",
+      "completion": "NOT_RUN"
+    },
+    {
+      "retrieval_prompt": "Find 15% of 60 and explain your method.",
+      "day": 10,
+      "minutes": {
+        "retrieval_or_diagnostic": 4,
+        "total": 20,
+        "explanation_or_feedback": 5,
+        "practice_or_assessment": 8,
+        "reflection_and_review_plan": 3
+      },
+      "focus": "Find other whole-number percentages of quantities.",
+      "completion": "NOT_RUN"
+    },
+    {
+      "retrieval_prompt": "A group has 40 people; 30% choose tea. How many is that?",
+      "day": 11,
+      "minutes": {
+        "retrieval_or_diagnostic": 4,
+        "total": 20,
+        "explanation_or_feedback": 5,
+        "practice_or_assessment": 8,
+        "reflection_and_review_plan": 3
+      },
+      "focus": "Apply fractions and percentages to simple word problems.",
+      "completion": "NOT_RUN"
+    },
+    {
+      "retrieval_prompt": "Convert 3/5 to a percentage and find 3/5 of 50.",
+      "day": 12,
+      "minutes": {
+        "retrieval_or_diagnostic": 4,
+        "total": 20,
+        "explanation_or_feedback": 5,
+        "practice_or_assessment": 8,
+        "reflection_and_review_plan": 3
+      },
+      "focus": "Mixed retrieval and targeted correction.",
+      "completion": "NOT_RUN"
+    },
+    {
+      "retrieval_prompt": "Explain why 2/5 equals 40%; find 40% of 90.",
+      "day": 13,
+      "minutes": {
+        "retrieval_or_diagnostic": 4,
+        "total": 20,
+        "explanation_or_feedback": 5,
+        "practice_or_assessment": 8,
+        "reflection_and_review_plan": 3
+      },
+      "focus": "Spaced review and independent mixed practice.",
+      "completion": "NOT_RUN"
+    },
+    {
+      "retrieval_prompt": "Complete 10 mixed items covering representation, equivalence, conversions and quantities without notes.",
+      "day": 14,
+      "minutes": {
+        "retrieval_or_diagnostic": 4,
+        "total": 20,
+        "explanation_or_feedback": 5,
+        "practice_or_assessment": 8,
+        "reflection_and_review_plan": 3
+      },
+      "focus": "Final planned assessment and future review plan.",
+      "completion": "NOT_RUN"
+    }
+  ],
+  "proposed_success_criterion": "On day 14, attempt 10 mixed items independently; a provisional target is at least 8 correct with explained methods. This is a future criterion, not an observed score.",
+  "checks": {
+    "fourteen_days": "PASS",
+    "retrieval_and_spaced_review_planned": "PASS",
+    "daily_time_limit": "PASS",
+    "learning_outcomes_achieved": "NOT_RUN"
+  },
+  "observable_goals": [
+    "Represent and explain fractions using equal parts.",
+    "Produce and simplify equivalent fractions.",
+    "Convert common fractions and percentages in both directions.",
+    "Calculate percentages of quantities and explain a method."
+  ],
+  "skill": "loop-learn",
+  "feedback_plan": "Attempt prompts before checking worked examples or solutions. Compare each step, name the error, and retry a similar item. Adapt only after real learner responses; if day 1 shows gaps, replace later practice with prerequisite work while keeping 20 minutes per day.",
+  "assessment": {
+    "practice_completion": "NOT_RUN",
+    "reason": "No learner responses supplied; a generated schedule does not establish learning.",
+    "mastery": "NOT_ASSESSED",
+    "feedback_on_actual_responses": "NOT_RUN",
+    "score": null,
+    "final_assessment": "NOT_RUN",
+    "diagnostic": "NOT_RUN"
+  },
+  "worked_example": "Percent means per hundred: 1/4 = 25/100 = 25%. To find 25% of 80, divide 80 into four equal parts: 20."
+}

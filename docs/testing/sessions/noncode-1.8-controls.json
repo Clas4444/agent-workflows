@@ -1,0 +1,108 @@
+{
+  "session_id": "noncode-1.8-20261025T054823Z",
+  "controls": [
+    {
+      "case": "earlier-input-pin-is-stale",
+      "expected_exit": 1,
+      "actual_exit": 1,
+      "output": "verification inputs changed; the result is stale for this checkout\npost-run input pin differs"
+    },
+    {
+      "case": "wrong-session-is-rejected",
+      "expected_exit": 1,
+      "actual_exit": 1,
+      "output": "session ID does not match the requested session\nverification inputs changed; the result is stale for this checkout\npost-run input pin differs"
+    },
+    {
+      "case": "selected-hardlink-preflight",
+      "expected_exit": 1,
+      "actual_exit": 1,
+      "outside_bytes_preserved": true,
+      "backup_absent": true,
+      "other_selected_file_absent": true
+    },
+    {
+      "case": "final-report-matching-session",
+      "expected_exit": 0,
+      "actual_exit": 0,
+      "message": "PASS: session and verification inputs match"
+    },
+    {
+      "case": "final-report-wrong-session-only",
+      "expected_exit": 1,
+      "actual_exit": 1,
+      "message": "session ID does not match the requested session"
+    },
+    {
+      "case": "identical-isolated-copy",
+      "expected_exit": 0,
+      "actual_exit": 0,
+      "message": "PASS: session and verification inputs match"
+    },
+    {
+      "case": "changed-isolated-source-is-stale",
+      "expected_exit": 1,
+      "actual_exit": 1,
+      "message": "verification inputs changed; the result is stale for this checkout\npost-run input pin differs"
+    }
+  ],
+  "bundle_installs": [
+    {
+      "bundle": "writing",
+      "selected_count": 2,
+      "install_exit": 0,
+      "check_exit": 0,
+      "exact_selection_and_bytes": "PASS"
+    },
+    {
+      "bundle": "office",
+      "selected_count": 4,
+      "install_exit": 0,
+      "check_exit": 0,
+      "exact_selection_and_bytes": "PASS"
+    },
+    {
+      "bundle": "learning",
+      "selected_count": 3,
+      "install_exit": 0,
+      "check_exit": 0,
+      "exact_selection_and_bytes": "PASS"
+    },
+    {
+      "bundle": "decisions",
+      "selected_count": 3,
+      "install_exit": 0,
+      "check_exit": 0,
+      "exact_selection_and_bytes": "PASS"
+    },
+    {
+      "bundle": "developer",
+      "selected_count": 5,
+      "install_exit": 0,
+      "check_exit": 0,
+      "exact_selection_and_bytes": "PASS"
+    },
+    {
+      "bundle": "project",
+      "selected_count": 5,
+      "install_exit": 0,
+      "check_exit": 0,
+      "exact_selection_and_bytes": "PASS"
+    },
+    {
+      "bundle": "qa",
+      "selected_count": 4,
+      "install_exit": 0,
+      "check_exit": 0,
+      "exact_selection_and_bytes": "PASS"
+    },
+    {
+      "bundle": "incident",
+      "selected_count": 3,
+      "install_exit": 0,
+      "check_exit": 0,
+      "exact_selection_and_bytes": "PASS"
+    }
+  ],
+  "scope": "Real local CLIs on disposable fixtures; expected nonzero exits are explicit negative controls, not unrecorded failures."
+}

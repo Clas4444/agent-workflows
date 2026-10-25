@@ -1,0 +1,69 @@
+{
+  "session_id": "noncode-1.8-20261025T054823Z",
+  "base_revision": "ce93a07a148076b21afbd9a5ceb26c452059c870",
+  "instruction_sha256": {
+    "loop-write": "e77a0650acf3c39e5f427476573cde3d3faf89c2f99b4f49cad69a0afaec89d2",
+    "loop-summarize": "6669353a41ab65e52de665db29be4edb9a90b5b48f8249c1f26282bac1249b34",
+    "loop-meeting": "575f446cb6e24f0847af5805489f8bfb0cf6fbb02b2cf32b68364b231fd9fd60",
+    "loop-organize": "940d14ed5837c4b48e769b70a8627745efa01bfcd094fde849e8252a2b171572",
+    "loop-decide": "12fc03b6bd20f42d7bb51c781db7167590f108e2ef23e558698220fa77b7854c",
+    "loop-learn": "3badcf0fafcabcde60519e43327a668b55457e2668ec24563b705ad46cd27b66"
+  },
+  "criteria": {
+    "write": [
+      "USD 120 preserved",
+      "date remains undecided",
+      "no sending"
+    ],
+    "summarize": [
+      "both dates attributed",
+      "cancellation exception retained",
+      "missing appendix disclosed"
+    ],
+    "meeting": [
+      "no launch decision",
+      "Lan draft due Tuesday",
+      "review owner unassigned"
+    ],
+    "organize": [
+      "different source bytes retained",
+      "collision-safe proposal",
+      "no moves"
+    ],
+    "decide": [
+      "V2 violates access",
+      "V3 over budget",
+      "V1 only conditional on capacity"
+    ],
+    "learn": [
+      "daily<=20 and days<=14",
+      "retrieval and review",
+      "no invented assessment or mastery"
+    ]
+  },
+  "expected_criteria_frozen_before_model": true,
+  "model_contexts": 2,
+  "assessment": {
+    "write": "PASS",
+    "summarize": "PASS",
+    "meeting": "PASS",
+    "organize": "PASS",
+    "decide": "PASS",
+    "learn": "PASS"
+  },
+  "assessment_scope": "Manual semantic review plus packet arithmetic, JSON and input-identity checks. One synthetic request per skill.",
+  "native_discovery": "NOT_RUN",
+  "external_actions": "NOT_RUN",
+  "source_inputs_unchanged": true,
+  "artifact_sha256": {
+    "communication-request.txt": "0700e8f590e5552d814b41d2a6e3cece4338e35fb5b19e87b6638e590df9bfaa",
+    "decide.json": "1f227025ccd1787e22e2f0e81784c2e9073b36fba2cede5df2f1ddddcbe85d16",
+    "learn.json": "05fecf6179e9b3449a724a90bf1e8f5adcae2b9ed8ba7101db219b7be7a2298d",
+    "meeting.json": "1d8f08947155df34e5b8b89d08c50ef0afa0f9fd9cf016840e52fccfd88368f5",
+    "organize.json": "4614eb3f96bc51e174fab705f526c2585f9d156e4cc4703dff3bde8bf64a5fd0",
+    "planning-request.txt": "01c5b7374dcf9e2165c1b3ef660cd2df96d93ad27d4895528913e5c22301d85f",
+    "summarize.json": "270912ee6f695fbb600d51921de1d0be7e75e4f9c019b2c19924481640246de9",
+    "write.json": "2e28ff739ac0b32624483838a3449e1c872fbba7589f457de18362341bc00dea"
+  },
+  "publication_normalization": "UTF-8/LF serialization; JSON values unchanged; raw originals retained in ignored session directory."
+}

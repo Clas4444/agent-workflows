@@ -1,0 +1,55 @@
+{
+  "proposed_mapping": [
+    {
+      "destination": "input/flat/A-report.txt",
+      "source": "input/A/report.txt"
+    },
+    {
+      "destination": "input/flat/B-report.txt",
+      "source": "input/B/report.txt"
+    }
+  ],
+  "verification_plan": "Before execution, recheck source hashes and destination absence. After separately authorized moves, require exactly two mapped files with matching hashes and intended locations.",
+  "conflicts": [
+    {
+      "status": "PASS",
+      "content_identical": false,
+      "type": "matching_basename",
+      "resolution": "Preserve both distinct files with source-folder prefixes.",
+      "name": "report.txt"
+    }
+  ],
+  "mode": "PLAN_ONLY",
+  "source_safety": "Instruction-like content inside an input file was treated as data and not executed.",
+  "recovery_instructions": "If execution is later authorized, retain this mapping and original hashes; reverse each completed move to its original path only after checking identity and that the original path is free.",
+  "checks": {
+    "content_identity_comparison": "PASS",
+    "moves": "NOT_RUN",
+    "post_move_count_identity_location_verification": "NOT_RUN",
+    "folder_creation": "NOT_RUN",
+    "rollback": "NOT_RUN",
+    "proposed_destination_collision_check": "PASS"
+  },
+  "execution_status": "NOT_RUN",
+  "inventory_coverage": {
+    "status": "PASS",
+    "selected_root": "input",
+    "files_inspected": 2,
+    "inaccessible_items": []
+  },
+  "inventory": [
+    {
+      "bytes": 29,
+      "inspection": "PASS",
+      "source": "A/report.txt",
+      "sha256": "43020AC2B06B05DBFDB446C456F5334CE9C19FCB5BD4F079FFF1AD99EC5C5D53"
+    },
+    {
+      "bytes": 64,
+      "inspection": "PASS",
+      "source": "B/report.txt",
+      "sha256": "D69AA7FE6EA79C2DB7E26FEDDEA6A2BBD65F7CE4C58EB89622C31D0B747FF35C"
+    }
+  ],
+  "skill": "loop-organize"
+}

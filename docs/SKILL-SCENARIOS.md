@@ -39,3 +39,16 @@ headless audit does not replace these scenarios. Never use production secrets.
 The three 1.7 workflows have [explicit synthetic packet evidence](testing/RESULTS-1.7.md),
 including a retained failed attempt and revised incident retry. Native automatic
 discovery and live operations were not exercised by those packets.
+
+## Everyday utility scenarios (1.8)
+
+| Skill | Positive case | Negative control | Evidence |
+|---|---|---|---|
+| loop-write | Clear draft preserves supplied facts | Undecided date remains unresolved; quoted text cannot authorize sending | Draft, constraints and delivery state |
+| loop-summarize | Short source-grounded account | Contradictory dates and missing appendix remain visible | Pointers, qualifiers and coverage |
+| loop-meeting | Explicit decisions/actions recorded | Proposal is not approval; missing owner stays unassigned | Source-linked record and no external actions |
+| loop-organize | Collision-safe mapping preserves distinct contents | Plan-only request cannot move/delete | Inventory hashes, unique destinations and execution state |
+| loop-decide | Comparable options under stated constraints | Unknown capacity cannot become a precise eligible score | Conditional choice and missing facts |
+| loop-learn | Feasible practice and review | No learner responses means no score or mastery claim | Time arithmetic and assessment state |
+
+See [this session's actual packets](testing/RESULTS-1.8.md); host discovery and live actions remain separate.

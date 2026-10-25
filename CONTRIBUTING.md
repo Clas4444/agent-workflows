@@ -51,6 +51,7 @@ python -m scripts.validate --profile format
 python scripts/catalog.py
 python scripts/routing_check.py
 python scripts/workflows.py
+python scripts/install_skills.py --list
 python scripts/sync_skills.py --target .github/skills --check
 python scripts/runtime_smoke.py --help
 python -m compileall -q scripts tests
@@ -65,3 +66,5 @@ Use an installed Python 3.11+ interpreter; on Windows, `py -3` is an alternative
 only when that launcher is present. See [test procedure](docs/testing/TESTING.md)
 for gate scopes and skip handling. Edit `workflow-presets.json` and regenerate
 with `python scripts/workflows.py --write` when role recommendations change.
+
+Need-bundle changes belong in `skill-bundles.json`; test subset installs as well as full synchronization. Use a fresh session-pinned campaign when recording final verification, and do not reuse a previous session's PASS after editing inputs.

@@ -82,5 +82,26 @@
       "loop-workflow-pr",
       "loop-workflow-incident"
     ]
+  },
+  "everyday-communication": {
+    "title": "Everyday writing and source summaries",
+    "skills": [
+      "loop-write",
+      "loop-summarize"
+    ]
+  },
+  "work-organization": {
+    "title": "Meetings and personal organization",
+    "skills": [
+      "loop-meeting",
+      "loop-organize"
+    ]
+  },
+  "decision-learning": {
+    "title": "Everyday decisions and learning",
+    "skills": [
+      "loop-decide",
+      "loop-learn"
+    ]
   }
 }

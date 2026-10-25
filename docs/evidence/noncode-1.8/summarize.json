@@ -1,0 +1,40 @@
+{
+  "skill": "loop-summarize",
+  "summary": "M1 plans delivery for 10 May and allows cancellation until 1 May. M2 expects delivery on 12 May and reports that sales considers the old date obsolete. The delivery dates conflict; neither memo is established as authoritative. The referenced appendix was not supplied, so its contents are outside this summary's coverage.",
+  "source_pointers": {
+    "M1": [
+      "Delivery planned for 10 May",
+      "Cancellation allowed until 1 May"
+    ],
+    "M2": [
+      "Delivery expected 12 May",
+      "Old date obsolete according to sales"
+    ]
+  },
+  "contradictions": [
+    {
+      "topic": "Delivery date",
+      "M1": "10 May, planned",
+      "M2": "12 May, expected",
+      "resolution": "Unresolved; M2 attributes obsolescence of the old date to sales, but source authority is not established."
+    }
+  ],
+  "coverage": {
+    "included": [
+      "Supplied M1 text",
+      "Supplied M2 text"
+    ],
+    "missing": [
+      "Referenced appendix"
+    ],
+    "available_material_summary": "PASS",
+    "appendix_review": "BLOCKED"
+  },
+  "verification": {
+    "source_consistency": "PASS",
+    "under_100_words": "PASS",
+    "external_fact_check": "NOT_RUN",
+    "authority_determination": "NOT_RUN"
+  },
+  "delivery_status": "NOT_RUN"
+}

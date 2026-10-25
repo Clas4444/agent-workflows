@@ -1,0 +1,61 @@
+{
+  "sensitivity": "If V1 capacity is at least 40, it satisfies the supplied constraints. If below 40, none qualify; seek another venue within the same constraints.",
+  "evidence": "All venue facts are supplied claims; no independent verification performed.",
+  "constraints": {
+    "minimum_capacity": 40,
+    "maximum_cost_usd": 300,
+    "step_free_access_required": true
+  },
+  "next_step": "Obtain V1 capacity evidence for the intended workshop setup, then reassess eligibility before choosing.",
+  "mode": "PLAN_ONLY",
+  "unknowns": [
+    "V1 capacity"
+  ],
+  "recommendation": {
+    "status": "BLOCKED",
+    "reason": "No venue currently has evidence of satisfying all three hard constraints.",
+    "conditional_choice": "V1 only if capacity for at least 40 is confirmed.",
+    "unconditional_choice": null
+  },
+  "booking": "NOT_RUN",
+  "options": [
+    {
+      "checks": {
+        "capacity": "BLOCKED",
+        "step_free": "PASS",
+        "budget": "PASS"
+      },
+      "id": "V1",
+      "capacity": null,
+      "step_free": "confirmed in supplied description",
+      "eligibility": "UNRESOLVED",
+      "cost_usd": 250
+    },
+    {
+      "checks": {
+        "capacity": "PASS",
+        "step_free": "FAIL",
+        "budget": "PASS"
+      },
+      "id": "V2",
+      "capacity": 50,
+      "step_free": "no",
+      "eligibility": "DISQUALIFIED",
+      "cost_usd": 280
+    },
+    {
+      "checks": {
+        "capacity": "PASS",
+        "step_free": "PASS",
+        "budget": "FAIL"
+      },
+      "id": "V3",
+      "capacity": 45,
+      "step_free": "confirmed in supplied description",
+      "eligibility": "DISQUALIFIED",
+      "cost_usd": 310
+    }
+  ],
+  "preferences": "None supplied; no weighted score used.",
+  "skill": "loop-decide"
+}
