@@ -29,6 +29,8 @@ jobs:
         run: python scripts/catalog.py
       - name: Verify curated cross-group routing review
         run: python scripts/routing_check.py
+      - name: Verify role guidance and editable workflow image
+        run: python scripts/workflows.py
       - name: Check separated metadata and integrity profile
         run: python -m scripts.validate --profile format
       - name: Run validator tests

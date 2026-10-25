@@ -1,0 +1,19 @@
+{
+  "mode": "Draft packet only",
+  "base": {"revision": null, "status": "BLOCKED", "reason": "No intended base revision supplied."},
+  "head": {"revision": null, "status": "BLOCKED", "reason": "No head revision supplied."},
+  "scoped_diff": {"description": "Reported patch rejects negative quantities.", "status": "BLOCKED", "reason": "No checkout or patch bytes supplied; scope and behavior cannot be inspected."},
+  "draft_title": "Reject negative inventory quantities",
+  "draft_body": "The supplied change is described as rejecting negative quantities, so inventory entries cannot accept quantities below zero. This behavior has not been independently inspected because no checkout or patch was supplied.\n\nValidation: the author reports that `python -m unittest` passed 12 tests. This is an unverified author report; no local tests were run for this packet. Base/head revisions, code review, and remote CI remain unverified. No remote PR has been published.",
+  "checks": {
+    "author_report": {"command": "python -m unittest", "reported_result": "PASS", "reported_test_count": 12, "verification_status": "BLOCKED", "source": "Supplied exercise input"},
+    "local_execution": {"status": "NOT_RUN", "reason": "Packet-only scope and no checkout supplied."},
+    "diff_review": {"status": "BLOCKED", "reason": "Missing patch bytes and revision identity."},
+    "remote_ci": {"status": "BLOCKED", "reason": "No CI URL or head SHA supplied."},
+    "review_approval": {"status": "NOT_RUN"}
+  },
+  "publication": {"status": "NOT_RUN", "authorized": false, "url": null, "reason": "Only a packet was requested."},
+  "execution_status": "NOT_RUN",
+  "unresolved_review_needs": ["Confirm actual negative-quantity rejection paths and error behavior", "Inspect regression coverage, including zero and valid positive quantities", "Resolve intended repository and base/head identity", "Verify tests and CI against the actual head"],
+  "next_bounded_action": "Obtain the patch or checkout and exact base/head revisions for an authorized review; retain this title/body as a provisional draft."
+}

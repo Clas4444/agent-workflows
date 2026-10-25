@@ -38,7 +38,7 @@ class RuntimeSmokeTests(unittest.TestCase):
     def test_production_text_io_declares_encoding(self):
         scripts=Path(__file__).resolve().parents[1]/'scripts'
         missing=[]
-        for path in scripts.glob('*.py'):
+        for path in scripts.rglob('*.py'):
             for node in ast.walk(ast.parse(path.read_text(encoding='utf-8'))):
                 if isinstance(node,ast.Call) and isinstance(node.func,ast.Attribute) and node.func.attr in ('read_text','write_text'):
                     if not any(keyword.arg=='encoding' for keyword in node.keywords):

@@ -55,3 +55,15 @@ Explicit instruction loading and decision checks do not establish native skill
 discovery or full positive workflows. At that earlier point native-host
 workflows were NOT_RUN; the 2026-10-24 Codex smoke campaign above adds scoped
 workflow evidence while leaving other hosts and automatic discovery unverified.
+
+## Project workflows (1.7)
+
+Native discovery and live operational execution are separate from explicit synthetic packet exercises.
+
+| Skill | Native discovery | Live execution |
+|---|---|---|
+| loop-workflow-project | NOT_RUN | NOT_RUN |
+| loop-workflow-pr | NOT_RUN | NOT_RUN |
+| loop-workflow-incident | NOT_RUN | NOT_RUN |
+
+The three 1.7 workflows were explicitly loaded in isolated Codex subagent packet exercises. See [results](testing/RESULTS-1.7.md) for one retained failed incident attempt and its corrected retry. This does not change the native-discovery or live-execution NOT_RUN entries above.

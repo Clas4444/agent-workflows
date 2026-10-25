@@ -1,0 +1,20 @@
+{
+  "mode": "MVP scope and backlog only",
+  "context_source": "forward/request.md synthetic project input",
+  "mvp": "A local inventory app that records item names and quantities and shows current inventory while offline.",
+  "approved_requirements": ["Record item name and quantity", "Show current inventory", "Work offline"],
+  "assumptions": ["A minimal local workflow is sufficient for initial planning; storage technology and role model are not approved."],
+  "acceptance_backlog": [
+    {"id": "AC-01", "slice": 1, "depends_on": [], "criterion": "With network unavailable, a user can record an item name and quantity and immediately see that item and quantity in current inventory.", "verification_gate": "Demonstrate create-and-list flow with network disabled.", "status": "NOT_RUN"},
+    {"id": "AC-02", "slice": 2, "depends_on": ["AC-01"], "criterion": "Recorded inventory remains available after closing and reopening the local app while offline.", "verification_gate": "Record inventory, restart the app offline, and compare names and quantities.", "status": "NOT_RUN", "decision_note": "Persistence is a proposed MVP interpretation to confirm before implementation."}
+  ],
+  "non_goals": ["Implementation in this exercise", "Cloud sync", "Remote publication or deployment", "Paid services", "Barcode scanning", "Reporting and analytics", "Multi-user roles until decided"],
+  "open_decisions": ["Budget: TBD", "User roles and whether access control is needed: TBD", "Target device/platform: TBD", "Quantity rules, including whether fractions or negatives are allowed: TBD", "Confirm local persistence expectation and backup needs: TBD"],
+  "execution_status": "NOT_RUN",
+  "tests_status": "NOT_RUN",
+  "completed_acceptance_ids": [],
+  "remaining_acceptance_ids": ["AC-01", "AC-02"],
+  "evidence": ["Only the supplied needs were available; no implementation or baseline was inspected or created."],
+  "risks": ["Role, platform, and quantity decisions may change scope."],
+  "next_bounded_action": "Review this MVP backlog with the volunteer and resolve target platform, quantity rules, and roles before seeking implementation authorization."
+}

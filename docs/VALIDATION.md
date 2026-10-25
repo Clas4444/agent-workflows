@@ -124,3 +124,12 @@ invoke a model or access a network. `--repo` can point to a disposable snapshot
 of an older revision; `--expect vulnerable` tests the recorded old behavior.
 A matching expectation is not a claim that an invalid fixture passed validation
 correctly. Read the per-invocation exit codes and side effects in results.json.
+
+## Portable JSON depth bound (1.7)
+
+Shared control-plane JSON readers reject nesting deeper than 512 containers
+before parsing. This is a Loop limit, not a JSON standard restriction. Brackets
+inside quoted strings do not count; strings, UTF-8 bytes and UTF-16 bytearrays
+share the same rule. Duplicate decoded keys and non-finite constants remain
+rejected. Interpreter recursion failures are still converted to controlled errors.
+The explicit bound avoids launch-mode-dependent acceptance on Python 3.14.

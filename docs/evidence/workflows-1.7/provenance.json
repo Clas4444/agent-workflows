@@ -1,0 +1,59 @@
+{
+  "scope": "Explicit instruction-file exercises in isolated Codex collaboration subagents; not native discovery or live operations",
+  "base_revision": "a1250d13d8ebadf51e91e4e1edcb3de948824fd0",
+  "native_discovery": "NOT_RUN",
+  "live_operations": "NOT_RUN",
+  "attempts": [
+    {
+      "id": "first-context",
+      "skills": [
+        "loop-workflow-project",
+        "loop-workflow-pr",
+        "loop-workflow-incident"
+      ],
+      "instruction_sha256": {
+        "loop-workflow-project": "ac2842fe881b17e5bd4211e2266acf5f2f8a67fbc06ae5509ff4ebcf05740f9b",
+        "loop-workflow-pr": "7d3f83a9e9a2c912923ecc928d05e6bef03cb586fcc513c6ee3f96e6893801e8",
+        "loop-workflow-incident": "f975cfb9d359017bfa588dd82793eb5d9749323bf18b723944122a0fc60f7d58"
+      },
+      "outputs": [
+        "project.json",
+        "pr.json",
+        "incident-before.json"
+      ],
+      "assessment": {
+        "project": "PASS",
+        "pr": "PASS",
+        "incident": "FAIL"
+      },
+      "failure": "Reported unit-test/probe claims assigned PASS gate fields without independent execution."
+    },
+    {
+      "id": "second-fresh-context",
+      "skills": [
+        "loop-workflow-incident"
+      ],
+      "instruction_sha256": {
+        "loop-workflow-incident": "9ae80b5d85b66dd2b586e176acb9901bee3fbe6d63967cb404cce5b33f7b4864"
+      },
+      "outputs": [
+        "incident-after.json"
+      ],
+      "assessment": {
+        "incident": "PASS"
+      },
+      "limits": "One synthetic retry; no statistical reliability claim."
+    }
+  ],
+  "artifact_sha256": {
+    "checks.json": "07b0bd5389521e94425466725ee77a8b1eb2af4264ed476b6fedabac674b9df5",
+    "incident-after.json": "2a56c287bdfc80064f560e4db4a44fa026d42576d3083a66cd58f2c7a7038bca",
+    "incident-before.json": "05dcede140faffdc845b32e642ab0a13421063f7f610ea3c46029efc79815d41",
+    "incident-instruction-before.md": "f975cfb9d359017bfa588dd82793eb5d9749323bf18b723944122a0fc60f7d58",
+    "pr.json": "e4ae3deaf95265cf16d0c51f741c68ca38cf345e63afe92f11dc686630d1389e",
+    "project.json": "e3563927cf8695097a31f140b0daab670a8edab7795f4c8ade72d17375a30ea2",
+    "request.md": "74756b0446ac606d0f64c5c865cd2d5f7c8edc82b66bf41c901c27506f1020ad"
+  },
+  "review": "Manual semantic review of actual JSON; PASS applies only to packet acceptance. Failed attempt retained.",
+  "publication_normalization": "CRLF normalized to LF for published text; JSON values unchanged. Original outputs retained in ignored local attempts."
+}

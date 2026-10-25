@@ -17,13 +17,13 @@ class RoutingReviewTests(unittest.TestCase):
 
     def test_every_skill_has_a_decision_and_an_accepted_primary_case(self):
         self.assertEqual(check_routes(ROOT), [])
-        self.assertEqual(len(self.data['decisions']), 36)
-        self.assertEqual(len(self.data['cases']), 39)
+        self.assertEqual(len(self.data['decisions']), 39)
+        self.assertEqual(len(self.data['cases']), 42)
         self.assertEqual({row['skill'] for row in self.data['decisions'] if row['action']=='upgrade'},
                          {'loop-review', 'loop-code', 'loop-diagnose', 'loop-test',
                           'loop-plan', 'loop-research', 'loop-evaluate', 'loop-skill-create'})
         self.assertEqual({row['skill'] for row in self.data['decisions'] if row['action']=='add'},
-                         {'loop-deploy', 'loop-observe', 'loop-context', 'loop-handoff'})
+                         {'loop-deploy', 'loop-observe', 'loop-context', 'loop-handoff', 'loop-workflow-project', 'loop-workflow-pr', 'loop-workflow-incident'})
 
     def test_missing_decision_or_no_skill_controls_cannot_pass(self):
         with tempfile.TemporaryDirectory() as temp:
@@ -64,10 +64,10 @@ class RoutingReviewTests(unittest.TestCase):
 
     def test_prediction_grader_counts_failures_and_never_drops_cases(self):
         predictions = {row['id']: row['acceptable'][0] for row in self.data['cases']}
-        self.assertEqual(grade_predictions(self.data, predictions)['correct'], 39)
+        self.assertEqual(grade_predictions(self.data, predictions)['correct'], 42)
         predictions[self.data['cases'][0]['id']] = 'NONE'
         result = grade_predictions(self.data, predictions)
-        self.assertEqual((result['status'], result['total'], result['correct']), ('FAIL', 39, 38))
+        self.assertEqual((result['status'], result['total'], result['correct']), ('FAIL', 42, 41))
         predictions.pop(self.data['cases'][1]['id'])
         with self.assertRaises(ValueError):
             grade_predictions(self.data, predictions)
@@ -80,4 +80,4 @@ class RoutingReviewTests(unittest.TestCase):
                                     capture_output=True, text=True, timeout=30)
             self.assertEqual(result.returncode, 1)
             observed = json.loads(result.stdout)
-            self.assertEqual((observed['total'], observed['correct']), (39, 3))
+            self.assertEqual((observed['total'], observed['correct']), (42, 3))

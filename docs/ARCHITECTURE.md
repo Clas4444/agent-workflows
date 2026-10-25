@@ -18,7 +18,11 @@ skill directories remain flat; historical evidence is versioned independently.
 | `scripts/validation/skill_format.py` | Core metadata checks for the supported single-line subset |
 | `scripts/validation/loop_policy.py` | Local headings, invocation flags, examples, statuses and stop conventions |
 | `scripts/sync_skills.py` | Explicit-root synchronization, preflight and backups |
-| `scripts/runtime_smoke.py`, `scripts/smoke_cases.py` | Opt-in model execution and independent artifact grading |
+| `scripts/runtime_smoke.py` | Opt-in host execution and evidence collection |
+| `scripts/smoke_cases.py` | Compatibility facade retaining the existing fixture/grader imports |
+| `scripts/smoke/fixtures.py` | Synthetic task inputs, preparation and source snapshots |
+| `scripts/smoke/grading.py` | Artifact grading and bounded verification subprocesses |
+| `scripts/workflows.py`, `workflow-presets.json` | Inventory-checked role guidance and editable SVG |
 | `tests/` | Deterministic local tests; no model calls |
 | `schemas/` | Versioned machine-readable descriptions of existing data contracts |
 | `docs/evidence/` | Reviewed public execution summaries with provenance |
@@ -52,3 +56,17 @@ self-contained so copied skills do not depend on repository-only modules.
 MCP/A2A/API adapters, OAuth flows, telemetry exporters and runtime policy
 enforcement require separate scoped implementation and tests. Markdown guidance
 does not enforce sandboxing, prevent prompt injection or provide authentication.
+
+## Navigation without installation churn (1.7)
+
+The new project-workflows group coordinates explicit project, PR and incident
+lifecycles. It does not replace focused code, plan, review or debug skills.
+Role presets recommend a small toolkit; neither presets nor groups are runtime
+dispatchers. Generated Markdown/SVG are checked in CI against the manifest.
+PNG illustrations are explanatory snapshots, not executable configuration.
+
+The smoke module split retains both `scripts.smoke_cases` package imports and
+the direct `python scripts/runtime_smoke.py` entry point. Fixture preparation
+does not execute submissions; grading owns subprocess verification. The retained
+23 runtime-smoke characterization tests and boundary tests exercise both sides.
+See [test procedure](testing/TESTING.md) and [1.7 results](testing/RESULTS-1.7.md).

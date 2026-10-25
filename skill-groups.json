@@ -74,5 +74,13 @@
       "loop-mcp-test",
       "loop-mcp-security"
     ]
+  },
+  "project-workflows": {
+    "title": "End-to-end project workflows",
+    "skills": [
+      "loop-workflow-project",
+      "loop-workflow-pr",
+      "loop-workflow-incident"
+    ]
   }
 }

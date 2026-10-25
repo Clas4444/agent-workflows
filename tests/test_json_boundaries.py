@@ -8,7 +8,7 @@ import unittest
 from scripts.validation.manifest import load_manifest
 from scripts.routing_check import check_routes
 from scripts.catalog import check_catalog
-from scripts.validation.json_data import loads_json
+from scripts.validation.json_data import loads_json, MAX_JSON_DEPTH
 from scripts.sync_skills import sync
 from unittest import mock
 
@@ -20,6 +20,20 @@ class JSONBoundaryTests(unittest.TestCase):
         raw='['*10000+'0'+']'*10000
         with self.assertRaisesRegex(ValueError,'nesting'):
             loads_json(raw)
+
+    def test_depth_bound_is_explicit_for_strings_and_encoded_inputs(self):
+        valid = '['*MAX_JSON_DEPTH+'0'+']'*MAX_JSON_DEPTH
+        invalid = '['*(MAX_JSON_DEPTH+1)+'0'+']'*(MAX_JSON_DEPTH+1)
+        for encode in (lambda s:s, lambda s:s.encode('utf-8'),
+                       lambda s:bytearray(s.encode('utf-16'))):
+            with self.subTest(encode=encode):
+                self.assertIsInstance(loads_json(encode(valid)), list)
+                with self.assertRaisesRegex(ValueError, 'nesting'):
+                    loads_json(encode(invalid))
+
+    def test_quoted_brackets_and_escaped_quotes_do_not_count_as_nesting(self):
+        value = {'text':'['*2000+' escaped quote: " and slash: \\ '+']'*2000}
+        self.assertEqual(loads_json(json.dumps(value)), value)
 
     def test_unique_keys_apply_after_escape_decoding_and_at_every_depth(self):
         for raw in ('{"status":"FAIL","\\u0073tatus":"PASS"}',

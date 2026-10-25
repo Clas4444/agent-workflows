@@ -1,6 +1,6 @@
 # Portable Loop Skills
 
-**36 bounded workflows for coding agents.** Review a change, investigate a bug,
+**39 bounded workflows for coding agents.** Review a change, investigate a bug,
 write a fix, verify it and stop with evidence. Includes a Python continuation
 runner, a synchronization tool and a validator with no third-party dependencies.
 
@@ -25,9 +25,28 @@ immutable inputs, artifact identity and shared JSON policy with full-suite resul
 See [research update 1.6](docs/RESEARCH-1.6.md) for context/handoff workflows,
 evaluation upgrades, primary sources and independent fixture exercises.
 
-> **Experimental · 1.6.0-experimental.** Shared instructions and matching files
+> **Experimental · 1.7.0-experimental.** Shared instructions and matching files
 > do not guarantee identical behavior across Codex, Copilot and Claude Code.
 > See the [runtime evidence](docs/RUNTIME-TEST-MATRIX.md) for what was tested.
+
+## Choose a focused workflow
+
+[Role toolkits and Do / Do not guidance](docs/guides/ROLE-WORKFLOWS.md) ·
+[Documentation map](docs/README.md) · [Test procedure](docs/testing/TESTING.md) ·
+[Restructuring results 1.7](docs/testing/RESULTS-1.7.md)
+
+For professional coding, start with research-repo, code **or** debug, test and
+review. Add planning or PR preparation when the task needs them. The new
+**End-to-end project workflows** group coordinates project delivery, PR packets
+and incident response; it does not require invoking every focused skill.
+
+![Developer skill workflow](docs/assets/developer-workflow.png)
+
+![Three project workflows](docs/assets/project-workflows.png)
+
+The English illustrations explain recommended use. Inventory-checked
+[Markdown and editable SVG](docs/guides/ROLE-WORKFLOWS.md) are the maintained
+reference. Instructions guide decisions; host permissions enforce access.
 
 ## Quick start
 
@@ -136,6 +155,14 @@ Groups are navigation metadata; native skill directories remain flat.
 | [loop-mcp-test](.github/skills/loop-mcp-test/SKILL.md) | Exercise a versioned MCP interface using bounded local fixtures or an explicitly authorized server |
 | [loop-mcp-security](.github/skills/loop-mcp-security/SKILL.md) | Review an authorized MCP integration for tool trust, scoped authorization, credential handling and data-exfiltration boundaries |
 
+### End-to-end project workflows
+
+| Skill | Purpose |
+|---|---|
+| [loop-workflow-project](.github/skills/loop-workflow-project/SKILL.md) | Turn an authorized small-project idea into an incremental delivery workflow with an MVP boundary, acceptance backlog, first verified slice and resumable state |
+| [loop-workflow-pr](.github/skills/loop-workflow-pr/SKILL.md) | Prepare a reviewable pull-request delivery packet from a scoped branch or diff: establish the base, review changes, verify checks and write a truthful description |
+| [loop-workflow-incident](.github/skills/loop-workflow-incident/SKILL.md) | Coordinate an active service-incident assessment: establish impact, separate observations from hypotheses, choose authorized containment and verify recovery |
+
 <!-- END GENERATED SKILL GROUPS -->
 
 For selection advice and complete examples, see [Skill usage](docs/SKILL-USAGE.md).
@@ -163,7 +190,7 @@ python scripts/sync_skills.py --target PATH_TO_SKILL_ROOT
 ```
 
 The first command reports differences without writing. The second copies the
-manifest's 36 skills, preserving unrelated skills and backing up overwritten
+manifest's 39 skills, preserving unrelated skills and backing up overwritten
 files under `.loop/backups/`. Select a personal installation root only when
 your host supports it and you intend to update it.
 

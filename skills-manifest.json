@@ -1,6 +1,6 @@
 {
   "name": "portable-loop-skills",
-  "version": "1.6.0-experimental",
+  "version": "1.7.0-experimental",
   "skills": [
     "loop-review",
     "loop-code",
@@ -37,7 +37,10 @@
     "loop-deploy",
     "loop-observe",
     "loop-context",
-    "loop-handoff"
+    "loop-handoff",
+    "loop-workflow-project",
+    "loop-workflow-pr",
+    "loop-workflow-incident"
   ],
   "project_skill_roots": [
     ".github/skills",

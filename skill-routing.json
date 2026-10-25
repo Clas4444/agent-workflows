@@ -274,6 +274,27 @@
       "acceptable": [
         "loop-handoff"
       ]
+    },
+    {
+      "id": "route-40",
+      "prompt": "Scope a new offline inventory project into an MVP backlog and deliver its first authorized verified slice with a checkpoint.",
+      "acceptable": [
+        "loop-workflow-project"
+      ]
+    },
+    {
+      "id": "route-41",
+      "prompt": "Prepare a pull-request delivery packet for these completed changes: resolve base/head, review the diff, record checks and draft a truthful title and description.",
+      "acceptable": [
+        "loop-workflow-pr"
+      ]
+    },
+    {
+      "id": "route-42",
+      "prompt": "Coordinate this active service outage: establish impact, assess permitted containment and verify sustained recovery.",
+      "acceptable": [
+        "loop-workflow-incident"
+      ]
     }
   ],
   "decisions": [
@@ -456,6 +477,21 @@
       "skill": "loop-handoff",
       "action": "add",
       "reason": "Research-backed distinct context selection or cross-session checkpoint contract; native discovery remains NOT_RUN."
+    },
+    {
+      "skill": "loop-workflow-project",
+      "action": "add",
+      "reason": "Coordinate an explicit lifecycle with distinct acceptance and authorization gates; focused skills remain independently usable."
+    },
+    {
+      "skill": "loop-workflow-pr",
+      "action": "add",
+      "reason": "Coordinate an explicit lifecycle with distinct acceptance and authorization gates; focused skills remain independently usable."
+    },
+    {
+      "skill": "loop-workflow-incident",
+      "action": "add",
+      "reason": "Coordinate an explicit lifecycle with distinct acceptance and authorization gates; focused skills remain independently usable."
     }
   ],
   "overlap_decisions": [
@@ -538,6 +574,17 @@
         "loop-prompt"
       ],
       "decision": "Checkpoint integrity and cold resume do not launch processes or infer a sequence of new prompts."
+    },
+    {
+      "skills": [
+        "loop-workflow-project",
+        "loop-workflow-pr",
+        "loop-workflow-incident",
+        "loop-plan",
+        "loop-review",
+        "loop-debug"
+      ],
+      "decision": "Lifecycle workflows coordinate MVP delivery, PR evidence and incident recovery; focused planning, review and bug repair remain distinct and are not mandatory extra steps."
     }
   ]
 }

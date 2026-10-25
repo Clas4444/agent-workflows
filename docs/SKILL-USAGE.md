@@ -106,3 +106,7 @@ compatibility with a particular host or host version.
 - `loop-handoff`: checkpoint unfinished work or validate a saved checkpoint before resuming. It does not launch another process.
 
 See [research and verification](RESEARCH-1.6.md).
+
+## Project workflows (1.7)
+
+Use `loop-workflow-project` for MVP-to-slice delivery, `loop-workflow-pr` for a review packet, and `loop-workflow-incident` for incident impact and recovery decisions. Do not invoke a whole lifecycle for a narrow code edit. See [role workflows](guides/ROLE-WORKFLOWS.md).

@@ -1,0 +1,132 @@
+{
+  "scope": "Local Windows deterministic execution; not model runtime or remote CI",
+  "runs": [
+    {
+      "python": "3.12.14",
+      "status": "PASS",
+      "unit_tests": {
+        "discovered": 204,
+        "passed": 203,
+        "skipped": 1,
+        "failed": 0,
+        "skip_reason": "Windows file symlink privilege unavailable"
+      },
+      "gates": [
+        {
+          "command": "python -m unittest discover -s tests -v",
+          "exit_code": 0
+        },
+        {
+          "command": "python scripts/validate.py",
+          "exit_code": 0
+        },
+        {
+          "command": "python -m scripts.validate --profile format",
+          "exit_code": 0
+        },
+        {
+          "command": "python scripts/catalog.py",
+          "exit_code": 0
+        },
+        {
+          "command": "python scripts/routing_check.py",
+          "exit_code": 0
+        },
+        {
+          "command": "python scripts/workflows.py",
+          "exit_code": 0
+        },
+        {
+          "command": "python scripts/sync_skills.py --target .github/skills --check",
+          "exit_code": 0
+        },
+        {
+          "command": "python scripts/runtime_smoke.py --help",
+          "exit_code": 0
+        },
+        {
+          "command": "python -m compileall -q scripts tests",
+          "exit_code": 0
+        }
+      ]
+    },
+    {
+      "python": "3.14.7",
+      "status": "PASS",
+      "unit_tests": {
+        "discovered": 204,
+        "passed": 203,
+        "skipped": 1,
+        "failed": 0,
+        "skip_reason": "Windows file symlink privilege unavailable"
+      },
+      "gates": [
+        {
+          "command": "python -m unittest discover -s tests -v",
+          "exit_code": 0
+        },
+        {
+          "command": "python scripts/validate.py",
+          "exit_code": 0
+        },
+        {
+          "command": "python -m scripts.validate --profile format",
+          "exit_code": 0
+        },
+        {
+          "command": "python scripts/catalog.py",
+          "exit_code": 0
+        },
+        {
+          "command": "python scripts/routing_check.py",
+          "exit_code": 0
+        },
+        {
+          "command": "python scripts/workflows.py",
+          "exit_code": 0
+        },
+        {
+          "command": "python scripts/sync_skills.py --target .github/skills --check",
+          "exit_code": 0
+        },
+        {
+          "command": "python scripts/runtime_smoke.py --help",
+          "exit_code": 0
+        },
+        {
+          "command": "python -m compileall -q scripts tests",
+          "exit_code": 0
+        }
+      ]
+    }
+  ],
+  "adversarial_cli": {
+    "expectation_matched": true,
+    "validator_invocations": 12,
+    "hardlink": {
+      "link_count": 2,
+      "sync": {
+        "exit_code": 1,
+        "hardlink_rejected": true
+      },
+      "check": {
+        "exit_code": 1,
+        "hardlink_rejected": true
+      },
+      "outside_target_modified": false,
+      "backup_created": false,
+      "status": "EXECUTED"
+    }
+  },
+  "before_correction": {
+    "python_3_14_suite": "FAIL: existing excessive-nesting regression accepted 10000 levels in a child launch",
+    "new_depth_boundary": "FAIL: depth 513 accepted for string, UTF-8 bytes and UTF-16 bytearray",
+    "svg_long_toolkit": "FAIL: first card text overlapped the next card"
+  },
+  "after_correction": {
+    "depth_boundary": "PASS",
+    "svg_long_toolkit": "PASS"
+  },
+  "native_discovery": "NOT_RUN",
+  "live_operations": "NOT_RUN"
+}
