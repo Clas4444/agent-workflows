@@ -1,0 +1,4 @@
+interface:
+  display_name: "Loop Test E2E"
+  short_description: "Use Loop Test E2E for a focused workflow"
+  default_prompt: "Use $loop-test-e2e for this task; verify the result and report any limits."

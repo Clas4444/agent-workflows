@@ -1,0 +1,4 @@
+interface:
+  display_name: "Loop"
+  short_description: "Find Loop skills and bundles"
+  default_prompt: "Use $loop to find the smallest skill or bundle for my task."

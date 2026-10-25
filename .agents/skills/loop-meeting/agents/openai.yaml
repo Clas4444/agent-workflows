@@ -1,0 +1,4 @@
+interface:
+  display_name: "Loop Meeting (mtg)"
+  short_description: "Use Loop Meeting (mtg) for a focused workflow"
+  default_prompt: "Use $loop-meeting for this task; verify the result and report any limits."

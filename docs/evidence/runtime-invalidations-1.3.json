@@ -70,5 +70,11 @@
     "current_instruction_text_sha256": "2a96dc5d2abcfa5739608a9a078b909c7f3b19bc3a0ddd15d1e095665a98fc70",
     "current_runtime_status": "NOT_RUN",
     "reason": "Three-hour 2026-10-25 audit adds source identity/recheck, evidence-vs-capability distinctions and untrusted-source authority boundaries. Historical 1.2 executions do not exercise revised instructions."
+  },
+  "loop-debug": {
+    "historical_instruction_text_sha256": "7c2acb2953338e177b086b8954761093c1ea5dae064e8cd76a2ec5eb2005d667",
+    "current_instruction_text_sha256": "0f3404bcdf152aa8d8cbd808bfaa90409912587373c9fb915fcb7609216a6d0e",
+    "current_runtime_status": "NOT_RUN",
+    "reason": "1.10 patch verification / artifact update; old executions do not cover current instructions."
   }
 }

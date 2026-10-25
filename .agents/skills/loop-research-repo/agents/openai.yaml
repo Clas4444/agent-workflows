@@ -1,0 +1,4 @@
+interface:
+  display_name: "Loop Research Repo"
+  short_description: "Use Loop Research Repo for a focused workflow"
+  default_prompt: "Use $loop-research-repo for this task; verify the result and report any limits."

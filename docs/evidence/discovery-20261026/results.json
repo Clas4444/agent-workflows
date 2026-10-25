@@ -1,0 +1,76 @@
+{
+  "support": {
+    "artifact_status": "PASS",
+    "errors": [],
+    "usage": {
+      "input_tokens": 108909,
+      "cached_input_tokens": 91392,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 1691,
+      "reasoning_output_tokens": 33
+    },
+    "observed_item_types": [
+      "agent_message",
+      "command_execution"
+    ],
+    "trial_count": 1,
+    "native_discovery": "NOT_RUN",
+    "model_identity": "NOT_VERIFIED_FROM_JSON_EVENTS"
+  },
+  "knowledge": {
+    "artifact_status": "PASS",
+    "errors": [],
+    "usage": {
+      "input_tokens": 104349,
+      "cached_input_tokens": 77696,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 1236,
+      "reasoning_output_tokens": 11
+    },
+    "observed_item_types": [
+      "agent_message",
+      "command_execution"
+    ],
+    "trial_count": 1,
+    "native_discovery": "NOT_RUN",
+    "model_identity": "NOT_VERIFIED_FROM_JSON_EVENTS"
+  },
+  "work": {
+    "artifact_status": "FAIL",
+    "errors": [
+      "assessment differs from fixed evidence contract"
+    ],
+    "usage": {
+      "input_tokens": 111429,
+      "cached_input_tokens": 94336,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 1606,
+      "reasoning_output_tokens": 20
+    },
+    "observed_item_types": [
+      "agent_message",
+      "command_execution"
+    ],
+    "trial_count": 1,
+    "native_discovery": "NOT_RUN",
+    "model_identity": "NOT_VERIFIED_FROM_JSON_EVENTS"
+  },
+  "work-schema-explicit": {
+    "artifact_status": "PASS",
+    "errors": [],
+    "usage": {
+      "input_tokens": 111847,
+      "cached_input_tokens": 94592,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 1585,
+      "reasoning_output_tokens": 13
+    },
+    "observed_item_types": [
+      "agent_message",
+      "command_execution"
+    ],
+    "trial_count": 1,
+    "native_discovery": "NOT_RUN",
+    "model_identity": "NOT_VERIFIED_FROM_JSON_EVENTS"
+  }
+}

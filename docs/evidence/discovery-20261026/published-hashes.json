@@ -1,0 +1,22 @@
+{
+  "algorithm": "sha256",
+  "scope": "Reviewed published bytes, self excluded. Public text logs are sanitized and trailing whitespace normalized; raw private logs remain separate. Not execution attestation.",
+  "files": {
+    "all-payload-install.json": "d9318efc370c49aa470b29ecfa776e9750fc04c0e884afe314eb76c0342d104b",
+    "artifact-hashes.json": "a1302b023c6cefaf51e4df97790db223b992305ea69e3be017a240adf6208b52",
+    "bundle-journeys.json": "6418f2d44887cbad754777173f0789e4725c52817165aba4acb2476faad2cbfc",
+    "check_runtime.py": "c674ddf3edd4b7e045e98dc632629621b461b88c9687e310093e1b32e535f56b",
+    "knowledge-events.jsonl": "bfa4ee678933a6d95186a1e65c7d9900fb333a83485adca28713727bdc2dfcd3",
+    "oracle-controls.json": "d103f5ec78734c552a146b7f9046528f0ac53abb70a4cfac033056e47847f269",
+    "protocol.json": "21f38345932305563f28145e489f55da6ab9a246b57b6b579cd01a3a112d778e",
+    "raw-artifacts.zip": "9657d0062e912e7bea4673bf94e5981699b42fb8ae1d688fcc99547347e02566",
+    "README.md": "778a752a6c84f2fbfb9de40cd59de1e5675b2b2148b23c6bab805d4ab1423bbe",
+    "results.json": "5b912efb48760c8b262915f5608400a620aea33a09bdee26cb35393570321ad8",
+    "support-events.jsonl": "51c0e36af30d488d2b63658b0144c97674d0345f1d99595d1f4eee5dfad99356",
+    "trajectory-review.json": "84fd4bf995cab681093a3d6132cea5ecf72d58c014ff74f4ed2064aacdceac6e",
+    "work-events.jsonl": "2d8cfdd30127268e6947171b1986a835e2ee9e5078d0d16a1103f74133ddce08",
+    "work-schema-explicit-events.jsonl": "56d374ec069eb77988250da527fe93ad57c79581bf79129c7a88898ab43dc570",
+    "finder-before.txt": "d1ac5b8b5cc6c3a5ea0c5c89186f898b254ac5b4da3ff5b5a961d8c31570b636",
+    "initial-unit.txt": "e942c91acf48911e46ed2a0efe0d8f7caf017e991b592a486726e05aa95532b0"
+  }
+}

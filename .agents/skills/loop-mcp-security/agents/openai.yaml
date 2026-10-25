@@ -1,0 +1,4 @@
+interface:
+  display_name: "Loop Mcp Security"
+  short_description: "Use Loop Mcp Security for a focused workflow"
+  default_prompt: "Use $loop-mcp-security for this task; verify the result and report any limits."

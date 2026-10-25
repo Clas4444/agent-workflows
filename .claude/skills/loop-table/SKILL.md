@@ -32,10 +32,15 @@ is the bound. Preserve unknown meanings instead of inferring them from appearanc
    optional [read-only helper](scripts/table_check.py) provides strict inspection
    and unit-separated decimal sums; see [its scope](references/table-contract.md).
    It is not an XLSX engine and never evaluates formula-like source text.
-4. If producing a cleaned table or workbook, reopen it and compare expected rows,
+4. For formula work, identify Excel/Sheets, engine/version and locale separators.
+   State ranges and expected results before writing. Test blanks, mixed types,
+   added rows and errors with small independently calculated controls; report
+   unsupported functions or engines explicitly. Do not hide bad source data with
+   IFERROR or replace formulas with constants just to pass a check.
+5. If producing a cleaned table or workbook, reopen it and compare expected rows,
    identifiers, formulas and changes. Saving a workbook does not prove formulas
    recalculated; use a suitable engine or mark recalculation NOT_RUN/BLOCKED.
-5. Deliver the requested result with source pointers, exclusions, units and limits.
+6. Deliver the requested result with source pointers, exclusions, units and limits.
    Incomplete data yields explicitly partial known-value subtotals, not an invented
    grand total. Verify the actual output file and preserve unrelated sheets/cells.
 

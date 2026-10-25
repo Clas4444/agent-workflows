@@ -22,3 +22,8 @@ Only classify an item done when its defined outcome is observed. If asked for a
 plan only, return a concrete plan and mark production/external actions NOT_RUN.
 If an authorized document is requested, create and inspect the actual file rather
 than replacing it with a suggestion to create one later.
+
+Keep dependency IDs stable across updates. A missing dependency or cycle blocks
+readiness; it is not proof of completion. Record which source IDs a done criterion
+depends on so an observed source revision change can trigger targeted revalidation.
+Do not infer that every old criterion failed just because one input changed.

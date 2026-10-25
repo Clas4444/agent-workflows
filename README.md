@@ -1,8 +1,8 @@
 # Portable Loop Skills
 
-**49 bounded workflows for everyday work and coding agents.** Produce a useful
+**53 bounded workflows for everyday work and coding agents.** Produce a useful
 result, verify what actually happened, and stop with a clear checkpoint.
-Experimental version **1.9.4-experimental**; instructions do not enforce permissions.
+Experimental version **1.10.0-experimental**; instructions do not enforce permissions.
 
 ## Quick start
 
@@ -11,6 +11,8 @@ you do not need to code to use the everyday workflows.
 
 | Your task | Start here | Small installation choice |
 |---|---|---|
+| Scope an unclear request or triage support | `loop-intake`, `loop-support` | `support` |
+| Maintain source-linked notes or a FAQ | `loop-knowledge` | `knowledge` |
 | Complete an office/personal work package | `loop-work` | `work` or `office` |
 | Draft or summarize text | `loop-write`, `loop-summarize` | `writing` |
 | Organize local files | `loop-files` | `files` |
@@ -39,6 +41,15 @@ Open the selected project in your host, start a fresh session and confirm actual
 skill discovery. `.agents/skills`, `.github/skills` and `.claude/skills` are the
 maintained native layouts; identical files do not prove equivalent host behavior.
 
+## Short names and bundles
+
+Find **Loop Code (lc)** or **Loop Debug (dbg)** in a supporting host picker, or use
+`$loop code ...`, `$loop lc ...`, `$loop bundle office ...`, `$loop bundle support ...`.
+The gateway chooses the smallest needed workflow; bundles do not run every member.
+Native slash aliases and picker search depend on the host. See the
+[lookup and shortcut guide](docs/guides/SKILL-FINDER.md) for verified CLI forms,
+installation and limitations. No duplicate alias skills are installed.
+
 ## Choose a focused workflow
 
 ```text
@@ -53,9 +64,9 @@ actual paths, contents, units and outputs. Do not invoke every installed skill.
 `loop-organize` remains a selector for older/mixed requests; explicit file work
 now uses files, and personal/office deliverables use work.
 
-[Everyday examples](docs/guides/EVERYDAY-WORK.md) ·
-[Work and artifact guide](docs/guides/WORK-AND-ARTIFACTS.md) ·
-[Role toolkits and English visuals](docs/guides/ROLE-WORKFLOWS.md) ·
+[Everyday examples](docs/guides/EVERYDAY-WORK.md) Â·
+[Work and artifact guide](docs/guides/WORK-AND-ARTIFACTS.md) Â·
+[Role toolkits and English visuals](docs/guides/ROLE-WORKFLOWS.md) Â·
 [Practical prompts](docs/guides/WORKFLOW-EXAMPLES.md)
 
 ## Verification
@@ -66,6 +77,7 @@ python scripts/validate.py
 python -m scripts.validate --profile format
 python scripts/catalog.py
 python scripts/routing_check.py
+python scripts/discovery.py
 python scripts/workflows.py
 python scripts/install_skills.py --list
 python scripts/doctor_skills.py --all --target .github/skills
@@ -83,10 +95,10 @@ violation, BLOCKED a missing prerequisite and NOT_RUN an unexecuted check.
 Unit tests, real CLI/artifact checks, model decisions, native discovery and external
 actions are separate layers. Missing tools and zero collected tests are not PASS.
 
-[Current autonomous session](docs/testing/AUTONOMOUS-3H-2026-10-25.md) ·
-[Earlier audit and paired pilot](docs/testing/AUDIT-AB-2026-10-25.md) ·
-[1.9 tests](docs/testing/RESULTS-1.9.md) ·
-[Research and limits](docs/RESEARCH-1.9.md) · [All-skill review](docs/TAXONOMY-1.9.md) ·
+[Current autonomous session](docs/testing/AUTONOMOUS-3H-2026-10-25.md) Â·
+[Earlier audit and paired pilot](docs/testing/AUDIT-AB-2026-10-25.md) Â·
+[1.9 tests](docs/testing/RESULTS-1.9.md) Â·
+[Research and limits](docs/RESEARCH-1.9.md) Â· [All-skill review](docs/TAXONOMY-1.9.md) Â·
 [Historical runtime matrix](docs/RUNTIME-TEST-MATRIX.md)
 
 ## Skill catalog
@@ -94,6 +106,12 @@ actions are separate layers. Missing tools and zero collected tests are not PASS
 <!-- BEGIN GENERATED SKILL GROUPS -->
 
 Groups are navigation metadata; native skill directories remain flat.
+
+### Skill selection and bundle lookup
+
+| Skill | Purpose |
+|---|---|
+| [loop](.github/skills/loop/SKILL.md) | Find Loop skills by spaced names, shortcuts such as lc/dbg/kb, or need-based bundles |
 
 ### Discovery and scoped planning
 
@@ -104,6 +122,7 @@ Groups are navigation metadata; native skill directories remain flat.
 | [loop-research-tools](.github/skills/loop-research-tools/SKILL.md) | Research tools, extensions, plugins, skills, and MCP servers in a bounded evidence loop |
 | [loop-plan](.github/skills/loop-plan/SKILL.md) | Turn a scoped request into dependency-ordered, verifiable implementation batches without changing code |
 | [loop-context](.github/skills/loop-context/SKILL.md) | Prepare a compact, source-linked context packet for a specific task from existing artifacts |
+| [loop-knowledge](.github/skills/loop-knowledge/SKILL.md) | Build or update a small source-linked knowledge set from multiple supplied documents, preserving conflicts, unknowns and revision identity |
 
 ### Implementation and maintenance
 
@@ -209,6 +228,13 @@ Groups are navigation metadata; native skill directories remain flat.
 | [loop-table](.github/skills/loop-table/SKILL.md) | Inspect, clean or analyze supplied tables with explicit types, units, missing-value rules and source-preserving output checks |
 | [loop-document](.github/skills/loop-document/SKILL.md) | Create or revise a usable document artifact with source-faithful content, requested file format and separate content/layout/export checks |
 
+### Request intake and support triage
+
+| Skill | Purpose |
+|---|---|
+| [loop-intake](.github/skills/loop-intake/SKILL.md) | Turn an ambiguous office or personal request into a source-backed brief with acceptance criteria, blockers and a bounded next action |
+| [loop-support](.github/skills/loop-support/SKILL.md) | Triage supplied support tickets into evidence-backed categories, impact, uncertainty and response drafts |
+
 <!-- END GENERATED SKILL GROUPS -->
 
 ## Optional headless loops
@@ -221,9 +247,9 @@ they do not provide an office suite, messaging service or file transaction manag
 
 ## Documentation
 
-[Documentation map](docs/README.md) · [Architecture](docs/ARCHITECTURE.md) ·
-[Authoring](docs/AUTHORING.md) · [Data contracts](schemas/README.md) ·
-[Contributing](CONTRIBUTING.md) · [Changelog](CHANGELOG.md) · [Security](SECURITY.md)
+[Documentation map](docs/README.md) Â· [Architecture](docs/ARCHITECTURE.md) Â·
+[Authoring](docs/AUTHORING.md) Â· [Data contracts](schemas/README.md) Â·
+[Contributing](CONTRIBUTING.md) Â· [Changelog](CHANGELOG.md) Â· [Security](SECURITY.md)
 
 ## License and ownership
 

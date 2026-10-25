@@ -1,0 +1,327 @@
+[
+  {
+    "case": "support",
+    "path": "protected.txt",
+    "sha256": "5a0ddadcefd844171ccb80272ce23546cde8018c444ae36db17e1ddffe8cbf0f"
+  },
+  {
+    "case": "support",
+    "path": "tickets.txt",
+    "sha256": "f530882e7fe390b926c8d65c83ca9b8c3b39b59b3ca2a2112d342924ed3eee01"
+  },
+  {
+    "case": "support",
+    "path": "skills/loop/SKILL.md",
+    "sha256": "d44b42bd6e117a6be29fc542ea0f24cbf1eecdde655be3a98252faa0de44311b"
+  },
+  {
+    "case": "support",
+    "path": "skills/loop-intake/SKILL.md",
+    "sha256": "c217ce5e68a3227b6b452c2eb5147dd3151a0879f1db71f27db2abdf64405754"
+  },
+  {
+    "case": "support",
+    "path": "skills/loop-support/SKILL.md",
+    "sha256": "50d018e00743de11519a3fc971eaf819cf63e54c24f2294c8467bdea23522db8"
+  },
+  {
+    "case": "support",
+    "path": "skills/loop-write/SKILL.md",
+    "sha256": "96961742b9819830039e90beca14680cb8854768482918dbcb18e7f0f67379bd"
+  },
+  {
+    "case": "support",
+    "path": "skills/loop/agents/openai.yaml",
+    "sha256": "1bcf2de029635137ee55f855bf5bbe582c8e7fbae3e09505a3f593858ba2523f"
+  },
+  {
+    "case": "support",
+    "path": "skills/loop/assets/catalog.json",
+    "sha256": "5656ac2db052fbbe89d5bd586bf0c1339eb6b0c2879740783cb0b70de83dc31b"
+  },
+  {
+    "case": "support",
+    "path": "skills/loop/scripts/find_skill.py",
+    "sha256": "b5bc3875d37b0430b2860fcac01303be1af624b8c3c77d5eaad420175283079a"
+  },
+  {
+    "case": "support",
+    "path": "skills/loop-intake/agents/openai.yaml",
+    "sha256": "c4aace2bfbd668c0a751d6533ff7402460ada12b2f116018eb35904090d69deb"
+  },
+  {
+    "case": "support",
+    "path": "skills/loop-support/agents/openai.yaml",
+    "sha256": "0f2dc9961a0c01946ea9f8e73aafe19f9cfd4951bb69e1fc2677e4efe41b8122"
+  },
+  {
+    "case": "support",
+    "path": "skills/loop-write/agents/openai.yaml",
+    "sha256": "2bdd39ccbb7cc8b155bacd7028d3958d45db2a70e86179b0b9629eb377174329"
+  },
+  {
+    "case": "support",
+    "path": "prompt.txt",
+    "sha256": "e3d3b65f224999a807283d0e3cf104e6f254f6e6bd2209b5e4d435c223966618"
+  },
+  {
+    "case": "support",
+    "path": "assessment.json",
+    "sha256": "acb3180733db5ecb7fb093bf9bf5e987d3462462e9befc0ac0e3a269f0bdd640"
+  },
+  {
+    "case": "support",
+    "path": "report.md",
+    "sha256": "d57f8cc97c1c0de74e71002ca37b8f26a5493aa917c4c8eb23e213cb348826f8"
+  },
+  {
+    "case": "knowledge",
+    "path": "policy-a.txt",
+    "sha256": "14ca97293762b02dd902ed67c8473ca1d66d2041b278d2d4e1b98184dd3995e5"
+  },
+  {
+    "case": "knowledge",
+    "path": "policy-b.txt",
+    "sha256": "c93313a6152c8f3ad76561cf8d39baa398f07509d74062e6d7857acd517b7d75"
+  },
+  {
+    "case": "knowledge",
+    "path": "protected.txt",
+    "sha256": "5a0ddadcefd844171ccb80272ce23546cde8018c444ae36db17e1ddffe8cbf0f"
+  },
+  {
+    "case": "knowledge",
+    "path": "skills/loop/SKILL.md",
+    "sha256": "d44b42bd6e117a6be29fc542ea0f24cbf1eecdde655be3a98252faa0de44311b"
+  },
+  {
+    "case": "knowledge",
+    "path": "skills/loop-knowledge/SKILL.md",
+    "sha256": "09dcda4ea861d797ff7af276fbdf597725ad7f034708202140f1d05ecd1c6baa"
+  },
+  {
+    "case": "knowledge",
+    "path": "skills/loop/agents/openai.yaml",
+    "sha256": "1bcf2de029635137ee55f855bf5bbe582c8e7fbae3e09505a3f593858ba2523f"
+  },
+  {
+    "case": "knowledge",
+    "path": "skills/loop/assets/catalog.json",
+    "sha256": "5656ac2db052fbbe89d5bd586bf0c1339eb6b0c2879740783cb0b70de83dc31b"
+  },
+  {
+    "case": "knowledge",
+    "path": "skills/loop/scripts/find_skill.py",
+    "sha256": "b5bc3875d37b0430b2860fcac01303be1af624b8c3c77d5eaad420175283079a"
+  },
+  {
+    "case": "knowledge",
+    "path": "skills/loop-knowledge/agents/openai.yaml",
+    "sha256": "287a3f3cde45f48dccb582f9967a9252e9b4920f1839b770f0136e2128f73d36"
+  },
+  {
+    "case": "knowledge",
+    "path": "prompt.txt",
+    "sha256": "0c5690309f22c6114486d52a7dad2bcc8b77c93fc2c6b676aadb79a41becc276"
+  },
+  {
+    "case": "knowledge",
+    "path": "assessment.json",
+    "sha256": "003ff92eabcf21f87768a6d872fa6d290b130575f4043c61e63dec3fe576c124"
+  },
+  {
+    "case": "knowledge",
+    "path": "report.md",
+    "sha256": "26987b8cfa091ba3fcf41ab0fead19959b4f6da3fcf41089a1d0f0055c7edde2"
+  },
+  {
+    "case": "work",
+    "path": "items.csv",
+    "sha256": "30cc9838b6210f6b75cab17d3ca90c82366f3278b7319acd52b463bd88c606a3"
+  },
+  {
+    "case": "work",
+    "path": "meeting.txt",
+    "sha256": "64533e46d94e3ad961fb037c8b2ebfd268c868e9cc9018e3a2f1bbcf7503a6b8"
+  },
+  {
+    "case": "work",
+    "path": "protected.txt",
+    "sha256": "5a0ddadcefd844171ccb80272ce23546cde8018c444ae36db17e1ddffe8cbf0f"
+  },
+  {
+    "case": "work",
+    "path": "skills/loop-document/SKILL.md",
+    "sha256": "ff1cba29f1a356e7dbb701b904196a487a8f70a87211cdeeceb531aac2d37fd3"
+  },
+  {
+    "case": "work",
+    "path": "skills/loop-meeting/SKILL.md",
+    "sha256": "c2337a405b8a7558e23d02cb1d6ebe5b6724f731da3e306664bf28bf1b09cad4"
+  },
+  {
+    "case": "work",
+    "path": "skills/loop-table/SKILL.md",
+    "sha256": "7b2a6591e2096a0163426446299c552d35f79ed3e69151f4b7c326adfd77c51f"
+  },
+  {
+    "case": "work",
+    "path": "skills/loop-work/SKILL.md",
+    "sha256": "d83c0341eb469fd4139ade5c5aaa6e4f1e0d785139345e9e683f34033dca269f"
+  },
+  {
+    "case": "work",
+    "path": "skills/loop-document/agents/openai.yaml",
+    "sha256": "3dada1ca80323461de7317e73e4bf98be2525f8c8651901182dc99a67b325db2"
+  },
+  {
+    "case": "work",
+    "path": "skills/loop-document/references/format-gates.md",
+    "sha256": "32a083da0912a874a4de0d83e13325c31ee6ebaa6be86b41b7be1847ba9c7cee"
+  },
+  {
+    "case": "work",
+    "path": "skills/loop-meeting/agents/openai.yaml",
+    "sha256": "cbbf63cbb3717b8346929eb3ceb166bdf31132340ea441b48333c4026bb3eb35"
+  },
+  {
+    "case": "work",
+    "path": "skills/loop-table/agents/openai.yaml",
+    "sha256": "e5b0a5d3d7d0178f2a0883a9c9c1f465dd5ef871c05afa03f7245b90a2bc7617"
+  },
+  {
+    "case": "work",
+    "path": "skills/loop-table/references/table-contract.md",
+    "sha256": "7cd24c950476b064c86821a5e692134c1599be7fc2010466274192a17151e421"
+  },
+  {
+    "case": "work",
+    "path": "skills/loop-table/scripts/table_check.py",
+    "sha256": "18977d82eedb73f2629ee938dd0a0fc4b1fb96d934458e74b0b62e3be5d9b04c"
+  },
+  {
+    "case": "work",
+    "path": "skills/loop-work/agents/openai.yaml",
+    "sha256": "4136539b3af0573e370891cdee9579c3dc89f75255524fb0e21bdd80f3d45315"
+  },
+  {
+    "case": "work",
+    "path": "skills/loop-work/assets/work-checkpoint.json",
+    "sha256": "0700311dbff32f811547e57c373eef873d57bcbbd601504b00b4994950afa675"
+  },
+  {
+    "case": "work",
+    "path": "skills/loop-work/references/work-ledger.md",
+    "sha256": "934fd9f207f0befa9b3fbe274141a63582aa22a77f47a75c8aefd0dc55f3979c"
+  },
+  {
+    "case": "work",
+    "path": "prompt.txt",
+    "sha256": "3f9b127670aa9a596e5fae14d6093568ab9fc2af94ab30c163b47bfb2c7feb1c"
+  },
+  {
+    "case": "work",
+    "path": "assessment.json",
+    "sha256": "d55fd08330d1c372728809776424f54b780ac9239631e2f5715bb99b3d161b39"
+  },
+  {
+    "case": "work",
+    "path": "report.md",
+    "sha256": "e79b4b9e4cabd9b8171bd66fd28dbaee6bf973e66baf5c516add3a2c7a63cb40"
+  },
+  {
+    "case": "work-schema-explicit",
+    "path": "items.csv",
+    "sha256": "30cc9838b6210f6b75cab17d3ca90c82366f3278b7319acd52b463bd88c606a3"
+  },
+  {
+    "case": "work-schema-explicit",
+    "path": "meeting.txt",
+    "sha256": "64533e46d94e3ad961fb037c8b2ebfd268c868e9cc9018e3a2f1bbcf7503a6b8"
+  },
+  {
+    "case": "work-schema-explicit",
+    "path": "protected.txt",
+    "sha256": "5a0ddadcefd844171ccb80272ce23546cde8018c444ae36db17e1ddffe8cbf0f"
+  },
+  {
+    "case": "work-schema-explicit",
+    "path": "skills/loop-document/SKILL.md",
+    "sha256": "ff1cba29f1a356e7dbb701b904196a487a8f70a87211cdeeceb531aac2d37fd3"
+  },
+  {
+    "case": "work-schema-explicit",
+    "path": "skills/loop-meeting/SKILL.md",
+    "sha256": "c2337a405b8a7558e23d02cb1d6ebe5b6724f731da3e306664bf28bf1b09cad4"
+  },
+  {
+    "case": "work-schema-explicit",
+    "path": "skills/loop-table/SKILL.md",
+    "sha256": "7b2a6591e2096a0163426446299c552d35f79ed3e69151f4b7c326adfd77c51f"
+  },
+  {
+    "case": "work-schema-explicit",
+    "path": "skills/loop-work/SKILL.md",
+    "sha256": "d83c0341eb469fd4139ade5c5aaa6e4f1e0d785139345e9e683f34033dca269f"
+  },
+  {
+    "case": "work-schema-explicit",
+    "path": "skills/loop-document/agents/openai.yaml",
+    "sha256": "3dada1ca80323461de7317e73e4bf98be2525f8c8651901182dc99a67b325db2"
+  },
+  {
+    "case": "work-schema-explicit",
+    "path": "skills/loop-document/references/format-gates.md",
+    "sha256": "32a083da0912a874a4de0d83e13325c31ee6ebaa6be86b41b7be1847ba9c7cee"
+  },
+  {
+    "case": "work-schema-explicit",
+    "path": "skills/loop-meeting/agents/openai.yaml",
+    "sha256": "cbbf63cbb3717b8346929eb3ceb166bdf31132340ea441b48333c4026bb3eb35"
+  },
+  {
+    "case": "work-schema-explicit",
+    "path": "skills/loop-table/agents/openai.yaml",
+    "sha256": "e5b0a5d3d7d0178f2a0883a9c9c1f465dd5ef871c05afa03f7245b90a2bc7617"
+  },
+  {
+    "case": "work-schema-explicit",
+    "path": "skills/loop-table/references/table-contract.md",
+    "sha256": "7cd24c950476b064c86821a5e692134c1599be7fc2010466274192a17151e421"
+  },
+  {
+    "case": "work-schema-explicit",
+    "path": "skills/loop-table/scripts/table_check.py",
+    "sha256": "18977d82eedb73f2629ee938dd0a0fc4b1fb96d934458e74b0b62e3be5d9b04c"
+  },
+  {
+    "case": "work-schema-explicit",
+    "path": "skills/loop-work/agents/openai.yaml",
+    "sha256": "4136539b3af0573e370891cdee9579c3dc89f75255524fb0e21bdd80f3d45315"
+  },
+  {
+    "case": "work-schema-explicit",
+    "path": "skills/loop-work/assets/work-checkpoint.json",
+    "sha256": "0700311dbff32f811547e57c373eef873d57bcbbd601504b00b4994950afa675"
+  },
+  {
+    "case": "work-schema-explicit",
+    "path": "skills/loop-work/references/work-ledger.md",
+    "sha256": "934fd9f207f0befa9b3fbe274141a63582aa22a77f47a75c8aefd0dc55f3979c"
+  },
+  {
+    "case": "work-schema-explicit",
+    "path": "prompt.txt",
+    "sha256": "a61d5ce91307330a6f26061695822e6901f412940741111b190bb6ab1643be0c"
+  },
+  {
+    "case": "work-schema-explicit",
+    "path": "assessment.json",
+    "sha256": "d511ec584572af8a30b29ee81bf207fdebd947c827a42797d9bd0ead5ebdf8a7"
+  },
+  {
+    "case": "work-schema-explicit",
+    "path": "report.md",
+    "sha256": "13f74e348525f0a93a5b9f85cc9aac4af403c7cbe2e754c27d90370dcf735b77"
+  }
+]

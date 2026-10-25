@@ -22,7 +22,7 @@
       "reason": "1.9 responsibility/artifact-gate update; historical observations remain tied to their original instruction bytes.",
       "historical_reuse_status": "INVALIDATED",
       "automatic_discovery_status": "NOT_RUN",
-      "current_sha256": "80760f6ba3011b4d45ac027b053f59c6bfa17a85e7bd7e73b81ac2ba6d815005"
+      "current_sha256": "c2337a405b8a7558e23d02cb1d6ebe5b6724f731da3e306664bf28bf1b09cad4"
     },
     "loop-organize": {
       "historical_sha256": "940d14ed5837c4b48e769b70a8627745efa01bfcd094fde849e8252a2b171572",

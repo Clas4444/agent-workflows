@@ -1,0 +1,4 @@
+interface:
+  display_name: "Loop Knowledge (kb)"
+  short_description: "Use Loop Knowledge (kb) for a focused workflow"
+  default_prompt: "Use $loop-knowledge for this task; verify the result and report any limits."

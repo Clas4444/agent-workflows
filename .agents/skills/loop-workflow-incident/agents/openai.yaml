@@ -1,0 +1,4 @@
+interface:
+  display_name: "Loop Workflow Incident"
+  short_description: "Use Loop Workflow Incident for a focused workflow"
+  default_prompt: "Use $loop-workflow-incident for this task; verify the result and report any limits."

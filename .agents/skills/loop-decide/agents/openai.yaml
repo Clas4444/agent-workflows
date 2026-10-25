@@ -1,0 +1,4 @@
+interface:
+  display_name: "Loop Decide"
+  short_description: "Use Loop Decide for a focused workflow"
+  default_prompt: "Use $loop-decide for this task; verify the result and report any limits."

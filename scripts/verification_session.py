@@ -20,6 +20,7 @@ COMMANDS = (
     ('format', ('-m','scripts.validate','--profile','format')),
     ('catalog', ('scripts/catalog.py',)),
     ('routing', ('scripts/routing_check.py',)),
+    ('discovery', ('scripts/discovery.py',)),
     ('workflows', ('scripts/workflows.py',)),
     ('bundles', ('scripts/install_skills.py','--list')),
     ('install-diagnosis', ('scripts/doctor_skills.py','--all','--target','.github/skills')),

@@ -1,6 +1,6 @@
 # Working on Loop Skills
 
-This repository distributes 49 skill instructions and a local CLI runner. It
+This repository distributes 53 skill instructions and a local CLI runner. It
 does not implement an MCP or A2A service. Read README.md and the relevant guide
 in docs/ before changing a workflow.
 
@@ -25,6 +25,7 @@ python -m unittest discover -s tests -v
 python scripts/validate.py
 python scripts/catalog.py
 python scripts/routing_check.py
+python scripts/discovery.py
 python scripts/workflows.py
 python scripts/install_skills.py --list
 python scripts/doctor_skills.py --all --target .github/skills
@@ -64,3 +65,7 @@ explicit session ID and a new `.loop/` output directory. Verify the same report
 against the same session and unchanged input pin before citing it. The command
 records the exact verification input scope; documentation report prose and raw
 logs are outside that scope. Do not relabel earlier-session output as fresh.
+
+For selection/UI changes, keep the bundled loop lookup catalog synchronized with
+the manifest and bundle registry using scripts/discovery.py --write before root
+sync. Do not claim native slash aliases or picker discovery from CLI results.

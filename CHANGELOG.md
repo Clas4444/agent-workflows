@@ -1,5 +1,17 @@
 # Changelog
 
+## 1.10.0-experimental
+
+- Add one portable Loop selection gateway with exact short selectors, search,
+  bundle lookup and requested Codex UI metadata; no native slash-alias claim.
+- Add scoped intake, ticket support and source-linked knowledge workflows, plus
+  support/knowledge bundles. Every bundle includes the single gateway.
+- Upgrade work dependency checkpoints, spreadsheet formulas, meeting attribution,
+  document visual checks and post-patch verification without duplicate skills.
+- Register every UI/helper resource, synchronize all three roots and invalidate
+  historical instruction reuse for changed text.
+
+
 ## 1.9.4-experimental — 2026-10-25
 
 - Upgrade existing repository/tool research workflows with source identity/recheck, untrusted-source authority boundaries and explicit advertised-versus-observed capability distinctions.

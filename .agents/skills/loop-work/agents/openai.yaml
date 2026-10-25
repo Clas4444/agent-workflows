@@ -1,0 +1,4 @@
+interface:
+  display_name: "Loop Work (wk)"
+  short_description: "Use Loop Work (wk) for a focused workflow"
+  default_prompt: "Use $loop-work for this task; verify the result and report any limits."

@@ -1,0 +1,86 @@
+[
+  {
+    "bundle": "writing",
+    "skill_count": 3,
+    "install_check_doctor_lookup": "PASS",
+    "unselected_not_installed": true
+  },
+  {
+    "bundle": "office",
+    "skill_count": 7,
+    "install_check_doctor_lookup": "PASS",
+    "unselected_not_installed": true
+  },
+  {
+    "bundle": "learning",
+    "skill_count": 4,
+    "install_check_doctor_lookup": "PASS",
+    "unselected_not_installed": true
+  },
+  {
+    "bundle": "decisions",
+    "skill_count": 4,
+    "install_check_doctor_lookup": "PASS",
+    "unselected_not_installed": true
+  },
+  {
+    "bundle": "developer",
+    "skill_count": 6,
+    "install_check_doctor_lookup": "PASS",
+    "unselected_not_installed": true
+  },
+  {
+    "bundle": "project",
+    "skill_count": 6,
+    "install_check_doctor_lookup": "PASS",
+    "unselected_not_installed": true
+  },
+  {
+    "bundle": "qa",
+    "skill_count": 5,
+    "install_check_doctor_lookup": "PASS",
+    "unselected_not_installed": true
+  },
+  {
+    "bundle": "incident",
+    "skill_count": 4,
+    "install_check_doctor_lookup": "PASS",
+    "unselected_not_installed": true
+  },
+  {
+    "bundle": "work",
+    "skill_count": 5,
+    "install_check_doctor_lookup": "PASS",
+    "unselected_not_installed": true
+  },
+  {
+    "bundle": "files",
+    "skill_count": 2,
+    "install_check_doctor_lookup": "PASS",
+    "unselected_not_installed": true
+  },
+  {
+    "bundle": "documents",
+    "skill_count": 4,
+    "install_check_doctor_lookup": "PASS",
+    "unselected_not_installed": true
+  },
+  {
+    "bundle": "data",
+    "skill_count": 3,
+    "install_check_doctor_lookup": "PASS",
+    "unselected_not_installed": true
+  },
+  {
+    "bundle": "support",
+    "skill_count": 4,
+    "install_check_doctor_lookup": "PASS",
+    "unselected_not_installed": true
+  },
+  {
+    "bundle": "knowledge",
+    "skill_count": 4,
+    "install_check_doctor_lookup": "PASS",
+    "unselected_not_installed": true
+  }
+]

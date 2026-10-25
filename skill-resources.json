@@ -3,18 +3,171 @@
   "resources": {
     "loop-work": [
       "references/work-ledger.md",
-      "assets/work-checkpoint.json"
+      "assets/work-checkpoint.json",
+      "agents/openai.yaml"
     ],
     "loop-files": [
       "scripts/file_plan.py",
-      "references/file-plan.md"
+      "references/file-plan.md",
+      "agents/openai.yaml"
     ],
     "loop-table": [
       "scripts/table_check.py",
-      "references/table-contract.md"
+      "references/table-contract.md",
+      "agents/openai.yaml"
     ],
     "loop-document": [
-      "references/format-gates.md"
+      "references/format-gates.md",
+      "agents/openai.yaml"
+    ],
+    "loop": [
+      "scripts/find_skill.py",
+      "assets/catalog.json",
+      "agents/openai.yaml"
+    ],
+    "loop-review": [
+      "agents/openai.yaml"
+    ],
+    "loop-code": [
+      "agents/openai.yaml"
+    ],
+    "loop-diagnose": [
+      "agents/openai.yaml"
+    ],
+    "loop-diagnose-repro": [
+      "agents/openai.yaml"
+    ],
+    "loop-diagnose-performance": [
+      "agents/openai.yaml"
+    ],
+    "loop-diagnose-regression": [
+      "agents/openai.yaml"
+    ],
+    "loop-research": [
+      "agents/openai.yaml"
+    ],
+    "loop-research-repo": [
+      "agents/openai.yaml"
+    ],
+    "loop-research-tools": [
+      "agents/openai.yaml"
+    ],
+    "loop-test": [
+      "agents/openai.yaml"
+    ],
+    "loop-test-unit": [
+      "agents/openai.yaml"
+    ],
+    "loop-test-integration": [
+      "agents/openai.yaml"
+    ],
+    "loop-test-coverage": [
+      "agents/openai.yaml"
+    ],
+    "loop-docs": [
+      "agents/openai.yaml"
+    ],
+    "loop-skill-create": [
+      "agents/openai.yaml"
+    ],
+    "loop-orchestrate": [
+      "agents/openai.yaml"
+    ],
+    "loop-prompt": [
+      "agents/openai.yaml"
+    ],
+    "loop-debug": [
+      "agents/openai.yaml"
+    ],
+    "loop-security": [
+      "agents/openai.yaml"
+    ],
+    "loop-refactor": [
+      "agents/openai.yaml"
+    ],
+    "loop-ci": [
+      "agents/openai.yaml"
+    ],
+    "loop-release": [
+      "agents/openai.yaml"
+    ],
+    "loop-plan": [
+      "agents/openai.yaml"
+    ],
+    "loop-dependencies": [
+      "agents/openai.yaml"
+    ],
+    "loop-migrate": [
+      "agents/openai.yaml"
+    ],
+    "loop-test-e2e": [
+      "agents/openai.yaml"
+    ],
+    "loop-evaluate": [
+      "agents/openai.yaml"
+    ],
+    "loop-test-adversarial": [
+      "agents/openai.yaml"
+    ],
+    "loop-test-compatibility": [
+      "agents/openai.yaml"
+    ],
+    "loop-mcp-design": [
+      "agents/openai.yaml"
+    ],
+    "loop-mcp-test": [
+      "agents/openai.yaml"
+    ],
+    "loop-mcp-security": [
+      "agents/openai.yaml"
+    ],
+    "loop-deploy": [
+      "agents/openai.yaml"
+    ],
+    "loop-observe": [
+      "agents/openai.yaml"
+    ],
+    "loop-context": [
+      "agents/openai.yaml"
+    ],
+    "loop-handoff": [
+      "agents/openai.yaml"
+    ],
+    "loop-workflow-project": [
+      "agents/openai.yaml"
+    ],
+    "loop-workflow-pr": [
+      "agents/openai.yaml"
+    ],
+    "loop-workflow-incident": [
+      "agents/openai.yaml"
+    ],
+    "loop-write": [
+      "agents/openai.yaml"
+    ],
+    "loop-summarize": [
+      "agents/openai.yaml"
+    ],
+    "loop-meeting": [
+      "agents/openai.yaml"
+    ],
+    "loop-organize": [
+      "agents/openai.yaml"
+    ],
+    "loop-decide": [
+      "agents/openai.yaml"
+    ],
+    "loop-learn": [
+      "agents/openai.yaml"
+    ],
+    "loop-intake": [
+      "agents/openai.yaml"
+    ],
+    "loop-support": [
+      "agents/openai.yaml"
+    ],
+    "loop-knowledge": [
+      "agents/openai.yaml"
     ]
   }
 }

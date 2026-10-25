@@ -1,0 +1,4 @@
+interface:
+  display_name: "Loop Test Unit"
+  short_description: "Use Loop Test Unit for a focused workflow"
+  default_prompt: "Use $loop-test-unit for this task; verify the result and report any limits."

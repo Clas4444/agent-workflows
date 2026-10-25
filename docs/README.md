@@ -17,6 +17,8 @@ role toolkits recommend a small subset, not a requirement to run all skills.
 | Understand process cleanup and current autonomous work | [Lifecycle contract](PROCESS-LIFECYCLE.md), [ongoing three-hour ledger](testing/AUTONOMOUS-3H-2026-10-25.md) |
 | Inspect the earlier audit and paired pilot | [1.9.1 audit](testing/AUDIT-AB-2026-10-25.md), [research ledger](RESEARCH-AUDIT-2026-10-25.md) |
 | Inspect the previous restructuring session | [1.9 tests and research update](testing/RESULTS-1.9.md) |
+| Inspect the local 1.10 update | [1.10 scope and tests](testing/RESULTS-1.10.md) |
+| Find short names or call a bundle | [Skill finder](guides/SKILL-FINDER.md) |
 | Check actual host evidence | [Runtime matrix](RUNTIME-TEST-MATRIX.md), [runtime smoke](RUNTIME-SMOKE.md) |
 
 Historical reports and evidence stay at their existing paths so old links and

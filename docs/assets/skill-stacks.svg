@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="2275" viewBox="0 0 1200 2275" role="img" aria-labelledby="title desc">
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="2755" viewBox="0 0 1200 2755" role="img" aria-labelledby="title desc">
 <title id="title">Recommended Loop skill toolkits</title>
 <desc id="desc">Role-specific recommendations. Skills are optional instructions, not a sandbox.</desc>
 <rect width="1200" height="100%" fill="#f4f8fc"/>
@@ -59,5 +59,17 @@
 <text x="45" y="2120" font-size="18" fill="#385d85">Optional: loop-deploy, loop-security</text>
 <text x="45" y="2144" font-size="18" fill="#126246">DO: Prefer reversible actions inside existing authorization.</text>
 <text x="45" y="2168" font-size="18" fill="#9c2941">DO NOT: Treat one green probe as sustained recovery.</text>
+<rect x="25" y="2270" width="1150" height="225" rx="15" fill="white" stroke="#c4d9ed"/>
+<text x="45" y="2304" font-size="25" font-weight="bold">Support and request intake</text>
+<text x="45" y="2336" font-size="18" fill="#18324f">Core: loop-intake, loop-support, loop-write</text>
+<text x="45" y="2360" font-size="18" fill="#385d85">Optional: loop-work, loop-debug</text>
+<text x="45" y="2384" font-size="18" fill="#126246">DO: Keep priority and SLA provisional when no policy was supplied.</text>
+<text x="45" y="2408" font-size="18" fill="#9c2941">DO NOT: Promise a refund, fix or date without approval and evidence.</text>
+<rect x="25" y="2510" width="1150" height="225" rx="15" fill="white" stroke="#c4d9ed"/>
+<text x="45" y="2544" font-size="25" font-weight="bold">Knowledge and policy editor</text>
+<text x="45" y="2576" font-size="18" fill="#18324f">Core: loop-knowledge, loop-summarize, loop-document</text>
+<text x="45" y="2600" font-size="18" fill="#385d85">Optional: loop-research, loop-decide</text>
+<text x="45" y="2624" font-size="18" fill="#126246">DO: Pin sources and recheck claims affected by revision changes.</text>
+<text x="45" y="2648" font-size="18" fill="#9c2941">DO NOT: Choose the newest-looking document without evidence of precedence.</text>
 </g>
 </svg>

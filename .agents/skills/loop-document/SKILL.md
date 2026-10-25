@@ -34,7 +34,12 @@ missing facts, assets or approvals remain explicit.
 4. Reopen the actual saved artifact. Apply [format-specific checks](references/format-gates.md)
    for content, structure, links, layout and export. A valid extension/header is
    only a container check, not proof that every page or field is correct.
-5. Return the file path/link, meaningful changes, actual checks, unresolved content
+5. When presentation slides are requested, define audience, one main message per
+   slide and source-backed claims before layout. Reopen slides and notes, render
+   every slide with an available tool, and inspect readability/overflow. For Word
+   or PDF, inspect headings, tables, page breaks and fields in the final render.
+   Keep container, content and visual checks separate; see the format reference.
+6. Return the file path/link, meaningful changes, actual checks, unresolved content
    and any remaining review need. Keep approval, signature, delivery and publication
    separate from file creation. Do not claim a render/export that never ran.
 

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Loop Docs"
+  short_description: "Use Loop Docs for a focused workflow"
+  default_prompt: "Use $loop-docs for this task; verify the result and report any limits."

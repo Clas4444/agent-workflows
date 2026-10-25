@@ -1,0 +1,110 @@
+[
+  {
+    "case": "support",
+    "control": "correct",
+    "accepted": true,
+    "expected_accept": true
+  },
+  {
+    "case": "support",
+    "control": "missing-assessment",
+    "accepted": false,
+    "expected_accept": false
+  },
+  {
+    "case": "support",
+    "control": "wrong-evidence",
+    "accepted": false,
+    "expected_accept": false
+  },
+  {
+    "case": "support",
+    "control": "changed-input",
+    "accepted": false,
+    "expected_accept": false
+  },
+  {
+    "case": "support",
+    "control": "missing-report",
+    "accepted": false,
+    "expected_accept": false
+  },
+  {
+    "case": "support",
+    "control": "wrong-type",
+    "accepted": false,
+    "expected_accept": false
+  },
+  {
+    "case": "knowledge",
+    "control": "correct",
+    "accepted": true,
+    "expected_accept": true
+  },
+  {
+    "case": "knowledge",
+    "control": "missing-assessment",
+    "accepted": false,
+    "expected_accept": false
+  },
+  {
+    "case": "knowledge",
+    "control": "wrong-evidence",
+    "accepted": false,
+    "expected_accept": false
+  },
+  {
+    "case": "knowledge",
+    "control": "changed-input",
+    "accepted": false,
+    "expected_accept": false
+  },
+  {
+    "case": "knowledge",
+    "control": "missing-report",
+    "accepted": false,
+    "expected_accept": false
+  },
+  {
+    "case": "knowledge",
+    "control": "wrong-type",
+    "accepted": false,
+    "expected_accept": false
+  },
+  {
+    "case": "work",
+    "control": "correct",
+    "accepted": true,
+    "expected_accept": true
+  },
+  {
+    "case": "work",
+    "control": "missing-assessment",
+    "accepted": false,
+    "expected_accept": false
+  },
+  {
+    "case": "work",
+    "control": "wrong-evidence",
+    "accepted": false,
+    "expected_accept": false
+  },
+  {
+    "case": "work",
+    "control": "changed-input",
+    "accepted": false,
+    "expected_accept": false
+  },
+  {
+    "case": "work",
+    "control": "missing-report",
+    "accepted": false,
+    "expected_accept": false
+  },
+  {
+    "case": "work",
+    "control": "wrong-type",
+    "accepted": false,
+    "expected_accept": false
+  }
+]

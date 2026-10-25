@@ -1,0 +1,4 @@
+interface:
+  display_name: "Loop Plan"
+  short_description: "Use Loop Plan for a focused workflow"
+  default_prompt: "Use $loop-plan for this task; verify the result and report any limits."

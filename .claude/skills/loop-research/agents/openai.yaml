@@ -1,0 +1,4 @@
+interface:
+  display_name: "Loop Research"
+  short_description: "Use Loop Research for a focused workflow"
+  default_prompt: "Use $loop-research for this task; verify the result and report any limits."

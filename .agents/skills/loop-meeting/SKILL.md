@@ -30,15 +30,19 @@ dates stay unknown. If duration is omitted, the scoped task is the bound.
    questions. Preserve attribution and contradictory commitments; silence is not
    agreement.
 
-3. Extract actions with source pointers and only supported owners/dates. Keep
+3. Use a timestamp, paragraph or stable source ID for each material decision and
+   action when available. Label newly proposed owners/dates as proposals; keep
+   contradictory statements and missing approval visible. Do not strip attribution
+   or timestamps needed to distinguish a proposal from a later decision.
+4. Extract actions with source pointers and only supported owners/dates. Keep
    review/approval prerequisites visible. Relative weekdays need a reference date before
    becoming calendar dates; do not invent a year or time zone.
 
-4. Distinguish action assignment from completion evidence. Prepare the requested record,
+5. Distinguish action assignment from completion evidence. Prepare the requested record,
    agenda or follow-up draft. Use loop-work when a broader authorized deliverable
    package needs capacity/dependency management.
 
-5. Check the final output against the notes. Keep record preparation, confirmation,
+6. Check the final output against the notes. Keep record preparation, confirmation,
    task-system updates, notifications and scheduling separate; execute external actions
    only within explicit authorization and available tools.
 

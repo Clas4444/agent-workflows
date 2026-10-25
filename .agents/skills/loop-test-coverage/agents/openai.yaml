@@ -1,0 +1,4 @@
+interface:
+  display_name: "Loop Test Coverage"
+  short_description: "Use Loop Test Coverage for a focused workflow"
+  default_prompt: "Use $loop-test-coverage for this task; verify the result and report any limits."

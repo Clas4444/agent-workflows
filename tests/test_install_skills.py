@@ -17,9 +17,9 @@ class NeedBasedInstallTests(unittest.TestCase):
                               capture_output=True, text=True, timeout=30)
 
     def test_writing_bundle_is_small_and_union_is_manifest_ordered(self):
-        self.assertEqual(set(load_bundles(ROOT)['writing']['skills']), {'loop-write','loop-summarize'})
+        self.assertEqual(set(load_bundles(ROOT)['writing']['skills']), {'loop','loop-write','loop-summarize'})
         chosen = select_skills(ROOT, ['writing','office','writing'], ['loop-write'])
-        self.assertEqual(set(chosen), {'loop-write','loop-summarize','loop-meeting','loop-organize','loop-work','loop-document'})
+        self.assertEqual(set(chosen), {'loop','loop-write','loop-summarize','loop-meeting','loop-organize','loop-work','loop-document'})
         manifest = json.loads((ROOT/'skills-manifest.json').read_text(encoding='utf-8'))['skills']
         self.assertEqual(chosen, [name for name in manifest if name in chosen])
 
@@ -44,11 +44,11 @@ class NeedBasedInstallTests(unittest.TestCase):
             self.assertEqual(result.returncode, 1, result.stderr)
             self.assertFalse(target.exists())
             self.assertFalse(backup.exists())
-            self.assertEqual(set(json.loads(result.stdout)['selected_skills']), {'loop-write','loop-summarize'})
+            self.assertEqual(set(json.loads(result.stdout)['selected_skills']), {'loop','loop-write','loop-summarize'})
             result = self.cli('--bundle','writing','--target',target,'--backup',backup)
             self.assertEqual(result.returncode, 0, result.stderr)
-            self.assertEqual({p.name for p in target.iterdir()}, {'loop-write','loop-summarize'})
-            for name in ('loop-write','loop-summarize'):
+            self.assertEqual({p.name for p in target.iterdir()}, {'loop','loop-write','loop-summarize'})
+            for name in ('loop','loop-write','loop-summarize'):
                 self.assertEqual((target/name/'SKILL.md').read_bytes(),
                                  (ROOT/'.github/skills'/name/'SKILL.md').read_bytes())
             self.assertEqual(self.cli('--bundle','writing','--target',target,'--check').returncode, 0)

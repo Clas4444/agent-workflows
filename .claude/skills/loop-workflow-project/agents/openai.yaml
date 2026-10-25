@@ -1,0 +1,4 @@
+interface:
+  display_name: "Loop Workflow Project"
+  short_description: "Use Loop Workflow Project for a focused workflow"
+  default_prompt: "Use $loop-workflow-project for this task; verify the result and report any limits."

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Loop Mcp Design"
+  short_description: "Use Loop Mcp Design for a focused workflow"
+  default_prompt: "Use $loop-mcp-design for this task; verify the result and report any limits."

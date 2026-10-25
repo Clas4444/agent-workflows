@@ -20,6 +20,7 @@ def make_fixture() -> Path:
     shutil.copy2(REPO / "skills-manifest.json", temp / "skills-manifest.json")
     if (REPO / 'skill-resources.json').is_file():
         shutil.copy2(REPO / 'skill-resources.json', temp / 'skill-resources.json')
+    shutil.copy2(REPO / "skill-bundles.json", temp / "skill-bundles.json")
     return temp
 
 

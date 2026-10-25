@@ -1,0 +1,4 @@
+interface:
+  display_name: "Loop Files"
+  short_description: "Use Loop Files for a focused workflow"
+  default_prompt: "Use $loop-files for this task; verify the result and report any limits."

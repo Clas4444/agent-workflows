@@ -32,7 +32,7 @@ class RuntimeEvidenceTests(unittest.TestCase):
                 self.assertNotEqual(current,row['instruction_text_sha256'])
             else:
                 self.assertEqual(current,row['instruction_text_sha256'],row['skill'])
-        self.assertEqual(set(invalidations),{'loop-orchestrate','loop-prompt','loop-review','loop-code','loop-diagnose','loop-test','loop-plan','loop-research','loop-evaluate','loop-skill-create','loop-research-repo','loop-research-tools'})
+        self.assertEqual(set(invalidations),{'loop-orchestrate','loop-prompt','loop-review','loop-code','loop-diagnose','loop-test','loop-plan','loop-research','loop-evaluate','loop-skill-create','loop-research-repo','loop-research-tools','loop-debug'})
 
     def test_new_execution_and_historical_reuse_are_distinct(self):
         current=[row for row in self.data['results'] if row['basis']=='current_fixture_execution']

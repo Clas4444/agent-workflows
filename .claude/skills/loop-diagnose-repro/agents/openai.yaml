@@ -1,0 +1,4 @@
+interface:
+  display_name: "Loop Diagnose Repro"
+  short_description: "Use Loop Diagnose Repro for a focused workflow"
+  default_prompt: "Use $loop-diagnose-repro for this task; verify the result and report any limits."

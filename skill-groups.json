@@ -1,4 +1,10 @@
 {
+  "selection": {
+    "title": "Skill selection and bundle lookup",
+    "skills": [
+      "loop"
+    ]
+  },
   "discovery-planning": {
     "title": "Discovery and scoped planning",
     "skills": [
@@ -6,7 +12,8 @@
       "loop-research-repo",
       "loop-research-tools",
       "loop-plan",
-      "loop-context"
+      "loop-context",
+      "loop-knowledge"
     ]
   },
   "implementation": {
@@ -111,6 +118,13 @@
     "skills": [
       "loop-table",
       "loop-document"
+    ]
+  },
+  "request-support": {
+    "title": "Request intake and support triage",
+    "skills": [
+      "loop-intake",
+      "loop-support"
     ]
   }
 }

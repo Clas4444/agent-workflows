@@ -1,0 +1,4 @@
+interface:
+  display_name: "Loop Code (lc)"
+  short_description: "Use Loop Code (lc) for a focused workflow"
+  default_prompt: "Use $loop-code for this task; verify the result and report any limits."

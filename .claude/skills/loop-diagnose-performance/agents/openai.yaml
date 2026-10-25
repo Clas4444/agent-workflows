@@ -1,0 +1,4 @@
+interface:
+  display_name: "Loop Diagnose Performance"
+  short_description: "Use Loop Diagnose Performance for a focused workflow"
+  default_prompt: "Use $loop-diagnose-performance for this task; verify the result and report any limits."

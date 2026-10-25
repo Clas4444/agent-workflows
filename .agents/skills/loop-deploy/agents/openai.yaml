@@ -1,0 +1,4 @@
+interface:
+  display_name: "Loop Deploy"
+  short_description: "Use Loop Deploy for a focused workflow"
+  default_prompt: "Use $loop-deploy for this task; verify the result and report any limits."

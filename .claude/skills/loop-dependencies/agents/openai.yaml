@@ -1,0 +1,4 @@
+interface:
+  display_name: "Loop Dependencies"
+  short_description: "Use Loop Dependencies for a focused workflow"
+  default_prompt: "Use $loop-dependencies for this task; verify the result and report any limits."

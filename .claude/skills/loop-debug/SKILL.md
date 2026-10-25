@@ -33,7 +33,12 @@ that prevents safe progress.
    apply one small reversible fix within the user's scope.
 4. Run the original reproducer and the focused test, then relevant project gates.
    Inspect the diff and verify the fix did not merely hide the symptom.
-5. Report root cause, changed files, before/after commands, results, remaining
+5. Challenge nearby paths sharing the root cause, invalid inputs, cleanup/error
+   paths and legitimate behavior affected by the patch. Pin base and patched inputs;
+   compare the same oracle before/after. Distinguish source review, build checks
+   and actual runtime evidence. A passing original reproducer alone does not
+   establish coverage of a broader security or compatibility claim.
+6. Report root cause, changed files, before/after commands, results, remaining
    risks and next action. A patch without verification is not PASS.
 
 ## Output

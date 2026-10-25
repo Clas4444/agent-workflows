@@ -1,0 +1,4 @@
+interface:
+  display_name: "Loop Refactor"
+  short_description: "Use Loop Refactor for a focused workflow"
+  default_prompt: "Use $loop-refactor for this task; verify the result and report any limits."

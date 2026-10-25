@@ -1,0 +1,4 @@
+interface:
+  display_name: "Loop Observe"
+  short_description: "Use Loop Observe for a focused workflow"
+  default_prompt: "Use $loop-observe for this task; verify the result and report any limits."

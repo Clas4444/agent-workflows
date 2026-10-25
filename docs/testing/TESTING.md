@@ -12,6 +12,7 @@ python scripts/validate.py
 python -m scripts.validate --profile format
 python scripts/catalog.py
 python scripts/routing_check.py
+python scripts/discovery.py
 python scripts/workflows.py
 python scripts/install_skills.py --list
 python scripts/doctor_skills.py --all --target .github/skills
@@ -29,6 +30,7 @@ git diff --check
 | Full validator | Manifest, supported metadata, Loop conventions and copy integrity | Arbitrary YAML or host enforcement |
 | Format profile | Supported metadata and repository integrity | All Loop conventions |
 | Catalog/routing | Exact group coverage, generated catalog, fixed primary-route coverage | An actual model chose the correct skill |
+| Discovery | Catalog and requested UI metadata match sources; exact aliases and bundles resolve | Native picker matching, slash registration or task execution |
 | Workflows | Known skill names, valid role presets, matching Markdown/SVG | PNG accuracy or best toolkit for every user |
 | Sync check | Exact bundled runner/copy integrity under the selected root | User-wide installation or client activation |
 | Install doctor | Selected managed payload identity, missing/stale files and observed source drift | Host discovery, execution, or unmanaged extra files |

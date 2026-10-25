@@ -16,6 +16,7 @@ if __package__:
     from .catalog import check_catalog
     from .skill_resources import check_resources, plain_chain
     from .instruction_history import check_history
+    from .discovery import check as check_discovery
     from .validation.manifest import DEFAULT_ROOTS, NAME_PATTERN, Manifest, load_manifest
     from .validation.skill_format import FRONTMATTER_PATTERN, frontmatter_value, check_format
     from .validation.loop_policy import REQUIRED_STATUSES, REQUIRED_SECTIONS, check_loop_policy
@@ -24,6 +25,7 @@ else:
     from catalog import check_catalog
     from skill_resources import check_resources, plain_chain
     from instruction_history import check_history
+    from discovery import check as check_discovery
     from validation.manifest import DEFAULT_ROOTS, NAME_PATTERN, Manifest, load_manifest
     from validation.skill_format import FRONTMATTER_PATTERN, frontmatter_value, check_format
     from validation.loop_policy import REQUIRED_STATUSES, REQUIRED_SECTIONS, check_loop_policy
@@ -47,6 +49,11 @@ def validate(repo: Path, profile: str = "loop") -> list[str]:
         errors.extend(check_catalog(repo))
     if (repo / 'skill-routing.json').exists():
         errors.extend(check_routes(repo))
+    if 'loop' in manifest.skills:
+        try:
+            errors.extend(check_discovery(repo))
+        except (OSError, ValueError, KeyError, TypeError, AttributeError) as exc:
+            errors.append('invalid discovery registry: '+str(exc))
 
     for root in manifest.roots:
         root_path = repo / root

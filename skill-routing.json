@@ -372,6 +372,34 @@
       "acceptable": [
         "loop-organize"
       ]
+    },
+    {
+      "id": "route-new-loop",
+      "prompt": "Find which Loop skill matches code, lc or bundle office without executing the task.",
+      "acceptable": [
+        "loop"
+      ]
+    },
+    {
+      "id": "route-new-loop-intake",
+      "prompt": "Turn these conflicting project notes into a scoped request brief, not deliverables or a support reply.",
+      "acceptable": [
+        "loop-intake"
+      ]
+    },
+    {
+      "id": "route-new-loop-support",
+      "prompt": "Classify this customer ticket, assess reported impact and draft a reply without sending.",
+      "acceptable": [
+        "loop-support"
+      ]
+    },
+    {
+      "id": "route-new-loop-knowledge",
+      "prompt": "Maintain a source-linked FAQ across these conflicting policy revisions and flag stale claims.",
+      "acceptable": [
+        "loop-knowledge"
+      ]
     }
   ],
   "decisions": [
@@ -619,6 +647,26 @@
       "skill": "loop-document",
       "action": "add",
       "reason": "Distinct outcome with artifact and side-effect gates; no mandatory pipeline or unsupported format claim."
+    },
+    {
+      "skill": "loop",
+      "action": "add",
+      "reason": "One gateway replaces duplicate alias skills."
+    },
+    {
+      "skill": "loop-intake",
+      "action": "add",
+      "reason": "Resolve ambiguous requests before delivery."
+    },
+    {
+      "skill": "loop-support",
+      "action": "add",
+      "reason": "Support triage differs from general writing or bug repair."
+    },
+    {
+      "skill": "loop-knowledge",
+      "action": "add",
+      "reason": "Multi-source durable knowledge differs from one-source summarization."
     }
   ],
   "overlap_decisions": [
@@ -769,6 +817,29 @@
         "loop-evaluate"
       ],
       "decision": "Tabular transformations, personal option choices and fixed-rubric grading are distinct."
+    },
+    {
+      "skills": [
+        "loop-intake",
+        "loop-work",
+        "loop-support"
+      ],
+      "decision": "Intake scopes an unclear request; work delivers an agreed package; support triages tickets and drafts responses."
+    },
+    {
+      "skills": [
+        "loop-knowledge",
+        "loop-summarize",
+        "loop-research"
+      ],
+      "decision": "Knowledge maintains claims across source revisions; summarize condenses supplied material; research seeks evidence."
+    },
+    {
+      "skills": [
+        "loop",
+        "loop-organize"
+      ],
+      "decision": "Loop resolves workflow names and bundles; organize routes a mixed everyday organization request."
     }
   ],
   "routing_revisions": [

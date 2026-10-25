@@ -1,0 +1,4 @@
+interface:
+  display_name: "Loop Test Adversarial"
+  short_description: "Use Loop Test Adversarial for a focused workflow"
+  default_prompt: "Use $loop-test-adversarial for this task; verify the result and report any limits."

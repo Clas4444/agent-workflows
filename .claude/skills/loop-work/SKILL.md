@@ -35,7 +35,12 @@ If duration is omitted, the agreed work package is the bound. Reuse prior author
 4. Inspect the actual deliverable against its criteria: content, numbers, source
    coverage and the output file when applicable. Keep draft readiness, approval,
    delivery and external actions separate. Missing tools do not mean success.
-5. Leave a compact checkpoint with completed/remaining criteria, actual evidence,
+5. For work spanning several deliverables, give tasks stable IDs, dependencies,
+   acceptance criteria and evidence pointers. Select only a ready task; detect
+   dependency cycles and unavailable inputs instead of inventing a feasible plan.
+   If an input changes, recheck affected completed criteria before reusing a PASS.
+   For a small request, keep this in prose rather than creating a tracking system.
+6. Leave a compact checkpoint with completed/remaining criteria, actual evidence,
    blockers, owner when known and one next permitted action. For a substantial
    handoff, use [the work ledger](references/work-ledger.md); an editable starting
    structure is [the checkpoint template](assets/work-checkpoint.json).

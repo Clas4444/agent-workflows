@@ -1,0 +1,4 @@
+interface:
+  display_name: "Loop Orchestrate"
+  short_description: "Use Loop Orchestrate for a focused workflow"
+  default_prompt: "Use $loop-orchestrate for this task; verify the result and report any limits."

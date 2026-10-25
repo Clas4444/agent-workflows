@@ -1,0 +1,4 @@
+interface:
+  display_name: "Loop Ci"
+  short_description: "Use Loop Ci for a focused workflow"
+  default_prompt: "Use $loop-ci for this task; verify the result and report any limits."

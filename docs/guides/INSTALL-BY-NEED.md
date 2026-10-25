@@ -10,18 +10,20 @@ Your host still needs its own tools, permissions and account access when applica
 
 | Need | Bundle | Installed skills |
 |---|---|---|
-| Draft everyday communication and summarize supplied material | `writing` | `loop-write`, `loop-summarize` |
-| Complete everyday work packages with source-grounded drafts, records and document artifacts | `office` | `loop-work`, `loop-write`, `loop-summarize`, `loop-meeting`, `loop-organize`, `loop-document` |
-| Plan study, understand supplied material and compare learning choices | `learning` | `loop-learn`, `loop-summarize`, `loop-decide` |
-| Compare options with explicit priorities and source-grounded evidence | `decisions` | `loop-decide`, `loop-research`, `loop-summarize` |
-| Understand, implement or repair, test and review existing code | `developer` | `loop-research-repo`, `loop-code`, `loop-debug`, `loop-test`, `loop-review` |
-| Coordinate a small software project and verified implementation slices | `project` | `loop-workflow-project`, `loop-plan`, `loop-code`, `loop-test`, `loop-handoff` |
-| Challenge contracts, assess evidence and inspect CI/review results | `qa` | `loop-test-adversarial`, `loop-evaluate`, `loop-ci`, `loop-review` |
-| Assess impact, investigate and verify operational signals | `incident` | `loop-workflow-incident`, `loop-diagnose`, `loop-observe` |
-| Coordinate feasible everyday deliverables and checkpoints | `work` | `loop-work`, `loop-write`, `loop-meeting`, `loop-decide` |
-| Inventory and verify scoped local file organization | `files` | `loop-files` |
-| Draft, summarize and verify usable document files | `documents` | `loop-document`, `loop-write`, `loop-summarize` |
-| Analyze tables and create source-grounded report artifacts | `data` | `loop-table`, `loop-document` |
+| Draft everyday communication and summarize supplied material | `writing` | `loop`, `loop-write`, `loop-summarize` |
+| Complete everyday work packages with source-grounded drafts, records and document artifacts | `office` | `loop`, `loop-work`, `loop-write`, `loop-summarize`, `loop-meeting`, `loop-organize`, `loop-document` |
+| Plan study, understand supplied material and compare learning choices | `learning` | `loop`, `loop-learn`, `loop-summarize`, `loop-decide` |
+| Compare options with explicit priorities and source-grounded evidence | `decisions` | `loop`, `loop-decide`, `loop-research`, `loop-summarize` |
+| Understand, implement or repair, test and review existing code | `developer` | `loop`, `loop-research-repo`, `loop-code`, `loop-debug`, `loop-test`, `loop-review` |
+| Coordinate a small software project and verified implementation slices | `project` | `loop`, `loop-workflow-project`, `loop-plan`, `loop-code`, `loop-test`, `loop-handoff` |
+| Challenge contracts, assess evidence and inspect CI/review results | `qa` | `loop`, `loop-test-adversarial`, `loop-evaluate`, `loop-ci`, `loop-review` |
+| Assess impact, investigate and verify operational signals | `incident` | `loop`, `loop-workflow-incident`, `loop-diagnose`, `loop-observe` |
+| Coordinate feasible everyday deliverables and checkpoints | `work` | `loop`, `loop-work`, `loop-write`, `loop-meeting`, `loop-decide` |
+| Inventory and verify scoped local file organization | `files` | `loop`, `loop-files` |
+| Draft, summarize and verify usable document files | `documents` | `loop`, `loop-document`, `loop-write`, `loop-summarize` |
+| Analyze tables and create source-grounded report artifacts | `data` | `loop`, `loop-table`, `loop-document` |
+| Scope incoming requests and triage source-backed support replies | `support` | `loop`, `loop-intake`, `loop-support`, `loop-write` |
+| Build maintainable source-linked notes and FAQs | `knowledge` | `loop`, `loop-knowledge`, `loop-summarize`, `loop-document` |
 
 <!-- END GENERATED NEED BUNDLES -->
 

@@ -1,0 +1,95 @@
+test_colliding_alias_unknown_bundle_member_and_duplicate_json_fail_closed (test_skill_finder.SkillFinderTests.test_colliding_alias_unknown_bundle_member_and_duplicate_json_fail_closed) ... ERROR
+test_exact_bundle_expansion_preserves_registered_order (test_skill_finder.SkillFinderTests.test_exact_bundle_expansion_preserves_registered_order) ... ERROR
+test_installed_gateway_runs_without_repository_imports_and_never_executes_query (test_skill_finder.SkillFinderTests.test_installed_gateway_runs_without_repository_imports_and_never_executes_query) ... ERROR
+test_search_can_find_names_aliases_and_function_without_invoking (test_skill_finder.SkillFinderTests.test_search_can_find_names_aliases_and_function_without_invoking) ... ERROR
+test_spaced_canonical_short_and_case_variants_resolve_same_skill (test_skill_finder.SkillFinderTests.test_spaced_canonical_short_and_case_variants_resolve_same_skill) ... ERROR
+test_unknown_and_ambiguous_queries_do_not_guess_or_fall_back_to_all (test_skill_finder.SkillFinderTests.test_unknown_and_ambiguous_queries_do_not_guess_or_fall_back_to_all) ... ERROR
+
+======================================================================
+ERROR: test_colliding_alias_unknown_bundle_member_and_duplicate_json_fail_closed (test_skill_finder.SkillFinderTests.test_colliding_alias_unknown_bundle_member_and_duplicate_json_fail_closed)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<REPO>\tests\test_skill_finder.py", line 23, in setUp
+    self.finder = finder()
+                  ^^^^^^^^
+  File "<REPO>\tests\test_skill_finder.py", line 17, in finder
+    spec.loader.exec_module(module)
+  File "<frozen importlib._bootstrap_external>", line 995, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 1132, in get_code
+  File "<frozen importlib._bootstrap_external>", line 1190, in get_data
+FileNotFoundError: [Errno 2] No such file or directory: '<REPO>\\.github\\skills\\loop\\scripts\\find_skill.py'
+
+======================================================================
+ERROR: test_exact_bundle_expansion_preserves_registered_order (test_skill_finder.SkillFinderTests.test_exact_bundle_expansion_preserves_registered_order)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<REPO>\tests\test_skill_finder.py", line 23, in setUp
+    self.finder = finder()
+                  ^^^^^^^^
+  File "<REPO>\tests\test_skill_finder.py", line 17, in finder
+    spec.loader.exec_module(module)
+  File "<frozen importlib._bootstrap_external>", line 995, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 1132, in get_code
+  File "<frozen importlib._bootstrap_external>", line 1190, in get_data
+FileNotFoundError: [Errno 2] No such file or directory: '<REPO>\\.github\\skills\\loop\\scripts\\find_skill.py'
+
+======================================================================
+ERROR: test_installed_gateway_runs_without_repository_imports_and_never_executes_query (test_skill_finder.SkillFinderTests.test_installed_gateway_runs_without_repository_imports_and_never_executes_query)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<REPO>\tests\test_skill_finder.py", line 23, in setUp
+    self.finder = finder()
+                  ^^^^^^^^
+  File "<REPO>\tests\test_skill_finder.py", line 17, in finder
+    spec.loader.exec_module(module)
+  File "<frozen importlib._bootstrap_external>", line 995, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 1132, in get_code
+  File "<frozen importlib._bootstrap_external>", line 1190, in get_data
+FileNotFoundError: [Errno 2] No such file or directory: '<REPO>\\.github\\skills\\loop\\scripts\\find_skill.py'
+
+======================================================================
+ERROR: test_search_can_find_names_aliases_and_function_without_invoking (test_skill_finder.SkillFinderTests.test_search_can_find_names_aliases_and_function_without_invoking)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<REPO>\tests\test_skill_finder.py", line 23, in setUp
+    self.finder = finder()
+                  ^^^^^^^^
+  File "<REPO>\tests\test_skill_finder.py", line 17, in finder
+    spec.loader.exec_module(module)
+  File "<frozen importlib._bootstrap_external>", line 995, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 1132, in get_code
+  File "<frozen importlib._bootstrap_external>", line 1190, in get_data
+FileNotFoundError: [Errno 2] No such file or directory: '<REPO>\\.github\\skills\\loop\\scripts\\find_skill.py'
+
+======================================================================
+ERROR: test_spaced_canonical_short_and_case_variants_resolve_same_skill (test_skill_finder.SkillFinderTests.test_spaced_canonical_short_and_case_variants_resolve_same_skill)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<REPO>\tests\test_skill_finder.py", line 23, in setUp
+    self.finder = finder()
+                  ^^^^^^^^
+  File "<REPO>\tests\test_skill_finder.py", line 17, in finder
+    spec.loader.exec_module(module)
+  File "<frozen importlib._bootstrap_external>", line 995, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 1132, in get_code
+  File "<frozen importlib._bootstrap_external>", line 1190, in get_data
+FileNotFoundError: [Errno 2] No such file or directory: '<REPO>\\.github\\skills\\loop\\scripts\\find_skill.py'
+
+======================================================================
+ERROR: test_unknown_and_ambiguous_queries_do_not_guess_or_fall_back_to_all (test_skill_finder.SkillFinderTests.test_unknown_and_ambiguous_queries_do_not_guess_or_fall_back_to_all)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<REPO>\tests\test_skill_finder.py", line 23, in setUp
+    self.finder = finder()
+                  ^^^^^^^^
+  File "<REPO>\tests\test_skill_finder.py", line 17, in finder
+    spec.loader.exec_module(module)
+  File "<frozen importlib._bootstrap_external>", line 995, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 1132, in get_code
+  File "<frozen importlib._bootstrap_external>", line 1190, in get_data
+FileNotFoundError: [Errno 2] No such file or directory: '<REPO>\\.github\\skills\\loop\\scripts\\find_skill.py'
+
+----------------------------------------------------------------------
+Ran 6 tests in 0.003s
+
+FAILED (errors=6)

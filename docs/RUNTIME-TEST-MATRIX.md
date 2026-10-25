@@ -91,3 +91,19 @@ Earlier noncode-1.8 and workflow-project-1.7 observations are retained against a
 | loop-files | NOT_RUN | NOT_RUN |
 | loop-table | NOT_RUN | NOT_RUN |
 | loop-document | NOT_RUN | NOT_RUN |
+
+## 1.10 instruction and discovery update
+
+New loop/intake/support/knowledge instructions and changed work/table/document/
+meeting/debug/adversarial contracts require fresh behavioral evidence. CLI lookup,
+installer and registry checks do not prove native picker search or slash aliases.
+Historical fixture runs retain original instruction identity; new model runs, if
+performed, are recorded in the 1.10 session report rather than overwriting them.
+Native discovery and all-workflow behavioral coverage remain NOT_RUN.
+
+| New workflow | Native discovery | Current behavior evidence |
+|---|---|---|
+| loop | NOT_RUN | Deterministic lookup and explicit fixture execution reported separately |
+| loop-intake | NOT_RUN | See current release session; no historical reuse |
+| loop-support | NOT_RUN | See current release session; no historical reuse |
+| loop-knowledge | NOT_RUN | See current release session; no historical reuse |

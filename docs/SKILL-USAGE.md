@@ -130,3 +130,14 @@ See [install by need](guides/INSTALL-BY-NEED.md) and [non-coding examples](guide
 - `loop-document`: actual document artifacts and separate content/layout/export gates.
 
 `loop-organize` remains a compatibility selector; explicit filesystem requests now route to loop-files. Supporting resources are declared, synchronized and tested from fresh installations.
+
+## Selection and incoming knowledge work (1.10)
+
+- `loop`: portable shortcut/bundle lookup; see [finder](guides/SKILL-FINDER.md).
+- `loop-intake`: source-backed brief for an unclear request, before delivery.
+- `loop-support`: ticket impact/category and response draft, without inventing SLA.
+- `loop-knowledge`: maintain multi-source claims, conflicts and source revisions.
+
+Use `$loop bundle support` or `$loop bundle knowledge` to select a toolkit.
+Use only necessary members and read their current installed instructions. Native
+slash discovery is separate from deterministic lookup and remains host-dependent.

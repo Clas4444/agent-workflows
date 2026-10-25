@@ -1,0 +1,4 @@
+interface:
+  display_name: "Loop Skill Create"
+  short_description: "Use Loop Skill Create for a focused workflow"
+  default_prompt: "Use $loop-skill-create for this task; verify the result and report any limits."

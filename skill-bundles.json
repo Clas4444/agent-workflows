@@ -4,6 +4,7 @@
     "writing": {
       "purpose": "Draft everyday communication and summarize supplied material",
       "skills": [
+        "loop",
         "loop-write",
         "loop-summarize"
       ]
@@ -11,6 +12,7 @@
     "office": {
       "purpose": "Complete everyday work packages with source-grounded drafts, records and document artifacts",
       "skills": [
+        "loop",
         "loop-work",
         "loop-write",
         "loop-summarize",
@@ -22,6 +24,7 @@
     "learning": {
       "purpose": "Plan study, understand supplied material and compare learning choices",
       "skills": [
+        "loop",
         "loop-learn",
         "loop-summarize",
         "loop-decide"
@@ -30,6 +33,7 @@
     "decisions": {
       "purpose": "Compare options with explicit priorities and source-grounded evidence",
       "skills": [
+        "loop",
         "loop-decide",
         "loop-research",
         "loop-summarize"
@@ -38,6 +42,7 @@
     "developer": {
       "purpose": "Understand, implement or repair, test and review existing code",
       "skills": [
+        "loop",
         "loop-research-repo",
         "loop-code",
         "loop-debug",
@@ -48,6 +53,7 @@
     "project": {
       "purpose": "Coordinate a small software project and verified implementation slices",
       "skills": [
+        "loop",
         "loop-workflow-project",
         "loop-plan",
         "loop-code",
@@ -58,6 +64,7 @@
     "qa": {
       "purpose": "Challenge contracts, assess evidence and inspect CI/review results",
       "skills": [
+        "loop",
         "loop-test-adversarial",
         "loop-evaluate",
         "loop-ci",
@@ -67,6 +74,7 @@
     "incident": {
       "purpose": "Assess impact, investigate and verify operational signals",
       "skills": [
+        "loop",
         "loop-workflow-incident",
         "loop-diagnose",
         "loop-observe"
@@ -75,6 +83,7 @@
     "work": {
       "purpose": "Coordinate feasible everyday deliverables and checkpoints",
       "skills": [
+        "loop",
         "loop-work",
         "loop-write",
         "loop-meeting",
@@ -84,12 +93,14 @@
     "files": {
       "purpose": "Inventory and verify scoped local file organization",
       "skills": [
+        "loop",
         "loop-files"
       ]
     },
     "documents": {
       "purpose": "Draft, summarize and verify usable document files",
       "skills": [
+        "loop",
         "loop-document",
         "loop-write",
         "loop-summarize"
@@ -98,7 +109,26 @@
     "data": {
       "purpose": "Analyze tables and create source-grounded report artifacts",
       "skills": [
+        "loop",
         "loop-table",
+        "loop-document"
+      ]
+    },
+    "support": {
+      "purpose": "Scope incoming requests and triage source-backed support replies",
+      "skills": [
+        "loop",
+        "loop-intake",
+        "loop-support",
+        "loop-write"
+      ]
+    },
+    "knowledge": {
+      "purpose": "Build maintainable source-linked notes and FAQs",
+      "skills": [
+        "loop",
+        "loop-knowledge",
+        "loop-summarize",
         "loop-document"
       ]
     }

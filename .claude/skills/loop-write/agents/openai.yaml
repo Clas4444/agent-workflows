@@ -1,0 +1,4 @@
+interface:
+  display_name: "Loop Write"
+  short_description: "Use Loop Write for a focused workflow"
+  default_prompt: "Use $loop-write for this task; verify the result and report any limits."

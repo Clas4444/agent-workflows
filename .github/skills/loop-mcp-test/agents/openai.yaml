@@ -1,0 +1,4 @@
+interface:
+  display_name: "Loop Mcp Test"
+  short_description: "Use Loop Mcp Test for a focused workflow"
+  default_prompt: "Use $loop-mcp-test for this task; verify the result and report any limits."

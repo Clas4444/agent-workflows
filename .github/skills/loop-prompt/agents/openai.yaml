@@ -1,0 +1,4 @@
+interface:
+  display_name: "Loop Prompt"
+  short_description: "Use Loop Prompt for a focused workflow"
+  default_prompt: "Use $loop-prompt for this task; verify the result and report any limits."

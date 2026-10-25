@@ -1,0 +1,4 @@
+interface:
+  display_name: "Loop Support"
+  short_description: "Use Loop Support for a focused workflow"
+  default_prompt: "Use $loop-support for this task; verify the result and report any limits."

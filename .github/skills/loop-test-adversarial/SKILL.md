@@ -34,7 +34,10 @@ was requested. Reuse existing authorization without broadening its scope.
 5. When repair is authorized and a bug is demonstrated, write a regression test
    that fails before the fix. Repair the root cause without weakening old tests,
    then rerun the same fixture, legitimate controls and relevant full gates.
-6. Report cases that found no violation, unavailable prerequisites and limits.
+6. After repair, challenge root-cause variants and legitimate behavior the patch
+   could break, including callers, siblings and cleanup paths. Keep the same
+   baseline oracle and record any new failure introduced by the patch separately.
+7. Report cases that found no violation, unavailable prerequisites and limits.
    Separate unit tests, CLI execution and model/host runtime evidence. Keep
    failed attempts and source identities; do not relabel old tests as fresh runs.
 

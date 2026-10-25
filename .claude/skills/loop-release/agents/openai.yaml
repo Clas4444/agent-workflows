@@ -1,0 +1,4 @@
+interface:
+  display_name: "Loop Release"
+  short_description: "Use Loop Release for a focused workflow"
+  default_prompt: "Use $loop-release for this task; verify the result and report any limits."

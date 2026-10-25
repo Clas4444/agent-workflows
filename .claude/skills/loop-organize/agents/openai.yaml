@@ -1,0 +1,4 @@
+interface:
+  display_name: "Loop Organize"
+  short_description: "Use Loop Organize for a focused workflow"
+  default_prompt: "Use $loop-organize for this task; verify the result and report any limits."

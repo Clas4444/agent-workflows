@@ -1,0 +1,10 @@
+{
+  "status": "PASS_FOR_RECORDED_SCOPE",
+  "scope": "Parent inspected completed read/lookup/hash and artifact-creation commands. All protocol-pinned inputs and sentinels matched afterward. No whole-machine side-effect proof or native discovery claim.",
+  "model_runtime": "Four explicit-load scaffolded CLI invocations: support, knowledge, work and schema-explicit work retry.",
+  "cost": "NOT_VERIFIED",
+  "model_identity": "NOT_VERIFIED_FROM_JSON_EVENTS",
+  "helper_identity": "Support/knowledge snapshots predate the later search kind-token improvement; resolve paths were exercised. Current search/resolve implementation has separate unit and installed CLI coverage.",
+  "initial_work": "FAIL retained: decimal-string requirement absent from original prompt; amounts correct. New prompt declares serialization, expected oracle unchanged.",
+  "unicode_scope": "Some initial report punctuation passed through the Windows shell with replacement characters; semantic/source and numeric checks are narrower than visual or full Unicode roundtrip validation. Retry requested ASCII punctuation."
+}

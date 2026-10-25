@@ -1,0 +1,4 @@
+interface:
+  display_name: "Loop Test (tst)"
+  short_description: "Use Loop Test (tst) for a focused workflow"
+  default_prompt: "Use $loop-test for this task; verify the result and report any limits."

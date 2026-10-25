@@ -1,0 +1,4 @@
+interface:
+  display_name: "Loop Test Compatibility"
+  short_description: "Use Loop Test Compatibility for a focused workflow"
+  default_prompt: "Use $loop-test-compatibility for this task; verify the result and report any limits."
