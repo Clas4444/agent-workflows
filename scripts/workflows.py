@@ -54,6 +54,7 @@ def markdown(profiles):
              '<!-- Generated from workflow-presets.json by scripts/workflows.py. -->', '',
              'These are small recommended toolkits, not mandatory sequences. Install or invoke',
              'only what the task needs. A skill provides instructions; it does not enforce a sandbox.', '',
+             'See [practical English prompts](WORKFLOW-EXAMPLES.md) for concrete role-specific requests.', '',
              '![Developer workflow](../assets/developer-workflow.png)', '',
              '![Project workflows](../assets/project-workflows.png)', '',
              'The editable SVG below and the lists are generated from the same inventory-checked',

@@ -1,5 +1,6 @@
 # Preserve published 1.7 packet bytes and the instruction hashes they identify.
 /docs/evidence/workflows-1.7/* -text
+/docs/evidence/routing-1.7/* text eol=lf
 /.github/skills/loop-workflow-*/SKILL.md text eol=lf
 /.agents/skills/loop-workflow-*/SKILL.md text eol=lf
 /.claude/skills/loop-workflow-*/SKILL.md text eol=lf

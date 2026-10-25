@@ -45,12 +45,23 @@ validator gate for contributions; `--profile format` is diagnostic only.
 From the repository root, run:
 
 ```text
-py -3 -m unittest discover -s tests -v
-py -3 scripts\validate.py
-py -3 -m py_compile scripts\run_loop.py scripts\validate.py tests\test_validate.py
+python -m unittest discover -s tests -v
+python scripts/validate.py
+python -m scripts.validate --profile format
+python scripts/catalog.py
+python scripts/routing_check.py
+python scripts/workflows.py
+python scripts/sync_skills.py --target .github/skills --check
+python scripts/runtime_smoke.py --help
+python -m compileall -q scripts tests
 git diff --check
 ```
 
 Do not mark CI or host-runtime checks as `PASS` without recorded evidence.
 Keep generated validation evidence factual, and review the final diff for
 unrelated files or captured sensitive output.
+
+Use an installed Python 3.11+ interpreter; on Windows, `py -3` is an alternative
+only when that launcher is present. See [test procedure](docs/testing/TESTING.md)
+for gate scopes and skip handling. Edit `workflow-presets.json` and regenerate
+with `python scripts/workflows.py --write` when role recommendations change.

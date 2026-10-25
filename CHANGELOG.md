@@ -1,5 +1,29 @@
 # Changelog
 
+## 1.7.0-experimental — 2026-10-25
+
+- Add an end-to-end project workflows group with project, PR and incident
+  coordination skills: 39 skills, nine groups and 42 fixed routing cases.
+- Add English role toolkits, practical prompts, two illustrated workflow posters,
+  an editable generated SVG and inventory/staleness checks in CI.
+- Separate smoke fixtures from grading behind the existing compatibility facade;
+  add a documentation map, reproducible test procedure and reviewed before/after
+  packet evidence, retaining the failed incident attempt.
+- Correct incident evidence labels so reported test claims do not become verified
+  PASS; keep recovery and authorization decisions separate.
+- Enforce a portable 512-container JSON nesting bound after the expanded Python
+  3.14 run exposed launch-dependent acceptance; preserve existing negative tests.
+- Fix long-toolkit SVG overflow with content-derived layout and regression tests.
+  Final local suites: 204 discovered, 203 passed and one Windows privilege skip
+  on both Python 3.12 and 3.14; host discovery/live operations remain NOT_RUN.
+
+## 1.6.0-experimental — 2026-10-25
+
+- Add context selection and resumable handoff skills, bringing the catalog to 36.
+- Record independent synthetic context/handoff exercises and their limitations.
+- Add trial metrics that retain failed/blocked attempts and distinguish any-run
+  success from observed all-runs success. See `docs/RESEARCH-1.6.md` for evidence.
+
 ## 1.5.0-experimental — 2026-10-24
 
 - Reorganize 34 skills into eight outcome-oriented groups; retain public names

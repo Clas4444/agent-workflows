@@ -26,6 +26,7 @@ testing documentation/results and a new group containing two to six skills.
 `loop-skill-create` and the system `skill-creator` guided three narrow instruction
 contracts and independent forward tests. `loop-test` and `loop-review` guided
 negative controls, complete regression checks and inspection of the resulting diff.
+`loop-docs` guided the final link, example and contributor-command review.
 The imagegen skill/tool produced the two English posters. These are explicit uses
 of instructions/tools; they are not automatic host-discovery measurements.
 
@@ -63,6 +64,18 @@ Evidence: [project](../evidence/workflows-1.7/project.json),
 [provenance](../evidence/workflows-1.7/provenance.json).
 This was a manual semantic evaluation of a small synthetic sample. It does not
 establish a statistical reliability rate or prevent future model errors.
+
+## Independent route classification
+
+A third fresh context received only the 39 descriptions and 42 request prompts,
+not the expected routes or prior findings. Expected answers were pinned in
+implementation commit `56846a9` before this pass. The real prediction-grading CLI
+reported **42/42 correct**, including three NONE controls and all three new
+workflow routes. [Inputs](../evidence/routing-1.7/input.json),
+[predictions](../evidence/routing-1.7/predictions.json) and
+[result/provenance](../evidence/routing-1.7/result.json) are retained. This is a
+single curated classification pass, not automatic discovery or skill execution.
+It does not estimate general routing accuracy or model reliability.
 
 ## Deterministic checks
 
@@ -108,8 +121,11 @@ functions retained identical ASTs across the module move; the shared JSON reader
 was intentionally hardened separately. [Machine-readable local results](../evidence/workflows-1.7/checks.json)
 retain the earlier failures and final command exit codes.
 
-Remote CI is a separate post-push check; consult the run for the actual commit.
-The external session report records its URL and completion status.
+Implementation commit `56846a9fd0ff74a6f3d9a9c873a3c92dae1fe72b` passed
+[all four CI jobs](https://github.com/Clas4444/loop-skills-repository/actions/runs/40163311210)
+on Windows/Ubuntu with Python 3.11/3.12. Remote CI remains a separate per-commit
+check. The external session report records the final documentation follow-up
+commit, its CI URL and completion status.
 
 ## Unproven scope and limits
 

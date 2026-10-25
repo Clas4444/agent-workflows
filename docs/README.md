@@ -6,6 +6,7 @@ role toolkits recommend a small subset, not a requirement to run all skills.
 | Need | Start here |
 |---|---|
 | Choose skills for a developer, builder, researcher, QA or incident responder | [Role workflows and English illustrations](guides/ROLE-WORKFLOWS.md) |
+| Try a concrete request without widening scope | [Practical English prompts](guides/WORKFLOW-EXAMPLES.md) |
 | Install skills and understand host differences | [Compatibility](COMPATIBILITY.md) |
 | Inspect functional boundaries | [Skill groups](SKILL-GROUPS.md), [usage](SKILL-USAGE.md) |
 | Understand implementation and data contracts | [Architecture](ARCHITECTURE.md), [schemas](../schemas/README.md) |

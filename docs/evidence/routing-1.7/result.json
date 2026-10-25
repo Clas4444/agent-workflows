@@ -1,0 +1,15 @@
+{
+  "status": "PASS",
+  "total": 42,
+  "correct": 42,
+  "failed_case_ids": [],
+  "scope": "Curated route classification only, not host discovery or skill execution.",
+  "fixed_oracle_revision": "56846a9fd0ff74a6f3d9a9c873a3c92dae1fe72b",
+  "oracle_pinned_before_classification": true,
+  "input_sha256": "0520f073aeff122714c72dbbb82bde15485eacfb82ee7b872874717110bd01a1",
+  "predictions_sha256": "38bc0ca55c65eefcd87f95aca61c46289877d2a7533bf1c88a774d1dd082a230",
+  "protocol": "Fresh subagent given descriptions and requests only; expected routes withheld. No request execution permitted.",
+  "native_discovery": "NOT_RUN",
+  "skill_execution": "NOT_RUN",
+  "limits": "One curated classification pass; not a general routing benchmark or reliability estimate."
+}

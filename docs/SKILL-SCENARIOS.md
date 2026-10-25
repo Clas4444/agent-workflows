@@ -27,8 +27,15 @@ Structural tests check metadata, synchronization and required contract text.
 | loop-migrate | Dry-run, migrate, rerun and roll back a copied fixture | Invalid record: FAIL without changing source or backup | Invariants, hashes, backup, idempotence, exercised rollback |
 | loop-test-e2e | Exercise actual CLI success and error journeys | Invalid input returns an error without unexpected writes | Entry-point output, exit, message and side effects |
 | loop-evaluate | Score baseline/candidate with a predeclared rubric | Unexpected PASS is a false positive; keep it in the denominator | Per-case scores, false positives/negatives, blocked/not-run counts |
+| loop-workflow-project | Turn a scoped project into acceptance IDs and verified slices | Plan-only request: no implementation, dependency install or publication | MVP boundary, open decisions, backlog and actual execution status |
+| loop-workflow-pr | Resolve a real base/head and prepare a truthful review packet | No patch/revision access: do not invent review or remote CI results | Revision identity, scoped diff, commands/results, publication state |
+| loop-workflow-incident | Separate impact, containment, recovery and root-cause decisions | Reported passing tests and one healthy probe: do not declare verified recovery or infer rollback authority | Fact/hypothesis timeline, reported versus verified results, proposed window, actual action status |
 
 For each host, run the positive and negative scenario with disposable local
 fixtures and record the host/version, skill discovery/invocation, observed
 behavior and artifacts in RUNTIME-TEST-MATRIX.md. A static review or unrelated
 headless audit does not replace these scenarios. Never use production secrets.
+
+The three 1.7 workflows have [explicit synthetic packet evidence](testing/RESULTS-1.7.md),
+including a retained failed attempt and revised incident retry. Native automatic
+discovery and live operations were not exercised by those packets.

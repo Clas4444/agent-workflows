@@ -239,7 +239,13 @@ available; otherwise use the Python executable installed in your environment.
 ```text
 python -m unittest discover -s tests -v
 python scripts/validate.py
+python -m scripts.validate --profile format
+python scripts/catalog.py
+python scripts/routing_check.py
+python scripts/workflows.py
 python scripts/sync_skills.py --target .github/skills --check
+python scripts/runtime_smoke.py --help
+python -m compileall -q scripts tests
 git diff --check
 ```
 
