@@ -1,0 +1,22 @@
+Fix ledger.py summarize(rows). Return JSON-compatible data with exactly
+row_count (integer), complete (boolean), groups (list sorted by category then currency).
+Each group has category, currency, known_total (exact decimal string with two places,
+or null if all amounts are blank), missing_ids (source IDs in source order).
+Group only by category AND currency; blank amounts are unknown, not zero. Preserve
+leading-zero IDs. Do not mutate rows. Empty input returns no groups, complete true,
+row_count zero. Inputs use valid finite decimal amounts of at most two fractional
+digits, arbitrary integer precision and may be negative. No currency conversion.
+Keep the summarize(rows) API and standard library only. Add and run regression tests.
+Deliver the changed files in this directory. Do not access any other workspace.
+
+Execution mode: generate files as a JSON response, rather than using tools. Return exactly {"code": "complete replacement ledger.py", "tests": "complete unittest test_ledger.py"}. The evaluator will save these files, run your tests and grade your code. You cannot run commands in this mode; do not claim you ran tests. All input is supplied below. No extra prose.
+Initial ledger.py:
+def summarize(rows):
+    totals = {}
+    for row in rows:
+        row['amount'] = float(row['amount'] or 0)
+        totals[row['category']] = totals.get(row['category'], 0) + row['amount']
+    return totals
+
+Example input rows:
+[{"id": "001", "category": "Food", "currency": "USD", "amount": "10.20"}, {"id": "002", "category": "Food", "currency": "USD", "amount": "0.10"}, {"id": "003", "category": "Food", "currency": "EUR", "amount": "5.00"}, {"id": "004", "category": "Food", "currency": "USD", "amount": ""}, {"id": "005", "category": "Travel", "currency": "USD", "amount": "-2.00"}, {"id": "006", "category": "Travel", "currency": "USD", "amount": "2.00"}, {"id": "007", "category": "Other", "currency": "JPY", "amount": ""}]

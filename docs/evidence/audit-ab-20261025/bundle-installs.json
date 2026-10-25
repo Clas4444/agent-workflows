@@ -1,0 +1,91 @@
+{
+  "session_id": "audit-ab-20261025T083146Z",
+  "checked_at": "2026-10-25T08:49:20.893518+00:00",
+  "scope": "12 separate initially-empty fixture targets; actual CLI install then read-only CLIcheck; native host discovery NOT_RUN",
+  "results": [
+    {
+      "bundle": "writing",
+      "install_exit": 0,
+      "check_exit": 0,
+      "installed_skill_count": 2,
+      "status": "PASS"
+    },
+    {
+      "bundle": "office",
+      "install_exit": 0,
+      "check_exit": 0,
+      "installed_skill_count": 6,
+      "status": "PASS"
+    },
+    {
+      "bundle": "learning",
+      "install_exit": 0,
+      "check_exit": 0,
+      "installed_skill_count": 3,
+      "status": "PASS"
+    },
+    {
+      "bundle": "decisions",
+      "install_exit": 0,
+      "check_exit": 0,
+      "installed_skill_count": 3,
+      "status": "PASS"
+    },
+    {
+      "bundle": "developer",
+      "install_exit": 0,
+      "check_exit": 0,
+      "installed_skill_count": 5,
+      "status": "PASS"
+    },
+    {
+      "bundle": "project",
+      "install_exit": 0,
+      "check_exit": 0,
+      "installed_skill_count": 5,
+      "status": "PASS"
+    },
+    {
+      "bundle": "qa",
+      "install_exit": 0,
+      "check_exit": 0,
+      "installed_skill_count": 4,
+      "status": "PASS"
+    },
+    {
+      "bundle": "incident",
+      "install_exit": 0,
+      "check_exit": 0,
+      "installed_skill_count": 3,
+      "status": "PASS"
+    },
+    {
+      "bundle": "work",
+      "install_exit": 0,
+      "check_exit": 0,
+      "installed_skill_count": 4,
+      "status": "PASS"
+    },
+    {
+      "bundle": "files",
+      "install_exit": 0,
+      "check_exit": 0,
+      "installed_skill_count": 1,
+      "status": "PASS"
+    },
+    {
+      "bundle": "documents",
+      "install_exit": 0,
+      "check_exit": 0,
+      "installed_skill_count": 3,
+      "status": "PASS"
+    },
+    {
+      "bundle": "data",
+      "install_exit": 0,
+      "check_exit": 0,
+      "installed_skill_count": 2,
+      "status": "PASS"
+    }
+  ]
+}

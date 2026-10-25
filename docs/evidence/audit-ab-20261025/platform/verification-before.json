@@ -1,0 +1,210 @@
+{
+  "session_id": "audit-ab-20261025T083146Z-cache-repro",
+  "started_at": "2026-10-25T08:36:40.112121+00:00",
+  "python": "3.12.14",
+  "platform": "win32",
+  "git": {
+    "head_at_start": null,
+    "dirty_at_start": null
+  },
+  "input_scope": {
+    "roots": [
+      ".github/skills",
+      ".agents/skills",
+      ".claude/skills",
+      "scripts",
+      "tests",
+      "schemas",
+      ".github/workflows",
+      "docs/evidence",
+      "docs/guides",
+      "docs/assets"
+    ],
+    "files": [
+      "skills-manifest.json",
+      "skill-groups.json",
+      "skill-routing.json",
+      "workflow-presets.json",
+      "skill-bundles.json",
+      "README.md",
+      "AGENTS.md",
+      "CONTRIBUTING.md",
+      ".gitattributes",
+      "skill-resources.json",
+      "docs/SKILL-USAGE.md",
+      "docs/RUNTIME-TEST-MATRIX.md"
+    ]
+  },
+  "inputs": {
+    ".gitattributes": "aef8f081ddadb71261241a74ed361563bf96532440940c274cd43cd9324332fb",
+    "AGENTS.md": "576ead61e352a2351867756151ca92f8355078e0181be5ad979abea83475ddcd",
+    "CONTRIBUTING.md": "bd4b352392216e1c8afa20c19edb0b2fd8b90060b91b9e459fce8b4121af1e6c",
+    "docs/RUNTIME-TEST-MATRIX.md": "91525849d27548465b1cc861e523f35f64e3f3cb8ce8cc171b228cf265b9a8b5",
+    "docs/SKILL-USAGE.md": "2811521acac52e06b0ab2b78ddb12f0501f12ef9f891a109fb8a08b962de473d",
+    "README.md": "a6cb981693a945f56dd31f4f3faa186ce2563b193fef0e52a745d48058d76b15",
+    "skill-bundles.json": "e0ffdb6b5b3c577d9fe2ba2a9a2ca0cebeb1e6a0f958aac76b2ff1082b1480f4",
+    "skill-groups.json": "e01932d1fe89e675ef8c783944611a28079561e510de8389830d1fc2f2cb5bb0",
+    "skill-resources.json": "4a7e80a0655153633a270177013214b653948dd434191eea692f71bb80d53f1d",
+    "skill-routing.json": "f70e14cbb1e297126a688216d05e1850380671f2716b86b8fb88587ba465d2e3",
+    "skills-manifest.json": "ec25f19929e615da355f79b8d9b3ae82909974334a60d5d4d502634363478973",
+    "workflow-presets.json": "1be11c5d596dc0e6db687a98be6c3f07330afb5c8aa48e646f9488285aa6b1c4"
+  },
+  "input_fingerprint": "a096270d089427d501cfa4ed8301d577b160dead752b4f9de4e2a94a985783b2",
+  "checks": [
+    {
+      "id": "unit",
+      "command": [
+        "python",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-v"
+      ],
+      "started_at": "2026-10-25T08:36:40.149342+00:00",
+      "finished_at": "2026-10-25T08:37:18.068152+00:00",
+      "exit_code": 0,
+      "status": "PASS",
+      "log_sha256": "4fc29b7b9099c9999bd2b97659ef4dd623e938f4e92f16e1735eea39e091605e",
+      "discovered": 246,
+      "skipped": 1
+    },
+    {
+      "id": "full",
+      "command": [
+        "python",
+        "scripts/validate.py"
+      ],
+      "started_at": "2026-10-25T08:37:18.090127+00:00",
+      "finished_at": "2026-10-25T08:37:18.482706+00:00",
+      "exit_code": 0,
+      "status": "PASS",
+      "log_sha256": "7cb045edcebc0336f8f29ccf7c9976358ba251b41bb3120081b5c803e408cb46"
+    },
+    {
+      "id": "format",
+      "command": [
+        "python",
+        "-m",
+        "scripts.validate",
+        "--profile",
+        "format"
+      ],
+      "started_at": "2026-10-25T08:37:18.496100+00:00",
+      "finished_at": "2026-10-25T08:37:18.794826+00:00",
+      "exit_code": 0,
+      "status": "PASS",
+      "log_sha256": "7cb045edcebc0336f8f29ccf7c9976358ba251b41bb3120081b5c803e408cb46"
+    },
+    {
+      "id": "catalog",
+      "command": [
+        "python",
+        "scripts/catalog.py"
+      ],
+      "started_at": "2026-10-25T08:37:18.795824+00:00",
+      "finished_at": "2026-10-25T08:37:18.882753+00:00",
+      "exit_code": 0,
+      "status": "PASS",
+      "log_sha256": "de31aaf6f71fa838fc7a3bf0555bfcbbe199218e6426678278ddb29d7629e13f"
+    },
+    {
+      "id": "routing",
+      "command": [
+        "python",
+        "scripts/routing_check.py"
+      ],
+      "started_at": "2026-10-25T08:37:18.887916+00:00",
+      "finished_at": "2026-10-25T08:37:18.938168+00:00",
+      "exit_code": 0,
+      "status": "PASS",
+      "log_sha256": "29ee0a9fd443411e2504551ca0cbd88cd0c4adac46007114c56eba17cb48d399"
+    },
+    {
+      "id": "workflows",
+      "command": [
+        "python",
+        "scripts/workflows.py"
+      ],
+      "started_at": "2026-10-25T08:37:18.949815+00:00",
+      "finished_at": "2026-10-25T08:37:19.022219+00:00",
+      "exit_code": 0,
+      "status": "PASS",
+      "log_sha256": "732ad18dbe8fae00d6be9d68949d5fbc8fe33f2d272a4f9ff9247b15d8dac090"
+    },
+    {
+      "id": "bundles",
+      "command": [
+        "python",
+        "scripts/install_skills.py",
+        "--list"
+      ],
+      "started_at": "2026-10-25T08:37:19.023557+00:00",
+      "finished_at": "2026-10-25T08:37:19.084932+00:00",
+      "exit_code": 0,
+      "status": "PASS",
+      "log_sha256": "c33026a0913ff49ff408da0cf2f62125247d6654b0d9582c9d7554354d817c07"
+    },
+    {
+      "id": "resources",
+      "command": [
+        "python",
+        "scripts/skill_resources.py"
+      ],
+      "started_at": "2026-10-25T08:37:19.085933+00:00",
+      "finished_at": "2026-10-25T08:37:19.267599+00:00",
+      "exit_code": 0,
+      "status": "PASS",
+      "log_sha256": "eb55587df88b027f9a1ee470ae6a183c1578c70344b3cd0c54b324a8f52ebe4b"
+    },
+    {
+      "id": "sync",
+      "command": [
+        "python",
+        "scripts/sync_skills.py",
+        "--target",
+        ".github/skills",
+        "--check"
+      ],
+      "started_at": "2026-10-25T08:37:19.267599+00:00",
+      "finished_at": "2026-10-25T08:37:19.400792+00:00",
+      "exit_code": 0,
+      "status": "PASS",
+      "log_sha256": "cdfa49d13c0f3666d57d4685f1def960af87448e07208f637c7251ea0f599401"
+    },
+    {
+      "id": "smoke-interface",
+      "command": [
+        "python",
+        "scripts/runtime_smoke.py",
+        "--help"
+      ],
+      "started_at": "2026-10-25T08:37:19.400792+00:00",
+      "finished_at": "2026-10-25T08:37:19.493775+00:00",
+      "exit_code": 0,
+      "status": "PASS",
+      "log_sha256": "e9cdb39d5858c6f5fa7e96b60db628eadd0eb94899048e6dcf2445a93e6f5310"
+    },
+    {
+      "id": "compile",
+      "command": [
+        "python",
+        "-m",
+        "compileall",
+        "-q",
+        "scripts",
+        "tests"
+      ],
+      "started_at": "2026-10-25T08:37:19.494769+00:00",
+      "finished_at": "2026-10-25T08:37:19.587916+00:00",
+      "exit_code": 0,
+      "status": "PASS",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "finished_at": "2026-10-25T08:37:19.618041+00:00",
+  "inputs_unchanged": true,
+  "after_fingerprint": "a096270d089427d501cfa4ed8301d577b160dead752b4f9de4e2a94a985783b2",
+  "status": "PASS"
+}

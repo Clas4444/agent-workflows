@@ -1,0 +1,18 @@
+{
+  "algorithm": "sha256",
+  "scope": "Published UTF-8 LF bytes; this index excludes itself. Campaign log_sha256 and finding raw_private_hashes refer to private originals.",
+  "files": {
+    "finding.json": "3edc9852ce02a3112835f134f6eff1892c749f2010ceb30167f33561974bbe85",
+    "README.md": "4bce9d966b94dd20121b505c60e5d80954be81950086fe7c45b94ff788322985",
+    "regression-after-314.txt": "2739f729b834a45cf004463ef27def9f2a3573d26fe5ff1b5390b701298b3516",
+    "regression-after.txt": "fe948ad1531b3d59c457aa0b008b626a84e8fa4d90796f8bfce7d4c0fcd354dd",
+    "regression-before.txt": "7be815fad5fb4a72bc55afe5d693371884fb12e4b33c4350c7a874980d385c55",
+    "unit-after.txt": "13dd7cf13b856a0aabf70a9408060966acc6810f79b01905fd2ce5af21af0568",
+    "unit-before.txt": "450c6d61ad3cf9c32ce1f1770659ec1283e5c7c68f91bc8b461243c00299c42f",
+    "verification-after.json": "6621f514f4b1c02578e72538fd35afa4fcaec6ae39bf44e3c8e6b3fa715747b9",
+    "verification-before.json": "ea6cf455b4645f50ba3dd9d10f2b48d90e21d7f3d13f9a8243b528d42c63a828",
+    "verify-fresh-after.txt": "916d018ed74eb1ed3d8a82b5ce7cb52a776a6b49c979f744246eaee40b368d8c",
+    "verify-stale-after.txt": "51873bdb972d41250456222e62a00cf38be1ef995ae6a6ac944aa5dc2c93eb89",
+    "verify-stale-before.txt": "916d018ed74eb1ed3d8a82b5ce7cb52a776a6b49c979f744246eaee40b368d8c"
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "report": {
+    "row_count": 7,
+    "complete": false,
+    "groups": [
+      {
+        "category": "Food",
+        "currency": "EUR",
+        "known_total": "5.00",
+        "missing_ids": []
+      },
+      {
+        "category": "Food",
+        "currency": "USD",
+        "known_total": "10.30",
+        "missing_ids": ["004"]
+      },
+      {
+        "category": "Other",
+        "currency": "JPY",
+        "known_total": null,
+        "missing_ids": ["007"]
+      },
+      {
+        "category": "Travel",
+        "currency": "USD",
+        "known_total": "0.00",
+        "missing_ids": []
+      }
+    ]
+  },
+  "briefing": "# Expense briefing\n\nThe source contains 7 rows. Amounts are incomplete: source IDs 004 and 007 have blank amounts, which are unknown rather than zero.\n\n| Category | Currency | Known subtotal | Source IDs with known amounts | Source IDs with missing amounts |\n| --- | --- | --- | --- | --- |\n| Food | EUR | 5.00 | 003 | None |\n| Food | USD | 10.30 | 001, 002 | 004 |\n| Other | JPY | Unknown (all amounts blank) | None | 007 |\n| Travel | USD | 0.00 | 005, 006 | None |\n\nFood USD's known subtotal excludes the unknown amount at ID 004. Other JPY has no known subtotal because ID 007 is blank. Travel USD totals -2.00 + 2.00 = 0.00, with no missing amounts.\n\nGroups are sorted by category, then currency. Source IDs retain leading zeros. Currencies are kept separate; no conversion or grand total is included.\n"
+}

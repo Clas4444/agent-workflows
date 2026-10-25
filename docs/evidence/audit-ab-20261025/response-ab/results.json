@@ -1,0 +1,368 @@
+[
+  {
+    "id": "code-A-1",
+    "order": 1,
+    "arm": "A",
+    "case": "code",
+    "repeat": 1,
+    "started_at": "2026-10-25T08:46:31.642036+00:00",
+    "seconds": 40.094,
+    "exit_code": 0,
+    "timeout": false,
+    "config": [
+      {
+        "approval_policy": "never",
+        "sandbox_policy": {
+          "type": "read-only"
+        },
+        "model": "gpt-6.1-sol",
+        "summary": "none"
+      }
+    ],
+    "usage": [
+      {
+        "input_tokens": 14401,
+        "cached_input_tokens": 12288,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 1960,
+        "reasoning_output_tokens": 203
+      }
+    ],
+    "skills_supplied": [],
+    "initial_context_contains_loop": false,
+    "base_instructions_contains_loop": false,
+    "recorded_tool_calls": 0,
+    "immutable_inputs_unchanged": true,
+    "materialization_errors": [],
+    "generated_tests": {
+      "exit_code": 0,
+      "output": "test_arbitrarily_large_integer_and_carry (test_ledger.SummarizeTests.test_arbitrarily_large_integer_and_carry) ... ok\ntest_empty (test_ledger.SummarizeTests.test_empty) ... ok\ntest_exact_arithmetic_and_negative_fraction (test_ledger.SummarizeTests.test_exact_arithmetic_and_negative_fraction) ... ok\ntest_example_and_no_mutation (test_ledger.SummarizeTests.test_example_and_no_mutation) ... ok\ntest_known_zero_is_not_unknown (test_ledger.SummarizeTests.test_known_zero_is_not_unknown) ... ok\ntest_missing_ids_preserve_source_order_and_duplicates (test_ledger.SummarizeTests.test_missing_ids_preserve_source_order_and_duplicates) ... ok\ntest_precision_independent_of_decimal_context (test_ledger.SummarizeTests.test_precision_independent_of_decimal_context) ... ok\ntest_sorting_and_two_decimal_places (test_ledger.SummarizeTests.test_sorting_and_two_decimal_places) ... ok\n\n----------------------------------------------------------------------\nRan 8 tests in 0.005s\n\nOK\n"
+    },
+    "checker": {
+      "exit_code": 0,
+      "stdout": "{\"status\": \"PASS\", \"errors\": []}\n",
+      "stderr": ""
+    },
+    "success": true
+  },
+  {
+    "id": "code-B-1",
+    "order": 2,
+    "arm": "B",
+    "case": "code",
+    "repeat": 1,
+    "started_at": "2026-10-25T08:47:11.947227+00:00",
+    "seconds": 27.797,
+    "exit_code": 0,
+    "timeout": false,
+    "config": [
+      {
+        "approval_policy": "never",
+        "sandbox_policy": {
+          "type": "read-only"
+        },
+        "model": "gpt-6.1-sol",
+        "summary": "none"
+      }
+    ],
+    "usage": [
+      {
+        "input_tokens": 15665,
+        "cached_input_tokens": 12288,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 1979,
+        "reasoning_output_tokens": 185
+      }
+    ],
+    "skills_supplied": [
+      "loop-debug",
+      "loop-test"
+    ],
+    "initial_context_contains_loop": true,
+    "base_instructions_contains_loop": false,
+    "recorded_tool_calls": 0,
+    "immutable_inputs_unchanged": true,
+    "materialization_errors": [],
+    "generated_tests": {
+      "exit_code": 0,
+      "output": "test_arbitrary_integer_precision (test_ledger.SummarizeTests.test_arbitrary_integer_precision) ... ok\ntest_empty (test_ledger.SummarizeTests.test_empty) ... ok\ntest_exact_arithmetic_and_decimal_context_independence (test_ledger.SummarizeTests.test_exact_arithmetic_and_decimal_context_independence) ... ok\ntest_missing_ids_preserve_source_order_and_leading_zeros (test_ledger.SummarizeTests.test_missing_ids_preserve_source_order_and_leading_zeros) ... ok\ntest_sorting_and_negative_zero (test_ledger.SummarizeTests.test_sorting_and_negative_zero) ... ok\ntest_supplied_example (test_ledger.SummarizeTests.test_supplied_example) ... ok\n\n----------------------------------------------------------------------\nRan 6 tests in 0.006s\n\nOK\n"
+    },
+    "checker": {
+      "exit_code": 0,
+      "stdout": "{\"status\": \"PASS\", \"errors\": []}\n",
+      "stderr": ""
+    },
+    "success": true
+  },
+  {
+    "id": "office-B-1",
+    "order": 3,
+    "arm": "B",
+    "case": "office",
+    "repeat": 1,
+    "started_at": "2026-10-25T08:47:39.938918+00:00",
+    "seconds": 12.516,
+    "exit_code": 0,
+    "timeout": false,
+    "config": [
+      {
+        "approval_policy": "never",
+        "sandbox_policy": {
+          "type": "read-only"
+        },
+        "model": "gpt-6.1-sol",
+        "summary": "none"
+      }
+    ],
+    "usage": [
+      {
+        "input_tokens": 14847,
+        "cached_input_tokens": 12288,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 389,
+        "reasoning_output_tokens": 0
+      }
+    ],
+    "skills_supplied": [
+      "loop-table"
+    ],
+    "initial_context_contains_loop": true,
+    "base_instructions_contains_loop": false,
+    "recorded_tool_calls": 0,
+    "immutable_inputs_unchanged": true,
+    "materialization_errors": [],
+    "generated_tests": null,
+    "checker": {
+      "exit_code": 0,
+      "stdout": "{\"status\": \"PASS\", \"errors\": []}\n",
+      "stderr": ""
+    },
+    "success": true
+  },
+  {
+    "id": "office-A-1",
+    "order": 4,
+    "arm": "A",
+    "case": "office",
+    "repeat": 1,
+    "started_at": "2026-10-25T08:47:52.553926+00:00",
+    "seconds": 13.032,
+    "exit_code": 0,
+    "timeout": false,
+    "config": [
+      {
+        "approval_policy": "never",
+        "sandbox_policy": {
+          "type": "read-only"
+        },
+        "model": "gpt-6.1-sol",
+        "summary": "none"
+      }
+    ],
+    "usage": [
+      {
+        "input_tokens": 14177,
+        "cached_input_tokens": 12288,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 441,
+        "reasoning_output_tokens": 34
+      }
+    ],
+    "skills_supplied": [],
+    "initial_context_contains_loop": false,
+    "base_instructions_contains_loop": false,
+    "recorded_tool_calls": 0,
+    "immutable_inputs_unchanged": true,
+    "materialization_errors": [],
+    "generated_tests": null,
+    "checker": {
+      "exit_code": 0,
+      "stdout": "{\"status\": \"PASS\", \"errors\": []}\n",
+      "stderr": ""
+    },
+    "success": true
+  },
+  {
+    "id": "code-B-2",
+    "order": 5,
+    "arm": "B",
+    "case": "code",
+    "repeat": 2,
+    "started_at": "2026-10-25T08:48:05.680243+00:00",
+    "seconds": 43.032,
+    "exit_code": 0,
+    "timeout": false,
+    "config": [
+      {
+        "approval_policy": "never",
+        "sandbox_policy": {
+          "type": "read-only"
+        },
+        "model": "gpt-6.1-sol",
+        "summary": "none"
+      }
+    ],
+    "usage": [
+      {
+        "input_tokens": 15665,
+        "cached_input_tokens": 12288,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 2172,
+        "reasoning_output_tokens": 184
+      }
+    ],
+    "skills_supplied": [
+      "loop-debug",
+      "loop-test"
+    ],
+    "initial_context_contains_loop": true,
+    "base_instructions_contains_loop": false,
+    "recorded_tool_calls": 0,
+    "immutable_inputs_unchanged": true,
+    "materialization_errors": [],
+    "generated_tests": {
+      "exit_code": 0,
+      "output": "test_arbitrary_integer_precision (test_ledger.SummarizeTests.test_arbitrary_integer_precision) ... ok\ntest_blank_variants (test_ledger.SummarizeTests.test_blank_variants) ... ok\ntest_empty (test_ledger.SummarizeTests.test_empty) ... ok\ntest_exact_arithmetic_independent_of_decimal_context (test_ledger.SummarizeTests.test_exact_arithmetic_independent_of_decimal_context) ... ok\ntest_iterable_and_repeated_calls (test_ledger.SummarizeTests.test_iterable_and_repeated_calls) ... ok\ntest_sorting_and_missing_source_order (test_ledger.SummarizeTests.test_sorting_and_missing_source_order) ... ok\ntest_supplied_example (test_ledger.SummarizeTests.test_supplied_example) ... ok\ntest_unknown_and_known_zero_are_distinct (test_ledger.SummarizeTests.test_unknown_and_known_zero_are_distinct) ... ok\ntest_zero_is_known_and_negative_zero_is_normalized (test_ledger.SummarizeTests.test_zero_is_known_and_negative_zero_is_normalized) ... ok\n\n----------------------------------------------------------------------\nRan 9 tests in 0.004s\n\nOK\n"
+    },
+    "checker": {
+      "exit_code": 0,
+      "stdout": "{\"status\": \"PASS\", \"errors\": []}\n",
+      "stderr": ""
+    },
+    "success": true
+  },
+  {
+    "id": "code-A-2",
+    "order": 6,
+    "arm": "A",
+    "case": "code",
+    "repeat": 2,
+    "started_at": "2026-10-25T08:48:48.902669+00:00",
+    "seconds": 36.047,
+    "exit_code": 0,
+    "timeout": false,
+    "config": [
+      {
+        "approval_policy": "never",
+        "sandbox_policy": {
+          "type": "read-only"
+        },
+        "model": "gpt-6.1-sol",
+        "summary": "none"
+      }
+    ],
+    "usage": [
+      {
+        "input_tokens": 14401,
+        "cached_input_tokens": 12288,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 1957,
+        "reasoning_output_tokens": 149
+      }
+    ],
+    "skills_supplied": [],
+    "initial_context_contains_loop": false,
+    "base_instructions_contains_loop": false,
+    "recorded_tool_calls": 0,
+    "immutable_inputs_unchanged": true,
+    "materialization_errors": [],
+    "generated_tests": {
+      "exit_code": 0,
+      "output": "test_arbitrary_integer_precision (test_ledger.SummarizeTests.test_arbitrary_integer_precision) ... ok\ntest_empty (test_ledger.SummarizeTests.test_empty) ... ok\ntest_exact_arithmetic_independent_of_decimal_context (test_ledger.SummarizeTests.test_exact_arithmetic_independent_of_decimal_context) ... ok\ntest_example_and_no_mutation (test_ledger.SummarizeTests.test_example_and_no_mutation) ... ok\ntest_fraction_padding_and_negative_zero (test_ledger.SummarizeTests.test_fraction_padding_and_negative_zero) ... ok\ntest_missing_order_and_zero (test_ledger.SummarizeTests.test_missing_order_and_zero) ... ok\n\n----------------------------------------------------------------------\nRan 6 tests in 0.010s\n\nOK\n"
+    },
+    "checker": {
+      "exit_code": 0,
+      "stdout": "{\"status\": \"PASS\", \"errors\": []}\n",
+      "stderr": ""
+    },
+    "success": true
+  },
+  {
+    "id": "office-A-2",
+    "order": 7,
+    "arm": "A",
+    "case": "office",
+    "repeat": 2,
+    "started_at": "2026-10-25T08:49:25.142760+00:00",
+    "seconds": 13.0,
+    "exit_code": 0,
+    "timeout": false,
+    "config": [
+      {
+        "approval_policy": "never",
+        "sandbox_policy": {
+          "type": "read-only"
+        },
+        "model": "gpt-6.1-sol",
+        "summary": "none"
+      }
+    ],
+    "usage": [
+      {
+        "input_tokens": 14177,
+        "cached_input_tokens": 12288,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 394,
+        "reasoning_output_tokens": 62
+      }
+    ],
+    "skills_supplied": [],
+    "initial_context_contains_loop": false,
+    "base_instructions_contains_loop": false,
+    "recorded_tool_calls": 0,
+    "immutable_inputs_unchanged": true,
+    "materialization_errors": [],
+    "generated_tests": null,
+    "checker": {
+      "exit_code": 0,
+      "stdout": "{\"status\": \"PASS\", \"errors\": []}\n",
+      "stderr": ""
+    },
+    "success": true
+  },
+  {
+    "id": "office-B-2",
+    "order": 8,
+    "arm": "B",
+    "case": "office",
+    "repeat": 2,
+    "started_at": "2026-10-25T08:49:38.256086+00:00",
+    "seconds": 24.156,
+    "exit_code": 0,
+    "timeout": false,
+    "config": [
+      {
+        "approval_policy": "never",
+        "sandbox_policy": {
+          "type": "read-only"
+        },
+        "model": "gpt-6.1-sol",
+        "summary": "none"
+      }
+    ],
+    "usage": [
+      {
+        "input_tokens": 14847,
+        "cached_input_tokens": 12288,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 486,
+        "reasoning_output_tokens": 28
+      }
+    ],
+    "skills_supplied": [
+      "loop-table"
+    ],
+    "initial_context_contains_loop": true,
+    "base_instructions_contains_loop": false,
+    "recorded_tool_calls": 0,
+    "immutable_inputs_unchanged": true,
+    "materialization_errors": [],
+    "generated_tests": null,
+    "checker": {
+      "exit_code": 0,
+      "stdout": "{\"status\": \"PASS\", \"errors\": []}\n",
+      "stderr": ""
+    },
+    "success": true
+  }
+]

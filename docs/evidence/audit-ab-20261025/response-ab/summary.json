@@ -1,0 +1,63 @@
+{
+  "results": [
+    {
+      "case": "code",
+      "arm": "A",
+      "n": 2,
+      "successes": 2,
+      "any_success": true,
+      "all_success": true,
+      "seconds": [
+        40.094,
+        36.047
+      ],
+      "input_tokens": 28802,
+      "output_tokens": 3917
+    },
+    {
+      "case": "code",
+      "arm": "B",
+      "n": 2,
+      "successes": 2,
+      "any_success": true,
+      "all_success": true,
+      "seconds": [
+        27.797,
+        43.032
+      ],
+      "input_tokens": 31330,
+      "output_tokens": 4151
+    },
+    {
+      "case": "office",
+      "arm": "A",
+      "n": 2,
+      "successes": 2,
+      "any_success": true,
+      "all_success": true,
+      "seconds": [
+        13.032,
+        13.0
+      ],
+      "input_tokens": 28354,
+      "output_tokens": 835
+    },
+    {
+      "case": "office",
+      "arm": "B",
+      "n": 2,
+      "successes": 2,
+      "any_success": true,
+      "all_success": true,
+      "seconds": [
+        12.516,
+        24.156
+      ],
+      "input_tokens": 29694,
+      "output_tokens": 875
+    }
+  ],
+  "conclusion": "Tie on both diagnostic tasks. No demonstrated success-rate gain. Small generation-only pilot; not autonomous tool-use or universal skill effectiveness.",
+  "monetary_cost": "NOT_VERIFIED",
+  "human_interventions": "Zero within each v2 trial; one disclosed protocol change between campaigns to address tool prerequisites."
+}

@@ -1,0 +1,1438 @@
+{
+  "session_id": "audit-ab-20261025T083146Z",
+  "reviewed_at_utc": "2026-10-25T08:38:16.367861+00:00",
+  "base_sha": "393104e50f1007b30d04638259db72c6c19f011b",
+  "review_method": "Fresh static read of all 49 canonical SKILL.md files in bounded batches, manifest/groups/routing/install guide and all seven declared references/assets/helper scripts. Runner payload identity inspected against root script; runner behavior is outside this ledger. No historical runtime PASS was reused.",
+  "classification_vocabulary": [
+    "KEEP",
+    "IMPROVE",
+    "SPLIT",
+    "MERGE",
+    "DEPRECATE",
+    "NEW_NEEDED"
+  ],
+  "counts": {
+    "skills_reviewed": 49,
+    "groups_reviewed": 13,
+    "KEEP": 46,
+    "IMPROVE": 3,
+    "SPLIT": 0,
+    "MERGE": 0,
+    "DEPRECATE": 0,
+    "NEW_NEEDED": 0
+  },
+  "findings": [
+    {
+      "id": "INV-DOC-01",
+      "classification": "DOCUMENTATION_GAP",
+      "source": "docs/VALIDATION.md",
+      "observed": "The expected skill count is 34.",
+      "expected": "Manifest currently contains 49 skills; ideally describe manifest-driven count to avoid repeated stale prose.",
+      "verification": "Fresh text read against parsed manifest; no runtime assertion."
+    },
+    {
+      "id": "INV-DESIGN-01",
+      "classification": "DESIGN_RISK",
+      "source": ".github/skills/loop-evaluate/SKILL.md",
+      "observed": "Comparable baseline conditions are required but installed global/project skill and prior-history contamination are not named explicitly.",
+      "verification": "Static instruction inspection; no false effectiveness claim or runtime failure asserted."
+    },
+    {
+      "id": "INV-DESIGN-02",
+      "classification": "DESIGN_RISK",
+      "source": ".github/skills/loop-research-repo/SKILL.md; .github/skills/loop-research-tools/SKILL.md",
+      "observed": "Standalone leaf research workflows omit explicit source-snapshot/recheck and embedded-instruction treatment present in loop-research.",
+      "verification": "Static comparison only; host authority rules may independently protect users."
+    }
+  ],
+  "rejected_changes": [
+    {
+      "proposal": "Merge all testing skills into loop-test",
+      "reason": "Different acceptance layers and preconditions are explicitly distinguished; merging now removes useful selection without measured routing evidence."
+    },
+    {
+      "proposal": "Remove loop-organize after the split",
+      "reason": "The compatibility entrypoint serves old/mixed requests and includes standalone fallback. No evidence justifies breaking it."
+    },
+    {
+      "proposal": "Add generic browser/email/calendar automation skills",
+      "reason": "No missing contract demonstrated; actual connectors/tools and authorization remain host responsibilities, already disclosed."
+    },
+    {
+      "proposal": "Add A2A/MCP server implementation merely to satisfy standards coverage",
+      "reason": "This repository distributes instructions and a runner; it is not a protocol service."
+    },
+    {
+      "proposal": "Claim every skill works because structural validators pass",
+      "reason": "Static validation does not execute model behavior, actual host discovery or external tool effects."
+    }
+  ],
+  "limits": [
+    "All 49 classifications are static architecture/instruction judgments, not measured skill effectiveness.",
+    "Runtime validation and native discovery for this inventory pass are NOT_RUN. Refer to separately identified experiments for their narrower execution scope.",
+    "All helper/reference text was read; bundled runner source was identity checked only, not a fresh line-by-line semantic audit.",
+    "No recommendation alone is a confirmed bug. No new skill, split, merge or deprecation is justified by this inspection."
+  ],
+  "skills": [
+    {
+      "skill": "loop-review",
+      "group": "assurance",
+      "classification": "KEEP",
+      "classification_scope": "STATIC_REVIEW_RECOMMENDATION",
+      "reason": "Prioritized source-backed findings remain distinct from planning, grading and adoption; installed delivery surfaces are explicitly included.",
+      "source": ".github/skills/loop-review/SKILL.md",
+      "source_sha256": "fd77f2fc1f49b40af545b8fb62cc15368e257a07bf703dff2a59a273d65c70f7",
+      "payload_inventory": [
+        {
+          "path": ".github/skills/loop-review/SKILL.md",
+          "sha256": "fd77f2fc1f49b40af545b8fb62cc15368e257a07bf703dff2a59a273d65c70f7"
+        }
+      ],
+      "routing_case_ids": [
+        "route-01"
+      ],
+      "reviewed_layers": [
+        "full canonical instruction text",
+        "description/responsibility against neighboring skills",
+        "manifest/group membership",
+        "declared payload inventory"
+      ],
+      "runtime_validation": "NOT_RUN",
+      "native_discovery": "NOT_RUN",
+      "confirmed_behavioral_bug": false
+    },
+    {
+      "skill": "loop-code",
+      "group": "implementation",
+      "classification": "KEEP",
+      "classification_scope": "STATIC_REVIEW_RECOMMENDATION",
+      "reason": "Small authorized implementation batches retain acceptance IDs, source identity, negative controls and installed-artifact verification.",
+      "source": ".github/skills/loop-code/SKILL.md",
+      "source_sha256": "d7e2a9be0e8331c0e92c26b89630a02914e53a879aa9dab1fd3cc00d1a5c1b1c",
+      "payload_inventory": [
+        {
+          "path": ".github/skills/loop-code/SKILL.md",
+          "sha256": "d7e2a9be0e8331c0e92c26b89630a02914e53a879aa9dab1fd3cc00d1a5c1b1c"
+        }
+      ],
+      "routing_case_ids": [
+        "route-02"
+      ],
+      "reviewed_layers": [
+        "full canonical instruction text",
+        "description/responsibility against neighboring skills",
+        "manifest/group membership",
+        "declared payload inventory"
+      ],
+      "runtime_validation": "NOT_RUN",
+      "native_discovery": "NOT_RUN",
+      "confirmed_behavioral_bug": false
+    },
+    {
+      "skill": "loop-diagnose",
+      "group": "diagnosis",
+      "classification": "KEEP",
+      "classification_scope": "STATIC_REVIEW_RECOMMENDATION",
+      "reason": "Competing hypotheses and reproduction frequency preserve the distinction between investigation and repair.",
+      "source": ".github/skills/loop-diagnose/SKILL.md",
+      "source_sha256": "39ada952dfb052c0fa3ae5063a43f54ce8d03b58d92f7dadefa273b25d46ff2a",
+      "payload_inventory": [
+        {
+          "path": ".github/skills/loop-diagnose/SKILL.md",
+          "sha256": "39ada952dfb052c0fa3ae5063a43f54ce8d03b58d92f7dadefa273b25d46ff2a"
+        }
+      ],
+      "routing_case_ids": [
+        "route-03"
+      ],
+      "reviewed_layers": [
+        "full canonical instruction text",
+        "description/responsibility against neighboring skills",
+        "manifest/group membership",
+        "declared payload inventory"
+      ],
+      "runtime_validation": "NOT_RUN",
+      "native_discovery": "NOT_RUN",
+      "confirmed_behavioral_bug": false
+    },
+    {
+      "skill": "loop-diagnose-repro",
+      "group": "diagnosis",
+      "classification": "KEEP",
+      "classification_scope": "STATIC_REVIEW_RECOMMENDATION",
+      "reason": "Minimization preserves the failing observation and explicitly avoids an unsupported fix claim.",
+      "source": ".github/skills/loop-diagnose-repro/SKILL.md",
+      "source_sha256": "c9ed4cae2798bdf3d1b2e0d5c200a65f549e432654eab1606a88bd1ee6c47497",
+      "payload_inventory": [
+        {
+          "path": ".github/skills/loop-diagnose-repro/SKILL.md",
+          "sha256": "c9ed4cae2798bdf3d1b2e0d5c200a65f549e432654eab1606a88bd1ee6c47497"
+        }
+      ],
+      "routing_case_ids": [
+        "route-04"
+      ],
+      "reviewed_layers": [
+        "full canonical instruction text",
+        "description/responsibility against neighboring skills",
+        "manifest/group membership",
+        "declared payload inventory"
+      ],
+      "runtime_validation": "NOT_RUN",
+      "native_discovery": "NOT_RUN",
+      "confirmed_behavioral_bug": false
+    },
+    {
+      "skill": "loop-diagnose-performance",
+      "group": "diagnosis",
+      "classification": "KEEP",
+      "classification_scope": "STATIC_REVIEW_RECOMMENDATION",
+      "reason": "Repeated comparable measurements and variance are required before an improvement claim.",
+      "source": ".github/skills/loop-diagnose-performance/SKILL.md",
+      "source_sha256": "a5a814e6ec8acc4c01dc2eb4f8551f62de108ff84c63f40d731458f99e77fe50",
+      "payload_inventory": [
+        {
+          "path": ".github/skills/loop-diagnose-performance/SKILL.md",
+          "sha256": "a5a814e6ec8acc4c01dc2eb4f8551f62de108ff84c63f40d731458f99e77fe50"
+        }
+      ],
+      "routing_case_ids": [
+        "route-05"
+      ],
+      "reviewed_layers": [
+        "full canonical instruction text",
+        "description/responsibility against neighboring skills",
+        "manifest/group membership",
+        "declared payload inventory"
+      ],
+      "runtime_validation": "NOT_RUN",
+      "native_discovery": "NOT_RUN",
+      "confirmed_behavioral_bug": false
+    },
+    {
+      "skill": "loop-diagnose-regression",
+      "group": "diagnosis",
+      "classification": "KEEP",
+      "classification_scope": "STATIC_REVIEW_RECOMMENDATION",
+      "reason": "Known-good/failing revisions and rerun evidence define a distinct historical-isolation workflow.",
+      "source": ".github/skills/loop-diagnose-regression/SKILL.md",
+      "source_sha256": "e62c4fae287007212e4e61b8941615d4b1378ba64814b5f1ab5884ac05cfd3c3",
+      "payload_inventory": [
+        {
+          "path": ".github/skills/loop-diagnose-regression/SKILL.md",
+          "sha256": "e62c4fae287007212e4e61b8941615d4b1378ba64814b5f1ab5884ac05cfd3c3"
+        }
+      ],
+      "routing_case_ids": [
+        "route-06"
+      ],
+      "reviewed_layers": [
+        "full canonical instruction text",
+        "description/responsibility against neighboring skills",
+        "manifest/group membership",
+        "declared payload inventory"
+      ],
+      "runtime_validation": "NOT_RUN",
+      "native_discovery": "NOT_RUN",
+      "confirmed_behavioral_bug": false
+    },
+    {
+      "skill": "loop-research",
+      "group": "discovery-planning",
+      "classification": "KEEP",
+      "classification_scope": "STATIC_REVIEW_RECOMMENDATION",
+      "reason": "Dated primary sources, exact revision/content identity, untrusted-source treatment and benchmark applicability are explicit.",
+      "source": ".github/skills/loop-research/SKILL.md",
+      "source_sha256": "de7c44ee288766805e7853c75f19fe185bb0e9f554c43515456187325b1155f3",
+      "payload_inventory": [
+        {
+          "path": ".github/skills/loop-research/SKILL.md",
+          "sha256": "de7c44ee288766805e7853c75f19fe185bb0e9f554c43515456187325b1155f3"
+        }
+      ],
+      "routing_case_ids": [
+        "route-07"
+      ],
+      "reviewed_layers": [
+        "full canonical instruction text",
+        "description/responsibility against neighboring skills",
+        "manifest/group membership",
+        "declared payload inventory"
+      ],
+      "runtime_validation": "NOT_RUN",
+      "native_discovery": "NOT_RUN",
+      "confirmed_behavioral_bug": false
+    },
+    {
+      "skill": "loop-research-repo",
+      "group": "discovery-planning",
+      "classification": "IMPROVE",
+      "classification_scope": "STATIC_REVIEW_RECOMMENDATION",
+      "reason": "Repository adoption criteria are useful, but the leaf workflow does not inherit the current general-research source-snapshot/recheck and embedded-instruction rules when installed alone.",
+      "source": ".github/skills/loop-research-repo/SKILL.md",
+      "source_sha256": "c5c8f5fe40689d5270712f1ba9caede4809e60143614340cfb6b8cf9af4f681b",
+      "payload_inventory": [
+        {
+          "path": ".github/skills/loop-research-repo/SKILL.md",
+          "sha256": "c5c8f5fe40689d5270712f1ba9caede4809e60143614340cfb6b8cf9af4f681b"
+        }
+      ],
+      "routing_case_ids": [
+        "route-08"
+      ],
+      "reviewed_layers": [
+        "full canonical instruction text",
+        "description/responsibility against neighboring skills",
+        "manifest/group membership",
+        "declared payload inventory"
+      ],
+      "runtime_validation": "NOT_RUN",
+      "native_discovery": "NOT_RUN",
+      "confirmed_behavioral_bug": false
+    },
+    {
+      "skill": "loop-research-tools",
+      "group": "discovery-planning",
+      "classification": "IMPROVE",
+      "classification_scope": "STATIC_REVIEW_RECOMMENDATION",
+      "reason": "Capability/permission/data-flow adoption review is useful, but standalone instructions omit the general-research exact source identity/recheck and explicit embedded-instruction rule.",
+      "source": ".github/skills/loop-research-tools/SKILL.md",
+      "source_sha256": "338b861e9d0e87b55cc2f06319f80434f5a81ce2df8eac6aad67ff1383505c07",
+      "payload_inventory": [
+        {
+          "path": ".github/skills/loop-research-tools/SKILL.md",
+          "sha256": "338b861e9d0e87b55cc2f06319f80434f5a81ce2df8eac6aad67ff1383505c07"
+        }
+      ],
+      "routing_case_ids": [
+        "route-09"
+      ],
+      "reviewed_layers": [
+        "full canonical instruction text",
+        "description/responsibility against neighboring skills",
+        "manifest/group membership",
+        "declared payload inventory"
+      ],
+      "runtime_validation": "NOT_RUN",
+      "native_discovery": "NOT_RUN",
+      "confirmed_behavioral_bug": false
+    },
+    {
+      "skill": "loop-test",
+      "group": "verification",
+      "classification": "KEEP",
+      "classification_scope": "STATIC_REVIEW_RECOMMENDATION",
+      "reason": "Risk-based layer selection, frozen criteria, controlled failures and end-state checks are more useful than indiscriminate test volume.",
+      "source": ".github/skills/loop-test/SKILL.md",
+      "source_sha256": "26f5e9e1c0e6e1e7189a9c6cdc54f3c4fef26512d918a365f8d242fa0c33bded",
+      "payload_inventory": [
+        {
+          "path": ".github/skills/loop-test/SKILL.md",
+          "sha256": "26f5e9e1c0e6e1e7189a9c6cdc54f3c4fef26512d918a365f8d242fa0c33bded"
+        }
+      ],
+      "routing_case_ids": [
+        "route-10"
+      ],
+      "reviewed_layers": [
+        "full canonical instruction text",
+        "description/responsibility against neighboring skills",
+        "manifest/group membership",
+        "declared payload inventory"
+      ],
+      "runtime_validation": "NOT_RUN",
+      "native_discovery": "NOT_RUN",
+      "confirmed_behavioral_bug": false
+    },
+    {
+      "skill": "loop-test-unit",
+      "group": "verification",
+      "classification": "KEEP",
+      "classification_scope": "STATIC_REVIEW_RECOMMENDATION",
+      "reason": "Isolated function/module assertions and preservation of acceptance criteria remain a distinct focused route.",
+      "source": ".github/skills/loop-test-unit/SKILL.md",
+      "source_sha256": "0d67534872978e57a64b7f3e7e27b50a45eef0a46a698300ddcd5bc74e0ba860",
+      "payload_inventory": [
+        {
+          "path": ".github/skills/loop-test-unit/SKILL.md",
+          "sha256": "0d67534872978e57a64b7f3e7e27b50a45eef0a46a698300ddcd5bc74e0ba860"
+        }
+      ],
+      "routing_case_ids": [
+        "route-11"
+      ],
+      "reviewed_layers": [
+        "full canonical instruction text",
+        "description/responsibility against neighboring skills",
+        "manifest/group membership",
+        "declared payload inventory"
+      ],
+      "runtime_validation": "NOT_RUN",
+      "native_discovery": "NOT_RUN",
+      "confirmed_behavioral_bug": false
+    },
+    {
+      "skill": "loop-test-integration",
+      "group": "verification",
+      "classification": "KEEP",
+      "classification_scope": "STATIC_REVIEW_RECOMMENDATION",
+      "reason": "Boundary setup, cleanup and reproducibility are explicit; real service availability remains an execution prerequisite.",
+      "source": ".github/skills/loop-test-integration/SKILL.md",
+      "source_sha256": "4400b6e7cfac60a4bf7937af12f1787e5403ae8c7e3a60240842d8ce8f7feeca",
+      "payload_inventory": [
+        {
+          "path": ".github/skills/loop-test-integration/SKILL.md",
+          "sha256": "4400b6e7cfac60a4bf7937af12f1787e5403ae8c7e3a60240842d8ce8f7feeca"
+        }
+      ],
+      "routing_case_ids": [
+        "route-12"
+      ],
+      "reviewed_layers": [
+        "full canonical instruction text",
+        "description/responsibility against neighboring skills",
+        "manifest/group membership",
+        "declared payload inventory"
+      ],
+      "runtime_validation": "NOT_RUN",
+      "native_discovery": "NOT_RUN",
+      "confirmed_behavioral_bug": false
+    },
+    {
+      "skill": "loop-test-coverage",
+      "group": "verification",
+      "classification": "KEEP",
+      "classification_scope": "STATIC_REVIEW_RECOMMENDATION",
+      "reason": "Line, branch, path and mutation evidence are separated and thresholds cannot be weakened for a green result.",
+      "source": ".github/skills/loop-test-coverage/SKILL.md",
+      "source_sha256": "62ce3d888a8993405781a60f89e77c50d768b3b722c563f55680d46df5a28fc4",
+      "payload_inventory": [
+        {
+          "path": ".github/skills/loop-test-coverage/SKILL.md",
+          "sha256": "62ce3d888a8993405781a60f89e77c50d768b3b722c563f55680d46df5a28fc4"
+        }
+      ],
+      "routing_case_ids": [
+        "route-13"
+      ],
+      "reviewed_layers": [
+        "full canonical instruction text",
+        "description/responsibility against neighboring skills",
+        "manifest/group membership",
+        "declared payload inventory"
+      ],
+      "runtime_validation": "NOT_RUN",
+      "native_discovery": "NOT_RUN",
+      "confirmed_behavioral_bug": false
+    },
+    {
+      "skill": "loop-docs",
+      "group": "delivery",
+      "classification": "KEEP",
+      "classification_scope": "STATIC_REVIEW_RECOMMENDATION",
+      "reason": "Documentation claims are traced to source; command/link verification is scoped and unavailable checks remain visible.",
+      "source": ".github/skills/loop-docs/SKILL.md",
+      "source_sha256": "1cd2b298658b65aa31a99b3e8f1b9707e6b7a8d0906eee937290c6a2563eeae5",
+      "payload_inventory": [
+        {
+          "path": ".github/skills/loop-docs/SKILL.md",
+          "sha256": "1cd2b298658b65aa31a99b3e8f1b9707e6b7a8d0906eee937290c6a2563eeae5"
+        }
+      ],
+      "routing_case_ids": [
+        "route-14"
+      ],
+      "reviewed_layers": [
+        "full canonical instruction text",
+        "description/responsibility against neighboring skills",
+        "manifest/group membership",
+        "declared payload inventory"
+      ],
+      "runtime_validation": "NOT_RUN",
+      "native_discovery": "NOT_RUN",
+      "confirmed_behavioral_bug": false
+    },
+    {
+      "skill": "loop-skill-create",
+      "group": "automation",
+      "classification": "KEEP",
+      "classification_scope": "STATIC_REVIEW_RECOMMENDATION",
+      "reason": "Responsibility comparison, frozen realistic tasks, artifact checks, resource declaration and instruction-history invalidation cover authoring lifecycle.",
+      "source": ".github/skills/loop-skill-create/SKILL.md",
+      "source_sha256": "7e14f9df43616ec87d567a533be8fed85992aa7c9c3cb57c81aaf962ff01fb16",
+      "payload_inventory": [
+        {
+          "path": ".github/skills/loop-skill-create/SKILL.md",
+          "sha256": "7e14f9df43616ec87d567a533be8fed85992aa7c9c3cb57c81aaf962ff01fb16"
+        }
+      ],
+      "routing_case_ids": [
+        "route-15"
+      ],
+      "reviewed_layers": [
+        "full canonical instruction text",
+        "description/responsibility against neighboring skills",
+        "manifest/group membership",
+        "declared payload inventory"
+      ],
+      "runtime_validation": "NOT_RUN",
+      "native_discovery": "NOT_RUN",
+      "confirmed_behavioral_bug": false
+    },
+    {
+      "skill": "loop-orchestrate",
+      "group": "automation",
+      "classification": "KEEP",
+      "classification_scope": "STATIC_REVIEW_RECOMMENDATION",
+      "reason": "Explicit host adapter, finite limits and terminal markers separate process continuation from native host compatibility; descendant cleanup limitation is disclosed.",
+      "source": ".github/skills/loop-orchestrate/SKILL.md",
+      "source_sha256": "6de70c4db555697b4f4579e0b3c28aaddc457b9349ee0c88662052347ceca57f",
+      "payload_inventory": [
+        {
+          "path": ".github/skills/loop-orchestrate/scripts/run_loop.py",
+          "sha256": "9f91d9cbaaee5f873634ba5b02daa4aeed13a95466e600cd8dcc4a65054c7915"
+        },
+        {
+          "path": ".github/skills/loop-orchestrate/SKILL.md",
+          "sha256": "6de70c4db555697b4f4579e0b3c28aaddc457b9349ee0c88662052347ceca57f"
+        }
+      ],
+      "routing_case_ids": [
+        "route-16"
+      ],
+      "reviewed_layers": [
+        "full canonical instruction text",
+        "description/responsibility against neighboring skills",
+        "manifest/group membership",
+        "declared payload inventory"
+      ],
+      "runtime_validation": "NOT_RUN",
+      "native_discovery": "NOT_RUN",
+      "confirmed_behavioral_bug": false
+    },
+    {
+      "skill": "loop-prompt",
+      "group": "automation",
+      "classification": "KEEP",
+      "classification_scope": "STATIC_REVIEW_RECOMMENDATION",
+      "reason": "Explicit invocation only, N+1 hard ceiling, early stops and retained state distinguish bounded follow-ups from unrestricted autonomy.",
+      "source": ".github/skills/loop-prompt/SKILL.md",
+      "source_sha256": "5f15b28c67618c20e17cbec97594a1144772dd145dbd1c8ff759decf3b2e9343",
+      "payload_inventory": [
+        {
+          "path": ".github/skills/loop-prompt/scripts/run_loop.py",
+          "sha256": "9f91d9cbaaee5f873634ba5b02daa4aeed13a95466e600cd8dcc4a65054c7915"
+        },
+        {
+          "path": ".github/skills/loop-prompt/SKILL.md",
+          "sha256": "5f15b28c67618c20e17cbec97594a1144772dd145dbd1c8ff759decf3b2e9343"
+        }
+      ],
+      "routing_case_ids": [
+        "route-17"
+      ],
+      "reviewed_layers": [
+        "full canonical instruction text",
+        "description/responsibility against neighboring skills",
+        "manifest/group membership",
+        "declared payload inventory"
+      ],
+      "runtime_validation": "NOT_RUN",
+      "native_discovery": "NOT_RUN",
+      "confirmed_behavioral_bug": false
+    },
+    {
+      "skill": "loop-debug",
+      "group": "diagnosis",
+      "classification": "KEEP",
+      "classification_scope": "STATIC_REVIEW_RECOMMENDATION",
+      "reason": "A demonstrated failing baseline precedes repair and rerun; failure to reproduce is not promoted to a verified fix.",
+      "source": ".github/skills/loop-debug/SKILL.md",
+      "source_sha256": "b2d020f5f0a9d4f9405554162809f8687a843d9835c99b24bf4a645514b06254",
+      "payload_inventory": [
+        {
+          "path": ".github/skills/loop-debug/SKILL.md",
+          "sha256": "b2d020f5f0a9d4f9405554162809f8687a843d9835c99b24bf4a645514b06254"
+        }
+      ],
+      "routing_case_ids": [
+        "route-18"
+      ],
+      "reviewed_layers": [
+        "full canonical instruction text",
+        "description/responsibility against neighboring skills",
+        "manifest/group membership",
+        "declared payload inventory"
+      ],
+      "runtime_validation": "NOT_RUN",
+      "native_discovery": "NOT_RUN",
+      "confirmed_behavioral_bug": false
+    },
+    {
+      "skill": "loop-security",
+      "group": "assurance",
+      "classification": "KEEP",
+      "classification_scope": "STATIC_REVIEW_RECOMMENDATION",
+      "reason": "Authorized assets, reachability, impact and safe local probes prevent a generic scan result becoming a security guarantee.",
+      "source": ".github/skills/loop-security/SKILL.md",
+      "source_sha256": "801ca595e4326d62f58f553a797bdeac4dacdb6c72f582d129749afb0b94acd9",
+      "payload_inventory": [
+        {
+          "path": ".github/skills/loop-security/SKILL.md",
+          "sha256": "801ca595e4326d62f58f553a797bdeac4dacdb6c72f582d129749afb0b94acd9"
+        }
+      ],
+      "routing_case_ids": [
+        "route-19"
+      ],
+      "reviewed_layers": [
+        "full canonical instruction text",
+        "description/responsibility against neighboring skills",
+        "manifest/group membership",
+        "declared payload inventory"
+      ],
+      "runtime_validation": "NOT_RUN",
+      "native_discovery": "NOT_RUN",
+      "confirmed_behavioral_bug": false
+    },
+    {
+      "skill": "loop-refactor",
+      "group": "implementation",
+      "classification": "KEEP",
+      "classification_scope": "STATIC_REVIEW_RECOMMENDATION",
+      "reason": "Observable behavior and characterization baseline distinguish restructuring from requested feature changes.",
+      "source": ".github/skills/loop-refactor/SKILL.md",
+      "source_sha256": "68089cdf37db0a6b418fcf90914281f0fccbba1d8f496dc0e1bdebc171f55909",
+      "payload_inventory": [
+        {
+          "path": ".github/skills/loop-refactor/SKILL.md",
+          "sha256": "68089cdf37db0a6b418fcf90914281f0fccbba1d8f496dc0e1bdebc171f55909"
+        }
+      ],
+      "routing_case_ids": [
+        "route-20"
+      ],
+      "reviewed_layers": [
+        "full canonical instruction text",
+        "description/responsibility against neighboring skills",
+        "manifest/group membership",
+        "declared payload inventory"
+      ],
+      "runtime_validation": "NOT_RUN",
+      "native_discovery": "NOT_RUN",
+      "confirmed_behavioral_bug": false
+    },
+    {
+      "skill": "loop-ci",
+      "group": "delivery",
+      "classification": "KEEP",
+      "classification_scope": "STATIC_REVIEW_RECOMMENDATION",
+      "reason": "Run/job/revision identity and local versus remote results address a genuine pipeline-specific boundary.",
+      "source": ".github/skills/loop-ci/SKILL.md",
+      "source_sha256": "a5e3f2bf27483036f31d7187b740751039a7f5425545a71a260512b79fa4133d",
+      "payload_inventory": [
+        {
+          "path": ".github/skills/loop-ci/SKILL.md",
+          "sha256": "a5e3f2bf27483036f31d7187b740751039a7f5425545a71a260512b79fa4133d"
+        }
+      ],
+      "routing_case_ids": [
+        "route-21"
+      ],
+      "reviewed_layers": [
+        "full canonical instruction text",
+        "description/responsibility against neighboring skills",
+        "manifest/group membership",
+        "declared payload inventory"
+      ],
+      "runtime_validation": "NOT_RUN",
+      "native_discovery": "NOT_RUN",
+      "confirmed_behavioral_bug": false
+    },
+    {
+      "skill": "loop-release",
+      "group": "delivery",
+      "classification": "KEEP",
+      "classification_scope": "STATIC_REVIEW_RECOMMENDATION",
+      "reason": "Rebuild checksum comparison is required for reproducibility and install success is separated from build success.",
+      "source": ".github/skills/loop-release/SKILL.md",
+      "source_sha256": "a32d67afd5fd7389bdbc3dd5e2371ae47e98b253bbf1b030173f14b0b5640cc3",
+      "payload_inventory": [
+        {
+          "path": ".github/skills/loop-release/SKILL.md",
+          "sha256": "a32d67afd5fd7389bdbc3dd5e2371ae47e98b253bbf1b030173f14b0b5640cc3"
+        }
+      ],
+      "routing_case_ids": [
+        "route-22"
+      ],
+      "reviewed_layers": [
+        "full canonical instruction text",
+        "description/responsibility against neighboring skills",
+        "manifest/group membership",
+        "declared payload inventory"
+      ],
+      "runtime_validation": "NOT_RUN",
+      "native_discovery": "NOT_RUN",
+      "confirmed_behavioral_bug": false
+    },
+    {
+      "skill": "loop-plan",
+      "group": "discovery-planning",
+      "classification": "KEEP",
+      "classification_scope": "STATIC_REVIEW_RECOMMENDATION",
+      "reason": "Stable criteria, context identities and positive/negative controls are explicit; planning does not authorize implementation.",
+      "source": ".github/skills/loop-plan/SKILL.md",
+      "source_sha256": "340e53253ce1d9f5019406a89e70a03c0cfdaa0ef22a98b5750e38298ed60e4e",
+      "payload_inventory": [
+        {
+          "path": ".github/skills/loop-plan/SKILL.md",
+          "sha256": "340e53253ce1d9f5019406a89e70a03c0cfdaa0ef22a98b5750e38298ed60e4e"
+        }
+      ],
+      "routing_case_ids": [
+        "route-23"
+      ],
+      "reviewed_layers": [
+        "full canonical instruction text",
+        "description/responsibility against neighboring skills",
+        "manifest/group membership",
+        "declared payload inventory"
+      ],
+      "runtime_validation": "NOT_RUN",
+      "native_discovery": "NOT_RUN",
+      "confirmed_behavioral_bug": false
+    },
+    {
+      "skill": "loop-dependencies",
+      "group": "implementation",
+      "classification": "KEEP",
+      "classification_scope": "STATIC_REVIEW_RECOMMENDATION",
+      "reason": "Manifest/lockfile consistency, advisory uncertainty and lifecycle-script authorization are explicit.",
+      "source": ".github/skills/loop-dependencies/SKILL.md",
+      "source_sha256": "b3774bb3fef47d32c3eca51a6379e73010bf85fb97b8aaca3e93cac2e4f481ee",
+      "payload_inventory": [
+        {
+          "path": ".github/skills/loop-dependencies/SKILL.md",
+          "sha256": "b3774bb3fef47d32c3eca51a6379e73010bf85fb97b8aaca3e93cac2e4f481ee"
+        }
+      ],
+      "routing_case_ids": [
+        "route-24"
+      ],
+      "reviewed_layers": [
+        "full canonical instruction text",
+        "description/responsibility against neighboring skills",
+        "manifest/group membership",
+        "declared payload inventory"
+      ],
+      "runtime_validation": "NOT_RUN",
+      "native_discovery": "NOT_RUN",
+      "confirmed_behavioral_bug": false
+    },
+    {
+      "skill": "loop-migrate",
+      "group": "implementation",
+      "classification": "KEEP",
+      "classification_scope": "STATIC_REVIEW_RECOMMENDATION",
+      "reason": "Dry-run, invariant preservation, idempotence and actually exercised rollback define persisted-state transformation.",
+      "source": ".github/skills/loop-migrate/SKILL.md",
+      "source_sha256": "93647651f0cf60c3496e5afb14792ef037e5d179f0a9c1fc7411e3504f31faac",
+      "payload_inventory": [
+        {
+          "path": ".github/skills/loop-migrate/SKILL.md",
+          "sha256": "93647651f0cf60c3496e5afb14792ef037e5d179f0a9c1fc7411e3504f31faac"
+        }
+      ],
+      "routing_case_ids": [
+        "route-25"
+      ],
+      "reviewed_layers": [
+        "full canonical instruction text",
+        "description/responsibility against neighboring skills",
+        "manifest/group membership",
+        "declared payload inventory"
+      ],
+      "runtime_validation": "NOT_RUN",
+      "native_discovery": "NOT_RUN",
+      "confirmed_behavioral_bug": false
+    },
+    {
+      "skill": "loop-test-e2e",
+      "group": "verification",
+      "classification": "KEEP",
+      "classification_scope": "STATIC_REVIEW_RECOMMENDATION",
+      "reason": "Real entry point, invalid-input journey and absence of unwanted side effects distinguish E2E from unit mocks.",
+      "source": ".github/skills/loop-test-e2e/SKILL.md",
+      "source_sha256": "11abd5eeae62ef4575c5445c0a066e36e6e393a17096b485a96075c66eecbb2a",
+      "payload_inventory": [
+        {
+          "path": ".github/skills/loop-test-e2e/SKILL.md",
+          "sha256": "11abd5eeae62ef4575c5445c0a066e36e6e393a17096b485a96075c66eecbb2a"
+        }
+      ],
+      "routing_case_ids": [
+        "route-26"
+      ],
+      "reviewed_layers": [
+        "full canonical instruction text",
+        "description/responsibility against neighboring skills",
+        "manifest/group membership",
+        "declared payload inventory"
+      ],
+      "runtime_validation": "NOT_RUN",
+      "native_discovery": "NOT_RUN",
+      "confirmed_behavioral_bug": false
+    },
+    {
+      "skill": "loop-evaluate",
+      "group": "verification",
+      "classification": "IMPROVE",
+      "classification_scope": "STATIC_REVIEW_RECOMMENDATION",
+      "reason": "Frozen oracles, denominators, all-attempt retention and pass@k/pass^k are sound; comparable baseline guidance should explicitly name instruction/history/global-skill leakage.",
+      "source": ".github/skills/loop-evaluate/SKILL.md",
+      "source_sha256": "794440c4da3197922f58829acced7b12cbf890bd3840c3a2d93ce92dfa0d994d",
+      "payload_inventory": [
+        {
+          "path": ".github/skills/loop-evaluate/SKILL.md",
+          "sha256": "794440c4da3197922f58829acced7b12cbf890bd3840c3a2d93ce92dfa0d994d"
+        }
+      ],
+      "routing_case_ids": [
+        "route-27"
+      ],
+      "reviewed_layers": [
+        "full canonical instruction text",
+        "description/responsibility against neighboring skills",
+        "manifest/group membership",
+        "declared payload inventory"
+      ],
+      "runtime_validation": "NOT_RUN",
+      "native_discovery": "NOT_RUN",
+      "confirmed_behavioral_bug": false
+    },
+    {
+      "skill": "loop-test-adversarial",
+      "group": "verification",
+      "classification": "KEEP",
+      "classification_scope": "STATIC_REVIEW_RECOMMENDATION",
+      "reason": "Independent invariants, untouched baseline and failing regression before root repair support falsifiable false-PASS testing.",
+      "source": ".github/skills/loop-test-adversarial/SKILL.md",
+      "source_sha256": "938d5f8f14b7bb74c17bd79c4948d346b2d998224e5f57e88561d55e9018f9fb",
+      "payload_inventory": [
+        {
+          "path": ".github/skills/loop-test-adversarial/SKILL.md",
+          "sha256": "938d5f8f14b7bb74c17bd79c4948d346b2d998224e5f57e88561d55e9018f9fb"
+        }
+      ],
+      "routing_case_ids": [
+        "route-28"
+      ],
+      "reviewed_layers": [
+        "full canonical instruction text",
+        "description/responsibility against neighboring skills",
+        "manifest/group membership",
+        "declared payload inventory"
+      ],
+      "runtime_validation": "NOT_RUN",
+      "native_discovery": "NOT_RUN",
+      "confirmed_behavioral_bug": false
+    },
+    {
+      "skill": "loop-test-compatibility",
+      "group": "verification",
+      "classification": "KEEP",
+      "classification_scope": "STATIC_REVIEW_RECOMMENDATION",
+      "reason": "Per-cell real execution, unsupported controls and separation of synchronized bytes from host discovery constrain compatibility claims.",
+      "source": ".github/skills/loop-test-compatibility/SKILL.md",
+      "source_sha256": "f94f116ac80815ffb54a4679bbeb6667b07e1ed02b043186cce9e37f93c640e6",
+      "payload_inventory": [
+        {
+          "path": ".github/skills/loop-test-compatibility/SKILL.md",
+          "sha256": "f94f116ac80815ffb54a4679bbeb6667b07e1ed02b043186cce9e37f93c640e6"
+        }
+      ],
+      "routing_case_ids": [
+        "route-29"
+      ],
+      "reviewed_layers": [
+        "full canonical instruction text",
+        "description/responsibility against neighboring skills",
+        "manifest/group membership",
+        "declared payload inventory"
+      ],
+      "runtime_validation": "NOT_RUN",
+      "native_discovery": "NOT_RUN",
+      "confirmed_behavioral_bug": false
+    },
+    {
+      "skill": "loop-mcp-design",
+      "group": "mcp-integration",
+      "classification": "KEEP",
+      "classification_scope": "STATIC_REVIEW_RECOMMENDATION",
+      "reason": "Versioned protocol/transport and tool trust boundaries prevent skill text being mistaken for a running server.",
+      "source": ".github/skills/loop-mcp-design/SKILL.md",
+      "source_sha256": "7b2cd975445425cde1faeafca99fef470901412445a25d6b77e39d37373c3b4d",
+      "payload_inventory": [
+        {
+          "path": ".github/skills/loop-mcp-design/SKILL.md",
+          "sha256": "7b2cd975445425cde1faeafca99fef470901412445a25d6b77e39d37373c3b4d"
+        }
+      ],
+      "routing_case_ids": [
+        "route-30"
+      ],
+      "reviewed_layers": [
+        "full canonical instruction text",
+        "description/responsibility against neighboring skills",
+        "manifest/group membership",
+        "declared payload inventory"
+      ],
+      "runtime_validation": "NOT_RUN",
+      "native_discovery": "NOT_RUN",
+      "confirmed_behavioral_bug": false
+    },
+    {
+      "skill": "loop-mcp-test",
+      "group": "mcp-integration",
+      "classification": "KEEP",
+      "classification_scope": "STATIC_REVIEW_RECOMMENDATION",
+      "reason": "Offline envelope, live transport, authentication and host interoperability are separately labeled.",
+      "source": ".github/skills/loop-mcp-test/SKILL.md",
+      "source_sha256": "95423acc31d6ced6433d537466f4a863ee21e973258d365245937de953826e78",
+      "payload_inventory": [
+        {
+          "path": ".github/skills/loop-mcp-test/SKILL.md",
+          "sha256": "95423acc31d6ced6433d537466f4a863ee21e973258d365245937de953826e78"
+        }
+      ],
+      "routing_case_ids": [
+        "route-31"
+      ],
+      "reviewed_layers": [
+        "full canonical instruction text",
+        "description/responsibility against neighboring skills",
+        "manifest/group membership",
+        "declared payload inventory"
+      ],
+      "runtime_validation": "NOT_RUN",
+      "native_discovery": "NOT_RUN",
+      "confirmed_behavioral_bug": false
+    },
+    {
+      "skill": "loop-mcp-security",
+      "group": "mcp-integration",
+      "classification": "KEEP",
+      "classification_scope": "STATIC_REVIEW_RECOMMENDATION",
+      "reason": "Tool annotations are hints rather than enforcement; synthetic credentials and absent forbidden side effects are explicit.",
+      "source": ".github/skills/loop-mcp-security/SKILL.md",
+      "source_sha256": "85b71f20fa085182f4554366c2aa60e54fe3c65eba59b5260cf4e95147d76af6",
+      "payload_inventory": [
+        {
+          "path": ".github/skills/loop-mcp-security/SKILL.md",
+          "sha256": "85b71f20fa085182f4554366c2aa60e54fe3c65eba59b5260cf4e95147d76af6"
+        }
+      ],
+      "routing_case_ids": [
+        "route-32"
+      ],
+      "reviewed_layers": [
+        "full canonical instruction text",
+        "description/responsibility against neighboring skills",
+        "manifest/group membership",
+        "declared payload inventory"
+      ],
+      "runtime_validation": "NOT_RUN",
+      "native_discovery": "NOT_RUN",
+      "confirmed_behavioral_bug": false
+    },
+    {
+      "skill": "loop-deploy",
+      "group": "delivery",
+      "classification": "KEEP",
+      "classification_scope": "STATIC_REVIEW_RECOMMENDATION",
+      "reason": "Known artifact, authorized environment, health gate and observed rollback remain distinct from release readiness.",
+      "source": ".github/skills/loop-deploy/SKILL.md",
+      "source_sha256": "2a085b2f76339a8564f55d97d2dde17303c3870c9fc801eba9360d1a77a155cd",
+      "payload_inventory": [
+        {
+          "path": ".github/skills/loop-deploy/SKILL.md",
+          "sha256": "2a085b2f76339a8564f55d97d2dde17303c3870c9fc801eba9360d1a77a155cd"
+        }
+      ],
+      "routing_case_ids": [
+        "route-33"
+      ],
+      "reviewed_layers": [
+        "full canonical instruction text",
+        "description/responsibility against neighboring skills",
+        "manifest/group membership",
+        "declared payload inventory"
+      ],
+      "runtime_validation": "NOT_RUN",
+      "native_discovery": "NOT_RUN",
+      "confirmed_behavioral_bug": false
+    },
+    {
+      "skill": "loop-observe",
+      "group": "delivery",
+      "classification": "KEEP",
+      "classification_scope": "STATIC_REVIEW_RECOMMENDATION",
+      "reason": "Signal provenance, absent data versus zero, noise and actual alert delivery are explicit without implicit persistent monitoring.",
+      "source": ".github/skills/loop-observe/SKILL.md",
+      "source_sha256": "c23265c07ef22cd72975e546751a5a35a48f07117b063fc03b2fd1b81602db92",
+      "payload_inventory": [
+        {
+          "path": ".github/skills/loop-observe/SKILL.md",
+          "sha256": "c23265c07ef22cd72975e546751a5a35a48f07117b063fc03b2fd1b81602db92"
+        }
+      ],
+      "routing_case_ids": [
+        "route-34"
+      ],
+      "reviewed_layers": [
+        "full canonical instruction text",
+        "description/responsibility against neighboring skills",
+        "manifest/group membership",
+        "declared payload inventory"
+      ],
+      "runtime_validation": "NOT_RUN",
+      "native_discovery": "NOT_RUN",
+      "confirmed_behavioral_bug": false
+    },
+    {
+      "skill": "loop-context",
+      "group": "discovery-planning",
+      "classification": "KEEP",
+      "classification_scope": "STATIC_REVIEW_RECOMMENDATION",
+      "reason": "Task-relevant source selection preserves critical constraints and distinguishes matching hashes from faithful summary meaning.",
+      "source": ".github/skills/loop-context/SKILL.md",
+      "source_sha256": "4f346249334469257dc41f65343edf44b0df43805e1d6ba28dcbc287f33f7e2a",
+      "payload_inventory": [
+        {
+          "path": ".github/skills/loop-context/SKILL.md",
+          "sha256": "4f346249334469257dc41f65343edf44b0df43805e1d6ba28dcbc287f33f7e2a"
+        }
+      ],
+      "routing_case_ids": [
+        "route-38"
+      ],
+      "reviewed_layers": [
+        "full canonical instruction text",
+        "description/responsibility against neighboring skills",
+        "manifest/group membership",
+        "declared payload inventory"
+      ],
+      "runtime_validation": "NOT_RUN",
+      "native_discovery": "NOT_RUN",
+      "confirmed_behavioral_bug": false
+    },
+    {
+      "skill": "loop-handoff",
+      "group": "automation",
+      "classification": "KEEP",
+      "classification_scope": "STATIC_REVIEW_RECOMMENDATION",
+      "reason": "Resume rechecks source/artifact drift and retained failures; saved commands are not grants of authority.",
+      "source": ".github/skills/loop-handoff/SKILL.md",
+      "source_sha256": "c3868c4316de7bcc7c5a3fc481e474c2c9de781c120dd5547a12b974cddc7ba5",
+      "payload_inventory": [
+        {
+          "path": ".github/skills/loop-handoff/SKILL.md",
+          "sha256": "c3868c4316de7bcc7c5a3fc481e474c2c9de781c120dd5547a12b974cddc7ba5"
+        }
+      ],
+      "routing_case_ids": [
+        "route-39"
+      ],
+      "reviewed_layers": [
+        "full canonical instruction text",
+        "description/responsibility against neighboring skills",
+        "manifest/group membership",
+        "declared payload inventory"
+      ],
+      "runtime_validation": "NOT_RUN",
+      "native_discovery": "NOT_RUN",
+      "confirmed_behavioral_bug": false
+    },
+    {
+      "skill": "loop-workflow-project",
+      "group": "project-workflows",
+      "classification": "KEEP",
+      "classification_scope": "STATIC_REVIEW_RECOMMENDATION",
+      "reason": "Software MVP slices and actual user-visible gates remain separate from non-software work and narrow edits.",
+      "source": ".github/skills/loop-workflow-project/SKILL.md",
+      "source_sha256": "4fa2b71ef49aaed113397dec4e61175e5d83c1103894cb039698173b3c86ae60",
+      "payload_inventory": [
+        {
+          "path": ".github/skills/loop-workflow-project/SKILL.md",
+          "sha256": "4fa2b71ef49aaed113397dec4e61175e5d83c1103894cb039698173b3c86ae60"
+        }
+      ],
+      "routing_case_ids": [
+        "route-40"
+      ],
+      "reviewed_layers": [
+        "full canonical instruction text",
+        "description/responsibility against neighboring skills",
+        "manifest/group membership",
+        "declared payload inventory"
+      ],
+      "runtime_validation": "NOT_RUN",
+      "native_discovery": "NOT_RUN",
+      "confirmed_behavioral_bug": false
+    },
+    {
+      "skill": "loop-workflow-pr",
+      "group": "project-workflows",
+      "classification": "KEEP",
+      "classification_scope": "STATIC_REVIEW_RECOMMENDATION",
+      "reason": "Base/head identity and exact remote-head CI follow publication; a local PASS is not review or merge authorization.",
+      "source": ".github/skills/loop-workflow-pr/SKILL.md",
+      "source_sha256": "7d3f83a9e9a2c912923ecc928d05e6bef03cb586fcc513c6ee3f96e6893801e8",
+      "payload_inventory": [
+        {
+          "path": ".github/skills/loop-workflow-pr/SKILL.md",
+          "sha256": "7d3f83a9e9a2c912923ecc928d05e6bef03cb586fcc513c6ee3f96e6893801e8"
+        }
+      ],
+      "routing_case_ids": [
+        "route-41"
+      ],
+      "reviewed_layers": [
+        "full canonical instruction text",
+        "description/responsibility against neighboring skills",
+        "manifest/group membership",
+        "declared payload inventory"
+      ],
+      "runtime_validation": "NOT_RUN",
+      "native_discovery": "NOT_RUN",
+      "confirmed_behavioral_bug": false
+    },
+    {
+      "skill": "loop-workflow-incident",
+      "group": "project-workflows",
+      "classification": "KEEP",
+      "classification_scope": "STATIC_REVIEW_RECOMMENDATION",
+      "reason": "Operational impact, hypotheses, containment, observation windows and user-facing recovery are separate claims.",
+      "source": ".github/skills/loop-workflow-incident/SKILL.md",
+      "source_sha256": "9ae80b5d85b66dd2b586e176acb9901bee3fbe6d63967cb404cce5b33f7b4864",
+      "payload_inventory": [
+        {
+          "path": ".github/skills/loop-workflow-incident/SKILL.md",
+          "sha256": "9ae80b5d85b66dd2b586e176acb9901bee3fbe6d63967cb404cce5b33f7b4864"
+        }
+      ],
+      "routing_case_ids": [
+        "route-42"
+      ],
+      "reviewed_layers": [
+        "full canonical instruction text",
+        "description/responsibility against neighboring skills",
+        "manifest/group membership",
+        "declared payload inventory"
+      ],
+      "runtime_validation": "NOT_RUN",
+      "native_discovery": "NOT_RUN",
+      "confirmed_behavioral_bug": false
+    },
+    {
+      "skill": "loop-write",
+      "group": "everyday-communication",
+      "classification": "KEEP",
+      "classification_scope": "STATIC_REVIEW_RECOMMENDATION",
+      "reason": "Consequential facts, unknown commitments and actual requested-file delivery are checked separately from sending.",
+      "source": ".github/skills/loop-write/SKILL.md",
+      "source_sha256": "96961742b9819830039e90beca14680cb8854768482918dbcb18e7f0f67379bd",
+      "payload_inventory": [
+        {
+          "path": ".github/skills/loop-write/SKILL.md",
+          "sha256": "96961742b9819830039e90beca14680cb8854768482918dbcb18e7f0f67379bd"
+        }
+      ],
+      "routing_case_ids": [
+        "route-43"
+      ],
+      "reviewed_layers": [
+        "full canonical instruction text",
+        "description/responsibility against neighboring skills",
+        "manifest/group membership",
+        "declared payload inventory"
+      ],
+      "runtime_validation": "NOT_RUN",
+      "native_discovery": "NOT_RUN",
+      "confirmed_behavioral_bug": false
+    },
+    {
+      "skill": "loop-summarize",
+      "group": "everyday-communication",
+      "classification": "KEEP",
+      "classification_scope": "STATIC_REVIEW_RECOMMENDATION",
+      "reason": "Read coverage, source qualifiers, contradictions and material omissions constrain faithful compression.",
+      "source": ".github/skills/loop-summarize/SKILL.md",
+      "source_sha256": "f09d25beea324fe67529ef9261fe5c3244a882e4551e5e606b705b486c32d6b5",
+      "payload_inventory": [
+        {
+          "path": ".github/skills/loop-summarize/SKILL.md",
+          "sha256": "f09d25beea324fe67529ef9261fe5c3244a882e4551e5e606b705b486c32d6b5"
+        }
+      ],
+      "routing_case_ids": [
+        "route-44"
+      ],
+      "reviewed_layers": [
+        "full canonical instruction text",
+        "description/responsibility against neighboring skills",
+        "manifest/group membership",
+        "declared payload inventory"
+      ],
+      "runtime_validation": "NOT_RUN",
+      "native_discovery": "NOT_RUN",
+      "confirmed_behavioral_bug": false
+    },
+    {
+      "skill": "loop-meeting",
+      "group": "work-organization",
+      "classification": "KEEP",
+      "classification_scope": "STATIC_REVIEW_RECOMMENDATION",
+      "reason": "Proposal, decision, ownership, due date and completion are independently supported rather than inferred from a transcript.",
+      "source": ".github/skills/loop-meeting/SKILL.md",
+      "source_sha256": "80760f6ba3011b4d45ac027b053f59c6bfa17a85e7bd7e73b81ac2ba6d815005",
+      "payload_inventory": [
+        {
+          "path": ".github/skills/loop-meeting/SKILL.md",
+          "sha256": "80760f6ba3011b4d45ac027b053f59c6bfa17a85e7bd7e73b81ac2ba6d815005"
+        }
+      ],
+      "routing_case_ids": [
+        "route-45"
+      ],
+      "reviewed_layers": [
+        "full canonical instruction text",
+        "description/responsibility against neighboring skills",
+        "manifest/group membership",
+        "declared payload inventory"
+      ],
+      "runtime_validation": "NOT_RUN",
+      "native_discovery": "NOT_RUN",
+      "confirmed_behavioral_bug": false
+    },
+    {
+      "skill": "loop-organize",
+      "group": "work-organization",
+      "classification": "KEEP",
+      "classification_scope": "STATIC_REVIEW_RECOMMENDATION",
+      "reason": "Existing compatibility selector has explicit file/work branches and a safe standalone fallback; deleting it would break established invocation.",
+      "source": ".github/skills/loop-organize/SKILL.md",
+      "source_sha256": "32aebd2e873256ddd5627b025611af337a1ac935d7985b633f5a4f4827f0ed6a",
+      "payload_inventory": [
+        {
+          "path": ".github/skills/loop-organize/SKILL.md",
+          "sha256": "32aebd2e873256ddd5627b025611af337a1ac935d7985b633f5a4f4827f0ed6a"
+        }
+      ],
+      "routing_case_ids": [
+        "route-53"
+      ],
+      "reviewed_layers": [
+        "full canonical instruction text",
+        "description/responsibility against neighboring skills",
+        "manifest/group membership",
+        "declared payload inventory"
+      ],
+      "runtime_validation": "NOT_RUN",
+      "native_discovery": "NOT_RUN",
+      "confirmed_behavioral_bug": false
+    },
+    {
+      "skill": "loop-decide",
+      "group": "decision-learning",
+      "classification": "KEEP",
+      "classification_scope": "STATIC_REVIEW_RECOMMENDATION",
+      "reason": "Hard constraints, unknown feasibility, compatible units and sensitivity prevent fabricated precise recommendations.",
+      "source": ".github/skills/loop-decide/SKILL.md",
+      "source_sha256": "9f229026d9b12a842e98de57cbba40d566f05c80411847b721a8f12906713662",
+      "payload_inventory": [
+        {
+          "path": ".github/skills/loop-decide/SKILL.md",
+          "sha256": "9f229026d9b12a842e98de57cbba40d566f05c80411847b721a8f12906713662"
+        }
+      ],
+      "routing_case_ids": [
+        "route-47"
+      ],
+      "reviewed_layers": [
+        "full canonical instruction text",
+        "description/responsibility against neighboring skills",
+        "manifest/group membership",
+        "declared payload inventory"
+      ],
+      "runtime_validation": "NOT_RUN",
+      "native_discovery": "NOT_RUN",
+      "confirmed_behavioral_bug": false
+    },
+    {
+      "skill": "loop-learn",
+      "group": "decision-learning",
+      "classification": "KEEP",
+      "classification_scope": "STATIC_REVIEW_RECOMMENDATION",
+      "reason": "Observable learning outcomes, time arithmetic and actual learner responses distinguish planning from demonstrated mastery.",
+      "source": ".github/skills/loop-learn/SKILL.md",
+      "source_sha256": "6f0e3e322769b523dd82c24af04c447d93c54bfdc9867191b702f8074c4260ac",
+      "payload_inventory": [
+        {
+          "path": ".github/skills/loop-learn/SKILL.md",
+          "sha256": "6f0e3e322769b523dd82c24af04c447d93c54bfdc9867191b702f8074c4260ac"
+        }
+      ],
+      "routing_case_ids": [
+        "route-48"
+      ],
+      "reviewed_layers": [
+        "full canonical instruction text",
+        "description/responsibility against neighboring skills",
+        "manifest/group membership",
+        "declared payload inventory"
+      ],
+      "runtime_validation": "NOT_RUN",
+      "native_discovery": "NOT_RUN",
+      "confirmed_behavioral_bug": false
+    },
+    {
+      "skill": "loop-work",
+      "group": "work-organization",
+      "classification": "KEEP",
+      "classification_scope": "STATIC_REVIEW_RECOMMENDATION",
+      "reason": "Done criteria, actual deliverables, capacity and task-state/check-state separation cover office packages without imposing software planning.",
+      "source": ".github/skills/loop-work/SKILL.md",
+      "source_sha256": "a37a7d03e2a8b3a4eb296687c24bbf0a745e59b8d1ae147f6372c21bba6fb11f",
+      "payload_inventory": [
+        {
+          "path": ".github/skills/loop-work/assets/work-checkpoint.json",
+          "sha256": "0700311dbff32f811547e57c373eef873d57bcbbd601504b00b4994950afa675"
+        },
+        {
+          "path": ".github/skills/loop-work/references/work-ledger.md",
+          "sha256": "79bd735bd75a89a4b85158f0119fedbc57a3f40c570a602f45952d00ca5ae018"
+        },
+        {
+          "path": ".github/skills/loop-work/SKILL.md",
+          "sha256": "a37a7d03e2a8b3a4eb296687c24bbf0a745e59b8d1ae147f6372c21bba6fb11f"
+        }
+      ],
+      "routing_case_ids": [
+        "route-49"
+      ],
+      "reviewed_layers": [
+        "full canonical instruction text",
+        "description/responsibility against neighboring skills",
+        "manifest/group membership",
+        "declared payload inventory"
+      ],
+      "runtime_validation": "NOT_RUN",
+      "native_discovery": "NOT_RUN",
+      "confirmed_behavioral_bug": false
+    },
+    {
+      "skill": "loop-files",
+      "group": "work-organization",
+      "classification": "KEEP",
+      "classification_scope": "STATIC_REVIEW_RECOMMENDATION",
+      "reason": "Pinned regular-file inventory, separate native moves, protected identities and nontransactional concurrency limits define a bounded helper contract.",
+      "source": ".github/skills/loop-files/SKILL.md",
+      "source_sha256": "3058dacdb6bcd5fc9ba6a93b331aac965f359200b21b5933af691d9dd678a6e8",
+      "payload_inventory": [
+        {
+          "path": ".github/skills/loop-files/references/file-plan.md",
+          "sha256": "ca52ca88c469155b55e42db7a68012b1268f97eadeeb1063a094178a4ff49d19"
+        },
+        {
+          "path": ".github/skills/loop-files/scripts/file_plan.py",
+          "sha256": "84852e323ca2970f07b10f16d3b7035903383beb6dd5bcd59a994c202b7e4489"
+        },
+        {
+          "path": ".github/skills/loop-files/SKILL.md",
+          "sha256": "3058dacdb6bcd5fc9ba6a93b331aac965f359200b21b5933af691d9dd678a6e8"
+        }
+      ],
+      "routing_case_ids": [
+        "route-46",
+        "route-50"
+      ],
+      "reviewed_layers": [
+        "full canonical instruction text",
+        "description/responsibility against neighboring skills",
+        "manifest/group membership",
+        "declared payload inventory"
+      ],
+      "runtime_validation": "NOT_RUN",
+      "native_discovery": "NOT_RUN",
+      "confirmed_behavioral_bug": false
+    },
+    {
+      "skill": "loop-table",
+      "group": "data-documents",
+      "classification": "KEEP",
+      "classification_scope": "STATIC_REVIEW_RECOMMENDATION",
+      "reason": "Explicit types/units/missing policy, exact arithmetic and formula/layout separation constrain table claims.",
+      "source": ".github/skills/loop-table/SKILL.md",
+      "source_sha256": "b5eb9445af6828a9f723fa82c311010cad83ce10c83cae43b4c5f81ae09a0c4b",
+      "payload_inventory": [
+        {
+          "path": ".github/skills/loop-table/references/table-contract.md",
+          "sha256": "7cd24c950476b064c86821a5e692134c1599be7fc2010466274192a17151e421"
+        },
+        {
+          "path": ".github/skills/loop-table/scripts/table_check.py",
+          "sha256": "18977d82eedb73f2629ee938dd0a0fc4b1fb96d934458e74b0b62e3be5d9b04c"
+        },
+        {
+          "path": ".github/skills/loop-table/SKILL.md",
+          "sha256": "b5eb9445af6828a9f723fa82c311010cad83ce10c83cae43b4c5f81ae09a0c4b"
+        }
+      ],
+      "routing_case_ids": [
+        "route-51"
+      ],
+      "reviewed_layers": [
+        "full canonical instruction text",
+        "description/responsibility against neighboring skills",
+        "manifest/group membership",
+        "declared payload inventory"
+      ],
+      "runtime_validation": "NOT_RUN",
+      "native_discovery": "NOT_RUN",
+      "confirmed_behavioral_bug": false
+    },
+    {
+      "skill": "loop-document",
+      "group": "data-documents",
+      "classification": "KEEP",
+      "classification_scope": "STATIC_REVIEW_RECOMMENDATION",
+      "reason": "Requested format, reopened final artifact and distinct content/container/layout/export checks prevent file-extension-only acceptance.",
+      "source": ".github/skills/loop-document/SKILL.md",
+      "source_sha256": "d25d126ae69d34102f31a901a5c9fb611a64f0c05efd869b263923309890c0dd",
+      "payload_inventory": [
+        {
+          "path": ".github/skills/loop-document/references/format-gates.md",
+          "sha256": "d9fe510bfb3d52a2cffa3f339ab506e242502c41d950d0626969c935215ce163"
+        },
+        {
+          "path": ".github/skills/loop-document/SKILL.md",
+          "sha256": "d25d126ae69d34102f31a901a5c9fb611a64f0c05efd869b263923309890c0dd"
+        }
+      ],
+      "routing_case_ids": [
+        "route-52"
+      ],
+      "reviewed_layers": [
+        "full canonical instruction text",
+        "description/responsibility against neighboring skills",
+        "manifest/group membership",
+        "declared payload inventory"
+      ],
+      "runtime_validation": "NOT_RUN",
+      "native_discovery": "NOT_RUN",
+      "confirmed_behavioral_bug": false
+    }
+  ]
+}

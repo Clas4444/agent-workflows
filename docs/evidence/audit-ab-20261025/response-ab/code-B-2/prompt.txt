@@ -1,0 +1,156 @@
+Fix ledger.py summarize(rows). Return JSON-compatible data with exactly
+row_count (integer), complete (boolean), groups (list sorted by category then currency).
+Each group has category, currency, known_total (exact decimal string with two places,
+or null if all amounts are blank), missing_ids (source IDs in source order).
+Group only by category AND currency; blank amounts are unknown, not zero. Preserve
+leading-zero IDs. Do not mutate rows. Empty input returns no groups, complete true,
+row_count zero. Inputs use valid finite decimal amounts of at most two fractional
+digits, arbitrary integer precision and may be negative. No currency conversion.
+Keep the summarize(rows) API and standard library only. Add and run regression tests.
+Deliver the changed files in this directory. Do not access any other workspace.
+
+Execution mode: generate files as a JSON response, rather than using tools. Return exactly {"code": "complete replacement ledger.py", "tests": "complete unittest test_ledger.py"}. The evaluator will save these files, run your tests and grade your code. You cannot run commands in this mode; do not claim you ran tests. All input is supplied below. No extra prose.
+Initial ledger.py:
+def summarize(rows):
+    totals = {}
+    for row in rows:
+        row['amount'] = float(row['amount'] or 0)
+        totals[row['category']] = totals.get(row['category'], 0) + row['amount']
+    return totals
+
+Example input rows:
+[{"id": "001", "category": "Food", "currency": "USD", "amount": "10.20"}, {"id": "002", "category": "Food", "currency": "USD", "amount": "0.10"}, {"id": "003", "category": "Food", "currency": "EUR", "amount": "5.00"}, {"id": "004", "category": "Food", "currency": "USD", "amount": ""}, {"id": "005", "category": "Travel", "currency": "USD", "amount": "-2.00"}, {"id": "006", "category": "Travel", "currency": "USD", "amount": "2.00"}, {"id": "007", "category": "Other", "currency": "JPY", "amount": ""}]
+Apply these supplied Loop instructions within the generation-only execution mode. Optional helpers are unavailable; do not claim helper execution.
+
+---
+name: loop-debug
+description: "Repair a reproducible bug end to end: capture a failing test, isolate the cause, apply the smallest authorized fix, and rerun regression checks. Use when the user wants a bug fixed, rather than diagnosis alone."
+argument-hint: "[duration, symptom, target, and expected behavior]"
+user-invocable: true
+disable-model-invocation: false
+---
+
+# Loop Debug
+
+## Use when
+
+The user requests a fix for a specific bug. Use loop-diagnose for investigation
+without repair, or loop-diagnose-repro when only a minimal reproducer is needed.
+
+## Inputs
+
+Bug symptom, target, expected behavior, available failing case and repair authorization.
+If no duration is supplied, use the task scope as the bound and stop when it is complete.
+Reuse authorization already given in the session; clarify only missing information
+that prevents safe progress.
+
+## Workflow
+
+1. Read repository instructions, worktree status, symptom and expected behavior.
+   Record the environment, exact failing command, exit code and relevant logs.
+2. Reproduce the failure before editing; add a focused regression test when
+   authorized. Distinguish a command not executed (NOT_RUN) from an executed
+   attempt where the symptom did not appear. Record the observed result and
+   reproduction rate; fix verification remains NOT_RUN without a demonstrated
+   failing baseline. Investigate one variable at a time rather than claiming a fix.
+3. Keep a hypothesis table with evidence and confidence. Isolate the cause and
+   apply one small reversible fix within the user's scope.
+4. Run the original reproducer and the focused test, then relevant project gates.
+   Inspect the diff and verify the fix did not merely hide the symptom.
+5. Report root cause, changed files, before/after commands, results, remaining
+   risks and next action. A patch without verification is not PASS.
+
+## Output
+
+Failing baseline, root cause, minimal fix, regression results and remaining risk.
+For each check distinguish PASS (verified), FAIL (check failed), BLOCKED (a
+required prerequisite prevents progress) and NOT_RUN (not executed). Include
+what was observed, what changed and what remains unverified.
+
+## Boundaries and evidence
+
+Do not weaken assertions, swallow unexpected errors, expose sensitive logs,
+install dependencies, or change unrelated behavior without authorization.
+Preserve unrelated work. Report PASS, FAIL, BLOCKED or NOT_RUN per check.
+
+Stop when no suitable work remains, the deadline or user request ends the run,
+a safety boundary is reached, or materially identical results recur more than
+three times. Never sleep to consume time; write a consolidated report.
+
+## Example
+
+```text
+/loop-debug 15m fix valid markers being lost after large output
+```
+
+Use the host's supported skill invocation syntax; the example expresses intent,
+not a guarantee that every host supports slash commands.
+
+---
+name: loop-test
+description: "Select and execute a risk-based test strategy for a project or change when the required test layer is not yet known. Use focused unit, integration, E2E, coverage, adversarial or compatibility skills when that layer is already the main request."
+argument-hint: "[duration and target]"
+user-invocable: true
+disable-model-invocation: false
+---
+
+# Loop Test
+
+## Use when
+
+Select, run, or improve a bounded test strategy for a project or change.
+
+## Inputs
+
+Project or change, acceptance criteria, known test commands and permitted fixture edits.
+If no duration is supplied, use the task scope as the bound and stop when it is complete.
+Reuse authorization already given in the session; clarify only missing information
+that prevents safe progress.
+
+## Workflow
+
+1. Identify acceptance criteria, project gates, environment and the risk that
+   each check must distinguish. Select the needed test layers before running.
+2. Establish the smallest relevant baseline and include valid/invalid controls
+   where applicable. Broaden when failures or untested boundaries justify it.
+3. Inspect actual assertions and artifacts, not only the command's self-reported
+   PASS. Keep unit, CLI, model/host and remote evidence separate.
+4. Record commands, exit codes, failures, changed assertions and next action.
+   Missing prerequisites are BLOCKED or NOT_RUN according to what was attempted;
+   do not install or weaken gates merely to obtain a green report.
+5. Trace results to stable acceptance IDs and the context revision/hash used.
+   For executable contracts use the repository's `docs/ACCEPTANCE-GATE.md` when
+   available. A zero exit alone, zero collected tests, an expected rejection
+   caused by a missing executable, or a timeout cannot prove acceptance. Keep
+   planned checks NOT_RUN and stale/missing context BLOCKED. After changing a
+   checker, exercise a controlled failure to show it can reject bad behavior.
+
+Verify observable end states as well as logs: requested artifact contents, protected
+inputs, installed resources and relevant negative controls. Keep unit, CLI, model
+decision, host discovery and external action evidence separate; use changed-value
+challenges when a scorer could merely repeat an expected answer.
+
+## Output
+
+Test selection, commands, exit codes, failure evidence and unverified risks.
+For each check distinguish PASS (verified), FAIL (check failed), BLOCKED (a
+required prerequisite prevents progress) and NOT_RUN (not executed). Include
+what was observed, what changed and what remains unverified.
+
+## Boundaries and evidence
+
+Change tests or fixtures only with authorization. Never weaken assertions or
+accept a missing tool as `PASS`. Report `PASS`, `FAIL`, `BLOCKED`, or `NOT_RUN`.
+
+Stop when no suitable work remains, the deadline or user request ends the run,
+a safety boundary is reached, or materially identical results recur more than
+three times. Never sleep to consume time; write a consolidated report.
+
+## Example
+
+```text
+/loop-test 10m verify the current parser change
+```
+
+Use the host's supported skill invocation syntax; the example expresses intent,
+not a guarantee that every host supports slash commands.

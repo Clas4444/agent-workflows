@@ -1,5 +1,12 @@
 # Changelog
 
+## 1.9.1-experimental — 2026-10-25
+
+- Fix a false current-evidence PASS when the checkout has a `__pycache__` ancestor; keep source exclusions relative to the repository.
+- Strengthen evaluation instructions with tested checker controls and explicit baseline isolation; retain historical runtime invalidation.
+- Audit all 49 skills, correct manifest-count documentation, and publish a frozen independent ledger checker with current research and paired real-model pilot evidence.
+- Keep blocked tool-use trials separate from generation-only results; no native discovery, handoff or universal effectiveness claim.
+
 ## 1.9.0-experimental — 2026-10-25
 
 - Review all 45 existing instructions; upgrade twelve and split organize into a retained selector plus work/files execution. Add four work/artifact skills: 49 skills, thirteen groups, twelve install bundles.

@@ -18,3 +18,5 @@
 **/loop-files/** text eol=lf
 **/loop-table/** text eol=lf
 **/loop-document/** text eol=lf
+/docs/evidence/audit-ab-20261025/** text eol=lf
+**/loop-evaluate/SKILL.md text eol=lf

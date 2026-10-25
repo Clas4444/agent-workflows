@@ -1,0 +1,19 @@
+test_code_boolean_empty_count_cannot_pass_as_integer_zero (test_benchmark_cases.BenchmarkCasesTests.test_code_boolean_empty_count_cannot_pass_as_integer_zero) ... ok
+test_code_hardcoded_fixture_answer_is_rejected (test_benchmark_cases.BenchmarkCasesTests.test_code_hardcoded_fixture_answer_is_rejected) ... ok
+test_code_reference_is_exact_nonmutating_and_accepted (test_benchmark_cases.BenchmarkCasesTests.test_code_reference_is_exact_nonmutating_and_accepted) ... ok
+test_code_starter_is_rejected (test_benchmark_cases.BenchmarkCasesTests.test_code_starter_is_rejected) ... ok
+test_code_unseen_rows_must_also_remain_unchanged (test_benchmark_cases.BenchmarkCasesTests.test_code_unseen_rows_must_also_remain_unchanged) ... ok
+test_controls_include_real_rejections (test_benchmark_cases.BenchmarkCasesTests.test_controls_include_real_rejections) ... ok
+test_office_correct_saved_artifacts_and_source_preservation (test_benchmark_cases.BenchmarkCasesTests.test_office_correct_saved_artifacts_and_source_preservation) ... ok
+test_office_duplicate_escaped_equivalent_key_is_rejected (test_benchmark_cases.BenchmarkCasesTests.test_office_duplicate_escaped_equivalent_key_is_rejected) ... ok
+test_office_missing_artifact_is_not_accepted (test_benchmark_cases.BenchmarkCasesTests.test_office_missing_artifact_is_not_accepted) ... ok
+test_office_requires_actual_briefing_file (test_benchmark_cases.BenchmarkCasesTests.test_office_requires_actual_briefing_file) ... ok
+test_office_requires_missing_data_disclosure (test_benchmark_cases.BenchmarkCasesTests.test_office_requires_missing_data_disclosure) ... ok
+test_office_source_alteration_is_rejected (test_benchmark_cases.BenchmarkCasesTests.test_office_source_alteration_is_rejected) ... ok
+test_report_missing_extra_and_wrong_numeric_content_rejected (test_benchmark_cases.BenchmarkCasesTests.test_report_missing_extra_and_wrong_numeric_content_rejected) ... ok
+test_report_types_are_not_coerced (test_benchmark_cases.BenchmarkCasesTests.test_report_types_are_not_coerced) ... ok
+
+----------------------------------------------------------------------
+Ran 14 tests in 0.169s
+
+OK

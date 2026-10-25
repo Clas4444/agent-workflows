@@ -1,0 +1,14 @@
+test_cache_named_ancestor_does_not_hide_repository_source_edits (test_verification_session.VerificationSessionTests.test_cache_named_ancestor_does_not_hide_repository_source_edits) ... ok
+test_change_during_command_cannot_finish_pass (test_verification_session.VerificationSessionTests.test_change_during_command_cannot_finish_pass) ... ok
+test_correct_session_accepts_unchanged_input_and_rejects_other_session (test_verification_session.VerificationSessionTests.test_correct_session_accepts_unchanged_input_and_rejects_other_session) ... ok
+test_edit_after_campaign_makes_previous_result_stale (test_verification_session.VerificationSessionTests.test_edit_after_campaign_makes_previous_result_stale) ... ok
+test_export_folder_does_not_claim_its_parent_repository_head (test_verification_session.VerificationSessionTests.test_export_folder_does_not_claim_its_parent_repository_head) ... ok
+test_nested_child_summary_does_not_replace_outer_suite_counts (test_verification_session.VerificationSessionTests.test_nested_child_summary_does_not_replace_outer_suite_counts) ... ok
+test_omitted_gate_or_zero_test_discovery_cannot_validate (test_verification_session.VerificationSessionTests.test_omitted_gate_or_zero_test_discovery_cannot_validate) ... ok
+test_repository_bytecode_is_excluded_without_excluding_source (test_verification_session.VerificationSessionTests.test_repository_bytecode_is_excluded_without_excluding_source) ... ok
+test_zero_discovery_or_start_failure_is_retained_as_failed_campaign (test_verification_session.VerificationSessionTests.test_zero_discovery_or_start_failure_is_retained_as_failed_campaign) ... ok
+
+----------------------------------------------------------------------
+Ran 9 tests in 1.069s
+
+OK

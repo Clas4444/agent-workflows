@@ -1,0 +1,332 @@
+[
+  {
+    "id": "code-A-1",
+    "order": 1,
+    "case": "code",
+    "arm": "A",
+    "repeat": 1,
+    "started_at": "2026-10-25T08:42:11.174716+00:00",
+    "seconds": 20.172,
+    "exit_code": 0,
+    "timeout": false,
+    "usage": [
+      {
+        "input_tokens": 61108,
+        "cached_input_tokens": 56704,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 273,
+        "reasoning_output_tokens": 21
+      }
+    ],
+    "config": [
+      {
+        "approval_policy": "never",
+        "sandbox_policy": {
+          "type": "read-only"
+        },
+        "model": "gpt-6.1-sol",
+        "summary": "none"
+      }
+    ],
+    "skills_supplied": [],
+    "immutable_inputs_unchanged": true,
+    "checker": {
+      "exit_code": 1,
+      "stdout": "{\"status\": \"FAIL\", \"errors\": [\"row_count must be an integer\", \"complete must be a boolean\", \"report does not match reconciled source rows, units and unknowns\", \"input rows were mutated\", \"empty input is incorrect\", \"unseen high-precision inputs are incorrect\", \"unseen input rows were mutated\"]}\n",
+      "stderr": ""
+    },
+    "completed": true,
+    "initial_context_contains_loop": false,
+    "success": false
+  },
+  {
+    "id": "code-B-1",
+    "order": 2,
+    "case": "code",
+    "arm": "B",
+    "repeat": 1,
+    "started_at": "2026-10-25T08:42:31.430413+00:00",
+    "seconds": 18.375,
+    "exit_code": 0,
+    "timeout": false,
+    "usage": [
+      {
+        "input_tokens": 61911,
+        "cached_input_tokens": 55424,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 330,
+        "reasoning_output_tokens": 36
+      }
+    ],
+    "config": [
+      {
+        "approval_policy": "never",
+        "sandbox_policy": {
+          "type": "read-only"
+        },
+        "model": "gpt-6.1-sol",
+        "summary": "none"
+      }
+    ],
+    "skills_supplied": [
+      "loop-debug",
+      "loop-test"
+    ],
+    "immutable_inputs_unchanged": true,
+    "checker": {
+      "exit_code": 1,
+      "stdout": "{\"status\": \"FAIL\", \"errors\": [\"row_count must be an integer\", \"complete must be a boolean\", \"report does not match reconciled source rows, units and unknowns\", \"input rows were mutated\", \"empty input is incorrect\", \"unseen high-precision inputs are incorrect\", \"unseen input rows were mutated\"]}\n",
+      "stderr": ""
+    },
+    "completed": true,
+    "initial_context_contains_loop": true,
+    "success": false
+  },
+  {
+    "id": "office-B-1",
+    "order": 3,
+    "case": "office",
+    "arm": "B",
+    "repeat": 1,
+    "started_at": "2026-10-25T08:42:49.893852+00:00",
+    "seconds": 13.094,
+    "exit_code": 0,
+    "timeout": false,
+    "usage": [
+      {
+        "input_tokens": 44652,
+        "cached_input_tokens": 40576,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 241,
+        "reasoning_output_tokens": 47
+      }
+    ],
+    "config": [
+      {
+        "approval_policy": "never",
+        "sandbox_policy": {
+          "type": "read-only"
+        },
+        "model": "gpt-6.1-sol",
+        "summary": "none"
+      }
+    ],
+    "skills_supplied": [
+      "loop-table"
+    ],
+    "immutable_inputs_unchanged": true,
+    "checker": {
+      "exit_code": 1,
+      "stdout": "{\"status\": \"FAIL\", \"errors\": [\"FileNotFoundError: [Errno 2] No such file or directory: 'C:\\\\\\\\Code\\\\\\\\LoopAuditAB-20261025T083146Z\\\\\\\\office-B-1-work\\\\\\\\report.json'\"]}\n",
+      "stderr": ""
+    },
+    "completed": true,
+    "initial_context_contains_loop": true,
+    "success": false
+  },
+  {
+    "id": "office-A-1",
+    "order": 4,
+    "case": "office",
+    "arm": "A",
+    "repeat": 1,
+    "started_at": "2026-10-25T08:43:03.071522+00:00",
+    "seconds": 20.766,
+    "exit_code": 0,
+    "timeout": false,
+    "usage": [
+      {
+        "input_tokens": 67837,
+        "cached_input_tokens": 58368,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 351,
+        "reasoning_output_tokens": 11
+      }
+    ],
+    "config": [
+      {
+        "approval_policy": "never",
+        "sandbox_policy": {
+          "type": "read-only"
+        },
+        "model": "gpt-6.1-sol",
+        "summary": "none"
+      }
+    ],
+    "skills_supplied": [],
+    "immutable_inputs_unchanged": true,
+    "checker": {
+      "exit_code": 1,
+      "stdout": "{\"status\": \"FAIL\", \"errors\": [\"FileNotFoundError: [Errno 2] No such file or directory: 'C:\\\\\\\\Code\\\\\\\\LoopAuditAB-20261025T083146Z\\\\\\\\office-A-1-work\\\\\\\\report.json'\"]}\n",
+      "stderr": ""
+    },
+    "completed": true,
+    "initial_context_contains_loop": false,
+    "success": false
+  },
+  {
+    "id": "code-B-2",
+    "order": 5,
+    "case": "code",
+    "arm": "B",
+    "repeat": 2,
+    "started_at": "2026-10-25T08:43:23.912358+00:00",
+    "seconds": 18.156,
+    "exit_code": 0,
+    "timeout": false,
+    "usage": [
+      {
+        "input_tokens": 61261,
+        "cached_input_tokens": 52992,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 285,
+        "reasoning_output_tokens": 28
+      }
+    ],
+    "config": [
+      {
+        "approval_policy": "never",
+        "sandbox_policy": {
+          "type": "read-only"
+        },
+        "model": "gpt-6.1-sol",
+        "summary": "none"
+      }
+    ],
+    "skills_supplied": [
+      "loop-debug",
+      "loop-test"
+    ],
+    "immutable_inputs_unchanged": true,
+    "checker": {
+      "exit_code": 1,
+      "stdout": "{\"status\": \"FAIL\", \"errors\": [\"row_count must be an integer\", \"complete must be a boolean\", \"report does not match reconciled source rows, units and unknowns\", \"input rows were mutated\", \"empty input is incorrect\", \"unseen high-precision inputs are incorrect\", \"unseen input rows were mutated\"]}\n",
+      "stderr": ""
+    },
+    "completed": true,
+    "initial_context_contains_loop": true,
+    "success": false
+  },
+  {
+    "id": "code-A-2",
+    "order": 6,
+    "case": "code",
+    "arm": "A",
+    "repeat": 2,
+    "started_at": "2026-10-25T08:43:42.172298+00:00",
+    "seconds": 16.172,
+    "exit_code": 0,
+    "timeout": false,
+    "usage": [
+      {
+        "input_tokens": 61171,
+        "cached_input_tokens": 54784,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 295,
+        "reasoning_output_tokens": 17
+      }
+    ],
+    "config": [
+      {
+        "approval_policy": "never",
+        "sandbox_policy": {
+          "type": "read-only"
+        },
+        "model": "gpt-6.1-sol",
+        "summary": "none"
+      }
+    ],
+    "skills_supplied": [],
+    "immutable_inputs_unchanged": true,
+    "checker": {
+      "exit_code": 1,
+      "stdout": "{\"status\": \"FAIL\", \"errors\": [\"row_count must be an integer\", \"complete must be a boolean\", \"report does not match reconciled source rows, units and unknowns\", \"input rows were mutated\", \"empty input is incorrect\", \"unseen high-precision inputs are incorrect\", \"unseen input rows were mutated\"]}\n",
+      "stderr": ""
+    },
+    "completed": true,
+    "initial_context_contains_loop": false,
+    "success": false
+  },
+  {
+    "id": "office-A-2",
+    "order": 7,
+    "case": "office",
+    "arm": "A",
+    "repeat": 2,
+    "started_at": "2026-10-25T08:43:58.436394+00:00",
+    "seconds": 16.5,
+    "exit_code": 0,
+    "timeout": false,
+    "usage": [
+      {
+        "input_tokens": 60948,
+        "cached_input_tokens": 56576,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 330,
+        "reasoning_output_tokens": 27
+      }
+    ],
+    "config": [
+      {
+        "approval_policy": "never",
+        "sandbox_policy": {
+          "type": "read-only"
+        },
+        "model": "gpt-6.1-sol",
+        "summary": "none"
+      }
+    ],
+    "skills_supplied": [],
+    "immutable_inputs_unchanged": true,
+    "checker": {
+      "exit_code": 1,
+      "stdout": "{\"status\": \"FAIL\", \"errors\": [\"FileNotFoundError: [Errno 2] No such file or directory: 'C:\\\\\\\\Code\\\\\\\\LoopAuditAB-20261025T083146Z\\\\\\\\office-A-2-work\\\\\\\\report.json'\"]}\n",
+      "stderr": ""
+    },
+    "completed": true,
+    "initial_context_contains_loop": false,
+    "success": false
+  },
+  {
+    "id": "office-B-2",
+    "order": 8,
+    "case": "office",
+    "arm": "B",
+    "repeat": 2,
+    "started_at": "2026-10-25T08:44:15.032931+00:00",
+    "seconds": 14.531,
+    "exit_code": 0,
+    "timeout": false,
+    "usage": [
+      {
+        "input_tokens": 48073,
+        "cached_input_tokens": 40576,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 239,
+        "reasoning_output_tokens": 37
+      }
+    ],
+    "config": [
+      {
+        "approval_policy": "never",
+        "sandbox_policy": {
+          "type": "read-only"
+        },
+        "model": "gpt-6.1-sol",
+        "summary": "none"
+      }
+    ],
+    "skills_supplied": [
+      "loop-table"
+    ],
+    "immutable_inputs_unchanged": true,
+    "checker": {
+      "exit_code": 1,
+      "stdout": "{\"status\": \"FAIL\", \"errors\": [\"FileNotFoundError: [Errno 2] No such file or directory: 'C:\\\\\\\\Code\\\\\\\\LoopAuditAB-20261025T083146Z\\\\\\\\office-B-2-work\\\\\\\\report.json'\"]}\n",
+      "stderr": ""
+    },
+    "completed": true,
+    "initial_context_contains_loop": true,
+    "success": false
+  }
+]

@@ -2,7 +2,7 @@
 
 **49 bounded workflows for everyday work and coding agents.** Produce a useful
 result, verify what actually happened, and stop with a clear checkpoint.
-Experimental version **1.9.0-experimental**; instructions do not enforce permissions.
+Experimental version **1.9.1-experimental**; instructions do not enforce permissions.
 
 ## Quick start
 
@@ -78,7 +78,8 @@ violation, BLOCKED a missing prerequisite and NOT_RUN an unexecuted check.
 Unit tests, real CLI/artifact checks, model decisions, native discovery and external
 actions are separate layers. Missing tools and zero collected tests are not PASS.
 
-[Current 1.9 tests](docs/testing/RESULTS-1.9.md) ·
+[Current audit and paired pilot](docs/testing/AUDIT-AB-2026-10-25.md) ·
+[1.9 tests](docs/testing/RESULTS-1.9.md) ·
 [Research and limits](docs/RESEARCH-1.9.md) · [All-skill review](docs/TAXONOMY-1.9.md) ·
 [Historical runtime matrix](docs/RUNTIME-TEST-MATRIX.md)
 

@@ -1,0 +1,72 @@
+{
+  "session_id": "audit-ab-20261025T083146Z",
+  "frozen_at": "2026-10-25T08:41:20.332028+00:00",
+  "checker_sha256": "4827147666dc511ec824dd453cfb747c39ed56f1e73b199b485370ece0248b6c",
+  "attempts_per_arm_per_case": 2,
+  "cases": [
+    "code",
+    "office"
+  ],
+  "order": [
+    "code-A-1",
+    "code-B-1",
+    "office-B-1",
+    "office-A-1",
+    "code-B-2",
+    "code-A-2",
+    "office-A-2",
+    "office-B-2"
+  ],
+  "execution": "sequential; no previous outputs supplied",
+  "per_attempt_seconds": 180,
+  "arms": {
+    "A": [],
+    "B_code": [
+      "loop-debug",
+      "loop-test"
+    ],
+    "B_office": [
+      "loop-table"
+    ]
+  },
+  "tool_policy": "workspace-write, same tools and CLI flags, no external workspace reads, auth-only home per attempt",
+  "host_discovery_note": "Both HOME and USERPROFILE plus CODEX_HOME replaced; no ancestor AGENTS or project skills. skip_host_skill_discovery is conditional, not relied on alone. No container filesystem isolation claim.",
+  "model": "CLI default for both arms; resolved identity will be read from session metadata if exposed",
+  "success": "independent frozen checker exit0 + preserved task/source inputs + completed model turn; no self-report grading",
+  "policy_metric": "Observed transcripts only; cannot prove absence of every outside-file read",
+  "handoff": "NOT_RUN",
+  "controls": [
+    {
+      "id": "correct",
+      "accepted": true,
+      "expected_accept": true,
+      "errors": []
+    },
+    {
+      "id": "wrong",
+      "accepted": false,
+      "expected_accept": false,
+      "errors": [
+        "row_count must be an integer",
+        "report does not match reconciled source rows, units and unknowns"
+      ]
+    },
+    {
+      "id": "missing",
+      "accepted": false,
+      "expected_accept": false,
+      "errors": [
+        "report does not match reconciled source rows, units and unknowns"
+      ]
+    },
+    {
+      "id": "valid-format-wrong-content",
+      "accepted": false,
+      "expected_accept": false,
+      "errors": [
+        "report does not match reconciled source rows, units and unknowns"
+      ]
+    }
+  ],
+  "cost": "NOT_VERIFIED unless reported by host"
+}

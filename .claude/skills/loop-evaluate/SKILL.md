@@ -24,6 +24,9 @@ authorization; clarify only prerequisites that prevent safe progress.
    outputs. Include positive, negative and blocked-prerequisite cases.
 2. Identify instruction/model versions, baseline, fixture inputs and authorized
    execution budget. Supplied outputs may be scored without new model calls.
+   Freeze the checker and acceptance criteria before candidate execution. Prove
+   acceptance of a correct control and rejection of wrong, missing and valid-format
+   but wrong-content controls. A checker failure blocks effectiveness claims.
 3. Run only authorized invocations; preserve raw outputs and failed attempts.
    Stop new invocations on quota or prerequisite failure, marking them honestly.
 4. Grade artifacts/tool outcomes against the rubric, not just model self-reported
@@ -36,6 +39,11 @@ authorization; clarify only prerequisites that prevent safe progress.
    consistency rule; one successful sample is not reliability. Do not confuse
    pass@k (at least one success) with pass^k (all k succeed), or assume trials
    are independent. Name any estimator and its assumptions before using it.
+   Isolate each attempt's home, workspace, history and output. A no-skill baseline
+   must not load global/project skills or the candidate repository's AGENTS.md.
+   Check actual host discovery paths; a config flag alone is not proof of isolation.
+   Record execution order, model/config, limits and isolation evidence. If isolation
+   is unproven, label the comparison NOT_VERIFIED instead of claiming a clean A/B.
 6. If producing a scorer, verify it runs in a fresh directory from only its
    documented inputs. Machine-readable metrics must not depend on a pre-existing
    human report; create optional reports when absent. Exercise changed outputs

@@ -36,6 +36,26 @@ class VerificationSessionTests(unittest.TestCase):
             (repo/'scripts/example.py').write_text('value = 2\n',encoding='utf-8')
             self.assertTrue(any('stale' in e for e in verify_report(repo,out/'verification.json','session-a')))
 
+    def test_cache_named_ancestor_does_not_hide_repository_source_edits(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root=Path(directory)/'__pycache__';root.mkdir()
+            repo=self.fixture(root);out=root/'run'
+            report=run_session(repo,out,'session-a',execute=self.successful_command)
+            self.assertEqual(report['status'],'PASS')
+            self.assertIn('scripts/example.py',report['inputs'])
+            (repo/'scripts/example.py').write_text('value = 2\n',encoding='utf-8')
+            self.assertTrue(any('stale' in error
+                for error in verify_report(repo,out/'verification.json','session-a')))
+
+    def test_repository_bytecode_is_excluded_without_excluding_source(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root=Path(directory);repo=self.fixture(root);out=root/'run'
+            cache=repo/'scripts/__pycache__';cache.mkdir()
+            bytecode=cache/'example.cpython-312.pyc';bytecode.write_bytes(b'old')
+            run_session(repo,out,'session-a',execute=self.successful_command)
+            bytecode.write_bytes(b'new')
+            self.assertEqual(verify_report(repo,out/'verification.json','session-a'),[])
+
     def test_change_during_command_cannot_finish_pass(self):
         with tempfile.TemporaryDirectory() as directory:
             root=Path(directory);repo=self.fixture(root);out=root/'run'

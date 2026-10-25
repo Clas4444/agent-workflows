@@ -1,0 +1,70 @@
+{
+  "session_id": "audit-ab-20261025T083146Z",
+  "test_kind": "explicit-instruction-load supplied-output forward test",
+  "instruction": {
+    "path": ".github/skills/loop-evaluate/SKILL.md",
+    "sha256_exact_local_bytes": "692ed7407126eadce8754bb6f0a5363bf50025b2c6d0120b796759dd202fc559",
+    "read_method": "PowerShell Get-Content and Get-FileHash SHA256 before answering",
+    "loaded": true,
+    "native_discovery": "NOT_RUN"
+  },
+  "scope": {
+    "evaluator": "fresh child-agent response after reading the updated instruction",
+    "additional_model_or_benchmark_invocations": "NOT_RUN",
+    "external_artifact_authentication": "NOT_RUN",
+    "claims": "Assessment of the supplied case records only; no actual A/B execution or independent attestation is claimed."
+  },
+  "cases": [
+    {
+      "id": "unproven-isolation-and-invalid-checker",
+      "input": "An investigator used the same CODEX_HOME with separate working directories, shared global HOME skills, tested the checker only on a correct output, and observed baseline win 1 versus 0 in one paired trial. They conclude that Loop is worse.",
+      "response": {
+        "comparison_status": "NOT_VERIFIED",
+        "checker_status": "BLOCKED",
+        "conclusion": "The supplied record does not support the conclusion that Loop is worse. Separate working directories do not establish isolated homes, histories or discovery. Shared global HOME skills leave baseline contamination unresolved. A positive control alone does not establish rejection of bad outputs, so effectiveness claims are blocked.",
+        "retained_observation": "Retain the investigator's reported baseline 1/1 and Loop 0/1 outcome as one unverified paired observation, including the failure. Do not silently delete, rerun until favorable, or treat it as a valid effectiveness estimate.",
+        "required_evidence": [
+          "Actual startup/discovery and instruction-root evidence showing that the baseline did not load Loop, project AGENTS.md or other-attempt context.",
+          "Frozen checker acceptance of a correct control plus rejection of wrong, missing and valid-format/wrong-content controls.",
+          "Comparable model/configuration, task data, tools, authority, attempt limits and recorded execution order.",
+          "Raw artifact outcomes and all trial records, not only model self-reported PASS."
+        ],
+        "no_rerun": "No new model trial was executed or requested by this evaluation. Fixing prerequisites and rechecking retained outputs is distinct from collecting a new predeclared experiment."
+      }
+    },
+    {
+      "id": "small-paired-tie",
+      "input": "A protocol has two arms and two replicates per case. Code outputs all pass in both arms; office outputs all pass in both arms. Sources remain immutable, all four checker controls are valid, isolated home/root evidence is supplied, and model/configuration are the same.",
+      "response": {
+        "assessment_status": "PASS for coherent supplied-record interpretation; underlying executions are not independently authenticated here",
+        "interpretation": "Taking the supplied protocol record as given, this is a tie on the two tested cases. Two cases times two replicates times two arms gives eight attempts, four per arm. Each arm reports 4/4 accepted attempts. The result shows successful completion in this small setting; it shows no observed correctness improvement for either arm.",
+        "sequences": {
+          "code": {"baseline": ["PASS", "PASS"], "loop": ["PASS", "PASS"]},
+          "office": {"baseline": ["PASS", "PASS"], "loop": ["PASS", "PASS"]}
+        },
+        "any_vs_all": {
+          "rule": "For each case and arm, any-success means at least one accepted attempt out of the two declared attempts; all-success means both accepted. These are descriptive observed rules, not extrapolated estimators.",
+          "baseline": {"cases_with_any_success": "2/2", "cases_with_all_success": "2/2"},
+          "loop": {"cases_with_any_success": "2/2", "cases_with_all_success": "2/2"},
+          "independence": "Not established; do not assume independent identical trials or infer production reliability from two replicates."
+        },
+        "checker_interpretation": "The four valid controls must mean that the frozen checker accepted the correct control and rejected wrong, missing and valid-format/wrong-content controls. Format validity alone would not satisfy this premise.",
+        "limits": [
+          "Two cases and two replicates per arm are a small pilot with ceiling effects and limited task diversity; no universal benefit, harm, compatibility or reliability claim follows.",
+          "Execution order, tool and authority parity, limits, timing, token usage, cost, host discovery and source pins must remain visible in the actual protocol. Unprovided fields are NOT_VERIFIED here.",
+          "Correct final outcomes do not establish coverage of every instruction obligation, safe behavior in untriggered conditions or cold-handoff effectiveness.",
+          "The supplied descriptions do not permit this evaluator to independently reopen outputs or authenticate traces. This response is a forward test of evaluation behavior, not new benchmark evidence."
+        ],
+        "defensible_statement": "In the supplied eight-attempt pilot, baseline and Loop both met acceptance in every reported attempt. No correctness difference was observed. Broader effectiveness and efficiency remain unproven."
+      }
+    }
+  ],
+  "observed_instruction_behaviors": [
+    "Rejected an unproven clean-baseline claim despite a comparative win/loss count.",
+    "Blocked effectiveness claims when only a correct checker control had been exercised.",
+    "Preserved the unfavorable Loop observation without converting it into a causal conclusion.",
+    "Reported declared trial denominators and separated observed any-success from all-success.",
+    "Avoided superiority claims from a small tie and separated task acceptance from skill obligation coverage.",
+    "Distinguished supplied-output assessment, explicit instruction loading and native/model benchmark execution."
+  ]
+}

@@ -1,0 +1,101 @@
+{
+  "classification": "CONFIRMED_BUG",
+  "severity": "P2",
+  "component": "scripts/verification_session.py:input_snapshot",
+  "contract": "An edited verification input cannot validate as current (docs/testing/TESTING.md).",
+  "scenario": "A Git export placed beneath an ancestor directory named __pycache__.",
+  "cause": "The exclusion predicate checked absolute path.parts instead of repository-relative path parts.",
+  "base_sha": "393104e50f1007b30d04638259db72c6c19f011b",
+  "before": {
+    "session_id": "audit-ab-20261025T083146Z-cache-repro",
+    "campaign_status": "PASS",
+    "gates": {
+      "unit": "PASS",
+      "full": "PASS",
+      "format": "PASS",
+      "catalog": "PASS",
+      "routing": "PASS",
+      "workflows": "PASS",
+      "bundles": "PASS",
+      "resources": "PASS",
+      "sync": "PASS",
+      "smoke-interface": "PASS",
+      "compile": "PASS"
+    },
+    "unit_discovered": 246,
+    "unit_skipped": 1,
+    "pinned_files": 12,
+    "scripts_included": false,
+    "post_campaign_edit": "Append a comment to scripts/catalog.py",
+    "stale_verify_exit": 0,
+    "stale_verify_output": "PASS: session and verification inputs match",
+    "regression_tests": 9,
+    "regression_failures": 1
+  },
+  "after": {
+    "session_id": "audit-ab-20261025T083146Z-cache-fixed",
+    "campaign_status": "PASS",
+    "gates": {
+      "unit": "PASS",
+      "full": "PASS",
+      "format": "PASS",
+      "catalog": "PASS",
+      "routing": "PASS",
+      "workflows": "PASS",
+      "bundles": "PASS",
+      "resources": "PASS",
+      "sync": "PASS",
+      "smoke-interface": "PASS",
+      "compile": "PASS"
+    },
+    "unit_discovered": 248,
+    "unit_skipped": 1,
+    "pinned_files": 335,
+    "scripts_included": true,
+    "fresh_verify_exit": 0,
+    "stale_verify_exit": 1,
+    "stale_verify_output": "verification inputs changed; the result is stale for this checkout\npost-run input pin differs",
+    "focused_py312": "9 tests PASS",
+    "focused_py314": "9 tests PASS"
+  },
+  "limits": [
+    "The exported campaigns are actual CLI gate executions, not model runtime validation.",
+    "Unit regression uses injected successful commands only to test pin behavior; separate actual exported campaigns establish the operational false PASS.",
+    "Windows file-symlink test remained SKIP in both actual suites.",
+    "An initial before-campaign PowerShell TEMP assignment referred to a missing export-local .loop/tmp and printed Resolve-Path error; the campaign itself ran and all eleven gates completed PASS. The repaired campaign used an explicitly existing temp directory.",
+    "Manually forged reports remain outside authenticated-attestation guarantees."
+  ],
+  "raw_private_hashes": {
+    "regression-before.log": {
+      "sha256": "799a4f5e983bab43af679ac7c2c97992e1b63982517df7a58c5d3d72fe3f4e51"
+    },
+    "regression-after.log": {
+      "sha256": "632c744c80a3149a13c664b3e1b2fd93c461c6f26f1d44877040a36ed3dd8522"
+    },
+    "regression-after-314.log": {
+      "sha256": "2d874a780473be5e25221654ccc8d8a64978c8cad8c12169b1646b81bff5044f"
+    },
+    "__pycache__/raw-before/verification.json": {
+      "sha256": "465350aa638d4e451d96575b09507917883354a103348107bc4021a31c5931c5"
+    },
+    "__pycache__/raw-after/verification.json": {
+      "sha256": "92a474f8cbc253fea3a9be435035edb30146241d9d88bad3db859f110a97b6af"
+    },
+    "__pycache__/verify-stale-before.log": {
+      "sha256": "42fc2376565ac18333ee79cc8eb68daafadbf93163849169c888c2158ecbed78"
+    },
+    "__pycache__/verify-fresh-after.log": {
+      "sha256": "42fc2376565ac18333ee79cc8eb68daafadbf93163849169c888c2158ecbed78"
+    },
+    "__pycache__/verify-stale-after.log": {
+      "sha256": "9582145f63aea2f583fec77d1aaff6bc493c32a7993599702e0933311365e752"
+    }
+  },
+  "publication": {
+    "transformation": "UTF-8 LF, absolute workspace and user-home paths replaced with placeholders.",
+    "raw_private_hashes": "Hashes of private original artifacts, not hashes of the sanitized published files.",
+    "campaign_log_sha256": "Verification report log_sha256 values refer to private original gate logs; sanitized unit logs have separate hashes in published-hashes.json.",
+    "source_pin": "The 335-file post-fix pin describes an intermediate Git export of the base SHA with the two-file fix, before final session evidence publication. It is not the final repo source pin.",
+    "summary_recheck": "All eleven exit codes/statuses, discovered/skipped counts, pinned file counts and outer unit summaries were independently re-read before publication."
+  }
+}

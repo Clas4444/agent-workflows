@@ -43,7 +43,8 @@ def input_snapshot(repo):
     paths = {repo/name for name in FILES if (repo/name).is_file()}
     for name in ROOTS:
         paths.update(path for path in (repo/name).rglob('*') if path.is_file()
-                     and '__pycache__' not in path.parts and path.suffix != '.pyc')
+                     and '__pycache__' not in path.relative_to(repo).parts
+                     and path.suffix != '.pyc')
     return {path.relative_to(repo).as_posix(): hashlib.sha256(path.read_bytes()).hexdigest()
             for path in sorted(paths)}
 

@@ -1,0 +1,11 @@
+Applied the supplied Loop Table instructions to the 7 supplied CSV rows. All rows are included, grouped by category and currency. IDs remain strings with leading zeros. Blank amounts are unknown and excluded from known subtotals. CSV text is treated as data. No currency conversion or grand total is produced.
+
+Known subtotals and source rows:
+- Food / EUR: 5.00 from ID 003; no missing amounts.
+- Food / USD: partial known subtotal 10.30 from IDs 001 (10.20) and 002 (0.10). ID 004 has an unknown amount.
+- Other / JPY: no known subtotal (null). ID 007 has an unknown amount; this is not a zero subtotal.
+- Travel / USD: 0.00 from IDs 005 (-2.00) and 006 (2.00); no missing amounts.
+
+Overall completeness is false because IDs 004 and 007 have missing amounts.
+
+Verification: PASS for generated-content structure, category/currency sorting, exact decimal arithmetic, preservation of source IDs, and reconciliation of all 7 rows into 4 groups. Saved-artifact verification: NOT_RUN in generation-only mode; the evaluator will save and reopen the artifacts. No tools or helpers were executed, and no files or other workspaces were accessed.
