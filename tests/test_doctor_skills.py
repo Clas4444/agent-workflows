@@ -74,19 +74,31 @@ class DoctorSkillsTests(unittest.TestCase):
         self.assertNotEqual(row['expected_sha256'],row['observed_sha256'])
         self.assertEqual(path.read_bytes(),b'personal version')
 
-    def test_source_change_during_diagnosis_cannot_finish_pass(self):
+    def assert_source_change_detected(self):
         self.install()
         source=self.source/'SKILL.md'
-        destination=self.target/'loop-demo/SKILL.md'
+        destination=(self.target/'loop-demo/SKILL.md').resolve()
         original=Path.read_bytes
+        observed=[]
         def change_after_comparison(p):
             data=original(p)
-            if p==destination:source.write_bytes(b'changed during diagnosis')
+            if p.resolve()==destination:
+                source.write_bytes(b'changed during diagnosis')
+                observed.append(True)
             return data
         with mock.patch.object(Path,'read_bytes',change_after_comparison):result=self.check()
+        self.assertEqual(observed,[True],'the source-drift injection must actually execute')
         self.assertEqual(result['status'],'BLOCKED')
         self.assertFalse(result['reference_unchanged'])
         self.assertTrue(result['reference_errors'])
+
+    def test_source_change_during_diagnosis_cannot_finish_pass(self):
+        self.assert_source_change_detected()
+
+    def test_source_drift_with_equivalent_target_spelling_is_still_injected(self):
+        anchor=self.root/'alias-anchor';anchor.mkdir()
+        self.target=anchor/'..'/'installed'
+        self.assert_source_change_detected()
 
     def test_hardlinked_payload_is_blocked_without_reading_its_bytes(self):
         self.install();path=self.target/'loop-demo/SKILL.md';path.unlink()
@@ -94,7 +106,7 @@ class DoctorSkillsTests(unittest.TestCase):
         os.link(outside,path)
         original=Path.read_bytes
         def guarded_read(p):
-            if p==path:raise AssertionError('must not read the aliased target')
+            if p.resolve()==path.resolve():raise AssertionError('must not read the aliased target')
             return original(p)
         with mock.patch.object(Path,'read_bytes',guarded_read):result=self.check()
         self.assertEqual(result['status'],'BLOCKED')

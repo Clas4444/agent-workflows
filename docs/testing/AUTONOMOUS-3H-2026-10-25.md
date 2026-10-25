@@ -199,3 +199,32 @@ privilege skip, unchanged inputs. These publication reports supersede the
 pre-normalization maps: [3.12](sessions/autonomous-3h-batch1-publish-312.json),
 [3.14](sessions/autonomous-3h-batch1-publish-314.json). The staged whitespace gate
 now returns zero, and published hash indexes match the exact export bytes.
+
+## First exact-head CI failure and portability repair
+
+The first pushed tip was `8b21ea67df6aa236afa11cf46c46c7e5f5378a6f`.
+[Its CI](https://github.com/Clas4444/loop-skills-repository/actions/runs/40184258944)
+passed both Ubuntu jobs but failed both Windows jobs at the source-drift injection
+test. All other executed tests, including lifecycle tests, passed in those logs.
+The injection compared an unresolved fixture path against the doctor's resolved
+target; an equivalent path spelling could therefore make the injection a no-op.
+A local anchor/../installed reproduction gives the same failure. The exact original
+VM temp spelling was not retained, so a specific 8.3 spelling remains inference.
+
+The test now compares resolved identities and requires the mutation hook to run
+exactly once. A new equivalent-target test exercises that boundary. No production
+hash check or expected BLOCKED assertion changed. Twelve doctor tests pass on
+both local interpreters. [Failure excerpts and repair evidence](../evidence/autonomous-3h-20261025/batch1-ci/)
+preserve the failed CI rather than hiding it. The corrected head still requires
+its own full pinned campaigns and exact-head CI before release success is claimed.
+
+After the portability repair, both local interpreters passed all twelve gates with
+292 discovered tests, 291 passed and one local Windows file-symlink privilege skip.
+Reports: [3.12](sessions/autonomous-3h-ci-repair-312.json),
+[3.14](sessions/autonomous-3h-ci-repair-314.json). These observations do not replace
+new-head CI; a final export verifies the publication bytes before the corrective push.
+
+The corrective staged export passed all twelve gates (292 discovered, 291 passed,
+one local Windows privilege skip), with unchanged inputs. [Corrective export map](sessions/autonomous-3h-ci-repair-export.json).
+The next head is eligible for a corrective push after blob verification; its remote
+CI must independently confirm Windows and Ubuntu before the batch is called green.

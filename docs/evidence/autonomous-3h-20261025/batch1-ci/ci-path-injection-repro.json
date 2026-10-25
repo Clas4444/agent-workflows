@@ -1,0 +1,5 @@
+{
+  "reproduced": true,
+  "scenario": "equivalent lexical target spelling is normalized by production, but equality-based fault injection compares unresolved path",
+  "failure": "'PASS' != 'BLOCKED'\n- PASS\n+ BLOCKED\n"
+}

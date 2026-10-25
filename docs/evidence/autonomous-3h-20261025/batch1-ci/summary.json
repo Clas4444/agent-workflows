@@ -1,0 +1,21 @@
+{
+  "session_id": "autonomous-3h-20261025T092231Z",
+  "failed_head": "8b21ea67df6aa236afa11cf46c46c7e5f5378a6f",
+  "ci_run": 40184258944,
+  "ci_url": "https://github.com/Clas4444/loop-skills-repository/actions/runs/40184258944",
+  "observed_jobs": {
+    "ubuntu311": "PASS",
+    "ubuntu312": "PASS",
+    "windows311": "FAIL",
+    "windows312": "FAIL"
+  },
+  "failing_test": "test_source_change_during_diagnosis_cannot_finish_pass",
+  "classification": "TEST_FIXTURE_PORTABILITY_BUG",
+  "reproducer": "Set target to an equivalent anchor/../installed spelling; production resolves it, old injection compares raw spelling and never fires. The same expected BLOCKED assertion fails.",
+  "fix": "Compare resolved paths and assert the source-drift injection executed exactly once; add noncanonical-target regression. No production logic or existing acceptance expectation relaxed.",
+  "limits": [
+    "Exact temporary-path spelling in the original GitHub VM was not logged, so 8.3 aliasing is an inference, not separately verified.",
+    "New local12doctor tests pass on312/314; exact new-head CI must still be checked.",
+    "Real POSIX lifecycle execution passed in both Ubuntu jobs; this is deterministic CI, not model runtime."
+  ]
+}

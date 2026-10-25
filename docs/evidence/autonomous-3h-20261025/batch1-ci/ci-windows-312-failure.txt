@@ -1,0 +1,14 @@
+2026-10-25T10:20:16.1175071Z FAIL: test_source_change_during_diagnosis_cannot_finish_pass (test_doctor_skills.DoctorSkillsTests.test_source_change_during_diagnosis_cannot_finish_pass)
+2026-10-25T10:20:16.1176252Z ----------------------------------------------------------------------
+2026-10-25T10:20:16.1177096Z Traceback (most recent call last):
+2026-10-25T10:20:16.1184444Z   File "<ci-workspace>\tests\test_doctor_skills.py", line 87, in test_source_change_during_diagnosis_cannot_finish_pass
+2026-10-25T10:20:16.1185191Z     self.assertEqual(result['status'],'BLOCKED')
+2026-10-25T10:20:16.1185517Z AssertionError: 'PASS' != 'BLOCKED'
+2026-10-25T10:20:16.1185765Z - PASS
+2026-10-25T10:20:16.1185997Z + BLOCKED
+2026-10-25T10:20:16.1186413Z
+2026-10-25T10:20:16.1186575Z
+2026-10-25T10:20:16.1186732Z ----------------------------------------------------------------------
+2026-10-25T10:20:16.1187066Z Ran 291 tests in 63.470s
+2026-10-25T10:20:16.1187224Z
+2026-10-25T10:20:16.1187319Z FAILED (failures=1)

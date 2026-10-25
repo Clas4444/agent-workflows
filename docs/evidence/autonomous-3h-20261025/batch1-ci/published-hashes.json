@@ -1,0 +1,12 @@
+{
+  "algorithm": "sha256",
+  "scope": "Sanitized UTF8LF, trailing whitespace normalized; index excludes itself.",
+  "files": {
+    "ci-path-injection-repro.json": "6a379f59ef7b796d22f8a51e808d4c0f1d66f28a6540282d5a3a37e511c8d407",
+    "ci-windows-311-failure.txt": "30340a46fe62753556b6acbbaf0122cd2249002d7ad5214040e8c0090f0d7203",
+    "ci-windows-312-failure.txt": "8dcc95a55ba386831066fba7eb98a0518132253056df40614a9f759fe7dccb0c",
+    "doctor-ci-portability-312.txt": "8b047132c1e2585acd6ae837e7849db0b75fe3a3d1ff5e4df92e36929fb4422e",
+    "doctor-ci-portability-314.txt": "e21aa41c92e0c97c3ccb5dae98c8ebb8df7985c5b43a2ebead75efd5afc49a2d",
+    "summary.json": "2069fa10a8e126634e17c93f7837c9abadc02574fdb7a6ee1d36aeaa2b1b5c59"
+  }
+}
