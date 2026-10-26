@@ -27,6 +27,7 @@ python scripts/catalog.py
 python scripts/routing_check.py
 python scripts/discovery.py
 python scripts/workflows.py
+python scripts/docs_check.py
 python scripts/install_skills.py --list
 python scripts/doctor_skills.py --all --target .github/skills
 python scripts/skill_resources.py

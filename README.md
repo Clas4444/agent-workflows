@@ -4,7 +4,7 @@
 specific outcome, work through a small batch, check the result and leave a useful
 checkpoint. Choose a focused skill or a small installation bundle.
 
-Experimental version **1.10.0-experimental** · 15 groups · 14 bundles · Python 3.11+
+Experimental version **1.10.1-experimental** · 15 groups · 14 bundles · Python 3.11+
 for repository tools. These are portable instructions and local helpers; your
 agent host supplies execution tools and permissions.
 
@@ -125,6 +125,7 @@ python scripts/catalog.py
 python scripts/routing_check.py
 python scripts/discovery.py
 python scripts/workflows.py
+python scripts/docs_check.py
 python scripts/install_skills.py --list
 python scripts/doctor_skills.py --all --target .github/skills
 python scripts/skill_resources.py

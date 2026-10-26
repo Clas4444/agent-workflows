@@ -14,6 +14,7 @@ python scripts/catalog.py
 python scripts/routing_check.py
 python scripts/discovery.py
 python scripts/workflows.py
+python scripts/docs_check.py
 python scripts/install_skills.py --list
 python scripts/doctor_skills.py --all --target .github/skills
 python scripts/skill_resources.py
@@ -32,6 +33,7 @@ git diff --check
 | Catalog/routing | Exact group coverage, generated catalog, fixed primary-route coverage | An actual model chose the correct skill |
 | Discovery | Catalog and requested UI metadata match sources; exact aliases and bundles resolve | Native picker matching, slash registration or task execution |
 | Workflows | Known skill names, valid role presets, matching Markdown/SVG | PNG accuracy or best toolkit for every user |
+| Documentation navigation | Local inline file/image targets and supported Markdown heading fragments, including case spelling | External URL reachability, rendering, factual accuracy or every Markdown dialect |
 | Sync check | Exact bundled runner/copy integrity under the selected root | User-wide installation or client activation |
 | Install doctor | Selected managed payload identity, missing/stale files and observed source drift | Host discovery, execution, or unmanaged extra files |
 | Published evidence indexes | Declared public artifact bytes still match their recorded SHA256 references | Authorship, actual execution, truth of prose, or unindexed artifacts |
@@ -41,6 +43,40 @@ CI repeats the gates on Ubuntu and Windows with Python 3.11 and 3.12. Inspect th
 actual run at the tested head SHA; local PASS cannot be substituted for remote CI.
 Windows may lack file-symlink privileges: record a skip explicitly and use the
 Ubuntu matrix result for that executed path. Do not silently drop skipped tests.
+
+## Documentation navigation
+
+```text
+python scripts/docs_check.py
+python -m scripts.docs_check --json
+```
+
+The checker reads root Markdown files plus `docs/` and `schemas/` recursively.
+It validates local inline links/images, repository-root paths, URL-encoded paths,
+case-sensitive spelling and local Markdown heading anchors. Diagnostics retain
+source line numbers. Fenced code, inline code and HTML comments are excluded.
+Below-root filesystem aliases and paths escaping the repository are rejected;
+the tool does not execute source text, fetch URLs or write reports/files.
+
+Supported navigation includes ordinary or angle-bracket destinations, optional
+quoted titles, one nested parenthesis pair in a destination, and labels spanning
+lines. Headings support basic ATX/Setext markup, duplicate suffixes and explicit
+`<a name="...">`/`id` anchors. Unsupported inline/reference-style patterns are
+reported for review; use ordinary inline links in repository documentation.
+This is a scoped checker, not a complete CommonMark/GitHub renderer or HTML
+sanitizer. For unusual markup, confirm the actual host rendering separately.
+The basic heading conventions follow [GitHub's section-link documentation](https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax#section-links).
+
+JSON output keeps `external_urls: NOT_RUN` and counts external links without
+fetching them. Non-Markdown fragments such as SVG element IDs are counted as
+unchecked; file existence alone does not validate those fragment targets.
+PASS applies only to the named supported local-navigation checks.
+
+CI runs the standalone checker. The fixed fourteen-gate session recipe retains
+its existing command list; its unit gate also exercises the real repository
+navigation check. Run the standalone command explicitly when recording a docs
+review. The campaign's declared input pin remains its documented scope, not an
+atomic snapshot of every file mentioned by a historical report.
 
 ## Behavioral skill exercises
 

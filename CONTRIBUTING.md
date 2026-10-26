@@ -54,6 +54,7 @@ python scripts/catalog.py
 python scripts/routing_check.py
 python scripts/discovery.py
 python scripts/workflows.py
+python scripts/docs_check.py
 python scripts/install_skills.py --list
 python scripts/doctor_skills.py --all --target .github/skills
 python scripts/skill_resources.py
@@ -77,5 +78,9 @@ For the per-bundle workflow atlas, edit `docs/assets/bundles/workflows.json`,
 regenerate with `python scripts/bundle_workflows.py --write`, then render/check
 every changed diagram. Membership comes from `skill-bundles.json`, not a second
 hand-maintained list. The regular workflows gate also checks this atlas.
+
+Run `python scripts/docs_check.py` after changing Markdown links or headings.
+It checks local inline destinations and Markdown fragments without network
+access; see the [syntax and scope](docs/testing/TESTING.md#documentation-navigation).
 
 Need-bundle changes belong in `skill-bundles.json`; test subset installs as well as full synchronization. Use a fresh session-pinned campaign when recording final verification, and do not reuse a previous session's PASS after editing inputs.

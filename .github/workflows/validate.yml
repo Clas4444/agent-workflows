@@ -35,6 +35,8 @@ jobs:
         run: python scripts/workflows.py
       - name: Verify every bundle iteration diagram and selection guide
         run: python scripts/bundle_workflows.py
+      - name: Check local documentation links and heading anchors
+        run: python scripts/docs_check.py
       - name: Validate need-based installation bundles
         run: python scripts/install_skills.py --list
       - name: Diagnose managed canonical payloads without host activation

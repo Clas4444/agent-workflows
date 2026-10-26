@@ -23,6 +23,7 @@ skill directories remain flat; historical evidence is versioned independently.
 | `scripts/smoke/fixtures.py` | Synthetic task inputs, preparation and source snapshots |
 | `scripts/smoke/grading.py` | Artifact grading and bounded verification subprocesses |
 | `scripts/workflows.py`, `workflow-presets.json` | Inventory-checked role guidance and editable SVG |
+| `scripts/docs_check.py` | Read-only local Markdown file/image and heading navigation checks; no URL fetching or renderer claim |
 | `scripts/install_skills.py`, `scripts/skill_bundles.py`, `skill-bundles.json` | Explicit need-based selection using the existing sync engine |
 | `scripts/doctor_skills.py` | Read-only selected-install diagnosis with observed before/after reference pins; no host discovery or writes |
 | `scripts/verification_session.py` | Fixed gate campaign with session identity and before/after verification-input hashes |

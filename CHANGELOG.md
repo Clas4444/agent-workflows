@@ -1,5 +1,12 @@
 # Changelog
 
+## 1.10.1-experimental — 2026-10-26
+
+- Add a read-only local documentation link/heading checker with case, path,
+  markup and Unicode-terminal regressions; integrate it into CI and contributor
+  instructions. Keep the fourteen-gate campaign recipe and existing CLI contracts.
+- Preserve all existing illustrations, skill instructions and bundle membership.
+
 ## 1.10.0-experimental — 2026-10-26
 
 - Add an illustrated workflow atlas for all fourteen bundles, with request
