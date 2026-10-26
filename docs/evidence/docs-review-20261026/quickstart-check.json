@@ -1,0 +1,104 @@
+{
+  "started_at": "2026-10-26T12:39:35.006770+00:00",
+  "finished_at": "2026-10-26T12:39:35.932769+00:00",
+  "status": "PASS",
+  "python": "3.14.7",
+  "platform": "win32",
+  "scope": "Fresh disposable path containing a space; documented support install/check/doctor and installed gateway lookup. No host or model invocation.",
+  "reference_commit": "c6255a192c56c633c21889886c6080230bb774aa",
+  "working_tree": "Documentation edits present; no production code or instruction edits in this session.",
+  "selected_skills": [
+    "loop",
+    "loop-intake",
+    "loop-support",
+    "loop-write"
+  ],
+  "steps": [
+    {
+      "id": "01-before-check",
+      "command": [
+        "python",
+        "scripts/install_skills.py",
+        "--bundle",
+        "support",
+        "--target",
+        "<fixture>/.agents/skills",
+        "--check"
+      ],
+      "expected_exit": 1,
+      "observed_exit": 1,
+      "status": "PASS"
+    },
+    {
+      "id": "02-install",
+      "command": [
+        "python",
+        "scripts/install_skills.py",
+        "--bundle",
+        "support",
+        "--target",
+        "<fixture>/.agents/skills"
+      ],
+      "expected_exit": 0,
+      "observed_exit": 0,
+      "status": "PASS"
+    },
+    {
+      "id": "03-after-check",
+      "command": [
+        "python",
+        "scripts/install_skills.py",
+        "--bundle",
+        "support",
+        "--target",
+        "<fixture>/.agents/skills",
+        "--check"
+      ],
+      "expected_exit": 0,
+      "observed_exit": 0,
+      "status": "PASS"
+    },
+    {
+      "id": "04-doctor",
+      "command": [
+        "python",
+        "scripts/doctor_skills.py",
+        "--bundle",
+        "support",
+        "--target",
+        "<fixture>/.agents/skills"
+      ],
+      "expected_exit": 0,
+      "observed_exit": 0,
+      "status": "PASS"
+    },
+    {
+      "id": "05-installed-lookup",
+      "command": [
+        "python",
+        "<fixture>/.agents/skills\\loop\\scripts\\find_skill.py",
+        "resolve",
+        "--query",
+        "bundle support"
+      ],
+      "expected_exit": 0,
+      "observed_exit": 0,
+      "status": "PASS"
+    }
+  ],
+  "initial_check": "Exit 1 was expected for absent selected skills; not an installation success.",
+  "after_check_differences": [],
+  "unrelated_sentinel_preserved": true,
+  "only_selected_skills_installed": true,
+  "installed_lookup_missing_skills": [],
+  "execution": "NONE",
+  "native_discovery": "NOT_RUN",
+  "model_runtime": "NOT_RUN",
+  "source_hashes": {
+    "docs/guides/START-HERE.md": "25e0788f52ffeca0623712e7f628b8ab0f121edccbfd5ba20912ec0c4761bd64",
+    "scripts/install_skills.py": "ee7487d447623db76e552ffbf67f040baef8c210f64945a170a21e42f17fbcd8",
+    "scripts/doctor_skills.py": "f99cdf90ea4cc6b4e8bd89f99ff0ed90fb1c020b69801ab0398c1b730583168e",
+    ".github/skills/loop/scripts/find_skill.py": "59c7c24ed57ae8bbd78d479a58b8df0feb6e1efeecf410cb3cb73b18388a2495",
+    "skill-bundles.json": "38bb5e4eb4cc36633d2ac3cd45ee58597cc0bc20c54913bad17b9917cc69e5fa"
+  }
+}

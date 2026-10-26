@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="680" viewBox="0 0 1200 680" role="img" aria-labelledby="title desc">
+  <title id="title">Recorded verification scope for Loop 1.10</title>
+  <desc id="desc">Release c6255a1: two local final-export campaigns each passed 14 gates with 317 passed tests and one skip; 14 bundle journeys and all 53 skill payload installations were checked; four explicit-load model trials retain one failed original work trial and three passing artifact results. Native discovery, office engines and broad reliability remain untested. Four release CI jobs succeeded.</desc>
+  <defs>
+    <style>
+      text { font-family: Arial, Helvetica, sans-serif; fill: #16313b; }
+      .eyebrow { font-size: 14px; font-weight: 700; letter-spacing: 2px; fill: #126957; }
+      .title { font-size: 35px; font-weight: 700; }
+      .sub { font-size: 18px; fill: #4f6770; }
+      .heading { font-size: 21px; font-weight: 700; }
+      .body { font-size: 18px; fill: #415d67; }
+      .tag { font-size: 14px; font-weight: 700; fill: #126957; }
+      .pending { fill: #865f1f; }
+      .small { font-size: 16px; fill: #415d67; }
+    </style>
+  </defs>
+  <rect width="1200" height="680" rx="22" fill="#f2f6f4"/>
+  <text x="38" y="45" class="eyebrow">EVIDENCE / 1.10.0-EXPERIMENTAL</text>
+  <text x="38" y="92" class="title">What was checked, and at which layer?</text>
+  <text x="38" y="126" class="sub">Recorded release c6255a1 · Read the linked artifacts for exact inputs, dates and limits.</text>
+
+  <g fill="#fff" stroke="#ceddd8" stroke-width="1.5">
+    <rect x="38" y="159" width="1124" height="96" rx="12"/>
+    <rect x="38" y="271" width="1124" height="96" rx="12"/>
+    <rect x="38" y="383" width="1124" height="96" rx="12"/>
+    <rect x="38" y="495" width="1124" height="96" rx="12"/>
+  </g>
+  <g fill="#e0eee7">
+    <rect x="58" y="179" width="130" height="29" rx="6"/>
+    <rect x="58" y="291" width="130" height="29" rx="6"/>
+    <rect x="58" y="403" width="130" height="29" rx="6"/>
+  </g>
+  <rect x="58" y="515" width="130" height="29" rx="6" fill="#f6ead0"/>
+
+  <text x="76" y="199" class="tag">LOCAL GATES</text>
+  <text x="210" y="192" class="heading">Two final exports: 14/14 gates each</text>
+  <text x="210" y="224" class="body">Python 3.12 / 3.14: 318 discovered; 317 PASS + 1 Windows symlink SKIP.</text>
+  <text x="58" y="242" class="small">Structure + regressions</text>
+
+  <text x="70" y="311" class="tag">INSTALLATION</text>
+  <text x="210" y="304" class="heading">14 bundle journeys; 53 skills in three layouts</text>
+  <text x="210" y="336" class="body">117 payloads per layout; 351 original backup byte comparisons passed.</text>
+  <text x="58" y="354" class="small">Files + preservation</text>
+
+  <text x="74" y="423" class="tag">MODEL TRIALS</text>
+  <text x="210" y="416" class="heading">Four explicit-load calls, including a retained failure</text>
+  <text x="210" y="448" class="body">Support PASS · Knowledge PASS · Work FAIL · Schema-explicit work PASS.</text>
+  <text x="58" y="466" class="small">Fixed artifact criteria</text>
+
+  <text x="86" y="535" class="tag pending">NOT_RUN</text>
+  <text x="210" y="528" class="heading">Native discovery, office engines and broad reliability</text>
+  <text x="210" y="560" class="body">No native picker/slash proof, formula recalculation or office artifact rendering.</text>
+  <text x="58" y="578" class="small">Separate missing evidence</text>
+
+  <text x="38" y="631" class="body">Release CI: 4/4 jobs succeeded on Ubuntu / Windows with Python 3.11 / 3.12.</text>
+  <text x="38" y="659" class="small">These counts describe recorded checks. They are not an all-skill success rate or an A/B benchmark.</text>
+</svg>

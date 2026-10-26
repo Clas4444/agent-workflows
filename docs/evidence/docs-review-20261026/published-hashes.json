@@ -1,0 +1,10 @@
+{
+  "algorithm": "sha256",
+  "scope": "Reviewed documentation-review observations; byte identity only, not execution attestation.",
+  "files": {
+    "quickstart-check.json": "6495d2b57eb427e2dbd88f00c8fbb71a7832abd21980ac5db8db8b6161cf15cd",
+    "README.md": "94112ef42a9df79d05306926841baa11cfe6534d1b43b2f4e8217f6bd0e2ecde",
+    "release-ci.json": "2d7d84942a1dc51766a2a96b3a47561f90abbc6876ab4901a0872ccae3b64dac",
+    "release-claim-check.json": "5de45aafea2e5774acd22181b82e326b4de0b379aaef3af498e7064f4ac3e090"
+  }
+}

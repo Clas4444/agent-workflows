@@ -1,15 +1,17 @@
 # Contributing
 
-This repository distributes one portable set of 39 workflow skills in three
+This repository distributes one portable set of 53 workflow skills in three
 native project layouts. Contributions should improve clarity or correctness
 without changing a workflow's responsibility or silently widening its scope.
 
 ## Source and synchronization
 
 1. Edit `.github/skills/<skill-name>/SKILL.md`.
-2. Copy that exact file to the matching `.agents/skills/` and `.claude/skills/`
-   directories.
-3. Confirm all three SHA-256 hashes match.
+2. Register new supporting files in `skill-resources.json`. If selection metadata
+   changes, regenerate the gateway catalog/UI with `python scripts/discovery.py --write`.
+3. Synchronize complete payloads with `python scripts/sync_skills.py --target .agents/skills`
+   and `python scripts/sync_skills.py --target .claude/skills`. Confirm matching
+   instructions and declared resources across all three roots.
 4. Update documentation when the workflow, command, output, or limitation
    changes.
 
@@ -50,9 +52,12 @@ python scripts/validate.py
 python -m scripts.validate --profile format
 python scripts/catalog.py
 python scripts/routing_check.py
+python scripts/discovery.py
 python scripts/workflows.py
 python scripts/install_skills.py --list
+python scripts/doctor_skills.py --all --target .github/skills
 python scripts/skill_resources.py
+python scripts/evidence_indexes.py
 python scripts/sync_skills.py --target .github/skills --check
 python scripts/runtime_smoke.py --help
 python -m compileall -q scripts tests
@@ -67,5 +72,10 @@ Use an installed Python 3.11+ interpreter; on Windows, `py -3` is an alternative
 only when that launcher is present. See [test procedure](docs/testing/TESTING.md)
 for gate scopes and skip handling. Edit `workflow-presets.json` and regenerate
 with `python scripts/workflows.py --write` when role recommendations change.
+
+For the per-bundle workflow atlas, edit `docs/assets/bundles/workflows.json`,
+regenerate with `python scripts/bundle_workflows.py --write`, then render/check
+every changed diagram. Membership comes from `skill-bundles.json`, not a second
+hand-maintained list. The regular workflows gate also checks this atlas.
 
 Need-bundle changes belong in `skill-bundles.json`; test subset installs as well as full synchronization. Use a fresh session-pinned campaign when recording final verification, and do not reuse a previous session's PASS after editing inputs.

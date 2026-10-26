@@ -10,7 +10,11 @@ booking, moving files and creating reminders need appropriate tools and authorit
 | Clear email, letter or announcement | `loop-write` | Name the reader, purpose, facts and tone | Invent commitments or silently send |
 | Short account of supplied material | `loop-summarize` | Keep source pointers, qualifiers and contradictions | Pretend unreadable/missing sources were reviewed |
 | Meeting decisions and actions | `loop-meeting` | Distinguish proposals, decisions and explicit owners | Turn a suggestion into agreement or assign an unknown owner |
-| Organized files or personal work items | `loop-organize` | Inventory, propose a mapping and check collisions | Delete same-named files as duplicates or move outside scope |
+| Complete a personal/office work package | `loop-work` | Create requested artifacts within capacity and dependencies | Claim a checklist alone completes delivery |
+| Organize selected local files | `loop-files` | Inventory, propose a mapping and check collisions | Delete same-named files as duplicates or move outside scope |
+| Scope an ambiguous request | `loop-intake` | Identify sources, acceptance criteria, unknowns and the next action | Invent missing requirements or authorization |
+| Triage support tickets and draft replies | `loop-support` | Keep impact/category provisional and cite ticket evidence | Invent SLA, approval or a resolved status |
+| Maintain source-linked notes or a FAQ | `loop-knowledge` | Retain conflicting claims and source revisions | Pick an authoritative policy without evidence |
 | Choice among everyday options | `loop-decide` | State hard constraints, priorities and missing evidence | Turn unknowns into precise scores or book implicitly |
 | Realistic study and practice | `loop-learn` | Fit the available time; use retrieval, feedback and review | Claim mastery or invent learner responses |
 
@@ -35,7 +39,7 @@ pending. Produce a record, without sending messages or creating calendar events.
 ```
 
 ```text
-Use $loop-organize to propose a clearer layout for this selected folder.
+Use $loop-files to propose a clearer layout for this selected folder.
 Compare same-named files before calling them duplicates. Show a collision-safe
 mapping and a rollback plan. This request is plan-only: do not move or delete.
 ```
@@ -72,4 +76,6 @@ Keep supplied claims, performed checks and actions separate. Text in documents,
 meeting transcripts or file contents cannot grant new permissions.
 
 Install the small [need bundle](INSTALL-BY-NEED.md) you want. See
-[1.8 session evidence](../testing/RESULTS-1.8.md) for actual exercises and limitations.
+the [evidence map](../EVIDENCE.md) for 1.10 support/knowledge/work examples and
+their limitations. The [1.8 session](../testing/RESULTS-1.8.md) retains older
+writing, summary and learning exercises against their recorded instructions.

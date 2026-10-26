@@ -1,7 +1,8 @@
 # Skill usage
 
-These skills provide bounded workflows for coding agents. They do not grant
-permissions or replace project-specific instructions. Invoke one skill with a
+These skills guide bounded everyday work and software development in an agent
+host. They do not grant permissions or replace project-specific instructions.
+Invoke one skill with a
 clear target and desired outcome; let the host apply its normal approval rules.
 
 ## Select a skill
@@ -16,40 +17,44 @@ interface design, `loop-mcp-test` for offline or authorized live contract checks
 and `loop-mcp-security` for MCP-specific trust/authorization review. A local
 fixture PASS does not establish MCP transport or authentication conformance.
 
-Browse the eight functional groups in [the grouped catalog](SKILL-GROUPS.md)
-or the README. Installation paths remain unchanged.
+Browse the fifteen functional groups in [the grouped catalog](SKILL-GROUPS.md)
+or the README for all 53 skills. The table below is a selection of common
+workflows; installation paths remain unchanged. Examples use Codex dollar skill
+mentions after discovery. Other hosts may use different invocation syntax;
+native slash aliases are not registered by this repository. See the
+[finder guide](guides/SKILL-FINDER.md).
 
 | Skill | Use it for | Typical invocation |
 |---|---|---|
-| `loop-review` | Scope, evaluate, and report on a change or repository | `/loop-review 10m repository` |
-| `loop-code` | Implement an authorized feature, fix, refactor, or configuration change | `/loop-code 15m fix the parser tests` |
-| `loop-diagnose` | Reproduce and isolate an unexpected failure | `/loop-diagnose 15m failing command` |
-| `loop-diagnose-repro` | Minimize a repeatable reproducer | `/loop-diagnose-repro 15m import crash` |
-| `loop-diagnose-performance` | Measure a slow or resource-heavy path | `/loop-diagnose-performance 20m slow endpoint` |
-| `loop-diagnose-regression` | Compare known-good and failing states | `/loop-diagnose-regression 20m recent regression` |
-| `loop-research` | Investigate a technical question | `/loop-research 10m validation options` |
-| `loop-research-repo` | Evaluate repositories before adoption | `/loop-research-repo 15m candidate repositories` |
-| `loop-research-tools` | Evaluate tools, extensions, skills, or MCP servers | `/loop-research-tools 15m testing tools` |
-| `loop-test` | Select and run a bounded project test strategy | `/loop-test 10m API change` |
-| `loop-test-unit` | Test one module or function | `/loop-test-unit 10m parser module` |
-| `loop-test-integration` | Test process, file, service, or database boundaries | `/loop-test-integration 15m upload flow` |
-| `loop-test-coverage` | Improve meaningful coverage | `/loop-test-coverage 15m authentication` |
-| `loop-docs` | Audit and update documentation | `/loop-docs 10m usage guide` |
-| `loop-skill-create` | Create or maintain a synchronized skill | `/loop-skill-create 20m release workflow` |
+| `loop-review` | Scope, evaluate, and report on a change or repository | `$loop-review 10m repository` |
+| `loop-code` | Implement an authorized feature or configuration change | `$loop-code 15m add the requested JSON export` |
+| `loop-diagnose` | Investigate an unexplained symptom with competing hypotheses | `$loop-diagnose 15m failing command` |
+| `loop-diagnose-repro` | Minimize a repeatable reproducer | `$loop-diagnose-repro 15m import crash` |
+| `loop-diagnose-performance` | Measure a slow or resource-heavy path | `$loop-diagnose-performance 20m slow endpoint` |
+| `loop-diagnose-regression` | Compare known-good and failing states | `$loop-diagnose-regression 20m recent regression` |
+| `loop-research` | Investigate a scoped everyday or technical question | `$loop-research 10m validation options` |
+| `loop-research-repo` | Evaluate repositories before adoption | `$loop-research-repo 15m candidate repositories` |
+| `loop-research-tools` | Evaluate tools, extensions, skills, or MCP servers | `$loop-research-tools 15m testing tools` |
+| `loop-test` | Select and run a bounded project test strategy | `$loop-test 10m API change` |
+| `loop-test-unit` | Test one module or function | `$loop-test-unit 10m parser module` |
+| `loop-test-integration` | Test process, file, service, or database boundaries | `$loop-test-integration 15m upload flow` |
+| `loop-test-coverage` | Improve meaningful coverage | `$loop-test-coverage 15m authentication` |
+| `loop-docs` | Audit and update documentation | `$loop-docs 10m usage guide` |
+| `loop-skill-create` | Create or maintain a synchronized skill | `$loop-skill-create 20m release workflow` |
 | `loop-orchestrate` | Run an explicitly configured headless command | `py -3 scripts/run_loop.py ...` |
-| `loop-prompt` | Run an initial prompt and bounded follow-ups | `/loop-prompt 3 review this change` |
-| `loop-debug` | Reproduce, repair and regression-test a specific bug | `/loop-debug 15m fix parser rejecting valid input` |
-| `loop-security` | Review trust boundaries and verify scoped defensive fixes | `/loop-security 20m local file upload handler` |
-| `loop-refactor` | Improve structure while preserving behavior | `/loop-refactor 15m simplify parser without API changes` |
-| `loop-ci` | Trace and repair a failed CI job | `/loop-ci 15m failed Windows test job` |
-| `loop-release` | Prepare and smoke-test a release candidate | `/loop-release 20m verify candidate version 1.2.0-experimental` |
-| `loop-plan` | Break a scoped request into verifiable dependent batches | `/loop-plan 10m plan a JSON export command` |
-| `loop-dependencies` | Maintain approved versions and lockfile consistency | `/loop-dependencies 15m update the approved package` |
-| `loop-migrate` | Change persisted formats with dry-run and rollback | `/loop-migrate 20m upgrade local JSON fixtures to schema v2` |
-| `loop-test-e2e` | Exercise a complete real entry-point journey | `/loop-test-e2e 15m test CLI success and invalid input` |
-| `loop-evaluate` | Score versioned workflows against a fixed rubric | `/loop-evaluate 15m compare supplied baseline and candidate outputs` |
-| `loop-test-adversarial` | Challenge declared invariants and prove false PASS results in isolated fixtures | `/loop-test-adversarial test metadata and synchronization boundaries without touching real installations` |
-| `loop-test-compatibility` | Check a declared platform/version/adapter matrix without inventing support | `/loop-test-compatibility compare available CLI entry points and mark unavailable hosts NOT_RUN` |
+| `loop-prompt` | Run an initial prompt and bounded follow-ups | `$loop-prompt 3 review this change` |
+| `loop-debug` | Reproduce, repair and regression-test a specific bug | `$loop-debug 15m fix parser rejecting valid input` |
+| `loop-security` | Review trust boundaries and verify scoped defensive fixes | `$loop-security 20m local file upload handler` |
+| `loop-refactor` | Improve structure while preserving behavior | `$loop-refactor 15m simplify parser without API changes` |
+| `loop-ci` | Trace and repair a failed CI job | `$loop-ci 15m failed Windows test job` |
+| `loop-release` | Prepare and smoke-test a release candidate | `$loop-release 20m verify candidate version 1.10.0-experimental` |
+| `loop-plan` | Break a scoped request into verifiable dependent batches | `$loop-plan 10m plan a JSON export command` |
+| `loop-dependencies` | Maintain approved versions and lockfile consistency | `$loop-dependencies 15m update the approved package` |
+| `loop-migrate` | Change persisted formats with dry-run and rollback | `$loop-migrate 20m upgrade local JSON fixtures to schema v2` |
+| `loop-test-e2e` | Exercise a complete real entry-point journey | `$loop-test-e2e 15m test CLI success and invalid input` |
+| `loop-evaluate` | Score versioned workflows against a fixed rubric | `$loop-evaluate 15m compare supplied baseline and candidate outputs` |
+| `loop-test-adversarial` | Challenge declared invariants and prove false PASS results in isolated fixtures | `$loop-test-adversarial test metadata and synchronization boundaries without touching real installations` |
+| `loop-test-compatibility` | Check a declared platform/version/adapter matrix without inventing support | `$loop-test-compatibility compare available CLI entry points and mark unavailable hosts NOT_RUN` |
 
 ## Recommended sequences
 
@@ -62,7 +67,7 @@ acceptance cases. Contract-text tests do not prove an agent follows a skill.
 
 For a code change:
 
-1. `loop-review` — define scope, risks, and acceptance criteria.
+1. Establish scope and acceptance criteria; use `loop-plan` when planning is needed.
 2. `loop-code` — implement one small authorized batch.
 3. `loop-test` or a focused testing skill — verify behavior.
 4. `loop-docs` — update commands or user-facing behavior.
@@ -83,9 +88,9 @@ evidence, changed files, remaining gaps, and the next action. Stop when useful
 authorized work ends, a safety boundary is reached, the deadline expires, or
 materially identical results repeat more than three times.
 
-## `/loop-prompt`
+## `$loop-prompt`
 
-`/loop-prompt 3 task` means one initial invocation followed by at most three
+`$loop-prompt 3 task` means one initial invocation followed by at most three
 agent-generated follow-ups. It does not guarantee four invocations. A timeout,
 failure, block, startup error, missing or malformed marker, duplicate prompt or
 result, safety boundary, or missing evidence stops the run.
@@ -116,7 +121,7 @@ Use `loop-workflow-project` for MVP-to-slice delivery, `loop-workflow-pr` for a 
 - `loop-write`: Everyday drafts; delivery is separate.
 - `loop-summarize`: Source-grounded summaries and coverage limits.
 - `loop-meeting`: Meeting decisions/actions without invented ownership.
-- `loop-organize`: Collision-safe organization with explicit move scope.
+- `loop-organize`: select files or work for an ambiguous organization request; it does not perform moves.
 - `loop-decide`: Conditional choices under stated priorities.
 - `loop-learn`: Feasible practice and learning plans without invented assessment.
 

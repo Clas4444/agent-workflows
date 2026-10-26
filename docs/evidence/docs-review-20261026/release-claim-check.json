@@ -1,0 +1,28 @@
+{
+  "observed_at": "2026-10-26T12:41:37.735671+00:00",
+  "status": "PASS",
+  "release_commit": "c6255a192c56c633c21889886c6080230bb774aa",
+  "method": "Read retained JSON and ZIP artifacts; compare all 718 identical session input pins with git cat-file --batch blobs at the exact release commit. No new model calls.",
+  "final_export_sessions": 2,
+  "gates_per_session": 14,
+  "discovered_per_session": 318,
+  "pass_per_session": 317,
+  "skip_per_session": 1,
+  "identical_input_pins": true,
+  "input_files_compared_to_git_blobs": 718,
+  "git_blob_mismatches": [],
+  "bundle_journeys": 14,
+  "layouts": 3,
+  "skills_per_layout": 53,
+  "payloads_per_layout": 117,
+  "backup_comparisons": 351,
+  "recorded_trial_outcomes": {
+    "support": "PASS",
+    "knowledge": "PASS",
+    "work": "FAIL",
+    "work-schema-explicit": "PASS"
+  },
+  "documented_json_excerpts_match_archive": true,
+  "release_ci_jobs": 4,
+  "limits": "Checks consistency and byte identity of retained evidence. Does not authenticate historical execution or establish native discovery, broad reliability, or current-checkout PASS."
+}

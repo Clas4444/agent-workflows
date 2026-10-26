@@ -1,12 +1,13 @@
 # Functional skill groups
 
-The catalog has **49 skills in thirteen groups**. `skill-groups.json` defines
+The catalog has **53 skills in fifteen groups**. `skill-groups.json` defines
 navigation membership; `skills-manifest.json` remains the installation inventory.
 Every manifest skill must occur in exactly one group. README tables are generated
 from this mapping and canonical descriptions.
 
 | Group | Reviewer checks |
 |---|---|
+| Skill selection and bundle lookup | Exact selectors, explicit missing installations and no claim of native slash registration |
 | Discovery and scoped planning | Primary sources, adoption constraints, acceptance criteria and non-implementation planning |
 | Implementation and maintenance | Authorized edits, preserved behavior, dependency/data rollback |
 | Debugging and diagnosis | Failing baseline, discriminating experiments, cause and regression evidence |
@@ -20,6 +21,7 @@ from this mapping and canonical descriptions.
 | Everyday decisions and learning | Hard constraints, conditional choices, realistic time budgets and actual learner assessment |
 | Tables and document artifacts | Explicit units, source preservation, complete payloads and separate format/layout checks |
 | MCP integration and tool trust | Pinned interface versions, tool acceptance contracts and scoped authorization boundaries |
+| Request intake and support triage | Source-backed acceptance brief, provisional ticket categories, unknown SLA/owners and draft-only replies |
 
 ## Check or update the catalog
 
@@ -38,7 +40,12 @@ Native roots `.github/skills`, `.agents/skills` and `.claude/skills` remain flat
 Moving skills into group subdirectories would change discovery and installation
 paths. Change navigation membership rather than moving native skill folders.
 
-## Adversarial workflow boundary
+## Historical notes (1.3–1.6)
+
+The notes below retain the scope and results of earlier updates. For the 1.10
+catalog and runtime status, use the README and [evidence map](EVIDENCE.md).
+
+### Adversarial workflow boundary
 
 `loop-test-adversarial` challenges declared contracts with isolated fixtures,
 independent oracles, valid controls and retained failures. `loop-security` covers
@@ -58,7 +65,7 @@ observability additions, see [taxonomy review 1.5](TAXONOMY-1.5.md).
 For context preparation, handoff and research-backed evaluation upgrades, see
 [research update 1.6](RESEARCH-1.6.md).
 
-## Verification of this update
+### Verification of the earlier grouping update
 
 On 2026-10-24, Windows/Python 3.12.14: **115 deterministic tests passed** in
 15.150 seconds. Full and format validation, catalog rendering/coverage, Python

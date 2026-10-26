@@ -1,13 +1,27 @@
 # Portable Loop Skills
 
-**53 bounded workflows for everyday work and coding agents.** Produce a useful
-result, verify what actually happened, and stop with a clear checkpoint.
-Experimental version **1.10.0-experimental**; instructions do not enforce permissions.
+**53 bounded workflows for everyday work and software development.** Give your agent a
+specific outcome, work through a small batch, check the result and leave a useful
+checkpoint. Choose a focused skill or a small installation bundle.
+
+Experimental version **1.10.0-experimental** · 15 groups · 14 bundles · Python 3.11+
+for repository tools. These are portable instructions and local helpers; your
+agent host supplies execution tools and permissions.
+
+![How Loop turns a request into a checked result](docs/assets/loop-workflow.svg)
+
+[Start here](docs/guides/START-HERE.md) ·
+[14 bundle workflow diagrams](docs/guides/BUNDLE-WORKFLOWS.md) ·
+[What has actually been tested](docs/EVIDENCE.md) ·
+[Install by need](docs/guides/INSTALL-BY-NEED.md) ·
+[Browse all skills](#skill-catalog)
 
 ## Quick start
 
-Choose the outcome you need. You can ask your agent to install the selected bundle;
-you do not need to code to use the everyday workflows.
+Open this repository in your agent host, then choose the outcome you need. You can
+ask your agent to install the selected bundle into another project; you do not
+need to code to use the everyday workflows. See [start here](docs/guides/START-HERE.md)
+for the full sequence, including a first prompt and expected output.
 
 | Your task | Start here | Small installation choice |
 |---|---|---|
@@ -21,6 +35,10 @@ you do not need to code to use the everyday workflows.
 | Study or compare everyday options | `loop-learn`, `loop-decide` | `learning`, `decisions` |
 | Implement or repair software | `loop-code` or `loop-debug` | `developer` |
 | Coordinate a software project | `loop-workflow-project` | `project` |
+
+Open the [bundle workflow atlas](docs/guides/BUNDLE-WORKFLOWS.md) for one image per
+bundle: when to choose it, why to iterate, the feedback/stop path, recommended
+checks and mistakes to avoid. Each image has an accessible text equivalent.
 
 ```text
 python scripts/install_skills.py --list
@@ -43,8 +61,11 @@ maintained native layouts; identical files do not prove equivalent host behavior
 
 ## Short names and bundles
 
-Find **Loop Code (lc)** or **Loop Debug (dbg)** in a supporting host picker, or use
-`$loop code ...`, `$loop lc ...`, `$loop bundle office ...`, `$loop bundle support ...`.
+On Codex hosts supporting dollar skill mentions, use `$loop code ...`,
+`$loop lc ...`, `$loop bundle office ...` or `$loop bundle support ...` after the
+selected skills are installed and discovered. The requested picker display names
+include **Loop Code (lc)** and **Loop Debug (dbg)**; actual picker matching has
+not been verified for this release.
 The gateway chooses the smallest needed workflow; bundles do not run every member.
 Native slash aliases and picker search depend on the host. See the
 [lookup and shortcut guide](docs/guides/SKILL-FINDER.md) for verified CLI forms,
@@ -64,12 +85,37 @@ actual paths, contents, units and outputs. Do not invoke every installed skill.
 `loop-organize` remains a selector for older/mixed requests; explicit file work
 now uses files, and personal/office deliverables use work.
 
-[Everyday examples](docs/guides/EVERYDAY-WORK.md) Â·
-[Work and artifact guide](docs/guides/WORK-AND-ARTIFACTS.md) Â·
-[Role toolkits and English visuals](docs/guides/ROLE-WORKFLOWS.md) Â·
+[Everyday examples](docs/guides/EVERYDAY-WORK.md) ·
+[Work and artifact guide](docs/guides/WORK-AND-ARTIFACTS.md) ·
+[Role toolkits and English visuals](docs/guides/ROLE-WORKFLOWS.md) ·
 [Practical prompts](docs/guides/WORKFLOW-EXAMPLES.md)
 
-## Verification
+## Evidence for 1.10
+
+Published commit: [`c6255a1`](https://github.com/Clas4444/loop-skills-repository/commit/c6255a192c56c633c21889886c6080230bb774aa).
+Results below belong to that release and the recorded fixtures, not every future
+checkout or every possible task.
+
+| Checked layer | Observed result | Inspect the evidence |
+|---|---|---|
+| Release CI | 4/4 jobs successful, Ubuntu/Windows × Python 3.11/3.12 | [GitHub Actions run](https://github.com/Clas4444/loop-skills-repository/actions/runs/40320619298) |
+| Final local export, Python 3.12 and 3.14 | Each: 14/14 gates; 318 tests discovered, 317 passed, 1 Windows symlink skip | [1.10 report and pinned sessions](docs/testing/RESULTS-1.10.md#final-verified-export) |
+| Installation | 14 bundle journeys; all 53 skills / 117 payloads per layout, 351 backup byte comparisons | [Installation records](docs/EVIDENCE.md#installation-evidence) |
+| Explicit-load Codex trials | Support PASS; knowledge PASS; original work FAIL retained; schema-explicit work retry PASS | [Inputs, outputs and limits](docs/EVIDENCE.md#behavioral-evidence) |
+| Native discovery and broad reliability | NOT_RUN | [Untested scope](docs/EVIDENCE.md#what-remains-unverified) |
+
+The [evidence map](docs/EVIDENCE.md) includes readable source-to-output examples,
+raw artifact locations and the failed trial. CLI lookup and matching installation
+bytes do not establish native picker behavior or execution of all 53 skills.
+
+## Run repository checks
+
+Use a fresh [session-pinned campaign](docs/testing/TESTING.md) for consolidated
+results. PASS means the named check ran and met its criterion; FAIL is an observed
+violation, BLOCKED a missing prerequisite and NOT_RUN an unexecuted check.
+
+<details>
+<summary>Repository commands (no model calls)</summary>
 
 ```text
 python -m unittest discover -s tests -v
@@ -89,17 +135,15 @@ python -m compileall -q scripts tests
 git diff --check
 ```
 
-Use a fresh [session-pinned campaign](docs/testing/TESTING.md) for consolidated
-results. PASS means the named check ran and met its criterion; FAIL is an observed
-violation, BLOCKED a missing prerequisite and NOT_RUN an unexecuted check.
+</details>
+
 Unit tests, real CLI/artifact checks, model decisions, native discovery and external
 actions are separate layers. Missing tools and zero collected tests are not PASS.
 
-[Current autonomous session](docs/testing/AUTONOMOUS-3H-2026-10-25.md) Â·
-[Earlier audit and paired pilot](docs/testing/AUDIT-AB-2026-10-25.md) Â·
-[1.9 tests](docs/testing/RESULTS-1.9.md) Â·
-[Research and limits](docs/RESEARCH-1.9.md) Â· [All-skill review](docs/TAXONOMY-1.9.md) Â·
-[Historical runtime matrix](docs/RUNTIME-TEST-MATRIX.md)
+Earlier sessions: [three-hour work log](docs/testing/AUTONOMOUS-3H-2026-10-25.md) ·
+[audit and paired pilot](docs/testing/AUDIT-AB-2026-10-25.md) ·
+[1.9 tests](docs/testing/RESULTS-1.9.md) ·
+[historical runtime matrix](docs/RUNTIME-TEST-MATRIX.md).
 
 ## Skill catalog
 
@@ -247,9 +291,9 @@ they do not provide an office suite, messaging service or file transaction manag
 
 ## Documentation
 
-[Documentation map](docs/README.md) Â· [Architecture](docs/ARCHITECTURE.md) Â·
-[Authoring](docs/AUTHORING.md) Â· [Data contracts](schemas/README.md) Â·
-[Contributing](CONTRIBUTING.md) Â· [Changelog](CHANGELOG.md) Â· [Security](SECURITY.md)
+[Documentation map](docs/README.md) · [Architecture](docs/ARCHITECTURE.md) ·
+[Authoring](docs/AUTHORING.md) · [Data contracts](schemas/README.md) ·
+[Contributing](CONTRIBUTING.md) · [Changelog](CHANGELOG.md) · [Security](SECURITY.md)
 
 ## License and ownership
 

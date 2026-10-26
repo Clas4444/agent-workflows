@@ -1,7 +1,11 @@
 # Changelog
 
-## 1.10.0-experimental
+## 1.10.0-experimental — 2026-10-26
 
+- Add an illustrated workflow atlas for all fourteen bundles, with request
+  selection, iteration/stop paths, recommendations, examples and inventory checks.
+- Correct stale documentation counts/publication status and surface release
+  evidence, retained failures and first-use instructions with explanatory SVGs.
 - Add one portable Loop selection gateway with exact short selectors, search,
   bundle lookup and requested Codex UI metadata; no native slash-alias claim.
 - Add scoped intake, ticket support and source-linked knowledge workflows, plus

@@ -1,0 +1,8 @@
+{
+  "algorithm": "sha256",
+  "scope": "Reviewed bundle atlas render observations; identity only, not execution attestation.",
+  "files": {
+    "README.md": "4c248183150be409803abaa02cd283087823409d264bdcae05361daa7b93ff78",
+    "render-check.json": "39eac6eee25e62e52243c5ffbd2d5d675ad103439f96d168adc5b1253f5a16f7"
+  }
+}

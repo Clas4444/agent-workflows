@@ -35,26 +35,31 @@ this is still not a general YAML parser.
 Run from the repository root:
 
 ```text
-py -3 -m unittest discover -s tests -v
-py -3 scripts\validate.py
-py -3 -m py_compile scripts\run_loop.py scripts\validate.py tests\test_validate.py
+python -m unittest discover -s tests -v
+python scripts/validate.py
+python -m compileall -q scripts tests
 git diff --check
 ```
 
-On systems where `py -3` is unavailable, use the installed Python command
-documented by that environment. A missing command is `NOT_RUN`, not `PASS`.
+Use an installed Python 3.11+ interpreter. On Windows, `py -3` is an alternative
+only when that launcher is available. A missing command is `NOT_RUN`, not `PASS`.
+For the complete gate set and session-pinned reports, see the
+[test procedure](testing/TESTING.md).
 
 ## Evidence
 
 Generate the report after the tests and validator pass:
 
 ```text
-py -3 scripts\validate.py --write-summary --tests-status PASS --ci-status NOT_RUN --runtime-status NOT_RUN
+python scripts/validate.py --write-summary --tests-status PASS --ci-status NOT_RUN --runtime-status NOT_RUN
 ```
 
 `docs/VALIDATION-RESULT.md` records structural status, test/CI/runtime status,
 the clean commit or a working-tree fingerprint, and findings. `PASS`, `FAIL`,
 `BLOCKED`, and `NOT_RUN` are distinct and must reflect actual evidence.
+The saved `VALIDATION-RESULT.md` is a snapshot at its declared revision/fingerprint,
+not an automatically refreshed release dashboard. For published 1.10 results and
+remote CI, use the [evidence map](EVIDENCE.md).
 
 The generated report is excluded from the fingerprint to avoid self-reference.
 Fingerprint encoding v2 uses framed filename/content-hash records and POSIX

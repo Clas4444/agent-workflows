@@ -9,9 +9,11 @@ import textwrap
 if __package__:
     from .validation.json_data import loads_json
     from .bundle_docs import check_bundle_guide
+    from .bundle_workflows import check as check_bundle_workflows
 else:
     from validation.json_data import loads_json
     from bundle_docs import check_bundle_guide
+    from bundle_workflows import check as check_bundle_workflows
 
 GUIDE = 'docs/guides/ROLE-WORKFLOWS.md'
 IMAGE = 'docs/assets/skill-stacks.svg'
@@ -133,6 +135,7 @@ def check_workflows(repo):
                 if not (repo/name).is_file() or (repo/name).read_text(encoding='utf-8') != content]
         if (repo/'skill-bundles.json').is_file():
             errors.extend(check_bundle_guide(repo))
+            errors.extend(check_bundle_workflows(repo))
         return errors
     except (OSError, ValueError, KeyError, TypeError) as exc:
         return [f'invalid workflow presets: {exc}']

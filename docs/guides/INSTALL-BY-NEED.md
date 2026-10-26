@@ -6,6 +6,9 @@ Your host still needs its own tools, permissions and account access when applica
 
 ## Choose a small bundle
 
+See the [bundle workflow atlas](BUNDLE-WORKFLOWS.md) for a separate diagram,
+selection criteria, useful iteration and do/avoid guidance for every bundle.
+
 <!-- BEGIN GENERATED NEED BUNDLES -->
 
 | Need | Bundle | Installed skills |
@@ -121,7 +124,9 @@ silently repair a personal/global installation.
 
 Copy the chosen **skill folders**, not only their `SKILL.md`, from `.github/skills`
 into your selected project's native root. For example, the writing bundle is
-`loop-write/` and `loop-summarize/`. Preserve existing folders or back them up
+`loop/`, `loop-write/` and `loop-summarize/`, including each folder's declared
+supporting files. Use the generated bundle table above as the complete list.
+Preserve existing folders or back them up
 before replacing them. The continuation skills include a `scripts/` folder that
 must travel with them; manual copying does not run the repository's alias checks.
 

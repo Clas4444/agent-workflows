@@ -1,0 +1,97 @@
+{
+  "scope": "All 14 actual SVGs rendered in local headless Chrome; measured text geometry and produced PNG previews. Not behavioral host evidence.",
+  "status": "PASS",
+  "rows": [
+    {
+      "bundle": "writing",
+      "text_nodes": 39,
+      "errors": []
+    },
+    {
+      "bundle": "office",
+      "text_nodes": 39,
+      "errors": []
+    },
+    {
+      "bundle": "learning",
+      "text_nodes": 39,
+      "errors": []
+    },
+    {
+      "bundle": "decisions",
+      "text_nodes": 39,
+      "errors": []
+    },
+    {
+      "bundle": "developer",
+      "text_nodes": 40,
+      "errors": []
+    },
+    {
+      "bundle": "project",
+      "text_nodes": 39,
+      "errors": []
+    },
+    {
+      "bundle": "qa",
+      "text_nodes": 39,
+      "errors": []
+    },
+    {
+      "bundle": "incident",
+      "text_nodes": 41,
+      "errors": []
+    },
+    {
+      "bundle": "work",
+      "text_nodes": 40,
+      "errors": []
+    },
+    {
+      "bundle": "files",
+      "text_nodes": 41,
+      "errors": []
+    },
+    {
+      "bundle": "documents",
+      "text_nodes": 39,
+      "errors": []
+    },
+    {
+      "bundle": "data",
+      "text_nodes": 40,
+      "errors": []
+    },
+    {
+      "bundle": "support",
+      "text_nodes": 41,
+      "errors": []
+    },
+    {
+      "bundle": "knowledge",
+      "text_nodes": 39,
+      "errors": []
+    }
+  ],
+  "svg_sha256": {
+    "data.svg": "d640644d75ba3af725fc1319979b69baf050ac5dfd7182992c33084f1153485a",
+    "decisions.svg": "89e3463e5a6d01b4cb5dad16260e3edaadd6d3c2bbc31b91741886aa7a2a1b6d",
+    "developer.svg": "cab1e3e5a8576ebd5c5763f5acc87362bf5b9c87d8911f0fa3fdac767c5f7706",
+    "documents.svg": "c2872c43263feac84250e98b232178d63143a4a28d162d6f0e768040f0838c3b",
+    "files.svg": "04be1c88e800cedf0e58ac8e65745ac405547c104ca8f529f033bd3daf1076be",
+    "incident.svg": "aa1aaaa0966d807ed39d8069cefd238ab31fd257e611eae8547d8e4e52208b3a",
+    "knowledge.svg": "d87c1f7eaeb60c2183c8571027402a91de898792358e83d2a84a0bd910d86162",
+    "learning.svg": "2e1cf6f4ddf419d9bac20a5edf59a5f26dfe2bfcab3b57ff45f0ced649a92126",
+    "office.svg": "e9b08a1ad01a573243b45e6a6bacd5fd574213f73dfa447a842afbe7231ca6b5",
+    "project.svg": "b794762f09a627660bbd48e6b334664c1c4e1749f3ac467972e0ebce86ff3180",
+    "qa.svg": "2e053f83c25f218b2aca2a621a9f24ca9ed87cd446bee67adf6cabd8ed1bd744",
+    "support.svg": "eb53a0b4aad0731022e6203f52fcc98954409c9ff4b0a4be3ec3cebc77bcf0a5",
+    "work.svg": "222b142d28f20ef16ac615e4e8110a3ec8f0080ec4095b3d7d26e8211198ecee",
+    "writing.svg": "0631e60b39df40eda707cabbb7dfa02c9731eec9eed359e758921d5e5b10ab16"
+  },
+  "source_sha256": {
+    "scripts/bundle_workflows.py": "bc120bd8a52fa259c4ba88fadd83d376ebf8dd46b1517610383d3fd2416652f5",
+    "docs/assets/bundles/workflows.json": "f1255069db0098abf9ad6f2bc5a9dfe9df3e5f8eb8bb21decd86115baf2b4785",
+    "skill-bundles.json": "38bb5e4eb4cc36633d2ac3cd45ee58597cc0bc20c54913bad17b9917cc69e5fa"
+  }
+}

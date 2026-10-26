@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="620" viewBox="0 0 1200 620" role="img" aria-labelledby="title desc">
+  <title id="title">From a request to a checked result with Loop</title>
+  <desc id="desc">Define the outcome, install a small toolkit into a selected project, invoke only the needed skills in a fresh host session, and inspect artifacts and evidence. Bundles are installation selections. The host supplies tools and permissions.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto"><path d="M0 0 L8 4 L0 8" fill="none" stroke="#678187" stroke-width="1.5"/></marker>
+    <style>
+      text { font-family: Arial, Helvetica, sans-serif; fill: #16313b; }
+      .eyebrow { font-size: 14px; font-weight: 700; letter-spacing: 2px; fill: #126957; }
+      .title { font-size: 35px; font-weight: 700; }
+      .subtitle { font-size: 18px; fill: #4f6770; }
+      .step { font-size: 15px; font-weight: 700; fill: #126957; }
+      .heading { font-size: 21px; font-weight: 700; }
+      .body { font-size: 17px; fill: #415d67; }
+      .mono { font-family: Consolas, 'Courier New', monospace; font-size: 16px; }
+      .small { font-size: 16px; fill: #415d67; }
+    </style>
+  </defs>
+  <rect width="1200" height="620" rx="22" fill="#f2f6f4"/>
+  <text x="38" y="47" class="eyebrow">PORTABLE LOOP SKILLS</text>
+  <text x="38" y="96" class="title">One outcome. A small toolkit. A checked result.</text>
+  <text x="38" y="130" class="subtitle">Instructions guide the work. Your agent host supplies tools, access and permissions.</text>
+
+  <g fill="#fff" stroke="#ceddd8" stroke-width="1.5">
+    <rect x="38" y="171" width="264" height="256" rx="14"/>
+    <rect x="324" y="171" width="264" height="256" rx="14"/>
+    <rect x="610" y="171" width="264" height="256" rx="14"/>
+    <rect x="896" y="171" width="266" height="256" rx="14"/>
+  </g>
+  <g stroke="#678187" stroke-width="1.5" marker-end="url(#arrow)">
+    <path d="M305 294 H317"/><path d="M591 294 H603"/><path d="M877 294 H889"/>
+  </g>
+
+  <text x="58" y="204" class="step">01 / SCOPE</text>
+  <text x="58" y="244" class="heading">Define the outcome</text>
+  <text x="58" y="281" class="body">Supply facts or files.</text>
+  <text x="58" y="309" class="body">Name the deliverable,</text>
+  <text x="58" y="337" class="body">constraints and checks.</text>
+  <path d="M58 359 H282" stroke="#dce7e3"/>
+  <text x="58" y="388" class="small">Example: draft ticket replies</text>
+  <text x="58" y="411" class="small">with unknown dates intact.</text>
+
+  <text x="344" y="204" class="step">02 / INSTALL</text>
+  <text x="344" y="244" class="heading">Choose a small set</text>
+  <text x="344" y="281" class="body">Select a need bundle</text>
+  <text x="344" y="309" class="body">or individual skills.</text>
+  <text x="344" y="337" class="body">Copy complete payloads.</text>
+  <path d="M344 359 H568" stroke="#dce7e3"/>
+  <text x="344" y="388" class="small">Check the selected project.</text>
+  <text x="344" y="411" class="small">Keep unrelated files.</text>
+
+  <text x="630" y="204" class="step">03 / USE</text>
+  <text x="630" y="244" class="heading">Run what is needed</text>
+  <text x="630" y="281" class="body">Start a fresh host session.</text>
+  <text x="630" y="309" class="body">Verify discovered paths.</text>
+  <text x="630" y="337" class="body">Ask for the actual task.</text>
+  <path d="M630 359 H854" stroke="#dce7e3"/>
+  <text x="630" y="388" class="mono">$loop bundle support</text>
+  <text x="630" y="411" class="small">Select only useful members.</text>
+
+  <text x="916" y="204" class="step">04 / VERIFY</text>
+  <text x="916" y="244" class="heading">Inspect the result</text>
+  <text x="916" y="281" class="body">Open the saved artifact.</text>
+  <text x="916" y="309" class="body">Check facts and criteria.</text>
+  <text x="916" y="337" class="body">Keep remaining gaps visible.</text>
+  <path d="M916 359 H1142" stroke="#dce7e3"/>
+  <text x="916" y="388" class="small">PASS / FAIL / BLOCKED</text>
+  <text x="916" y="411" class="small">or NOT_RUN, with evidence.</text>
+
+  <rect x="38" y="458" width="1124" height="123" rx="14" fill="#e0eee7"/>
+  <text x="60" y="491" class="heading">Keep these boundaries visible</text>
+  <text x="60" y="524" class="body">A bundle is an installation selection. It does not require running every member.</text>
+  <text x="60" y="552" class="body">A local draft can be complete while sending, publishing or approval remains unperformed.</text>
+</svg>

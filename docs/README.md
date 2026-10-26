@@ -5,6 +5,9 @@ role toolkits recommend a small subset, not a requirement to run all skills.
 
 | Need | Start here |
 |---|---|
+| Understand Loop and try the first workflow | [Start here: installation to checked output](guides/START-HERE.md) |
+| Choose a bundle and understand its iteration, recommendations and limits | [14 illustrated bundle workflows](guides/BUNDLE-WORKFLOWS.md) |
+| Inspect the published 1.10 release and its evidence | [Evidence map](EVIDENCE.md), [1.10 scope and tests](testing/RESULTS-1.10.md) |
 | Choose skills for a developer, builder, researcher, QA or incident responder | [Role workflows and English illustrations](guides/ROLE-WORKFLOWS.md) |
 | Try a concrete request without widening scope | [Practical English prompts](guides/WORKFLOW-EXAMPLES.md), [work/artifact guide](guides/WORK-AND-ARTIFACTS.md) |
 | Write, summarize, organize, decide or study without coding | [Everyday work](guides/EVERYDAY-WORK.md) |
@@ -14,10 +17,9 @@ role toolkits recommend a small subset, not a requirement to run all skills.
 | Understand implementation and data contracts | [Architecture](ARCHITECTURE.md), [schemas](../schemas/README.md) |
 | Author or update instructions | [Authoring](AUTHORING.md), [contributing](../CONTRIBUTING.md) |
 | Run checks and interpret their limits | [Test procedure](testing/TESTING.md), [validation](VALIDATION.md) |
-| Understand process cleanup and current autonomous work | [Lifecycle contract](PROCESS-LIFECYCLE.md), [ongoing three-hour ledger](testing/AUTONOMOUS-3H-2026-10-25.md) |
+| Understand process cleanup and the earlier autonomous session | [Lifecycle contract](PROCESS-LIFECYCLE.md), [historical three-hour ledger](testing/AUTONOMOUS-3H-2026-10-25.md) |
 | Inspect the earlier audit and paired pilot | [1.9.1 audit](testing/AUDIT-AB-2026-10-25.md), [research ledger](RESEARCH-AUDIT-2026-10-25.md) |
 | Inspect the previous restructuring session | [1.9 tests and research update](testing/RESULTS-1.9.md) |
-| Inspect the local 1.10 update | [1.10 scope and tests](testing/RESULTS-1.10.md) |
 | Find short names or call a bundle | [Skill finder](guides/SKILL-FINDER.md) |
 | Check actual host evidence | [Runtime matrix](RUNTIME-TEST-MATRIX.md), [runtime smoke](RUNTIME-SMOKE.md) |
 

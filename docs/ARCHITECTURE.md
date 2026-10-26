@@ -1,7 +1,6 @@
 # Repository architecture
 
-The skill catalog, runner and verification tooling have separate contracts.
-This layout keeps the catalog, runner and verification tools separate. Native
+The skill catalog, runner and verification tooling have separate contracts. Native
 skill directories remain flat; historical evidence is versioned independently.
 
 | Location | Responsibility |
@@ -100,4 +99,23 @@ not cryptographic attestation of an untrusted report's execution.
 
 `skill-resources.json` declares supporting files; `scripts/skill_resources.py` is shared by validation and sync. Repository-native inventories are exact; selected external installs preserve unmanaged extras. Source/destination aliases and resource case collisions fail preflight. Both validation profiles retain resource integrity. Helpers are self-contained and live inside their owning canonical skill, not duplicated root implementations.
 
-`instruction_history.py` verifies archived 1.7/1.8 bytes plus explicit current-hash invalidations. It does not turn historical runtime PASS into new execution. The generated install table uses the same registry as the CLI. Current full campaigns have eleven gates; old records retain their original recipe.
+`instruction_history.py` verifies archived 1.7/1.8 bytes plus explicit current-hash
+invalidations. It does not turn historical runtime PASS into new execution. The
+generated install table uses the same registry as the CLI. The 1.10 session runner
+has fourteen gates, defined by `COMMANDS` in `scripts/verification_session.py`;
+old records retain their original recipe. `git diff --check` is a separate check.
+
+## Selection and delivery (1.10)
+
+![Request, selection, installation and verified output](assets/loop-workflow.svg)
+
+The `loop` gateway resolves a selector to canonical skills or a need bundle.
+Its bundled catalog supports lookup even outside this repository. It reports
+missing installed instructions; it does not install them or execute task text.
+`agents/openai.yaml` supplies display metadata for supporting hosts. A metadata
+file or successful CLI lookup cannot establish native discovery.
+
+Groups partition the 53 skills into fifteen navigation categories. Fourteen
+bundles are overlapping installation selections. Role presets are task guidance.
+None requires running every listed member. See [start here](guides/START-HERE.md)
+for an installation-to-use example and [evidence](EVIDENCE.md) for tested scope.

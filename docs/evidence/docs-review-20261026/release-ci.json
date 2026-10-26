@@ -1,0 +1,45 @@
+{
+  "observed_at": "2026-10-26T12:38:11.3164882Z",
+  "source_urls": [
+    "https://api.github.com/repos/Clas4444/loop-skills-repository/actions/runs/40320619298",
+    "https://api.github.com/repos/Clas4444/loop-skills-repository/actions/runs/40320619298/jobs"
+  ],
+  "run_id": 40320619298,
+  "head_sha": "c6255a192c56c633c21889886c6080230bb774aa",
+  "status": "completed",
+  "conclusion": "success",
+  "html_url": "https://github.com/Clas4444/loop-skills-repository/actions/runs/40320619298",
+  "run_started_at": "2026-10-26T12:11:23Z",
+  "updated_at": "2026-10-26T12:13:19Z",
+  "jobs": [
+    {
+      "id": 121564313642,
+      "name": "structural-validation (ubuntu-latest, 3.11)",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/Clas4444/loop-skills-repository/actions/runs/40320619298/job/121564313642"
+    },
+    {
+      "id": 121564313857,
+      "name": "structural-validation (windows-latest, 3.11)",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/Clas4444/loop-skills-repository/actions/runs/40320619298/job/121564313857"
+    },
+    {
+      "id": 121564313917,
+      "name": "structural-validation (windows-latest, 3.12)",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/Clas4444/loop-skills-repository/actions/runs/40320619298/job/121564313917"
+    },
+    {
+      "id": 121564314018,
+      "name": "structural-validation (ubuntu-latest, 3.12)",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/Clas4444/loop-skills-repository/actions/runs/40320619298/job/121564314018"
+    }
+  ],
+  "scope": "Read-only GitHub API observation of the published release; does not cover later working-tree documentation edits."
+}

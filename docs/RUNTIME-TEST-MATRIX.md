@@ -5,6 +5,10 @@ support for a host, run one representative workflow and record how the host
 discovered the skill, loaded its instructions, accepted the invocation, and
 completed safely.
 
+For the 1.10 release, start with the [evidence map](EVIDENCE.md#behavioral-evidence)
+and [1.10 report](testing/RESULTS-1.10.md). The rows below retain earlier campaigns
+and invalidations; they are not a fresh execution of the current 53-skill catalog.
+
 | Host | Version | Skill | Invocation | Result | Evidence |
 |---|---|---|---|---|---|
 | Codex subagent / Windows, explicit canonical files | host version not recorded | loop-context + loop-handoff | Two independent synthetic preparation/cold-resume tasks | `PASS` for stated fixture scope only | [1.6 research/evidence](RESEARCH-1.6.md); no automatic discovery or product tests |
@@ -94,16 +98,23 @@ Earlier noncode-1.8 and workflow-project-1.7 observations are retained against a
 
 ## 1.10 instruction and discovery update
 
-New loop/intake/support/knowledge instructions and changed work/table/document/
-meeting/debug/adversarial contracts require fresh behavioral evidence. CLI lookup,
-installer and registry checks do not prove native picker search or slash aliases.
-Historical fixture runs retain original instruction identity; new model runs, if
-performed, are recorded in the 1.10 session report rather than overwriting them.
-Native discovery and all-workflow behavioral coverage remain NOT_RUN.
+Four explicit-load scaffolded Codex CLI calls are retained in the
+[1.10 evidence](EVIDENCE.md#behavioral-evidence): support PASS, knowledge PASS,
+original work FAIL, and a fresh schema-explicit work retry PASS. These are fixed
+artifact checks, not native discovery or fresh all-workflow behavioral coverage.
+The records preserve instruction snapshots; published-byte differences and helper
+snapshot limitations are explained in the [release report](testing/RESULTS-1.10.md).
+CLI lookup, installer and registry checks do not prove native picker search or
+slash aliases. Native discovery and all-workflow behavioral coverage remain NOT_RUN.
 
 | New workflow | Native discovery | Current behavior evidence |
 |---|---|---|
-| loop | NOT_RUN | Deterministic lookup and explicit fixture execution reported separately |
-| loop-intake | NOT_RUN | See current release session; no historical reuse |
-| loop-support | NOT_RUN | See current release session; no historical reuse |
-| loop-knowledge | NOT_RUN | See current release session; no historical reuse |
+| loop | NOT_RUN | Explicit support/knowledge lookup; snapshots and limits in linked 1.10 evidence |
+| loop-intake | NOT_RUN | Support brief fixture PASS for recorded inputs and artifact checks |
+| loop-support | NOT_RUN | Support triage/draft fixture PASS; sending and resolution NOT_RUN |
+| loop-knowledge | NOT_RUN | Conflicting-policy fixture PASS; authority resolution/publication NOT_RUN |
+
+Work/table/meeting/document were exercised together in the work packet, not as
+independent trials of each skill. Debug and adversarial instruction upgrades have
+no separate fresh model trial here. Regrading archived artifacts makes no new
+model call and must not be counted as fresh behavioral execution.

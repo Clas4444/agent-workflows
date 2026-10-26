@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="1040" viewBox="0 0 1440 1040" role="img" aria-labelledby="title desc">
+<title id="title">Scoped local file organization — files bundle iteration</title>
+<desc id="desc">Selected existing local files need a proposed layout or explicitly authorized native moves. Pinned identities and collision checks protect different files with the same name and expose partial state. Revise only while useful, authorized and within budget. Stop with evidence and a checkpoint.</desc>
+<defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto"><path d="M0 0 L8 4 L0 8" fill="none" stroke="#126957" stroke-width="1.5"/></marker></defs>
+<rect width="1440" height="1040" rx="20" fill="#f2f6f4"/>
+<g font-family="Arial, Helvetica, sans-serif" fill="#16313b">
+<text x="40" y="38" font-size="15" fill="#126957" font-weight="700">LOOP / FILES BUNDLE</text>
+<text x="40" y="89" font-size="36" fill="#16313b" font-weight="700">Scoped local file organization</text>
+<text x="40" y="137" font-size="15" fill="#126957" font-weight="700">CHOOSE WHEN</text>
+<text x="196" y="137" font-size="19" fill="#415d67">Selected existing local files need a proposed layout or explicitly authorized native moves.</text>
+<text x="40" y="210" font-size="15" fill="#126957" font-weight="700">WHY THIS LOOP</text>
+<text x="196" y="210" font-size="19" fill="#415d67">Pinned identities and collision checks protect different files with the same name and expose partial</text>
+<text x="196" y="237" font-size="19" fill="#415d67">state.</text>
+<rect x="40" y="270" width="328" height="220" rx="12" fill="#fff" stroke="#ceddd8"/>
+<text x="58" y="298" font-size="13" fill="#126957" font-weight="700">01 / ONE USEFUL STEP</text>
+<text x="58" y="332" font-size="22" fill="#16313b" font-weight="700">Inventory and pin</text>
+<text x="58" y="393" font-size="18" fill="#415d67">Inspect the selected root,</text>
+<text x="58" y="417" font-size="18" fill="#415d67">content identities and aliases.</text>
+<text x="58" y="465" font-size="14" fill="#126957" font-family="Consolas, monospace">loop-files</text>
+<path d="M370 374 H378" fill="none" stroke="#126957" stroke-width="1.5" marker-end="url(#arrow)"/>
+<rect x="384" y="270" width="328" height="220" rx="12" fill="#fff" stroke="#ceddd8"/>
+<text x="402" y="298" font-size="13" fill="#126957" font-weight="700">02 / ONE USEFUL STEP</text>
+<text x="402" y="332" font-size="22" fill="#16313b" font-weight="700">Map and preflight</text>
+<text x="402" y="393" font-size="18" fill="#415d67">Reject collisions, escapes and</text>
+<text x="402" y="417" font-size="18" fill="#415d67">drift; keep recovery paths.</text>
+<text x="402" y="465" font-size="14" fill="#126957" font-family="Consolas, monospace">loop-files</text>
+<path d="M714 374 H722" fill="none" stroke="#126957" stroke-width="1.5" marker-end="url(#arrow)"/>
+<rect x="728" y="270" width="328" height="220" rx="12" fill="#fff" stroke="#ceddd8"/>
+<text x="746" y="298" font-size="13" fill="#126957" font-weight="700">03 / ONE USEFUL STEP</text>
+<text x="746" y="332" font-size="22" fill="#16313b" font-weight="700">Move if authorized</text>
+<text x="746" y="393" font-size="18" fill="#415d67">Plan-only stops here; native</text>
+<text x="746" y="417" font-size="18" fill="#415d67">tools perform mapped moves.</text>
+<text x="746" y="465" font-size="14" fill="#126957" font-family="Consolas, monospace">loop-files</text>
+<path d="M1058 374 H1066" fill="none" stroke="#126957" stroke-width="1.5" marker-end="url(#arrow)"/>
+<rect x="1072" y="270" width="328" height="220" rx="12" fill="#fff" stroke="#ceddd8"/>
+<text x="1090" y="298" font-size="13" fill="#126957" font-weight="700">04 / ONE USEFUL STEP</text>
+<text x="1090" y="332" font-size="22" fill="#16313b" font-weight="700">Verify actual state</text>
+<text x="1090" y="393" font-size="18" fill="#415d67">Check moved and protected</text>
+<text x="1090" y="417" font-size="18" fill="#415d67">contents, paths and counts.</text>
+<text x="1090" y="465" font-size="14" fill="#126957" font-family="Consolas, monospace">loop-files</text>
+<text x="384" y="526" font-size="18" fill="#126957" font-weight="700">Needs revision? Repeat only with time, authority and a useful next step.</text>
+<path d="M1220 491 V548 H204 V496" fill="none" stroke="#126957" stroke-width="2" marker-end="url(#arrow)"/>
+<path d="M1370 491 V566" fill="none" stroke="#126957" stroke-width="2" marker-end="url(#arrow)"/>
+<text x="1290" y="561" font-size="14" fill="#126957" font-weight="700">EXIT</text>
+<rect x="40" y="574" width="1360" height="58" rx="10" fill="#e0eee7"/>
+<text x="60" y="610" font-size="20" fill="#16313b" font-weight="700">STOP: criteria met, blocker, budget, safety boundary or repeated unchanged results. Leave evidence + next action.</text>
+<rect x="40" y="656" width="670" height="178" rx="12" fill="#fff" stroke="#d4dfda"/>
+<text x="60" y="689" font-size="15" fill="#126957" font-weight="700">RECOMMENDED</text>
+<text x="60" y="726" font-size="18" fill="#415d67">• Keep plans/results outside the selected root.</text>
+<text x="60" y="777" font-size="18" fill="#415d67">• Stop on partial failure and report the actual completed moves.</text>
+<rect x="730" y="656" width="670" height="178" rx="12" fill="#fff8f4" stroke="#d4dfda"/>
+<text x="750" y="689" font-size="15" fill="#8b3c36" font-weight="700">AVOID</text>
+<text x="750" y="726" font-size="18" fill="#415d67">• Treat helper preflight as proof that moves happened.</text>
+<text x="750" y="777" font-size="18" fill="#415d67">• Overwrite, delete, merge duplicates or replay a failed plan</text>
+<text x="750" y="801" font-size="18" fill="#415d67">blindly.</text>
+<text x="40" y="875" font-size="17" fill="#415d67">CHOOSE ANOTHER ROUTE: For work priorities choose work. The bundled helper is read-only and provides neither moves nor atomic rollback.</text>
+<text x="40" y="944" font-size="15" fill="#126957" font-weight="700">INSTALLED TOOLKIT — choose only needed members; these steps are guidance, not mandatory calls.</text>
+<text x="40" y="975" font-size="15" fill="#415d67" font-family="Consolas, monospace">loop, loop-files</text>
+<text x="40" y="1020" font-size="16" fill="#415d67">Instructions do not supply service tools or permissions. A passing plan or draft does not prove an external action.</text>
+</g>
+</svg>

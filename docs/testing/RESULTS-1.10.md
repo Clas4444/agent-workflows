@@ -1,8 +1,16 @@
 # 1.10 selection and everyday workflow update
 
 Client date 2026-10-26 (Asia/Bangkok). Base commit:
-`0a1f061bd747f8f3c2800f829e3eeb4ae801552a`. No remote push is authorized for this
-update: the user's previous no-push constraint is retained. Remote CI is NOT_RUN.
+`0a1f061bd747f8f3c2800f829e3eeb4ae801552a`.
+
+**Publication update, 2026-10-26:** the owner subsequently authorized publication.
+Commit `c6255a192c56c633c21889886c6080230bb774aa` was pushed; GitHub Actions
+[run 40320619298](https://github.com/Clas4444/loop-skills-repository/actions/runs/40320619298)
+completed with four successful jobs. The [evidence map](../EVIDENCE.md) links the
+API observation and distinguishes release CI from the local campaigns below.
+The original work was prepared under a no-push constraint; that historical
+constraint is superseded for this published commit. Personal/global installs
+were not updated. This report's original local results retain their scope.
 
 ## Delivered scope
 
@@ -96,8 +104,9 @@ were not changed. Source and script identities are retained in public evidence.
 
 ## Remaining limits
 
-Native picker search, native `/lc`, macOS, live service connectors and remote CI:
-NOT_RUN. Formula recalculation and document/slide visual rendering were not run by
+Native picker search, native `/lc`, macOS and live service connectors: NOT_RUN.
+Remote CI was NOT_RUN during the local campaign; see the publication update above.
+Formula recalculation and document/slide visual rendering were not run by
 these CSV/Markdown trials. New debug/adversarial text has structural/regression
 coverage but no separate fresh model trial. No fake PASS is substituted. The router
 catalog is selection data, not an installer, sandbox, dynamic host extension or
@@ -147,8 +156,9 @@ after the earlier global cleanup. This is an observation from those invocations,
 not a guarantee for other hosts, catalogs or future sessions. Native picker search
 and native slash registration remain NOT_RUN.
 
-Release status: **LOCAL ONLY**. No push, remote CI or personal/global installation
-write was performed. Use the changed repository's native skill directory or select
+Original campaign status at capture: **LOCAL ONLY**. Push and remote CI happened
+later for `c6255a1`, as recorded in the publication update above. No personal/global
+installation write was performed. Use the repository's native skill directory or select
 a project installation from the guide, then open a fresh host session and verify
 actual instruction paths. Read-only lookup PASS must not be relabeled as native
 discovery or successful execution of all bundle workflows.

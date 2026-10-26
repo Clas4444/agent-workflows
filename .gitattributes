@@ -26,3 +26,8 @@
 
 /docs/evidence/discovery-20261026/** text eol=lf
 /docs/evidence/discovery-20261026/raw-artifacts.zip -text
+
+# Keep documentation-review observations stable across Git and Windows checkouts.
+/docs/evidence/docs-review-20261026/** text eol=lf
+/docs/evidence/bundle-atlas-20261026/** text eol=lf
+/docs/assets/bundles/** text eol=lf

@@ -17,8 +17,10 @@ $loop bundle support triage these tickets and draft replies only
 $loop bundle knowledge update the FAQ and flag unsupported claims
 ```
 
-Search the skill picker for **Loop Code (lc)**, **Loop Debug (dbg)** or **Loop**.
-The distributed `agents/openai.yaml` sets display names and starter prompts.
+The distributed `agents/openai.yaml` requests display names such as
+**Loop Code (lc)**, **Loop Debug (dbg)** and **Loop**, plus starter prompts.
+You can try those names in a supporting host picker after installation; their
+actual search behavior has not been verified for this release.
 Search ranking, matching of spaced text and native `/lc` commands are host behavior,
 not controlled by this repository. If your host routes `/loop code` or `/lc` here,
 the gateway understands that selector; if it does not, use `$loop code` or the
@@ -78,8 +80,10 @@ python scripts/install_skills.py --bundle support --target "/my/project/.agents/
 ```
 
 Restart/open a fresh host session and check the actual selected instruction paths.
-Do not infer activation from file equality. The catalog lists all available choices,
-but only reads selected installed instructions. Missing members stay explicit;
+Do not infer activation from file equality. The catalog lists all available choices.
+The helper returns selected instruction paths and checks whether their SKILL.md
+files exist; the agent must read the current selected instructions before use.
+Missing members stay explicit;
 there is no automatic install or authentication. Installing fewer skills still
 helps keep metadata small; UI metadata and one router cannot guarantee elimination
 of a host context-budget warning.
