@@ -6,6 +6,21 @@ Store alias is unavailable. Keep fixture logs and private inputs under `.loop/`.
 
 ## Deterministic repository gates
 
+During editing, start with checks matching the change:
+
+| Changed area | First checks |
+|---|---|
+| Markdown navigation | `python scripts/docs_check.py` |
+| Grouped catalog | `python scripts/catalog.py` |
+| Finder/search/UI metadata | `python -m unittest tests.test_skill_finder -v`; `python scripts/discovery.py` |
+| Installer/backup | `python -m unittest tests.test_install_skills tests.test_sync tests.test_backup_preflight -v` |
+| Runner/process lifecycle | `python -m unittest tests.test_process_lifecycle tests.test_runner_regressions -v` |
+| Retained support/knowledge/work evidence | `python -m unittest tests.test_work_packet_evidence -v`; `python scripts/evidence_indexes.py` |
+
+Before publication run the full gates below. Focused checks reduce investigation
+scope; they do not replace release verification. On Windows, record sandbox/TEMP
+and Python version before treating a process or fixture failure as a code defect.
+
 ```text
 python -m unittest discover -s tests -v
 python scripts/validate.py
@@ -31,7 +46,7 @@ git diff --check
 | Full validator | Manifest, supported metadata, Loop conventions and copy integrity | Arbitrary YAML or host enforcement |
 | Format profile | Supported metadata and repository integrity | All Loop conventions |
 | Catalog/routing | Exact group coverage, generated catalog, fixed primary-route coverage | An actual model chose the correct skill |
-| Discovery | Catalog and requested UI metadata match sources; exact aliases and bundles resolve | Native picker matching, slash registration or task execution |
+| Discovery | Canonical names/full bundles resolve; short search hints return candidates; generated metadata matches sources | Native picker matching, slash registration or task execution |
 | Workflows | Known skill names, valid role presets, matching Markdown/SVG | PNG accuracy or best toolkit for every user |
 | Documentation navigation | Local inline file/image targets and supported Markdown heading fragments, including case spelling | External URL reachability, rendering, factual accuracy or every Markdown dialect |
 | Sync check | Exact bundled runner/copy integrity under the selected root | User-wide installation or client activation |

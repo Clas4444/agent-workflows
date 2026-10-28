@@ -1,4 +1,4 @@
 interface:
-  display_name: "Loop Table (tbl)"
-  short_description: "Use Loop Table (tbl) for a focused workflow"
+  display_name: "Loop Table"
+  short_description: "Use Loop Table for a focused workflow"
   default_prompt: "Use $loop-table for this task; verify the result and report any limits."

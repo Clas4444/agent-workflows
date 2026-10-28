@@ -1,0 +1,135 @@
+{
+  "date": "2026-10-28",
+  "base": "8cafb9413fdc641d34b46d8f9fc947fcd785a6d8",
+  "scope": "Agent-captured deterministic checks in Windows checkout; not native picker or model API trials.",
+  "host_model_observation": {
+    "host": "Codex desktop",
+    "model": "GPT-6.1 Sol",
+    "identity_source": "active conversation context; self-reported, not independent telemetry",
+    "explicit_instruction_use": "RUN",
+    "native_picker_activation": "NOT_RUN"
+  },
+  "instruction_sha256": {
+    "loop-code": "d7e2a9be0e8331c0e92c26b89630a02914e53a879aa9dab1fd3cc00d1a5c1b1c",
+    "loop-debug": "0f3404bcdf152aa8d8cbd808bfaa90409912587373c9fb915fcb7609216a6d0e",
+    "loop": "0d695c98516d8b0f4a10face94f398a51c3b3896f4cdde8287dd1ceef3cb11d8"
+  },
+  "checks": [
+    {
+      "case": "search",
+      "query": "lc",
+      "expected": "loop-code",
+      "observed": [
+        "loop-code"
+      ],
+      "status": "PASS"
+    },
+    {
+      "case": "search",
+      "query": "dbg",
+      "expected": "loop-debug",
+      "observed": [
+        "loop-debug"
+      ],
+      "status": "PASS"
+    },
+    {
+      "case": "search",
+      "query": "kb",
+      "expected": "loop-knowledge",
+      "observed": [
+        "loop-knowledge"
+      ],
+      "status": "PASS"
+    },
+    {
+      "case": "resolve_rejection",
+      "query": "lc",
+      "status": "PASS"
+    },
+    {
+      "case": "resolve_rejection",
+      "query": "$loop lc",
+      "status": "PASS"
+    },
+    {
+      "case": "resolve_rejection",
+      "query": "b office",
+      "status": "PASS"
+    },
+    {
+      "case": "resolve",
+      "query": "loop-code",
+      "result": {
+        "kind": "skill",
+        "id": "loop-code",
+        "skills": [
+          "loop-code"
+        ],
+        "execution": "NONE"
+      },
+      "status": "PASS"
+    },
+    {
+      "case": "resolve",
+      "query": "bundle office",
+      "result": {
+        "kind": "bundle",
+        "id": "office",
+        "skills": [
+          "loop",
+          "loop-work",
+          "loop-write",
+          "loop-summarize",
+          "loop-meeting",
+          "loop-organize",
+          "loop-document"
+        ],
+        "execution": "NONE"
+      },
+      "status": "PASS"
+    },
+    {
+      "case": "docs",
+      "command": [
+        "python",
+        "scripts/docs_check.py"
+      ],
+      "exit_code": 0,
+      "status": "PASS",
+      "output": "PASS: documentation navigation; 98 Markdown files, 527 local links\n"
+    },
+    {
+      "case": "windows-invalid-executable",
+      "command": [
+        "python",
+        "-m",
+        "unittest",
+        "tests.test_process_lifecycle.ProcessLifecycleTests.test_invalid_executable_preserves_launch_error",
+        "-v"
+      ],
+      "exit_code": 0,
+      "status": "PASS",
+      "output": "test_invalid_executable_preserves_launch_error (tests.test_process_lifecycle.ProcessLifecycleTests.test_invalid_executable_preserves_launch_error) ... ok\n\n----------------------------------------------------------------------\nRan 1 test in 0.062s\n\nOK\n"
+    },
+    {
+      "case": "base_comparison",
+      "path": "scripts/run_loop.py",
+      "normalization": "UTF-8 text, CRLF to LF",
+      "sha256": "889e7837c06fbc42b7c556dacc1fa3a864ac933fe7882c6a6564b2c69f134580",
+      "status": "PASS"
+    },
+    {
+      "case": "base_comparison",
+      "path": "scripts/validation/loop_policy.py",
+      "normalization": "UTF-8 text, CRLF to LF",
+      "sha256": "26e48b19199998d50da4e3abe4cf0a78dd41848f5c01bcf71c8b030eebbd4659",
+      "status": "PASS"
+    },
+    {
+      "case": "assets_unchanged",
+      "status": "PASS"
+    }
+  ],
+  "status": "PASS"
+}

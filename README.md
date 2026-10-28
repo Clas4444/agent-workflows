@@ -4,7 +4,7 @@
 specific outcome, work through a small batch, check the result and leave a useful
 checkpoint. Choose a focused skill or a small installation bundle.
 
-Experimental version **1.10.1-experimental** · 15 groups · 14 bundles · Python 3.11+
+Experimental version **1.10.2-experimental** · 15 groups · 14 bundles · Python 3.11+
 for repository tools. These are portable instructions and local helpers; your
 agent host supplies execution tools and permissions.
 
@@ -59,17 +59,19 @@ Open the selected project in your host, start a fresh session and confirm actual
 skill discovery. `.agents/skills`, `.github/skills` and `.claude/skills` are the
 maintained native layouts; identical files do not prove equivalent host behavior.
 
-## Short names and bundles
+## Canonical names and bundles
 
-On Codex hosts supporting dollar skill mentions, use `$loop code ...`,
-`$loop lc ...`, `$loop bundle office ...` or `$loop bundle support ...` after the
-selected skills are installed and discovered. The requested picker display names
-include **Loop Code (lc)** and **Loop Debug (dbg)**; actual picker matching has
-not been verified for this release.
-The gateway chooses the smallest needed workflow; bundles do not run every member.
-Native slash aliases and picker search depend on the host. See the
-[lookup and shortcut guide](docs/guides/SKILL-FINDER.md) for verified CLI forms,
-installation and limitations. No duplicate alias skills are installed.
+On Codex hosts supporting dollar skill mentions, invoke the focused skill by its
+canonical name, for example `$loop-code ...` or `$loop-debug ...`. Use the full
+`bundle office` or `bundle support` selector with the read-only finder after the
+selected skills are installed and discovered. Bundles do not run every member.
+This release publishes no short aliases or native slash commands. See the
+[skill and bundle finder guide](docs/guides/SKILL-FINDER.md) for verified CLI forms,
+installation and limitations.
+
+Short search hints (`lc`, `dbg`, `kb`) return candidates in the finder; invoke the
+selected canonical skill directly. See [bundle starting points](docs/guides/BUNDLE-QUICKSTART.md)
+and [1.10.2 validation and Codex session scope](docs/testing/RESULTS-1.10.2.md).
 
 ## Choose a focused workflow
 
@@ -103,6 +105,10 @@ checkout or every possible task.
 | Installation | 14 bundle journeys; all 53 skills / 117 payloads per layout, 351 backup byte comparisons | [Installation records](docs/EVIDENCE.md#installation-evidence) |
 | Explicit-load Codex trials | Support PASS; knowledge PASS; original work FAIL retained; schema-explicit work retry PASS | [Inputs, outputs and limits](docs/EVIDENCE.md#behavioral-evidence) |
 | Native discovery and broad reliability | NOT_RUN | [Untested scope](docs/EVIDENCE.md#what-remains-unverified) |
+
+For the later desktop session, explicit skill loading on Codex / GPT-6.1 Sol is
+RUN; see [current session evidence](docs/testing/RESULTS-1.10.2.md). Picker activation
+and all-skill reliability remain separate from that observation.
 
 The [evidence map](docs/EVIDENCE.md) includes readable source-to-output examples,
 raw artifact locations and the failed trial. CLI lookup and matching installation
@@ -156,7 +162,7 @@ Groups are navigation metadata; native skill directories remain flat.
 
 | Skill | Purpose |
 |---|---|
-| [loop](.github/skills/loop/SKILL.md) | Find Loop skills by spaced names, shortcuts such as lc/dbg/kb, or need-based bundles |
+| [loop](.github/skills/loop/SKILL.md) | Find Loop skills by their canonical names or full need-based bundle selectors |
 
 ### Discovery and scoped planning
 

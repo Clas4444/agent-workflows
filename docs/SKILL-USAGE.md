@@ -47,7 +47,7 @@ native slash aliases are not registered by this repository. See the
 | `loop-security` | Review trust boundaries and verify scoped defensive fixes | `$loop-security 20m local file upload handler` |
 | `loop-refactor` | Improve structure while preserving behavior | `$loop-refactor 15m simplify parser without API changes` |
 | `loop-ci` | Trace and repair a failed CI job | `$loop-ci 15m failed Windows test job` |
-| `loop-release` | Prepare and smoke-test a release candidate | `$loop-release 20m verify candidate version 1.10.1-experimental` |
+| `loop-release` | Prepare and smoke-test a release candidate | `$loop-release 20m verify candidate version 1.10.2-experimental` |
 | `loop-plan` | Break a scoped request into verifiable dependent batches | `$loop-plan 10m plan a JSON export command` |
 | `loop-dependencies` | Maintain approved versions and lockfile consistency | `$loop-dependencies 15m update the approved package` |
 | `loop-migrate` | Change persisted formats with dry-run and rollback | `$loop-migrate 20m upgrade local JSON fixtures to schema v2` |
@@ -138,7 +138,7 @@ See [install by need](guides/INSTALL-BY-NEED.md) and [non-coding examples](guide
 
 ## Selection and incoming knowledge work (1.10)
 
-- `loop`: portable shortcut/bundle lookup; see [finder](guides/SKILL-FINDER.md).
+- `loop`: portable canonical-name/bundle lookup; see [finder](guides/SKILL-FINDER.md).
 - `loop-intake`: source-backed brief for an unclear request, before delivery.
 - `loop-support`: ticket impact/category and response draft, without inventing SLA.
 - `loop-knowledge`: maintain multi-source claims, conflicts and source revisions.

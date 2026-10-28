@@ -11,7 +11,7 @@ skill directories remain flat; historical evidence is versioned independently.
 | `scripts/validate.py` | Repository integrity checks, CLI and validation report |
 | `scripts/acceptance_gate.py` | Opt-in acceptance/source identity contract and local subprocess evidence |
 | `scripts/catalog.py`, `skill-groups.json` | Functional group coverage and generated README catalog |
-| `scripts/discovery.py`, `.github/skills/loop/` | Generated short-selector/bundle catalog and Codex UI metadata; portable read-only lookup, not a host command registrar |
+| `scripts/discovery.py`, `.github/skills/loop/` | Generated canonical-name/bundle catalog and Codex UI metadata; portable read-only lookup, not a host command registrar |
 | `scripts/routing_check.py`, `skill-routing.json` | Per-skill decisions, overlap review and fixed primary-route cases |
 | `scripts/validation/manifest.py` | Manifest model, names, version and safe native roots |
 | `scripts/validation/json_data.py` | Shared strict JSON input: reject duplicate decoded keys and NaN/Infinity literals |

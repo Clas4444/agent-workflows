@@ -76,7 +76,7 @@ Do not send replies, issue refunds or mark tickets resolved.
 
 For a single focused task, `$loop-support ...` is also an explicit form. The
 gateway helps select a workflow; it does not install missing skills or supply a
-support-service connection. Native `/lc` aliases and picker matching are untested
+support-service connection. Native slash aliases and picker matching are untested
 for this release. See [verified CLI selectors](SKILL-FINDER.md).
 
 ## 4. Inspect what was delivered
@@ -100,7 +100,7 @@ the original failed work trial and the narrower scope of the passing retry.
 |---|---|
 | Skill is absent in the host | Check the target root, run the selected doctor and verify paths in a fresh session |
 | Helper says `missing_skills` | Install the selected members and complete payloads; lookup itself does not install |
-| `/lc` does nothing | Use an explicit supported skill mention; CLI selector parsing does not register host commands |
+| A made-up slash alias does nothing | Use an explicit canonical skill mention; CLI selector parsing does not register host commands |
 | Agent returns only a plan | Recheck whether the request asks for actual deliverables and inspect saved outputs |
 | An old PASS is cited | Compare its revision, input hashes and tested scope with the files used now |
 

@@ -14,10 +14,10 @@ else:
     from validation.skill_format import FRONTMATTER_PATTERN, frontmatter_value
     from skill_bundles import load_bundles
 
-SHORT = {'loop-code': 'lc', 'loop-debug': 'dbg', 'loop-review': 'rv', 'loop-test': 'tst',
-         'loop-work': 'wk', 'loop-table': 'tbl', 'loop-document': 'doc', 'loop-meeting': 'mtg',
-         'loop-knowledge': 'kb', 'loop-intake': 'intake', 'loop-support': 'support'}
 CATALOG = '.github/skills/loop/assets/catalog.json'
+SEARCH_TERMS = {'loop-code': 'lc', 'loop-debug': 'dbg', 'loop-review': 'rv',
+                'loop-test': 'tst', 'loop-work': 'wk', 'loop-table': 'tbl',
+                'loop-document': 'doc', 'loop-meeting': 'mtg', 'loop-knowledge': 'kb'}
 
 
 def expected(repo):
@@ -30,12 +30,9 @@ def expected(repo):
         description = frontmatter_value(match.group(1), 'description') if match else None
         if not description: raise ValueError('missing description: '+name)
         short = name.removeprefix('loop-')
-        aliases = [short.replace('-', ' '), 'loop '+short.replace('-', ' ')] if name != 'loop' else ['help', 'find']
-        if short != short.replace('-', ' '): aliases.append(short)
-        if name in SHORT and SHORT[name] not in aliases: aliases.append(SHORT[name])
-        data['skills'][name] = {'description': description, 'aliases': aliases}
+        data['skills'][name] = {'description': description, 'aliases': [],
+                                'search_terms': [SEARCH_TERMS[name]] if name in SEARCH_TERMS else []}
         title = 'Loop' if name == 'loop' else 'Loop '+short.replace('-', ' ').title()
-        if name in SHORT and SHORT[name] != short: title += ' ('+SHORT[name]+')'
         blurb = ('Find Loop skills and bundles' if name == 'loop' else 'Use '+title+' for a focused workflow')[:64]
         prompt = 'Use $'+name+' '+('to find the smallest skill or bundle for my task.' if name == 'loop' else 'for this task; verify the result and report any limits.')
         metadata[name] = 'interface:\n'+''.join('  '+key+': '+json.dumps(value)+'\n' for key, value in

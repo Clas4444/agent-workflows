@@ -1,30 +1,27 @@
-# Find a skill, shortcut or bundle
+# Find a skill or bundle
 
 Use the smallest workflow that fits the requested outcome. A bundle is a toolkit,
-not an instruction to execute all its members. No alias grants permissions.
+not an instruction to execute all its members.
 
 ## In a host
 
-Canonical explicit forms on Codex hosts supporting dollar skill mentions:
+Use canonical skill names on hosts supporting dollar skill mentions:
 
 ```text
-$loop code add the requested export and run relevant tests
-$loop lc add the requested export and run relevant tests
-$loop dbg fix this reproducible failure
-$loop kb build a source-linked FAQ from these policies
-$loop bundle office prepare the requested work packet; do not send anything
-$loop bundle support triage these tickets and draft replies only
-$loop bundle knowledge update the FAQ and flag unsupported claims
+$loop-code add the requested export and run relevant tests
+$loop-debug fix this reproducible failure
+$loop-knowledge build a source-linked FAQ from these policies
 ```
 
-The distributed `agents/openai.yaml` requests display names such as
-**Loop Code (lc)**, **Loop Debug (dbg)** and **Loop**, plus starter prompts.
-You can try those names in a supporting host picker after installation; their
-actual search behavior has not been verified for this release.
-Search ranking, matching of spaced text and native `/lc` commands are host behavior,
-not controlled by this repository. If your host routes `/loop code` or `/lc` here,
-the gateway understands that selector; if it does not, use `$loop code` or the
-canonical `$loop-code`. We do not install global custom slash commands.
+The distributed `agents/openai.yaml` requests canonical display names and starter
+prompts. You can try those names in a supporting host picker after installation;
+their actual search behavior has not been verified for this release. Search ranking
+and native slash commands are host behavior, not controlled by this repository.
+Use canonical skill names such as `$loop-code`; we do not install global custom
+slash commands or publish shortcut invocation aliases. Short search terms such as
+`lc`, `dbg` and `kb` remain candidate-search hints: `search --query lc` finds
+`loop-code`, while `resolve --query lc` and `$loop lc` are rejected. A suggestion
+does not execute a skill. Select the canonical result and give the task directly.
 
 Official [Build skills documentation](https://learn.chatgpt.com/docs/build-skills),
 read 2026-10-26, describes explicit mentions/selectors and optional UI metadata.
@@ -36,43 +33,45 @@ UI/native discovery for this release is NOT_RUN until observed on the target hos
 From repository root, Python 3.11+:
 
 ```text
-python .github/skills/loop/scripts/find_skill.py search --query "loop code"
-python .github/skills/loop/scripts/find_skill.py resolve --query "/lc"
-python .github/skills/loop/scripts/find_skill.py resolve --query "/loop bundle office"
+python .github/skills/loop/scripts/find_skill.py search --query "loop-code"
+python .github/skills/loop/scripts/find_skill.py resolve --query "loop-code"
+python .github/skills/loop/scripts/find_skill.py resolve --query "bundle office"
 python .github/skills/loop/scripts/find_skill.py bundles
 python scripts/discovery.py
 ```
 
 After installing, use the finder's actual path inside `loop/scripts`. It imports
 only Python's standard library and carries its own generated catalog. `resolve`
-requires an exact registered selector; search returns candidates without choosing
+requires an exact canonical skill name or full bundle selector; search returns candidates without choosing
 or executing them. Unknown/ambiguous selectors fail, never select the full catalog.
 A valid catalog match can still have `missing_skills`: lookup success is distinct
 from installation completeness. No commands, task text or model responses are eval'd.
 
-| Short selector | Canonical skill |
+| Canonical skill | Use it for |
 |---|---|
-| `lc`, `code` | `loop-code` |
-| `dbg`, `debug` | `loop-debug` |
-| `rv`, `review` | `loop-review` |
-| `tst`, `test` | `loop-test` |
-| `wk`, `work` | `loop-work` |
-| `tbl`, `table` | `loop-table` |
-| `doc`, `document` | `loop-document` |
-| `mtg`, `meeting` | `loop-meeting` |
-| `kb`, `knowledge` | `loop-knowledge` |
-| `intake` | `loop-intake` |
-| `support` | `loop-support` |
+| `loop-code` | authorized implementation work |
+| `loop-debug` | a reproducible failure |
+| `loop-review` | an evidence-backed review |
+| `loop-test` | selecting a test strategy |
+| `loop-work` | an office or personal work package |
+| `loop-table` | table analysis and report artifacts |
+| `loop-document` | a document artifact |
+| `loop-meeting` | meeting preparation or synthesis |
+| `loop-knowledge` | source-linked notes or FAQ |
+| `loop-intake` | scoping an unclear request |
+| `loop-support` | support-ticket triage |
 
-Other skills accept their canonical name and spaced suffix, e.g. `test integration`.
-Use `bundle <id>` or `b <id>` to avoid collisions with skill names such as work.
+Every skill accepts only its canonical name. Use the full `bundle <id>` selector.
 Keep the actual task separate from the CLI selector; `--query` accepts only the
 lookup string for resolution. It does not parse an arbitrary task into shell code.
 
 ## Installation and maintenance
 
-All need bundles include the single `loop` gateway, not a second folder for each
-alias. For an individual skill, select the gateway too if you want shortcut lookup:
+See [bundle starting points and worked examples](BUNDLE-QUICKSTART.md) for the
+first skill, minimum inputs and expected output for each bundle.
+
+All need bundles include the single `loop` gateway. For an individual skill, select
+the gateway too only if you want its read-only canonical-name/bundle lookup:
 
 ```text
 python scripts/install_skills.py --skill loop --skill loop-code --target "/my/project/.agents/skills"

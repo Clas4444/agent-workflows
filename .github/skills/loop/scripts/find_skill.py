@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Portable read-only skill lookup. Shortcuts are data, never shell commands."""
+"""Portable read-only lookup for canonical skill names and full bundle selectors."""
 import argparse
 import json
 from pathlib import Path
@@ -34,8 +34,12 @@ def validate_catalog(data):
         if not isinstance(row.get('description'), str) or not row['description'].strip():
             raise ValueError('skill description required')
         values = row.get('aliases')
-        if not isinstance(values, list) or not values:
-            raise ValueError('skill aliases required')
+        terms = row.get('search_terms', [])
+        if (not isinstance(terms, list) or any(not isinstance(term, str)
+                or not re.fullmatch(r'[a-z0-9]+', term) for term in terms)):
+            raise ValueError('invalid search terms')
+        if not isinstance(values, list):
+            raise ValueError('skill aliases must be a list')
         for alias in [name, *values]:
             if (not isinstance(alias, str) or not re.fullmatch(r'[a-z0-9]+(?:[ -][a-z0-9]+)*', alias)
                     or alias.startswith(('bundle ', 'b '))):
@@ -60,18 +64,16 @@ def load_catalog(path):
 
 def resolve(data, query):
     query = normalize(query)
-    if query.startswith('loop '):
-        query = query[5:]
-    for prefix in ('bundle ', 'b '):
+    for prefix in ('bundle ',):
         if query.startswith(prefix):
             key = query[len(prefix):]
             if key not in data['bundles']:
                 raise ValueError('unknown bundle; search or list bundles first')
             return {'kind': 'bundle', 'id': key, 'skills': data['bundles'][key]['skills'], 'execution': 'NONE'}
     for name, row in data['skills'].items():
-        if query == name or query in row['aliases']:
+        if query == name:
             return {'kind': 'skill', 'id': name, 'skills': [name], 'execution': 'NONE'}
-    raise ValueError('unknown selector; use an exact name or registered alias, or search first')
+    raise ValueError('unknown selector; use an exact canonical name or full bundle selector, or search first')
 
 
 def search(data, query):
@@ -82,7 +84,7 @@ def search(data, query):
     rows = []
     for kind, entries in (('skill', data['skills']), ('bundle', data['bundles'])):
         for key, row in entries.items():
-            text = ' '.join([kind, key, *row.get('aliases', []), row.get('description', row.get('purpose', ''))]).casefold().replace('-', ' ')
+            text = ' '.join([kind, key, *row.get('search_terms', []), row.get('description', row.get('purpose', ''))]).casefold().replace('-', ' ')
             words = re.findall(r'[a-z0-9]+', text)
             if all(token in words or (len(token) >= 4 and any(word.startswith(token) for word in words)) for token in tokens):
                 rows.append({'kind': kind, 'id': key, 'description': row.get('description', row.get('purpose'))})

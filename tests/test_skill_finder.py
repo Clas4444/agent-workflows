@@ -1,4 +1,4 @@
-"""User-facing shortcuts must select safely without executing task content."""
+"""Canonical skill and bundle selectors must select safely without executing task content."""
 import copy
 import importlib.util
 import json
@@ -23,26 +23,37 @@ class SkillFinderTests(unittest.TestCase):
         self.finder = finder()
         self.catalog = self.finder.load_catalog(ROOT/'.github/skills/loop/assets/catalog.json')
 
-    def test_spaced_canonical_short_and_case_variants_resolve_same_skill(self):
-        for query in ['/loop code', '/lc', '$loop code', 'LOOP-CODE', 'code']:
+    def test_canonical_name_and_case_variants_resolve_same_skill(self):
+        for query in ['/loop-code', '$loop-code', 'LOOP-CODE']:
             with self.subTest(query=query):
                 row = self.finder.resolve(self.catalog, query)
                 self.assertEqual(row['kind'], 'skill')
                 self.assertEqual(row['skills'], ['loop-code'])
 
     def test_exact_bundle_expansion_preserves_registered_order(self):
-        for query in ['/loop bundle office', 'bundle office', '/b office']:
+        for query in ['/bundle office', 'bundle office']:
             row = self.finder.resolve(self.catalog, query)
             self.assertEqual(row['kind'], 'bundle')
             self.assertEqual(row['skills'], self.catalog['bundles']['office']['skills'])
 
     def test_unknown_and_ambiguous_queries_do_not_guess_or_fall_back_to_all(self):
-        for query in ['', '/l', 'office', '/loop bundle no-such-bundle', '/loop cod', '../loop-code']:
+        for query in ['', '/l', 'office', '/loop bundle no-such-bundle', '/loop cod',
+                      '../loop-code', 'code', 'b office',
+                      'lc', 'dbg', 'rv', 'tst', 'wk', 'tbl', 'doc', 'mtg', 'kb', '$loop lc']:
             with self.subTest(query=query), self.assertRaises(ValueError):
                 self.finder.resolve(self.catalog, query)
 
-    def test_search_can_find_names_aliases_and_function_without_invoking(self):
-        for query in ['loop code', 'lc', 'implement']:
+    def test_catalog_publishes_no_shortcut_aliases(self):
+        self.assertTrue(all(row['aliases'] == [] for row in self.catalog['skills'].values()))
+
+    def test_short_search_terms_find_candidates_but_cannot_resolve(self):
+        for term, name in [('lc', 'loop-code'), ('dbg', 'loop-debug'), ('kb', 'loop-knowledge')]:
+            self.assertIn(name, [row['id'] for row in self.finder.search(self.catalog, term)])
+            with self.assertRaises(ValueError):
+                self.finder.resolve(self.catalog, term)
+
+    def test_search_can_find_canonical_names_and_function_without_invoking(self):
+        for query in ['loop-code', 'implement']:
             rows = self.finder.search(self.catalog, query)
             self.assertIn('loop-code', [row['id'] for row in rows])
         self.assertEqual(self.finder.search(self.catalog, 'no-such-skill'), [])
@@ -56,7 +67,7 @@ class SkillFinderTests(unittest.TestCase):
 
     def test_colliding_alias_unknown_bundle_member_and_duplicate_json_fail_closed(self):
         data = copy.deepcopy(self.catalog)
-        data['skills']['loop-debug']['aliases'].append('lc')
+        data['skills']['loop-debug']['aliases'].append('loop-code')
         with self.assertRaises(ValueError): self.finder.validate_catalog(data)
         data = copy.deepcopy(self.catalog)
         data['bundles']['office']['skills'].append('missing-skill')
@@ -79,7 +90,7 @@ class SkillFinderTests(unittest.TestCase):
         def changed(path, *args, **kwargs):
             text = original(path, *args, **kwargs)
             if path == ROOT/'.github/skills/loop/assets/catalog.json':
-                return text.replace('"lc"', '"wrong-alias"')
+                return text.replace('"aliases": []', '"aliases": ["wrong-alias"]', 1)
             return text
         with mock.patch.object(Path, 'read_text', changed):
             self.assertTrue(check(ROOT))
@@ -93,13 +104,13 @@ class SkillFinderTests(unittest.TestCase):
             catalog = root/'loop/assets/catalog.json';catalog.parent.mkdir()
             catalog.write_bytes((ROOT/'.github/skills/loop/assets/catalog.json').read_bytes())
             argv = [sys.executable, '-I', '-B', str(script), 'resolve', '--query']
-            result = subprocess.run([*argv, '/lc'], cwd=root, capture_output=True, text=True, timeout=10)
+            result = subprocess.run([*argv, '/loop-code'], cwd=root, capture_output=True, text=True, timeout=10)
             self.assertEqual(result.returncode, 0, result.stderr)
             row = json.loads(result.stdout)
             self.assertEqual(row['missing_skills'], ['loop-code'])
             self.assertEqual(row['execution'], 'NONE')
             marker = root/'unsafe.txt'
-            result = subprocess.run([*argv, '/lc; touch unsafe.txt'], cwd=root, capture_output=True, text=True, timeout=10)
+            result = subprocess.run([*argv, '/loop-code; touch unsafe.txt'], cwd=root, capture_output=True, text=True, timeout=10)
             self.assertNotEqual(result.returncode, 0)
             self.assertFalse(marker.exists())
 

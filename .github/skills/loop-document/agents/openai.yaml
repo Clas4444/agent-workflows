@@ -1,4 +1,4 @@
 interface:
-  display_name: "Loop Document (doc)"
-  short_description: "Use Loop Document (doc) for a focused workflow"
+  display_name: "Loop Document"
+  short_description: "Use Loop Document for a focused workflow"
   default_prompt: "Use $loop-document for this task; verify the result and report any limits."

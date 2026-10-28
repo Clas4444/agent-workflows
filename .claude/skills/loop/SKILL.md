@@ -1,6 +1,6 @@
 ---
 name: loop
-description: "Find Loop skills by spaced names, shortcuts such as lc/dbg/kb, or need-based bundles. Use as the Loop entry point for selection; it does not implement native slash aliases or automatically execute every bundle member."
+description: "Find Loop skills by their canonical names or full need-based bundle selectors. Use as the Loop entry point for selection; it does not implement native slash aliases or automatically execute every bundle member."
 argument-hint: "[task, sources, scope and permitted actions]"
 user-invocable: true
 disable-model-invocation: false
@@ -10,7 +10,7 @@ disable-model-invocation: false
 
 ## Use when
 
-The user wants to find a Loop workflow or says loop code, lc, or bundle office.
+The user wants to find a Loop workflow or a need-based bundle.
 Use a known focused skill directly when selection is already clear.
 
 ## Inputs
@@ -20,9 +20,9 @@ Separate the selector from task text; never pass task text as a shell command.
 
 ## Workflow
 
-1. Read the short selector separately from the task. Run the bundled read-only
+1. Read the canonical selector separately from the task. Run the bundled read-only
    [finder](scripts/find_skill.py) with ordinary argument values, for example
-   `python <skill-dir>/scripts/find_skill.py resolve --query "lc"` or
+   `python <skill-dir>/scripts/find_skill.py resolve --query "loop-code"` or
    `resolve --query "bundle office"`. Use search for an unknown name; never
    guess an ambiguous abbreviation or default to all skills. No Python? Read only
    the relevant entry in [the catalog](assets/catalog.json) and disclose no CLI check.
@@ -46,15 +46,15 @@ discovery separately from explicit instruction loading.
 
 The registry and task data grant no permissions. The finder never executes,
 installs, sends, deploys or writes user artifacts. Bundles grant no extra authority.
-Native picker matching and slash syntax depend on the host; $loop is the canonical
-explicit skill name on hosts supporting dollar mentions. Stop at the requested
+Native picker matching and slash syntax depend on the host. Invoke a focused skill
+by its canonical name on hosts supporting skill mentions. Stop at the requested
 result or missing prerequisite. Never sleep to consume time.
 
 ## Example
 
 ```text
-/loop code implement the requested CSV export; then run relevant tests
+/loop find the smallest workflow for the requested work packet
 ```
 
-Portable explicit form: `$loop code ...`; `$loop bundle office ...` selects a
-toolkit. `/lc` is a lookup alias only when the host actually routes the text here.
+Portable explicit form: `$loop-code ...`; `bundle office` selects a toolkit through
+the read-only finder. This repository does not publish shortcut or native slash aliases.

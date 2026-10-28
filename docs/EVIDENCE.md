@@ -45,6 +45,25 @@ installation update. Installation instructions are in
 
 ## Behavioral evidence
 
+### Current desktop session: Codex / GPT-6.1 Sol, 2026-10-28
+
+Status: RUN (explicit instruction loading). In this desktop conversation the
+agent selected `loop-code`, read the repository's
+`.github/skills/loop-code/SKILL.md`, and applied its scoped change/check/report
+workflow to this clarification. Host/model identity comes from the session
+context, not from an independently captured model API response. This is a narrow
+interactive observation, not a benchmark or a rerun of the historical trials.
+
+| Capability | Current observation |
+|---|---|
+| Select and read a skill explicitly in Codex / GPT-6.1 Sol | RUN: repository `loop-code` instructions loaded in this session |
+| Apply it to this documentation change | RUN: edit plus documentation-navigation check; see the conversation tool results for the check outcome |
+| Native picker selection / automatic activation | NOT_RUN by the agent; the user reported a `/lc` suggestion, without a captured activation path |
+| All skills / all bundles on this model | NOT_RUN |
+
+The native-discovery NOT_RUN entries elsewhere refer to picker/activation
+verification. They must not be read as saying no skill has been used in Codex.
+
 Four explicit-load scaffolded Codex CLI calls were recorded. Expected artifact
 fields were supplied, while answers were checked against a frozen finite oracle.
 Eighteen oracle controls ran before the calls. The calls used existing global
@@ -123,11 +142,11 @@ python -m unittest discover -s tests -p test_work_packet_evidence.py -v
 python scripts/evidence_indexes.py
 ```
 
-The first command checks the retained PASS/FAIL outcomes, current instruction
-text after trailing-whitespace normalization and oracle mutation controls. The
+The first command checks the retained PASS/FAIL outcomes, archived instruction
+bytes against their original protocol pins and oracle mutation controls. The
 second checks declared published bytes. Neither makes a new model invocation.
-Recorded instruction snapshots have their own hashes; equality after trimming
-does not mean the final published files were executed byte for byte.
+Recorded instruction snapshots have their own hashes. Current gateway instructions
+have changed; these historical trials do not certify the current gateway.
 
 ## What remains unverified
 

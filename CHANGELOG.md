@@ -1,5 +1,16 @@
 # Changelog
 
+## 1.10.2-experimental — 2026-10-28
+
+- Keep short search hints while requiring canonical skill names/full bundle
+  selectors for resolution; remove abbreviated picker labels and gateway aliases.
+- Add starting points for fourteen bundles, four worked request examples and
+  focused verification guidance.
+- Distinguish observed Codex / GPT-6.1 Sol explicit instruction use from native
+  picker activation and historical runtime trials. Preserve historical pins.
+- Preserve illustrations and runner behavior; record the Windows timeout
+  investigation without claiming an unverified repair.
+
 ## 1.10.1-experimental — 2026-10-26
 
 - Add a read-only local documentation link/heading checker with case, path,

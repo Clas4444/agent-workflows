@@ -1,4 +1,4 @@
 interface:
-  display_name: "Loop Debug (dbg)"
-  short_description: "Use Loop Debug (dbg) for a focused workflow"
+  display_name: "Loop Debug"
+  short_description: "Use Loop Debug for a focused workflow"
   default_prompt: "Use $loop-debug for this task; verify the result and report any limits."

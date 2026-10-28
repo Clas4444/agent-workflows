@@ -1,5 +1,6 @@
 """Regrade retained artifacts and challenge the finite oracle without model calls."""
 import copy
+import hashlib
 import importlib.util
 import json
 from pathlib import Path
@@ -32,12 +33,12 @@ class WorkPacketEvidenceTests(unittest.TestCase):
             self.assertEqual(bool(errors), key == 'work', (key, errors))
         self.assertIn('serialization', self.protocol['measurement_note'])
 
-    def test_recorded_instruction_text_matches_current_except_trailing_whitespace(self):
+    def test_recorded_instruction_text_matches_the_retained_input_pins(self):
         for key, case in self.protocol['cases'].items():
             for name in case['skills']:
-                recorded = (self.root/key/'skills'/name/'SKILL.md').read_text(encoding='utf-8')
-                current = (ROOT/'.github/skills'/name/'SKILL.md').read_text(encoding='utf-8')
-                self.assertEqual(recorded.rstrip(), current.rstrip(), (key, name))
+                path = f'skills/{name}/SKILL.md'
+                recorded = (self.root/key/path).read_bytes()
+                self.assertEqual(hashlib.sha256(recorded).hexdigest(), case['pins'][path], (key, name))
 
     def test_positive_control_and_missing_wrong_hash_changed_input_and_type_controls(self):
         for key in ('support', 'knowledge', 'work-schema-explicit'):
