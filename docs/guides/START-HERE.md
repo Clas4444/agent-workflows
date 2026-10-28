@@ -33,8 +33,8 @@ None requires executing every member. See the complete
 If you have not cloned the repository:
 
 ```text
-git clone https://github.com/Clas4444/loop-skills-repository.git
-cd loop-skills-repository
+git clone https://github.com/Clas4444/agent-workflows.git
+cd agent-workflows
 ```
 
 From the repository root, replace `C:/My Project` with your actual project path.

@@ -1,8 +1,12 @@
-# Portable Loop Skills
+# Agent Workflows
 
 **53 bounded workflows for everyday work and software development.** Give your agent a
 specific outcome, work through a small batch, check the result and leave a useful
 checkpoint. Choose a focused skill or a small installation bundle.
+
+Repository renamed from `loop-skills-repository`; existing `loop-*` skill names
+and workflow behavior are unchanged. Optional task-wide attention controls live
+in the separate [agent-attention](https://github.com/Clas4444/agent-attention) repo.
 
 Experimental version **1.10.2-experimental** · 15 groups · 14 bundles · Python 3.11+
 for repository tools. These are portable instructions and local helpers; your
@@ -305,7 +309,7 @@ they do not provide an office suite, messaging service or file transaction manag
 ## License and ownership
 
 An independent project maintained at
-[Clas4444/loop-skills-repository](https://github.com/Clas4444/loop-skills-repository),
+[Clas4444/agent-workflows](https://github.com/Clas4444/agent-workflows),
 distributed under the [MIT license](LICENSE). This repository is not a fork of
 its research references and is not affiliated with OpenAI, Anthropic, GitHub or
 Microsoft. No external benchmark result is a performance claim for this project.
