@@ -1,5 +1,12 @@
 # Evidence map for 1.10
 
+New scoped measurement, 2026-10-29: [Codex workflow batching versus sequential
+prompts](testing/CODEX-WORKFLOW-COST.md) compares one-, three- and five-step
+synthetic packages, including a complete ordinary-prompt control. It reports
+per-case token/time observations and preserves failed attempts. It is not a
+clean skill-free A/B test or a native continued-chat benchmark; its results do
+not upgrade the historical claims below.
+
 Current 1.11.1 separates workflow setup from independent attention setup; see
 [setup separation checks](testing/SETUP-SEPARATION.md). The 1.11.0 shared-graph
 capture remains [historical setup validation](testing/WORKFLOW-SETUP.md).

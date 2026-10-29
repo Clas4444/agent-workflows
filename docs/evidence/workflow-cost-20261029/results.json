@@ -1,0 +1,1834 @@
+{
+  "version": 1,
+  "date": "2026-10-29",
+  "measurement_status": "PASS",
+  "clean_skill_ab_status": "NOT_VERIFIED",
+  "native_continuation_status": "NOT_RUN",
+  "native_discovery_status": "NOT_RUN",
+  "source_head": "850445598d95057afd5aff6b9b4d1538fdedabbd",
+  "source_context": "Working tree had unrelated setup packaging edits; they were preserved. Candidate skill hash is pinned; global/ancestor context was not isolated.",
+  "model": "gpt-6.1-sol",
+  "reasoning_effort": "low",
+  "identity_evidence": "Model/provider observed in separate default calibration header; supported low effort explicitly passed to every measured call. No independent backend identity attestation.",
+  "oracle_controls": [
+    {
+      "case": "single",
+      "control": "correct",
+      "passed": true
+    },
+    {
+      "case": "single",
+      "control": "missing",
+      "passed": true
+    },
+    {
+      "case": "single",
+      "control": "wrong_type_metrics",
+      "passed": true
+    },
+    {
+      "case": "single",
+      "control": "valid_format_wrong_content_metrics",
+      "passed": true
+    },
+    {
+      "case": "three",
+      "control": "correct",
+      "passed": true
+    },
+    {
+      "case": "three",
+      "control": "missing",
+      "passed": true
+    },
+    {
+      "case": "three",
+      "control": "wrong_type_triage",
+      "passed": true
+    },
+    {
+      "case": "three",
+      "control": "valid_format_wrong_content_triage",
+      "passed": true
+    },
+    {
+      "case": "three",
+      "control": "wrong_type_metrics",
+      "passed": true
+    },
+    {
+      "case": "three",
+      "control": "valid_format_wrong_content_metrics",
+      "passed": true
+    },
+    {
+      "case": "three",
+      "control": "wrong_type_brief",
+      "passed": true
+    },
+    {
+      "case": "three",
+      "control": "valid_format_wrong_content_brief",
+      "passed": true
+    },
+    {
+      "case": "five",
+      "control": "correct",
+      "passed": true
+    },
+    {
+      "case": "five",
+      "control": "missing",
+      "passed": true
+    },
+    {
+      "case": "five",
+      "control": "wrong_type_triage",
+      "passed": true
+    },
+    {
+      "case": "five",
+      "control": "valid_format_wrong_content_triage",
+      "passed": true
+    },
+    {
+      "case": "five",
+      "control": "wrong_type_metrics",
+      "passed": true
+    },
+    {
+      "case": "five",
+      "control": "valid_format_wrong_content_metrics",
+      "passed": true
+    },
+    {
+      "case": "five",
+      "control": "wrong_type_allocation",
+      "passed": true
+    },
+    {
+      "case": "five",
+      "control": "valid_format_wrong_content_allocation",
+      "passed": true
+    },
+    {
+      "case": "five",
+      "control": "wrong_type_risks",
+      "passed": true
+    },
+    {
+      "case": "five",
+      "control": "valid_format_wrong_content_risks",
+      "passed": true
+    },
+    {
+      "case": "five",
+      "control": "wrong_type_brief",
+      "passed": true
+    },
+    {
+      "case": "five",
+      "control": "valid_format_wrong_content_brief",
+      "passed": true
+    },
+    {
+      "case": "parser",
+      "control": "duplicate_keys",
+      "passed": true
+    }
+  ],
+  "packages": [
+    {
+      "id": "01-single-r1-workflow",
+      "case": "single",
+      "rep": 1,
+      "arm": "workflow",
+      "status": "PASS",
+      "call_count": 1,
+      "seconds": 6.565170199999557,
+      "usage": {
+        "input_tokens": 26752,
+        "cached_input_tokens": 13440,
+        "output_tokens": 34,
+        "reasoning_output_tokens": 0,
+        "uncached_input_tokens": 13312,
+        "total_tokens": 26786
+      },
+      "final_check": true,
+      "calls": [
+        {
+          "id": "01-single-r1-workflow-s1",
+          "status": "PASS",
+          "seconds": 6.565170199999557,
+          "exit_code": 0,
+          "timeout": false,
+          "usage": {
+            "input_tokens": 26752,
+            "cached_input_tokens": 13440,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 34,
+            "reasoning_output_tokens": 0
+          },
+          "checks": {
+            "exit_zero": true,
+            "single_usage_event": true,
+            "usage_valid": true,
+            "jsonl_valid": true,
+            "no_tool_use": true,
+            "expected_output": true
+          },
+          "warning_counts": {
+            "model_catalog_refresh_timeout": 0,
+            "skill_interface_warning": 4
+          },
+          "hashes": {
+            "answer.txt": "2fa39c5f03ddcbf0b4b11dcf103dd6f07fce03bac3f29fd0783db39321da2320",
+            "events.jsonl": "4dfeb7846c698160dd373b27a8f8b32efceec54a0d940481ed86802aafc0f4c7",
+            "prompt.txt": "bd07e333d0799dfa8a255c2dcacea36a2d7c4634d7a8936ed356760de8bb3942",
+            "stderr.log": "430e8aee0ee32e43c0403e0e8594e8361fd631bec8a431d1bc10be9815ea3edf"
+          }
+        }
+      ]
+    },
+    {
+      "id": "02-single-r1-plain",
+      "case": "single",
+      "rep": 1,
+      "arm": "plain",
+      "status": "PASS",
+      "call_count": 1,
+      "seconds": 6.1548103999994055,
+      "usage": {
+        "input_tokens": 26093,
+        "cached_input_tokens": 13440,
+        "output_tokens": 34,
+        "reasoning_output_tokens": 0,
+        "uncached_input_tokens": 12653,
+        "total_tokens": 26127
+      },
+      "final_check": true,
+      "calls": [
+        {
+          "id": "02-single-r1-plain-s1",
+          "status": "PASS",
+          "seconds": 6.1548103999994055,
+          "exit_code": 0,
+          "timeout": false,
+          "usage": {
+            "input_tokens": 26093,
+            "cached_input_tokens": 13440,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 34,
+            "reasoning_output_tokens": 0
+          },
+          "checks": {
+            "exit_zero": true,
+            "single_usage_event": true,
+            "usage_valid": true,
+            "jsonl_valid": true,
+            "no_tool_use": true,
+            "expected_output": true
+          },
+          "warning_counts": {
+            "model_catalog_refresh_timeout": 0,
+            "skill_interface_warning": 4
+          },
+          "hashes": {
+            "answer.txt": "2fa39c5f03ddcbf0b4b11dcf103dd6f07fce03bac3f29fd0783db39321da2320",
+            "events.jsonl": "970c44f83beb83911bdfda69a7d3e3785373f665c6472f492c73d71db42fe3f5",
+            "prompt.txt": "d193b4ebf9308b471582ca55839f8a27b176d6b51456a29c7b51e330c6deade5",
+            "stderr.log": "4077ef74ddef5255a42f241dbe7e366ab8433cfa0bccdf25db9c4f1e4208a2c1"
+          }
+        }
+      ]
+    },
+    {
+      "id": "03-single-r1-manual",
+      "case": "single",
+      "rep": 1,
+      "arm": "manual",
+      "status": "PASS",
+      "call_count": 1,
+      "seconds": 5.171960899999249,
+      "usage": {
+        "input_tokens": 26014,
+        "cached_input_tokens": 13440,
+        "output_tokens": 34,
+        "reasoning_output_tokens": 0,
+        "uncached_input_tokens": 12574,
+        "total_tokens": 26048
+      },
+      "final_check": true,
+      "calls": [
+        {
+          "id": "03-single-r1-manual-s1",
+          "status": "PASS",
+          "seconds": 5.171960899999249,
+          "exit_code": 0,
+          "timeout": false,
+          "usage": {
+            "input_tokens": 26014,
+            "cached_input_tokens": 13440,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 34,
+            "reasoning_output_tokens": 0
+          },
+          "checks": {
+            "exit_zero": true,
+            "single_usage_event": true,
+            "usage_valid": true,
+            "jsonl_valid": true,
+            "no_tool_use": true,
+            "expected_output": true
+          },
+          "warning_counts": {
+            "model_catalog_refresh_timeout": 0,
+            "skill_interface_warning": 4
+          },
+          "hashes": {
+            "answer.txt": "2fa39c5f03ddcbf0b4b11dcf103dd6f07fce03bac3f29fd0783db39321da2320",
+            "events.jsonl": "7fbff85cf515fd87e331e6e8ed4b3f4cd25a3a3221158a59fe750fee753daf35",
+            "prompt.txt": "cd89b62505a3f747873c4b41caaa377ed56121560f0ea9058c1421ca8821a47b",
+            "stderr.log": "15431f0b18edf2cb2e69d2ff13bf396b60a929035bc9ee370fa50c5ff5308a2b"
+          }
+        }
+      ]
+    },
+    {
+      "id": "04-single-r2-manual",
+      "case": "single",
+      "rep": 2,
+      "arm": "manual",
+      "status": "PASS",
+      "call_count": 1,
+      "seconds": 6.165421099998639,
+      "usage": {
+        "input_tokens": 26114,
+        "cached_input_tokens": 13440,
+        "output_tokens": 34,
+        "reasoning_output_tokens": 0,
+        "uncached_input_tokens": 12674,
+        "total_tokens": 26148
+      },
+      "final_check": true,
+      "calls": [
+        {
+          "id": "04-single-r2-manual-s1",
+          "status": "PASS",
+          "seconds": 6.165421099998639,
+          "exit_code": 0,
+          "timeout": false,
+          "usage": {
+            "input_tokens": 26114,
+            "cached_input_tokens": 13440,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 34,
+            "reasoning_output_tokens": 0
+          },
+          "checks": {
+            "exit_zero": true,
+            "single_usage_event": true,
+            "usage_valid": true,
+            "jsonl_valid": true,
+            "no_tool_use": true,
+            "expected_output": true
+          },
+          "warning_counts": {
+            "model_catalog_refresh_timeout": 0,
+            "skill_interface_warning": 4
+          },
+          "hashes": {
+            "answer.txt": "2fa39c5f03ddcbf0b4b11dcf103dd6f07fce03bac3f29fd0783db39321da2320",
+            "events.jsonl": "9014771238a3cd1943f6a130ef7cb53c6f37552aab7cae10c103f677bb589893",
+            "prompt.txt": "cd89b62505a3f747873c4b41caaa377ed56121560f0ea9058c1421ca8821a47b",
+            "stderr.log": "2056014c926186eb0db131ae8dd30a75c376771e64c7daff7b5c1106a4f507ec"
+          }
+        }
+      ]
+    },
+    {
+      "id": "05-single-r2-plain",
+      "case": "single",
+      "rep": 2,
+      "arm": "plain",
+      "status": "PASS",
+      "call_count": 1,
+      "seconds": 6.52042320000146,
+      "usage": {
+        "input_tokens": 25993,
+        "cached_input_tokens": 13440,
+        "output_tokens": 34,
+        "reasoning_output_tokens": 0,
+        "uncached_input_tokens": 12553,
+        "total_tokens": 26027
+      },
+      "final_check": true,
+      "calls": [
+        {
+          "id": "05-single-r2-plain-s1",
+          "status": "PASS",
+          "seconds": 6.52042320000146,
+          "exit_code": 0,
+          "timeout": false,
+          "usage": {
+            "input_tokens": 25993,
+            "cached_input_tokens": 13440,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 34,
+            "reasoning_output_tokens": 0
+          },
+          "checks": {
+            "exit_zero": true,
+            "single_usage_event": true,
+            "usage_valid": true,
+            "jsonl_valid": true,
+            "no_tool_use": true,
+            "expected_output": true
+          },
+          "warning_counts": {
+            "model_catalog_refresh_timeout": 0,
+            "skill_interface_warning": 4
+          },
+          "hashes": {
+            "answer.txt": "2fa39c5f03ddcbf0b4b11dcf103dd6f07fce03bac3f29fd0783db39321da2320",
+            "events.jsonl": "38ed0a3bada286cda4489e51e4299456a35bbe204bb43545b23e0e5b28c51af8",
+            "prompt.txt": "d193b4ebf9308b471582ca55839f8a27b176d6b51456a29c7b51e330c6deade5",
+            "stderr.log": "1f00ddd2b9535d98204ef15cc69951f13bbd8ca11067bdf6bf3d7eae52f1627a"
+          }
+        }
+      ]
+    },
+    {
+      "id": "06-single-r2-workflow",
+      "case": "single",
+      "rep": 2,
+      "arm": "workflow",
+      "status": "PASS",
+      "call_count": 1,
+      "seconds": 5.945626700000503,
+      "usage": {
+        "input_tokens": 26752,
+        "cached_input_tokens": 23936,
+        "output_tokens": 34,
+        "reasoning_output_tokens": 0,
+        "uncached_input_tokens": 2816,
+        "total_tokens": 26786
+      },
+      "final_check": true,
+      "calls": [
+        {
+          "id": "06-single-r2-workflow-s1",
+          "status": "PASS",
+          "seconds": 5.945626700000503,
+          "exit_code": 0,
+          "timeout": false,
+          "usage": {
+            "input_tokens": 26752,
+            "cached_input_tokens": 23936,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 34,
+            "reasoning_output_tokens": 0
+          },
+          "checks": {
+            "exit_zero": true,
+            "single_usage_event": true,
+            "usage_valid": true,
+            "jsonl_valid": true,
+            "no_tool_use": true,
+            "expected_output": true
+          },
+          "warning_counts": {
+            "model_catalog_refresh_timeout": 0,
+            "skill_interface_warning": 4
+          },
+          "hashes": {
+            "answer.txt": "2fa39c5f03ddcbf0b4b11dcf103dd6f07fce03bac3f29fd0783db39321da2320",
+            "events.jsonl": "5cdf768a3f66edbc538585730d7d5db98b8bfa4c6325bf8956350713519ec907",
+            "prompt.txt": "bd07e333d0799dfa8a255c2dcacea36a2d7c4634d7a8936ed356760de8bb3942",
+            "stderr.log": "b197c9bd10a20d58df4a2c4fcec84491dd967de3156bd8866799224e71d460b0"
+          }
+        }
+      ]
+    },
+    {
+      "id": "07-three-r1-plain",
+      "case": "three",
+      "rep": 1,
+      "arm": "plain",
+      "status": "PASS",
+      "call_count": 1,
+      "seconds": 7.7538138999989314,
+      "usage": {
+        "input_tokens": 26160,
+        "cached_input_tokens": 13440,
+        "output_tokens": 171,
+        "reasoning_output_tokens": 0,
+        "uncached_input_tokens": 12720,
+        "total_tokens": 26331
+      },
+      "final_check": true,
+      "calls": [
+        {
+          "id": "07-three-r1-plain-s1",
+          "status": "PASS",
+          "seconds": 7.7538138999989314,
+          "exit_code": 0,
+          "timeout": false,
+          "usage": {
+            "input_tokens": 26160,
+            "cached_input_tokens": 13440,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 171,
+            "reasoning_output_tokens": 0
+          },
+          "checks": {
+            "exit_zero": true,
+            "single_usage_event": true,
+            "usage_valid": true,
+            "jsonl_valid": true,
+            "no_tool_use": true,
+            "expected_output": true
+          },
+          "warning_counts": {
+            "model_catalog_refresh_timeout": 0,
+            "skill_interface_warning": 4
+          },
+          "hashes": {
+            "answer.txt": "ad7e325965180909633c0fcf1c4228bec7368c49256c1b62df76179477cc07b3",
+            "events.jsonl": "bbbd68ea74ddabcda82d09d2e49b529194d9e2dab68c0e824a0f2e729e72e43f",
+            "prompt.txt": "e6d7b465d3259421b15acdccce470cbbf61c55ccd63fadfd617d6af2336a1ba7",
+            "stderr.log": "98fdad0fb35a9ad8f41dd2108cee36734f7561d36d454f60269f9a281d920be0"
+          }
+        }
+      ]
+    },
+    {
+      "id": "08-three-r1-manual",
+      "case": "three",
+      "rep": 1,
+      "arm": "manual",
+      "status": "PASS",
+      "call_count": 3,
+      "seconds": 20.696446099998866,
+      "usage": {
+        "input_tokens": 78785,
+        "cached_input_tokens": 40320,
+        "output_tokens": 181,
+        "reasoning_output_tokens": 0,
+        "uncached_input_tokens": 38465,
+        "total_tokens": 78966
+      },
+      "final_check": true,
+      "calls": [
+        {
+          "id": "08-three-r1-manual-s1",
+          "status": "PASS",
+          "seconds": 8.075021000000561,
+          "exit_code": 0,
+          "timeout": false,
+          "usage": {
+            "input_tokens": 26182,
+            "cached_input_tokens": 13440,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 112,
+            "reasoning_output_tokens": 0
+          },
+          "checks": {
+            "exit_zero": true,
+            "single_usage_event": true,
+            "usage_valid": true,
+            "jsonl_valid": true,
+            "no_tool_use": true,
+            "expected_output": true
+          },
+          "warning_counts": {
+            "model_catalog_refresh_timeout": 0,
+            "skill_interface_warning": 4
+          },
+          "hashes": {
+            "answer.txt": "75c242c4e1ea98761d5f88e35f219b0540f8da7a42dc3b804fb82e29a0c13b10",
+            "events.jsonl": "95f6810ea1a5bd7351ec80d9312b528847ba7287a1da825105c5537b2227d5d1",
+            "prompt.txt": "9458ecee586490f85016acb1522995c096c3a9a17bfb18a42cf35dc58f1e5fd6",
+            "stderr.log": "c57c920ed7d8e52a618f1fbede6d1f7d958c1c1a4dfcd0e9192cec7ca99d56e2"
+          }
+        },
+        {
+          "id": "08-three-r1-manual-s2",
+          "status": "PASS",
+          "seconds": 6.596860899999228,
+          "exit_code": 0,
+          "timeout": false,
+          "usage": {
+            "input_tokens": 26221,
+            "cached_input_tokens": 13440,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 34,
+            "reasoning_output_tokens": 0
+          },
+          "checks": {
+            "exit_zero": true,
+            "single_usage_event": true,
+            "usage_valid": true,
+            "jsonl_valid": true,
+            "no_tool_use": true,
+            "expected_output": true
+          },
+          "warning_counts": {
+            "model_catalog_refresh_timeout": 0,
+            "skill_interface_warning": 4
+          },
+          "hashes": {
+            "answer.txt": "2fa39c5f03ddcbf0b4b11dcf103dd6f07fce03bac3f29fd0783db39321da2320",
+            "events.jsonl": "694f511846823b45831c0fc2fb3b6b5665501b272bd0dce2f6313272df3d094d",
+            "prompt.txt": "7c2ed5e838963de71e770faca593794033587a4023792d6718355f9a2a0728c9",
+            "stderr.log": "dcc63c42d5226e03f0aa91372874be906ec79c449d5212bba4c2f0b151b1af1c"
+          }
+        },
+        {
+          "id": "08-three-r1-manual-s3",
+          "status": "PASS",
+          "seconds": 6.024564199999077,
+          "exit_code": 0,
+          "timeout": false,
+          "usage": {
+            "input_tokens": 26382,
+            "cached_input_tokens": 13440,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 35,
+            "reasoning_output_tokens": 0
+          },
+          "checks": {
+            "exit_zero": true,
+            "single_usage_event": true,
+            "usage_valid": true,
+            "jsonl_valid": true,
+            "no_tool_use": true,
+            "expected_output": true
+          },
+          "warning_counts": {
+            "model_catalog_refresh_timeout": 0,
+            "skill_interface_warning": 4
+          },
+          "hashes": {
+            "answer.txt": "67947c3ccecc01acf852201c2f09831abf053beb46b69f836955ef062b1b9f6b",
+            "events.jsonl": "11be249be0bbf00dc4ffd2d8826c68ca4d2665e7740108826d82d2e0a197facd",
+            "prompt.txt": "a13367b475aff80f68276b1af981c622dd50b47bd23d0f5186366b75c3da8e01",
+            "stderr.log": "9dca4ac84a96ec34969e133f2defef6ac9dd53eb6f434248eb499414347aa704"
+          }
+        }
+      ]
+    },
+    {
+      "id": "09-three-r1-workflow",
+      "case": "three",
+      "rep": 1,
+      "arm": "workflow",
+      "status": "PASS",
+      "call_count": 1,
+      "seconds": 6.612546599999405,
+      "usage": {
+        "input_tokens": 26819,
+        "cached_input_tokens": 13440,
+        "output_tokens": 171,
+        "reasoning_output_tokens": 0,
+        "uncached_input_tokens": 13379,
+        "total_tokens": 26990
+      },
+      "final_check": true,
+      "calls": [
+        {
+          "id": "09-three-r1-workflow-s1",
+          "status": "PASS",
+          "seconds": 6.612546599999405,
+          "exit_code": 0,
+          "timeout": false,
+          "usage": {
+            "input_tokens": 26819,
+            "cached_input_tokens": 13440,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 171,
+            "reasoning_output_tokens": 0
+          },
+          "checks": {
+            "exit_zero": true,
+            "single_usage_event": true,
+            "usage_valid": true,
+            "jsonl_valid": true,
+            "no_tool_use": true,
+            "expected_output": true
+          },
+          "warning_counts": {
+            "model_catalog_refresh_timeout": 0,
+            "skill_interface_warning": 4
+          },
+          "hashes": {
+            "answer.txt": "ad7e325965180909633c0fcf1c4228bec7368c49256c1b62df76179477cc07b3",
+            "events.jsonl": "08c5134fa0dd278a7b03c1d596d38eafe7dbc34b9a1eea375e236e114409143e",
+            "prompt.txt": "5ad674c42650f19608d4b44bf93512fd972278bdf73e752ce08f04b23c362b6d",
+            "stderr.log": "d623882036f5fc89b52349c66fb99ad4f4d8cb677312ab18e2f795f511bd1aff"
+          }
+        }
+      ]
+    },
+    {
+      "id": "10-three-r2-workflow",
+      "case": "three",
+      "rep": 2,
+      "arm": "workflow",
+      "status": "PASS",
+      "call_count": 1,
+      "seconds": 7.610523299999841,
+      "usage": {
+        "input_tokens": 26819,
+        "cached_input_tokens": 13440,
+        "output_tokens": 171,
+        "reasoning_output_tokens": 0,
+        "uncached_input_tokens": 13379,
+        "total_tokens": 26990
+      },
+      "final_check": true,
+      "calls": [
+        {
+          "id": "10-three-r2-workflow-s1",
+          "status": "PASS",
+          "seconds": 7.610523299999841,
+          "exit_code": 0,
+          "timeout": false,
+          "usage": {
+            "input_tokens": 26819,
+            "cached_input_tokens": 13440,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 171,
+            "reasoning_output_tokens": 0
+          },
+          "checks": {
+            "exit_zero": true,
+            "single_usage_event": true,
+            "usage_valid": true,
+            "jsonl_valid": true,
+            "no_tool_use": true,
+            "expected_output": true
+          },
+          "warning_counts": {
+            "model_catalog_refresh_timeout": 0,
+            "skill_interface_warning": 4
+          },
+          "hashes": {
+            "answer.txt": "ad7e325965180909633c0fcf1c4228bec7368c49256c1b62df76179477cc07b3",
+            "events.jsonl": "f0e4e832eb5d80efb830fe110b3340c10cc714bde5bf99974584f7042622a8c7",
+            "prompt.txt": "5ad674c42650f19608d4b44bf93512fd972278bdf73e752ce08f04b23c362b6d",
+            "stderr.log": "335cf1a12444d01ad7a3924c6d409b32e1b661af8362911d1ef484ec0ca5e73e"
+          }
+        }
+      ]
+    },
+    {
+      "id": "11-three-r2-manual",
+      "case": "three",
+      "rep": 2,
+      "arm": "manual",
+      "status": "PASS",
+      "call_count": 3,
+      "seconds": 19.733293800001775,
+      "usage": {
+        "input_tokens": 78785,
+        "cached_input_tokens": 40320,
+        "output_tokens": 181,
+        "reasoning_output_tokens": 0,
+        "uncached_input_tokens": 38465,
+        "total_tokens": 78966
+      },
+      "final_check": true,
+      "calls": [
+        {
+          "id": "11-three-r2-manual-s1",
+          "status": "PASS",
+          "seconds": 9.110758900000292,
+          "exit_code": 0,
+          "timeout": false,
+          "usage": {
+            "input_tokens": 26182,
+            "cached_input_tokens": 13440,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 112,
+            "reasoning_output_tokens": 0
+          },
+          "checks": {
+            "exit_zero": true,
+            "single_usage_event": true,
+            "usage_valid": true,
+            "jsonl_valid": true,
+            "no_tool_use": true,
+            "expected_output": true
+          },
+          "warning_counts": {
+            "model_catalog_refresh_timeout": 0,
+            "skill_interface_warning": 4
+          },
+          "hashes": {
+            "answer.txt": "75c242c4e1ea98761d5f88e35f219b0540f8da7a42dc3b804fb82e29a0c13b10",
+            "events.jsonl": "4263bd12d61fce819fa97f284b8298446dc17c91986f3c8748a42ecdfa0dfa95",
+            "prompt.txt": "9458ecee586490f85016acb1522995c096c3a9a17bfb18a42cf35dc58f1e5fd6",
+            "stderr.log": "14e292646c60b80fa94518f5fa4c4a338b3537b48814394d118d962449117fe3"
+          }
+        },
+        {
+          "id": "11-three-r2-manual-s2",
+          "status": "PASS",
+          "seconds": 5.455408400001033,
+          "exit_code": 0,
+          "timeout": false,
+          "usage": {
+            "input_tokens": 26221,
+            "cached_input_tokens": 13440,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 34,
+            "reasoning_output_tokens": 0
+          },
+          "checks": {
+            "exit_zero": true,
+            "single_usage_event": true,
+            "usage_valid": true,
+            "jsonl_valid": true,
+            "no_tool_use": true,
+            "expected_output": true
+          },
+          "warning_counts": {
+            "model_catalog_refresh_timeout": 0,
+            "skill_interface_warning": 4
+          },
+          "hashes": {
+            "answer.txt": "2fa39c5f03ddcbf0b4b11dcf103dd6f07fce03bac3f29fd0783db39321da2320",
+            "events.jsonl": "ef47b5e92ae4884b1b9134db804ba4387dd0ac9927d3e3d8bebcb2331e59671b",
+            "prompt.txt": "7c2ed5e838963de71e770faca593794033587a4023792d6718355f9a2a0728c9",
+            "stderr.log": "95cef369bd3d69f025d649e723ec007604ef2398b55253dbbc51e052fc34fa39"
+          }
+        },
+        {
+          "id": "11-three-r2-manual-s3",
+          "status": "PASS",
+          "seconds": 5.16712650000045,
+          "exit_code": 0,
+          "timeout": false,
+          "usage": {
+            "input_tokens": 26382,
+            "cached_input_tokens": 13440,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 35,
+            "reasoning_output_tokens": 0
+          },
+          "checks": {
+            "exit_zero": true,
+            "single_usage_event": true,
+            "usage_valid": true,
+            "jsonl_valid": true,
+            "no_tool_use": true,
+            "expected_output": true
+          },
+          "warning_counts": {
+            "model_catalog_refresh_timeout": 0,
+            "skill_interface_warning": 4
+          },
+          "hashes": {
+            "answer.txt": "67947c3ccecc01acf852201c2f09831abf053beb46b69f836955ef062b1b9f6b",
+            "events.jsonl": "b386f902a5d3275e491a029922c9584bb02e47712df8a7eeaafc5b44230d1965",
+            "prompt.txt": "a13367b475aff80f68276b1af981c622dd50b47bd23d0f5186366b75c3da8e01",
+            "stderr.log": "e2ee8f27bdc86c54a67b9ed0e9ff2a197a8a47ac6ef1a7ac1bbd447a3c4c8477"
+          }
+        }
+      ]
+    },
+    {
+      "id": "12-three-r2-plain",
+      "case": "three",
+      "rep": 2,
+      "arm": "plain",
+      "status": "PASS",
+      "call_count": 1,
+      "seconds": 6.521844800001418,
+      "usage": {
+        "input_tokens": 26160,
+        "cached_input_tokens": 13440,
+        "output_tokens": 171,
+        "reasoning_output_tokens": 0,
+        "uncached_input_tokens": 12720,
+        "total_tokens": 26331
+      },
+      "final_check": true,
+      "calls": [
+        {
+          "id": "12-three-r2-plain-s1",
+          "status": "PASS",
+          "seconds": 6.521844800001418,
+          "exit_code": 0,
+          "timeout": false,
+          "usage": {
+            "input_tokens": 26160,
+            "cached_input_tokens": 13440,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 171,
+            "reasoning_output_tokens": 0
+          },
+          "checks": {
+            "exit_zero": true,
+            "single_usage_event": true,
+            "usage_valid": true,
+            "jsonl_valid": true,
+            "no_tool_use": true,
+            "expected_output": true
+          },
+          "warning_counts": {
+            "model_catalog_refresh_timeout": 0,
+            "skill_interface_warning": 4
+          },
+          "hashes": {
+            "answer.txt": "ad7e325965180909633c0fcf1c4228bec7368c49256c1b62df76179477cc07b3",
+            "events.jsonl": "2cdde787d7daafef295872865d24e5ebe36895574b1b74767a3d92507df340dd",
+            "prompt.txt": "e6d7b465d3259421b15acdccce470cbbf61c55ccd63fadfd617d6af2336a1ba7",
+            "stderr.log": "907c3afc7bf94ef09c363bd8595538127c678cb4b8353f9bdbdf7eb60c29710f"
+          }
+        }
+      ]
+    },
+    {
+      "id": "13-five-r1-manual",
+      "case": "five",
+      "rep": 1,
+      "arm": "manual",
+      "status": "PASS",
+      "call_count": 5,
+      "seconds": 29.82085729999926,
+      "usage": {
+        "input_tokens": 132070,
+        "cached_input_tokens": 67200,
+        "output_tokens": 252,
+        "reasoning_output_tokens": 0,
+        "uncached_input_tokens": 64870,
+        "total_tokens": 132322
+      },
+      "final_check": true,
+      "calls": [
+        {
+          "id": "13-five-r1-manual-s1",
+          "status": "PASS",
+          "seconds": 5.711750700000266,
+          "exit_code": 0,
+          "timeout": false,
+          "usage": {
+            "input_tokens": 26267,
+            "cached_input_tokens": 13440,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 112,
+            "reasoning_output_tokens": 0
+          },
+          "checks": {
+            "exit_zero": true,
+            "single_usage_event": true,
+            "usage_valid": true,
+            "jsonl_valid": true,
+            "no_tool_use": true,
+            "expected_output": true
+          },
+          "warning_counts": {
+            "model_catalog_refresh_timeout": 0,
+            "skill_interface_warning": 4
+          },
+          "hashes": {
+            "answer.txt": "75c242c4e1ea98761d5f88e35f219b0540f8da7a42dc3b804fb82e29a0c13b10",
+            "events.jsonl": "2694a46469e0db662fb75b7e9dd2546c7b0cd7ec79f03b41ec620d1cab758536",
+            "prompt.txt": "1379219af4c8bffceb43cade7a1735f8011a103c81d011d0754da01a0ec92024",
+            "stderr.log": "882f5c9daac3409cac279a560193bc7e93cfd52573f137f9f76dbddcef59f245"
+          }
+        },
+        {
+          "id": "13-five-r1-manual-s2",
+          "status": "PASS",
+          "seconds": 7.391548600000533,
+          "exit_code": 0,
+          "timeout": false,
+          "usage": {
+            "input_tokens": 26306,
+            "cached_input_tokens": 13440,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 34,
+            "reasoning_output_tokens": 0
+          },
+          "checks": {
+            "exit_zero": true,
+            "single_usage_event": true,
+            "usage_valid": true,
+            "jsonl_valid": true,
+            "no_tool_use": true,
+            "expected_output": true
+          },
+          "warning_counts": {
+            "model_catalog_refresh_timeout": 0,
+            "skill_interface_warning": 4
+          },
+          "hashes": {
+            "answer.txt": "2fa39c5f03ddcbf0b4b11dcf103dd6f07fce03bac3f29fd0783db39321da2320",
+            "events.jsonl": "01c2eea0b3100c684348055aa5f5d75b87a3fd764116ec675ba8bc9e5669d371",
+            "prompt.txt": "f2f7412f5530c41d46e889913edc606151846c078cf3bfb9b370610f39b044d3",
+            "stderr.log": "2249b6301dac182ac84012ce11985a6fedb88fdb72119938887398174bd1b7fb"
+          }
+        },
+        {
+          "id": "13-five-r1-manual-s3",
+          "status": "PASS",
+          "seconds": 6.051892800000132,
+          "exit_code": 0,
+          "timeout": false,
+          "usage": {
+            "input_tokens": 26367,
+            "cached_input_tokens": 13440,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 44,
+            "reasoning_output_tokens": 0
+          },
+          "checks": {
+            "exit_zero": true,
+            "single_usage_event": true,
+            "usage_valid": true,
+            "jsonl_valid": true,
+            "no_tool_use": true,
+            "expected_output": true
+          },
+          "warning_counts": {
+            "model_catalog_refresh_timeout": 0,
+            "skill_interface_warning": 4
+          },
+          "hashes": {
+            "answer.txt": "40bc8a181d2f7c252ab96c8a1fb6ffb919e1f606ad76330cfcd106a85c93f7a3",
+            "events.jsonl": "e31bb9ec36f719459ca0b68eb25caa19fd3a0bc99fdc3b796f31661941d55832",
+            "prompt.txt": "a8d967c7babe389d7fcfc9a5be3ad1741d5a215127a40a26f02ec11665a988e0",
+            "stderr.log": "92374b550a48e8279cacd6abf602ee029b84241e35a7db394c2b952d501396dd"
+          }
+        },
+        {
+          "id": "13-five-r1-manual-s4",
+          "status": "PASS",
+          "seconds": 5.201729099999284,
+          "exit_code": 0,
+          "timeout": false,
+          "usage": {
+            "input_tokens": 26538,
+            "cached_input_tokens": 13440,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 27,
+            "reasoning_output_tokens": 0
+          },
+          "checks": {
+            "exit_zero": true,
+            "single_usage_event": true,
+            "usage_valid": true,
+            "jsonl_valid": true,
+            "no_tool_use": true,
+            "expected_output": true
+          },
+          "warning_counts": {
+            "model_catalog_refresh_timeout": 0,
+            "skill_interface_warning": 4
+          },
+          "hashes": {
+            "answer.txt": "eeab2f0cfcbf4a1977834be2cc2dde957f5d92b522732c64cbd69cde9ecaa6f6",
+            "events.jsonl": "2bb792aaf5c921e2b651dc17ea95298b24b3a3f7af8e673936639968f4bdd347",
+            "prompt.txt": "2c79e6c0fa53e55eb976917a4bc5d47b20e21e037f726c15edb195596db1f44f",
+            "stderr.log": "9866a8343e24798b601cca23992d5b2d32837c5d84ef36c529598f76c7bdd9e4"
+          }
+        },
+        {
+          "id": "13-five-r1-manual-s5",
+          "status": "PASS",
+          "seconds": 5.463936099999046,
+          "exit_code": 0,
+          "timeout": false,
+          "usage": {
+            "input_tokens": 26592,
+            "cached_input_tokens": 13440,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 35,
+            "reasoning_output_tokens": 0
+          },
+          "checks": {
+            "exit_zero": true,
+            "single_usage_event": true,
+            "usage_valid": true,
+            "jsonl_valid": true,
+            "no_tool_use": true,
+            "expected_output": true
+          },
+          "warning_counts": {
+            "model_catalog_refresh_timeout": 0,
+            "skill_interface_warning": 4
+          },
+          "hashes": {
+            "answer.txt": "67947c3ccecc01acf852201c2f09831abf053beb46b69f836955ef062b1b9f6b",
+            "events.jsonl": "4f8136205b43f35eab47cb66299b1b96c6dc4b53ec27558c22f8897c22fb388d",
+            "prompt.txt": "d111d4ef94163b6db443f7a5f6f98ab698daf02bab11c25ffd743028596b693f",
+            "stderr.log": "ccc6b424b7cf4b3b57dd42f35bb8aa1b3d13657b6979a353e92b514e582f94a4"
+          }
+        }
+      ]
+    },
+    {
+      "id": "14-five-r1-workflow",
+      "case": "five",
+      "rep": 1,
+      "arm": "workflow",
+      "status": "PASS",
+      "call_count": 1,
+      "seconds": 9.628417300000365,
+      "usage": {
+        "input_tokens": 26904,
+        "cached_input_tokens": 23936,
+        "output_tokens": 283,
+        "reasoning_output_tokens": 49,
+        "uncached_input_tokens": 2968,
+        "total_tokens": 27187
+      },
+      "final_check": true,
+      "calls": [
+        {
+          "id": "14-five-r1-workflow-s1",
+          "status": "PASS",
+          "seconds": 9.628417300000365,
+          "exit_code": 0,
+          "timeout": false,
+          "usage": {
+            "input_tokens": 26904,
+            "cached_input_tokens": 23936,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 283,
+            "reasoning_output_tokens": 49
+          },
+          "checks": {
+            "exit_zero": true,
+            "single_usage_event": true,
+            "usage_valid": true,
+            "jsonl_valid": true,
+            "no_tool_use": true,
+            "expected_output": true
+          },
+          "warning_counts": {
+            "model_catalog_refresh_timeout": 0,
+            "skill_interface_warning": 6
+          },
+          "hashes": {
+            "answer.txt": "97b9b5934f00cfdbfbcd25e49ad4dc146f9bd49c959c22df97eaa13cf0499904",
+            "events.jsonl": "d5c4e8b5a953899729ed8936b91f0301f62963469eef60f143452c1f22556144",
+            "prompt.txt": "d92c502108405d05ac757b794c8ac6b9b6501fd0dc39f7ac6167125d27d208dd",
+            "stderr.log": "83e95e4fa8bb842c76db1c47751dca67ae701f74962be07b3aa4c66ae9cd40df"
+          }
+        }
+      ]
+    },
+    {
+      "id": "15-five-r1-plain",
+      "case": "five",
+      "rep": 1,
+      "arm": "plain",
+      "status": "PASS",
+      "call_count": 1,
+      "seconds": 10.245185199999469,
+      "usage": {
+        "input_tokens": 26245,
+        "cached_input_tokens": 13440,
+        "output_tokens": 295,
+        "reasoning_output_tokens": 61,
+        "uncached_input_tokens": 12805,
+        "total_tokens": 26540
+      },
+      "final_check": true,
+      "calls": [
+        {
+          "id": "15-five-r1-plain-s1",
+          "status": "PASS",
+          "seconds": 10.245185199999469,
+          "exit_code": 0,
+          "timeout": false,
+          "usage": {
+            "input_tokens": 26245,
+            "cached_input_tokens": 13440,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 295,
+            "reasoning_output_tokens": 61
+          },
+          "checks": {
+            "exit_zero": true,
+            "single_usage_event": true,
+            "usage_valid": true,
+            "jsonl_valid": true,
+            "no_tool_use": true,
+            "expected_output": true
+          },
+          "warning_counts": {
+            "model_catalog_refresh_timeout": 1,
+            "skill_interface_warning": 4
+          },
+          "hashes": {
+            "answer.txt": "97b9b5934f00cfdbfbcd25e49ad4dc146f9bd49c959c22df97eaa13cf0499904",
+            "events.jsonl": "ba6fd42de086ae5fdd63c30d1b9acf84a4b7a85a93a407f37f9622821dffc32b",
+            "prompt.txt": "bbd8cb52334c7443df3a1d65fe547e130c78ec0bbb8cd82f41751f55c460011e",
+            "stderr.log": "bc8ed833f219197ce4e8f1e7210c79e2ccd25463fc252b9066f5fb8292bb6407"
+          }
+        }
+      ]
+    },
+    {
+      "id": "16-five-r2-plain",
+      "case": "five",
+      "rep": 2,
+      "arm": "plain",
+      "status": "PASS",
+      "call_count": 1,
+      "seconds": 10.286454500001128,
+      "usage": {
+        "input_tokens": 26245,
+        "cached_input_tokens": 13440,
+        "output_tokens": 283,
+        "reasoning_output_tokens": 49,
+        "uncached_input_tokens": 12805,
+        "total_tokens": 26528
+      },
+      "final_check": true,
+      "calls": [
+        {
+          "id": "16-five-r2-plain-s1",
+          "status": "PASS",
+          "seconds": 10.286454500001128,
+          "exit_code": 0,
+          "timeout": false,
+          "usage": {
+            "input_tokens": 26245,
+            "cached_input_tokens": 13440,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 283,
+            "reasoning_output_tokens": 49
+          },
+          "checks": {
+            "exit_zero": true,
+            "single_usage_event": true,
+            "usage_valid": true,
+            "jsonl_valid": true,
+            "no_tool_use": true,
+            "expected_output": true
+          },
+          "warning_counts": {
+            "model_catalog_refresh_timeout": 0,
+            "skill_interface_warning": 4
+          },
+          "hashes": {
+            "answer.txt": "97b9b5934f00cfdbfbcd25e49ad4dc146f9bd49c959c22df97eaa13cf0499904",
+            "events.jsonl": "51765e9e534acb312085299d60a41c0d901692eb32faeb7750f866fb238df257",
+            "prompt.txt": "bbd8cb52334c7443df3a1d65fe547e130c78ec0bbb8cd82f41751f55c460011e",
+            "stderr.log": "8156c02b56e4dc50e8343ff6fca42d214f855e414f52da5a4638bff0e16eb3ee"
+          }
+        }
+      ]
+    },
+    {
+      "id": "17-five-r2-workflow",
+      "case": "five",
+      "rep": 2,
+      "arm": "workflow",
+      "status": "PASS",
+      "call_count": 1,
+      "seconds": 7.805135000000519,
+      "usage": {
+        "input_tokens": 27004,
+        "cached_input_tokens": 13440,
+        "output_tokens": 281,
+        "reasoning_output_tokens": 47,
+        "uncached_input_tokens": 13564,
+        "total_tokens": 27285
+      },
+      "final_check": true,
+      "calls": [
+        {
+          "id": "17-five-r2-workflow-s1",
+          "status": "PASS",
+          "seconds": 7.805135000000519,
+          "exit_code": 0,
+          "timeout": false,
+          "usage": {
+            "input_tokens": 27004,
+            "cached_input_tokens": 13440,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 281,
+            "reasoning_output_tokens": 47
+          },
+          "checks": {
+            "exit_zero": true,
+            "single_usage_event": true,
+            "usage_valid": true,
+            "jsonl_valid": true,
+            "no_tool_use": true,
+            "expected_output": true
+          },
+          "warning_counts": {
+            "model_catalog_refresh_timeout": 0,
+            "skill_interface_warning": 4
+          },
+          "hashes": {
+            "answer.txt": "97b9b5934f00cfdbfbcd25e49ad4dc146f9bd49c959c22df97eaa13cf0499904",
+            "events.jsonl": "2d2c8350d92ad4f27d91441a27cfc8b08caf877622636508700d6925e1e84b1e",
+            "prompt.txt": "d92c502108405d05ac757b794c8ac6b9b6501fd0dc39f7ac6167125d27d208dd",
+            "stderr.log": "5ece7defea3287628f707051df16fa3aa60d7213845854031bff93fa4504b30d"
+          }
+        }
+      ]
+    },
+    {
+      "id": "18-five-r2-manual",
+      "case": "five",
+      "rep": 2,
+      "arm": "manual",
+      "status": "PASS",
+      "call_count": 5,
+      "seconds": 29.294123099996796,
+      "usage": {
+        "input_tokens": 132070,
+        "cached_input_tokens": 67200,
+        "output_tokens": 252,
+        "reasoning_output_tokens": 0,
+        "uncached_input_tokens": 64870,
+        "total_tokens": 132322
+      },
+      "final_check": true,
+      "calls": [
+        {
+          "id": "18-five-r2-manual-s1",
+          "status": "PASS",
+          "seconds": 6.735971399999471,
+          "exit_code": 0,
+          "timeout": false,
+          "usage": {
+            "input_tokens": 26267,
+            "cached_input_tokens": 13440,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 112,
+            "reasoning_output_tokens": 0
+          },
+          "checks": {
+            "exit_zero": true,
+            "single_usage_event": true,
+            "usage_valid": true,
+            "jsonl_valid": true,
+            "no_tool_use": true,
+            "expected_output": true
+          },
+          "warning_counts": {
+            "model_catalog_refresh_timeout": 0,
+            "skill_interface_warning": 4
+          },
+          "hashes": {
+            "answer.txt": "75c242c4e1ea98761d5f88e35f219b0540f8da7a42dc3b804fb82e29a0c13b10",
+            "events.jsonl": "e610c036151427b0c6d0ebbbdff9c5cd008da32db8b9566bc4eab1ea83be6afc",
+            "prompt.txt": "1379219af4c8bffceb43cade7a1735f8011a103c81d011d0754da01a0ec92024",
+            "stderr.log": "55820968af009b221f8a66d4443dd82902ee0abaade5f6d88f48d08a6580e5eb"
+          }
+        },
+        {
+          "id": "18-five-r2-manual-s2",
+          "status": "PASS",
+          "seconds": 5.314736799999082,
+          "exit_code": 0,
+          "timeout": false,
+          "usage": {
+            "input_tokens": 26406,
+            "cached_input_tokens": 13440,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 34,
+            "reasoning_output_tokens": 0
+          },
+          "checks": {
+            "exit_zero": true,
+            "single_usage_event": true,
+            "usage_valid": true,
+            "jsonl_valid": true,
+            "no_tool_use": true,
+            "expected_output": true
+          },
+          "warning_counts": {
+            "model_catalog_refresh_timeout": 0,
+            "skill_interface_warning": 4
+          },
+          "hashes": {
+            "answer.txt": "2fa39c5f03ddcbf0b4b11dcf103dd6f07fce03bac3f29fd0783db39321da2320",
+            "events.jsonl": "c7ee4b1701e64faa18b7c7eddc5ee42fe58a1b35e3aaa04fcea039494d6947e4",
+            "prompt.txt": "f2f7412f5530c41d46e889913edc606151846c078cf3bfb9b370610f39b044d3",
+            "stderr.log": "026bc7eb27ac537c1822ce413e819f09db39aff6b002b0829538eff4a8e9402a"
+          }
+        },
+        {
+          "id": "18-five-r2-manual-s3",
+          "status": "PASS",
+          "seconds": 5.392441699999836,
+          "exit_code": 0,
+          "timeout": false,
+          "usage": {
+            "input_tokens": 26367,
+            "cached_input_tokens": 13440,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 44,
+            "reasoning_output_tokens": 0
+          },
+          "checks": {
+            "exit_zero": true,
+            "single_usage_event": true,
+            "usage_valid": true,
+            "jsonl_valid": true,
+            "no_tool_use": true,
+            "expected_output": true
+          },
+          "warning_counts": {
+            "model_catalog_refresh_timeout": 0,
+            "skill_interface_warning": 4
+          },
+          "hashes": {
+            "answer.txt": "40bc8a181d2f7c252ab96c8a1fb6ffb919e1f606ad76330cfcd106a85c93f7a3",
+            "events.jsonl": "02d23de144432dfc35c6e6c23d9384fa52d35ced529aeca4016d7fdffc1148e7",
+            "prompt.txt": "a8d967c7babe389d7fcfc9a5be3ad1741d5a215127a40a26f02ec11665a988e0",
+            "stderr.log": "7d29fbf5366192d56225728e146a9ae6197d9bc8631259d2899bdd350d7d63a7"
+          }
+        },
+        {
+          "id": "18-five-r2-manual-s4",
+          "status": "PASS",
+          "seconds": 5.949534599998515,
+          "exit_code": 0,
+          "timeout": false,
+          "usage": {
+            "input_tokens": 26538,
+            "cached_input_tokens": 13440,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 27,
+            "reasoning_output_tokens": 0
+          },
+          "checks": {
+            "exit_zero": true,
+            "single_usage_event": true,
+            "usage_valid": true,
+            "jsonl_valid": true,
+            "no_tool_use": true,
+            "expected_output": true
+          },
+          "warning_counts": {
+            "model_catalog_refresh_timeout": 0,
+            "skill_interface_warning": 4
+          },
+          "hashes": {
+            "answer.txt": "eeab2f0cfcbf4a1977834be2cc2dde957f5d92b522732c64cbd69cde9ecaa6f6",
+            "events.jsonl": "3ce9e07229f66fa3bf1298d0278fd5e8f5222a45d16d3c90e521e42a7f0ce7aa",
+            "prompt.txt": "2c79e6c0fa53e55eb976917a4bc5d47b20e21e037f726c15edb195596db1f44f",
+            "stderr.log": "6f3563a5121efcee28f77460462b9c1ca9cb36d6105c184149a1a69b89453975"
+          }
+        },
+        {
+          "id": "18-five-r2-manual-s5",
+          "status": "PASS",
+          "seconds": 5.901438599999892,
+          "exit_code": 0,
+          "timeout": false,
+          "usage": {
+            "input_tokens": 26492,
+            "cached_input_tokens": 13440,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 35,
+            "reasoning_output_tokens": 0
+          },
+          "checks": {
+            "exit_zero": true,
+            "single_usage_event": true,
+            "usage_valid": true,
+            "jsonl_valid": true,
+            "no_tool_use": true,
+            "expected_output": true
+          },
+          "warning_counts": {
+            "model_catalog_refresh_timeout": 0,
+            "skill_interface_warning": 4
+          },
+          "hashes": {
+            "answer.txt": "67947c3ccecc01acf852201c2f09831abf053beb46b69f836955ef062b1b9f6b",
+            "events.jsonl": "06983bd7698799eb7770bb9774522dd0e6b297d3d3bedf5f47777ad0a46419b6",
+            "prompt.txt": "d111d4ef94163b6db443f7a5f6f98ab698daf02bab11c25ffd743028596b693f",
+            "stderr.log": "401d86cfe9caa2f0bba7a77f19cec44d15081526313e09ebf1d4f59cdad58cfc"
+          }
+        }
+      ]
+    }
+  ],
+  "case_means": {
+    "single": {
+      "workflow": {
+        "seconds": 6.25539845000003,
+        "input_tokens": 26752,
+        "cached_input_tokens": 18688,
+        "uncached_input_tokens": 8064,
+        "output_tokens": 34,
+        "total_tokens": 26786,
+        "seconds_min": 5.945626700000503,
+        "seconds_max": 6.565170199999557
+      },
+      "plain": {
+        "seconds": 6.337616800000433,
+        "input_tokens": 26043,
+        "cached_input_tokens": 13440,
+        "uncached_input_tokens": 12603,
+        "output_tokens": 34,
+        "total_tokens": 26077,
+        "seconds_min": 6.1548103999994055,
+        "seconds_max": 6.52042320000146
+      },
+      "manual": {
+        "seconds": 5.668690999998944,
+        "input_tokens": 26064,
+        "cached_input_tokens": 13440,
+        "uncached_input_tokens": 12624,
+        "output_tokens": 34,
+        "total_tokens": 26098,
+        "seconds_min": 5.171960899999249,
+        "seconds_max": 6.165421099998639
+      }
+    },
+    "three": {
+      "workflow": {
+        "seconds": 7.111534949999623,
+        "input_tokens": 26819,
+        "cached_input_tokens": 13440,
+        "uncached_input_tokens": 13379,
+        "output_tokens": 171,
+        "total_tokens": 26990,
+        "seconds_min": 6.612546599999405,
+        "seconds_max": 7.610523299999841
+      },
+      "plain": {
+        "seconds": 7.137829350000175,
+        "input_tokens": 26160,
+        "cached_input_tokens": 13440,
+        "uncached_input_tokens": 12720,
+        "output_tokens": 171,
+        "total_tokens": 26331,
+        "seconds_min": 6.521844800001418,
+        "seconds_max": 7.7538138999989314
+      },
+      "manual": {
+        "seconds": 20.21486995000032,
+        "input_tokens": 78785,
+        "cached_input_tokens": 40320,
+        "uncached_input_tokens": 38465,
+        "output_tokens": 181,
+        "total_tokens": 78966,
+        "seconds_min": 19.733293800001775,
+        "seconds_max": 20.696446099998866
+      }
+    },
+    "five": {
+      "workflow": {
+        "seconds": 8.716776150000442,
+        "input_tokens": 26954,
+        "cached_input_tokens": 18688,
+        "uncached_input_tokens": 8266,
+        "output_tokens": 282,
+        "total_tokens": 27236,
+        "seconds_min": 7.805135000000519,
+        "seconds_max": 9.628417300000365
+      },
+      "plain": {
+        "seconds": 10.265819850000298,
+        "input_tokens": 26245,
+        "cached_input_tokens": 13440,
+        "uncached_input_tokens": 12805,
+        "output_tokens": 289,
+        "total_tokens": 26534,
+        "seconds_min": 10.245185199999469,
+        "seconds_max": 10.286454500001128
+      },
+      "manual": {
+        "seconds": 29.55749019999803,
+        "input_tokens": 132070,
+        "cached_input_tokens": 67200,
+        "uncached_input_tokens": 64870,
+        "output_tokens": 252,
+        "total_tokens": 132322,
+        "seconds_min": 29.294123099996796,
+        "seconds_max": 29.82085729999926
+      }
+    }
+  },
+  "workflow_reduction_percent": {
+    "single": {
+      "plain": {
+        "seconds": 1.2973070571322243,
+        "input_tokens": -2.722420612064669,
+        "uncached_input_tokens": 36.01523446798382,
+        "output_tokens": 0.0,
+        "total_tokens": -2.7188710357786583
+      },
+      "manual": {
+        "seconds": -10.34996351011539,
+        "input_tokens": -2.639656230816456,
+        "uncached_input_tokens": 36.12167300380228,
+        "output_tokens": 0.0,
+        "total_tokens": -2.6362173346616613
+      }
+    },
+    "three": {
+      "plain": {
+        "seconds": 0.3683809000078031,
+        "input_tokens": -2.5191131498470964,
+        "uncached_input_tokens": -5.180817610062882,
+        "output_tokens": 0.0,
+        "total_tokens": -2.5027534085298786
+      },
+      "manual": {
+        "seconds": 64.82027849998853,
+        "input_tokens": 65.95925620359205,
+        "uncached_input_tokens": 65.21773040426362,
+        "output_tokens": 5.524861878453036,
+        "total_tokens": 65.82073297368487
+      }
+    },
+    "five": {
+      "plain": {
+        "seconds": 15.08933258749725,
+        "input_tokens": -2.701466946084974,
+        "uncached_input_tokens": 35.4470909800859,
+        "output_tokens": 2.422145328719727,
+        "total_tokens": -2.645662169292229
+      },
+      "manual": {
+        "seconds": 70.50907877827521,
+        "input_tokens": 79.59112591807374,
+        "uncached_input_tokens": 87.2575921072915,
+        "output_tokens": -11.904761904761907,
+        "total_tokens": 79.41687701213706
+      }
+    }
+  },
+  "pooled_reduction_percent": {
+    "plain": {
+      "seconds": 6.981752573770706,
+      "total_tokens": -2.622178308124945,
+      "uncached_input_tokens": 22.08088543852287
+    },
+    "manual": {
+      "seconds": 60.1672243005422,
+      "total_tokens": 65.87330339615647,
+      "uncached_input_tokens": 74.37973766589916
+    }
+  },
+  "equal_case_mean_reduction_percent": {
+    "plain": {
+      "seconds": 5.5850068482124255,
+      "total_tokens": -2.6224288712002553,
+      "uncached_input_tokens": 22.09383594600228
+    },
+    "manual": {
+      "seconds": 41.659797922716116,
+      "total_tokens": 47.53379755038676,
+      "uncached_input_tokens": 62.8656651717858
+    }
+  },
+  "human_delay_scenarios": [
+    {
+      "case": "single",
+      "seconds_per_continuation": 0,
+      "workflow_seconds": 6.25539845000003,
+      "manual_seconds": 5.668690999998944
+    },
+    {
+      "case": "single",
+      "seconds_per_continuation": 15,
+      "workflow_seconds": 6.25539845000003,
+      "manual_seconds": 5.668690999998944
+    },
+    {
+      "case": "single",
+      "seconds_per_continuation": 30,
+      "workflow_seconds": 6.25539845000003,
+      "manual_seconds": 5.668690999998944
+    },
+    {
+      "case": "single",
+      "seconds_per_continuation": 60,
+      "workflow_seconds": 6.25539845000003,
+      "manual_seconds": 5.668690999998944
+    },
+    {
+      "case": "three",
+      "seconds_per_continuation": 0,
+      "workflow_seconds": 7.111534949999623,
+      "manual_seconds": 20.21486995000032
+    },
+    {
+      "case": "three",
+      "seconds_per_continuation": 15,
+      "workflow_seconds": 7.111534949999623,
+      "manual_seconds": 50.21486995000032
+    },
+    {
+      "case": "three",
+      "seconds_per_continuation": 30,
+      "workflow_seconds": 7.111534949999623,
+      "manual_seconds": 80.21486995000032
+    },
+    {
+      "case": "three",
+      "seconds_per_continuation": 60,
+      "workflow_seconds": 7.111534949999623,
+      "manual_seconds": 140.21486995000032
+    },
+    {
+      "case": "five",
+      "seconds_per_continuation": 0,
+      "workflow_seconds": 8.716776150000442,
+      "manual_seconds": 29.55749019999803
+    },
+    {
+      "case": "five",
+      "seconds_per_continuation": 15,
+      "workflow_seconds": 8.716776150000442,
+      "manual_seconds": 89.55749019999803
+    },
+    {
+      "case": "five",
+      "seconds_per_continuation": 30,
+      "workflow_seconds": 8.716776150000442,
+      "manual_seconds": 149.55749019999803
+    },
+    {
+      "case": "five",
+      "seconds_per_continuation": 60,
+      "workflow_seconds": 8.716776150000442,
+      "manual_seconds": 269.557490199998
+    }
+  ],
+  "ancillary_attempts": [
+    {
+      "id": "default-calibration",
+      "status": "PASS",
+      "calls": 1,
+      "output_check": "READY",
+      "usage_comparability": "NOT_VERIFIED: non-JSON calibration; excluded from workload averages",
+      "header_model": "gpt-6.1-sol",
+      "header_reasoning": "none",
+      "raw_log_sha256": "9cbee4e27d3a1ce5d8781c647970f694943131377b4128894012430a6bc632d7"
+    },
+    {
+      "id": "explicit-none-campaign",
+      "status": "BLOCKED",
+      "started_calls": 1,
+      "failed_calls": 1,
+      "remaining_packages_not_run": 17,
+      "failure": "API 400 unsupported_value: explicit reasoning effort none rejected for gpt-6.1-sol; low/medium/high/xhigh/max offered.",
+      "attempt_seconds": 2.660680400000274,
+      "observation_sha256": "c30153c55d895f8f724fe5650dff8143dd6635586d8bd515379d990423b03613",
+      "protocol_sha256": "ad0075675eeccfaa0f69a60fb31dbeb2f277a10e66f5ffc1d95ff5518827cb22"
+    },
+    {
+      "id": "original-approval-review",
+      "status": "BLOCKED",
+      "model_calls": 0,
+      "reason": "Initial content-export approval rejected; user later explicitly approved synthetic task and skill submission."
+    }
+  ],
+  "historical_pilot": {
+    "status": "PASS",
+    "new_run": false,
+    "packages": [
+      {
+        "arm": "workflow",
+        "order": 1,
+        "status": "PASS",
+        "calls": 1,
+        "seconds": 34.4544762000005,
+        "input_tokens": 26925,
+        "cached_input_tokens": 13440,
+        "output_tokens": 171,
+        "reasoning_output_tokens": 0,
+        "uncached_input_tokens": 13485,
+        "total_tokens": 27096
+      },
+      {
+        "arm": "manual",
+        "order": 2,
+        "status": "PASS",
+        "calls": 3,
+        "seconds": 56.27226499999597,
+        "input_tokens": 78711,
+        "cached_input_tokens": 40320,
+        "output_tokens": 181,
+        "reasoning_output_tokens": 0,
+        "uncached_input_tokens": 38391,
+        "total_tokens": 78892
+      },
+      {
+        "arm": "manual",
+        "order": 3,
+        "status": "PASS",
+        "calls": 3,
+        "seconds": 47.49046950000047,
+        "input_tokens": 78611,
+        "cached_input_tokens": 40320,
+        "output_tokens": 181,
+        "reasoning_output_tokens": 0,
+        "uncached_input_tokens": 38291,
+        "total_tokens": 78792
+      },
+      {
+        "arm": "workflow",
+        "order": 4,
+        "status": "PASS",
+        "calls": 1,
+        "seconds": 10.125385399998777,
+        "input_tokens": 26925,
+        "cached_input_tokens": 13440,
+        "output_tokens": 171,
+        "reasoning_output_tokens": 0,
+        "uncached_input_tokens": 13485,
+        "total_tokens": 27096
+      }
+    ],
+    "means": {
+      "workflow": {
+        "seconds": 22.289930799999638,
+        "input_tokens": 26925,
+        "cached_input_tokens": 13440,
+        "uncached_input_tokens": 13485,
+        "output_tokens": 171,
+        "total_tokens": 27096
+      },
+      "manual": {
+        "seconds": 51.88136724999822,
+        "input_tokens": 78661,
+        "cached_input_tokens": 40320,
+        "uncached_input_tokens": 38341,
+        "output_tokens": 181,
+        "total_tokens": 78842
+      }
+    },
+    "model_identity": "NOT_VERIFIED",
+    "reasoning_effort": "NOT_VERIFIED",
+    "included_in_expanded_averages": false,
+    "summary_sha256": "1a8eab311356859bde34fc1810f69393ff3044f49dbc3ea8b174b6d2507fa4f9"
+  },
+  "capture_integrity": {
+    "protocol_sha256": "170c91648d6b47d531333a76b9ff1c0179536a1ea5f353acc37227179372319a",
+    "harness_sha256": "c8f57302f810c91d61ab110c87974fc7d52a3e30b12652d8cd2186282f5e3980",
+    "raw_results_sha256": "dce5c08a7a9719204676e68089c61806bd5cf1efcac9364d412f13227bac5f8c",
+    "finish_sha256": "ac5e87699f383f3e9702f287793cc0a75ff924885be1b2a0cdbe588d7e3b765b",
+    "skill_unchanged": true
+  },
+  "limits": [
+    "Synthetic arithmetic-only work, no tools or files generated by candidates.",
+    "Fresh ephemeral process per call with manual transcript replay; not native resumed chat.",
+    "Shared configured global skills and ancestor instructions; no clean skill-free baseline.",
+    "All required source is known at the start; later input changes and approvals not tested.",
+    "Two repetitions per cell, no independence assumption or population inference.",
+    "Wall time includes CLI startup/shutdown and network/cache effects; human delays are hypothetical.",
+    "Input includes cached subset; token counts are not dollars. No model-specific pricing applied.",
+    "Raw traces/prompts/responses are retained locally and are not published. Hashes do not make them public or attest execution."
+  ]
+}

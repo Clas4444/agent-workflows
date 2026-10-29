@@ -1,0 +1,219 @@
+{
+  "version": 2,
+  "date": "2026-10-29",
+  "source_head": "850445598d95057afd5aff6b9b4d1538fdedabbd",
+  "skill_path": ".github/skills/loop-work/SKILL.md",
+  "skill_sha256": "d83c0341eb469fd4139ade5c5aaa6e4f1e0d785139345e9e683f34033dca269f",
+  "cli_version": "0.165.0-alpha.1.2",
+  "model_requested": "gpt-6.1-sol",
+  "reasoning_effort_requested": "low",
+  "calibration_default_header": {
+    "model": "gpt-6.1-sol",
+    "provider": "openai",
+    "reasoning_effort": "none"
+  },
+  "cases": {
+    "single": [
+      "metrics"
+    ],
+    "three": [
+      "triage",
+      "metrics",
+      "brief"
+    ],
+    "five": [
+      "triage",
+      "metrics",
+      "allocation",
+      "risks",
+      "brief"
+    ]
+  },
+  "source_records": [
+    {
+      "id": "T1",
+      "team": "A",
+      "hours": 2,
+      "urgent": true
+    },
+    {
+      "id": "T2",
+      "team": "B",
+      "hours": 3,
+      "urgent": false
+    },
+    {
+      "id": "T3",
+      "team": "A",
+      "hours": 1,
+      "urgent": false
+    },
+    {
+      "id": "T4",
+      "team": "B",
+      "hours": 4,
+      "urgent": true
+    },
+    {
+      "id": "T5",
+      "team": "A",
+      "hours": 2,
+      "urgent": true
+    },
+    {
+      "id": "T6",
+      "team": "B",
+      "hours": 1,
+      "urgent": false
+    },
+    {
+      "id": "T3",
+      "team": "A",
+      "hours": 1,
+      "urgent": false
+    }
+  ],
+  "deliverable_rules": {
+    "triage": "Unique records by id, keep first. Sort urgent first then id ascending within each group. Preserve all four fields exactly.",
+    "metrics": "Object with unique_count, total_hours, urgent_hours, team_hours (object A/B). Use unique records only.",
+    "allocation": "With capacity 10 hours, scan triage in order; accept a record if its hours fit remaining capacity, otherwise defer it and continue scanning. Object selected_ids (ordered), deferred_ids (ordered), used_hours, remaining_hours.",
+    "risks": "Object overloaded (total unique hours > 10), deferred_ids (from allocation), missing_owners (true if no named people in source; teams are not named people).",
+    "brief": "Object capacity_hours=10, overload_hours=max(total unique hours-10,0), requires_approval=true, sent=false, recommendation=\"request_more_capacity\" if overloaded else \"within_capacity\"."
+  },
+  "expected": {
+    "triage": [
+      {
+        "id": "T1",
+        "team": "A",
+        "hours": 2,
+        "urgent": true
+      },
+      {
+        "id": "T4",
+        "team": "B",
+        "hours": 4,
+        "urgent": true
+      },
+      {
+        "id": "T5",
+        "team": "A",
+        "hours": 2,
+        "urgent": true
+      },
+      {
+        "id": "T2",
+        "team": "B",
+        "hours": 3,
+        "urgent": false
+      },
+      {
+        "id": "T3",
+        "team": "A",
+        "hours": 1,
+        "urgent": false
+      },
+      {
+        "id": "T6",
+        "team": "B",
+        "hours": 1,
+        "urgent": false
+      }
+    ],
+    "metrics": {
+      "unique_count": 6,
+      "total_hours": 13,
+      "urgent_hours": 8,
+      "team_hours": {
+        "A": 5,
+        "B": 8
+      }
+    },
+    "allocation": {
+      "selected_ids": [
+        "T1",
+        "T4",
+        "T5",
+        "T3",
+        "T6"
+      ],
+      "deferred_ids": [
+        "T2"
+      ],
+      "used_hours": 10,
+      "remaining_hours": 0
+    },
+    "risks": {
+      "overloaded": true,
+      "deferred_ids": [
+        "T2"
+      ],
+      "missing_owners": true
+    },
+    "brief": {
+      "capacity_hours": 10,
+      "overload_hours": 3,
+      "requires_approval": true,
+      "sent": false,
+      "recommendation": "request_more_capacity"
+    }
+  },
+  "order": {
+    "single": [
+      [
+        "workflow",
+        "plain",
+        "manual"
+      ],
+      [
+        "manual",
+        "plain",
+        "workflow"
+      ]
+    ],
+    "three": [
+      [
+        "plain",
+        "manual",
+        "workflow"
+      ],
+      [
+        "workflow",
+        "manual",
+        "plain"
+      ]
+    ],
+    "five": [
+      [
+        "manual",
+        "workflow",
+        "plain"
+      ],
+      [
+        "plain",
+        "workflow",
+        "manual"
+      ]
+    ]
+  },
+  "repetitions_per_case_arm": 2,
+  "planned_calls": 30,
+  "calibration_calls": 1,
+  "timeout_seconds_per_call": 150,
+  "controls_passed": 25,
+  "stop_rule": "Stop on prerequisite, quota, timeout or malformed usage; preserve output failures without retries. Mark remaining planned slots NOT_RUN.",
+  "comparison_status": "NOT_VERIFIED as clean skill A/B: shared configured host/global skills and ancestor instructions are not isolated.",
+  "arms": {
+    "workflow": "All deliverables in one call with exact explicit loop-work text appended.",
+    "plain": "All deliverables in one call without explicit workflow append; not a no-skill host.",
+    "manual": "One call per deliverable, full prior prompt/answer history replayed in separate ephemeral calls."
+  },
+  "metrics": "Sum actual input+output (cached input already included); uncached=input-cached; wall includes CLI lifecycle; no dollar estimate.",
+  "human_delay_seconds": [
+    0,
+    15,
+    30,
+    60
+  ],
+  "aggregation": "Per case/arm mean of two completed packages. Reduction=100*(1-workflow/baseline). Overall primary pooled ratio of sums across the equally repeated case mix; also show equal-case mean reduction. No confidence interval, independence, or causal skill attribution claimed.",
+  "quality_rule": "Exact typed JSON equality for every stage and final merged artifact, no tools, one valid usage event and zero exit. Consistency means both repetitions PASS, not pass@k."
+}
