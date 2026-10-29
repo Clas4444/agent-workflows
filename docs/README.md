@@ -37,3 +37,7 @@ role toolkits recommend a small subset, not a requirement to run all skills.
 Historical reports and evidence stay at their existing paths so old links and
 recorded instruction hashes remain interpretable. A historical PASS applies to
 its recorded scope and bytes, not every current skill or host.
+
+## Archived experiment reconciliation
+
+[Published findings and retained failures](testing/ARCHIVE-RECONCILIATION.md) · [Audit data](testing/ARCHIVE-RECONCILIATION.json)
