@@ -15,7 +15,7 @@ else:
     from bundle_docs import check_bundle_guide
     from bundle_workflows import check as check_bundle_workflows
 
-GUIDE = 'docs/guides/ROLE-WORKFLOWS.md'
+GUIDE = 'docs/guides/role-workflows.md'
 IMAGE = 'docs/assets/skill-stacks.svg'
 
 
@@ -58,8 +58,8 @@ def markdown(profiles):
              '<!-- Generated from workflow-presets.json by scripts/workflows.py. -->', '',
              'These are small recommended toolkits, not mandatory sequences. Install or invoke',
              'only what the task needs. A skill provides instructions; it does not enforce a sandbox.', '',
-             'See [practical English prompts](WORKFLOW-EXAMPLES.md) for concrete role-specific requests.', '',
-             'For non-coding work, see [everyday examples](EVERYDAY-WORK.md) and [install by need](INSTALL-BY-NEED.md).', '',
+             'See [practical English prompts](workflow-examples.md) for concrete role-specific requests.', '',
+             'For non-coding work, see [everyday examples](everyday-work.md) and [install by need](install-by-need.md).', '',
              'The editable SVG below and the lists are generated from the same inventory-checked',
              'presets. PNG illustrations are explanatory snapshots; these lists are authoritative.', '',
              '![Recommended skill stacks](../assets/skill-stacks.svg)', '']
@@ -83,8 +83,8 @@ def markdown(profiles):
               'Start a new session after installation and ask the host which skills it sees.',
               'Reusing existing authorization is appropriate; skill text does not grant new',
               'permission to publish, deploy, send messages or change production data.', '',
-              'See [testing](../testing/TESTING.md), [runtime evidence](../RUNTIME-TEST-MATRIX.md)',
-              'and [installation compatibility](../COMPATIBILITY.md).', '']
+              'See [testing](../testing/procedure.md), [runtime evidence](../reference/runtime-test-matrix.md)',
+              'and [installation compatibility](../reference/compatibility.md).', '']
     return '\n'.join(lines)
 
 

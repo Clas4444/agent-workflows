@@ -2,11 +2,11 @@
 
 | Asset | Purpose and source |
 |---|---|
-| [bundles/](bundles/) | Fourteen generated diagrams, one per bundle, with request selection, why/iteration, feedback/stop path and do/avoid guidance. Read the [workflow atlas](../guides/BUNDLE-WORKFLOWS.md); explanations come from `bundles/workflows.json`, membership from `skill-bundles.json`. |
+| [bundles/](bundles) | Fourteen generated diagrams, one per bundle, with request selection, why/iteration, feedback/stop path and do/avoid guidance. Read the [workflow atlas](../guides/bundle-workflows.md); explanations come from `bundles/workflows.json`, membership from `skill-bundles.json`. |
 | [loop-workflow.svg](loop-workflow.svg) | Overview of scope, selected installation, host use and artifact verification. Explanatory workflow, not a recorded execution trace. |
-| [evidence-1.10.svg](evidence-1.10.svg) | Snapshot of the separate 1.10 verification layers at release `c6255a1`; every count is linked to records in the [evidence map](../EVIDENCE.md). |
+| [evidence-1.10.svg](evidence-1.10.svg) | Snapshot of the separate 1.10 verification layers at release `c6255a1`; every count is linked to records in the [evidence map](../testing/evidence.md). |
 | [skill-stacks.svg](skill-stacks.svg) | Generated role toolkits from `workflow-presets.json`; check/regenerate with `python scripts/workflows.py [--write]` from the repository root. |
-| [developer-workflow.png](developer-workflow.png), [project-workflows.png](project-workflows.png) | Earlier explanatory illustrations. The generated [role guide](../guides/ROLE-WORKFLOWS.md) is authoritative for current toolkit membership. |
+| [developer-workflow.png](developer-workflow.png), [project-workflows.png](project-workflows.png) | Earlier explanatory illustrations. The generated [role guide](../guides/role-workflows.md) is authoritative for current toolkit membership. |
 
 The two new SVGs are editable text with accessible titles/descriptions, embedded
 styles and no external scripts, fonts or images. Their content also appears in

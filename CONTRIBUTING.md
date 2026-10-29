@@ -20,7 +20,7 @@ add a skill directory without adding its name and all three copies.
 
 ## Skill requirements
 
-Follow [the writing guide](docs/AUTHORING.md): Use when, Inputs, Workflow,
+Follow [the writing guide](docs/reference/authoring.md): Use when, Inputs, Workflow,
 Output, Boundaries and evidence, and a concrete Example. Keep the description
 specific enough to select the right workflow without loading every skill.
 
@@ -41,7 +41,7 @@ or host-compatibility claims without explicit authorization and evidence.
 ## Validation
 
 Read [AGENTS.md](AGENTS.md) for the agent workflow and
-[architecture](docs/ARCHITECTURE.md) for module ownership. Use the full default
+[architecture](docs/reference/architecture.md) for module ownership. Use the full default
 validator gate for contributions; `--profile format` is diagnostic only.
 
 From the repository root, run:
@@ -70,7 +70,7 @@ Keep generated validation evidence factual, and review the final diff for
 unrelated files or captured sensitive output.
 
 Use an installed Python 3.11+ interpreter; on Windows, `py -3` is an alternative
-only when that launcher is present. See [test procedure](docs/testing/TESTING.md)
+only when that launcher is present. See [test procedure](docs/testing/procedure.md)
 for gate scopes and skip handling. Edit `workflow-presets.json` and regenerate
 with `python scripts/workflows.py --write` when role recommendations change.
 
@@ -81,6 +81,6 @@ hand-maintained list. The regular workflows gate also checks this atlas.
 
 Run `python scripts/docs_check.py` after changing Markdown links or headings.
 It checks local inline destinations and Markdown fragments without network
-access; see the [syntax and scope](docs/testing/TESTING.md#documentation-navigation).
+access; see the [syntax and scope](docs/testing/procedure.md#documentation-navigation).
 
 Need-bundle changes belong in `skill-bundles.json`; test subset installs as well as full synchronization. Use a fresh session-pinned campaign when recording final verification, and do not reuse a previous session's PASS after editing inputs.

@@ -8,7 +8,7 @@ from scripts.validate import DEFAULT_ROOTS, Manifest, frontmatter_value, validat
 from scripts.validation.manifest import Manifest as ManifestType
 from scripts.validation.skill_format import check_format
 from scripts.validation.loop_policy import check_loop_policy
-import test_contract_validation as fixtures
+from tests import test_contract_validation as fixtures
 
 ROOT = Path(__file__).resolve().parents[1]
 MINIMAL = "---\nname: loop-review\ndescription: Review a scoped change.\n---\n\nReview the supplied diff.\n"

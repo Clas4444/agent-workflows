@@ -30,7 +30,7 @@ class SkillExpansionTests(unittest.TestCase):
     def test_manifest_and_documented_routes_cover_all_skills(self):
         manifest = json.loads((REPO / 'skills-manifest.json').read_text(encoding='utf-8'))
         self.assertEqual(len(manifest['skills']), 53)
-        usage = (REPO / 'docs' / 'SKILL-USAGE.md').read_text(encoding='utf-8')
+        usage = (REPO / 'docs/reference/skill-usage.md').read_text(encoding='utf-8')
         for name in manifest['skills']:
             self.assertIn(f'`{name}`', usage)
 

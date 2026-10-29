@@ -10,7 +10,7 @@ else:
 
 START='<!-- BEGIN GENERATED NEED BUNDLES -->'
 END='<!-- END GENERATED NEED BUNDLES -->'
-GUIDE='docs/guides/INSTALL-BY-NEED.md'
+GUIDE='docs/guides/install-by-need.md'
 
 
 def render(repo):

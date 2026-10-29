@@ -8,7 +8,7 @@ unions resolve to manifest order before the sync engine runs. No JSON Schema
 compliance beyond the documented reader is claimed for this registry.
 
 The opt-in acceptance CLI has a separately documented version-1 contract in
-[ACCEPTANCE-GATE.md](../docs/ACCEPTANCE-GATE.md), enforced by its dependency-free
+[ACCEPTANCE-GATE.md](../docs/reference/acceptance-gate.md), enforced by its dependency-free
 Python reader. It does not change the repository manifest or runner state and
 does not yet have a published JSON Schema.
 
@@ -28,7 +28,7 @@ merely three digit groups. Version and skill-name patterns use explicit
 end-of-input checks to avoid regex-engine differences around a final newline.
 The 2026-10-25 campaign compared Python and Node regex behavior; a complete
 third-party JSON Schema engine was NOT_RUN. See the
-[hardening evidence](../docs/UPDATE-30M-2026-10-25.md).
+[hardening evidence](../docs/testing/history/2026-10-25-update-30m.md).
 
 Runner state and runtime evidence retain their current formats. They do not
 yet have published schemas; adding those requires characterizing error-path

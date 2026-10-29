@@ -154,6 +154,12 @@ def check(repo, write=False):
                folder/'references/setup.md': REFERENCE,
                folder/'assets/workflow-example.json': json.dumps(template(layer), indent=2)+'\n',
                repo/'docs/assets/workflow-setup.svg': picture()}
+    if layer == 'skills':
+        entry = repo/'skills/workflow-setup'
+        outputs.update({entry/'scripts/workflow_setup.py': (repo/'scripts/workflow_setup.py').read_text(encoding='utf-8'),
+                        entry/'references/setup.md': REFERENCE,
+                        entry/'assets/workflow-example.json': json.dumps(template('skills'), indent=2)+'\n',
+                        entry/'assets/catalog.json': (folder/'assets/catalog.json').read_text(encoding='utf-8')})
     errors = []
     for path, contents in outputs.items():
         if write:

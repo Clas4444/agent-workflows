@@ -253,3 +253,21 @@ class WorkflowSetupTests(unittest.TestCase):
             self.assertEqual(json.loads(result.stdout)['status'],'BLOCKED')
             self.assertEqual(json.loads(result.stdout)['missing_facts'],['kind'])
             self.assertEqual(state_file.read_bytes(),before)
+
+
+    def test_direct_setup_skill_is_a_complete_isolated_entrypoint(self):
+        folder = ROOT/'skills/workflow-setup'
+        entry = (folder/'SKILL.md').read_text(encoding='utf-8')
+        self.assertTrue(entry.startswith('---\nname: workflow-setup\n'))
+        self.assertIn('description:', entry.split('---', 2)[1])
+        metadata = (folder/'agents/openai.yaml').read_text(encoding='utf-8')
+        self.assertIn('$workflow-setup', metadata)
+        with tempfile.TemporaryDirectory() as directory:
+            installed = Path(directory)/'workflow-setup'
+            shutil.copytree(folder, installed)
+            result = subprocess.run([sys.executable, '-I', '-S', '-B', str(installed/'scripts/workflow_setup.py'),
+                'check', '--file', str(installed/'assets/workflow-example.json'),
+                '--catalog', str(installed/'assets/catalog.json')],
+                cwd=directory, capture_output=True, text=True, timeout=10)
+            self.assertEqual(result.returncode, 0, result.stderr)
+            self.assertEqual(json.loads(result.stdout)['status'], 'PASS')

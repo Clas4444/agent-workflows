@@ -1,0 +1,6 @@
+interface:
+  display_name: "Workflow Setup"
+  short_description: "Design workflow steps, conditional skills and result routes."
+  default_prompt: "Use $workflow-setup to design the setup for my task."
+policy:
+  allow_implicit_invocation: false

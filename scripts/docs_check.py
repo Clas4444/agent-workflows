@@ -22,7 +22,7 @@ LINK = re.compile(r'!?\[[^\]]*\]\(\s*(<[^>\n]*>|(?:\\.|[^\s()\\]|\([^()\n]*\))+?
                   r'(?:[ \t]+(?:"[^"\n]*"|\x27[^\x27\n]*\x27))?\s*\)')
 REFERENCE = re.compile(r'(?<!\w)!?\[[^\]\n]+\]\[[^\]\n]*\]|^ {0,3}\[[^\]\n]+\]:', re.M)
 CANDIDATE = re.compile(r'!?\[[^\]]*\]\(')
-SCOPE = 'Root, docs/ and schemas/ Markdown; inline file/image links and local Markdown anchors. No network or rendering.'
+SCOPE = 'Root, docs/, schemas/ and standalone skills/ Markdown; inline file/image links and local Markdown anchors. No network or rendering.'
 
 
 def blank(value):
@@ -89,7 +89,7 @@ def heading_anchors(text):
 
 def documents(repo, errors):
     paths = set(repo.glob('*.md'))
-    stack = [repo/name for name in ('docs', 'schemas') if (repo/name).exists()]
+    stack = [repo/name for name in ('docs', 'schemas', 'skills') if (repo/name).exists()]
     while stack:
         folder = stack.pop()
         try:

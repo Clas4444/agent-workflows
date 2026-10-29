@@ -30,7 +30,7 @@ else:
     from validation.skill_format import FRONTMATTER_PATTERN, frontmatter_value, check_format
     from validation.loop_policy import REQUIRED_STATUSES, REQUIRED_SECTIONS, check_loop_policy
 
-GENERATED_FILES = ("docs/VALIDATION-RESULT.md",)
+GENERATED_FILES = ("docs/testing/checks/validation-result.md",)
 
 def sha256(path: Path) -> str:
     digest = hashlib.sha256()
@@ -172,11 +172,13 @@ def write_summary(
         f"- Working tree changes present: `{str(dirty).lower()}`\n"
         f"- Automated validator tests: `{tests_status}`\n"
         f"- CI result: `{ci_status}`\n"
-        f"- Agent runtime tests: `{runtime_status}` (see `docs/RUNTIME-TEST-MATRIX.md`)\n\n"
+        f"- Agent runtime tests: `{runtime_status}` (see `docs/reference/runtime-test-matrix.md`)\n\n"
         "## Findings\n\n"
         f"{details}\n"
     )
-    (repo / "docs" / "VALIDATION-RESULT.md").write_text(output, encoding="utf-8")
+    report = repo / GENERATED_FILES[0]
+    report.parent.mkdir(parents=True, exist_ok=True)
+    report.write_text(output, encoding="utf-8")
 
 
 def main() -> int:

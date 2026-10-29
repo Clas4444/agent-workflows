@@ -31,11 +31,11 @@ COMMANDS = (
     ('compile', ('-m','compileall','-q','scripts','tests')),
 )
 ROOTS = ('.github/skills','.agents/skills','.claude/skills','scripts','tests','schemas',
-         '.github/workflows','docs/evidence','docs/guides','docs/assets')
+         '.github/workflows','docs/evidence','docs/guides','docs/assets','skills','docs/reference')
 FILES = ('skills-manifest.json','skill-groups.json','skill-routing.json','workflow-presets.json',
          'skill-bundles.json','README.md','AGENTS.md','CONTRIBUTING.md','.gitattributes',
          'skill-resources.json',
-         'docs/SKILL-USAGE.md','docs/RUNTIME-TEST-MATRIX.md','docs/PROCESS-LIFECYCLE.md')
+         'docs/reference/skill-usage.md','docs/reference/runtime-test-matrix.md','docs/reference/process-lifecycle.md')
 
 
 def utc_now():

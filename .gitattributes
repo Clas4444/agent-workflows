@@ -37,3 +37,4 @@
 /docs/evidence/workflow-cost-20261030/** text eol=lf
 /scripts/workflow_cost*.py text eol=lf
 /tests/test_workflow_cost.py text eol=lf
+/skills/workflow-setup/** text eol=lf

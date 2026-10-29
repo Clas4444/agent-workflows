@@ -1,5 +1,15 @@
 # Changelog
 
+## 1.11.3 — 2026-10-30
+
+- Publish the independent `workflow-setup` skill with UI metadata, catalog,
+  self-contained helper and references, separate from the 53-workflow manifest.
+- Group guides, technical references, checks, experiments and historical reports;
+  use lowercase hyphenated document names and update live links and generators.
+- Preserve immutable evidence packets and recorded JSON captures. Keep four
+  compatibility entry points for installed instructions and retained evidence.
+- Validate standalone skill links, installation resources and documentation layout.
+
 ## 1.11.2 — 2026-10-30
 
 - Add a repeatable, opt-in Codex workflow cost experiment with finance,
@@ -141,7 +151,7 @@
 - Add context selection and resumable handoff skills, bringing the catalog to 36.
 - Record independent synthetic context/handoff exercises and their limitations.
 - Add trial metrics that retain failed/blocked attempts and distinguish any-run
-  success from observed all-runs success. See `docs/RESEARCH-1.6.md` for evidence.
+  success from observed all-runs success. See `docs/testing/history/research-1.6.md` for evidence.
 
 ## 1.5.0-experimental — 2026-10-24
 

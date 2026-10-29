@@ -1,0 +1,421 @@
+{
+  "version": 1,
+  "skills": {
+    "loop-review": {
+      "description": "Inspect a scoped change or repository and report prioritized findings with source evidence. Use for review; use loop-plan for planning, loop-evaluate for fixed-rubric scoring and loop-research workflows for adoption decisions.",
+      "aliases": [],
+      "search_terms": [
+        "rv"
+      ]
+    },
+    "loop-code": {
+      "description": "Implement an authorized feature or configuration change in small verified batches. Prefer loop-debug when the main goal is repairing a reproducible bug and loop-refactor when the goal is restructuring without changing behavior.",
+      "aliases": [],
+      "search_terms": [
+        "lc"
+      ]
+    },
+    "loop-diagnose": {
+      "description": "Investigate an unexplained symptom using competing hypotheses and discriminating experiments. Use for diagnosis without an assumed repair; prefer loop-debug for a requested fix, loop-diagnose-repro for minimization and the focused performance/regression routes when those are the goal.",
+      "aliases": [],
+      "search_terms": []
+    },
+    "loop-diagnose-repro": {
+      "description": "Run a bounded reproduction loop for a bug or failure: capture the environment, minimize the reproducer, vary one factor at a time, and preserve exact evidence for a later fix.",
+      "aliases": [],
+      "search_terms": []
+    },
+    "loop-diagnose-performance": {
+      "description": "Run a bounded performance-diagnosis loop for slow, memory-heavy, or resource-intensive behavior. Establish a baseline, profile safely, isolate a bottleneck, and verify a targeted improvement.",
+      "aliases": [],
+      "search_terms": []
+    },
+    "loop-diagnose-regression": {
+      "description": "Run a bounded regression-diagnosis loop: compare a known-good and failing state, bisect or narrow the change set, reproduce the regression, and verify the smallest authorized fix.",
+      "aliases": [],
+      "search_terms": []
+    },
+    "loop-research": {
+      "description": "Research a scoped everyday or technical question using primary sources, explicit criteria and a dated source ledger. Use to discover evidence or compare alternatives; use loop-summarize for supplied-source compression without new research.",
+      "aliases": [],
+      "search_terms": []
+    },
+    "loop-research-repo": {
+      "description": "Research repositories and open-source projects in a bounded evidence loop. Compare relevance, activity, license, security, compatibility, and maintenance before recommending adoption.",
+      "aliases": [],
+      "search_terms": []
+    },
+    "loop-research-tools": {
+      "description": "Research tools, extensions, plugins, skills, and MCP servers in a bounded evidence loop. Evaluate capability, permissions, maintenance, compatibility, cost, and adoption risk before recommending or installing anything.",
+      "aliases": [],
+      "search_terms": []
+    },
+    "loop-test": {
+      "description": "Select and execute a risk-based test strategy for a project or change when the required test layer is not yet known. Use focused unit, integration, E2E, coverage, adversarial or compatibility skills when that layer is already the main request.",
+      "aliases": [],
+      "search_terms": [
+        "tst"
+      ]
+    },
+    "loop-test-unit": {
+      "description": "Run a bounded unit-test loop for a module or function: select focused tests, reproduce failures, improve authorized tests or fixtures, and verify isolated behavior without weakening acceptance criteria.",
+      "aliases": [],
+      "search_terms": []
+    },
+    "loop-test-integration": {
+      "description": "Run a bounded integration-test loop across services, processes, files, databases, or external boundaries. Verify setup, contracts, failure paths, cleanup, and reproducibility.",
+      "aliases": [],
+      "search_terms": []
+    },
+    "loop-test-coverage": {
+      "description": "Run a bounded test-coverage loop: identify untested risk, inspect coverage evidence, add authorized focused tests, and verify that coverage improvements are meaningful rather than cosmetic.",
+      "aliases": [],
+      "search_terms": []
+    },
+    "loop-docs": {
+      "description": "Run a bounded documentation loop: audit README, guides, API references, examples, localization, and generated documentation; propose or make authorized updates; verify links and consistency. Use when the user asks to improve docs repeatedly.",
+      "aliases": [],
+      "search_terms": []
+    },
+    "loop-skill-create": {
+      "description": "Create or maintain an agent skill through requirements, reusable-pattern inspection, synchronized editing, focused tests, documentation, and evidence review. Use when adding or changing a SKILL.md workflow.",
+      "aliases": [],
+      "search_terms": []
+    },
+    "loop-orchestrate": {
+      "description": "Run bounded follow-up prompts through a configured headless coding-agent command with state, timeout, stop markers, and evidence. Use when a loop must continue in a new agent invocation.",
+      "aliases": [],
+      "search_terms": []
+    },
+    "loop-prompt": {
+      "description": "Run an initial user prompt, have the agent infer the next useful prompt, and execute a bounded number of follow-up prompts with evidence. Use when the user requests /loop-prompt N.",
+      "aliases": [],
+      "search_terms": []
+    },
+    "loop-debug": {
+      "description": "Repair a reproducible bug end to end: capture a failing test, isolate the cause, apply the smallest authorized fix, and rerun regression checks. Use when the user wants a bug fixed, rather than diagnosis alone.",
+      "aliases": [],
+      "search_terms": [
+        "dbg"
+      ]
+    },
+    "loop-security": {
+      "description": "Review authorized code and configuration for security risks using threat boundaries, source evidence and safe local tests. Use for a defensive security review or scoped remediation, not unrestricted probing.",
+      "aliases": [],
+      "search_terms": []
+    },
+    "loop-refactor": {
+      "description": "Improve a scoped code structure while preserving observable behavior through characterization tests, small reversible changes and regression checks. Use for maintainability work without a feature or bug-fix behavior change.",
+      "aliases": [],
+      "search_terms": []
+    },
+    "loop-ci": {
+      "description": "Diagnose and repair scoped CI failures by tracing a failed job to logs, reproducing locally where possible, and verifying workflow changes. Use for CI pipelines rather than general application debugging.",
+      "aliases": [],
+      "search_terms": []
+    },
+    "loop-release": {
+      "description": "Prepare and verify a scoped release candidate: version consistency, reproducible build, package contents, changelog and rollback notes. Use for release readiness; publishing remains a separately authorized action.",
+      "aliases": [],
+      "search_terms": []
+    },
+    "loop-plan": {
+      "description": "Turn a scoped request into dependency-ordered, verifiable implementation batches without changing code. Use before multi-step work when acceptance criteria, risks or sequencing need definition.",
+      "aliases": [],
+      "search_terms": []
+    },
+    "loop-dependencies": {
+      "description": "Assess and perform an authorized dependency change with manifest/lockfile consistency, compatibility checks and rollback evidence. Use for project dependency maintenance rather than tool adoption.",
+      "aliases": [],
+      "search_terms": []
+    },
+    "loop-migrate": {
+      "description": "Prepare and verify a scoped data, schema or configuration migration with dry-run, backup, invariants, idempotence and rollback. Use when stored state or format changes, not for behavior-preserving refactors.",
+      "aliases": [],
+      "search_terms": []
+    },
+    "loop-test-e2e": {
+      "description": "Verify a complete user-visible journey through its real entry point, including success, invalid input and observable side effects. Use for end-to-end acceptance, not isolated units or one integration boundary.",
+      "aliases": [],
+      "search_terms": []
+    },
+    "loop-evaluate": {
+      "description": "Evaluate a skill or agent workflow using predefined cases, an explicit rubric and independently checked outcomes. Use for quality measurement, false-positive analysis and baseline comparison rather than code coverage.",
+      "aliases": [],
+      "search_terms": []
+    },
+    "loop-test-adversarial": {
+      "description": "Challenge a declared contract with isolated adversarial inputs and independently observed outcomes. Use to find false PASS results or boundary violations; use loop-security for a general threat review and loop-debug for an already identified bug.",
+      "aliases": [],
+      "search_terms": []
+    },
+    "loop-test-compatibility": {
+      "description": "Verify a declared compatibility matrix across versions, platforms, host adapters or data formats. Use to distinguish structural portability from executed behavior; use loop-test-integration for one boundary and loop-test-e2e for one complete journey.",
+      "aliases": [],
+      "search_terms": []
+    },
+    "loop-mcp-design": {
+      "description": "Design a scoped MCP client/server integration around a pinned protocol version, tool contracts and trust boundaries. Use before implementing or changing an MCP interface; use loop-mcp-test for execution and loop-mcp-security for defensive review.",
+      "aliases": [],
+      "search_terms": []
+    },
+    "loop-mcp-test": {
+      "description": "Exercise a versioned MCP interface using bounded local fixtures or an explicitly authorized server. Check tool contracts, correlation, error behavior and side effects; use loop-test-integration for non-MCP boundaries and loop-mcp-design for planning.",
+      "aliases": [],
+      "search_terms": []
+    },
+    "loop-mcp-security": {
+      "description": "Review an authorized MCP integration for tool trust, scoped authorization, credential handling and data-exfiltration boundaries. Use for MCP-specific defensive analysis; use loop-security for general code review and loop-test-adversarial for generic false-PASS challenges.",
+      "aliases": [],
+      "search_terms": []
+    },
+    "loop-deploy": {
+      "description": "Execute or rehearse a scoped deployment of a known release with health gates and rollback evidence. Use after release preparation when environment rollout is the goal; use loop-ci for pipeline repair and loop-migrate for persisted-data transformations.",
+      "aliases": [],
+      "search_terms": []
+    },
+    "loop-observe": {
+      "description": "Assess whether logs, metrics, traces and health signals can detect and explain an operational failure. Use for observability and alert verification; use loop-diagnose-performance for profiling and loop-deploy for executing a rollout.",
+      "aliases": [],
+      "search_terms": []
+    },
+    "loop-context": {
+      "description": "Prepare a compact, source-linked context packet for a specific task from existing artifacts. Use to select relevant constraints and resolve stale context before implementation; use loop-research to discover new sources.",
+      "aliases": [],
+      "search_terms": []
+    },
+    "loop-handoff": {
+      "description": "Create or validate a resumable checkpoint for unfinished agent work across sessions. Use to transfer current state, evidence and the next bounded action; use loop-orchestrate to launch follow-up processes.",
+      "aliases": [],
+      "search_terms": []
+    },
+    "loop-workflow-project": {
+      "description": "Turn an authorized small software project idea into an incremental delivery workflow with an MVP boundary, acceptance backlog, first verified slice and resumable state. Use for a new project lifecycle, not a single code change.",
+      "aliases": [],
+      "search_terms": []
+    },
+    "loop-workflow-pr": {
+      "description": "Prepare a reviewable pull-request delivery packet from a scoped branch or diff: establish the base, review changes, verify checks and write a truthful description. Create or update the remote PR only when authorized.",
+      "aliases": [],
+      "search_terms": []
+    },
+    "loop-workflow-incident": {
+      "description": "Coordinate an active service-incident assessment: establish impact, separate observations from hypotheses, choose authorized containment and verify recovery. Use for operational disruption, not an ordinary reproducible development bug.",
+      "aliases": [],
+      "search_terms": []
+    },
+    "loop-write": {
+      "description": "Draft or revise factual everyday emails, letters and short communications for a stated reader, preserving source facts, intent and unresolved commitments. Use for text drafting; use loop-document when file format and layout are part of acceptance.",
+      "aliases": [],
+      "search_terms": []
+    },
+    "loop-summarize": {
+      "description": "Condense supplied documents, notes or transcripts into a traceable summary while preserving material qualifiers, numbers, contradictions and source coverage. Use for faithful compression; use loop-research when new evidence must be discovered.",
+      "aliases": [],
+      "search_terms": []
+    },
+    "loop-meeting": {
+      "description": "Prepare an agenda or turn supplied meeting material into source-linked decisions, proposals, actions and unresolved questions. Use for meeting follow-through; not for inventing agreement, owners, completed tasks or calendar actions.",
+      "aliases": [],
+      "search_terms": [
+        "mtg"
+      ]
+    },
+    "loop-organize": {
+      "description": "Choose the right organization workflow for existing files or personal work items. Use loop-files for filesystem mapping/moves and loop-work for priorities and deliverables; retain this entrypoint for mixed or older organize requests.",
+      "aliases": [],
+      "search_terms": []
+    },
+    "loop-decide": {
+      "description": "Compare everyday options against explicit constraints, evidence, priorities and uncertainty, then give a conditional choice or decision record. Use for choosing among options; use loop-evaluate for fixed-rubric grading and loop-table for data analysis.",
+      "aliases": [],
+      "search_terms": []
+    },
+    "loop-learn": {
+      "description": "Create a feasible learning plan or conduct a practice session using observable goals, retrieval, feedback and spaced review. Use for study/tutoring; do not claim mastery, grades or completed assessment from a generated plan.",
+      "aliases": [],
+      "search_terms": []
+    },
+    "loop-work": {
+      "description": "Complete a bounded everyday work package: turn a messy request into feasible priorities, produce the authorized deliverables, and leave a source-backed checkpoint. Use for multi-step office or personal projects, not a single draft or a software implementation plan.",
+      "aliases": [],
+      "search_terms": [
+        "wk"
+      ]
+    },
+    "loop-files": {
+      "description": "Organize selected local files through a pinned inventory, collision-safe mapping, authorized native moves and verified recovery. Use for filesystem organization; use loop-work for task priorities and loop-organize as a compatibility selector.",
+      "aliases": [],
+      "search_terms": []
+    },
+    "loop-table": {
+      "description": "Inspect, clean or analyze supplied tables with explicit types, units, missing-value rules and source-preserving output checks. Use when tabular data is the main input/output; not for guessing missing values or claiming spreadsheet recalculation from a saved file.",
+      "aliases": [],
+      "search_terms": [
+        "tbl"
+      ]
+    },
+    "loop-document": {
+      "description": "Create or revise a usable document artifact with source-faithful content, requested file format and separate content/layout/export checks. Use for reports, briefs and formatted deliverables; use loop-write for text drafting alone and loop-docs for repository documentation maintenance.",
+      "aliases": [],
+      "search_terms": [
+        "doc"
+      ]
+    },
+    "loop": {
+      "description": "Find Loop skills/bundles or use loop setup to design an optional conditional loop with skill choices and a local agent map. No native slash aliases or automatic bundle execution.",
+      "aliases": [],
+      "search_terms": []
+    },
+    "loop-intake": {
+      "description": "Turn an ambiguous office or personal request into a source-backed brief with acceptance criteria, blockers and a bounded next action. Use before execution when the outcome is unclear; use loop-work to deliver an agreed package.",
+      "aliases": [],
+      "search_terms": []
+    },
+    "loop-support": {
+      "description": "Triage supplied support tickets into evidence-backed categories, impact, uncertainty and response drafts. Use for customer or internal help requests; do not invent SLAs, refunds, fixes or delivery.",
+      "aliases": [],
+      "search_terms": []
+    },
+    "loop-knowledge": {
+      "description": "Build or update a small source-linked knowledge set from multiple supplied documents, preserving conflicts, unknowns and revision identity. Use for reusable notes or FAQs; use loop-summarize for one source and loop-research to seek new evidence.",
+      "aliases": [],
+      "search_terms": [
+        "kb"
+      ]
+    }
+  },
+  "bundles": {
+    "writing": {
+      "purpose": "Draft everyday communication and summarize supplied material",
+      "skills": [
+        "loop",
+        "loop-write",
+        "loop-summarize"
+      ]
+    },
+    "office": {
+      "purpose": "Complete everyday work packages with source-grounded drafts, records and document artifacts",
+      "skills": [
+        "loop",
+        "loop-work",
+        "loop-write",
+        "loop-summarize",
+        "loop-meeting",
+        "loop-organize",
+        "loop-document"
+      ]
+    },
+    "learning": {
+      "purpose": "Plan study, understand supplied material and compare learning choices",
+      "skills": [
+        "loop",
+        "loop-learn",
+        "loop-summarize",
+        "loop-decide"
+      ]
+    },
+    "decisions": {
+      "purpose": "Compare options with explicit priorities and source-grounded evidence",
+      "skills": [
+        "loop",
+        "loop-decide",
+        "loop-research",
+        "loop-summarize"
+      ]
+    },
+    "developer": {
+      "purpose": "Understand, implement or repair, test and review existing code",
+      "skills": [
+        "loop",
+        "loop-research-repo",
+        "loop-code",
+        "loop-debug",
+        "loop-test",
+        "loop-review"
+      ]
+    },
+    "project": {
+      "purpose": "Coordinate a small software project and verified implementation slices",
+      "skills": [
+        "loop",
+        "loop-workflow-project",
+        "loop-plan",
+        "loop-code",
+        "loop-test",
+        "loop-handoff"
+      ]
+    },
+    "qa": {
+      "purpose": "Challenge contracts, assess evidence and inspect CI/review results",
+      "skills": [
+        "loop",
+        "loop-test-adversarial",
+        "loop-evaluate",
+        "loop-ci",
+        "loop-review"
+      ]
+    },
+    "incident": {
+      "purpose": "Assess impact, investigate and verify operational signals",
+      "skills": [
+        "loop",
+        "loop-workflow-incident",
+        "loop-diagnose",
+        "loop-observe"
+      ]
+    },
+    "work": {
+      "purpose": "Coordinate feasible everyday deliverables and checkpoints",
+      "skills": [
+        "loop",
+        "loop-work",
+        "loop-write",
+        "loop-meeting",
+        "loop-decide"
+      ]
+    },
+    "files": {
+      "purpose": "Inventory and verify scoped local file organization",
+      "skills": [
+        "loop",
+        "loop-files"
+      ]
+    },
+    "documents": {
+      "purpose": "Draft, summarize and verify usable document files",
+      "skills": [
+        "loop",
+        "loop-document",
+        "loop-write",
+        "loop-summarize"
+      ]
+    },
+    "data": {
+      "purpose": "Analyze tables and create source-grounded report artifacts",
+      "skills": [
+        "loop",
+        "loop-table",
+        "loop-document"
+      ]
+    },
+    "support": {
+      "purpose": "Scope incoming requests and triage source-backed support replies",
+      "skills": [
+        "loop",
+        "loop-intake",
+        "loop-support",
+        "loop-write"
+      ]
+    },
+    "knowledge": {
+      "purpose": "Build maintainable source-linked notes and FAQs",
+      "skills": [
+        "loop",
+        "loop-knowledge",
+        "loop-summarize",
+        "loop-document"
+      ]
+    }
+  }
+}

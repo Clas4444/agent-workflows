@@ -1,6 +1,6 @@
 # Agent Workflows
 
-**53 bounded workflows and optional conditional loop setup for everyday work and software development.** Give your agent a
+**53 bounded workflows and a standalone workflow setup skill for everyday work and software development.** Give your agent a
 specific outcome, work through a small batch, check the result and leave a useful
 checkpoint. Choose a focused skill or a small installation bundle.
 
@@ -8,28 +8,30 @@ Repository renamed from `loop-skills-repository`; existing `loop-*` skill names
 and workflow behavior are unchanged. Optional task-wide attention controls live
 in the separate [agent-attention](https://github.com/Clas4444/agent-attention) repo.
 
-Version **1.11.2** · 15 groups · 14 bundles · Python 3.11+
+Version **1.11.3** · 15 groups · 14 bundles · Python 3.11+
 for repository tools. These are portable instructions and local helpers; your
 agent host supplies execution tools and permissions.
 
 ![How Loop turns a request into a checked result](docs/assets/loop-workflow.svg)
 
-[Start here](docs/guides/START-HERE.md) ·
-[14 bundle workflow diagrams](docs/guides/BUNDLE-WORKFLOWS.md) ·
-[What has actually been tested](docs/EVIDENCE.md) ·
+[Start here](docs/guides/start-here.md) ·
+[14 bundle workflow diagrams](docs/guides/bundle-workflows.md) ·
+[What has actually been tested](docs/testing/evidence.md) ·
 [Testing and experiments](docs/testing/README.md) ·
-[Install by need](docs/guides/INSTALL-BY-NEED.md) ·
+[Install by need](docs/guides/install-by-need.md) ·
 [Browse all skills](#skill-catalog)
 
-New in this version: preview selected installation changes with
-`install_skills.py --plan`, then use its `--expect-plan` ID to reject stale
-source/target state before writing. See [reviewed installation plans](docs/guides/INSTALL-BY-NEED.md#preview-and-approve-the-exact-managed-file-changes).
+Use [`workflow-setup`](skills/workflow-setup/SKILL.md) to design work steps,
+conditional skill choices and result routes. Install the complete
+`skills/workflow-setup` folder into your host's skill directory and invoke
+**`$workflow-setup`**. This self-contained package is separate from the 53-workflow
+catalog; ordinary workflows do not require setup. See the [setup guide](docs/guides/workflow-setup.md).
 
 ## Quick start
 
 Open this repository in your agent host, then choose the outcome you need. You can
 ask your agent to install the selected bundle into another project; you do not
-need to code to use the everyday workflows. See [start here](docs/guides/START-HERE.md)
+need to code to use the everyday workflows. See [start here](docs/guides/start-here.md)
 for the full sequence, including a first prompt and expected output.
 
 | Your task | Start here | Small installation choice |
@@ -45,7 +47,7 @@ for the full sequence, including a first prompt and expected output.
 | Implement or repair software | `loop-code` or `loop-debug` | `developer` |
 | Coordinate a software project | `loop-workflow-project` | `project` |
 
-Open the [bundle workflow atlas](docs/guides/BUNDLE-WORKFLOWS.md) for one image per
+Open the [bundle workflow atlas](docs/guides/bundle-workflows.md) for one image per
 bundle: when to choose it, why to iterate, the feedback/stop path, recommended
 checks and mistakes to avoid. Each image has an accessible text equivalent.
 
@@ -58,7 +60,7 @@ python scripts/install_skills.py --bundle work --bundle documents --target "/my/
 
 Replace the example with your selected project. Python 3.11+ is required for these
 commands; an agent can use an available interpreter. A manual full-folder copy
-option is in [install by need](docs/guides/INSTALL-BY-NEED.md). The installer includes
+option is in [install by need](docs/guides/install-by-need.md). The installer includes
 declared helpers/references/assets, preserves unrelated files and backs up managed
 overwrites. An individual `--skill` selection does not require a bundle registry.
 The optional doctor is read-only: it separates absent, incomplete and changed
@@ -78,8 +80,8 @@ and does not start execution. Slash-picker availability depends on your host.
 
 ![Optional conditional workflow setup](docs/assets/workflow-setup.svg)
 
-[Setup guide and worked loop](docs/guides/WORKFLOW-SETUP.md) ·
-[Optional agent-attention integration](docs/guides/WORKFLOW-SETUP.md#add-agent-attention)
+[Setup guide and worked loop](docs/guides/workflow-setup.md) ·
+[Optional agent-attention integration](docs/guides/workflow-setup.md#add-agent-attention)
 
 ## Canonical names and bundles
 
@@ -88,12 +90,12 @@ canonical name, for example `$loop-code ...` or `$loop-debug ...`. Use the full
 `bundle office` or `bundle support` selector with the read-only finder after the
 selected skills are installed and discovered. Bundles do not run every member.
 This release publishes no short aliases or native slash commands. See the
-[skill and bundle finder guide](docs/guides/SKILL-FINDER.md) for verified CLI forms,
+[skill and bundle finder guide](docs/guides/skill-finder.md) for verified CLI forms,
 installation and limitations.
 
 Short search hints (`lc`, `dbg`, `kb`) return candidates in the finder; invoke the
-selected canonical skill directly. See [bundle starting points](docs/guides/BUNDLE-QUICKSTART.md)
-and [1.10.2 validation and Codex session scope](docs/testing/RESULTS-1.10.2.md).
+selected canonical skill directly. See [bundle starting points](docs/guides/bundle-quickstart.md)
+and [1.10.2 validation and Codex session scope](docs/testing/history/1.10.2-results.md).
 
 ## Choose a focused workflow
 
@@ -109,10 +111,10 @@ actual paths, contents, units and outputs. Do not invoke every installed skill.
 `loop-organize` remains a selector for older/mixed requests; explicit file work
 now uses files, and personal/office deliverables use work.
 
-[Everyday examples](docs/guides/EVERYDAY-WORK.md) ·
-[Work and artifact guide](docs/guides/WORK-AND-ARTIFACTS.md) ·
-[Role toolkits and English visuals](docs/guides/ROLE-WORKFLOWS.md) ·
-[Practical prompts](docs/guides/WORKFLOW-EXAMPLES.md)
+[Everyday examples](docs/guides/everyday-work.md) ·
+[Work and artifact guide](docs/guides/work-and-artifacts.md) ·
+[Role toolkits and English visuals](docs/guides/role-workflows.md) ·
+[Practical prompts](docs/guides/workflow-examples.md)
 
 ## Evidence for 1.10
 
@@ -123,22 +125,22 @@ checkout or every possible task.
 | Checked layer | Observed result | Inspect the evidence |
 |---|---|---|
 | Release CI | 4/4 jobs successful, Ubuntu/Windows × Python 3.11/3.12 | [GitHub Actions run](https://github.com/Clas4444/loop-skills-repository/actions/runs/40320619298) |
-| Final local export, Python 3.12 and 3.14 | Each: 14/14 gates; 318 tests discovered, 317 passed, 1 Windows symlink skip | [1.10 report and pinned sessions](docs/testing/RESULTS-1.10.md#final-verified-export) |
-| Installation | 14 bundle journeys; all 53 skills / 117 payloads per layout, 351 backup byte comparisons | [Installation records](docs/EVIDENCE.md#installation-evidence) |
-| Explicit-load Codex trials | Support PASS; knowledge PASS; original work FAIL retained; schema-explicit work retry PASS | [Inputs, outputs and limits](docs/EVIDENCE.md#behavioral-evidence) |
-| Native discovery and broad reliability | NOT_RUN | [Untested scope](docs/EVIDENCE.md#what-remains-unverified) |
+| Final local export, Python 3.12 and 3.14 | Each: 14/14 gates; 318 tests discovered, 317 passed, 1 Windows symlink skip | [1.10 report and pinned sessions](docs/testing/history/1.10-results.md#final-verified-export) |
+| Installation | 14 bundle journeys; all 53 skills / 117 payloads per layout, 351 backup byte comparisons | [Installation records](docs/testing/evidence.md#installation-evidence) |
+| Explicit-load Codex trials | Support PASS; knowledge PASS; original work FAIL retained; schema-explicit work retry PASS | [Inputs, outputs and limits](docs/testing/evidence.md#behavioral-evidence) |
+| Native discovery and broad reliability | NOT_RUN | [Untested scope](docs/testing/evidence.md#what-remains-unverified) |
 
 For the later desktop session, explicit skill loading on Codex / GPT-6.1 Sol is
-RUN; see [current session evidence](docs/testing/RESULTS-1.10.2.md). Picker activation
+RUN; see [current session evidence](docs/testing/history/1.10.2-results.md). Picker activation
 and all-skill reliability remain separate from that observation.
 
-The [evidence map](docs/EVIDENCE.md) includes readable source-to-output examples,
+The [evidence map](docs/testing/evidence.md) includes readable source-to-output examples,
 raw artifact locations and the failed trial. CLI lookup and matching installation
 bytes do not establish native picker behavior or execution of all 53 skills.
 
 ## Run repository checks
 
-Use a fresh [session-pinned campaign](docs/testing/TESTING.md) for consolidated
+Use a fresh [session-pinned campaign](docs/testing/procedure.md) for consolidated
 results. PASS means the named check ran and met its criterion; FAIL is an observed
 violation, BLOCKED a missing prerequisite and NOT_RUN an unexecuted check.
 
@@ -169,10 +171,10 @@ git diff --check
 Unit tests, real CLI/artifact checks, model decisions, native discovery and external
 actions are separate layers. Missing tools and zero collected tests are not PASS.
 
-Earlier sessions: [three-hour work log](docs/testing/AUTONOMOUS-3H-2026-10-25.md) ·
-[audit and paired pilot](docs/testing/AUDIT-AB-2026-10-25.md) ·
-[1.9 tests](docs/testing/RESULTS-1.9.md) ·
-[historical runtime matrix](docs/RUNTIME-TEST-MATRIX.md).
+Earlier sessions: [three-hour work log](docs/testing/history/2026-10-25-autonomous-3h.md) ·
+[audit and paired pilot](docs/testing/history/2026-10-25-audit-ab.md) ·
+[1.9 tests](docs/testing/history/1.9-results.md) ·
+[historical runtime matrix](docs/reference/runtime-test-matrix.md).
 
 ## Skill catalog
 
@@ -314,14 +316,14 @@ Groups are navigation metadata; native skill directories remain flat.
 
 The standalone continuation runner remains available through loop-orchestrate and
 loop-prompt. It does not install/authenticate an agent or grant permissions.
-See [protocol and finite limits](docs/ORCHESTRATION.md) before an authorized run.
+See [protocol and finite limits](docs/reference/orchestration.md) before an authorized run.
 Model calls are not part of CI. New helpers are self-contained read-only checkers;
 they do not provide an office suite, messaging service or file transaction manager.
 
 ## Documentation
 
-[Documentation map](docs/README.md) · [Architecture](docs/ARCHITECTURE.md) ·
-[Authoring](docs/AUTHORING.md) · [Data contracts](schemas/README.md) ·
+[Documentation map](docs/README.md) · [Architecture](docs/reference/architecture.md) ·
+[Authoring](docs/reference/authoring.md) · [Data contracts](schemas/README.md) ·
 [Contributing](CONTRIBUTING.md) · [Changelog](CHANGELOG.md) · [Security](SECURITY.md)
 
 ## License and ownership
@@ -334,4 +336,4 @@ Microsoft. No external benchmark result is a performance claim for this project.
 
 ## Documentation
 
-[Documentation map](docs/README.md) · [Changelog](CHANGELOG.md) · [Release and compatibility](docs/RELEASE.md)
+[Documentation map](docs/README.md) · [Changelog](CHANGELOG.md) · [Release and compatibility](docs/reference/release.md)

@@ -6,7 +6,7 @@ import subprocess
 import sys
 import unittest
 
-from test_validate import make_fixture
+from tests.test_validate import make_fixture
 
 ROOT = Path(__file__).resolve().parents[1]
 

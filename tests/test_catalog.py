@@ -19,7 +19,7 @@ class CatalogTests(unittest.TestCase):
         self.assertEqual(len(set(names)), 53)
 
     def test_duplicate_and_missing_routes_fail_even_with_valid_skill_files(self):
-        from test_validate import make_fixture
+        from tests.test_validate import make_fixture
         import shutil
         root = make_fixture()
         try:
@@ -41,13 +41,13 @@ class CatalogTests(unittest.TestCase):
         current = json.loads((ROOT/'skills-manifest.json').read_text(encoding='utf-8'))
         self.assertEqual(len(historical['skills']), 27)
         self.assertEqual(set(current['skills'])-set(historical['skills']), {'loop-test-adversarial', 'loop-test-compatibility', 'loop-mcp-design', 'loop-mcp-test', 'loop-mcp-security', 'loop-deploy', 'loop-observe', 'loop-context', 'loop-handoff', 'loop-workflow-project', 'loop-workflow-pr', 'loop-workflow-incident', 'loop-write', 'loop-summarize', 'loop-meeting', 'loop-organize', 'loop-decide', 'loop-learn', 'loop-work', 'loop-files', 'loop-table', 'loop-document', 'loop', 'loop-intake', 'loop-support', 'loop-knowledge'})
-        text = (ROOT/'docs/RUNTIME-TEST-MATRIX.md').read_text(encoding='utf-8')
+        text = (ROOT/'docs/reference/runtime-test-matrix.md').read_text(encoding='utf-8')
         for name in ('loop-test-adversarial', 'loop-test-compatibility', 'loop-mcp-design', 'loop-mcp-test', 'loop-mcp-security', 'loop-deploy', 'loop-observe', 'loop-context', 'loop-handoff', 'loop-workflow-project', 'loop-workflow-pr', 'loop-workflow-incident', 'loop-write', 'loop-summarize', 'loop-meeting', 'loop-organize', 'loop-decide', 'loop-learn', 'loop-work', 'loop-files', 'loop-table', 'loop-document'):
             row = next(line for line in text.splitlines() if f'| {name} |' in line)
             self.assertIn('NOT_RUN', row)
 
     def test_mcp_group_cannot_be_omitted_from_an_otherwise_valid_catalog(self):
-        from test_validate import make_fixture
+        from tests.test_validate import make_fixture
         import shutil
         root = make_fixture()
         try:

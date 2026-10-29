@@ -1,0 +1,125 @@
+# Runtime test matrix
+
+The local 1.11.0 setup candidate has deterministic graph/installed-helper checks
+and a cross-repo fixture, recorded in [setup validation](../testing/history/1.11.0-workflow-setup.md).
+Real-model interview quality, graph-following effectiveness and native setup
+discovery are NOT_RUN; older rows do not certify the changed gateway instructions.
+
+Structural validation does not prove runtime compatibility. Before claiming
+support for a host, run one representative workflow and record how the host
+discovered the skill, loaded its instructions, accepted the invocation, and
+completed safely.
+
+For the 1.10 release, start with the [evidence map](../testing/evidence.md#behavioral-evidence)
+and [1.10 report](../testing/history/1.10-results.md). The rows below retain earlier campaigns
+and invalidations; they are not a fresh execution of the current 53-skill catalog.
+
+| Host | Version | Skill | Invocation | Result | Evidence |
+|---|---|---|---|---|---|
+| Codex subagent / Windows, explicit canonical files | host version not recorded | loop-context + loop-handoff | Two independent synthetic preparation/cold-resume tasks | `PASS` for stated fixture scope only | [1.6 research/evidence](../testing/history/research-1.6.md); no automatic discovery or product tests |
+| Native automatic discovery / other hosts | not run | loop-context | New 1.6 contract | `NOT_RUN` | Explicit synthetic forward-test recorded separately |
+| Native automatic discovery / other hosts | not run | loop-handoff | New 1.6 contract | `NOT_RUN` | Explicit synthetic cold-resume recorded separately |
+| Revised 1.6 instruction contracts | not run | loop-evaluate / loop-skill-create | Research/repeated-trial upgrade | `NOT_RUN` | Historical instruction results invalidated |
+| Acceptance/context instruction revision | not run | loop-plan / loop-research / loop-code / loop-test | Pinned sources and mapped acceptance controls | `NOT_RUN` | Local CLI tests are separate from native model execution; old instruction results invalidated |
+| Revised 1.5 instruction contracts | not run | loop-review / loop-code / loop-diagnose / loop-test | Routing/workflow clarified | `NOT_RUN` | Historical evidence invalidated for current instruction text |
+| Native host workflow | not run | loop-deploy | Structural contract only | `NOT_RUN` | No real deployment or rollback execution |
+| Native host workflow | not run | loop-observe | Structural contract only | `NOT_RUN` | No live exporter/alert delivery or persistent monitor |
+| Full MCP transport/auth/discovery | not run | loop-mcp-design | Offline skill exercise only | `NOT_RUN` | No server was installed or started |
+| Full MCP transport/auth/discovery | not run | loop-mcp-test | Synthetic tool-acceptance subset only | `NOT_RUN` | Not an MCP conformance run |
+| Full MCP transport/auth/discovery | not run | loop-mcp-security | Synthetic catalog review only | `NOT_RUN` | Runtime enforcement remains untested |
+| Revised recovery contract | not run | loop-orchestrate / loop-prompt | Authorized-root recovery wording changed | `NOT_RUN` | Old 1.2 results remain historical; see runtime-invalidations-1.3.json |
+| Native host workflow | not run | loop-test-compatibility | Structural/text contract only | `NOT_RUN` | New 1.3 skill; actual cross-host execution pending |
+| Native host workflow | not run | loop-test-adversarial | Structural/text contract only | `NOT_RUN` | New 1.3 skill; adversarial CLI tests are not model runtime evidence |
+| VS Code/Copilot | not recorded | not recorded | not recorded | `NOT_RUN` | pending |
+| Codex CLI / Windows | 0.164.0-alpha.11.1 | Original 22 at recorded revision | Explicit skill request + installed instruction read | `PASS` for bounded smoke scope | [22-skill report](../testing/history/2026-10-24-codex-smoke.md) |
+| Codex CLI / Windows, 1.2 | 0.164.0-alpha.11.1 | 5 new + 3 changed skills; 19 prior byte-identical cases retained separately | Explicit skill request + installed instruction read | `PASS` for recorded fixture scope; not a fresh 27-case run | [1.2 report](../testing/history/runtime-1.2-result.md) |
+| Claude Code | not recorded | not recorded | not recorded | `NOT_RUN` | pending |
+
+Do not generalize one host's result to another host or version. Keep runtime
+evidence separate from the local fake-command tests for `run_loop.py`.
+
+The Codex row records real local tool workflows, with 22 final passing cases
+after two retests and one checker-path correction. Automatic skill discovery
+without explicit name/path remains NOT_RUN. This row is not certification of
+all possible tasks. See the report's failure history and scope restrictions.
+Version 1.2 adds eight fresh case executions; evidence reuse for the other
+nineteen is checked against instruction identity and labeled in the index.
+
+## Headless orchestration evidence (separate from native skill discovery)
+
+On 2026-10-23, Codex CLI 0.163.0-alpha.11.2 completed four read-only review
+invocations through `run_loop.py --follow-up-count 3` and an explicit local
+adapter. The agent inferred distinct follow-up prompts for documentation,
+acceptance cases and packaging. Final status PASS, prompt count 4.
+
+Local evidence: `.loop/expansion-state.json`, `.loop/expansion-report.md` and
+`.loop/expansion-review/review-01.txt` through `review-04.txt`. Logs remain local
+and ignored by Git. This verifies that particular configured headless review
+path; it does not prove native discovery or execution of each of the 22 skills.
+
+On the same date, one additional read-only Codex invocation read all five new
+installed skill files and assessed synthetic negative cases. An independent
+JSON assertion check matched 5/5 expected statuses. See TEST-22-RESULT.md.
+Explicit instruction loading and decision checks do not establish native skill
+discovery or full positive workflows. At that earlier point native-host
+workflows were NOT_RUN; the 2026-10-24 Codex smoke campaign above adds scoped
+workflow evidence while leaving other hosts and automatic discovery unverified.
+
+## Project workflows (1.7)
+
+Native discovery and live operational execution are separate from explicit synthetic packet exercises.
+
+| Skill | Native discovery | Live execution |
+|---|---|---|
+| loop-workflow-project | NOT_RUN | NOT_RUN |
+| loop-workflow-pr | NOT_RUN | NOT_RUN |
+| loop-workflow-incident | NOT_RUN | NOT_RUN |
+
+The three 1.7 workflows were explicitly loaded in isolated Codex subagent packet exercises. See [results](../testing/history/1.7-results.md) for one retained failed incident attempt and its corrected retry. This does not change the native-discovery or live-execution NOT_RUN entries above.
+
+## Everyday utility skills (1.8)
+
+Explicit fixture exercises are recorded separately from automatic discovery and external actions.
+
+| Skill | Native discovery | Live external actions |
+|---|---|---|
+| loop-write | NOT_RUN | NOT_RUN |
+| loop-summarize | NOT_RUN | NOT_RUN |
+| loop-meeting | NOT_RUN | NOT_RUN |
+| loop-organize | NOT_RUN | NOT_RUN |
+| loop-decide | NOT_RUN | NOT_RUN |
+| loop-learn | NOT_RUN | NOT_RUN |
+
+## Work/artifact update (1.9)
+
+Earlier noncode-1.8 and workflow-project-1.7 observations are retained against archived instructions; changed bytes cannot reuse their PASS. New exercises are recorded separately.
+
+| Skill | Automatic discovery | Full external-service execution |
+|---|---|---|
+| loop-work | NOT_RUN | NOT_RUN |
+| loop-files | NOT_RUN | NOT_RUN |
+| loop-table | NOT_RUN | NOT_RUN |
+| loop-document | NOT_RUN | NOT_RUN |
+
+## 1.10 instruction and discovery update
+
+Four explicit-load scaffolded Codex CLI calls are retained in the
+[1.10 evidence](../testing/evidence.md#behavioral-evidence): support PASS, knowledge PASS,
+original work FAIL, and a fresh schema-explicit work retry PASS. These are fixed
+artifact checks, not native discovery or fresh all-workflow behavioral coverage.
+The records preserve instruction snapshots; published-byte differences and helper
+snapshot limitations are explained in the [release report](../testing/history/1.10-results.md).
+CLI lookup, installer and registry checks do not prove native picker search or
+slash aliases. Native discovery and all-workflow behavioral coverage remain NOT_RUN.
+
+| New workflow | Native discovery | Current behavior evidence |
+|---|---|---|
+| loop | NOT_RUN | Explicit support/knowledge lookup; snapshots and limits in linked 1.10 evidence |
+| loop-intake | NOT_RUN | Support brief fixture PASS for recorded inputs and artifact checks |
+| loop-support | NOT_RUN | Support triage/draft fixture PASS; sending and resolution NOT_RUN |
+| loop-knowledge | NOT_RUN | Conflicting-policy fixture PASS; authority resolution/publication NOT_RUN |
+
+Work/table/meeting/document were exercised together in the work packet, not as
+independent trials of each skill. Debug and adversarial instruction upgrades have
+no separate fresh model trial here. Regrading archived artifacts makes no new
+model call and must not be counted as fresh behavioral execution.

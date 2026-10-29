@@ -445,8 +445,8 @@ class ValidateRepositoryTests(unittest.TestCase):
 
     def test_validation_fingerprint_excludes_generated_report(self) -> None:
         first = validation_fingerprint(self.temp)
-        report = self.temp / "docs" / "VALIDATION-RESULT.md"
-        report.parent.mkdir()
+        report = self.temp / "docs/testing/checks/validation-result.md"
+        report.parent.mkdir(parents=True)
         report.write_text("first", encoding="utf-8")
         second = validation_fingerprint(self.temp)
         self.assertEqual(first, second)

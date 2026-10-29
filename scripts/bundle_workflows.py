@@ -13,7 +13,7 @@ else:
     from validation.json_data import loads_json
 
 DATA = 'docs/assets/bundles/workflows.json'
-GUIDE = 'docs/guides/BUNDLE-WORKFLOWS.md'
+GUIDE = 'docs/guides/bundle-workflows.md'
 ASSETS = 'docs/assets/bundles'
 
 
@@ -135,8 +135,8 @@ def markdown(bundles, rows):
     for key, row in rows.items():
         when = row['when'].replace('|', '\\|')
         out.append(f"| [{key}](#{key}) | {when} |")
-    out += ['', 'For installation and host syntax, see [install by need](INSTALL-BY-NEED.md)',
-            'and [start here](START-HERE.md). The [evidence map](../EVIDENCE.md) records',
+    out += ['', 'For installation and host syntax, see [install by need](install-by-need.md)',
+            'and [start here](start-here.md). The [evidence map](../testing/evidence.md) records',
             'actual tested scope; an illustration is not a runtime test.', '']
     for key, row in rows.items():
         out += ['## '+key, '', '**'+row['title']+'**', '',
