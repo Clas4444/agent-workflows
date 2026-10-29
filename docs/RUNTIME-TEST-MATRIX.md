@@ -1,5 +1,10 @@
 # Runtime test matrix
 
+The local 1.11.0 setup candidate has deterministic graph/installed-helper checks
+and a cross-repo fixture, recorded in [setup validation](testing/WORKFLOW-SETUP.md).
+Real-model interview quality, graph-following effectiveness and native setup
+discovery are NOT_RUN; older rows do not certify the changed gateway instructions.
+
 Structural validation does not prove runtime compatibility. Before claiming
 support for a host, run one representative workflow and record how the host
 discovered the skill, loaded its instructions, accepted the invocation, and

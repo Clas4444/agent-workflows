@@ -33,8 +33,8 @@ def expected(repo):
         data['skills'][name] = {'description': description, 'aliases': [],
                                 'search_terms': [SEARCH_TERMS[name]] if name in SEARCH_TERMS else []}
         title = 'Loop' if name == 'loop' else 'Loop '+short.replace('-', ' ').title()
-        blurb = ('Find Loop skills and bundles' if name == 'loop' else 'Use '+title+' for a focused workflow')[:64]
-        prompt = 'Use $'+name+' '+('to find the smallest skill or bundle for my task.' if name == 'loop' else 'for this task; verify the result and report any limits.')
+        blurb = ('Find skills or set up a conditional loop' if name == 'loop' else 'Use '+title+' for a focused workflow')[:64]
+        prompt = 'Use $'+name+' '+('to choose a focused skill/bundle or help me set up a conditional workflow.' if name == 'loop' else 'for this task; verify the result and report any limits.')
         metadata[name] = 'interface:\n'+''.join('  '+key+': '+json.dumps(value)+'\n' for key, value in
             [('display_name', title), ('short_description', blurb), ('default_prompt', prompt)])
     return data, metadata

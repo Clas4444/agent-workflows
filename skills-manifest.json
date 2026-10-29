@@ -1,6 +1,6 @@
 {
   "name": "portable-loop-skills",
-  "version": "1.10.2-experimental",
+  "version": "1.11.0",
   "skills": [
     "loop-review",
     "loop-code",

@@ -3,6 +3,17 @@
 Start with the task you actually have. Groups describe responsibilities;
 role toolkits recommend a small subset, not a requirement to run all skills.
 
+## Current release routes
+
+| Need | Read |
+|---|---|
+| Design a conditional loop | [Workflow setup](guides/WORKFLOW-SETUP.md) |
+| Check current expectations and gaps | [Expectation audit](testing/EXPECTATION-AUDIT.md) |
+| Inspect setup integration | [Setup evidence](testing/WORKFLOW-SETUP.md) |
+| Upgrade or roll back | [Release compatibility](RELEASE.md) |
+
+## Existing topic routes
+
 | Need | Start here |
 |---|---|
 | Understand Loop and try the first workflow | [Start here: installation to checked output](guides/START-HERE.md) |

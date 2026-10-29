@@ -381,6 +381,11 @@
       ]
     },
     {
+      "id": "route-loop-setup",
+      "prompt": "Design a reusable conditional workflow with skill choices per branch, failure routes, a bounded return to the first step and a local agent map; ask me for missing setup details, do not execute it.",
+      "acceptable": ["loop"]
+    },
+    {
       "id": "route-new-loop-intake",
       "prompt": "Turn these conflicting project notes into a scoped request brief, not deliverables or a support reply.",
       "acceptable": [

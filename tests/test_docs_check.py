@@ -148,6 +148,22 @@ class DocsCheckTests(unittest.TestCase):
             self.assertEqual(result['status'], 'FAIL', source)
             self.assertTrue(any('unsupported' in e['error'] for e in result['errors']))
 
+    def test_long_inline_destinations_do_not_backtrack_exponentially(self):
+        # Isolate the vulnerable expression so a regression cannot hang the
+        # entire suite. Both rejecting and accepting long destinations matter.
+        code = ("from scripts.docs_check import LINK\n"
+                "for char in ('!', 'a', '-'):\n"
+                "    body = char * 50000\n"
+                "    assert LINK.search('[](' + body) is None\n"
+                "    assert LINK.search('[](' + body + ' ' + chr(34) + 'unterminated') is None\n"
+                "    assert LINK.fullmatch('[](' + body + ')') is not None\n")
+        try:
+            result = subprocess.run([sys.executable, '-c', code], cwd=ROOT,
+                                    capture_output=True, text=True, timeout=5)
+        except subprocess.TimeoutExpired:
+            self.fail('inline-link matching exceeded the bounded regression timeout')
+        self.assertEqual(result.returncode, 0, result.stderr)
+
     def test_missing_readme_and_invalid_utf8_are_controlled_failures(self):
         (self.root/'README.md').unlink()
         self.assertEqual(check(self.root)['status'], 'FAIL')

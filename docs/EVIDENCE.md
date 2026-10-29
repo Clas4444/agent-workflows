@@ -1,5 +1,9 @@
 # Evidence map for 1.10
 
+Current 1.11.0 candidate adds optional setup; see [setup validation](testing/WORKFLOW-SETUP.md).
+The older records below retain their original input pins and do not certify the
+changed gateway instructions or native setup discovery.
+
 This page connects release claims to inspectable records. Release revision:
 [`c6255a192c56c633c21889886c6080230bb774aa`](https://github.com/Clas4444/loop-skills-repository/commit/c6255a192c56c633c21889886c6080230bb774aa),
 version `1.10.0-experimental`. Later documentation edits do not rerun the original

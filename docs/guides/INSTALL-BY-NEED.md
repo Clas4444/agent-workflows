@@ -51,6 +51,40 @@ native discovery or equivalent behavior on every host/version.
 
 ## Run the installer yourself
 
+### Preview and approve the exact managed-file changes
+
+Use the new read-only plan before installing into a customized project:
+
+```text
+python scripts/install_skills.py --bundle office --target "C:/My Project/.agents/skills" --plan
+```
+
+The JSON lists CREATE, REPLACE, KEEP and BLOCKED for each selected payload, its
+expected/observed hashes, totals, and whether replacement backups are needed.
+READY means the proposal can be reviewed, not that installation happened. A valid
+plan exits 0 even when files differ; a blocked plan exits 1. No target or backup
+directory is created. Only selected managed files are inspected; unrelated files
+are preserved by installation, not audited by the plan.
+
+Copy the returned plan_id into the installation command (replace the placeholder):
+
+```text
+python scripts/install_skills.py --bundle office --target "C:/My Project/.agents/skills" --expect-plan "COPY_PLAN_ID_HERE" --backup "C:/Private Backups/office-update"
+```
+
+If a selected source, manifest, selected destination payload or selection changes,
+the reviewed ID no longer matches and installation stops before writes. Generate
+and review a fresh plan rather than deleting the guard. Plan IDs are drift checks,
+not authorization or filesystem locks; changes after the check remain possible.
+Backup destination preflight runs during installation. --plan does not accept
+--backup, --check or --expect-plan; choose the backup when applying. A new source
+version invalidates old plans even if the selected payload bytes are identical.
+
+After installation, run the same selection with --check, inspect any backup and
+start a fresh host session to verify discovery. Matching files are not runtime proof.
+
+### Install or compare directly
+
 From the cloned repository root with Python 3.11+ available:
 
 ```text

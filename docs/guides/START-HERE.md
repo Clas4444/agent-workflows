@@ -5,6 +5,10 @@ produce the requested files and report what was checked. The host still supplies
 the model, file tools, account connections and permissions. Python is needed for
 the repository's installer and helpers, not to write an ordinary prompt.
 
+For reusable conditional work, ask `$loop setup` to design steps, skill choices,
+result branches, a bounded cycle and a local agent map. See
+[optional workflow setup](WORKFLOW-SETUP.md). Direct skill use below stays available.
+
 ![Four steps from request to checked result](../assets/loop-workflow.svg)
 
 ## 1. Choose by the result you want

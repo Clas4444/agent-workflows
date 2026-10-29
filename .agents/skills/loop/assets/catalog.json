@@ -263,7 +263,7 @@
       ]
     },
     "loop": {
-      "description": "Find Loop skills by their canonical names or full need-based bundle selectors. Use as the Loop entry point for selection; it does not implement native slash aliases or automatically execute every bundle member.",
+      "description": "Find Loop skills/bundles or use loop setup to design an optional conditional loop with skill choices and a local agent map. No native slash aliases or automatic bundle execution.",
       "aliases": [],
       "search_terms": []
     },

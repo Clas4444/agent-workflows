@@ -15,7 +15,10 @@ if __package__:
 else:
     from skill_resources import plain_chain, plain_path
 
-LINK = re.compile(r'!?\[[^\]]*\]\(\s*(<[^>\n]*>|(?:\\.|[^\s()\\]+|\([^()\n]*\))+?)'
+# Repeated destination tokens have disjoint starting characters. Keep the plain
+# character alternative singular: nesting its + inside the outer repetition
+# creates exponentially many partitions when a closing delimiter is missing.
+LINK = re.compile(r'!?\[[^\]]*\]\(\s*(<[^>\n]*>|(?:\\.|[^\s()\\]|\([^()\n]*\))+?)'
                   r'(?:[ \t]+(?:"[^"\n]*"|\x27[^\x27\n]*\x27))?\s*\)')
 REFERENCE = re.compile(r'(?<!\w)!?\[[^\]\n]+\]\[[^\]\n]*\]|^ {0,3}\[[^\]\n]+\]:', re.M)
 CANDIDATE = re.compile(r'!?\[[^\]]*\]\(')

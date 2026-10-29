@@ -1,5 +1,30 @@
 # Changelog
 
+## 1.11.0 — 2026-10-29
+
+- Add optional `$loop setup`: a short interview designs conditional skill choices,
+  evidenced status routes, bounded cycles and per-step source pointers.
+- Export a local-only graph, agent map and Mermaid diagram. Ship the self-contained
+  checker/router and example with the existing Loop gateway; no new mandatory skill.
+- Share graph contract v1 with agent-attention 0.2.0 so profiles can be attached
+  without replacing skill choices or routes. Setup never executes tasks itself.
+- Add a matching light workflow illustration and separate deterministic/runtime
+  evidence boundaries. Native picker discovery and new real-agent setup efficacy
+  remain NOT_RUN until independently exercised.
+- Include the internal 1.10.3 candidate changes below; that candidate was not pushed.
+
+## 1.10.3-experimental — prepared, 2026-10-28
+
+- Add read-only per-file installation plans with CREATE/REPLACE/KEEP/BLOCKED
+  actions, backup-needed summary and a reviewed --expect-plan drift guard.
+
+- Remove exponential backtracking in the Markdown inline-link checker reported
+  by CodeQL py/redos, preserving supported destination syntax.
+- Add a bounded long-input regression and record baseline/fixed behavior and
+  short-input equivalence checks in docs/testing/CODEQL-REDOS-REPAIR.md.
+- Preserve skill instructions, bundle membership, illustrations and runner behavior.
+- Local candidate only; remote CodeQL reanalysis remains pending publication.
+
 ## 1.10.2-experimental — 2026-10-28
 
 - Keep short search hints while requiring canonical skill names/full bundle

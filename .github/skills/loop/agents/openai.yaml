@@ -1,4 +1,4 @@
 interface:
   display_name: "Loop"
-  short_description: "Find Loop skills and bundles"
-  default_prompt: "Use $loop to find the smallest skill or bundle for my task."
+  short_description: "Find skills or set up a conditional loop"
+  default_prompt: "Use $loop to choose a focused skill/bundle or help me set up a conditional workflow."

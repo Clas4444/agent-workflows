@@ -1,6 +1,6 @@
 # Agent Workflows
 
-**53 bounded workflows for everyday work and software development.** Give your agent a
+**53 bounded workflows and optional conditional loop setup for everyday work and software development.** Give your agent a
 specific outcome, work through a small batch, check the result and leave a useful
 checkpoint. Choose a focused skill or a small installation bundle.
 
@@ -8,7 +8,7 @@ Repository renamed from `loop-skills-repository`; existing `loop-*` skill names
 and workflow behavior are unchanged. Optional task-wide attention controls live
 in the separate [agent-attention](https://github.com/Clas4444/agent-attention) repo.
 
-Experimental version **1.10.2-experimental** · 15 groups · 14 bundles · Python 3.11+
+Version **1.11.0** · 15 groups · 14 bundles · Python 3.11+
 for repository tools. These are portable instructions and local helpers; your
 agent host supplies execution tools and permissions.
 
@@ -19,6 +19,10 @@ agent host supplies execution tools and permissions.
 [What has actually been tested](docs/EVIDENCE.md) ·
 [Install by need](docs/guides/INSTALL-BY-NEED.md) ·
 [Browse all skills](#skill-catalog)
+
+New in this version: preview selected installation changes with
+`install_skills.py --plan`, then use its `--expect-plan` ID to reject stale
+source/target state before writing. See [reviewed installation plans](docs/guides/INSTALL-BY-NEED.md#preview-and-approve-the-exact-managed-file-changes).
 
 ## Quick start
 
@@ -62,6 +66,19 @@ managed payloads without claiming your host discovered or executed them.
 Open the selected project in your host, start a fresh session and confirm actual
 skill discovery. `.agents/skills`, `.github/skills` and `.claude/skills` are the
 maintained native layouts; identical files do not prove equivalent host behavior.
+
+## Optional workflow setup
+
+For a reusable loop with branches, ask **`$loop setup`**. The agent asks about
+outcome, steps, conditions, skill choices, sources, cycle end and stop limits,
+then exports a local graph and agent route map. One step can choose different
+skills by condition; its observed result chooses the next step. Setup is optional
+and does not start execution. Slash-picker availability depends on your host.
+
+![Optional conditional workflow setup](docs/assets/workflow-setup.svg)
+
+[Setup guide and worked loop](docs/guides/WORKFLOW-SETUP.md) ·
+[Shared graph and Repo 2 attention attachment](docs/guides/WORKFLOW-SETUP.md#add-repo-2-attention)
 
 ## Canonical names and bundles
 
@@ -166,7 +183,7 @@ Groups are navigation metadata; native skill directories remain flat.
 
 | Skill | Purpose |
 |---|---|
-| [loop](.github/skills/loop/SKILL.md) | Find Loop skills by their canonical names or full need-based bundle selectors |
+| [loop](.github/skills/loop/SKILL.md) | Find Loop skills/bundles or use loop setup to design an optional conditional loop with skill choices and a local agent map |
 
 ### Discovery and scoped planning
 
@@ -313,3 +330,7 @@ An independent project maintained at
 distributed under the [MIT license](LICENSE). This repository is not a fork of
 its research references and is not affiliated with OpenAI, Anthropic, GitHub or
 Microsoft. No external benchmark result is a performance claim for this project.
+
+## Documentation
+
+[Documentation map](docs/README.md) · [Changelog](CHANGELOG.md) · [Release and compatibility](docs/RELEASE.md)

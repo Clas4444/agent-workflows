@@ -4,6 +4,13 @@ This repository distributes 53 skill instructions and a local CLI runner. It
 does not implement an MCP or A2A service. Read README.md and the relevant guide
 in docs/ before changing a workflow.
 
+Version 1.11 adds optional graph setup through the existing loop gateway. Keep
+scripts/workflow_setup.py and its bundled copy identical via workflow_assets.py;
+share contract v1 with agent-attention 0.2. No runtime cross-repo import is needed.
+Generated agent maps are local-only by default. Setup does not execute tasks,
+grant external-action authority or prove native discovery. Check generated setup
+assets with `python scripts/workflow_assets.py` after changes.
+
 ## Source and boundaries
 
 - Edit `.github/skills/<name>/SKILL.md` first. `.agents/skills` and

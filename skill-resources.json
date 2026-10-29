@@ -22,6 +22,9 @@
     ],
     "loop": [
       "scripts/find_skill.py",
+      "scripts/workflow_setup.py",
+      "references/setup.md",
+      "assets/workflow-example.json",
       "assets/catalog.json",
       "agents/openai.yaml"
     ],
