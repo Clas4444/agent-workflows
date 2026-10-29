@@ -8,6 +8,10 @@ host. This release does not register `/workflow` or a native shortcut alias.
 
 ![Setup interview and conditional cycle](../assets/workflow-setup.svg)
 
+Workflow setup works with agent-workflows alone. It designs task steps, skill
+choices and result routes. agent-attention is optional and has its own separate
+attention setup for base levels, context overrides and restoration.
+
 ## The interview
 
 The agent reuses information already supplied and asks two or three questions at
@@ -93,11 +97,12 @@ Missing required facts print JSON status=BLOCKED and exit 2, leaving state
 unchanged. Invalid configuration exits 1. Exit 0 means the routing operation
 succeeded, not that a STOP route or an unexecuted task is a successful task.
 
-## Add Repo 2 attention
+## Add agent-attention
 
-[agent-attention 0.2.0](https://github.com/Clas4444/agent-attention) supports the same
-graph. Ask `$agent-attention setup` to attach task/per-binding profiles to an
-existing workflow. The attach helper preserves the graph's skills, conditions
+[agent-attention](https://github.com/Clas4444/agent-attention) supports the same
+graph through an optional integration bridge. Explicitly ask to attach attention
+to the supplied graph; ordinary `$agent-attention setup` designs an independent
+attention plan, not task routes. The attach helper preserves the graph's skills, conditions
 and transitions; it outputs a new document for review/export. New branch conditions
 require an explicit graph revision. The repositories remain independently usable.
 

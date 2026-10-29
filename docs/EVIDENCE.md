@@ -1,6 +1,8 @@
 # Evidence map for 1.10
 
-Current 1.11.0 candidate adds optional setup; see [setup validation](testing/WORKFLOW-SETUP.md).
+Current 1.11.1 separates workflow setup from independent attention setup; see
+[setup separation checks](testing/SETUP-SEPARATION.md). The 1.11.0 shared-graph
+capture remains [historical setup validation](testing/WORKFLOW-SETUP.md).
 The older records below retain their original input pins and do not certify the
 changed gateway instructions or native setup discovery.
 

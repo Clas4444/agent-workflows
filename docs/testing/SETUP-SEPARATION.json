@@ -1,0 +1,205 @@
+{
+  "product": "agent-workflows",
+  "version": "1.11.1",
+  "date": "2026-10-29",
+  "session": "separated-1111-final-20261029",
+  "status": "PASS",
+  "input_fingerprint": "667002a48dcacd6bf7149876279503627216a8eb3d3d1059e368f6164d03812a",
+  "inputs_unchanged": true,
+  "checks": [
+    {
+      "id": "unit",
+      "command": [
+        "python",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-v"
+      ],
+      "started_at": "2026-10-29T01:21:19.984154+00:00",
+      "finished_at": "2026-10-29T01:23:02.477084+00:00",
+      "exit_code": 0,
+      "status": "PASS",
+      "log_sha256": "d6fe43235f1736ed4d666f4d5ff8645c0ef0c1f142651e8581638643632e1fc2",
+      "discovered": 372,
+      "skipped": 2
+    },
+    {
+      "id": "full",
+      "command": [
+        "python",
+        "scripts/validate.py"
+      ],
+      "started_at": "2026-10-29T01:23:02.485975+00:00",
+      "finished_at": "2026-10-29T01:23:02.959767+00:00",
+      "exit_code": 0,
+      "status": "PASS",
+      "log_sha256": "7cb045edcebc0336f8f29ccf7c9976358ba251b41bb3120081b5c803e408cb46"
+    },
+    {
+      "id": "format",
+      "command": [
+        "python",
+        "-m",
+        "scripts.validate",
+        "--profile",
+        "format"
+      ],
+      "started_at": "2026-10-29T01:23:02.965878+00:00",
+      "finished_at": "2026-10-29T01:23:03.387975+00:00",
+      "exit_code": 0,
+      "status": "PASS",
+      "log_sha256": "7cb045edcebc0336f8f29ccf7c9976358ba251b41bb3120081b5c803e408cb46"
+    },
+    {
+      "id": "catalog",
+      "command": [
+        "python",
+        "scripts/catalog.py"
+      ],
+      "started_at": "2026-10-29T01:23:03.389853+00:00",
+      "finished_at": "2026-10-29T01:23:03.509480+00:00",
+      "exit_code": 0,
+      "status": "PASS",
+      "log_sha256": "de31aaf6f71fa838fc7a3bf0555bfcbbe199218e6426678278ddb29d7629e13f"
+    },
+    {
+      "id": "routing",
+      "command": [
+        "python",
+        "scripts/routing_check.py"
+      ],
+      "started_at": "2026-10-29T01:23:03.510868+00:00",
+      "finished_at": "2026-10-29T01:23:03.620797+00:00",
+      "exit_code": 0,
+      "status": "PASS",
+      "log_sha256": "29ee0a9fd443411e2504551ca0cbd88cd0c4adac46007114c56eba17cb48d399"
+    },
+    {
+      "id": "discovery",
+      "command": [
+        "python",
+        "scripts/discovery.py"
+      ],
+      "started_at": "2026-10-29T01:23:03.622954+00:00",
+      "finished_at": "2026-10-29T01:23:03.754718+00:00",
+      "exit_code": 0,
+      "status": "PASS",
+      "log_sha256": "587fc835a8201ef23b64fa3ccce292e162123eec2dc30608f92fae20dfb65aeb"
+    },
+    {
+      "id": "workflows",
+      "command": [
+        "python",
+        "scripts/workflows.py"
+      ],
+      "started_at": "2026-10-29T01:23:03.755807+00:00",
+      "finished_at": "2026-10-29T01:23:03.867005+00:00",
+      "exit_code": 0,
+      "status": "PASS",
+      "log_sha256": "732ad18dbe8fae00d6be9d68949d5fbc8fe33f2d272a4f9ff9247b15d8dac090"
+    },
+    {
+      "id": "bundles",
+      "command": [
+        "python",
+        "scripts/install_skills.py",
+        "--list"
+      ],
+      "started_at": "2026-10-29T01:23:03.868179+00:00",
+      "finished_at": "2026-10-29T01:23:03.974746+00:00",
+      "exit_code": 0,
+      "status": "PASS",
+      "log_sha256": "ca1ecb6a13af5653cb44b9fe20a87add8e36466c39f344de2552cec184984eb6"
+    },
+    {
+      "id": "install-diagnosis",
+      "command": [
+        "python",
+        "scripts/doctor_skills.py",
+        "--all",
+        "--target",
+        ".github/skills"
+      ],
+      "started_at": "2026-10-29T01:23:03.976095+00:00",
+      "finished_at": "2026-10-29T01:23:04.222243+00:00",
+      "exit_code": 0,
+      "status": "PASS",
+      "log_sha256": "b8258a94bc3ad5bd54bb2d088ba435c768e92ad1674841b8a1fc63ce126e539b"
+    },
+    {
+      "id": "resources",
+      "command": [
+        "python",
+        "scripts/skill_resources.py"
+      ],
+      "started_at": "2026-10-29T01:23:04.232201+00:00",
+      "finished_at": "2026-10-29T01:23:04.508236+00:00",
+      "exit_code": 0,
+      "status": "PASS",
+      "log_sha256": "eb55587df88b027f9a1ee470ae6a183c1578c70344b3cd0c54b324a8f52ebe4b"
+    },
+    {
+      "id": "published-evidence",
+      "command": [
+        "python",
+        "scripts/evidence_indexes.py"
+      ],
+      "started_at": "2026-10-29T01:23:04.516981+00:00",
+      "finished_at": "2026-10-29T01:23:04.713773+00:00",
+      "exit_code": 0,
+      "status": "PASS",
+      "log_sha256": "7323d505c1b12b0de47cbd6781d066003ad257cf8e5e423fb9041973d2978036"
+    },
+    {
+      "id": "sync",
+      "command": [
+        "python",
+        "scripts/sync_skills.py",
+        "--target",
+        ".github/skills",
+        "--check"
+      ],
+      "started_at": "2026-10-29T01:23:04.715585+00:00",
+      "finished_at": "2026-10-29T01:23:04.938467+00:00",
+      "exit_code": 0,
+      "status": "PASS",
+      "log_sha256": "3e24a6045e3640b0372fe8a35038957b7f0e4ebaf043fb98241f4fb73ef76f8f"
+    },
+    {
+      "id": "smoke-interface",
+      "command": [
+        "python",
+        "scripts/runtime_smoke.py",
+        "--help"
+      ],
+      "started_at": "2026-10-29T01:23:04.944888+00:00",
+      "finished_at": "2026-10-29T01:23:05.096389+00:00",
+      "exit_code": 0,
+      "status": "PASS",
+      "log_sha256": "f052d83fd397c0437e99dacdd4ef87a4b2eb6afb22d604be3e5461cfcffeba65"
+    },
+    {
+      "id": "compile",
+      "command": [
+        "python",
+        "-m",
+        "compileall",
+        "-q",
+        "scripts",
+        "tests"
+      ],
+      "started_at": "2026-10-29T01:23:05.103796+00:00",
+      "finished_at": "2026-10-29T01:23:05.257212+00:00",
+      "exit_code": 0,
+      "status": "PASS",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "model_calls": 0,
+  "real_model_setup": "NOT_RUN",
+  "scope": "Workflow setup needs no attention installation; existing installed Loop helper test runs in isolation. Windows symlink tests skipped, not PASS.",
+  "normalization": "Final reviewed changed files use LF to match Git publication bytes; earlier local campaign is retained separately."
+}

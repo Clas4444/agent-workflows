@@ -8,7 +8,7 @@ Repository renamed from `loop-skills-repository`; existing `loop-*` skill names
 and workflow behavior are unchanged. Optional task-wide attention controls live
 in the separate [agent-attention](https://github.com/Clas4444/agent-attention) repo.
 
-Version **1.11.0** · 15 groups · 14 bundles · Python 3.11+
+Version **1.11.1** · 15 groups · 14 bundles · Python 3.11+
 for repository tools. These are portable instructions and local helpers; your
 agent host supplies execution tools and permissions.
 
@@ -78,7 +78,7 @@ and does not start execution. Slash-picker availability depends on your host.
 ![Optional conditional workflow setup](docs/assets/workflow-setup.svg)
 
 [Setup guide and worked loop](docs/guides/WORKFLOW-SETUP.md) ·
-[Shared graph and Repo 2 attention attachment](docs/guides/WORKFLOW-SETUP.md#add-repo-2-attention)
+[Optional agent-attention integration](docs/guides/WORKFLOW-SETUP.md#add-agent-attention)
 
 ## Canonical names and bundles
 

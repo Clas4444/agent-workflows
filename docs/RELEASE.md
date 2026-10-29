@@ -1,8 +1,12 @@
-# Release 1.11.0 — 2026-10-29
+# Release 1.11.1 — 2026-10-29
 
 This release adds optional conditional workflow design through the existing skill.
 Install first, verify host discovery, then request setup when a reusable graph is
 useful. Ordinary direct work remains available without graph files or cursors.
+
+Workflow setup works with agent-workflows alone. Independent attention setup
+belongs to agent-attention; its graph bridge is an optional explicit integration.
+See [setup separation checks](testing/SETUP-SEPARATION.md).
 
 ## Compatibility and migration
 

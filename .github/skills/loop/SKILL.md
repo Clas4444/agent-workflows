@@ -21,6 +21,9 @@ Separate the selector from task text; never pass task text as a shell command.
 
 ## Workflow
 
+Workflow setup designs steps, skill selection, result routes and bounded cycles.
+It works without agent-attention; configuring attention is a separate optional task.
+
 For **setup**, use [the setup interview and graph contract](references/setup.md)
 and bundled [workflow helper](scripts/workflow_setup.py). Ask outcome/steps first,
 then conditions, exact source pointers, skill alternatives, cycle end and limits;

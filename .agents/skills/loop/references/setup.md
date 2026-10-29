@@ -8,9 +8,9 @@ under isolated Python and never executes skills, tasks, shell expressions or mod
 
 Ask two or three related questions at a time, reusing known answers. Start with
 outcome/completion criteria and desired steps. Then ask about exact source pointers,
-PASS/FAIL/BLOCKED/NOT_RUN routes, conditional skill/profile choices, fact provenance,
+PASS/FAIL/BLOCKED/NOT_RUN routes, conditional skill choices, fact provenance,
 cycle end, limits, project root and output location. `questions --layer skills`
-or `questions --layer attention` prints the checklist. Do not manufacture answers.
+prints the workflow checklist. Attention setup is a separate optional product. Do not manufacture answers.
 
 Show the ordered graph and branch priorities in the conversation. Clarify missing
 conditions before dependent work; use existing authorization instead of asking for
@@ -19,7 +19,7 @@ If the user also requests execution, proceed only within that authorized scope.
 
 ## Shared graph contract v1
 
-`template --layer skills|attention|both` prints an editable two-step example.
+`template --layer skills` prints an editable two-step workflow example.
 Replace its sample goal, criteria, sources, facts and bindings with the user's
 answers; the scaffold itself is not a completed interview.
 
@@ -48,7 +48,7 @@ it does not turn a routed STOP or an unexecuted task into PASS.
 
 ## Check and export a local map
 
-`check --file draft.json` validates graph structure. Repo 1 should also supply
+`check --file draft.json` validates graph structure. agent-workflows should also supply
 `--catalog <skill-dir>/assets/catalog.json` to check canonical registered skills.
 This does not establish that instructions are installed or native picker discovery.
 Inspect selected instruction paths before execution; missing ones are BLOCKED.
@@ -89,7 +89,7 @@ not autonomously observed by this read-only routing helper.
 
 ## Attach attention to an existing skills graph
 
-Repo 2 can reuse Repo 1's graph. Use `attach --file workflow.json --patch modes.json`.
+agent-attention can reuse agent-workflows's graph. Use `attach --file workflow.json --patch modes.json`.
 A patch contains optional task attention and steps keyed by step ID, for example:
 
 ```json

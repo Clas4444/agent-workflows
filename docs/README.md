@@ -8,7 +8,7 @@ role toolkits recommend a small subset, not a requirement to run all skills.
 | Need | Read |
 |---|---|
 | Design a conditional loop | [Workflow setup](guides/WORKFLOW-SETUP.md) |
-| Check current expectations and gaps | [Expectation audit](testing/EXPECTATION-AUDIT.md) |
+| Check current expectations and gaps | [Setup separation and expectations](testing/SETUP-SEPARATION.md) |
 | Inspect setup integration | [Setup evidence](testing/WORKFLOW-SETUP.md) |
 | Upgrade or roll back | [Release compatibility](RELEASE.md) |
 

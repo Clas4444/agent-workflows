@@ -1,5 +1,12 @@
 # Changelog
 
+## 1.11.1 — 2026-10-29
+
+- Separate workflow setup from independent agent-attention setup; workflow design
+  needs only agent-workflows. Keep attention integration optional.
+- Replace conversational repository numbers with product names in public guides
+  and give the workflow illustration skill-specific content in the existing style.
+
 ## 1.11.0 — 2026-10-29
 
 - Add optional `$loop setup`: a short interview designs conditional skill choices,
