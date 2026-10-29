@@ -34,3 +34,6 @@
 
 # Stable sanitized Codex workflow cost observations.
 /docs/evidence/workflow-cost-20261029/** text eol=lf
+/docs/evidence/workflow-cost-20261030/** text eol=lf
+/scripts/workflow_cost*.py text eol=lf
+/tests/test_workflow_cost.py text eol=lf

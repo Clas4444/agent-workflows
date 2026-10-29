@@ -8,7 +8,7 @@ Repository renamed from `loop-skills-repository`; existing `loop-*` skill names
 and workflow behavior are unchanged. Optional task-wide attention controls live
 in the separate [agent-attention](https://github.com/Clas4444/agent-attention) repo.
 
-Version **1.11.1** · 15 groups · 14 bundles · Python 3.11+
+Version **1.11.2** · 15 groups · 14 bundles · Python 3.11+
 for repository tools. These are portable instructions and local helpers; your
 agent host supplies execution tools and permissions.
 
@@ -17,6 +17,7 @@ agent host supplies execution tools and permissions.
 [Start here](docs/guides/START-HERE.md) ·
 [14 bundle workflow diagrams](docs/guides/BUNDLE-WORKFLOWS.md) ·
 [What has actually been tested](docs/EVIDENCE.md) ·
+[Testing and experiments](docs/testing/README.md) ·
 [Install by need](docs/guides/INSTALL-BY-NEED.md) ·
 [Browse all skills](#skill-catalog)
 

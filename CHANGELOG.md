@@ -1,5 +1,14 @@
 # Changelog
 
+## 1.11.2 — 2026-10-30
+
+- Add a repeatable, opt-in Codex workflow cost experiment with finance,
+  dependency-blocking and revised-input cases. Plan and regrade without model calls.
+- Preserve failed and blocked benchmark attempts; withhold efficiency comparisons
+  when any planned quality repetition fails. Validate usage types and cache bounds.
+- Add a testing index separating deterministic gates, measured experiments and
+  historical reports, while retaining existing report URLs and raw-log privacy.
+
 ## 1.11.1 — 2026-10-29
 
 - Separate workflow setup from independent agent-attention setup; workflow design

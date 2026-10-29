@@ -11,6 +11,7 @@ role toolkits recommend a small subset, not a requirement to run all skills.
 | Check current expectations and gaps | [Setup separation and expectations](testing/SETUP-SEPARATION.md) |
 | Inspect setup integration | [Setup evidence](testing/WORKFLOW-SETUP.md) |
 | Upgrade or roll back | [Release compatibility](RELEASE.md) |
+| Find current tests, Codex experiments and retained history | [Testing and experiment index](testing/README.md) |
 
 ## Existing topic routes
 

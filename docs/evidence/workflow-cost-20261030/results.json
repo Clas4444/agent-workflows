@@ -1,0 +1,1505 @@
+{
+  "measurement_status": "PASS",
+  "clean_skill_ab_status": "NOT_VERIFIED",
+  "native_continuation_status": "NOT_RUN",
+  "packages": [
+    {
+      "id": "01-finance-r1-workflow",
+      "case": "finance",
+      "rep": 1,
+      "arm": "workflow",
+      "status": "PASS",
+      "observed_calls": 1,
+      "metrics_complete": true,
+      "seconds": 6.433738700001413,
+      "input_tokens": 27483,
+      "cached_input_tokens": 13440,
+      "output_tokens": 213,
+      "uncached_input_tokens": 14043,
+      "total_tokens": 27696,
+      "calls": [
+        {
+          "status": "PASS",
+          "seconds": 6.433738700001413,
+          "returncode": 0,
+          "checks": {
+            "exit_zero": true,
+            "one_usage_event": true,
+            "usage_valid": true,
+            "jsonl_valid": true,
+            "no_tools": true,
+            "expected_output": true
+          },
+          "usage": {
+            "input_tokens": 27483,
+            "cached_input_tokens": 13440,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 213,
+            "reasoning_output_tokens": 75
+          },
+          "raw_hashes": {
+            "answer.json": "022f0a66d3da8780a360ce89114896d39cbe234dbce0f6fa0966f34fc9a12cdc",
+            "events.jsonl": "d881d11b88c0f66921cb39a220e87e2d3e6b2062c5922297d23d7de36af93ff7",
+            "prompt.txt": "4c24b6d6df37ad72c08afb99741ad397bb8c21d8e73464384c2fa9f693e92d92",
+            "stderr.log": "91b856d4fe6a142197778b5998993538f76b05620eee8ccb75722229e2b4e5a9"
+          },
+          "step": 1
+        }
+      ]
+    },
+    {
+      "id": "02-finance-r1-plain",
+      "case": "finance",
+      "rep": 1,
+      "arm": "plain",
+      "status": "PASS",
+      "observed_calls": 1,
+      "metrics_complete": true,
+      "seconds": 6.6404411000003165,
+      "input_tokens": 26724,
+      "cached_input_tokens": 13440,
+      "output_tokens": 211,
+      "uncached_input_tokens": 13284,
+      "total_tokens": 26935,
+      "calls": [
+        {
+          "status": "PASS",
+          "seconds": 6.6404411000003165,
+          "returncode": 0,
+          "checks": {
+            "exit_zero": true,
+            "one_usage_event": true,
+            "usage_valid": true,
+            "jsonl_valid": true,
+            "no_tools": true,
+            "expected_output": true
+          },
+          "usage": {
+            "input_tokens": 26724,
+            "cached_input_tokens": 13440,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 211,
+            "reasoning_output_tokens": 73
+          },
+          "raw_hashes": {
+            "answer.json": "022f0a66d3da8780a360ce89114896d39cbe234dbce0f6fa0966f34fc9a12cdc",
+            "events.jsonl": "13dec1e1595bf027c7e630b49870b4bef98f9dbf029071ed1d3b5bd2f75f7ef4",
+            "prompt.txt": "7787ee90a9dfa167e4f66448deeff5e231ae850964e97c0b0aab8b6e26acfe79",
+            "stderr.log": "5e36598ddad10d64f2d95b9d401ee60f1c51c0782ab2158e1381d1ac7134a9f0"
+          },
+          "step": 1
+        }
+      ]
+    },
+    {
+      "id": "03-finance-r1-manual",
+      "case": "finance",
+      "rep": 1,
+      "arm": "manual",
+      "status": "PASS",
+      "observed_calls": 4,
+      "metrics_complete": true,
+      "seconds": 23.49084700000094,
+      "input_tokens": 107092,
+      "cached_input_tokens": 53760,
+      "output_tokens": 226,
+      "uncached_input_tokens": 53332,
+      "total_tokens": 107318,
+      "calls": [
+        {
+          "status": "PASS",
+          "seconds": 5.13814949999869,
+          "returncode": 0,
+          "checks": {
+            "exit_zero": true,
+            "one_usage_event": true,
+            "usage_valid": true,
+            "jsonl_valid": true,
+            "no_tools": true,
+            "expected_output": true
+          },
+          "usage": {
+            "input_tokens": 26640,
+            "cached_input_tokens": 13440,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 67,
+            "reasoning_output_tokens": 0
+          },
+          "raw_hashes": {
+            "answer.json": "918f48f666b7dc1a68ff0491dc66f4951c18e92289b11c99793049932e451237",
+            "events.jsonl": "8490e0bde5cd191bbc99a1c300dd4fe5032aba849238937b575a4c5205d8610b",
+            "prompt.txt": "4d018509386aea2e65358ea9712dab404c011b87e889515347ff8aa55703eed7",
+            "stderr.log": "92bc7583eabf33f8d95601a89431b121b91a93b81192c91d4888ef54061bfc45"
+          },
+          "step": 1
+        },
+        {
+          "status": "PASS",
+          "seconds": 6.6564003999992565,
+          "returncode": 0,
+          "checks": {
+            "exit_zero": true,
+            "one_usage_event": true,
+            "usage_valid": true,
+            "jsonl_valid": true,
+            "no_tools": true,
+            "expected_output": true
+          },
+          "usage": {
+            "input_tokens": 26729,
+            "cached_input_tokens": 13440,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 113,
+            "reasoning_output_tokens": 73
+          },
+          "raw_hashes": {
+            "answer.json": "268bc9856f86af07bd9684c451e2b2affebc08e284b50334b245671ae2d7d50e",
+            "events.jsonl": "9d1848de8bd1d27a69944ca4ccea322a9a50287fb0ddb625dc10b32b932b735d",
+            "prompt.txt": "f9ef42af28ef55848735a2add44fa5d3429966963fda1c6a662f0d6a21bc3c0a",
+            "stderr.log": "e1d825b1191d206bb0cafd1471bf15fe70fd48515452f9714e4f15804e54f985"
+          },
+          "step": 2
+        },
+        {
+          "status": "PASS",
+          "seconds": 4.950396700001875,
+          "returncode": 0,
+          "checks": {
+            "exit_zero": true,
+            "one_usage_event": true,
+            "usage_valid": true,
+            "jsonl_valid": true,
+            "no_tools": true,
+            "expected_output": true
+          },
+          "usage": {
+            "input_tokens": 26889,
+            "cached_input_tokens": 13440,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 24,
+            "reasoning_output_tokens": 0
+          },
+          "raw_hashes": {
+            "answer.json": "588be24a215f3b4754eff994cc05acee27bb7d900e5f953398c37b680e26fcbb",
+            "events.jsonl": "36a1a2cf0c2deb5c72da0226e990a05371017b80f3efd61f262d826db012cf59",
+            "prompt.txt": "755efbb39c3a57f69c69f3f672155f35b1fb030921d4e25325319f2b2f040472",
+            "stderr.log": "058440f0518167a3525f155060022dbc0de4a2e35715b5c7f66ce958599d8bd4"
+          },
+          "step": 3
+        },
+        {
+          "status": "PASS",
+          "seconds": 6.745900400001119,
+          "returncode": 0,
+          "checks": {
+            "exit_zero": true,
+            "one_usage_event": true,
+            "usage_valid": true,
+            "jsonl_valid": true,
+            "no_tools": true,
+            "expected_output": true
+          },
+          "usage": {
+            "input_tokens": 26834,
+            "cached_input_tokens": 13440,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 22,
+            "reasoning_output_tokens": 0
+          },
+          "raw_hashes": {
+            "answer.json": "0d916d62774b947adbac19df071600828eb495e31ce93d52c4dfe7f1276526e4",
+            "events.jsonl": "fb6f7a20591a589d0c11e34b5aedfdaa55aaa0ef0892fa7de4b4df215f798664",
+            "prompt.txt": "06eaf186efba716c922afd1925b0c26af5490002142e48691d61a69c7b748925",
+            "stderr.log": "95498a833d8f27d7b02e8019e34f546619f873747266409a5fdda3027c43a454"
+          },
+          "step": 4
+        }
+      ]
+    },
+    {
+      "id": "04-finance-r2-manual",
+      "case": "finance",
+      "rep": 2,
+      "arm": "manual",
+      "status": "PASS",
+      "observed_calls": 4,
+      "metrics_complete": true,
+      "seconds": 21.610578499999974,
+      "input_tokens": 107192,
+      "cached_input_tokens": 53760,
+      "output_tokens": 218,
+      "uncached_input_tokens": 53432,
+      "total_tokens": 107410,
+      "calls": [
+        {
+          "status": "PASS",
+          "seconds": 5.545620100001543,
+          "returncode": 0,
+          "checks": {
+            "exit_zero": true,
+            "one_usage_event": true,
+            "usage_valid": true,
+            "jsonl_valid": true,
+            "no_tools": true,
+            "expected_output": true
+          },
+          "usage": {
+            "input_tokens": 26740,
+            "cached_input_tokens": 13440,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 67,
+            "reasoning_output_tokens": 0
+          },
+          "raw_hashes": {
+            "answer.json": "918f48f666b7dc1a68ff0491dc66f4951c18e92289b11c99793049932e451237",
+            "events.jsonl": "c980a4116d349dc38e4162199e9b0b492b2e31281fe86d91c28badb6cf6422b5",
+            "prompt.txt": "4d018509386aea2e65358ea9712dab404c011b87e889515347ff8aa55703eed7",
+            "stderr.log": "7371509c61b2156ae07c9becc04e0cb2ede4f8c0e2541756b9cc197ab4760bd9"
+          },
+          "step": 1
+        },
+        {
+          "status": "PASS",
+          "seconds": 6.52174229999946,
+          "returncode": 0,
+          "checks": {
+            "exit_zero": true,
+            "one_usage_event": true,
+            "usage_valid": true,
+            "jsonl_valid": true,
+            "no_tools": true,
+            "expected_output": true
+          },
+          "usage": {
+            "input_tokens": 26729,
+            "cached_input_tokens": 13440,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 105,
+            "reasoning_output_tokens": 65
+          },
+          "raw_hashes": {
+            "answer.json": "268bc9856f86af07bd9684c451e2b2affebc08e284b50334b245671ae2d7d50e",
+            "events.jsonl": "823ca1e890d228bf008eb1f67df0445380be8020265c7c2c32e60758d6433050",
+            "prompt.txt": "f9ef42af28ef55848735a2add44fa5d3429966963fda1c6a662f0d6a21bc3c0a",
+            "stderr.log": "78e20b475044f21a7db0e7ae5d27695a1f2e3f6c52a21b9e306a7f5060d4564a"
+          },
+          "step": 2
+        },
+        {
+          "status": "PASS",
+          "seconds": 4.896558899999945,
+          "returncode": 0,
+          "checks": {
+            "exit_zero": true,
+            "one_usage_event": true,
+            "usage_valid": true,
+            "jsonl_valid": true,
+            "no_tools": true,
+            "expected_output": true
+          },
+          "usage": {
+            "input_tokens": 26889,
+            "cached_input_tokens": 13440,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 24,
+            "reasoning_output_tokens": 0
+          },
+          "raw_hashes": {
+            "answer.json": "588be24a215f3b4754eff994cc05acee27bb7d900e5f953398c37b680e26fcbb",
+            "events.jsonl": "08dc98cd33f53a56e9fd533b733dc9c1947ca70d0d6a8bb10fa9ab6b877a4608",
+            "prompt.txt": "755efbb39c3a57f69c69f3f672155f35b1fb030921d4e25325319f2b2f040472",
+            "stderr.log": "4b3702a3cc9a72f9b51988e69f923cf6991324acddd4081912f6acb6743d2e5f"
+          },
+          "step": 3
+        },
+        {
+          "status": "PASS",
+          "seconds": 4.6466571999990265,
+          "returncode": 0,
+          "checks": {
+            "exit_zero": true,
+            "one_usage_event": true,
+            "usage_valid": true,
+            "jsonl_valid": true,
+            "no_tools": true,
+            "expected_output": true
+          },
+          "usage": {
+            "input_tokens": 26834,
+            "cached_input_tokens": 13440,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 22,
+            "reasoning_output_tokens": 0
+          },
+          "raw_hashes": {
+            "answer.json": "0d916d62774b947adbac19df071600828eb495e31ce93d52c4dfe7f1276526e4",
+            "events.jsonl": "05e41e4721477b890af93a40b04f35e9b0399189e44561c64d5d2a5562ea6f2e",
+            "prompt.txt": "06eaf186efba716c922afd1925b0c26af5490002142e48691d61a69c7b748925",
+            "stderr.log": "ae8b2eec58424dd13dee2928eec928dc42d7fedcaff2e71344764a1b159510d9"
+          },
+          "step": 4
+        }
+      ]
+    },
+    {
+      "id": "05-finance-r2-plain",
+      "case": "finance",
+      "rep": 2,
+      "arm": "plain",
+      "status": "PASS",
+      "observed_calls": 1,
+      "metrics_complete": true,
+      "seconds": 7.151366499998403,
+      "input_tokens": 26724,
+      "cached_input_tokens": 13440,
+      "output_tokens": 205,
+      "uncached_input_tokens": 13284,
+      "total_tokens": 26929,
+      "calls": [
+        {
+          "status": "PASS",
+          "seconds": 7.151366499998403,
+          "returncode": 0,
+          "checks": {
+            "exit_zero": true,
+            "one_usage_event": true,
+            "usage_valid": true,
+            "jsonl_valid": true,
+            "no_tools": true,
+            "expected_output": true
+          },
+          "usage": {
+            "input_tokens": 26724,
+            "cached_input_tokens": 13440,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 205,
+            "reasoning_output_tokens": 67
+          },
+          "raw_hashes": {
+            "answer.json": "022f0a66d3da8780a360ce89114896d39cbe234dbce0f6fa0966f34fc9a12cdc",
+            "events.jsonl": "e6e02e12a55e17d11ef169ad20428fde2dbfd50e46fc898280b7a8ce6e61d9d7",
+            "prompt.txt": "7787ee90a9dfa167e4f66448deeff5e231ae850964e97c0b0aab8b6e26acfe79",
+            "stderr.log": "7b48096b2c05aa05adda53947c90d93f2de70bdd4c65b60ee28608f74d8f71a9"
+          },
+          "step": 1
+        }
+      ]
+    },
+    {
+      "id": "06-finance-r2-workflow",
+      "case": "finance",
+      "rep": 2,
+      "arm": "workflow",
+      "status": "PASS",
+      "observed_calls": 1,
+      "metrics_complete": true,
+      "seconds": 7.186126699998567,
+      "input_tokens": 27383,
+      "cached_input_tokens": 23936,
+      "output_tokens": 212,
+      "uncached_input_tokens": 3447,
+      "total_tokens": 27595,
+      "calls": [
+        {
+          "status": "PASS",
+          "seconds": 7.186126699998567,
+          "returncode": 0,
+          "checks": {
+            "exit_zero": true,
+            "one_usage_event": true,
+            "usage_valid": true,
+            "jsonl_valid": true,
+            "no_tools": true,
+            "expected_output": true
+          },
+          "usage": {
+            "input_tokens": 27383,
+            "cached_input_tokens": 23936,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 212,
+            "reasoning_output_tokens": 74
+          },
+          "raw_hashes": {
+            "answer.json": "022f0a66d3da8780a360ce89114896d39cbe234dbce0f6fa0966f34fc9a12cdc",
+            "events.jsonl": "0051f502bf28260b5b96bbbd420bca8160210c8878cb0984d4fc35df4e0a4012",
+            "prompt.txt": "4c24b6d6df37ad72c08afb99741ad397bb8c21d8e73464384c2fa9f693e92d92",
+            "stderr.log": "1f06684e7a48ea7eee87d05f44955a684baf30950a15762679c4c12322e8df8a"
+          },
+          "step": 1
+        }
+      ]
+    },
+    {
+      "id": "07-dependencies-r1-plain",
+      "case": "dependencies",
+      "rep": 1,
+      "arm": "plain",
+      "status": "PASS",
+      "observed_calls": 1,
+      "metrics_complete": true,
+      "seconds": 5.37116160000005,
+      "input_tokens": 26191,
+      "cached_input_tokens": 13440,
+      "output_tokens": 81,
+      "uncached_input_tokens": 12751,
+      "total_tokens": 26272,
+      "calls": [
+        {
+          "status": "PASS",
+          "seconds": 5.37116160000005,
+          "returncode": 0,
+          "checks": {
+            "exit_zero": true,
+            "one_usage_event": true,
+            "usage_valid": true,
+            "jsonl_valid": true,
+            "no_tools": true,
+            "expected_output": true
+          },
+          "usage": {
+            "input_tokens": 26191,
+            "cached_input_tokens": 13440,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 81,
+            "reasoning_output_tokens": 0
+          },
+          "raw_hashes": {
+            "answer.json": "dc5b7f7cccc67db899678c1c59c5f820a88e64fb350a3c4f04579fe239653127",
+            "events.jsonl": "10c1f6658540e995c8a2e7b6a005ee89d59cfe2cf3e86a8f01348798c2fb7da5",
+            "prompt.txt": "6bb23085380dc523384942f4e5583d42c8515eef117a41f4490395e4ba1e6848",
+            "stderr.log": "d43df98b568100a20b400752079040c1f73655bd24c9d7a2c15f5ebef3c47bbe"
+          },
+          "step": 1
+        }
+      ]
+    },
+    {
+      "id": "08-dependencies-r1-manual",
+      "case": "dependencies",
+      "rep": 1,
+      "arm": "manual",
+      "status": "PASS",
+      "observed_calls": 5,
+      "metrics_complete": true,
+      "seconds": 24.814563699994324,
+      "input_tokens": 131837,
+      "cached_input_tokens": 77696,
+      "output_tokens": 113,
+      "uncached_input_tokens": 54141,
+      "total_tokens": 131950,
+      "calls": [
+        {
+          "status": "PASS",
+          "seconds": 5.527042199999414,
+          "returncode": 0,
+          "checks": {
+            "exit_zero": true,
+            "one_usage_event": true,
+            "usage_valid": true,
+            "jsonl_valid": true,
+            "no_tools": true,
+            "expected_output": true
+          },
+          "usage": {
+            "input_tokens": 26308,
+            "cached_input_tokens": 13440,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 24,
+            "reasoning_output_tokens": 0
+          },
+          "raw_hashes": {
+            "answer.json": "7b08a468b6ea5dadfa2372636d0c6c9a385203b70c92fbf70a2cec397324c3ed",
+            "events.jsonl": "8b9b57c30f406ccefaf0913a94206807530019ccac40d8b3fcb072a7903e8bc2",
+            "prompt.txt": "01c8aac2418acb22a9309eb1826640c7e872ff4d7b7a8b119c9fc57fb29f0742",
+            "stderr.log": "d12888fd2bedc3a62f1dd5ed7da37df1dca45049a7e7b65e380f2fb18caee96e"
+          },
+          "step": 1
+        },
+        {
+          "status": "PASS",
+          "seconds": 4.906618199998775,
+          "returncode": 0,
+          "checks": {
+            "exit_zero": true,
+            "one_usage_event": true,
+            "usage_valid": true,
+            "jsonl_valid": true,
+            "no_tools": true,
+            "expected_output": true
+          },
+          "usage": {
+            "input_tokens": 26254,
+            "cached_input_tokens": 23936,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 23,
+            "reasoning_output_tokens": 10
+          },
+          "raw_hashes": {
+            "answer.json": "f5ce333f380fdef8bc026504254795aa373c64a1f7bb3fce924a8a0349fbabd9",
+            "events.jsonl": "2b1e9f783dced25a8addd33afc574d238f82105237c939e93aaf30706000f497",
+            "prompt.txt": "4b9edc985bd20c020f5e708a1ef070975964f9bd95e17acf37481b308b71041d",
+            "stderr.log": "90a889eccd6f2726744c030087764b391ef67255542ea0b5649dde5d85d3a969"
+          },
+          "step": 2
+        },
+        {
+          "status": "PASS",
+          "seconds": 4.324668599998404,
+          "returncode": 0,
+          "checks": {
+            "exit_zero": true,
+            "one_usage_event": true,
+            "usage_valid": true,
+            "jsonl_valid": true,
+            "no_tools": true,
+            "expected_output": true
+          },
+          "usage": {
+            "input_tokens": 26386,
+            "cached_input_tokens": 13440,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 12,
+            "reasoning_output_tokens": 0
+          },
+          "raw_hashes": {
+            "answer.json": "2c5c16eb25a826a54ad7c61597deb2fc0142189924615a7f6a3e2fd73173a128",
+            "events.jsonl": "cab2e9c2e17424d30f3486c45b54c9409b6beb024465182c3771e543a025fec0",
+            "prompt.txt": "8b3571c3e605ed53750e11bac90f942d211e0aa84d6f83ba0e113d5079182da4",
+            "stderr.log": "2fb3dc774553b66950705f3f7789536ccec940dde2169dc04f0af4e2adfe8e07"
+          },
+          "step": 3
+        },
+        {
+          "status": "PASS",
+          "seconds": 4.5233780999988085,
+          "returncode": 0,
+          "checks": {
+            "exit_zero": true,
+            "one_usage_event": true,
+            "usage_valid": true,
+            "jsonl_valid": true,
+            "no_tools": true,
+            "expected_output": true
+          },
+          "usage": {
+            "input_tokens": 26419,
+            "cached_input_tokens": 13440,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 29,
+            "reasoning_output_tokens": 0
+          },
+          "raw_hashes": {
+            "answer.json": "7d3cb5014c88dda27a54d1d89ee8ebd9d37d4be5c631fd529797139d68d878e2",
+            "events.jsonl": "51199d720e26b9ddddc67862c3c13b5ba8341430d57cfb7e80e3aab9d90265a5",
+            "prompt.txt": "580a44037ddb790f07329fadf4eb58708833831a6443bdc595ecfeeb4c930382",
+            "stderr.log": "3240f167f1224ab6ec323df8df376c6a25fa1579f22064808be1f83020e2eeee"
+          },
+          "step": 4
+        },
+        {
+          "status": "PASS",
+          "seconds": 5.532856599998922,
+          "returncode": 0,
+          "checks": {
+            "exit_zero": true,
+            "one_usage_event": true,
+            "usage_valid": true,
+            "jsonl_valid": true,
+            "no_tools": true,
+            "expected_output": true
+          },
+          "usage": {
+            "input_tokens": 26470,
+            "cached_input_tokens": 13440,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 25,
+            "reasoning_output_tokens": 0
+          },
+          "raw_hashes": {
+            "answer.json": "b74d249b150a91d21ec437c3bd29351200fa5cd7ebf43614cbf0f5b1871b601f",
+            "events.jsonl": "03dcdf92897d86ccafebef132e91f0585b12c87e6c805f7385655cc31f008058",
+            "prompt.txt": "c1e432880477bd9205fa696d107892beadeca55c1254be3d5684829f0d12e4c7",
+            "stderr.log": "21babfdd5d3c8ce7d85c2169638ac61fe3a48deda3f5bf938c62bc5cfb3e9f6e"
+          },
+          "step": 5
+        }
+      ]
+    },
+    {
+      "id": "09-dependencies-r1-workflow",
+      "case": "dependencies",
+      "rep": 1,
+      "arm": "workflow",
+      "status": "PASS",
+      "observed_calls": 1,
+      "metrics_complete": true,
+      "seconds": 6.6613434000028064,
+      "input_tokens": 26950,
+      "cached_input_tokens": 23936,
+      "output_tokens": 81,
+      "uncached_input_tokens": 3014,
+      "total_tokens": 27031,
+      "calls": [
+        {
+          "status": "PASS",
+          "seconds": 6.6613434000028064,
+          "returncode": 0,
+          "checks": {
+            "exit_zero": true,
+            "one_usage_event": true,
+            "usage_valid": true,
+            "jsonl_valid": true,
+            "no_tools": true,
+            "expected_output": true
+          },
+          "usage": {
+            "input_tokens": 26950,
+            "cached_input_tokens": 23936,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 81,
+            "reasoning_output_tokens": 0
+          },
+          "raw_hashes": {
+            "answer.json": "dc5b7f7cccc67db899678c1c59c5f820a88e64fb350a3c4f04579fe239653127",
+            "events.jsonl": "5ce3da22c3a22b7fa8bb493835f16effb37d5984cdb51b7ca670e4823d37b302",
+            "prompt.txt": "a939df7d2aca0d9f270dc58bf6f16127b32f006d1e8df4c2b10232755ecb1658",
+            "stderr.log": "6a71cf9da5bff383837ecc25591734ceae1749fcb4425c87cd73cfde284dfaa4"
+          },
+          "step": 1
+        }
+      ]
+    },
+    {
+      "id": "10-dependencies-r2-workflow",
+      "case": "dependencies",
+      "rep": 2,
+      "arm": "workflow",
+      "status": "PASS",
+      "observed_calls": 1,
+      "metrics_complete": true,
+      "seconds": 6.274721199999476,
+      "input_tokens": 26950,
+      "cached_input_tokens": 13440,
+      "output_tokens": 159,
+      "uncached_input_tokens": 13510,
+      "total_tokens": 27109,
+      "calls": [
+        {
+          "status": "PASS",
+          "seconds": 6.274721199999476,
+          "returncode": 0,
+          "checks": {
+            "exit_zero": true,
+            "one_usage_event": true,
+            "usage_valid": true,
+            "jsonl_valid": true,
+            "no_tools": true,
+            "expected_output": true
+          },
+          "usage": {
+            "input_tokens": 26950,
+            "cached_input_tokens": 13440,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 159,
+            "reasoning_output_tokens": 34
+          },
+          "raw_hashes": {
+            "answer.json": "c588be886e4256d6ed09d779b135c15b5eabb420d934af979790d9ffc99d582f",
+            "events.jsonl": "8ec52da013d79a4ca92359b509cad2b851e72e8b2b91023700764c11250e10bb",
+            "prompt.txt": "a939df7d2aca0d9f270dc58bf6f16127b32f006d1e8df4c2b10232755ecb1658",
+            "stderr.log": "b0202ea635934ba5c826e4753e77497909b5f7f8f60d69e7f9bb2fdad7f77fe2"
+          },
+          "step": 1
+        }
+      ]
+    },
+    {
+      "id": "11-dependencies-r2-manual",
+      "case": "dependencies",
+      "rep": 2,
+      "arm": "manual",
+      "status": "PASS",
+      "observed_calls": 5,
+      "metrics_complete": true,
+      "seconds": 26.452369100003125,
+      "input_tokens": 131937,
+      "cached_input_tokens": 88448,
+      "output_tokens": 133,
+      "uncached_input_tokens": 43489,
+      "total_tokens": 132070,
+      "calls": [
+        {
+          "status": "PASS",
+          "seconds": 5.144934900003136,
+          "returncode": 0,
+          "checks": {
+            "exit_zero": true,
+            "one_usage_event": true,
+            "usage_valid": true,
+            "jsonl_valid": true,
+            "no_tools": true,
+            "expected_output": true
+          },
+          "usage": {
+            "input_tokens": 26308,
+            "cached_input_tokens": 13440,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 24,
+            "reasoning_output_tokens": 0
+          },
+          "raw_hashes": {
+            "answer.json": "7b08a468b6ea5dadfa2372636d0c6c9a385203b70c92fbf70a2cec397324c3ed",
+            "events.jsonl": "6de760f2a4aaa89b3b06f2b6d298116a20ab5020fa8c83f20d2eacc4b805d259",
+            "prompt.txt": "01c8aac2418acb22a9309eb1826640c7e872ff4d7b7a8b119c9fc57fb29f0742",
+            "stderr.log": "7372e2deabccbe5d2130a7cd90c35e17cee2c79128e59080b5f6e992b2584153"
+          },
+          "step": 1
+        },
+        {
+          "status": "PASS",
+          "seconds": 4.683893800000078,
+          "returncode": 0,
+          "checks": {
+            "exit_zero": true,
+            "one_usage_event": true,
+            "usage_valid": true,
+            "jsonl_valid": true,
+            "no_tools": true,
+            "expected_output": true
+          },
+          "usage": {
+            "input_tokens": 26354,
+            "cached_input_tokens": 24064,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 11,
+            "reasoning_output_tokens": 0
+          },
+          "raw_hashes": {
+            "answer.json": "f5ce333f380fdef8bc026504254795aa373c64a1f7bb3fce924a8a0349fbabd9",
+            "events.jsonl": "6b9aa3c183b3d709c32b075caaf9cdb82f89cb7d086fd304d622308070cecc9c",
+            "prompt.txt": "4b9edc985bd20c020f5e708a1ef070975964f9bd95e17acf37481b308b71041d",
+            "stderr.log": "5815757c1b8f6ded9864f61c5d48929b4de3f2f43989675342a3b0e0bbdb4978"
+          },
+          "step": 2
+        },
+        {
+          "status": "PASS",
+          "seconds": 5.771205799999734,
+          "returncode": 0,
+          "checks": {
+            "exit_zero": true,
+            "one_usage_event": true,
+            "usage_valid": true,
+            "jsonl_valid": true,
+            "no_tools": true,
+            "expected_output": true
+          },
+          "usage": {
+            "input_tokens": 26386,
+            "cached_input_tokens": 24064,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 12,
+            "reasoning_output_tokens": 0
+          },
+          "raw_hashes": {
+            "answer.json": "2c5c16eb25a826a54ad7c61597deb2fc0142189924615a7f6a3e2fd73173a128",
+            "events.jsonl": "b873642008fb25e9de40b4e842be6c26f4432af9ea4195102d77b4afb31b12a4",
+            "prompt.txt": "8b3571c3e605ed53750e11bac90f942d211e0aa84d6f83ba0e113d5079182da4",
+            "stderr.log": "3db5bb7e45582848a2a32d56501d682236e58ea3cb40f516e4d99f4ac17c869a"
+          },
+          "step": 3
+        },
+        {
+          "status": "PASS",
+          "seconds": 5.835437500001717,
+          "returncode": 0,
+          "checks": {
+            "exit_zero": true,
+            "one_usage_event": true,
+            "usage_valid": true,
+            "jsonl_valid": true,
+            "no_tools": true,
+            "expected_output": true
+          },
+          "usage": {
+            "input_tokens": 26419,
+            "cached_input_tokens": 13440,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 61,
+            "reasoning_output_tokens": 30
+          },
+          "raw_hashes": {
+            "answer.json": "7d3cb5014c88dda27a54d1d89ee8ebd9d37d4be5c631fd529797139d68d878e2",
+            "events.jsonl": "f0e0058e714851c804b1c2299d7d0fec4accf8f99e764853f3f09944e9d45b98",
+            "prompt.txt": "580a44037ddb790f07329fadf4eb58708833831a6443bdc595ecfeeb4c930382",
+            "stderr.log": "79ff0910d8b0fadf03f57ffe9cd6aff7c49c599344d98ecf7c4dc7df61f7209b"
+          },
+          "step": 4
+        },
+        {
+          "status": "PASS",
+          "seconds": 5.0168970999984595,
+          "returncode": 0,
+          "checks": {
+            "exit_zero": true,
+            "one_usage_event": true,
+            "usage_valid": true,
+            "jsonl_valid": true,
+            "no_tools": true,
+            "expected_output": true
+          },
+          "usage": {
+            "input_tokens": 26470,
+            "cached_input_tokens": 13440,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 25,
+            "reasoning_output_tokens": 0
+          },
+          "raw_hashes": {
+            "answer.json": "b74d249b150a91d21ec437c3bd29351200fa5cd7ebf43614cbf0f5b1871b601f",
+            "events.jsonl": "0ba363fa8cac4fb6bd75095b8a9658f73f45d38690933ba8c6846e89a1f1e905",
+            "prompt.txt": "c1e432880477bd9205fa696d107892beadeca55c1254be3d5684829f0d12e4c7",
+            "stderr.log": "e381ce39d6c3be219199ecf19377070d58f32b879c2b1505df3777296a81765e"
+          },
+          "step": 5
+        }
+      ]
+    },
+    {
+      "id": "12-dependencies-r2-plain",
+      "case": "dependencies",
+      "rep": 2,
+      "arm": "plain",
+      "status": "PASS",
+      "observed_calls": 1,
+      "metrics_complete": true,
+      "seconds": 4.992085099998803,
+      "input_tokens": 26291,
+      "cached_input_tokens": 24064,
+      "output_tokens": 81,
+      "uncached_input_tokens": 2227,
+      "total_tokens": 26372,
+      "calls": [
+        {
+          "status": "PASS",
+          "seconds": 4.992085099998803,
+          "returncode": 0,
+          "checks": {
+            "exit_zero": true,
+            "one_usage_event": true,
+            "usage_valid": true,
+            "jsonl_valid": true,
+            "no_tools": true,
+            "expected_output": true
+          },
+          "usage": {
+            "input_tokens": 26291,
+            "cached_input_tokens": 24064,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 81,
+            "reasoning_output_tokens": 0
+          },
+          "raw_hashes": {
+            "answer.json": "dc5b7f7cccc67db899678c1c59c5f820a88e64fb350a3c4f04579fe239653127",
+            "events.jsonl": "1e32013350a79e55bec653386b19d5c37bbf1c16b0e162ac195228891e68f217",
+            "prompt.txt": "6bb23085380dc523384942f4e5583d42c8515eef117a41f4490395e4ba1e6848",
+            "stderr.log": "b02a4fef9cba0cb26a25cce34018d801171d0a76e02712b35e82f749cedfef5f"
+          },
+          "step": 1
+        }
+      ]
+    },
+    {
+      "id": "13-revision-r1-manual",
+      "case": "revision",
+      "rep": 1,
+      "arm": "manual",
+      "status": "PASS",
+      "observed_calls": 3,
+      "metrics_complete": true,
+      "seconds": 15.256853499995486,
+      "input_tokens": 78740,
+      "cached_input_tokens": 50944,
+      "output_tokens": 102,
+      "uncached_input_tokens": 27796,
+      "total_tokens": 78842,
+      "calls": [
+        {
+          "status": "PASS",
+          "seconds": 4.515153799999098,
+          "returncode": 0,
+          "checks": {
+            "exit_zero": true,
+            "one_usage_event": true,
+            "usage_valid": true,
+            "jsonl_valid": true,
+            "no_tools": true,
+            "expected_output": true
+          },
+          "usage": {
+            "input_tokens": 26193,
+            "cached_input_tokens": 13440,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 30,
+            "reasoning_output_tokens": 0
+          },
+          "raw_hashes": {
+            "answer.json": "c6c4881f5de7a62a131252cd431c20a0482153d609c3a12a2cf7bc35c854ca9e",
+            "events.jsonl": "1152dba1c02b2fb9db0257f54d4fa3362d1ec8032b67d551e96862a100ea8cc8",
+            "prompt.txt": "78a737e57ff0d0820e4cb7123e66fb73897320fa75cee1101c3bf6d6c8c459db",
+            "stderr.log": "f7d336d682613bd6eb16be4977de92535644e071a809dc0be31e9488c5107f89"
+          },
+          "step": 1
+        },
+        {
+          "status": "PASS",
+          "seconds": 5.488033499997982,
+          "returncode": 0,
+          "checks": {
+            "exit_zero": true,
+            "one_usage_event": true,
+            "usage_valid": true,
+            "jsonl_valid": true,
+            "no_tools": true,
+            "expected_output": true
+          },
+          "usage": {
+            "input_tokens": 26246,
+            "cached_input_tokens": 13440,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 31,
+            "reasoning_output_tokens": 0
+          },
+          "raw_hashes": {
+            "answer.json": "d4958b0dc66284f66c071d45352588c75b98eb50056943d431ed2a73b1d8ee05",
+            "events.jsonl": "68512d340649992d99bf252a6abc0cb11735ddffc9654ff9e94544caac4be8ec",
+            "prompt.txt": "4481048b12ef0eb28b3b7093a18b9010543a57fddd899d29176b28869f5ea4fe",
+            "stderr.log": "87bfe0f750200b48ad4527eb4b40bebd2cd21c582278016dc9ba68d0463116d6"
+          },
+          "step": 2
+        },
+        {
+          "status": "PASS",
+          "seconds": 5.253666199998406,
+          "returncode": 0,
+          "checks": {
+            "exit_zero": true,
+            "one_usage_event": true,
+            "usage_valid": true,
+            "jsonl_valid": true,
+            "no_tools": true,
+            "expected_output": true
+          },
+          "usage": {
+            "input_tokens": 26301,
+            "cached_input_tokens": 24064,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 41,
+            "reasoning_output_tokens": 0
+          },
+          "raw_hashes": {
+            "answer.json": "8ffc097b390517aa22fdb6b6bafdf81bdd9d9a0c60343829ae3a718ba1e03f25",
+            "events.jsonl": "ecee7f4867a5e0c5876759b790ccd20e4f2b862b09015fc83e5f1f26c651836a",
+            "prompt.txt": "fe82b4026bef255d31f862c90f6558661f1c807f0a85f4b0b18ac72a1c4ab52e",
+            "stderr.log": "4b3bfc5d4db2d6f6bc39ff38d46cd9baf28093a36c6495f578078132d9de0685"
+          },
+          "step": 3
+        }
+      ]
+    },
+    {
+      "id": "14-revision-r1-workflow",
+      "case": "revision",
+      "rep": 1,
+      "arm": "workflow",
+      "status": "PASS",
+      "observed_calls": 1,
+      "metrics_complete": true,
+      "seconds": 5.373238999996829,
+      "input_tokens": 26936,
+      "cached_input_tokens": 13440,
+      "output_tokens": 94,
+      "uncached_input_tokens": 13496,
+      "total_tokens": 27030,
+      "calls": [
+        {
+          "status": "PASS",
+          "seconds": 5.373238999996829,
+          "returncode": 0,
+          "checks": {
+            "exit_zero": true,
+            "one_usage_event": true,
+            "usage_valid": true,
+            "jsonl_valid": true,
+            "no_tools": true,
+            "expected_output": true
+          },
+          "usage": {
+            "input_tokens": 26936,
+            "cached_input_tokens": 13440,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 94,
+            "reasoning_output_tokens": 0
+          },
+          "raw_hashes": {
+            "answer.json": "0b8724e2a2ded9da9a5e681fa95166775cb5d886d6f294145707ba2efbdb44af",
+            "events.jsonl": "dc5252eb9c35f8bf1e4faa7b3cfe95bb31f11194c61e8a1e8da21327ca9744d1",
+            "prompt.txt": "807c23cff0ed2dfcbcd481d63f10b5c510cbe0af085ad0ead974a3499a51bcf1",
+            "stderr.log": "4e7dd5749743575631b0a2ea2dfe6fe3b76e8cbee428fbdacd1aeb45ff0ab69b"
+          },
+          "step": 1
+        }
+      ]
+    },
+    {
+      "id": "15-revision-r1-plain",
+      "case": "revision",
+      "rep": 1,
+      "arm": "plain",
+      "status": "PASS",
+      "observed_calls": 1,
+      "metrics_complete": true,
+      "seconds": 4.883004899998923,
+      "input_tokens": 26177,
+      "cached_input_tokens": 13440,
+      "output_tokens": 94,
+      "uncached_input_tokens": 12737,
+      "total_tokens": 26271,
+      "calls": [
+        {
+          "status": "PASS",
+          "seconds": 4.883004899998923,
+          "returncode": 0,
+          "checks": {
+            "exit_zero": true,
+            "one_usage_event": true,
+            "usage_valid": true,
+            "jsonl_valid": true,
+            "no_tools": true,
+            "expected_output": true
+          },
+          "usage": {
+            "input_tokens": 26177,
+            "cached_input_tokens": 13440,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 94,
+            "reasoning_output_tokens": 0
+          },
+          "raw_hashes": {
+            "answer.json": "0b8724e2a2ded9da9a5e681fa95166775cb5d886d6f294145707ba2efbdb44af",
+            "events.jsonl": "d8e7fb93d80e0a030013efb7a412b7b0d087d64daab4e9dabb8a28bd221733a2",
+            "prompt.txt": "37d5c056ff592a1e85d03aab3525e9ac38149bbbd0174bb3e4705e81144bcb90",
+            "stderr.log": "81f028e0d7237e0b2b9f404f7966900df474312d6eae62eeae7a3e0a1819fe73"
+          },
+          "step": 1
+        }
+      ]
+    },
+    {
+      "id": "16-revision-r2-plain",
+      "case": "revision",
+      "rep": 2,
+      "arm": "plain",
+      "status": "PASS",
+      "observed_calls": 1,
+      "metrics_complete": true,
+      "seconds": 5.805999399999564,
+      "input_tokens": 26077,
+      "cached_input_tokens": 13440,
+      "output_tokens": 94,
+      "uncached_input_tokens": 12637,
+      "total_tokens": 26171,
+      "calls": [
+        {
+          "status": "PASS",
+          "seconds": 5.805999399999564,
+          "returncode": 0,
+          "checks": {
+            "exit_zero": true,
+            "one_usage_event": true,
+            "usage_valid": true,
+            "jsonl_valid": true,
+            "no_tools": true,
+            "expected_output": true
+          },
+          "usage": {
+            "input_tokens": 26077,
+            "cached_input_tokens": 13440,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 94,
+            "reasoning_output_tokens": 0
+          },
+          "raw_hashes": {
+            "answer.json": "0b8724e2a2ded9da9a5e681fa95166775cb5d886d6f294145707ba2efbdb44af",
+            "events.jsonl": "c0c0e4e83d4ff2c564e210f3d76b4d369cf0f98df41b3553e4b7e02067dbadea",
+            "prompt.txt": "37d5c056ff592a1e85d03aab3525e9ac38149bbbd0174bb3e4705e81144bcb90",
+            "stderr.log": "74553662a7645ade1be4014b49b54a33a6ee1f0fcec8d7ff9d306d2bbb264fa0"
+          },
+          "step": 1
+        }
+      ]
+    },
+    {
+      "id": "17-revision-r2-workflow",
+      "case": "revision",
+      "rep": 2,
+      "arm": "workflow",
+      "status": "PASS",
+      "observed_calls": 1,
+      "metrics_complete": true,
+      "seconds": 5.24549670000124,
+      "input_tokens": 26836,
+      "cached_input_tokens": 13440,
+      "output_tokens": 94,
+      "uncached_input_tokens": 13396,
+      "total_tokens": 26930,
+      "calls": [
+        {
+          "status": "PASS",
+          "seconds": 5.24549670000124,
+          "returncode": 0,
+          "checks": {
+            "exit_zero": true,
+            "one_usage_event": true,
+            "usage_valid": true,
+            "jsonl_valid": true,
+            "no_tools": true,
+            "expected_output": true
+          },
+          "usage": {
+            "input_tokens": 26836,
+            "cached_input_tokens": 13440,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 94,
+            "reasoning_output_tokens": 0
+          },
+          "raw_hashes": {
+            "answer.json": "0b8724e2a2ded9da9a5e681fa95166775cb5d886d6f294145707ba2efbdb44af",
+            "events.jsonl": "173f608f354091c33c80b23213f42fd6fd4a09dfd1892ba16e3e28654363932c",
+            "prompt.txt": "807c23cff0ed2dfcbcd481d63f10b5c510cbe0af085ad0ead974a3499a51bcf1",
+            "stderr.log": "16969a7a608422d2b3873757889364b5dfeff8cc651353384d477f114e5d1d83"
+          },
+          "step": 1
+        }
+      ]
+    },
+    {
+      "id": "18-revision-r2-manual",
+      "case": "revision",
+      "rep": 2,
+      "arm": "manual",
+      "status": "PASS",
+      "observed_calls": 3,
+      "metrics_complete": true,
+      "seconds": 16.018574499998067,
+      "input_tokens": 78540,
+      "cached_input_tokens": 61440,
+      "output_tokens": 102,
+      "uncached_input_tokens": 17100,
+      "total_tokens": 78642,
+      "calls": [
+        {
+          "status": "PASS",
+          "seconds": 5.0130118999986735,
+          "returncode": 0,
+          "checks": {
+            "exit_zero": true,
+            "one_usage_event": true,
+            "usage_valid": true,
+            "jsonl_valid": true,
+            "no_tools": true,
+            "expected_output": true
+          },
+          "usage": {
+            "input_tokens": 26193,
+            "cached_input_tokens": 24064,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 30,
+            "reasoning_output_tokens": 0
+          },
+          "raw_hashes": {
+            "answer.json": "c6c4881f5de7a62a131252cd431c20a0482153d609c3a12a2cf7bc35c854ca9e",
+            "events.jsonl": "942b2ef2bf22422b1e76c7ea7dc0671c7293bf958df25023ef278e01caf9ebfe",
+            "prompt.txt": "78a737e57ff0d0820e4cb7123e66fb73897320fa75cee1101c3bf6d6c8c459db",
+            "stderr.log": "78c351f9d32b514e697407ef8a9835474c0754598cea82aa46a378a3a5f7171e"
+          },
+          "step": 1
+        },
+        {
+          "status": "PASS",
+          "seconds": 4.80971099999806,
+          "returncode": 0,
+          "checks": {
+            "exit_zero": true,
+            "one_usage_event": true,
+            "usage_valid": true,
+            "jsonl_valid": true,
+            "no_tools": true,
+            "expected_output": true
+          },
+          "usage": {
+            "input_tokens": 26146,
+            "cached_input_tokens": 13440,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 31,
+            "reasoning_output_tokens": 0
+          },
+          "raw_hashes": {
+            "answer.json": "d4958b0dc66284f66c071d45352588c75b98eb50056943d431ed2a73b1d8ee05",
+            "events.jsonl": "ec7a6fdc6cb70b1a4182ccb5d31b1f00f76e0e0deb1c8011a1ba265556356974",
+            "prompt.txt": "4481048b12ef0eb28b3b7093a18b9010543a57fddd899d29176b28869f5ea4fe",
+            "stderr.log": "7595f87d61a4983b55fa83c34c068b7f7bf58a71e34166411370976137c22db0"
+          },
+          "step": 2
+        },
+        {
+          "status": "PASS",
+          "seconds": 6.195851600001333,
+          "returncode": 0,
+          "checks": {
+            "exit_zero": true,
+            "one_usage_event": true,
+            "usage_valid": true,
+            "jsonl_valid": true,
+            "no_tools": true,
+            "expected_output": true
+          },
+          "usage": {
+            "input_tokens": 26201,
+            "cached_input_tokens": 23936,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 41,
+            "reasoning_output_tokens": 0
+          },
+          "raw_hashes": {
+            "answer.json": "8ffc097b390517aa22fdb6b6bafdf81bdd9d9a0c60343829ae3a718ba1e03f25",
+            "events.jsonl": "417d5727e9c300505d1904a98545449ba0b5d474a3ea25d745876af2849ac112",
+            "prompt.txt": "fe82b4026bef255d31f862c90f6558661f1c807f0a85f4b0b18ac72a1c4ab52e",
+            "stderr.log": "ac61dce234084206e05e8211e38bc7874331aba9fd5180e21472eb1038e1e8ef"
+          },
+          "step": 3
+        }
+      ]
+    }
+  ],
+  "case_means": {
+    "finance": {
+      "workflow": {
+        "statuses": {
+          "PASS": 2
+        },
+        "observed_packages": 2,
+        "seconds": 6.80993269999999,
+        "input_tokens": 27433,
+        "cached_input_tokens": 18688,
+        "output_tokens": 212.5,
+        "uncached_input_tokens": 8745,
+        "total_tokens": 27645.5
+      },
+      "plain": {
+        "statuses": {
+          "PASS": 2
+        },
+        "observed_packages": 2,
+        "seconds": 6.89590379999936,
+        "input_tokens": 26724,
+        "cached_input_tokens": 13440,
+        "output_tokens": 208,
+        "uncached_input_tokens": 13284,
+        "total_tokens": 26932
+      },
+      "manual": {
+        "statuses": {
+          "PASS": 2
+        },
+        "observed_packages": 2,
+        "seconds": 22.550712750000457,
+        "input_tokens": 107142,
+        "cached_input_tokens": 53760,
+        "output_tokens": 222,
+        "uncached_input_tokens": 53382,
+        "total_tokens": 107364
+      }
+    },
+    "dependencies": {
+      "workflow": {
+        "statuses": {
+          "PASS": 2
+        },
+        "observed_packages": 2,
+        "seconds": 6.468032300001141,
+        "input_tokens": 26950,
+        "cached_input_tokens": 18688,
+        "output_tokens": 120,
+        "uncached_input_tokens": 8262,
+        "total_tokens": 27070
+      },
+      "plain": {
+        "statuses": {
+          "PASS": 2
+        },
+        "observed_packages": 2,
+        "seconds": 5.181623349999427,
+        "input_tokens": 26241,
+        "cached_input_tokens": 18752,
+        "output_tokens": 81,
+        "uncached_input_tokens": 7489,
+        "total_tokens": 26322
+      },
+      "manual": {
+        "statuses": {
+          "PASS": 2
+        },
+        "observed_packages": 2,
+        "seconds": 25.633466399998724,
+        "input_tokens": 131887,
+        "cached_input_tokens": 83072,
+        "output_tokens": 123,
+        "uncached_input_tokens": 48815,
+        "total_tokens": 132010
+      }
+    },
+    "revision": {
+      "workflow": {
+        "statuses": {
+          "PASS": 2
+        },
+        "observed_packages": 2,
+        "seconds": 5.309367849999035,
+        "input_tokens": 26886,
+        "cached_input_tokens": 13440,
+        "output_tokens": 94,
+        "uncached_input_tokens": 13446,
+        "total_tokens": 26980
+      },
+      "plain": {
+        "statuses": {
+          "PASS": 2
+        },
+        "observed_packages": 2,
+        "seconds": 5.344502149999244,
+        "input_tokens": 26127,
+        "cached_input_tokens": 13440,
+        "output_tokens": 94,
+        "uncached_input_tokens": 12687,
+        "total_tokens": 26221
+      },
+      "manual": {
+        "statuses": {
+          "PASS": 2
+        },
+        "observed_packages": 2,
+        "seconds": 15.637713999996777,
+        "input_tokens": 78640,
+        "cached_input_tokens": 56192,
+        "output_tokens": 102,
+        "uncached_input_tokens": 22448,
+        "total_tokens": 78742
+      }
+    }
+  },
+  "comparisons": {
+    "finance": {
+      "status": "PASS",
+      "baseline_reductions": {
+        "plain": {
+          "seconds": 1.2466980760285185,
+          "total_tokens": -2.649264815089847,
+          "uncached_input_tokens": 34.168925022583565
+        },
+        "manual": {
+          "seconds": 69.80169640092704,
+          "total_tokens": 74.25067992995791,
+          "uncached_input_tokens": 83.61807350792402
+        }
+      }
+    },
+    "dependencies": {
+      "status": "PASS",
+      "baseline_reductions": {
+        "plain": {
+          "seconds": -24.82636932693798,
+          "total_tokens": -2.841729351872968,
+          "uncached_input_tokens": -10.321805314461209
+        },
+        "manual": {
+          "seconds": 74.76723514849532,
+          "total_tokens": 79.49397772895993,
+          "uncached_input_tokens": 83.07487452627267
+        }
+      }
+    },
+    "revision": {
+      "status": "PASS",
+      "baseline_reductions": {
+        "plain": {
+          "seconds": 0.6573914466516562,
+          "total_tokens": -2.89462644445293,
+          "uncached_input_tokens": -5.982501773468907
+        },
+        "manual": {
+          "seconds": 66.04767263296843,
+          "total_tokens": 65.73620177287852,
+          "uncached_input_tokens": 40.10156806842481
+        }
+      }
+    }
+  },
+  "eligible_cases": [
+    "finance",
+    "dependencies",
+    "revision"
+  ],
+  "pooled_reductions_percent": {
+    "plain": {
+      "seconds": -6.688678625986855,
+      "total_tokens": -2.79396036489461,
+      "uncached_input_tokens": 8.986849970113564
+    },
+    "manual": {
+      "seconds": 70.87624335067011,
+      "total_tokens": 74.31895912182978,
+      "uncached_input_tokens": 75.56821372698464
+    }
+  },
+  "equal_case_mean_reductions_percent": {
+    "plain": {
+      "seconds": -7.640759934752602,
+      "total_tokens": -2.795206870471915,
+      "uncached_input_tokens": 5.9548726448844835
+    },
+    "manual": {
+      "seconds": 70.2055347274636,
+      "total_tokens": 73.16028647726546,
+      "uncached_input_tokens": 68.9315053675405
+    }
+  },
+  "protocol_sha256": "6484d82328fa9da43a8ecffd13b185344518cd5cd9ef60a281d3d44c42b09315",
+  "date": "2026-10-30",
+  "cli_version": "0.165.0-alpha.1.2",
+  "candidate_version": "1.11.2 candidate based on a1ea22c; loop-work instruction unchanged",
+  "frozen_controls_passed": 41,
+  "capture_hashes": {
+    "protocol.json": "6484d82328fa9da43a8ecffd13b185344518cd5cd9ef60a281d3d44c42b09315",
+    "seal.json": "bc0d17fca8fe187b2ac28e72ff9191ffb196e1516e51ac9f8ff7b4752720008e",
+    "observations.json": "c2022ed8e246b3acae229748972bcb9af04326905b9c2748ebf3f45c1209d696",
+    "completed.json": "db11b9c58d9054d24be300078657eb7e7eb593afb312bff391184bd096c73b97"
+  },
+  "attempts": [
+    {
+      "stage": "intermediate_documentation_navigation",
+      "status": "FAIL",
+      "reason": "Four links pointed to the advanced report before it was authored. Corrected before publication; final navigation checked separately."
+    }
+  ],
+  "limits": [
+    "Only two repetitions per case/arm; scaffolded finite JSON outputs, no production reliability claim.",
+    "All source revisions are supplied up front, not introduced during native ongoing conversation.",
+    "Shared configured host/global skills/ancestor instructions: NOT_VERIFIED as a clean no-skill A/B.",
+    "Manual transcript replay in new ephemeral processes, not native resumed chat.",
+    "Model and low reasoning pinned as requested CLI arguments; no independent backend identity attestation.",
+    "Candidates are forbidden to use tools, files or external actions. Bounds are checked from CLI item telemetry, not a separate security proof.",
+    "Wall time includes process lifecycle, network, inference and shutdown; cache hits differ. Human time and prices are NOT_RUN.",
+    "Earlier pilot/campaign values are historical and excluded from new averages."
+  ]
+}

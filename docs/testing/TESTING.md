@@ -1,5 +1,10 @@
 # Testing Loop Skills
 
+Use the [testing index](README.md) to distinguish current deterministic checks,
+opt-in Codex experiments and historical evidence. The public
+`scripts/workflow_cost.py` harness has separate `plan`, authorized `run`, and
+offline `analyze` commands; see the [advanced workflow experiment](CODEX-WORKFLOW-ADVANCED.md).
+
 Run commands from the repository root with Python 3.11 or later. The repository
 gates use only the standard library. Use a real interpreter path if a Windows
 Store alias is unavailable. Keep fixture logs and private inputs under `.loop/`.
