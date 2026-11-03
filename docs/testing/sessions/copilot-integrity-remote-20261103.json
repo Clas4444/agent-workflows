@@ -1,0 +1,256 @@
+{
+  "head_sha": "2785cc1a2820fb71c0a654239eb889554c7cbbc7",
+  "workflow_runs": [
+    {
+      "id": 41591499264,
+      "name": "CodeQL",
+      "head_sha": "2785cc1a2820fb71c0a654239eb889554c7cbbc7",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/Clas4444/agent-workflows/actions/runs/41591499264"
+    },
+    {
+      "id": 41591484575,
+      "name": "Validate skills",
+      "head_sha": "2785cc1a2820fb71c0a654239eb889554c7cbbc7",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/Clas4444/agent-workflows/actions/runs/41591484575"
+    },
+    {
+      "id": 41591484041,
+      "name": "Push on main",
+      "head_sha": "2785cc1a2820fb71c0a654239eb889554c7cbbc7",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/Clas4444/agent-workflows/actions/runs/41591484041"
+    }
+  ],
+  "check_runs": [
+    {
+      "id": 125769456287,
+      "name": "Upload Results",
+      "head_sha": "2785cc1a2820fb71c0a654239eb889554c7cbbc7",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/Clas4444/agent-workflows/actions/runs/41591499264/job/125769456287"
+    },
+    {
+      "id": 125769039337,
+      "name": "Analyze (actions)",
+      "head_sha": "2785cc1a2820fb71c0a654239eb889554c7cbbc7",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/Clas4444/agent-workflows/actions/runs/41591499264/job/125769039337"
+    },
+    {
+      "id": 125769039319,
+      "name": "Analyze (python)",
+      "head_sha": "2785cc1a2820fb71c0a654239eb889554c7cbbc7",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/Clas4444/agent-workflows/actions/runs/41591499264/job/125769039319"
+    },
+    {
+      "id": 125769038947,
+      "name": "Analyze (javascript-typescript)",
+      "head_sha": "2785cc1a2820fb71c0a654239eb889554c7cbbc7",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/Clas4444/agent-workflows/actions/runs/41591499264/job/125769038947"
+    },
+    {
+      "id": 125768988817,
+      "name": "Analyze (python)",
+      "head_sha": "2785cc1a2820fb71c0a654239eb889554c7cbbc7",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/Clas4444/agent-workflows/actions/runs/41591484041/job/125768988817"
+    },
+    {
+      "id": 125768988603,
+      "name": "Analyze (actions)",
+      "head_sha": "2785cc1a2820fb71c0a654239eb889554c7cbbc7",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/Clas4444/agent-workflows/actions/runs/41591484041/job/125768988603"
+    },
+    {
+      "id": 125768985978,
+      "name": "structural-validation (ubuntu-latest, 3.12)",
+      "head_sha": "2785cc1a2820fb71c0a654239eb889554c7cbbc7",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/Clas4444/agent-workflows/actions/runs/41591484575/job/125768985978"
+    },
+    {
+      "id": 125768985970,
+      "name": "structural-validation (windows-latest, 3.12)",
+      "head_sha": "2785cc1a2820fb71c0a654239eb889554c7cbbc7",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/Clas4444/agent-workflows/actions/runs/41591484575/job/125768985970"
+    },
+    {
+      "id": 125768985963,
+      "name": "structural-validation (ubuntu-latest, 3.11)",
+      "head_sha": "2785cc1a2820fb71c0a654239eb889554c7cbbc7",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/Clas4444/agent-workflows/actions/runs/41591484575/job/125768985963"
+    },
+    {
+      "id": 125768985659,
+      "name": "structural-validation (windows-latest, 3.11)",
+      "head_sha": "2785cc1a2820fb71c0a654239eb889554c7cbbc7",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/Clas4444/agent-workflows/actions/runs/41591484575/job/125768985659"
+    }
+  ],
+  "public_bytes": {
+    "head_sha": "2785cc1a2820fb71c0a654239eb889554c7cbbc7",
+    "source": "raw.githubusercontent.com",
+    "artifacts": [
+      {
+        "path": "docs/evidence/copilot-integrity-20261103/figures/acceptance.png",
+        "expected": "b602566ce1d396789a5fdac0ebd16fd28044a25dea83e8ef033813d27b041c82",
+        "actual": "b602566ce1d396789a5fdac0ebd16fd28044a25dea83e8ef033813d27b041c82",
+        "status": "PASS"
+      },
+      {
+        "path": "docs/evidence/copilot-integrity-20261103/figures/acceptance.svg",
+        "expected": "f3dd79cc145a0d8bf2c5c82fa07c7f1ee8319a5226eb6d20c20e42078da313fb",
+        "actual": "f3dd79cc145a0d8bf2c5c82fa07c7f1ee8319a5226eb6d20c20e42078da313fb",
+        "status": "PASS"
+      },
+      {
+        "path": "docs/evidence/copilot-integrity-20261103/figures/chart-data.json",
+        "expected": "9d2afac0521b6692ea100fb5186af86151805b3ae74f9688718ed3970800dbd2",
+        "actual": "9d2afac0521b6692ea100fb5186af86151805b3ae74f9688718ed3970800dbd2",
+        "status": "PASS"
+      },
+      {
+        "path": "docs/evidence/copilot-integrity-20261103/figures/cost-quality.png",
+        "expected": "9e98702b91303f73f5e3769afa483d83583011716335655020f77af059b3d432",
+        "actual": "9e98702b91303f73f5e3769afa483d83583011716335655020f77af059b3d432",
+        "status": "PASS"
+      },
+      {
+        "path": "docs/evidence/copilot-integrity-20261103/figures/cost-quality.svg",
+        "expected": "348387dd9fc86c8d12547c96c3f2f5515050f3423fc5c148843fde3d2dcb482a",
+        "actual": "348387dd9fc86c8d12547c96c3f2f5515050f3423fc5c148843fde3d2dcb482a",
+        "status": "PASS"
+      },
+      {
+        "path": "docs/evidence/copilot-integrity-20261103/figures/coverage.png",
+        "expected": "751020f94246042517f8b5619034b342aff43627da66914bc0270733259fcd5c",
+        "actual": "751020f94246042517f8b5619034b342aff43627da66914bc0270733259fcd5c",
+        "status": "PASS"
+      },
+      {
+        "path": "docs/evidence/copilot-integrity-20261103/figures/coverage.svg",
+        "expected": "80f0723cb60eb217b5652ca834331a417a88c1473a34f013a21c3da20ebf601b",
+        "actual": "80f0723cb60eb217b5652ca834331a417a88c1473a34f013a21c3da20ebf601b",
+        "status": "PASS"
+      },
+      {
+        "path": "docs/evidence/copilot-integrity-20261103/figures/historical-runs.csv",
+        "expected": "b087bc460439d655db12e0d751410e6736973f3b400da5e5604bd754e4ab40a9",
+        "actual": "b087bc460439d655db12e0d751410e6736973f3b400da5e5604bd754e4ab40a9",
+        "status": "PASS"
+      },
+      {
+        "path": "docs/evidence/copilot-integrity-20261103/figures/per-run.png",
+        "expected": "0b4cc6e72e7fd6f7c011cd4517afcda0658894301c434c274909d232eb49baa6",
+        "actual": "0b4cc6e72e7fd6f7c011cd4517afcda0658894301c434c274909d232eb49baa6",
+        "status": "PASS"
+      },
+      {
+        "path": "docs/evidence/copilot-integrity-20261103/figures/per-run.svg",
+        "expected": "56f9533738a3e04b4564184cea7e74dd47cf9cc6e3e1529c9d339e148d33a609",
+        "actual": "56f9533738a3e04b4564184cea7e74dd47cf9cc6e3e1529c9d339e148d33a609",
+        "status": "PASS"
+      },
+      {
+        "path": "docs/evidence/copilot-integrity-20261103/figures/pilot-slots.csv",
+        "expected": "af517d896708ef522c8c3bda4a4f5ec6bb3f1b29e97a966401fa335021a7d738",
+        "actual": "af517d896708ef522c8c3bda4a4f5ec6bb3f1b29e97a966401fa335021a7d738",
+        "status": "PASS"
+      },
+      {
+        "path": "docs/evidence/copilot-integrity-20261103/figures/rendering.json",
+        "expected": "03b0b19570e4ce9cf623561971350c8bb7a486168c1abcff46366677821cf7b2",
+        "actual": "03b0b19570e4ce9cf623561971350c8bb7a486168c1abcff46366677821cf7b2",
+        "status": "PASS"
+      },
+      {
+        "path": "docs/evidence/copilot-integrity-20261103/figures/summary.csv",
+        "expected": "ccd066820c6cccc498f1a92cdf7989eabe458f1cf9628181381d10cb974fb141",
+        "actual": "ccd066820c6cccc498f1a92cdf7989eabe458f1cf9628181381d10cb974fb141",
+        "status": "PASS"
+      },
+      {
+        "path": "docs/evidence/copilot-integrity-20261103/historical-fixture.json",
+        "expected": "097e9dfd9daad40efa2e03904ef3f9a866ef482ad2be886603987bb6a7fee11d",
+        "actual": "097e9dfd9daad40efa2e03904ef3f9a866ef482ad2be886603987bb6a7fee11d",
+        "status": "PASS"
+      },
+      {
+        "path": "docs/evidence/copilot-integrity-20261103/historical-summary.json",
+        "expected": "ac97bfbf57a0fd7cc783fc41bdafedaaa8384a3bfd7886b6117d6fb7e8450a16",
+        "actual": "ac97bfbf57a0fd7cc783fc41bdafedaaa8384a3bfd7886b6117d6fb7e8450a16",
+        "status": "PASS"
+      },
+      {
+        "path": "docs/evidence/copilot-integrity-20261103/historical.json",
+        "expected": "40990c1cc72ccd1a47f1df0b03f96801a449e22373f9b11e9a3076866f479085",
+        "actual": "40990c1cc72ccd1a47f1df0b03f96801a449e22373f9b11e9a3076866f479085",
+        "status": "PASS"
+      },
+      {
+        "path": "docs/evidence/copilot-integrity-20261103/pilot-observations.json",
+        "expected": "ac43306b6c5d64611a7969adf1d6590339b4eeaa3659e41892360029a8423461",
+        "actual": "ac43306b6c5d64611a7969adf1d6590339b4eeaa3659e41892360029a8423461",
+        "status": "PASS"
+      },
+      {
+        "path": "docs/evidence/copilot-integrity-20261103/pilot-protocol.json",
+        "expected": "c7fd98508cc0d3b76a1cb175227a22a27c3b6999b42478574f2cbd7d4bffee53",
+        "actual": "c7fd98508cc0d3b76a1cb175227a22a27c3b6999b42478574f2cbd7d4bffee53",
+        "status": "PASS"
+      },
+      {
+        "path": "docs/evidence/copilot-integrity-20261103/pilot-seal.json",
+        "expected": "221f014feefa62d634af00874277a8352a054addd2d948e131d28cb7f59830c1",
+        "actual": "221f014feefa62d634af00874277a8352a054addd2d948e131d28cb7f59830c1",
+        "status": "PASS"
+      },
+      {
+        "path": "docs/evidence/copilot-integrity-20261103/README.md",
+        "expected": "ebbf9e3ce7fc459fee8c5fdc144dd603264b33d5e4f24ddde9c2981b95cc97c6",
+        "actual": "ebbf9e3ce7fc459fee8c5fdc144dd603264b33d5e4f24ddde9c2981b95cc97c6",
+        "status": "PASS"
+      },
+      {
+        "path": "docs/evidence/copilot-integrity-20261103/source-pins.json",
+        "expected": "0d7fda74ec18301ced92343c66ded5d265430e71cd93ea193f6873d5396cc75d",
+        "actual": "0d7fda74ec18301ced92343c66ded5d265430e71cd93ea193f6873d5396cc75d",
+        "status": "PASS"
+      },
+      {
+        "path": "docs/evidence/copilot-integrity-20261103/stop-observation.json",
+        "expected": "642f8b2a410df88c232a8236f3ce1432ccc83f1231d123a3b4d89128c61313d0",
+        "actual": "642f8b2a410df88c232a8236f3ce1432ccc83f1231d123a3b4d89128c61313d0",
+        "status": "PASS"
+      }
+    ],
+    "status": "PASS"
+  },
+  "code_scanning_alert_api": {
+    "status": "NOT_VERIFIED",
+    "head_sha": "2785cc1a2820fb71c0a654239eb889554c7cbbc7",
+    "reason": "Code-scanning alert API unavailable to public unauthenticated access"
+  },
+  "scope": "Exact source/evidence publication commit; later documentation-only receipt commit preserves its frozen code/data pins. Workflow success does not establish zero security alerts when the alert API is unavailable."
+}

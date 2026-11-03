@@ -192,3 +192,17 @@ The CSV writer now fixes LF explicitly, and all 22 artifact hashes were verified
 against staged blob bytes. Elapsed sums use `math.fsum` for reproducibility across
 supported Python versions. Intermediate gate runs invalidated by these changes
 remain STALE; only the final unchanged-input campaign is cited for publication.
+
+## Published source verification
+
+Source/evidence commit `2785cc1a2820fb71c0a654239eb889554c7cbbc7` passed
+[Validate skills](https://github.com/Clas4444/agent-workflows/actions/runs/41591484575)
+on Windows/Linux with Python 3.11/3.12 and
+[CodeQL](https://github.com/Clas4444/agent-workflows/actions/runs/41591499264)
+for Python, JavaScript/TypeScript and Actions. The separately configured
+[push analysis](https://github.com/Clas4444/agent-workflows/actions/runs/41591484041)
+also passed. All 22 published artifacts were downloaded from that exact commit
+and matched their SHA-256 index. The [remote receipt](../sessions/copilot-integrity-remote-20261103.json)
+retains exact head SHAs and check URLs. CodeQL workflow success is not a claim
+of zero alerts: the separate alert API was unavailable. This documentation-only
+receipt follow-up preserves the frozen code/data pins and gets its own CI check.
