@@ -1,6 +1,6 @@
 # Task status
 
-- State: CODEX_12_CALLS_COMPLETE_LOCAL_PUBLICATION_VERIFIED
+- State: CODEX_12_CALLS_DELIVERED_SOURCE_CI_VERIFIED
 - Started: 2026-11-03.
 - WF-01: PASS offline re-aggregation of 80 historical packages / 125 CLI; 367 internal model requests. All saved usage counters and usage hashes match. Original statuses unchanged; revision order and wrapper sensitivity scored separately. Saved cents regrade remains a historical layer, not independently re-executed.
 - WF-02: Harness/oracles implemented; 13 focused deterministic tests PASS, including isolated fresh-directory reproduction and extra-file/tool controls; all 14 publication gates PASS (405 tests, 403 PASS, two platform skips). New control bug (null-owner mutation changed nothing) detected and corrected before freeze/calls.
@@ -32,3 +32,5 @@ Offline deliverables complete. Pilot remains NOT_RUN; no efficiency/quality clai
 - Nine focused Codex tests PASS; full publication gates and new exact-SHA remote CI pending. Direct payload approval is not pending anymore; review's private-content assumption was resolved by byte comparison against already-public payload and retry approval.
 
 - Codex final publication gate: 14/14 PASS, 417 tests (415 PASS, two platform skips), unchanged pin48fab24a4973596622cd5ccbb39c70a025d0256c39e8f8c85b1b295b2361b1f3. Ten focused Codex tests PASS. New commit CI is evaluated after push on its own exact SHA.
+
+- Codex source/evidence commit653efd74eb5020b7bee24453bcbae2933161d3c5 pushed. Exact-SHA matrix Windows/Linux x Python3.11/3.12 PASS; CodeQL Python/JavaScript/Actions PASS. All16 public artifact hashes match downloads. Receipt: docs/testing/sessions/codex-office-remote-20261103.json. Model budget exhausted12/12; no further trial scheduled. Receipt-only follow-up receives its own CI after push.

@@ -1,0 +1,181 @@
+{
+  "head_sha": "653efd74eb5020b7bee24453bcbae2933161d3c5",
+  "runs": [
+    {
+      "id": 41600630723,
+      "name": "Push on main",
+      "head_sha": "653efd74eb5020b7bee24453bcbae2933161d3c5",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/Clas4444/agent-workflows/actions/runs/41600630723"
+    },
+    {
+      "id": 41600630704,
+      "name": "Validate skills",
+      "head_sha": "653efd74eb5020b7bee24453bcbae2933161d3c5",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/Clas4444/agent-workflows/actions/runs/41600630704"
+    }
+  ],
+  "checks": [
+    {
+      "id": 125798263642,
+      "name": "Analyze (python)",
+      "head_sha": "653efd74eb5020b7bee24453bcbae2933161d3c5",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/Clas4444/agent-workflows/actions/runs/41600630723/job/125798263642"
+    },
+    {
+      "id": 125798263590,
+      "name": "Analyze (actions)",
+      "head_sha": "653efd74eb5020b7bee24453bcbae2933161d3c5",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/Clas4444/agent-workflows/actions/runs/41600630723/job/125798263590"
+    },
+    {
+      "id": 125798263170,
+      "name": "Analyze (javascript-typescript)",
+      "head_sha": "653efd74eb5020b7bee24453bcbae2933161d3c5",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/Clas4444/agent-workflows/actions/runs/41600630723/job/125798263170"
+    },
+    {
+      "id": 125798258878,
+      "name": "structural-validation (ubuntu-latest, 3.12)",
+      "head_sha": "653efd74eb5020b7bee24453bcbae2933161d3c5",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/Clas4444/agent-workflows/actions/runs/41600630704/job/125798258878"
+    },
+    {
+      "id": 125798258677,
+      "name": "structural-validation (ubuntu-latest, 3.11)",
+      "head_sha": "653efd74eb5020b7bee24453bcbae2933161d3c5",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/Clas4444/agent-workflows/actions/runs/41600630704/job/125798258677"
+    },
+    {
+      "id": 125798258621,
+      "name": "structural-validation (windows-latest, 3.11)",
+      "head_sha": "653efd74eb5020b7bee24453bcbae2933161d3c5",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/Clas4444/agent-workflows/actions/runs/41600630704/job/125798258621"
+    },
+    {
+      "id": 125798258234,
+      "name": "structural-validation (windows-latest, 3.12)",
+      "head_sha": "653efd74eb5020b7bee24453bcbae2933161d3c5",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/Clas4444/agent-workflows/actions/runs/41600630704/job/125798258234"
+    }
+  ],
+  "public_bytes": {
+    "head_sha": "653efd74eb5020b7bee24453bcbae2933161d3c5",
+    "artifacts": [
+      {
+        "path": "docs/evidence/codex-office-20261103/figures/analysis.json",
+        "expected": "48361a820514c20fa07a3dfc4974f1f9f8334a7792639f5c630664d4d6c9b93e",
+        "actual": "48361a820514c20fa07a3dfc4974f1f9f8334a7792639f5c630664d4d6c9b93e",
+        "status": "PASS"
+      },
+      {
+        "path": "docs/evidence/codex-office-20261103/figures/codex-office-coverage.png",
+        "expected": "713c948530019899ccc35c8deb8425d37bf4ec8a75c5017155dad94c92e95652",
+        "actual": "713c948530019899ccc35c8deb8425d37bf4ec8a75c5017155dad94c92e95652",
+        "status": "PASS"
+      },
+      {
+        "path": "docs/evidence/codex-office-20261103/figures/codex-office-coverage.svg",
+        "expected": "c1b08d181a21104cab2a68704172a568a748dc4cc6ae4be4e633a73ddc2005a2",
+        "actual": "c1b08d181a21104cab2a68704172a568a748dc4cc6ae4be4e633a73ddc2005a2",
+        "status": "PASS"
+      },
+      {
+        "path": "docs/evidence/codex-office-20261103/figures/codex-office-quality.png",
+        "expected": "33d042131b59a741c354e9ce16d3e93e416e76e13cff9c57a45bfdcca94ae575",
+        "actual": "33d042131b59a741c354e9ce16d3e93e416e76e13cff9c57a45bfdcca94ae575",
+        "status": "PASS"
+      },
+      {
+        "path": "docs/evidence/codex-office-20261103/figures/codex-office-quality.svg",
+        "expected": "78736663c1379970cf233b73883a82388a9ffd8a27704c203febaaea4c107476",
+        "actual": "78736663c1379970cf233b73883a82388a9ffd8a27704c203febaaea4c107476",
+        "status": "PASS"
+      },
+      {
+        "path": "docs/evidence/codex-office-20261103/figures/codex-office-seconds.png",
+        "expected": "18757a57330c15771e76303472da1092a708cc20686a0558c2e3eb4a33f8f055",
+        "actual": "18757a57330c15771e76303472da1092a708cc20686a0558c2e3eb4a33f8f055",
+        "status": "PASS"
+      },
+      {
+        "path": "docs/evidence/codex-office-20261103/figures/codex-office-seconds.svg",
+        "expected": "ae129f16c7214443e6fc2b2524cad036ebb825f3b473f7d9029930001a7923bd",
+        "actual": "ae129f16c7214443e6fc2b2524cad036ebb825f3b473f7d9029930001a7923bd",
+        "status": "PASS"
+      },
+      {
+        "path": "docs/evidence/codex-office-20261103/figures/codex-office-tokens.png",
+        "expected": "b883f9b0919263e7c2815c59f18815a9a8ea940a9a066a269bbc5c40933aa1f0",
+        "actual": "b883f9b0919263e7c2815c59f18815a9a8ea940a9a066a269bbc5c40933aa1f0",
+        "status": "PASS"
+      },
+      {
+        "path": "docs/evidence/codex-office-20261103/figures/codex-office-tokens.svg",
+        "expected": "0dd850ea3ff23f44d6b8c690174b3db61e6f5d99e0278f46675c32473113bf74",
+        "actual": "0dd850ea3ff23f44d6b8c690174b3db61e6f5d99e0278f46675c32473113bf74",
+        "status": "PASS"
+      },
+      {
+        "path": "docs/evidence/codex-office-20261103/figures/summary.csv",
+        "expected": "9bc14252b91d1b4705d7be767aca7e44112a74bf825a8957f65cdfbea9ec5176",
+        "actual": "9bc14252b91d1b4705d7be767aca7e44112a74bf825a8957f65cdfbea9ec5176",
+        "status": "PASS"
+      },
+      {
+        "path": "docs/evidence/codex-office-20261103/measured-controller.py",
+        "expected": "dfe5b3ba410ce6e2dd757cdf92f35b54ddc9a7c1256553e9c5f026aa3171b303",
+        "actual": "dfe5b3ba410ce6e2dd757cdf92f35b54ddc9a7c1256553e9c5f026aa3171b303",
+        "status": "PASS"
+      },
+      {
+        "path": "docs/evidence/codex-office-20261103/observations.json",
+        "expected": "f7f0550499b397d55ad4c7802d4c4eec19bb148a4b79acaba397198516518ea6",
+        "actual": "f7f0550499b397d55ad4c7802d4c4eec19bb148a4b79acaba397198516518ea6",
+        "status": "PASS"
+      },
+      {
+        "path": "docs/evidence/codex-office-20261103/protocol.json",
+        "expected": "4b20632cf742ff4d1338b312447967d3916225063a2d9bd830b9742becf76b59",
+        "actual": "4b20632cf742ff4d1338b312447967d3916225063a2d9bd830b9742becf76b59",
+        "status": "PASS"
+      },
+      {
+        "path": "docs/evidence/codex-office-20261103/publication-proof.json",
+        "expected": "3eedc3fe0f3aaee0241bd619ba32250aa92b9cff69aa012a2f2cf74edee201fb",
+        "actual": "3eedc3fe0f3aaee0241bd619ba32250aa92b9cff69aa012a2f2cf74edee201fb",
+        "status": "PASS"
+      },
+      {
+        "path": "docs/evidence/codex-office-20261103/README.md",
+        "expected": "742b2c9a6c69a365b9a0711ebe38cbd7b42a45e9955137f7e6be0c4e68b3595a",
+        "actual": "742b2c9a6c69a365b9a0711ebe38cbd7b42a45e9955137f7e6be0c4e68b3595a",
+        "status": "PASS"
+      },
+      {
+        "path": "docs/evidence/codex-office-20261103/seal.json",
+        "expected": "bcff191909f7dfdf643127d3cea6156b3e133559466dfec09bbd246ae24fc8d0",
+        "actual": "bcff191909f7dfdf643127d3cea6156b3e133559466dfec09bbd246ae24fc8d0",
+        "status": "PASS"
+      }
+    ]
+  },
+  "scope": "Exact source/data publication SHA. Subsequent receipt follow-up edits documentation only; measured payload and frozen pins unchanged."
+}

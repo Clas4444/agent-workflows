@@ -153,3 +153,11 @@ actual measured calls used the original 12-slot schedule. The earlier local
 gate passed before this final repair and is STALE for the current source; its
 raw receipt remains retained. No extra model call was used to verify repairs.
 Remote CI/CodeQL is checked after pushing this complete source/evidence commit.
+
+Source/evidence commit `653efd74eb5020b7bee24453bcbae2933161d3c5` passed
+[Windows/Linux × Python3.11/3.12 CI](https://github.com/Clas4444/agent-workflows/actions/runs/41600630704)
+and [CodeQL Python/JavaScript/Actions](https://github.com/Clas4444/agent-workflows/actions/runs/41600630723).
+All16 public artifacts were downloaded at that SHA and matched their byte index.
+The [remote receipt](../sessions/codex-office-remote-20261103.json) records exact
+head SHAs and check URLs. This receipt-only documentation follow-up preserves
+the measured code/data and is checked separately after push.
