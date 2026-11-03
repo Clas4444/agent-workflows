@@ -1,0 +1,85 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="920" viewBox="0 0 1440 920">
+<rect width="100%" height="100%" fill="#fafbf9"/>
+<g font-family="Arial, sans-serif" fill="#182a35">
+<text x="52" y="48" font-size="26" font-weight="bold" fill="#182a35" text-anchor="start">Historical combined cents: Elapsed time across independent repetitions</text>
+<text x="52" y="78" font-size="15" font-weight="normal" fill="#182a35" text-anchor="start">Six arms, five packages per arm (n=30). Lines link independent repetitions; this is not a learning curve.</text>
+<text x="135" y="135" font-size="18" font-weight="bold" fill="#182a35" text-anchor="start">Elapsed wall seconds / package</text>
+<line x1="135" y1="670.0" x2="1165" y2="670.0" stroke="#ced7da"/>
+<text x="119" y="675.0" font-size="14" font-weight="normal" fill="#182a35" text-anchor="end">0</text>
+<line x1="135" y1="570.0" x2="1165" y2="570.0" stroke="#ced7da"/>
+<text x="119" y="575.0" font-size="14" font-weight="normal" fill="#182a35" text-anchor="end">24</text>
+<line x1="135" y1="470.0" x2="1165" y2="470.0" stroke="#ced7da"/>
+<text x="119" y="475.0" font-size="14" font-weight="normal" fill="#182a35" text-anchor="end">48</text>
+<line x1="135" y1="370.0" x2="1165" y2="370.0" stroke="#ced7da"/>
+<text x="119" y="375.0" font-size="14" font-weight="normal" fill="#182a35" text-anchor="end">72</text>
+<line x1="135" y1="270.0" x2="1165" y2="270.0" stroke="#ced7da"/>
+<text x="119" y="275.0" font-size="14" font-weight="normal" fill="#182a35" text-anchor="end">96</text>
+<line x1="135" y1="170.0" x2="1165" y2="170.0" stroke="#ced7da"/>
+<text x="119" y="175.0" font-size="14" font-weight="normal" fill="#182a35" text-anchor="end">120</text>
+<line x1="135.0" y1="170" x2="135.0" y2="670" stroke="#ced7da"/>
+<text x="135.0" y="702" font-size="16" font-weight="normal" fill="#182a35" text-anchor="middle">1</text>
+<line x1="392.5" y1="170" x2="392.5" y2="670" stroke="#ced7da"/>
+<text x="392.5" y="702" font-size="16" font-weight="normal" fill="#182a35" text-anchor="middle">2</text>
+<line x1="650.0" y1="170" x2="650.0" y2="670" stroke="#ced7da"/>
+<text x="650.0" y="702" font-size="16" font-weight="normal" fill="#182a35" text-anchor="middle">3</text>
+<line x1="907.5" y1="170" x2="907.5" y2="670" stroke="#ced7da"/>
+<text x="907.5" y="702" font-size="16" font-weight="normal" fill="#182a35" text-anchor="middle">4</text>
+<line x1="1165.0" y1="170" x2="1165.0" y2="670" stroke="#ced7da"/>
+<text x="1165.0" y="702" font-size="16" font-weight="normal" fill="#182a35" text-anchor="middle">5</text>
+<polyline points="135.0,515.1040762500043 392.5,533.4614858333331 650.0,498.24003833333484 907.5,535.7968725000046 1165.0,511.24753375000785" fill="none" stroke="#127d79" stroke-width="3"/>
+<circle cx="135.0" cy="515.1040762500043" r="5" fill="#127d79"/>
+<circle cx="392.5" cy="533.4614858333331" r="5" fill="#127d79"/>
+<circle cx="650.0" cy="498.24003833333484" r="5" fill="#127d79"/>
+<circle cx="907.5" cy="535.7968725000046" r="5" fill="#127d79"/>
+<circle cx="1165.0" cy="511.24753375000785" r="5" fill="#127d79"/>
+<polyline points="135.0,521.0072933333277 392.5,525.4255983333329 650.0,515.4828291666672 907.5,509.23151125000004 1165.0,523.6451170833213" fill="none" stroke="#2672a0" stroke-width="3"/>
+<circle cx="135.0" cy="521.0072933333277" r="5" fill="#2672a0"/>
+<circle cx="392.5" cy="525.4255983333329" r="5" fill="#2672a0"/>
+<circle cx="650.0" cy="515.4828291666672" r="5" fill="#2672a0"/>
+<circle cx="907.5" cy="509.23151125000004" r="5" fill="#2672a0"/>
+<circle cx="1165.0" cy="523.6451170833213" r="5" fill="#2672a0"/>
+<polyline points="135.0,531.7624133333265 392.5,500.98327000000154 650.0,518.0531200000012 907.5,539.2885850000039 1165.0,505.1400179166679" fill="none" stroke="#734c94" stroke-width="3"/>
+<circle cx="135.0" cy="531.7624133333265" r="5" fill="#734c94"/>
+<circle cx="392.5" cy="500.98327000000154" r="5" fill="#734c94"/>
+<circle cx="650.0" cy="518.0531200000012" r="5" fill="#734c94"/>
+<circle cx="907.5" cy="539.2885850000039" r="5" fill="#734c94"/>
+<circle cx="1165.0" cy="505.1400179166679" r="5" fill="#734c94"/>
+<polyline points="135.0,266.53882625001035 392.5,214.28867916665996 650.0,224.58984666665856 907.5,240.2895595833221 1165.0,173.00647749998768" fill="none" stroke="#9b3f4b" stroke-width="3"/>
+<circle cx="135.0" cy="266.53882625001035" r="5" fill="#9b3f4b"/>
+<circle cx="392.5" cy="214.28867916665996" r="5" fill="#9b3f4b"/>
+<circle cx="650.0" cy="224.58984666665856" r="5" fill="#9b3f4b"/>
+<circle cx="907.5" cy="240.2895595833221" r="5" fill="#9b3f4b"/>
+<circle cx="1165.0" cy="173.00647749998768" r="5" fill="#9b3f4b"/>
+<polyline points="135.0,348.4191949999922 392.5,382.14696458333344 650.0,386.05828041666274 907.5,400.59203958332546 1165.0,390.59240791665314" fill="none" stroke="#bc7b24" stroke-width="3"/>
+<circle cx="135.0" cy="348.4191949999922" r="5" fill="#bc7b24"/>
+<circle cx="392.5" cy="382.14696458333344" r="5" fill="#bc7b24"/>
+<circle cx="650.0" cy="386.05828041666274" r="5" fill="#bc7b24"/>
+<circle cx="907.5" cy="400.59203958332546" r="5" fill="#bc7b24"/>
+<circle cx="1165.0" cy="390.59240791665314" r="5" fill="#bc7b24"/>
+<polyline points="135.0,528.7040629166646 392.5,538.9140720833318 650.0,501.52531625000086 907.5,535.8718629166742 1165.0,528.2498287499978" fill="none" stroke="#4554a0" stroke-width="3"/>
+<circle cx="135.0" cy="528.7040629166646" r="5" fill="#4554a0"/>
+<circle cx="392.5" cy="538.9140720833318" r="5" fill="#4554a0"/>
+<circle cx="650.0" cy="501.52531625000086" r="5" fill="#4554a0"/>
+<circle cx="907.5" cy="535.8718629166742" r="5" fill="#4554a0"/>
+<circle cx="1165.0" cy="528.2498287499978" r="5" fill="#4554a0"/>
+<text x="650.0" y="743" font-size="18" font-weight="normal" fill="#182a35" text-anchor="middle">Independent repetition index</text>
+<rect x="75" y="789" width="30" height="4" fill="#127d79"/>
+<circle cx="90" cy="791" r="4" fill="#127d79"/>
+<text x="117" y="797" font-size="16" font-weight="normal" fill="#182a35" text-anchor="start">Agent Workflows (1 CLI/package)</text>
+<rect x="520" y="789" width="30" height="4" fill="#2672a0"/>
+<circle cx="535" cy="791" r="4" fill="#2672a0"/>
+<text x="562" y="797" font-size="16" font-weight="normal" fill="#182a35" text-anchor="start">Agent Attention (1 CLI/package)</text>
+<rect x="965" y="789" width="30" height="4" fill="#734c94"/>
+<circle cx="980" cy="791" r="4" fill="#734c94"/>
+<text x="1007" y="797" font-size="16" font-weight="normal" fill="#182a35" text-anchor="start">Combined (1 CLI/package)</text>
+<rect x="75" y="824" width="30" height="4" fill="#9b3f4b"/>
+<circle cx="90" cy="826" r="4" fill="#9b3f4b"/>
+<text x="117" y="832" font-size="16" font-weight="normal" fill="#182a35" text-anchor="start">Split prompts (3 CLI/package)</text>
+<rect x="520" y="824" width="30" height="4" fill="#bc7b24"/>
+<circle cx="535" cy="826" r="4" fill="#bc7b24"/>
+<text x="562" y="832" font-size="16" font-weight="normal" fill="#182a35" text-anchor="start">Idea + review (2 CLI/package)</text>
+<rect x="965" y="824" width="30" height="4" fill="#4554a0"/>
+<circle cx="980" cy="826" r="4" fill="#4554a0"/>
+<text x="1007" y="832" font-size="16" font-weight="normal" fill="#182a35" text-anchor="start">Oracle-rich prompt (1 CLI/package)</text>
+<text x="52" y="894" font-size="14" font-weight="normal" fill="#182a35" text-anchor="start">Source: sanitized saved Copilot combined/cents table. Cache is included within input; no billing-currency conversion.</text>
+</g></svg>

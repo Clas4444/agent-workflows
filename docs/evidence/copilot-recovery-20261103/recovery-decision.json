@@ -1,0 +1,26 @@
+{
+  "schema": 1,
+  "decision": "RECOVER_STARTUP_ONLY_NEW_CAMPAIGN",
+  "authorized_at": "2026-11-03T07:12:38.455888+00:00",
+  "reason": "User authorizes new campaign after absolute-path preflight; prior HARNESS_RELATIVE_CWD is startup failure, not quota.",
+  "old_marker_sha256": "2faad491d1537e08d2a007db59c7c821ede2280036798c49418234783fa4c676",
+  "attention_new_cli_limit": 24,
+  "no_old_grid_resume": true,
+  "preflight": [
+    {
+      "flag": "--version",
+      "exit": 0,
+      "stdout_sha256": "eba41141ce38608feab63e14551bbb9c0bba5d85acbcfe2a2352406b483a588a",
+      "absolute_workspace": true
+    },
+    {
+      "flag": "--help",
+      "exit": 0,
+      "stdout_sha256": "523ed8ff9db7be91f1ac927488de2d31b9cce85f875689a7fed9d2805e42bbf2",
+      "absolute_workspace": true
+    }
+  ],
+  "workflow_new_cli_limit": 12,
+  "new_marker_identifier": "STOP-MODEL-CALLS-RECOVERY-01.json",
+  "source_decision_sha256": "3c9c882a0cde49882933043958fa04eb0cc68fa21b7878b95bffbd3d95a94cdb"
+}

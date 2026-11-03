@@ -1,0 +1,235 @@
+{
+  "session_id": "copilot-lines-20261103",
+  "started_at": "2026-11-03T07:20:29.950670+00:00",
+  "finished_at": "2026-11-03T07:21:57.548130+00:00",
+  "python": "3.14.7",
+  "platform": "win32",
+  "input_fingerprint": "5ea2c51747702f5874728e6ce17c21ba51a788823e93327c078735a907508927",
+  "after_fingerprint": "5ea2c51747702f5874728e6ce17c21ba51a788823e93327c078735a907508927",
+  "inputs_unchanged": true,
+  "status": "PASS",
+  "input_scope": {
+    "roots": [
+      ".github/skills",
+      ".agents/skills",
+      ".claude/skills",
+      "scripts",
+      "tests",
+      "schemas",
+      ".github/workflows",
+      "docs/evidence",
+      "docs/guides",
+      "docs/assets",
+      "skills",
+      "docs/reference"
+    ],
+    "files": [
+      "skills-manifest.json",
+      "skill-groups.json",
+      "skill-routing.json",
+      "workflow-presets.json",
+      "skill-bundles.json",
+      "README.md",
+      "AGENTS.md",
+      "CONTRIBUTING.md",
+      ".gitattributes",
+      "skill-resources.json",
+      "docs/reference/skill-usage.md",
+      "docs/reference/runtime-test-matrix.md",
+      "docs/reference/process-lifecycle.md"
+    ]
+  },
+  "checks": [
+    {
+      "id": "unit",
+      "command": [
+        "python",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-v"
+      ],
+      "started_at": "2026-11-03T07:20:30.054441+00:00",
+      "finished_at": "2026-11-03T07:21:55.078813+00:00",
+      "exit_code": 0,
+      "status": "PASS",
+      "log_sha256": "e2c6145907ee03b91928ca172a34864dd8fa0d9b439ad3919707c65303dfccc4",
+      "discovered": 407,
+      "skipped": 2
+    },
+    {
+      "id": "full",
+      "command": [
+        "python",
+        "scripts/validate.py"
+      ],
+      "started_at": "2026-11-03T07:21:55.087131+00:00",
+      "finished_at": "2026-11-03T07:21:55.501783+00:00",
+      "exit_code": 0,
+      "status": "PASS",
+      "log_sha256": "7cb045edcebc0336f8f29ccf7c9976358ba251b41bb3120081b5c803e408cb46"
+    },
+    {
+      "id": "format",
+      "command": [
+        "python",
+        "-m",
+        "scripts.validate",
+        "--profile",
+        "format"
+      ],
+      "started_at": "2026-11-03T07:21:55.507871+00:00",
+      "finished_at": "2026-11-03T07:21:55.850390+00:00",
+      "exit_code": 0,
+      "status": "PASS",
+      "log_sha256": "7cb045edcebc0336f8f29ccf7c9976358ba251b41bb3120081b5c803e408cb46"
+    },
+    {
+      "id": "catalog",
+      "command": [
+        "python",
+        "scripts/catalog.py"
+      ],
+      "started_at": "2026-11-03T07:21:55.851599+00:00",
+      "finished_at": "2026-11-03T07:21:55.949467+00:00",
+      "exit_code": 0,
+      "status": "PASS",
+      "log_sha256": "de31aaf6f71fa838fc7a3bf0555bfcbbe199218e6426678278ddb29d7629e13f"
+    },
+    {
+      "id": "routing",
+      "command": [
+        "python",
+        "scripts/routing_check.py"
+      ],
+      "started_at": "2026-11-03T07:21:55.950767+00:00",
+      "finished_at": "2026-11-03T07:21:56.042895+00:00",
+      "exit_code": 0,
+      "status": "PASS",
+      "log_sha256": "29ee0a9fd443411e2504551ca0cbd88cd0c4adac46007114c56eba17cb48d399"
+    },
+    {
+      "id": "discovery",
+      "command": [
+        "python",
+        "scripts/discovery.py"
+      ],
+      "started_at": "2026-11-03T07:21:56.047833+00:00",
+      "finished_at": "2026-11-03T07:21:56.152559+00:00",
+      "exit_code": 0,
+      "status": "PASS",
+      "log_sha256": "587fc835a8201ef23b64fa3ccce292e162123eec2dc30608f92fae20dfb65aeb"
+    },
+    {
+      "id": "workflows",
+      "command": [
+        "python",
+        "scripts/workflows.py"
+      ],
+      "started_at": "2026-11-03T07:21:56.153668+00:00",
+      "finished_at": "2026-11-03T07:21:56.257399+00:00",
+      "exit_code": 0,
+      "status": "PASS",
+      "log_sha256": "732ad18dbe8fae00d6be9d68949d5fbc8fe33f2d272a4f9ff9247b15d8dac090"
+    },
+    {
+      "id": "bundles",
+      "command": [
+        "python",
+        "scripts/install_skills.py",
+        "--list"
+      ],
+      "started_at": "2026-11-03T07:21:56.258719+00:00",
+      "finished_at": "2026-11-03T07:21:56.358096+00:00",
+      "exit_code": 0,
+      "status": "PASS",
+      "log_sha256": "ca1ecb6a13af5653cb44b9fe20a87add8e36466c39f344de2552cec184984eb6"
+    },
+    {
+      "id": "install-diagnosis",
+      "command": [
+        "python",
+        "scripts/doctor_skills.py",
+        "--all",
+        "--target",
+        ".github/skills"
+      ],
+      "started_at": "2026-11-03T07:21:56.364616+00:00",
+      "finished_at": "2026-11-03T07:21:56.579001+00:00",
+      "exit_code": 0,
+      "status": "PASS",
+      "log_sha256": "0c1f7ac8b97bd22cdf7213e27f9c889bffa65962ad63b4beb1c5a7f44437710b"
+    },
+    {
+      "id": "resources",
+      "command": [
+        "python",
+        "scripts/skill_resources.py"
+      ],
+      "started_at": "2026-11-03T07:21:56.585860+00:00",
+      "finished_at": "2026-11-03T07:21:56.811192+00:00",
+      "exit_code": 0,
+      "status": "PASS",
+      "log_sha256": "eb55587df88b027f9a1ee470ae6a183c1578c70344b3cd0c54b324a8f52ebe4b"
+    },
+    {
+      "id": "published-evidence",
+      "command": [
+        "python",
+        "scripts/evidence_indexes.py"
+      ],
+      "started_at": "2026-11-03T07:21:56.812514+00:00",
+      "finished_at": "2026-11-03T07:21:56.965440+00:00",
+      "exit_code": 0,
+      "status": "PASS",
+      "log_sha256": "23a32ccaefc43905da90b01d375d9908a3eafb6ba96bca5b1d5d4de4c13808e8"
+    },
+    {
+      "id": "sync",
+      "command": [
+        "python",
+        "scripts/sync_skills.py",
+        "--target",
+        ".github/skills",
+        "--check"
+      ],
+      "started_at": "2026-11-03T07:21:56.971140+00:00",
+      "finished_at": "2026-11-03T07:21:57.149154+00:00",
+      "exit_code": 0,
+      "status": "PASS",
+      "log_sha256": "430c251b05a9f4af4969dab8ab7b0ed8d72f72a819a51bdb714f0763095b2b3b"
+    },
+    {
+      "id": "smoke-interface",
+      "command": [
+        "python",
+        "scripts/runtime_smoke.py",
+        "--help"
+      ],
+      "started_at": "2026-11-03T07:21:57.154660+00:00",
+      "finished_at": "2026-11-03T07:21:57.263677+00:00",
+      "exit_code": 0,
+      "status": "PASS",
+      "log_sha256": "f052d83fd397c0437e99dacdd4ef87a4b2eb6afb22d604be3e5461cfcffeba65"
+    },
+    {
+      "id": "compile",
+      "command": [
+        "python",
+        "-m",
+        "compileall",
+        "-q",
+        "scripts",
+        "tests"
+      ],
+      "started_at": "2026-11-03T07:21:57.264847+00:00",
+      "finished_at": "2026-11-03T07:21:57.392681+00:00",
+      "exit_code": 0,
+      "status": "PASS",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "scope": "Local publication gates for requested line charts; zero experimental model invocations. No clean-pilot or remote-CI claim."
+}

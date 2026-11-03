@@ -1,0 +1,13 @@
+{
+  "status": "BLOCKED_PRE_INVOCATION",
+  "workflow_recovery_cli_attempts": 0,
+  "max_authorized_proposed_cli": 12,
+  "automatic_review": "Rejected: direct human payload/destination approval required. No command executed; no workaround attempted.",
+  "direct_payload_approval": "PENDING",
+  "shared_recovery_marker": {
+    "reason": "MALFORMED_USAGE",
+    "owner": "agent-attention",
+    "attempt": "01-baseline"
+  },
+  "quota_exhaustion": "NOT_VERIFIED; MALFORMED_USAGE is an accounting stop, not proof of quota."
+}

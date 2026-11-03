@@ -38,6 +38,8 @@
 /docs/evidence/setup-map-20261031/** text eol=lf
 /docs/evidence/copilot-integrity-20261103/** text eol=lf
 /docs/evidence/copilot-integrity-20261103/**/*.png -text
+/docs/evidence/copilot-recovery-20261103/** text eol=lf
+/docs/evidence/copilot-recovery-20261103/**/*.png -text
 /scripts/workflow_cost*.py text eol=lf
 /tests/test_workflow_cost.py text eol=lf
 /skills/workflow-setup/** text eol=lf
