@@ -184,5 +184,22 @@
       "item": "Live combined/model adherence, clean A/B host isolation and general token savings."
     }
   ],
-  "product_state": "PUSHED_SOURCE_CI_VERIFIED"
+  "product_state": "PUSHED_SOURCE_CI_VERIFIED",
+  "chart_followup": {
+    "state": "LOCAL_VERIFIED_PENDING_PUSH",
+    "new_model_calls": 0,
+    "version_bump": false,
+    "packet": "docs/evidence/coordination-function-charts-20261103/README.md",
+    "figures": 4,
+    "svg_and_png": true,
+    "png_visual_review": "PASS",
+    "focused_tests": "PASS3/3",
+    "local_receipt": "docs/testing/sessions/coordination-charts-local-20261103.json",
+    "commit": null,
+    "pushed": false,
+    "remote_ci": "NOT_RUN",
+    "local_gates": "PASS14/14;464 tests462 PASS+2 skips",
+    "input_fingerprint": "964efcd50e7005379a225af3340bd0dd6b68d92f236801639c8fe8d6c822281a",
+    "original_packet_unchanged": true
+  }
 }

@@ -1,0 +1,13 @@
+id,case,arm,rep,original_pass,strict_pass,schema_pass,required_fields_pass,input_tokens,cached_input_tokens,output_tokens,total_tokens,seconds
+01-revision-1-workflow,revision,workflow,1,False,True,True,True,13660,11392,171,13831,6.819384700000228
+02-revision-1-matched,revision,matched,1,False,True,True,True,12981,11392,175,13156,8.015262699998857
+03-revision-1-plain,revision,plain,1,False,True,True,True,12901,11392,143,13044,10.788473799999338
+04-revision-2-plain,revision,plain,2,False,True,True,True,12901,11392,143,13044,7.090360399997735
+05-revision-2-matched,revision,matched,2,False,True,True,True,12981,11392,180,13161,8.726771399997233
+06-revision-2-workflow,revision,workflow,2,False,True,True,True,13660,11392,143,13803,8.210609599998861
+07-authority-1-matched,authority,matched,1,False,True,True,True,13090,11392,137,13227,8.303797199998371
+08-authority-1-plain,authority,plain,1,False,True,True,True,13010,11392,54,13064,6.072606800000358
+09-authority-1-workflow,authority,workflow,1,False,True,True,True,13769,11392,93,13862,9.280030300000362
+10-authority-2-workflow,authority,workflow,2,False,True,True,True,13769,11392,91,13860,9.54047139999966
+11-authority-2-plain,authority,plain,2,False,True,True,True,13010,11392,107,13117,8.256359999999404
+12-authority-2-matched,authority,matched,2,False,False,False,True,13090,11392,229,13319,12.463909499998408

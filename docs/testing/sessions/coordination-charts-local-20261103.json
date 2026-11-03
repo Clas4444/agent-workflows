@@ -1,0 +1,218 @@
+{
+  "session_id": "coordination-charts-final-20261103",
+  "started_at": "2026-11-03T15:03:19.916293+00:00",
+  "finished_at": "2026-11-03T15:05:08.524733+00:00",
+  "python": "3.14.7",
+  "platform": "win32",
+  "git": {
+    "head_at_start": "3fd829fa001e413a5ca07f48d71669738b78a877",
+    "dirty_at_start": true
+  },
+  "input_fingerprint": "964efcd50e7005379a225af3340bd0dd6b68d92f236801639c8fe8d6c822281a",
+  "after_fingerprint": "964efcd50e7005379a225af3340bd0dd6b68d92f236801639c8fe8d6c822281a",
+  "inputs_unchanged": true,
+  "status": "PASS",
+  "checks": [
+    {
+      "id": "unit",
+      "command": [
+        "python",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-v"
+      ],
+      "started_at": "2026-11-03T15:03:20.061492+00:00",
+      "finished_at": "2026-11-03T15:05:05.663679+00:00",
+      "exit_code": 0,
+      "status": "PASS",
+      "log_sha256": "9d7dec99ccbe510c99e5906d277a05d7ca355c3288cafdc9651171b6f70bc5f2",
+      "discovered": 464,
+      "skipped": 2
+    },
+    {
+      "id": "full",
+      "command": [
+        "python",
+        "scripts/validate.py"
+      ],
+      "started_at": "2026-11-03T15:05:05.673726+00:00",
+      "finished_at": "2026-11-03T15:05:06.116163+00:00",
+      "exit_code": 0,
+      "status": "PASS",
+      "log_sha256": "7cb045edcebc0336f8f29ccf7c9976358ba251b41bb3120081b5c803e408cb46"
+    },
+    {
+      "id": "format",
+      "command": [
+        "python",
+        "-m",
+        "scripts.validate",
+        "--profile",
+        "format"
+      ],
+      "started_at": "2026-11-03T15:05:06.123862+00:00",
+      "finished_at": "2026-11-03T15:05:06.505121+00:00",
+      "exit_code": 0,
+      "status": "PASS",
+      "log_sha256": "7cb045edcebc0336f8f29ccf7c9976358ba251b41bb3120081b5c803e408cb46"
+    },
+    {
+      "id": "catalog",
+      "command": [
+        "python",
+        "scripts/catalog.py"
+      ],
+      "started_at": "2026-11-03T15:05:06.506722+00:00",
+      "finished_at": "2026-11-03T15:05:06.627854+00:00",
+      "exit_code": 0,
+      "status": "PASS",
+      "log_sha256": "de31aaf6f71fa838fc7a3bf0555bfcbbe199218e6426678278ddb29d7629e13f"
+    },
+    {
+      "id": "routing",
+      "command": [
+        "python",
+        "scripts/routing_check.py"
+      ],
+      "started_at": "2026-11-03T15:05:06.633984+00:00",
+      "finished_at": "2026-11-03T15:05:06.751148+00:00",
+      "exit_code": 0,
+      "status": "PASS",
+      "log_sha256": "29ee0a9fd443411e2504551ca0cbd88cd0c4adac46007114c56eba17cb48d399"
+    },
+    {
+      "id": "discovery",
+      "command": [
+        "python",
+        "scripts/discovery.py"
+      ],
+      "started_at": "2026-11-03T15:05:06.757143+00:00",
+      "finished_at": "2026-11-03T15:05:06.900436+00:00",
+      "exit_code": 0,
+      "status": "PASS",
+      "log_sha256": "587fc835a8201ef23b64fa3ccce292e162123eec2dc30608f92fae20dfb65aeb"
+    },
+    {
+      "id": "workflows",
+      "command": [
+        "python",
+        "scripts/workflows.py"
+      ],
+      "started_at": "2026-11-03T15:05:06.906904+00:00",
+      "finished_at": "2026-11-03T15:05:07.023936+00:00",
+      "exit_code": 0,
+      "status": "PASS",
+      "log_sha256": "732ad18dbe8fae00d6be9d68949d5fbc8fe33f2d272a4f9ff9247b15d8dac090"
+    },
+    {
+      "id": "bundles",
+      "command": [
+        "python",
+        "scripts/install_skills.py",
+        "--list"
+      ],
+      "started_at": "2026-11-03T15:05:07.029650+00:00",
+      "finished_at": "2026-11-03T15:05:07.160148+00:00",
+      "exit_code": 0,
+      "status": "PASS",
+      "log_sha256": "ca1ecb6a13af5653cb44b9fe20a87add8e36466c39f344de2552cec184984eb6"
+    },
+    {
+      "id": "install-diagnosis",
+      "command": [
+        "python",
+        "scripts/doctor_skills.py",
+        "--all",
+        "--target",
+        ".github/skills"
+      ],
+      "started_at": "2026-11-03T15:05:07.166093+00:00",
+      "finished_at": "2026-11-03T15:05:07.410310+00:00",
+      "exit_code": 0,
+      "status": "PASS",
+      "log_sha256": "33edfd1a15d1ed91a394f438718861a5cd28df1891abc65f6da158625136931e"
+    },
+    {
+      "id": "resources",
+      "command": [
+        "python",
+        "scripts/skill_resources.py"
+      ],
+      "started_at": "2026-11-03T15:05:07.418398+00:00",
+      "finished_at": "2026-11-03T15:05:07.659876+00:00",
+      "exit_code": 0,
+      "status": "PASS",
+      "log_sha256": "eb55587df88b027f9a1ee470ae6a183c1578c70344b3cd0c54b324a8f52ebe4b"
+    },
+    {
+      "id": "published-evidence",
+      "command": [
+        "python",
+        "scripts/evidence_indexes.py"
+      ],
+      "started_at": "2026-11-03T15:05:07.665062+00:00",
+      "finished_at": "2026-11-03T15:05:07.840961+00:00",
+      "exit_code": 0,
+      "status": "PASS",
+      "log_sha256": "0d035bb202d389a6a16534371c1c7957b6b2a9b12efb4ebdcbcc6612adf4cf82"
+    },
+    {
+      "id": "sync",
+      "command": [
+        "python",
+        "scripts/sync_skills.py",
+        "--target",
+        ".github/skills",
+        "--check"
+      ],
+      "started_at": "2026-11-03T15:05:07.847763+00:00",
+      "finished_at": "2026-11-03T15:05:08.032727+00:00",
+      "exit_code": 0,
+      "status": "PASS",
+      "log_sha256": "ca52277b72234468689cf352f75ee5b4cf2e8ce687d76b7d4fb01b046b8f3d11"
+    },
+    {
+      "id": "smoke-interface",
+      "command": [
+        "python",
+        "scripts/runtime_smoke.py",
+        "--help"
+      ],
+      "started_at": "2026-11-03T15:05:08.038257+00:00",
+      "finished_at": "2026-11-03T15:05:08.160071+00:00",
+      "exit_code": 0,
+      "status": "PASS",
+      "log_sha256": "f052d83fd397c0437e99dacdd4ef87a4b2eb6afb22d604be3e5461cfcffeba65"
+    },
+    {
+      "id": "compile",
+      "command": [
+        "python",
+        "-m",
+        "compileall",
+        "-q",
+        "scripts",
+        "tests"
+      ],
+      "started_at": "2026-11-03T15:05:08.169102+00:00",
+      "finished_at": "2026-11-03T15:05:08.315378+00:00",
+      "exit_code": 0,
+      "status": "PASS",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "scope": "Chart follow-up final dirty source gates; machine-scoped pin includes ignored local instructions. Not a portable execution attestation.",
+  "extra_checks": {
+    "chart_reproduction": "PASS",
+    "png_render_and_visual_review": "PASS4/4",
+    "png_inline_embeds": "PASS4/4 across two reports",
+    "focused_tests": "PASS3/3",
+    "docs": "PASS",
+    "published_hashes": "PASS",
+    "version_bump": false,
+    "new_model_calls": 0
+  }
+}

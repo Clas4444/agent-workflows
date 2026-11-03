@@ -1,3 +1,12 @@
+# Chart follow-up — 2026-11-03
+
+- Added four PNG+SVG figures directly to the two public COORD-02/FUNCTION-03 reports, with CSV/JSON, generator and byte index.
+- Historical12 outputs remain historical; FUNCTION-03 missing counters remain null. No model efficacy/cost A/B or general savings claim.
+- PNGs rendered/viewed;3 focused tests PASS. Final14/14 gates PASS;464 tests462 PASS+2skips. Exact-SHA remote checks pending push.
+- No new model calls, version bump, tag/release, peer/global edits or raw-record changes.
+
+## Earlier delivery timeline
+
 # Delivered source — 2026-11-03
 
 - Agent Workflows1.11.5 source/evidence commit `cf3cff1070d60efc31f6ee8068da5b8fa98b76f2` pushed; exact-SHA Windows/Linux Python3.11/3.12 matrix and CodeQL Python/JavaScript/Actions PASS.

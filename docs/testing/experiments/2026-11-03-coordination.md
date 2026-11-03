@@ -41,6 +41,22 @@ The frozen controller archive represents what ran; current source differs after
 repairs. Integer process return codes were not separately persisted, so the audit
 relies on retained `checks.exit_zero` for that field, not independent reconstruction.
 
+![Historical12 office outputs: strict, structural schema and required-field acceptance by arm](../../evidence/coordination-function-charts-20261103/historical-quality.png)
+
+Historical observations only, n4/arm (two cases × two repetitions). Structural
+schema is a newly derived recursive key/type layer, separate from value checks;
+original FAIL12 is unchanged. [SVG](../../evidence/coordination-function-charts-20261103/historical-quality.svg),
+[source CSV](../../evidence/coordination-function-charts-20261103/historical-quality.csv),
+[per-run rows](../../evidence/coordination-function-charts-20261103/historical-runs.csv).
+
+![Historical12 office observations: input plus output tokens and CLI wall seconds for each case, arm and repeat](../../evidence/coordination-function-charts-20261103/historical-cost.png)
+
+Points show each saved observation, n2/case/arm; no interpolation, fitted trend or
+reliability estimate. Total tokens include cached input once, not twice.
+[SVG](../../evidence/coordination-function-charts-20261103/historical-cost.svg),
+[source CSV](../../evidence/coordination-function-charts-20261103/historical-runs.csv),
+[reproducible JSON and hashes](../../evidence/coordination-function-charts-20261103/README.md).
+
 The original equal-quality pooled ratio of means remains **+5.91% input+output
 tokens and +5.10% wall time** for workflow versus plain, with two repeats/case/arm.
 This is instruction overhead in two small office cases, not a general savings or
@@ -70,3 +86,14 @@ established. No globally installed skill was updated.
 ## Delivery verification
 
 Source/evidence commit [`cf3cff1`](https://github.com/Clas4444/agent-workflows/commit/cf3cff1070d60efc31f6ee8068da5b8fa98b76f2) passed the exact-SHA Windows/Linux Python3.11/3.12 matrix and CodeQL Python/JavaScript/Actions. All61 changed public file bytes match GitHub downloads. [Remote receipt](../sessions/coordination-function-remote-20261103.json) separates this source SHA from its documentation-only follow-up. No additional model call or broader effectiveness claim follows from CI.
+
+## Figure reproduction and checks
+
+The inline PNGs have [SVG downloads, source CSV/JSON and byte hashes](../../evidence/coordination-function-charts-20261103/README.md).
+Use `python scripts/coordination_charts.py` to regenerate and compare tables/SVG
+without a model or a human-report dependency. PNGs were rendered and visually
+reviewed; a focused test checks all four signatures/dimensions and inline report
+embeds. Missing values remain null; a negative control rejects zero-filled usage.
+The [chart follow-up local receipt](../sessions/coordination-charts-local-20261103.json)
+records the final source checks separately from earlier delivery receipts. No
+version bump, model call or edit to the original observations is involved.

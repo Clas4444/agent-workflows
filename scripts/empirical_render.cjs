@@ -5,7 +5,7 @@ const sharp = require('sharp');
 async function main() {
   if (process.argv.length !== 3) throw new Error('Usage: node empirical_render.cjs FIGURE_DIRECTORY');
   const folder = path.resolve(process.argv[2]);
-  const names = ['acceptance', 'per-run', 'cost-quality', 'coverage', 'combined-cents-tokens', 'combined-cents-seconds', 'codex-office-tokens', 'codex-office-seconds', 'codex-office-quality', 'codex-office-coverage'];
+  const names = ['acceptance', 'per-run', 'cost-quality', 'coverage', 'combined-cents-tokens', 'combined-cents-seconds', 'codex-office-tokens', 'codex-office-seconds', 'codex-office-quality', 'codex-office-coverage', 'historical-quality', 'historical-cost', 'function03-status', 'function03-observed-cost'];
   const existing = names.filter(name => fs.existsSync(path.join(folder, name + '.svg')));
   if (!existing.length) throw new Error('No supported SVG figures found');
   for (const name of existing) {

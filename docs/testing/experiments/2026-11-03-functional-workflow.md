@@ -57,6 +57,23 @@ NOT_REPORTED. Requested isolation flags alone do not establish clean A/B isolati
 | resume / baseline | CANCELLED_UNKNOWN | CANCELLED_UNKNOWN | unknown | unknown | unknown | unknown | unknown |
 | remaining three planned slots | NOT_RUN | NOT_RUN | — | — | — | — | — |
 
+![All six FUNCTION-03 planned slots: two prerequisite-blocked, one cancelled with unknown usage and three not run](../../evidence/coordination-function-charts-20261103/function03-status.png)
+
+Counts cover all six planned slots, not only successful calls. The two original
+FAIL records remain unchanged; BLOCKED_ENVIRONMENT is the separate prerequisite-v2
+layer. [SVG](../../evidence/coordination-function-charts-20261103/function03-status.svg),
+[source CSV](../../evidence/coordination-function-charts-20261103/function03-slots.csv).
+
+![FUNCTION-03 actual completed input, cache, output tokens and wall time; four slots have missing values rather than zero](../../evidence/coordination-function-charts-20261103/function03-observed-cost.png)
+
+Only two completed attempts have measured counters, n1/arm in repair; neither
+delivered executed work. The cancelled slot has unknown usage/time, while the
+other three slots were not run. Crosses mark missing annotations, not numeric
+zero. Stacked token components sum cached input + uncached input + output.
+[SVG](../../evidence/coordination-function-charts-20261103/function03-observed-cost.svg),
+[source CSV](../../evidence/coordination-function-charts-20261103/function03-slots.csv),
+[reproducible JSON and hashes](../../evidence/coordination-function-charts-20261103/README.md).
+
 The two completed sessions reported policy/read-only restrictions. Traces contain
 zero command_execution events and no requested artifacts; independent checks
 confirm no repair was delivered. The messages do not independently prove an OS
@@ -72,8 +89,9 @@ local process marker does not block a peer campaign. No auth/quota retry, Copilo
 call, provider/account switch or new model call occurred during delivery review.
 Whole-campaign token usage is unknown because the third attempt has no completed
 usage. Completed cache-write counts are0; reasoning outputs23 and15 are subsets
-of output. Cached input is already part of input. No efficacy/cost comparison or
-comparative chart is eligible with failed prerequisites and no executed work.
+of output. Cached input is already part of input. No efficacy or cost A/B
+comparison is eligible with failed prerequisites and no executed work.
+The figures above show state allocation and observed costs only.
 No general savings or live combined behavior is established.
 
 ## Public evidence and limits
@@ -105,3 +123,14 @@ modified. Delivery uses patch1.11.5; no release/tag is created.
 ## Delivery verification
 
 Source/evidence commit [`cf3cff1`](https://github.com/Clas4444/agent-workflows/commit/cf3cff1070d60efc31f6ee8068da5b8fa98b76f2) passed the exact-SHA Windows/Linux Python3.11/3.12 matrix and CodeQL Python/JavaScript/Actions. All61 changed public file bytes match GitHub downloads. [Remote receipt](../sessions/coordination-function-remote-20261103.json) separates this source SHA from its documentation-only follow-up. No additional model call or broader effectiveness claim follows from CI.
+
+## Figure reproduction and checks
+
+The inline PNGs have [SVG downloads, source CSV/JSON and byte hashes](../../evidence/coordination-function-charts-20261103/README.md).
+Use `python scripts/coordination_charts.py` to regenerate and compare tables/SVG
+without a model or a human-report dependency. PNGs were rendered and visually
+reviewed; a focused test checks all four signatures/dimensions and inline report
+embeds. Missing values remain null; a negative control rejects zero-filled usage.
+The [chart follow-up local receipt](../sessions/coordination-charts-local-20261103.json)
+records the final source checks separately from earlier delivery receipts. No
+version bump, model call or edit to the original observations is involved.

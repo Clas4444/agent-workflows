@@ -1,0 +1,7 @@
+id,case,arm,rep,original_status,regrade_status,cli_count,seconds,input_tokens,cached_input_tokens,cache_write_input_tokens,output_tokens,reasoning_output_tokens,total_tokens,measured
+01-repair-workflow,repair,workflow,1,FAIL,BLOCKED_ENVIRONMENT,1,15.90876870000011,59930,54144,0,273,23,60203,True
+02-repair-baseline,repair,baseline,1,FAIL,BLOCKED_ENVIRONMENT,1,17.416119999999864,67166,57856,0,259,15,67425,True
+03-resume-baseline,resume,baseline,1,CANCELLED_UNKNOWN,CANCELLED_UNKNOWN,1,,,,,,,,False
+04-resume-workflow,resume,workflow,1,NOT_RUN,NOT_RUN,0,,,,,,,,False
+05-conflict-workflow,conflict,workflow,1,NOT_RUN,NOT_RUN,0,,,,,,,,False
+06-conflict-baseline,conflict,baseline,1,NOT_RUN,NOT_RUN,0,,,,,,,,False

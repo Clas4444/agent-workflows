@@ -1,0 +1,4 @@
+arm,n,original_pass,strict_pass,schema_pass,required_fields_pass
+plain,4,0,4,4,4
+workflow,4,0,4,4,4
+matched,4,0,3,3,4
