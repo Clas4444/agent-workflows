@@ -1,5 +1,12 @@
 # Codex: workflow batching versus sequential prompts
 
+Interpretation clarification, 2026-10-31: "plain" in this historical experiment
+means no explicitly appended workflow text. The prompt still prescribed detailed
+processing rules, output fields and exception handling. It is a scaffolded,
+oracle-rich task specification, not a prompt merely complete at the idea level.
+Computed answers remained outside the prompt, but these results cannot establish
+the benefit over an idea-complete user request. Recorded measurements are unchanged.
+
 Recorded 2026-10-29 on Windows with Codex CLI 0.165.0-alpha.1.2, requested model `gpt-6.1-sol`, reasoning effort `low`. Agent Workflows candidate: `loop-work` from version 1.11.1, with its exact instruction hash in the protocol.
 
 **Measurement PASS:** 18/18 packages and 30/30 measured calls passed exact artifact/usage checks. **Clean skill A/B NOT_VERIFIED:** the configured host includes global skills and ancestor instructions. **Native continuation and native skill discovery NOT_RUN.**

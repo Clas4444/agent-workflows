@@ -1,0 +1,21 @@
+{
+  "status": "PASS",
+  "seconds": 87.74581560000001,
+  "usage": {
+    "input_tokens": 408317,
+    "cached_input_tokens": 355584,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 3154,
+    "reasoning_output_tokens": 114
+  },
+  "graph_sha256": "d8b0a0a3afe42e2e44ca80cb75d6b7c74da0f378baf7d3f1d705666691be31b4",
+  "map_sha256": "3d540e88698790145c4f64c759fdfabe85e7088249a37c9df03163194b608835",
+  "steps": [
+    "authority",
+    "items",
+    "draft"
+  ],
+  "source_values_present_during_design": false,
+  "client_contract_preserved": true,
+  "directory_sources": false
+}

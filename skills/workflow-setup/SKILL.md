@@ -8,6 +8,9 @@ description: "Design a conditional workflow with steps, skill choices, result ro
 ## Inputs
 
 The user's setup request, existing task facts and authorized project scope.
+Capture the requested outcome, output format/path, permitted writes and available
+tools before designing steps. Preserve that client contract rather than replacing
+an assessment with another kind of draft or adding unapproved ledger artifacts.
 
 ## Setup
 
@@ -23,6 +26,11 @@ a scaffold. Resolve names from assets/catalog.json, verify selected instructions
 are actually installed, and check the draft with --catalog assets/catalog.json.
 Export a NEW local graph/map only within the authorized project. Show branch
 priority and fallback rules. Do not silently run every skill in a selected toolkit.
+Source pointers name exact files, not directories that hide an unbounded scan.
+
+Before following a saved map, use the bundled helper's `check-map` with the graph,
+map file and selected project. A match checks design identity, not source freshness
+or task success. Re-read current sources before reusing prior facts or a PASS.
 
 Workflow setup designs work order, skill choices and result routes. It does not
 require agent-attention. Attention levels are a separate optional setup.

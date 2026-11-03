@@ -1,0 +1,202 @@
+[
+  {
+    "case": "update",
+    "arm": "idea",
+    "status": "PASS",
+    "source_reads": 17,
+    "decoy_reads": 12,
+    "map_reads": 0,
+    "graph_reads": 0,
+    "seconds": 31.889,
+    "usage": {
+      "input_tokens": 145406,
+      "cached_input_tokens": 111616,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 1073,
+      "reasoning_output_tokens": 48
+    },
+    "business_checks": {
+      "status": true,
+      "blocking_ids": true,
+      "totals_by_currency": true,
+      "requires_clarification": true,
+      "published": true,
+      "current_sources": true,
+      "inputs_unchanged": true
+    },
+    "additional_checks": {
+      "rationale": true,
+      "grounded_blocker_ids": true,
+      "only_permitted_outputs": true
+    },
+    "helper_commands": 0,
+    "skill_reads": [],
+    "exit_code": 0
+  },
+  {
+    "case": "update",
+    "arm": "graph",
+    "status": "PASS",
+    "source_reads": 10,
+    "decoy_reads": 0,
+    "map_reads": 0,
+    "graph_reads": 1,
+    "seconds": 26.824,
+    "usage": {
+      "input_tokens": 150614,
+      "cached_input_tokens": 117248,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 889,
+      "reasoning_output_tokens": 49
+    },
+    "business_checks": {
+      "status": true,
+      "blocking_ids": true,
+      "totals_by_currency": true,
+      "requires_clarification": true,
+      "published": true,
+      "current_sources": true,
+      "inputs_unchanged": true
+    },
+    "additional_checks": {
+      "rationale": true,
+      "grounded_blocker_ids": true,
+      "only_permitted_outputs": true
+    },
+    "helper_commands": 0,
+    "skill_reads": [],
+    "exit_code": 0
+  },
+  {
+    "case": "update",
+    "arm": "map",
+    "status": "PASS",
+    "source_reads": 10,
+    "decoy_reads": 0,
+    "map_reads": 1,
+    "graph_reads": 1,
+    "seconds": 29.077,
+    "usage": {
+      "input_tokens": 154950,
+      "cached_input_tokens": 119552,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 960,
+      "reasoning_output_tokens": 68
+    },
+    "business_checks": {
+      "status": true,
+      "blocking_ids": true,
+      "totals_by_currency": true,
+      "requires_clarification": true,
+      "published": true,
+      "current_sources": true,
+      "inputs_unchanged": true
+    },
+    "additional_checks": {
+      "rationale": true,
+      "grounded_blocker_ids": true,
+      "only_permitted_outputs": true
+    },
+    "helper_commands": 0,
+    "skill_reads": [],
+    "exit_code": 0
+  },
+  {
+    "case": "conflict",
+    "arm": "map",
+    "status": "PASS",
+    "source_reads": 34,
+    "decoy_reads": 24,
+    "map_reads": 1,
+    "graph_reads": 1,
+    "seconds": 49.3,
+    "usage": {
+      "input_tokens": 229978,
+      "cached_input_tokens": 204800,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 1019,
+      "reasoning_output_tokens": 85
+    },
+    "business_checks": {
+      "status": true,
+      "totals_by_currency": true,
+      "requires_clarification": true,
+      "published": true,
+      "current_sources": true,
+      "inputs_unchanged": true
+    },
+    "additional_checks": {
+      "rationale": true,
+      "grounded_blocker_ids": true,
+      "only_permitted_outputs": true
+    },
+    "helper_commands": 0,
+    "skill_reads": [
+      ".agents/skills/loop-knowledge/SKILL.md",
+      ".agents/skills/loop-table/SKILL.md"
+    ],
+    "exit_code": 0
+  },
+  {
+    "case": "conflict",
+    "arm": "graph",
+    "status": "PASS",
+    "source_reads": 21,
+    "decoy_reads": 12,
+    "map_reads": 0,
+    "graph_reads": 1,
+    "seconds": 33.716,
+    "usage": {
+      "input_tokens": 188633,
+      "cached_input_tokens": 165760,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 1127,
+      "reasoning_output_tokens": 58
+    },
+    "business_checks": {
+      "status": true,
+      "totals_by_currency": true,
+      "requires_clarification": true,
+      "published": true,
+      "current_sources": true,
+      "inputs_unchanged": true
+    },
+    "additional_checks": {
+      "rationale": true,
+      "grounded_blocker_ids": true,
+      "only_permitted_outputs": true
+    },
+    "helper_commands": 0,
+    "skill_reads": [
+      ".agents/skills/loop-knowledge/SKILL.md",
+      ".agents/skills/loop-work/SKILL.md",
+      ".agents/skills/loop-table/SKILL.md"
+    ],
+    "exit_code": 0
+  },
+  {
+    "case": "conflict",
+    "arm": "idea",
+    "status": "BLOCKED",
+    "source_reads": 17,
+    "decoy_reads": 12,
+    "map_reads": 0,
+    "graph_reads": 0,
+    "seconds": 21.326,
+    "usage": null,
+    "business_checks": {
+      "object": false,
+      "inputs_unchanged": true
+    },
+    "additional_checks": {
+      "rationale": false,
+      "grounded_blocker_ids": false,
+      "only_permitted_outputs": true
+    },
+    "helper_commands": 0,
+    "skill_reads": [
+      ".agents/skills/loop-knowledge/SKILL.md"
+    ],
+    "exit_code": 1
+  }
+]

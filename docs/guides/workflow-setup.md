@@ -91,6 +91,12 @@ project root, exact source pointers, fact provenance, criteria and candidate
 instruction paths. Load only the selected binding and current sources. Do not
 read every skill or search the whole project to rediscover a known route.
 
+The map includes its workflow fingerprint. Before use, run the helper's
+`check-map --file workflow.json --map-file AGENT-MAP.md --project <project>`.
+This checks the complete map text against the graph and project, catching edited
+source pointers even if the displayed hash was retained. It does not check the
+freshness of business source files or turn a prior PASS into current evidence.
+
 ```text
 python scripts/workflow_setup.py start --file workflow.json --facts-file facts.json
 python scripts/workflow_setup.py select --file workflow.json --state cursor.json

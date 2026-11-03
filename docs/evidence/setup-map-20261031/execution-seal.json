@@ -1,0 +1,12 @@
+{
+  "audit_sha256": "3cbfd179ab253d2960580bbef00834f2b44f5420f73bec57c56b08626f81b399",
+  "controls": [
+    "positive",
+    "missing_rationale",
+    "fabricated_id",
+    "extra_ledger",
+    "wrong_id_type"
+  ],
+  "frozen_before_execution": true,
+  "controller_sha256": "1e21b7c8fdaa2ede47d30251de8469553c33bd6fd22c6f82de42e635ef74e94d"
+}

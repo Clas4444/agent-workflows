@@ -16,10 +16,11 @@ checks, model output checks, host discovery and remote CI establish different th
 
 | Date | Record | Scope |
 |---|---|---|
+| 2026-10-31 | [Setup and map evaluation](experiments/2026-10-31-setup-map.md) | Setup contract, source-change handoff and policy conflict; five completed outputs, one capacity-blocked attempt |
 | 2026-10-30 | [Advanced workflow cases](experiments/2026-10-30-workflow-advanced.md) | Mixed-currency money, blocked dependency graphs, input revisions and source-text authority boundaries; reproducible public harness |
-| 2026-10-29 | [Workflow batching pilot](experiments/2026-10-29-workflow-cost.md) | One-, three- and five-step arithmetic cases; includes a complete plain-prompt control |
+| 2026-10-29 | [Workflow batching pilot](experiments/2026-10-29-workflow-cost.md) | One-, three- and five-step arithmetic cases; includes a scaffolded plain-prompt control |
 
-The two campaigns retain their own source hashes, model/configuration and case
+These campaigns retain their own source hashes, model/configuration and case
 denominators. Do not pool their timings into a current average or relabel old
 runs as new. Native conversation continuation is a separate unexecuted condition.
 

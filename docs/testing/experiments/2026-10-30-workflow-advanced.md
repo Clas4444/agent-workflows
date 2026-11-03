@@ -1,5 +1,12 @@
 # Codex workflow experiment: harder office cases
 
+Interpretation clarification, 2026-10-31: the "plain" arm omitted explicit skill
+text but included extensive procedural, serialization and exception rules. It was
+scaffolded/oracle-rich, not a clean idea-complete prompt. Expected computed answers
+were withheld, which is different from withholding the test recipe and edge-case
+checklist. The older token/time observations remain valid only for their original
+conditions; they are not evidence of effectiveness against an idea-level request.
+
 Recorded 2026-10-30. Requested Codex CLI model `gpt-6.1-sol`, reasoning `low`, CLI 0.165.0-alpha.1.2 on Windows. Agent Workflows 1.11.2 candidate adds a public experiment harness; the `loop-work` instruction itself is unchanged from the prior experiment and is hash-pinned.
 
 **Measurement PASS:** 36/36 model calls and 18/18 packages passed their fixed checks. Every case/arm passed both planned repetitions. This is consistency on two scaffolded samples, not a population reliability estimate. **Clean skill A/B NOT_VERIFIED. Native continued chat and native discovery NOT_RUN.**

@@ -1,0 +1,38 @@
+{
+  "date": "2026-10-31",
+  "model": "gpt-6.1-sol",
+  "reasoning": "low",
+  "prior_calls": 14,
+  "remaining_cap": 7,
+  "cases": [
+    "source-change-handoff",
+    "policy-conflict"
+  ],
+  "arms": [
+    "idea",
+    "graph",
+    "map"
+  ],
+  "variants_per_case": 1,
+  "prompt_class": "Idea-complete intent and artifact/tool contract; no expected values, test recipe or exception checklist.",
+  "design_contract": "Setup and execution receive the same IDEA contract. Step sources must exist or be one of assessment.json/cursor.json; no directory scope or added ledger artifacts.",
+  "handoff": "A real model-produced phase-1 idea assessment is copied identically to all handoff arms, then current sources differ. Fresh processes, not native conversation.",
+  "oracle": "Only controller, outside candidate project. Grader and expectation never inserted into prompts/maps.",
+  "primary_comparisons": "Report map vs idea and map vs graph separately; do not pool invalid prior protocol. Navigation counts are adapter-observed, not an OS read monitor. One variant per case cannot prove general superiority.",
+  "source_hashes": {
+    "controller": "1e21b7c8fdaa2ede47d30251de8469553c33bd6fd22c6f82de42e635ef74e94d",
+    "helper": "59f71d1b3d8ae924eca6c0c096354a9d6334a982809dfd4bd31d214b976f6919",
+    "skill": "9e41b6e2d998f2cbf9d08df66fce40ae9bd6acef9054897777f67503fd376e12"
+  },
+  "review_date": "2026-11-03",
+  "call_accounting": {
+    "initial_protocol": 14,
+    "corrected_setup": 1,
+    "corrected_executions": 6,
+    "total_attempted": 21,
+    "further_model_calls": 0
+  },
+  "invalid_initial_protocol": "Setup omitted client artifact/write contract; ten completed execution observations excluded from efficacy comparisons, one update execution interrupted. Two setup calls and one interview call also retained privately.",
+  "native_picker": "BLOCKED: computer-use skill forbids automating ChatGPT desktop UI",
+  "initial_auto_review": "BLOCKED before invocation; subsequently authorized by human"
+}

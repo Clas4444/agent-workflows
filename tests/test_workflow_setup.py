@@ -8,7 +8,7 @@ import subprocess
 import sys
 import tempfile
 import unittest
-from scripts.workflow_setup import (advance, agent_map, attach_attention, diagram, export, fingerprint, load,
+from scripts.workflow_setup import (advance, agent_map, attach_attention, check_map, diagram, export, fingerprint, load,
                                     questions, select, start, template, validate)
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -271,3 +271,74 @@ class WorkflowSetupTests(unittest.TestCase):
                 cwd=directory, capture_output=True, text=True, timeout=10)
             self.assertEqual(result.returncode, 0, result.stderr)
             self.assertEqual(json.loads(result.stdout)['status'], 'PASS')
+
+    def test_map_cli_respects_supplied_project(self):
+        with tempfile.TemporaryDirectory() as directory:
+            project = Path(directory).resolve()
+            graph = project/'workflow.json'
+            graph.write_text(json.dumps(self.document()), encoding='utf-8')
+            result = subprocess.run([sys.executable, '-I', str(ROOT/'scripts/workflow_setup.py'),
+                'map', '--file', str(graph), '--project', str(project)],
+                capture_output=True, text=True, timeout=10)
+            self.assertEqual(result.returncode, 0, result.stderr)
+            self.assertIn('Project root: '+str(project), result.stdout)
+            self.assertEqual(check_map(self.document(), result.stdout, project)['status'], 'PASS')
+
+    def test_map_identity_covers_content_project_and_graph(self):
+        with tempfile.TemporaryDirectory() as directory:
+            project = Path(directory).resolve()
+            doc = self.document(); contents = agent_map(doc, project)
+            self.assertIn(fingerprint(doc), contents)
+            self.assertEqual(check_map(doc, contents, project)['status'], 'PASS')
+            # Retaining the correct hash label cannot hide edited routing/source text.
+            with self.assertRaisesRegex(ValueError, 'stale, edited'):
+                check_map(doc, contents.replace('`README.md`', '`archive.md`'), project)
+            changed = copy.deepcopy(doc); changed['goal'] = 'Changed goal'
+            with self.assertRaises(ValueError): check_map(changed, contents, project)
+            other = project/'other'; other.mkdir()
+            with self.assertRaises(ValueError): check_map(doc, contents, other)
+
+    def test_exported_map_cli_check_rejects_tampering_without_writes(self):
+        with tempfile.TemporaryDirectory() as directory:
+            project = Path(directory).resolve()
+            result = export(self.document(), project)
+            out = Path(result['directory']); mapfile = out/'AGENT-MAP.md'
+            command = [sys.executable, '-I', str(ROOT/'scripts/workflow_setup.py'), 'check-map',
+                       '--file', str(out/'workflow.json'), '--project', str(project), '--map-file', str(mapfile)]
+            checked = subprocess.run(command, capture_output=True, text=True, timeout=10)
+            self.assertEqual(checked.returncode, 0, checked.stderr)
+            self.assertEqual(json.loads(checked.stdout)['execution'], 'NONE')
+            mapfile.write_text(mapfile.read_text(encoding='utf-8')+'\nEdited\n', encoding='utf-8')
+            before = mapfile.read_bytes()
+            checked = subprocess.run(command, capture_output=True, text=True, timeout=10)
+            self.assertNotEqual(checked.returncode, 0)
+            self.assertEqual(mapfile.read_bytes(), before)
+
+    def test_copied_setup_helper_exports_and_checks_map_under_isolation(self):
+        with tempfile.TemporaryDirectory() as directory:
+            base = Path(directory).resolve(); installed = base/'installed'; project = base/'project'
+            project.mkdir(); shutil.copytree(ROOT/'skills/workflow-setup', installed)
+            helper = [sys.executable, '-I', '-S', '-B', str(installed/'scripts/workflow_setup.py')]
+            result = subprocess.run(helper+['export', '--file', str(installed/'assets/workflow-example.json'),
+                '--catalog', str(installed/'assets/catalog.json'), '--project', str(project)],
+                cwd=base, capture_output=True, text=True, timeout=10)
+            self.assertEqual(result.returncode, 0, result.stderr)
+            exported = Path(json.loads(result.stdout)['directory'])
+            result = subprocess.run(helper+['check-map', '--file', str(exported/'workflow.json'),
+                '--map-file', str(exported/'AGENT-MAP.md'), '--project', str(project)],
+                cwd=base, capture_output=True, text=True, timeout=10)
+            self.assertEqual(result.returncode, 0, result.stderr)
+            checked = json.loads(result.stdout)
+            self.assertEqual(checked['status'], 'PASS')
+            self.assertIn('task success are NOT_RUN', checked['scope'])
+
+    def test_existing_directory_cannot_hide_a_wide_source_scope(self):
+        with tempfile.TemporaryDirectory() as directory:
+            project = Path(directory); (project/'sources').mkdir()
+            doc = self.document(); doc['steps'][0]['sources'] = ['sources']
+            with self.assertRaisesRegex(ValueError, 'exact files, not directories'):
+                export(doc, project)
+            self.assertEqual({p.name for p in project.iterdir()}, {'sources'})
+            # A later step's output can legitimately be missing during setup.
+            doc['steps'][0]['sources'] = ['future-assessment.json']
+            self.assertEqual(export(doc, project)['status'], 'PASS')

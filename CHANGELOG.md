@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.11.4 — 2026-11-03
+
+- Honor the selected project when rendering workflow maps; add full map/graph/project identity checks and reject directory source pointers.
+- Preserve client deliverables and write constraints during setup design.
+- Publish bounded setup/map observations with separate idea-complete and oracle-rich prompt terminology; no general savings claim.
+
 ## 1.11.3 — 2026-10-30
 
 - Publish the independent `workflow-setup` skill with UI metadata, catalog,

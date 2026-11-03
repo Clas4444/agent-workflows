@@ -76,6 +76,15 @@ Internal output aliases/reparse points are rejected. Export validates before
 creating files; an I/O failure may leave a partial new directory, so inspect it
 before retrying. Ignore rules do not prevent deliberate force-add or manual sharing.
 
+Before following a saved map, run
+`check-map --file workflow.json --map-file AGENT-MAP.md --project <authorized-project>`.
+It compares the complete rendered view with the
+current graph and selected project, not only its printed workflow hash. Edited
+maps, old graphs and different project roots are rejected without rewriting files.
+Regenerate a stale map from the reviewed graph. A matching map does not establish
+that source files are current, instructions are installed, or tasks passed. Re-read
+current step sources and revalidate affected criteria after source changes.
+
 ## Select and advance; no hidden scheduler
 
 `start --file workflow.json --facts <JSON>` prints the initial cursor.

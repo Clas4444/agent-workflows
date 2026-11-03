@@ -327,7 +327,10 @@ def diagram(document):
 
 def agent_map(document, project=None):
     validate(document)
-    lines = ['# Local agent route map', '', 'Goal: '+document['goal'], '',
+    if project is not None: check_project_sources(document, project)
+    lines = ['# Local agent route map', '', 'Workflow SHA256: '+fingerprint(document), '',
+             'Goal: '+document['goal'], '',
+             'Check this map against the current graph and selected project before following it.',
              'Read workflow.json and this map first. Start at `'+document['entry']+'`.',
              'Only load the current step, its selected skill instructions and its exact source pointers.',
              'Do not scan the whole project. Unknown facts require clarification, not a guessed branch.',
@@ -356,6 +359,16 @@ def agent_map(document, project=None):
     return '\n'.join(lines)
 
 
+def check_map(document, contents, project):
+    """Verify the whole rendered view, not just a copyable hash label."""
+    project = Path(project).resolve()
+    if not project.is_dir(): raise ValueError('project root must already exist')
+    if contents != agent_map(document, project):
+        raise ValueError('map is stale, edited, or belongs to a different project/workflow; regenerate it')
+    return {'status': 'PASS', 'workflow_sha256': fingerprint(document), 'execution': 'NONE',
+            'scope': 'Canonical map/graph/project identity only; source freshness and task success are NOT_RUN.'}
+
+
 def plain_entry(path):
     if path.exists() or path.is_symlink():
         meta = path.lstat()
@@ -363,10 +376,24 @@ def plain_entry(path):
             raise ValueError('output aliases/reparse points are not supported')
 
 
+def check_project_sources(document, project):
+    """Check pointer boundaries/kind, allowing not-yet-produced step artifacts."""
+    project = Path(project).resolve()
+    if not project.is_dir(): raise ValueError('project root must already exist')
+    for step in document['steps']:
+        for source in step['sources']:
+            path = project/source
+            if not path.resolve().is_relative_to(project):
+                raise ValueError('source pointer escapes the selected project: '+source)
+            if path.is_dir():
+                raise ValueError('source pointers must name exact files, not directories: '+source)
+
+
 def export(document, project, output=None):
     validate(document)
     project = Path(project).resolve()
     if not project.is_dir(): raise ValueError('project root must already exist')
+    check_project_sources(document, project)
     location = relative(output or '.loop/workflows/'+document['id'])
     destination = project/location
     resolved = destination.resolve()
@@ -391,7 +418,7 @@ def export(document, project, output=None):
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('command', choices=('questions', 'template', 'check', 'export', 'start', 'select', 'advance', 'map', 'attach'))
+    parser.add_argument('command', choices=('questions', 'template', 'check', 'check-map', 'export', 'start', 'select', 'advance', 'map', 'attach'))
     parser.add_argument('--layer', choices=('skills', 'attention', 'both'), default='skills')
     parser.add_argument('--file', type=Path); parser.add_argument('--catalog', type=Path)
     parser.add_argument('--project', type=Path); parser.add_argument('--output')
@@ -401,6 +428,7 @@ def main():
     fact_options.add_argument('--facts-file', type=Path, help='UTF-8 JSON fact object; avoids shell quoting')
     parser.add_argument('--status', choices=STATUSES); parser.add_argument('--evidence')
     parser.add_argument('--patch', type=Path)
+    parser.add_argument('--map-file', type=Path)
     args = parser.parse_args()
     try:
         if args.command == 'questions': result = questions(args.layer)
@@ -410,6 +438,8 @@ def main():
             document = load(args.file)
             known = set(load(args.catalog)['skills']) if args.catalog else None
             validate(document, known)
+            if args.command == 'check' and args.project is not None:
+                check_project_sources(document, args.project)
             facts = load(args.facts_file) if args.facts_file else json.loads(args.facts or '{}', object_pairs_hook=unique)
             if args.command == 'check': result = {'status': 'PASS', 'workflow_sha256': fingerprint(document),
                 'steps': len(document['steps']), 'limits': document['limits'], 'execution': 'NONE',
@@ -417,7 +447,12 @@ def main():
             elif args.command == 'attach':
                 if args.patch is None: raise ValueError('--patch is required')
                 result = attach_attention(document, load(args.patch))
-            elif args.command == 'map': print(agent_map(document)); return 0
+            elif args.command == 'map':
+                print(agent_map(document, args.project.resolve() if args.project else None), end=''); return 0
+            elif args.command == 'check-map':
+                if args.project is None or args.map_file is None:
+                    raise ValueError('--project and --map-file are required')
+                result = check_map(document, args.map_file.read_text(encoding='utf-8'), args.project)
             elif args.command == 'export':
                 if args.project is None: raise ValueError('--project is required')
                 result = export(document, args.project, args.output)
