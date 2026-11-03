@@ -1,0 +1,10 @@
+{
+  "skill_text_matches_public_github": true,
+  "fixtures_match_public_github": true,
+  "skill_sha256": "d83c0341eb469fd4139ade5c5aaa6e4f1e0d785139345e9e683f34033dca269f",
+  "public_source_commit": "f9262dafc05d2e682d315e0eac800f0885e69618",
+  "skill_public_path": ".github/skills/loop-work/SKILL.md",
+  "fixtures_public_path": "docs/evidence/copilot-integrity-20261103/pilot-protocol.json",
+  "secrets_or_private_fixture_data_in_payload": false,
+  "user_provider_switch": "User explicitly requested Codex CLI because Copilot has exhausted tokens."
+}

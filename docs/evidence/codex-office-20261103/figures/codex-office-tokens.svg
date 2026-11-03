@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="920" viewBox="0 0 1440 920">
+<rect width="100%" height="100%" fill="#fafbf9"/>
+<g font-family="Arial, sans-serif" fill="#182a35">
+<text x="52" y="48" font-size="26" font-weight="bold" fill="#182a35" text-anchor="start">New Codex pilot: Total input + output tokens per package</text>
+<text x="52" y="78" font-size="15" font-weight="normal" fill="#182a35" text-anchor="start">Two independent repetitions per case/arm; 12 CLI. Separate from historical Copilot. Descriptive only, not a learning curve.</text>
+<text x="110" y="125" font-size="22" font-weight="bold" fill="#182a35" text-anchor="start">revision</text>
+<line x1="110" y1="580.0" x2="580" y2="580.0" stroke="#ced7da"/>
+<text x="95" y="585.0" font-size="14" font-weight="normal" fill="#182a35" text-anchor="end">0</text>
+<line x1="110" y1="480.0" x2="580" y2="480.0" stroke="#ced7da"/>
+<text x="95" y="485.0" font-size="14" font-weight="normal" fill="#182a35" text-anchor="end">4,000</text>
+<line x1="110" y1="380.0" x2="580" y2="380.0" stroke="#ced7da"/>
+<text x="95" y="385.0" font-size="14" font-weight="normal" fill="#182a35" text-anchor="end">8,000</text>
+<line x1="110" y1="280.0" x2="580" y2="280.0" stroke="#ced7da"/>
+<text x="95" y="285.0" font-size="14" font-weight="normal" fill="#182a35" text-anchor="end">12,000</text>
+<line x1="110" y1="180.0" x2="580" y2="180.0" stroke="#ced7da"/>
+<text x="95" y="185.0" font-size="14" font-weight="normal" fill="#182a35" text-anchor="end">16,000</text>
+<text x="110" y="612" font-size="16" font-weight="normal" fill="#182a35" text-anchor="middle">1</text>
+<text x="580" y="612" font-size="16" font-weight="normal" fill="#182a35" text-anchor="middle">2</text>
+<polyline points="110,253.89999999999998 580,253.89999999999998" fill="none" stroke="#657783" stroke-width="3"/>
+<circle cx="110" cy="253.89999999999998" r="5" fill="#657783"/>
+<circle cx="580" cy="253.89999999999998" r="5" fill="#657783"/>
+<polyline points="110,234.22500000000002 580,234.92499999999995" fill="none" stroke="#127d79" stroke-width="3"/>
+<circle cx="110" cy="234.22500000000002" r="5" fill="#127d79"/>
+<circle cx="580" cy="234.92499999999995" r="5" fill="#127d79"/>
+<polyline points="110,251.09999999999997 580,250.97500000000002" fill="none" stroke="#4554a0" stroke-width="3"/>
+<circle cx="110" cy="251.09999999999997" r="5" fill="#4554a0"/>
+<circle cx="580" cy="250.97500000000002" r="5" fill="#4554a0"/>
+<text x="345.0" y="655" font-size="17" font-weight="normal" fill="#182a35" text-anchor="middle">Independent repetition</text>
+<text x="820" y="125" font-size="22" font-weight="bold" fill="#182a35" text-anchor="start">authority</text>
+<line x1="820" y1="580.0" x2="1290" y2="580.0" stroke="#ced7da"/>
+<text x="805" y="585.0" font-size="14" font-weight="normal" fill="#182a35" text-anchor="end">0</text>
+<line x1="820" y1="480.0" x2="1290" y2="480.0" stroke="#ced7da"/>
+<text x="805" y="485.0" font-size="14" font-weight="normal" fill="#182a35" text-anchor="end">4,000</text>
+<line x1="820" y1="380.0" x2="1290" y2="380.0" stroke="#ced7da"/>
+<text x="805" y="385.0" font-size="14" font-weight="normal" fill="#182a35" text-anchor="end">8,000</text>
+<line x1="820" y1="280.0" x2="1290" y2="280.0" stroke="#ced7da"/>
+<text x="805" y="285.0" font-size="14" font-weight="normal" fill="#182a35" text-anchor="end">12,000</text>
+<line x1="820" y1="180.0" x2="1290" y2="180.0" stroke="#ced7da"/>
+<text x="805" y="185.0" font-size="14" font-weight="normal" fill="#182a35" text-anchor="end">16,000</text>
+<text x="820" y="612" font-size="16" font-weight="normal" fill="#182a35" text-anchor="middle">1</text>
+<text x="1290" y="612" font-size="16" font-weight="normal" fill="#182a35" text-anchor="middle">2</text>
+<polyline points="820,253.39999999999998 1290,252.075" fill="none" stroke="#657783" stroke-width="3"/>
+<circle cx="820" cy="253.39999999999998" r="5" fill="#657783"/>
+<circle cx="1290" cy="252.075" r="5" fill="#657783"/>
+<polyline points="820,233.45 1290,233.5" fill="none" stroke="#127d79" stroke-width="3"/>
+<circle cx="820" cy="233.45" r="5" fill="#127d79"/>
+<circle cx="1290" cy="233.5" r="5" fill="#127d79"/>
+<polyline points="820,249.325 1290,247.02499999999998" fill="none" stroke="#4554a0" stroke-width="3"/>
+<circle cx="820" cy="249.325" r="5" fill="#4554a0"/>
+<circle cx="1290" cy="247.02499999999998" r="5" fill="#4554a0"/>
+<text x="1055.0" y="655" font-size="17" font-weight="normal" fill="#182a35" text-anchor="middle">Independent repetition</text>
+<rect x="100" y="749" width="30" height="4" fill="#657783"/>
+<text x="142" y="760" font-size="17" font-weight="normal" fill="#182a35" text-anchor="start">Idea-complete plain prompt</text>
+<rect x="540" y="749" width="30" height="4" fill="#127d79"/>
+<text x="582" y="760" font-size="17" font-weight="normal" fill="#182a35" text-anchor="start">Agent Workflows</text>
+<rect x="980" y="749" width="30" height="4" fill="#4554a0"/>
+<text x="1022" y="760" font-size="17" font-weight="normal" fill="#182a35" text-anchor="start">Information-matched prompt</text>
+<text x="52" y="840" font-size="15" font-weight="normal" fill="#182a35" text-anchor="start">Strict quality after diagnostic correction: plain: 4/4; workflow: 4/4; matched: 3/4.</text>
+<text x="52" y="875" font-size="14" font-weight="normal" fill="#182a35" text-anchor="start">Original FAIL labels retained: 12/12; diagnostic correction is separate. See analysis.json.</text>
+</g></svg>

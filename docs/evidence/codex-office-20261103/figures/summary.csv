@@ -1,0 +1,7 @@
+case,arm,planned,cli_count,original_pass,regraded_pass,required_fields_pass,measured_n,mean_seconds,mean_total_tokens
+revision,plain,2,2,0,2,2,2,8.939417099998536,13044
+revision,workflow,2,2,0,2,2,2,7.5149971499995445,13817
+revision,matched,2,2,0,2,2,2,8.371017049998045,13158.5
+authority,plain,2,2,0,2,2,2,7.164483399999881,13090.5
+authority,workflow,2,2,0,2,2,2,9.410250850000011,13861
+authority,matched,2,2,0,1,2,2,10.38385334999839,13273

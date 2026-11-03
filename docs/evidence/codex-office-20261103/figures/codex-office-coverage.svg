@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="920" viewBox="0 0 1440 920">
+<rect width="100%" height="100%" fill="#fafbf9"/>
+<g font-family="Arial, sans-serif" fill="#182a35">
+<text x="52" y="48" font-size="26" font-weight="bold" fill="#182a35" text-anchor="start">New Codex pilot: coverage and scoring layers</text>
+<text x="52" y="78" font-size="15" font-weight="normal" fill="#182a35" text-anchor="start">All planned slots retained. Completed CLI turns are not an independently reported backend model-request count.</text>
+<text x="70" y="165" font-size="22" font-weight="bold" fill="#182a35" text-anchor="start">Original strict checker</text>
+<rect x="70" y="195" width="1200" height="60" fill="#9b3f4b"/>
+<text x="70" y="290" font-size="18" font-weight="normal" fill="#182a35" text-anchor="start">PASS 0/12; non-PASS 12/12</text>
+<text x="70" y="355" font-size="22" font-weight="bold" fill="#182a35" text-anchor="start">Diagnostic-corrected strict checker</text>
+<rect x="70" y="385" width="1200" height="60" fill="#9b3f4b"/>
+<rect x="70" y="385" width="1100.0" height="60" fill="#127d79"/>
+<text x="70" y="480" font-size="18" font-weight="normal" fill="#182a35" text-anchor="start">PASS 11/12; non-PASS 1/12</text>
+<text x="70" y="545" font-size="22" font-weight="bold" fill="#182a35" text-anchor="start">Required business fields only</text>
+<rect x="70" y="575" width="1200" height="60" fill="#9b3f4b"/>
+<rect x="70" y="575" width="1200.0" height="60" fill="#127d79"/>
+<text x="70" y="670" font-size="18" font-weight="normal" fill="#182a35" text-anchor="start">PASS 12/12; non-PASS 0/12</text>
+<text x="70" y="790" font-size="20" font-weight="normal" fill="#182a35" text-anchor="start">CLI attempts: 12/12. Completed turns: 12. Remaining authorized calls: 0.</text>
+<text x="70" y="835" font-size="16" font-weight="normal" fill="#182a35" text-anchor="start">Original failures remain visible. Diagnostic correction does not hide extra-field schema violations.</text>
+</g></svg>

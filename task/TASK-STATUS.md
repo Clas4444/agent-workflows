@@ -1,6 +1,6 @@
 # Task status
 
-- State: OFFLINE_DELIVERED_PILOT_NOT_RUN_SHARED_STOP
+- State: CODEX_12_CALLS_COMPLETE_LOCAL_PUBLICATION_VERIFIED
 - Started: 2026-11-03.
 - WF-01: PASS offline re-aggregation of 80 historical packages / 125 CLI; 367 internal model requests. All saved usage counters and usage hashes match. Original statuses unchanged; revision order and wrapper sensitivity scored separately. Saved cents regrade remains a historical layer, not independently re-executed.
 - WF-02: Harness/oracles implemented; 13 focused deterministic tests PASS, including isolated fresh-directory reproduction and extra-file/tool controls; all 14 publication gates PASS (405 tests, 403 PASS, two platform skips). New control bug (null-owner mutation changed nothing) detected and corrected before freeze/calls.
@@ -21,3 +21,14 @@ Offline deliverables complete. Pilot remains NOT_RUN; no efficiency/quality clai
 - Subsequent shared recovery marker observed: MALFORMED_USAGE (peer attempt 01-baseline). This is not proof of quota. Both direct payload approval and valid accounting recovery are prerequisites for any new Workflow CLI. Recovery CLI remains 0; marker is not cleared.
 
 - Line-chart publication: all 14 local gates PASS, 407 tests (405 PASS, two skips), unchanged input pin. New nine-artifact byte index matches staged Git blobs; original packet unchanged. Remote CI for this follow-up is checked after push.
+
+## User-directed switch to Codex â€” actual pilot complete
+
+- User approved max12 CLI and explicitly switched the destination to Codex CLI because Copilot quota was exhausted. Copilot device login cancelled; all old markers/results retained.
+- Codex: 12/12 CLI completed, valid usage, no transport/auth/quota failure. Remaining budget0. No further model calls after classifier repair. Requested model gpt-6.1-sol / low; actual model and internal request count NOT_REPORTED.
+- Original labels: FAIL12 due CLI feature-warning false negatives. Separate diagnostic-corrected strict acceptance11/12; required-fields semantics12/12. Plain4/4, Agent Workflows4/4, matched3/4; one extra-field schema violation preserved.
+- Equal-quality workflow vs plain pooled ratio-of-means: +5.91% tokens, +5.10% wall time. Revision faster15.93%, authority slower31.35%; only n2 per cell. No general savings claim.
+- New report: docs/testing/experiments/2026-11-03-codex-office.md. New packet has sanitized per-run observations, frozen measured controller/protocol, standalone offline analysis and four SVG/PNG figures. Copilot historical data remains separate.
+- Nine focused Codex tests PASS; full publication gates and new exact-SHA remote CI pending. Direct payload approval is not pending anymore; review's private-content assumption was resolved by byte comparison against already-public payload and retry approval.
+
+- Codex final publication gate: 14/14 PASS, 417 tests (415 PASS, two platform skips), unchanged pin48fab24a4973596622cd5ccbb39c70a025d0256c39e8f8c85b1b295b2361b1f3. Ten focused Codex tests PASS. New commit CI is evaluated after push on its own exact SHA.
