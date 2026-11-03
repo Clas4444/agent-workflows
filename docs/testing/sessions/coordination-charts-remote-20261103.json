@@ -1,0 +1,605 @@
+{
+  "source_commit": "485df41fbe8e2b1664d2b0e31e9ae913ebbf2ecb",
+  "source_pushed": true,
+  "source_checks": {
+    "head_sha": "485df41fbe8e2b1664d2b0e31e9ae913ebbf2ecb",
+    "runs": [
+      {
+        "id": 41660490017,
+        "name": "Validate skills",
+        "head_sha": "485df41fbe8e2b1664d2b0e31e9ae913ebbf2ecb",
+        "status": "completed",
+        "conclusion": "success",
+        "html_url": "https://github.com/Clas4444/agent-workflows/actions/runs/41660490017"
+      },
+      {
+        "id": 41660490324,
+        "name": "Push on main",
+        "head_sha": "485df41fbe8e2b1664d2b0e31e9ae913ebbf2ecb",
+        "status": "completed",
+        "conclusion": "success",
+        "html_url": "https://github.com/Clas4444/agent-workflows/actions/runs/41660490324"
+      }
+    ],
+    "checks": [
+      {
+        "id": 126002078737,
+        "name": "Analyze (python)",
+        "head_sha": "485df41fbe8e2b1664d2b0e31e9ae913ebbf2ecb",
+        "status": "completed",
+        "conclusion": "success",
+        "html_url": "https://github.com/Clas4444/agent-workflows/actions/runs/41660490324/job/126002078737"
+      },
+      {
+        "id": 126002078347,
+        "name": "Analyze (javascript-typescript)",
+        "head_sha": "485df41fbe8e2b1664d2b0e31e9ae913ebbf2ecb",
+        "status": "completed",
+        "conclusion": "success",
+        "html_url": "https://github.com/Clas4444/agent-workflows/actions/runs/41660490324/job/126002078347"
+      },
+      {
+        "id": 126002077613,
+        "name": "Analyze (actions)",
+        "head_sha": "485df41fbe8e2b1664d2b0e31e9ae913ebbf2ecb",
+        "status": "completed",
+        "conclusion": "success",
+        "html_url": "https://github.com/Clas4444/agent-workflows/actions/runs/41660490324/job/126002077613"
+      },
+      {
+        "id": 126002075053,
+        "name": "structural-validation (ubuntu-latest, 3.12)",
+        "head_sha": "485df41fbe8e2b1664d2b0e31e9ae913ebbf2ecb",
+        "status": "completed",
+        "conclusion": "success",
+        "html_url": "https://github.com/Clas4444/agent-workflows/actions/runs/41660490017/job/126002075053"
+      },
+      {
+        "id": 126002074853,
+        "name": "structural-validation (windows-latest, 3.11)",
+        "head_sha": "485df41fbe8e2b1664d2b0e31e9ae913ebbf2ecb",
+        "status": "completed",
+        "conclusion": "success",
+        "html_url": "https://github.com/Clas4444/agent-workflows/actions/runs/41660490017/job/126002074853"
+      },
+      {
+        "id": 126002074834,
+        "name": "structural-validation (windows-latest, 3.12)",
+        "head_sha": "485df41fbe8e2b1664d2b0e31e9ae913ebbf2ecb",
+        "status": "completed",
+        "conclusion": "success",
+        "html_url": "https://github.com/Clas4444/agent-workflows/actions/runs/41660490017/job/126002074834"
+      },
+      {
+        "id": 126002074354,
+        "name": "structural-validation (ubuntu-latest, 3.11)",
+        "head_sha": "485df41fbe8e2b1664d2b0e31e9ae913ebbf2ecb",
+        "status": "completed",
+        "conclusion": "success",
+        "html_url": "https://github.com/Clas4444/agent-workflows/actions/runs/41660490017/job/126002074354"
+      }
+    ],
+    "missing_checks": [],
+    "status": "PASS"
+  },
+  "published_bytes": {
+    "head_sha": "485df41fbe8e2b1664d2b0e31e9ae913ebbf2ecb",
+    "status": "PASS",
+    "artifacts": [
+      {
+        "path": ".agents/skills/loop/SKILL.md",
+        "sha256": "50ebfcf69a9f630ad6db8747b07c4cf0a137a423b9a2d281cc073132393f3af6",
+        "downloaded_sha256": "50ebfcf69a9f630ad6db8747b07c4cf0a137a423b9a2d281cc073132393f3af6",
+        "matches": true
+      },
+      {
+        "path": ".agents/skills/loop/references/setup.md",
+        "sha256": "dfcc569cc794e3f44f119aa585aa2e4eeaeed624ff3757438b258af0e4b08ac0",
+        "downloaded_sha256": "dfcc569cc794e3f44f119aa585aa2e4eeaeed624ff3757438b258af0e4b08ac0",
+        "matches": true
+      },
+      {
+        "path": ".agents/skills/loop/scripts/workflow_setup.py",
+        "sha256": "bf094dbeb177e593bcc3b34c25b36a91938bce42dec93812328ee40f8635f574",
+        "downloaded_sha256": "bf094dbeb177e593bcc3b34c25b36a91938bce42dec93812328ee40f8635f574",
+        "matches": true
+      },
+      {
+        "path": ".claude/skills/loop/SKILL.md",
+        "sha256": "50ebfcf69a9f630ad6db8747b07c4cf0a137a423b9a2d281cc073132393f3af6",
+        "downloaded_sha256": "50ebfcf69a9f630ad6db8747b07c4cf0a137a423b9a2d281cc073132393f3af6",
+        "matches": true
+      },
+      {
+        "path": ".claude/skills/loop/references/setup.md",
+        "sha256": "dfcc569cc794e3f44f119aa585aa2e4eeaeed624ff3757438b258af0e4b08ac0",
+        "downloaded_sha256": "dfcc569cc794e3f44f119aa585aa2e4eeaeed624ff3757438b258af0e4b08ac0",
+        "matches": true
+      },
+      {
+        "path": ".claude/skills/loop/scripts/workflow_setup.py",
+        "sha256": "bf094dbeb177e593bcc3b34c25b36a91938bce42dec93812328ee40f8635f574",
+        "downloaded_sha256": "bf094dbeb177e593bcc3b34c25b36a91938bce42dec93812328ee40f8635f574",
+        "matches": true
+      },
+      {
+        "path": ".gitattributes",
+        "sha256": "cd68b045430ffc20207d245d31787dc2ab03ad379d49aa43001f8505485b87bf",
+        "downloaded_sha256": "cd68b045430ffc20207d245d31787dc2ab03ad379d49aa43001f8505485b87bf",
+        "matches": true
+      },
+      {
+        "path": ".github/skills/loop/SKILL.md",
+        "sha256": "50ebfcf69a9f630ad6db8747b07c4cf0a137a423b9a2d281cc073132393f3af6",
+        "downloaded_sha256": "50ebfcf69a9f630ad6db8747b07c4cf0a137a423b9a2d281cc073132393f3af6",
+        "matches": true
+      },
+      {
+        "path": ".github/skills/loop/references/setup.md",
+        "sha256": "dfcc569cc794e3f44f119aa585aa2e4eeaeed624ff3757438b258af0e4b08ac0",
+        "downloaded_sha256": "dfcc569cc794e3f44f119aa585aa2e4eeaeed624ff3757438b258af0e4b08ac0",
+        "matches": true
+      },
+      {
+        "path": ".github/skills/loop/scripts/workflow_setup.py",
+        "sha256": "bf094dbeb177e593bcc3b34c25b36a91938bce42dec93812328ee40f8635f574",
+        "downloaded_sha256": "bf094dbeb177e593bcc3b34c25b36a91938bce42dec93812328ee40f8635f574",
+        "matches": true
+      },
+      {
+        "path": "CHANGELOG.md",
+        "sha256": "a9f0612f3bee5f024c2a4a8db02ed0f2d1ce50f5fb2a8d85b01ade6555cb7d0e",
+        "downloaded_sha256": "a9f0612f3bee5f024c2a4a8db02ed0f2d1ce50f5fb2a8d85b01ade6555cb7d0e",
+        "matches": true
+      },
+      {
+        "path": "README.md",
+        "sha256": "cd84f508bf9856912bdedb4f6bb36d7795db795df77e123f33c36a14bdfb3258",
+        "downloaded_sha256": "cd84f508bf9856912bdedb4f6bb36d7795db795df77e123f33c36a14bdfb3258",
+        "matches": true
+      },
+      {
+        "path": "docs/evidence/coordination-function-20261103/README.md",
+        "sha256": "3513b3be45a9977a4931fa5db7dd7efe4246faf348f454ea6ec87a3345100af4",
+        "downloaded_sha256": "3513b3be45a9977a4931fa5db7dd7efe4246faf348f454ea6ec87a3345100af4",
+        "matches": true
+      },
+      {
+        "path": "docs/evidence/coordination-function-20261103/coord02-audit.json",
+        "sha256": "7c88178b64556f7d6be0aa0739fda3771db76d6ec67aa45b43d8ef9563234791",
+        "downloaded_sha256": "7c88178b64556f7d6be0aa0739fda3771db76d6ec67aa45b43d8ef9563234791",
+        "matches": true
+      },
+      {
+        "path": "docs/evidence/coordination-function-20261103/coord02-regrade-v2.json",
+        "sha256": "8832cb5254b4b513d374379f28df0eed24e4166aecac2e0d8754ca8be2da5c38",
+        "downloaded_sha256": "8832cb5254b4b513d374379f28df0eed24e4166aecac2e0d8754ca8be2da5c38",
+        "matches": true
+      },
+      {
+        "path": "docs/evidence/coordination-function-20261103/coordination-v1.json",
+        "sha256": "4d67c53d7b2fbe13c5fc5c9630e3cd8c0b307e2112adbb061bb959b3ed424a81",
+        "downloaded_sha256": "4d67c53d7b2fbe13c5fc5c9630e3cd8c0b307e2112adbb061bb959b3ed424a81",
+        "matches": true
+      },
+      {
+        "path": "docs/evidence/coordination-function-20261103/function03-budget.json",
+        "sha256": "80c0cb1ecbdd247238aa582c7373dead16177a6d3be3a4abf12f996e75687511",
+        "downloaded_sha256": "80c0cb1ecbdd247238aa582c7373dead16177a6d3be3a4abf12f996e75687511",
+        "matches": true
+      },
+      {
+        "path": "docs/evidence/coordination-function-20261103/function03-events-sanitized.json",
+        "sha256": "a468eb09dfe8629b31624eb5ed82bf80b386ca312ec4bd85094b94cc45fa8f31",
+        "downloaded_sha256": "a468eb09dfe8629b31624eb5ed82bf80b386ca312ec4bd85094b94cc45fa8f31",
+        "matches": true
+      },
+      {
+        "path": "docs/evidence/coordination-function-20261103/function03-measured-controller.py",
+        "sha256": "eba737d11111471dc49ec7a43be9d1db90729e6587b94884a978092d15600075",
+        "downloaded_sha256": "eba737d11111471dc49ec7a43be9d1db90729e6587b94884a978092d15600075",
+        "matches": true
+      },
+      {
+        "path": "docs/evidence/coordination-function-20261103/function03-measured-helper.py",
+        "sha256": "a6c666e4612643cb98d0770bb658c7b5c49aebf927131eb6357522b147e7d9c7",
+        "downloaded_sha256": "a6c666e4612643cb98d0770bb658c7b5c49aebf927131eb6357522b147e7d9c7",
+        "matches": true
+      },
+      {
+        "path": "docs/evidence/coordination-function-20261103/function03-model.csv",
+        "sha256": "799e2a68c41694e9033d65002c077d47ffdca4029311b23234844f99f67f7c6c",
+        "downloaded_sha256": "799e2a68c41694e9033d65002c077d47ffdca4029311b23234844f99f67f7c6c",
+        "matches": true
+      },
+      {
+        "path": "docs/evidence/coordination-function-20261103/function03-model.json",
+        "sha256": "a512111ebe211233e7b4bf0a3e82366ba659aab5f53540e4eea9c8c02ac07920",
+        "downloaded_sha256": "a512111ebe211233e7b4bf0a3e82366ba659aab5f53540e4eea9c8c02ac07920",
+        "matches": true
+      },
+      {
+        "path": "docs/evidence/coordination-function-20261103/function03-protocol.json",
+        "sha256": "f1c49700083fffc16ec613b4ae3460298e85187e6e48f511fc370f5599e260fd",
+        "downloaded_sha256": "f1c49700083fffc16ec613b4ae3460298e85187e6e48f511fc370f5599e260fd",
+        "matches": true
+      },
+      {
+        "path": "docs/evidence/coordination-function-20261103/published-hashes.json",
+        "sha256": "1fc9bba0477d0cbe99c0cbb5f401856d643c285fda83a59453d9c380d3a35909",
+        "downloaded_sha256": "1fc9bba0477d0cbe99c0cbb5f401856d643c285fda83a59453d9c380d3a35909",
+        "matches": true
+      },
+      {
+        "path": "docs/evidence/coordination-function-20261103/review-controls.json",
+        "sha256": "61a6c60efa213c2ce986542195e8df6849a08e7d1078ba40fdad8005a7917c77",
+        "downloaded_sha256": "61a6c60efa213c2ce986542195e8df6849a08e7d1078ba40fdad8005a7917c77",
+        "matches": true
+      },
+      {
+        "path": "docs/evidence/coordination-function-20261103/workflow-attention-v1.json",
+        "sha256": "0d5ddac214f0f757e1b70a0295cc50b1fdd3a82d408b0fa2759e5db6e7516cac",
+        "downloaded_sha256": "0d5ddac214f0f757e1b70a0295cc50b1fdd3a82d408b0fa2759e5db6e7516cac",
+        "matches": true
+      },
+      {
+        "path": "docs/evidence/coordination-function-charts-20261103/README.md",
+        "sha256": "b8bfebf34907ead834f4387bdd33c0c7bb156961f4fc8642a1e3ebf5c714cb14",
+        "downloaded_sha256": "b8bfebf34907ead834f4387bdd33c0c7bb156961f4fc8642a1e3ebf5c714cb14",
+        "matches": true
+      },
+      {
+        "path": "docs/evidence/coordination-function-charts-20261103/chart-data.json",
+        "sha256": "0545ba7e0868f486742ccd3df978f5a1a9afe24bcbf69940bb5b1f0f6b5874ec",
+        "downloaded_sha256": "0545ba7e0868f486742ccd3df978f5a1a9afe24bcbf69940bb5b1f0f6b5874ec",
+        "matches": true
+      },
+      {
+        "path": "docs/evidence/coordination-function-charts-20261103/function03-observed-cost.png",
+        "sha256": "1355c3e442cbf535005671ff16ed31cc8e77808458702b222e9465153bbca19d",
+        "downloaded_sha256": "1355c3e442cbf535005671ff16ed31cc8e77808458702b222e9465153bbca19d",
+        "matches": true
+      },
+      {
+        "path": "docs/evidence/coordination-function-charts-20261103/function03-observed-cost.svg",
+        "sha256": "70025283d3cfe5a6b012fc441ad6388cf3245bb0b6e9db42e38bb01358eec04f",
+        "downloaded_sha256": "70025283d3cfe5a6b012fc441ad6388cf3245bb0b6e9db42e38bb01358eec04f",
+        "matches": true
+      },
+      {
+        "path": "docs/evidence/coordination-function-charts-20261103/function03-slots.csv",
+        "sha256": "eb43674abd190263f05ec66a15a6dc9775334d923639b286907191b5bab446e3",
+        "downloaded_sha256": "eb43674abd190263f05ec66a15a6dc9775334d923639b286907191b5bab446e3",
+        "matches": true
+      },
+      {
+        "path": "docs/evidence/coordination-function-charts-20261103/function03-status.png",
+        "sha256": "d5997f77424e76612beef401bc4b46ff884b05653e3a1a66d9ef4f1bdf261b49",
+        "downloaded_sha256": "d5997f77424e76612beef401bc4b46ff884b05653e3a1a66d9ef4f1bdf261b49",
+        "matches": true
+      },
+      {
+        "path": "docs/evidence/coordination-function-charts-20261103/function03-status.svg",
+        "sha256": "cbcea2fa1d0fffbe5b2b9c03cb531cfac8cf19cdc9cc6db7ae85a33d8ad4f89e",
+        "downloaded_sha256": "cbcea2fa1d0fffbe5b2b9c03cb531cfac8cf19cdc9cc6db7ae85a33d8ad4f89e",
+        "matches": true
+      },
+      {
+        "path": "docs/evidence/coordination-function-charts-20261103/historical-cost.png",
+        "sha256": "43d6b5cb8d560fa4f00bd1a6ce4091850249a075a53d3cd5875da99be11867e3",
+        "downloaded_sha256": "43d6b5cb8d560fa4f00bd1a6ce4091850249a075a53d3cd5875da99be11867e3",
+        "matches": true
+      },
+      {
+        "path": "docs/evidence/coordination-function-charts-20261103/historical-cost.svg",
+        "sha256": "f81880d987e5b00e186239e282f944076385c7531b3618e49c2f1ce9263e66e9",
+        "downloaded_sha256": "f81880d987e5b00e186239e282f944076385c7531b3618e49c2f1ce9263e66e9",
+        "matches": true
+      },
+      {
+        "path": "docs/evidence/coordination-function-charts-20261103/historical-quality.csv",
+        "sha256": "3d6a0c3c4b44c097aaee8a67721aa4767ef9582ed28a64f5f873629912bd7178",
+        "downloaded_sha256": "3d6a0c3c4b44c097aaee8a67721aa4767ef9582ed28a64f5f873629912bd7178",
+        "matches": true
+      },
+      {
+        "path": "docs/evidence/coordination-function-charts-20261103/historical-quality.png",
+        "sha256": "b6ec652ac8a2944a3321acdeef139cf0641744aec2cc4359fcead98016b83ec6",
+        "downloaded_sha256": "b6ec652ac8a2944a3321acdeef139cf0641744aec2cc4359fcead98016b83ec6",
+        "matches": true
+      },
+      {
+        "path": "docs/evidence/coordination-function-charts-20261103/historical-quality.svg",
+        "sha256": "86fdecfe6b32417306ccf75a093d0633831892d5509d23976f8303a1ac847f95",
+        "downloaded_sha256": "86fdecfe6b32417306ccf75a093d0633831892d5509d23976f8303a1ac847f95",
+        "matches": true
+      },
+      {
+        "path": "docs/evidence/coordination-function-charts-20261103/historical-runs.csv",
+        "sha256": "648d5f9717e4ce3d27cab7b771ab13adbbb068079686366239d62f1aa5d0d3f8",
+        "downloaded_sha256": "648d5f9717e4ce3d27cab7b771ab13adbbb068079686366239d62f1aa5d0d3f8",
+        "matches": true
+      },
+      {
+        "path": "docs/evidence/coordination-function-charts-20261103/published-hashes.json",
+        "sha256": "9c2fdca5c7f470e485eac8baede497acdb9a5bf2e319826e1b015ed35b9a67b1",
+        "downloaded_sha256": "9c2fdca5c7f470e485eac8baede497acdb9a5bf2e319826e1b015ed35b9a67b1",
+        "matches": true
+      },
+      {
+        "path": "docs/guides/workflow-setup.md",
+        "sha256": "17dbfc8d7e972ccbaf132943a18e41f4adb07b17f716826d3afe714873dec9f8",
+        "downloaded_sha256": "17dbfc8d7e972ccbaf132943a18e41f4adb07b17f716826d3afe714873dec9f8",
+        "matches": true
+      },
+      {
+        "path": "docs/reference/coordination-contract.md",
+        "sha256": "a32aa163e717310bcc3373c6c4209325034a3dc3f30c1c8c83a963465afb4be1",
+        "downloaded_sha256": "a32aa163e717310bcc3373c6c4209325034a3dc3f30c1c8c83a963465afb4be1",
+        "matches": true
+      },
+      {
+        "path": "docs/testing/README.md",
+        "sha256": "771fa50648571f9376459b30142761051b0e46dc455bd41c0f4a523c3099389a",
+        "downloaded_sha256": "771fa50648571f9376459b30142761051b0e46dc455bd41c0f4a523c3099389a",
+        "matches": true
+      },
+      {
+        "path": "docs/testing/experiments/2026-11-03-coordination.md",
+        "sha256": "78bd5de9ac958f737cc4eec98be6858be74394e6120028b467f1490df945da02",
+        "downloaded_sha256": "78bd5de9ac958f737cc4eec98be6858be74394e6120028b467f1490df945da02",
+        "matches": true
+      },
+      {
+        "path": "docs/testing/experiments/2026-11-03-functional-workflow.md",
+        "sha256": "937f3ca1f4ec79b77444adde7be1858170060c0ac8bd36be111a94263180129f",
+        "downloaded_sha256": "937f3ca1f4ec79b77444adde7be1858170060c0ac8bd36be111a94263180129f",
+        "matches": true
+      },
+      {
+        "path": "docs/testing/sessions/coordination-charts-local-20261103.json",
+        "sha256": "ff9b32bbc0ef00e1f703f2fd5895b35d18c9a265ef5a8ffd4f1e923aec8c748d",
+        "downloaded_sha256": "ff9b32bbc0ef00e1f703f2fd5895b35d18c9a265ef5a8ffd4f1e923aec8c748d",
+        "matches": true
+      },
+      {
+        "path": "docs/testing/sessions/coordination-function-local-20261103.json",
+        "sha256": "5fac7d542c3f81c12799724b6e03a9d5418d1837722de5f2981c7045b97323f3",
+        "downloaded_sha256": "5fac7d542c3f81c12799724b6e03a9d5418d1837722de5f2981c7045b97323f3",
+        "matches": true
+      },
+      {
+        "path": "docs/testing/sessions/coordination-function-remote-20261103.json",
+        "sha256": "37e358b91729b6e926ea6ad2cea7768b0973d4765c4781e972c1ec58d174976f",
+        "downloaded_sha256": "37e358b91729b6e926ea6ad2cea7768b0973d4765c4781e972c1ec58d174976f",
+        "matches": true
+      },
+      {
+        "path": "scripts/campaign_coordination.py",
+        "sha256": "25a301df0b1b3ba3ef9ddd854d17bcf06a613db64d5ba20e323d8c70b7d3afe0",
+        "downloaded_sha256": "25a301df0b1b3ba3ef9ddd854d17bcf06a613db64d5ba20e323d8c70b7d3afe0",
+        "matches": true
+      },
+      {
+        "path": "scripts/codex_office_analysis.py",
+        "sha256": "e8a1d56765f0741c88e05b016f19c174cfc8935158766476c0dd054872da111a",
+        "downloaded_sha256": "e8a1d56765f0741c88e05b016f19c174cfc8935158766476c0dd054872da111a",
+        "matches": true
+      },
+      {
+        "path": "scripts/codex_office_pilot.py",
+        "sha256": "9c9ba3c8ba7c02d5fd46df986bff63c276c53ff37c2fc19cb459e16bc17ad05a",
+        "downloaded_sha256": "9c9ba3c8ba7c02d5fd46df986bff63c276c53ff37c2fc19cb459e16bc17ad05a",
+        "matches": true
+      },
+      {
+        "path": "scripts/coord02_audit.py",
+        "sha256": "e8789d05f6d4b2f147dec1c3027e37ccc785ff35db4e2b89919a73cb090ab0de",
+        "downloaded_sha256": "e8789d05f6d4b2f147dec1c3027e37ccc785ff35db4e2b89919a73cb090ab0de",
+        "matches": true
+      },
+      {
+        "path": "scripts/coordination_charts.py",
+        "sha256": "965457d889e65d4bb697eb29d1a1323c21a118294026c87340aca7d609d26b73",
+        "downloaded_sha256": "965457d889e65d4bb697eb29d1a1323c21a118294026c87340aca7d609d26b73",
+        "matches": true
+      },
+      {
+        "path": "scripts/coordination_evidence.py",
+        "sha256": "da12c4c6d06918d73299787b2c24b8ee4a1f6108107b664a65e47f0903c9fdbf",
+        "downloaded_sha256": "da12c4c6d06918d73299787b2c24b8ee4a1f6108107b664a65e47f0903c9fdbf",
+        "matches": true
+      },
+      {
+        "path": "scripts/empirical_pilot.py",
+        "sha256": "11035be4e44cc2098a463189fa790607aa8c56e8c5f0106d053de68c67821944",
+        "downloaded_sha256": "11035be4e44cc2098a463189fa790607aa8c56e8c5f0106d053de68c67821944",
+        "matches": true
+      },
+      {
+        "path": "scripts/empirical_render.cjs",
+        "sha256": "7e32b6efb38cc645885b47d4263bcb2edb9544b36a7243de7f71096c5083bf86",
+        "downloaded_sha256": "7e32b6efb38cc645885b47d4263bcb2edb9544b36a7243de7f71096c5083bf86",
+        "matches": true
+      },
+      {
+        "path": "scripts/function03_cases.py",
+        "sha256": "c82724e70365e4b8fc806e8e8bcb0d96827a69971a56fa921f30623e7ec4538e",
+        "downloaded_sha256": "c82724e70365e4b8fc806e8e8bcb0d96827a69971a56fa921f30623e7ec4538e",
+        "matches": true
+      },
+      {
+        "path": "scripts/function03_pilot.py",
+        "sha256": "47dede0187bc262ccb7ef0840c25ff481928e27ec1fe54ce765385c52bc7dd9f",
+        "downloaded_sha256": "47dede0187bc262ccb7ef0840c25ff481928e27ec1fe54ce765385c52bc7dd9f",
+        "matches": true
+      },
+      {
+        "path": "scripts/workflow_assets.py",
+        "sha256": "f7b15bab7d22474b8fd1c5e6089df954a59521f65a4cfc043ca8b89be901ca8f",
+        "downloaded_sha256": "f7b15bab7d22474b8fd1c5e6089df954a59521f65a4cfc043ca8b89be901ca8f",
+        "matches": true
+      },
+      {
+        "path": "scripts/workflow_setup.py",
+        "sha256": "bf094dbeb177e593bcc3b34c25b36a91938bce42dec93812328ee40f8635f574",
+        "downloaded_sha256": "bf094dbeb177e593bcc3b34c25b36a91938bce42dec93812328ee40f8635f574",
+        "matches": true
+      },
+      {
+        "path": "skills-manifest.json",
+        "sha256": "13728d6d9c666732f8bd575252c671bdbe1ce51917a8681024b30c1ae86edd35",
+        "downloaded_sha256": "13728d6d9c666732f8bd575252c671bdbe1ce51917a8681024b30c1ae86edd35",
+        "matches": true
+      },
+      {
+        "path": "skills/workflow-setup/SKILL.md",
+        "sha256": "ef159eaaccd24c1f2ad15445cd9bf4c9356188e00c905bf32a727e8ef0f3bb37",
+        "downloaded_sha256": "ef159eaaccd24c1f2ad15445cd9bf4c9356188e00c905bf32a727e8ef0f3bb37",
+        "matches": true
+      },
+      {
+        "path": "skills/workflow-setup/references/setup.md",
+        "sha256": "dfcc569cc794e3f44f119aa585aa2e4eeaeed624ff3757438b258af0e4b08ac0",
+        "downloaded_sha256": "dfcc569cc794e3f44f119aa585aa2e4eeaeed624ff3757438b258af0e4b08ac0",
+        "matches": true
+      },
+      {
+        "path": "skills/workflow-setup/scripts/workflow_setup.py",
+        "sha256": "bf094dbeb177e593bcc3b34c25b36a91938bce42dec93812328ee40f8635f574",
+        "downloaded_sha256": "bf094dbeb177e593bcc3b34c25b36a91938bce42dec93812328ee40f8635f574",
+        "matches": true
+      },
+      {
+        "path": "task/COORD-02-RESULTS.json",
+        "sha256": "f2aac16de6446e87cf2ef3646920515a27339869cf645e9166533fb9f9e96b90",
+        "downloaded_sha256": "f2aac16de6446e87cf2ef3646920515a27339869cf645e9166533fb9f9e96b90",
+        "matches": true
+      },
+      {
+        "path": "task/COORD-02.md",
+        "sha256": "2e31e14c0c8003b092f9fca30119158fe3f400463f387172432d466fbf78e7aa",
+        "downloaded_sha256": "2e31e14c0c8003b092f9fca30119158fe3f400463f387172432d466fbf78e7aa",
+        "matches": true
+      },
+      {
+        "path": "task/FUNCTION-03-RESULTS.json",
+        "sha256": "73714338598a6f0a1e44ffd41bbbe9ed8cf2c368a3520dd96d73652155e3256c",
+        "downloaded_sha256": "73714338598a6f0a1e44ffd41bbbe9ed8cf2c368a3520dd96d73652155e3256c",
+        "matches": true
+      },
+      {
+        "path": "task/FUNCTION-03.md",
+        "sha256": "21997c0cdb33e9f9452c6db14abf9539becc49ed949078f4c02e6e06c5dcbf90",
+        "downloaded_sha256": "21997c0cdb33e9f9452c6db14abf9539becc49ed949078f4c02e6e06c5dcbf90",
+        "matches": true
+      },
+      {
+        "path": "task/TASK-STATUS.md",
+        "sha256": "c4d9e4145f19e8f02866ee7b272a0bd145c5ca9952db9ac81fcc17187fbf09f8",
+        "downloaded_sha256": "c4d9e4145f19e8f02866ee7b272a0bd145c5ca9952db9ac81fcc17187fbf09f8",
+        "matches": true
+      },
+      {
+        "path": "tests/fixtures/coordination-v1.json",
+        "sha256": "4d67c53d7b2fbe13c5fc5c9630e3cd8c0b307e2112adbb061bb959b3ed424a81",
+        "downloaded_sha256": "4d67c53d7b2fbe13c5fc5c9630e3cd8c0b307e2112adbb061bb959b3ed424a81",
+        "matches": true
+      },
+      {
+        "path": "tests/fixtures/workflow-attention-v1.json",
+        "sha256": "0d5ddac214f0f757e1b70a0295cc50b1fdd3a82d408b0fa2759e5db6e7516cac",
+        "downloaded_sha256": "0d5ddac214f0f757e1b70a0295cc50b1fdd3a82d408b0fa2759e5db6e7516cac",
+        "matches": true
+      },
+      {
+        "path": "tests/test_campaign_coordination.py",
+        "sha256": "3ee6030696a067299c9245fcc9b2b6080a9432557917965c05bb05ef3b5b2670",
+        "downloaded_sha256": "3ee6030696a067299c9245fcc9b2b6080a9432557917965c05bb05ef3b5b2670",
+        "matches": true
+      },
+      {
+        "path": "tests/test_codex_office_pilot.py",
+        "sha256": "7d93feefb3df37e8d9cc3f4d8e59051a1f7ee59413c47f4df73d606f9eb693e1",
+        "downloaded_sha256": "7d93feefb3df37e8d9cc3f4d8e59051a1f7ee59413c47f4df73d606f9eb693e1",
+        "matches": true
+      },
+      {
+        "path": "tests/test_coord02_regrade.py",
+        "sha256": "196f342c48caddd7dcfd3bc3721fabfb274b7532c7423f62de6226e9b5c142c2",
+        "downloaded_sha256": "196f342c48caddd7dcfd3bc3721fabfb274b7532c7423f62de6226e9b5c142c2",
+        "matches": true
+      },
+      {
+        "path": "tests/test_coordination_charts.py",
+        "sha256": "a5d59fb6c2a978d3dcf48aa5fcc7b2c9f60199df8f7b272921f7e5b95584c905",
+        "downloaded_sha256": "a5d59fb6c2a978d3dcf48aa5fcc7b2c9f60199df8f7b272921f7e5b95584c905",
+        "matches": true
+      },
+      {
+        "path": "tests/test_coordination_evidence.py",
+        "sha256": "355a6cf1f8a02ff27676843488ceb0f88b3a190a640ac9caebfe94104531d284",
+        "downloaded_sha256": "355a6cf1f8a02ff27676843488ceb0f88b3a190a640ac9caebfe94104531d284",
+        "matches": true
+      },
+      {
+        "path": "tests/test_coordination_product.py",
+        "sha256": "8f679d64e26b9a3ed1c4b8fb080ae4b0bf59b30420cd57dfac9ee4f6b5065c16",
+        "downloaded_sha256": "8f679d64e26b9a3ed1c4b8fb080ae4b0bf59b30420cd57dfac9ee4f6b5065c16",
+        "matches": true
+      },
+      {
+        "path": "tests/test_empirical.py",
+        "sha256": "d3b4dc63ff102b590f5fcfd17d60f306c4d468673d0afdb9b65ab79a9a22b299",
+        "downloaded_sha256": "d3b4dc63ff102b590f5fcfd17d60f306c4d468673d0afdb9b65ab79a9a22b299",
+        "matches": true
+      },
+      {
+        "path": "tests/test_function03.py",
+        "sha256": "b3d95d64399618fddc63b0056d639b978899891b619b2dc57fce29c0a1150476",
+        "downloaded_sha256": "b3d95d64399618fddc63b0056d639b978899891b619b2dc57fce29c0a1150476",
+        "matches": true
+      },
+      {
+        "path": "tests/test_workflow_resume.py",
+        "sha256": "3bd64e8447358fa35bd134bcb083c1a32ea23404a82fdb5694dd8924f9b4ee6e",
+        "downloaded_sha256": "3bd64e8447358fa35bd134bcb083c1a32ea23404a82fdb5694dd8924f9b4ee6e",
+        "matches": true
+      }
+    ],
+    "count": 80,
+    "scope": "Exact Git blob bytes downloaded from GitHub raw endpoint; not execution attestation."
+  },
+  "relative_image_targets": {
+    "status": "PASS",
+    "images": [
+      {
+        "report": "2026-11-03-coordination.md",
+        "target": "docs/evidence/coordination-function-charts-20261103/historical-quality.png"
+      },
+      {
+        "report": "2026-11-03-coordination.md",
+        "target": "docs/evidence/coordination-function-charts-20261103/historical-cost.png"
+      },
+      {
+        "report": "2026-11-03-functional-workflow.md",
+        "target": "docs/evidence/coordination-function-charts-20261103/function03-status.png"
+      },
+      {
+        "report": "2026-11-03-functional-workflow.md",
+        "target": "docs/evidence/coordination-function-charts-20261103/function03-observed-cost.png"
+      }
+    ],
+    "scope": "Relative image targets resolve to exact published PNG bytes."
+  },
+  "png_render_and_visual_review": "PASS4/4",
+  "new_model_calls": 0,
+  "version_bump": false,
+  "scope": "Exact chart source SHA; this documentation receipt follow-up receives separate CI after push.",
+  "receipt_followup_ci_at_commit_time": "NOT_VERIFIED",
+  "limitations": [
+    "Historical12 calls remain historical.",
+    "FUNCTION-03 missing counters are null, not zero; no eligible efficacy/cost A/B comparison.",
+    "Rasterization can vary by sharp/font version; indexed PNGs were visually reviewed."
+  ]
+}

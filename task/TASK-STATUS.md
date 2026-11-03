@@ -2,7 +2,7 @@
 
 - Added four PNG+SVG figures directly to the two public COORD-02/FUNCTION-03 reports, with CSV/JSON, generator and byte index.
 - Historical12 outputs remain historical; FUNCTION-03 missing counters remain null. No model efficacy/cost A/B or general savings claim.
-- PNGs rendered/viewed;3 focused tests PASS. Final14/14 gates PASS;464 tests462 PASS+2skips. Exact-SHA remote checks pending push.
+- PNGs rendered/viewed;3 focused tests PASS. Final14/14 gates PASS;464 tests462 PASS+2skips. Chart source485df41 pushed; exact-SHA matrix and CodeQL PASS,80/80 bytes and4/4 PNG targets verified. [Receipt](../docs/testing/sessions/coordination-charts-remote-20261103.json). Documentation receipt follow-up receives its own CI after push.
 - No new model calls, version bump, tag/release, peer/global edits or raw-record changes.
 
 ## Earlier delivery timeline

@@ -129,7 +129,9 @@
     ],
     "review": "LAND after deterministic repair of observation alias, invalidated-budget validation and runtime-item quota false PASS.",
     "packet_index": "docs/evidence/coordination-function-20261103/published-hashes.json",
-    "receipt_followup_ci": "NOT_VERIFIED_AT_COMMIT_TIME"
+    "receipt_followup_ci": "NOT_VERIFIED_AT_COMMIT_TIME",
+    "latest_chart_source_commit": "485df41fbe8e2b1664d2b0e31e9ae913ebbf2ecb",
+    "chart_receipt": "docs/testing/sessions/coordination-charts-remote-20261103.json"
   },
   "historical_tests": {
     "session": "function03-20261103-final",
@@ -147,14 +149,14 @@
     }
   },
   "tests": {
-    "session": "coordination-function-staged-final-20261103",
+    "session": "coordination-charts-final-20261103",
     "status": "PASS",
     "gates": 14,
-    "discovered": 461,
-    "passed": 459,
+    "discovered": 464,
+    "passed": 462,
     "skipped": 2,
-    "input_fingerprint": "28b72eefa986888be5c4c8889f4ac6643e3d09b44413c442fcb3774a5b2c36f2",
-    "receipt": "docs/testing/sessions/coordination-function-local-20261103.json"
+    "input_fingerprint": "964efcd50e7005379a225af3340bd0dd6b68d92f236801639c8fe8d6c822281a",
+    "receipt": "docs/testing/sessions/coordination-charts-local-20261103.json"
   },
   "historical_unresolved": [
     {
@@ -181,7 +183,7 @@
     }
   ],
   "chart_followup": {
-    "state": "LOCAL_VERIFIED_PENDING_PUSH",
+    "state": "PUSHED_CI_VERIFIED",
     "new_model_calls": 0,
     "version_bump": false,
     "packet": "docs/evidence/coordination-function-charts-20261103/README.md",
@@ -190,11 +192,16 @@
     "png_visual_review": "PASS",
     "focused_tests": "PASS3/3",
     "local_receipt": "docs/testing/sessions/coordination-charts-local-20261103.json",
-    "commit": null,
-    "pushed": false,
-    "remote_ci": "NOT_RUN",
+    "commit": "485df41fbe8e2b1664d2b0e31e9ae913ebbf2ecb",
+    "pushed": true,
+    "remote_ci": "PASS:Windows/Linux x Python3.11/3.12;CodeQL Python/JavaScript/Actions",
     "local_gates": "PASS14/14;464 tests462 PASS+2 skips",
     "input_fingerprint": "964efcd50e7005379a225af3340bd0dd6b68d92f236801639c8fe8d6c822281a",
-    "original_packet_unchanged": true
+    "original_packet_unchanged": true,
+    "checked_sha": "485df41fbe8e2b1664d2b0e31e9ae913ebbf2ecb",
+    "public_bytes": "PASS80/80",
+    "relative_image_targets": "PASS4/4",
+    "remote_receipt": "docs/testing/sessions/coordination-charts-remote-20261103.json",
+    "receipt_followup_ci_at_commit_time": "NOT_VERIFIED"
   }
 }

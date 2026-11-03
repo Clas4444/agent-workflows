@@ -83,7 +83,7 @@ available for replay. Their retained hashes identify bytes; they do not authenti
 execution. No live combined-product, native picker or general token advantage was
 established. No globally installed skill was updated.
 
-## Delivery verification
+## Initial source delivery verification
 
 Source/evidence commit [`cf3cff1`](https://github.com/Clas4444/agent-workflows/commit/cf3cff1070d60efc31f6ee8068da5b8fa98b76f2) passed the exact-SHA Windows/Linux Python3.11/3.12 matrix and CodeQL Python/JavaScript/Actions. All61 changed public file bytes match GitHub downloads. [Remote receipt](../sessions/coordination-function-remote-20261103.json) separates this source SHA from its documentation-only follow-up. No additional model call or broader effectiveness claim follows from CI.
 
@@ -97,3 +97,5 @@ embeds. Missing values remain null; a negative control rejects zero-filled usage
 The [chart follow-up local receipt](../sessions/coordination-charts-local-20261103.json)
 records the final source checks separately from earlier delivery receipts. No
 version bump, model call or edit to the original observations is involved.
+
+Chart source [`485df41`](https://github.com/Clas4444/agent-workflows/commit/485df41fbe8e2b1664d2b0e31e9ae913ebbf2ecb) passed its exact-SHA Windows/Linux Python3.11/3.12 matrix and CodeQL Python/JavaScript/Actions. Final local checks:14/14 gates,464 tests (462 PASS,2 skips). All80 published file bytes and all four relative PNG targets match GitHub. [Chart remote receipt](../sessions/coordination-charts-remote-20261103.json) records this separately from earlier source deliveries and the documentation-only receipt follow-up.
