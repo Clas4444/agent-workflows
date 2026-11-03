@@ -101,3 +101,7 @@ native discovery and combined integration remain BLOCKED/NOT_VERIFIED. Common-v1
 local fixtures are unchanged; parent-reported peer hash equality is separate from
 live integration. Illustrations are unchanged. No global skills or peer files were
 modified. Delivery uses patch1.11.5; no release/tag is created.
+
+## Delivery verification
+
+Source/evidence commit [`cf3cff1`](https://github.com/Clas4444/agent-workflows/commit/cf3cff1070d60efc31f6ee8068da5b8fa98b76f2) passed the exact-SHA Windows/Linux Python3.11/3.12 matrix and CodeQL Python/JavaScript/Actions. All61 changed public file bytes match GitHub downloads. [Remote receipt](../sessions/coordination-function-remote-20261103.json) separates this source SHA from its documentation-only follow-up. No additional model call or broader effectiveness claim follows from CI.

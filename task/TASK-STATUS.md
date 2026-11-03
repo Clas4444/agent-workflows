@@ -1,3 +1,13 @@
+# Delivered source — 2026-11-03
+
+- Agent Workflows1.11.5 source/evidence commit `cf3cff1070d60efc31f6ee8068da5b8fa98b76f2` pushed; exact-SHA Windows/Linux Python3.11/3.12 matrix and CodeQL Python/JavaScript/Actions PASS.
+- Public61/61 changed artifacts match GitHub bytes. [Remote receipt](../docs/testing/sessions/coordination-function-remote-20261103.json).
+- Local14/14 gates,461 tests459 PASS+2skips; input pin unchanged. No additional model calls during delivery.
+- FUNCTION-03 remains3/12 consumed and paused; live model adherence, combined behavior and general savings NOT_VERIFIED.
+- This documentation receipt follow-up receives its own CI after push. Earlier pending/NO_PUSH timeline below is historical.
+
+## Prior timeline — retained history
+
 # Current delivery review — 2026-11-03
 
 - User authorized review/fix/commit/push, superseding prior NO_PUSH statements.

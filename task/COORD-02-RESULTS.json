@@ -1,6 +1,6 @@
 {
   "repo": "agent-workflows",
-  "state": "LOCAL_VERIFIED_PENDING_PUSH",
+  "state": "DELIVERED_WITH_MODEL_LIMITATIONS",
   "delivery_policy": "USER_AUTHORIZED_REVIEW_FIX_COMMIT_PUSH; no additional model calls or release/tag",
   "base_sha": "0b038de0a13c9b2da5463f832facdcd853be8696",
   "changed_paths": [
@@ -112,7 +112,8 @@
   "evidence_paths": [
     "docs/evidence/coordination-function-20261103/README.md",
     "docs/evidence/coordination-function-20261103/published-hashes.json",
-    "docs/testing/sessions/coordination-function-local-20261103.json"
+    "docs/testing/sessions/coordination-function-local-20261103.json",
+    "docs/testing/sessions/coordination-function-remote-20261103.json"
   ],
   "peer_contract_version": "coordination-v1 / workflow-attention-v1",
   "fixture_sha256": {
@@ -121,12 +122,14 @@
   },
   "report": "docs/testing/experiments/2026-11-03-coordination.md",
   "delivery": {
-    "commit": null,
-    "pushed": false,
+    "commit": "cf3cff1070d60efc31f6ee8068da5b8fa98b76f2",
+    "pushed": true,
     "checks": {
       "local": "PASS14/14;461 tests459 PASS+2 skips",
-      "receipt": "docs/testing/sessions/coordination-function-local-20261103.json",
-      "remote": "NOT_RUN"
+      "remote": "PASS:Windows/Linux x Python3.11/3.12;CodeQL Python/JavaScript/Actions",
+      "checked_sha": "cf3cff1070d60efc31f6ee8068da5b8fa98b76f2",
+      "published_bytes": "PASS61/61 exact Git blob bytes",
+      "receipt": "docs/testing/sessions/coordination-function-remote-20261103.json"
     },
     "limitations": [
       "No additional model calls. FUNCTION-03 consumed3/12 and paused; no live adherence or cost comparison.",
@@ -134,7 +137,8 @@
       "Patch1.11.5 for authorized behavior corrections; no tag/GitHub release or global install."
     ],
     "review": "LAND after deterministic repair of observation alias, invalidated-budget validation and runtime-item quota false PASS.",
-    "packet_index": "docs/evidence/coordination-function-20261103/published-hashes.json"
+    "packet_index": "docs/evidence/coordination-function-20261103/published-hashes.json",
+    "receipt_followup_ci": "NOT_VERIFIED_AT_COMMIT_TIME"
   },
   "historical_tests": {
     "session": "coord02-20261103-host-temp",
@@ -178,10 +182,7 @@
     {
       "status": "NOT_VERIFIED",
       "item": "Live combined/model adherence, clean A/B host isolation and general token savings."
-    },
-    {
-      "status": "NOT_RUN",
-      "item": "Exact-SHA remote CI and byte verification pending push."
     }
-  ]
+  ],
+  "product_state": "PUSHED_SOURCE_CI_VERIFIED"
 }
