@@ -1,0 +1,42 @@
+[
+  {
+    "dataset": "workflow",
+    "artifact": "observations.json",
+    "sha256": "e277e6b5d0d8942c888696ab424d80a152d08b08c19d55edcc3c0baf6a1db2b5"
+  },
+  {
+    "dataset": "workflow",
+    "artifact": "protocol.json",
+    "sha256": "7472ebeb2bf80d343b084cb91d523a46c67341460ca1bf10e8e1007405f4bb96"
+  },
+  {
+    "dataset": "combined",
+    "artifact": "observations.json",
+    "sha256": "e86229cb1b40f9dd7902ab92070e80e93fab3b13a2d4b7f12beb9cfefedcf2e4"
+  },
+  {
+    "dataset": "combined",
+    "artifact": "protocol.json",
+    "sha256": "d48611369a0080d8eb08f2449bf8cd9368adcbe03e2913efdf9b5a73c9437cc9"
+  },
+  {
+    "dataset": "combined",
+    "artifact": "observations-regraded.json",
+    "sha256": "7eaae16a9a021fe059cde1a8a75f050cdebc62f2abf96744ba0e2ee3236c73de"
+  },
+  {
+    "dataset": "historical-harness",
+    "artifact": "run_copilot_experiment.py",
+    "sha256": "912b18f9c6079d0c07af60769ab0b1f0c9866fe2f950d9edc8d4efdb85ca2c76"
+  },
+  {
+    "dataset": "historical-harness",
+    "artifact": "run_combined_campaign.py",
+    "sha256": "23403db8066cd094463a5e6ece549a2bd35ef66e29c8bab3520605cc611966ea"
+  },
+  {
+    "dataset": "secondary-research-report",
+    "artifact": "Academic_Research_Report_Agent_Workflows_Attention_Detailed_2026-11-03.pdf",
+    "sha256": "d34a52edf00abe7d078af6b513308df126c902605e6a9d1e5baa89371f415bf7"
+  }
+]

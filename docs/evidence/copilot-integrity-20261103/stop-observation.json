@@ -1,0 +1,10 @@
+{
+  "observed_date": "2026-11-03",
+  "workflow_cli_attempts": 0,
+  "scope": "shared stop observed before first workflow invocation",
+  "sibling_marker": {
+    "reason": "USAGE_UNAVAILABLE",
+    "owner": "agent-attention",
+    "attempt": "01-baseline"
+  }
+}

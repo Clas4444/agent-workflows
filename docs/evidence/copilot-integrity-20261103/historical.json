@@ -1,0 +1,6342 @@
+[
+  {
+    "cohort": "HISTORICAL",
+    "campaign": "workflow",
+    "case": "revision",
+    "rep": 1,
+    "arm": "workflow",
+    "candidate_calls": [
+      {
+        "before": {
+          "sorted_ids": [
+            "Q1",
+            "Q2",
+            "Q3"
+          ],
+          "total_hours": 6,
+          "capacity_status": "PASS"
+        },
+        "after": {
+          "sorted_ids": [
+            "Q1",
+            "Q2",
+            "Q4"
+          ],
+          "total_hours": 11,
+          "capacity_status": "BLOCKED"
+        },
+        "handoff": {
+          "prior_capacity_status": "STALE",
+          "delta_hours": 5,
+          "owner": null,
+          "approved": false,
+          "sent": false,
+          "next_action": "request_capacity_and_approval"
+        }
+      }
+    ],
+    "original_status": "PASS",
+    "saved_functional_status": null,
+    "strict_revision": true,
+    "order_relaxed_revision": true,
+    "semantic_revision": true,
+    "cents_independent_regrade": null,
+    "policy": true,
+    "file_integrity": "NOT_VERIFIED: historical no complete snapshot",
+    "calls": [
+      {
+        "cli": 1,
+        "seconds": 12.078660399999535,
+        "usage": {
+          "input_tokens": 18099,
+          "output_tokens": 371,
+          "cached_input_tokens": 8598,
+          "cache_write_tokens": 9498,
+          "model_requests": 1,
+          "premium_requests": 1,
+          "api_duration_ms": 5368,
+          "nano_aiu": 299226000,
+          "total_tokens": 18470
+        },
+        "actual_models": [
+          "gpt-5.6-luna"
+        ],
+        "saved_usage_matches": true,
+        "exit_code": 0
+      }
+    ],
+    "raw_hashes": [
+      {
+        "cli": 1,
+        "usage_sha256": "2918d17245f5886e055c2c191de51c66daae3c5d8007cda4b61cd9323ecb05d9"
+      }
+    ]
+  },
+  {
+    "cohort": "HISTORICAL",
+    "campaign": "workflow",
+    "case": "revision",
+    "rep": 1,
+    "arm": "manual",
+    "candidate_calls": [
+      {
+        "before": {
+          "sorted_ids": [
+            "Q2",
+            "Q1",
+            "Q3"
+          ],
+          "total_hours": 6,
+          "capacity_status": "PASS"
+        }
+      },
+      {
+        "after": {
+          "sorted_ids": [
+            "Q1",
+            "Q2",
+            "Q4"
+          ],
+          "total_hours": 11,
+          "capacity_status": "BLOCKED"
+        }
+      },
+      {
+        "handoff": {
+          "prior_capacity_status": "STALE",
+          "delta_hours": 3,
+          "owner": null,
+          "approved": false,
+          "sent": false,
+          "next_action": "request_capacity_and_approval"
+        }
+      }
+    ],
+    "original_status": "FAIL",
+    "saved_functional_status": null,
+    "strict_revision": false,
+    "order_relaxed_revision": false,
+    "semantic_revision": false,
+    "cents_independent_regrade": null,
+    "policy": true,
+    "file_integrity": "NOT_VERIFIED: historical no complete snapshot",
+    "calls": [
+      {
+        "cli": 1,
+        "seconds": 11.278726200000165,
+        "usage": {
+          "input_tokens": 17354,
+          "output_tokens": 148,
+          "cached_input_tokens": 8598,
+          "cache_write_tokens": 8753,
+          "model_requests": 1,
+          "premium_requests": 1,
+          "api_duration_ms": 4700,
+          "nano_aiu": 253841000,
+          "total_tokens": 17502
+        },
+        "actual_models": [
+          "gpt-5.6-luna"
+        ],
+        "saved_usage_matches": true,
+        "exit_code": 0
+      },
+      {
+        "cli": 2,
+        "seconds": 9.668499899999915,
+        "usage": {
+          "input_tokens": 17386,
+          "output_tokens": 147,
+          "cached_input_tokens": 8598,
+          "cache_write_tokens": 8785,
+          "model_requests": 1,
+          "premium_requests": 1,
+          "api_duration_ms": 3493,
+          "nano_aiu": 254521000,
+          "total_tokens": 17533
+        },
+        "actual_models": [
+          "gpt-5.6-luna"
+        ],
+        "saved_usage_matches": true,
+        "exit_code": 0
+      },
+      {
+        "cli": 3,
+        "seconds": 9.3974189999999,
+        "usage": {
+          "input_tokens": 17438,
+          "output_tokens": 94,
+          "cached_input_tokens": 8598,
+          "cache_write_tokens": 8837,
+          "model_requests": 1,
+          "premium_requests": 1,
+          "api_duration_ms": 2807,
+          "nano_aiu": 249461000,
+          "total_tokens": 17532
+        },
+        "actual_models": [
+          "gpt-5.6-luna"
+        ],
+        "saved_usage_matches": true,
+        "exit_code": 0
+      }
+    ],
+    "raw_hashes": [
+      {
+        "cli": 1,
+        "usage_sha256": "d2b89e01fc633b4d660947591456c06d7caf0feb35d944814bbc60dc42debe87"
+      },
+      {
+        "cli": 2,
+        "usage_sha256": "4b982609055af7a5601fb6b426458b4fea701c3ab11f5f55eee0f309cd5c8fd1"
+      },
+      {
+        "cli": 3,
+        "usage_sha256": "78f8c82a5ca81477130579ab17869a1b24127c51a0ef95487d581d2ad8bcadd8"
+      }
+    ]
+  },
+  {
+    "cohort": "HISTORICAL",
+    "campaign": "workflow",
+    "case": "revision",
+    "rep": 1,
+    "arm": "idea",
+    "candidate_calls": [
+      {
+        "before": {
+          "sorted_ids": [
+            "Q3",
+            "Q1",
+            "Q2"
+          ],
+          "total_hours": 6,
+          "capacity_status": "PASS"
+        },
+        "after": {
+          "sorted_ids": [
+            "Q1",
+            "Q4",
+            "Q2"
+          ],
+          "total_hours": 11,
+          "capacity_status": "BLOCKED"
+        },
+        "handoff": {
+          "prior_capacity_status": "STALE",
+          "delta_hours": 5,
+          "owner": null,
+          "approved": false,
+          "sent": false,
+          "next_action": "request_capacity_and_approval"
+        }
+      },
+      {
+        "before": {
+          "sorted_ids": [
+            "Q1",
+            "Q2",
+            "Q3"
+          ],
+          "total_hours": 6,
+          "capacity_status": "PASS"
+        },
+        "after": {
+          "sorted_ids": [
+            "Q1",
+            "Q2",
+            "Q4"
+          ],
+          "total_hours": 11,
+          "capacity_status": "BLOCKED"
+        },
+        "handoff": {
+          "prior_capacity_status": "STALE",
+          "delta_hours": 5,
+          "owner": null,
+          "approved": false,
+          "sent": false,
+          "next_action": "request_capacity_and_approval"
+        }
+      }
+    ],
+    "original_status": "PASS",
+    "saved_functional_status": null,
+    "strict_revision": true,
+    "order_relaxed_revision": true,
+    "semantic_revision": true,
+    "cents_independent_regrade": null,
+    "policy": true,
+    "file_integrity": "NOT_VERIFIED: historical no complete snapshot",
+    "calls": [
+      {
+        "cli": 1,
+        "seconds": 10.679469899999276,
+        "usage": {
+          "input_tokens": 17349,
+          "output_tokens": 259,
+          "cached_input_tokens": 8598,
+          "cache_write_tokens": 8748,
+          "model_requests": 1,
+          "premium_requests": 1,
+          "api_duration_ms": 4504,
+          "nano_aiu": 267036000,
+          "total_tokens": 17608
+        },
+        "actual_models": [
+          "gpt-5.6-luna"
+        ],
+        "saved_usage_matches": true,
+        "exit_code": 0
+      },
+      {
+        "cli": 2,
+        "seconds": 12.90331359999982,
+        "usage": {
+          "input_tokens": 17365,
+          "output_tokens": 365,
+          "cached_input_tokens": 8598,
+          "cache_write_tokens": 8764,
+          "model_requests": 1,
+          "premium_requests": 1,
+          "api_duration_ms": 6223,
+          "nano_aiu": 280156000,
+          "total_tokens": 17730
+        },
+        "actual_models": [
+          "gpt-5.6-luna"
+        ],
+        "saved_usage_matches": true,
+        "exit_code": 0
+      }
+    ],
+    "raw_hashes": [
+      {
+        "cli": 1,
+        "usage_sha256": "49431e64728eb458af76c13605376324694a0567e745429c020dd3d878b3be64"
+      },
+      {
+        "cli": 2,
+        "usage_sha256": "c5809582947cf56e09c8923518c23fd815f08e7f8f79ee958df913ecb9f0464d"
+      }
+    ]
+  },
+  {
+    "cohort": "HISTORICAL",
+    "campaign": "workflow",
+    "case": "revision",
+    "rep": 1,
+    "arm": "exhaustive",
+    "candidate_calls": [
+      {
+        "before": {
+          "sorted_ids": [
+            "Q1",
+            "Q2",
+            "Q3"
+          ],
+          "total_hours": 6,
+          "capacity_status": "PASS"
+        },
+        "after": {
+          "sorted_ids": [
+            "Q1",
+            "Q2",
+            "Q4"
+          ],
+          "total_hours": 11,
+          "capacity_status": "BLOCKED"
+        },
+        "handoff": {
+          "prior_capacity_status": "STALE",
+          "delta_hours": 5,
+          "owner": null,
+          "approved": false,
+          "sent": false,
+          "next_action": "request_capacity_and_approval"
+        }
+      }
+    ],
+    "original_status": "PASS",
+    "saved_functional_status": null,
+    "strict_revision": true,
+    "order_relaxed_revision": true,
+    "semantic_revision": true,
+    "cents_independent_regrade": null,
+    "policy": true,
+    "file_integrity": "NOT_VERIFIED: historical no complete snapshot",
+    "calls": [
+      {
+        "cli": 1,
+        "seconds": 9.647187600000507,
+        "usage": {
+          "input_tokens": 17406,
+          "output_tokens": 168,
+          "cached_input_tokens": 8598,
+          "cache_write_tokens": 8805,
+          "model_requests": 1,
+          "premium_requests": 1,
+          "api_duration_ms": 3288,
+          "nano_aiu": 257541000,
+          "total_tokens": 17574
+        },
+        "actual_models": [
+          "gpt-5.6-luna"
+        ],
+        "saved_usage_matches": true,
+        "exit_code": 0
+      }
+    ],
+    "raw_hashes": [
+      {
+        "cli": 1,
+        "usage_sha256": "a4ac76a1b1dee3bde6272cac6775d7ae78fd6fbea80e4fccc2b2786c2536bc7f"
+      }
+    ]
+  },
+  {
+    "cohort": "HISTORICAL",
+    "campaign": "workflow",
+    "case": "revision",
+    "rep": 2,
+    "arm": "workflow",
+    "candidate_calls": [
+      {
+        "before": {
+          "sorted_ids": [
+            "Q1",
+            "Q2",
+            "Q3"
+          ],
+          "total_hours": 6,
+          "capacity_status": "PASS"
+        },
+        "after": {
+          "sorted_ids": [
+            "Q1",
+            "Q2",
+            "Q4"
+          ],
+          "total_hours": 11,
+          "capacity_status": "BLOCKED"
+        },
+        "handoff": {
+          "prior_capacity_status": "STALE",
+          "delta_hours": 5,
+          "owner": null,
+          "approved": false,
+          "sent": false,
+          "next_action": "request_capacity_and_approval"
+        }
+      }
+    ],
+    "original_status": "PASS",
+    "saved_functional_status": null,
+    "strict_revision": true,
+    "order_relaxed_revision": true,
+    "semantic_revision": true,
+    "cents_independent_regrade": null,
+    "policy": true,
+    "file_integrity": "NOT_VERIFIED: historical no complete snapshot",
+    "calls": [
+      {
+        "cli": 1,
+        "seconds": 10.706416299999546,
+        "usage": {
+          "input_tokens": 18097,
+          "output_tokens": 283,
+          "cached_input_tokens": 8598,
+          "cache_write_tokens": 9496,
+          "model_requests": 1,
+          "premium_requests": 1,
+          "api_duration_ms": 4367,
+          "nano_aiu": 288616000,
+          "total_tokens": 18380
+        },
+        "actual_models": [
+          "gpt-5.6-luna"
+        ],
+        "saved_usage_matches": true,
+        "exit_code": 0
+      }
+    ],
+    "raw_hashes": [
+      {
+        "cli": 1,
+        "usage_sha256": "2317ad9d99855fc6e9b0112f7f7e0cc3adb42666e8c95fa9a0f5a9eb0c990ad5"
+      }
+    ]
+  },
+  {
+    "cohort": "HISTORICAL",
+    "campaign": "workflow",
+    "case": "revision",
+    "rep": 2,
+    "arm": "manual",
+    "candidate_calls": [
+      {
+        "before": {
+          "sorted_ids": [
+            "Q2",
+            "Q1",
+            "Q3"
+          ],
+          "total_hours": 6,
+          "capacity_status": "PASS"
+        }
+      },
+      {
+        "after": {
+          "sorted_ids": [
+            "Q1",
+            "Q2",
+            "Q4"
+          ],
+          "total_hours": 11,
+          "capacity_status": "BLOCKED"
+        }
+      },
+      {
+        "handoff": {
+          "prior_capacity_status": "STALE",
+          "delta_hours": 5,
+          "owner": null,
+          "approved": false,
+          "sent": false,
+          "next_action": "request_capacity_and_approval"
+        }
+      }
+    ],
+    "original_status": "FAIL",
+    "saved_functional_status": null,
+    "strict_revision": false,
+    "order_relaxed_revision": true,
+    "semantic_revision": true,
+    "cents_independent_regrade": null,
+    "policy": true,
+    "file_integrity": "NOT_VERIFIED: historical no complete snapshot",
+    "calls": [
+      {
+        "cli": 1,
+        "seconds": 12.423298499999873,
+        "usage": {
+          "input_tokens": 17355,
+          "output_tokens": 267,
+          "cached_input_tokens": 8598,
+          "cache_write_tokens": 8754,
+          "model_requests": 1,
+          "premium_requests": 1,
+          "api_duration_ms": 5940,
+          "nano_aiu": 268146000,
+          "total_tokens": 17622
+        },
+        "actual_models": [
+          "gpt-5.6-luna"
+        ],
+        "saved_usage_matches": true,
+        "exit_code": 0
+      },
+      {
+        "cli": 2,
+        "seconds": 9.510603500000798,
+        "usage": {
+          "input_tokens": 17381,
+          "output_tokens": 121,
+          "cached_input_tokens": 8598,
+          "cache_write_tokens": 8780,
+          "model_requests": 1,
+          "premium_requests": 1,
+          "api_duration_ms": 3425,
+          "nano_aiu": 251276000,
+          "total_tokens": 17502
+        },
+        "actual_models": [
+          "gpt-5.6-luna"
+        ],
+        "saved_usage_matches": true,
+        "exit_code": 0
+      },
+      {
+        "cli": 3,
+        "seconds": 9.81717800000024,
+        "usage": {
+          "input_tokens": 17440,
+          "output_tokens": 107,
+          "cached_input_tokens": 8598,
+          "cache_write_tokens": 8839,
+          "model_requests": 1,
+          "premium_requests": 1,
+          "api_duration_ms": 3779,
+          "nano_aiu": 251071000,
+          "total_tokens": 17547
+        },
+        "actual_models": [
+          "gpt-5.6-luna"
+        ],
+        "saved_usage_matches": true,
+        "exit_code": 0
+      }
+    ],
+    "raw_hashes": [
+      {
+        "cli": 1,
+        "usage_sha256": "d8a02256015ccd06f49e4b5dbd2037b9b04b3b493e1b4bde29fc6cdc13502682"
+      },
+      {
+        "cli": 2,
+        "usage_sha256": "f06d2d7611fc770be03d7cbd82971b9fc4fd276c0c24885781c10f8cf7c75961"
+      },
+      {
+        "cli": 3,
+        "usage_sha256": "0eacce26e1a0c27fa04fe6cbe10207b34c74a52394aed0201f53e409fc2333b5"
+      }
+    ]
+  },
+  {
+    "cohort": "HISTORICAL",
+    "campaign": "workflow",
+    "case": "revision",
+    "rep": 2,
+    "arm": "idea",
+    "candidate_calls": [
+      {
+        "before": {
+          "sorted_ids": [
+            "Q2",
+            "Q1",
+            "Q3"
+          ],
+          "total_hours": 6,
+          "capacity_status": "PASS"
+        },
+        "after": {
+          "sorted_ids": [
+            "Q2",
+            "Q1",
+            "Q4"
+          ],
+          "total_hours": 11,
+          "capacity_status": "BLOCKED"
+        },
+        "handoff": {
+          "prior_capacity_status": "STALE",
+          "delta_hours": 5,
+          "owner": null,
+          "approved": false,
+          "sent": false,
+          "next_action": "request_capacity_and_approval"
+        }
+      },
+      {
+        "before": {
+          "sorted_ids": [
+            "Q1",
+            "Q2",
+            "Q3"
+          ],
+          "total_hours": 6,
+          "capacity_status": "PASS"
+        },
+        "after": {
+          "sorted_ids": [
+            "Q1",
+            "Q2",
+            "Q4"
+          ],
+          "total_hours": 11,
+          "capacity_status": "BLOCKED"
+        },
+        "handoff": {
+          "prior_capacity_status": "STALE",
+          "delta_hours": 5,
+          "owner": null,
+          "approved": false,
+          "sent": false,
+          "next_action": "request_capacity_and_approval"
+        }
+      }
+    ],
+    "original_status": "PASS",
+    "saved_functional_status": null,
+    "strict_revision": true,
+    "order_relaxed_revision": true,
+    "semantic_revision": true,
+    "cents_independent_regrade": null,
+    "policy": true,
+    "file_integrity": "NOT_VERIFIED: historical no complete snapshot",
+    "calls": [
+      {
+        "cli": 1,
+        "seconds": 11.180519800000184,
+        "usage": {
+          "input_tokens": 17350,
+          "output_tokens": 294,
+          "cached_input_tokens": 8598,
+          "cache_write_tokens": 8749,
+          "model_requests": 1,
+          "premium_requests": 1,
+          "api_duration_ms": 4976,
+          "nano_aiu": 271261000,
+          "total_tokens": 17644
+        },
+        "actual_models": [
+          "gpt-5.6-luna"
+        ],
+        "saved_usage_matches": true,
+        "exit_code": 0
+      },
+      {
+        "cli": 2,
+        "seconds": 12.175159700000222,
+        "usage": {
+          "input_tokens": 17368,
+          "output_tokens": 453,
+          "cached_input_tokens": 8598,
+          "cache_write_tokens": 8767,
+          "model_requests": 1,
+          "premium_requests": 1,
+          "api_duration_ms": 6143,
+          "nano_aiu": 290791000,
+          "total_tokens": 17821
+        },
+        "actual_models": [
+          "gpt-5.6-luna"
+        ],
+        "saved_usage_matches": true,
+        "exit_code": 0
+      }
+    ],
+    "raw_hashes": [
+      {
+        "cli": 1,
+        "usage_sha256": "6e6d584690cdc3b724f550aabd09ce43688f69263558847f50593b0a48867c2a"
+      },
+      {
+        "cli": 2,
+        "usage_sha256": "6769e0cefc79d8a6097ca74426316d4d38c27b8aa8196d096919ad0d66af3ed2"
+      }
+    ]
+  },
+  {
+    "cohort": "HISTORICAL",
+    "campaign": "workflow",
+    "case": "revision",
+    "rep": 2,
+    "arm": "exhaustive",
+    "candidate_calls": [
+      {
+        "before": {
+          "sorted_ids": [
+            "Q1",
+            "Q2",
+            "Q3"
+          ],
+          "total_hours": 6,
+          "capacity_status": "PASS"
+        },
+        "after": {
+          "sorted_ids": [
+            "Q1",
+            "Q2",
+            "Q4"
+          ],
+          "total_hours": 11,
+          "capacity_status": "BLOCKED"
+        },
+        "handoff": {
+          "prior_capacity_status": "STALE",
+          "delta_hours": 5,
+          "owner": null,
+          "approved": false,
+          "sent": false,
+          "next_action": "request_capacity_and_approval"
+        }
+      }
+    ],
+    "original_status": "PASS",
+    "saved_functional_status": null,
+    "strict_revision": true,
+    "order_relaxed_revision": true,
+    "semantic_revision": true,
+    "cents_independent_regrade": null,
+    "policy": true,
+    "file_integrity": "NOT_VERIFIED: historical no complete snapshot",
+    "calls": [
+      {
+        "cli": 1,
+        "seconds": 12.264271199999712,
+        "usage": {
+          "input_tokens": 17405,
+          "output_tokens": 169,
+          "cached_input_tokens": 8598,
+          "cache_write_tokens": 8804,
+          "model_requests": 1,
+          "premium_requests": 1,
+          "api_duration_ms": 5970,
+          "nano_aiu": 257636000,
+          "total_tokens": 17574
+        },
+        "actual_models": [
+          "gpt-5.6-luna"
+        ],
+        "saved_usage_matches": true,
+        "exit_code": 0
+      }
+    ],
+    "raw_hashes": [
+      {
+        "cli": 1,
+        "usage_sha256": "99e39656e22970bfff3ead5fe4fcea45e2f59d91da1b31b1665b65526d93abc9"
+      }
+    ]
+  },
+  {
+    "cohort": "HISTORICAL",
+    "campaign": "workflow",
+    "case": "revision",
+    "rep": 3,
+    "arm": "workflow",
+    "candidate_calls": [
+      {
+        "before": {
+          "sorted_ids": [
+            "Q1",
+            "Q2",
+            "Q3"
+          ],
+          "total_hours": 6,
+          "capacity_status": "PASS"
+        },
+        "after": {
+          "sorted_ids": [
+            "Q1",
+            "Q2",
+            "Q4"
+          ],
+          "total_hours": 11,
+          "capacity_status": "BLOCKED"
+        },
+        "handoff": {
+          "prior_capacity_status": "STALE",
+          "delta_hours": 5,
+          "owner": null,
+          "approved": false,
+          "sent": false,
+          "next_action": "request_capacity_and_approval"
+        }
+      }
+    ],
+    "original_status": "PASS",
+    "saved_functional_status": null,
+    "strict_revision": true,
+    "order_relaxed_revision": true,
+    "semantic_revision": true,
+    "cents_independent_regrade": null,
+    "policy": true,
+    "file_integrity": "NOT_VERIFIED: historical no complete snapshot",
+    "calls": [
+      {
+        "cli": 1,
+        "seconds": 13.009411799999725,
+        "usage": {
+          "input_tokens": 18100,
+          "output_tokens": 324,
+          "cached_input_tokens": 8598,
+          "cache_write_tokens": 9499,
+          "model_requests": 1,
+          "premium_requests": 1,
+          "api_duration_ms": 6456,
+          "nano_aiu": 293611000,
+          "total_tokens": 18424
+        },
+        "actual_models": [
+          "gpt-5.6-luna"
+        ],
+        "saved_usage_matches": true,
+        "exit_code": 0
+      }
+    ],
+    "raw_hashes": [
+      {
+        "cli": 1,
+        "usage_sha256": "4c196c82caf36744781793bff6921d1dc6db933d7868c5e9d25c679504f90aea"
+      }
+    ]
+  },
+  {
+    "cohort": "HISTORICAL",
+    "campaign": "workflow",
+    "case": "revision",
+    "rep": 3,
+    "arm": "manual",
+    "candidate_calls": [
+      {
+        "before": {
+          "sorted_ids": [
+            "Q3",
+            "Q1",
+            "Q2"
+          ],
+          "total_hours": 6,
+          "capacity_status": "PASS"
+        }
+      },
+      {
+        "after": {
+          "sorted_ids": [
+            "Q1",
+            "Q2",
+            "Q4"
+          ],
+          "total_hours": 11,
+          "capacity_status": "BLOCKED"
+        }
+      },
+      {
+        "handoff": {
+          "prior_capacity_status": "STALE",
+          "delta_hours": 5,
+          "owner": null,
+          "approved": false,
+          "sent": false,
+          "next_action": "request_capacity_and_approval"
+        }
+      }
+    ],
+    "original_status": "FAIL",
+    "saved_functional_status": null,
+    "strict_revision": false,
+    "order_relaxed_revision": true,
+    "semantic_revision": true,
+    "cents_independent_regrade": null,
+    "policy": true,
+    "file_integrity": "NOT_VERIFIED: historical no complete snapshot",
+    "calls": [
+      {
+        "cli": 1,
+        "seconds": 10.859824899999694,
+        "usage": {
+          "input_tokens": 17355,
+          "output_tokens": 102,
+          "cached_input_tokens": 8598,
+          "cache_write_tokens": 8754,
+          "model_requests": 1,
+          "premium_requests": 1,
+          "api_duration_ms": 4139,
+          "nano_aiu": 248346000,
+          "total_tokens": 17457
+        },
+        "actual_models": [
+          "gpt-5.6-luna"
+        ],
+        "saved_usage_matches": true,
+        "exit_code": 0
+      },
+      {
+        "cli": 2,
+        "seconds": 9.19654780000019,
+        "usage": {
+          "input_tokens": 17385,
+          "output_tokens": 132,
+          "cached_input_tokens": 8598,
+          "cache_write_tokens": 8784,
+          "model_requests": 1,
+          "premium_requests": 1,
+          "api_duration_ms": 3251,
+          "nano_aiu": 252696000,
+          "total_tokens": 17517
+        },
+        "actual_models": [
+          "gpt-5.6-luna"
+        ],
+        "saved_usage_matches": true,
+        "exit_code": 0
+      },
+      {
+        "cli": 3,
+        "seconds": 10.260619399999996,
+        "usage": {
+          "input_tokens": 17440,
+          "output_tokens": 86,
+          "cached_input_tokens": 8598,
+          "cache_write_tokens": 8839,
+          "model_requests": 1,
+          "premium_requests": 1,
+          "api_duration_ms": 3983,
+          "nano_aiu": 248551000,
+          "total_tokens": 17526
+        },
+        "actual_models": [
+          "gpt-5.6-luna"
+        ],
+        "saved_usage_matches": true,
+        "exit_code": 0
+      }
+    ],
+    "raw_hashes": [
+      {
+        "cli": 1,
+        "usage_sha256": "10a198a41cbd0942069046f483d3518fc012fd36adad817bca46badb3c4a93b5"
+      },
+      {
+        "cli": 2,
+        "usage_sha256": "c9022dc2d6faf316295e7b23fd13b1c0c938fabc1007ead5e121425775387bb9"
+      },
+      {
+        "cli": 3,
+        "usage_sha256": "94854e5553223716bb7381db46cdc45d5e456ab4bff43922c5428cfb1263fa4f"
+      }
+    ]
+  },
+  {
+    "cohort": "HISTORICAL",
+    "campaign": "workflow",
+    "case": "revision",
+    "rep": 3,
+    "arm": "idea",
+    "candidate_calls": [
+      {
+        "before": {
+          "sorted_ids": [
+            "Q3",
+            "Q1",
+            "Q2"
+          ],
+          "total_hours": 6,
+          "capacity_status": "PASS"
+        },
+        "after": {
+          "sorted_ids": [
+            "Q1",
+            "Q4",
+            "Q2"
+          ],
+          "total_hours": 11,
+          "capacity_status": "BLOCKED"
+        },
+        "handoff": {
+          "prior_capacity_status": "STALE",
+          "delta_hours": 5,
+          "owner": null,
+          "approved": false,
+          "sent": false,
+          "next_action": "request_capacity_and_approval"
+        }
+      },
+      {
+        "before": {
+          "sorted_ids": [
+            "Q2",
+            "Q1",
+            "Q3"
+          ],
+          "total_hours": 6,
+          "capacity_status": "PASS"
+        },
+        "after": {
+          "sorted_ids": [
+            "Q2",
+            "Q1",
+            "Q4"
+          ],
+          "total_hours": 11,
+          "capacity_status": "BLOCKED"
+        },
+        "handoff": {
+          "prior_capacity_status": "STALE",
+          "delta_hours": 5,
+          "owner": null,
+          "approved": false,
+          "sent": false,
+          "next_action": "request_capacity_and_approval"
+        }
+      }
+    ],
+    "original_status": "FAIL",
+    "saved_functional_status": null,
+    "strict_revision": false,
+    "order_relaxed_revision": true,
+    "semantic_revision": true,
+    "cents_independent_regrade": null,
+    "policy": true,
+    "file_integrity": "NOT_VERIFIED: historical no complete snapshot",
+    "calls": [
+      {
+        "cli": 1,
+        "seconds": 10.624138299999686,
+        "usage": {
+          "input_tokens": 17348,
+          "output_tokens": 224,
+          "cached_input_tokens": 8598,
+          "cache_write_tokens": 8747,
+          "model_requests": 1,
+          "premium_requests": 1,
+          "api_duration_ms": 4193,
+          "nano_aiu": 262811000,
+          "total_tokens": 17572
+        },
+        "actual_models": [
+          "gpt-5.6-luna"
+        ],
+        "saved_usage_matches": true,
+        "exit_code": 0
+      },
+      {
+        "cli": 2,
+        "seconds": 11.734219499999199,
+        "usage": {
+          "input_tokens": 17364,
+          "output_tokens": 303,
+          "cached_input_tokens": 8598,
+          "cache_write_tokens": 8763,
+          "model_requests": 1,
+          "premium_requests": 1,
+          "api_duration_ms": 5259,
+          "nano_aiu": 272691000,
+          "total_tokens": 17667
+        },
+        "actual_models": [
+          "gpt-5.6-luna"
+        ],
+        "saved_usage_matches": true,
+        "exit_code": 0
+      }
+    ],
+    "raw_hashes": [
+      {
+        "cli": 1,
+        "usage_sha256": "7f6152b669a9a853415dea25c372038e4f33a06e68be371fcb9cba818162b818"
+      },
+      {
+        "cli": 2,
+        "usage_sha256": "cbdbe3391b393a7e93b21801761bcf0429c094d2ccd73a2742c9f2692bdc99bc"
+      }
+    ]
+  },
+  {
+    "cohort": "HISTORICAL",
+    "campaign": "workflow",
+    "case": "revision",
+    "rep": 3,
+    "arm": "exhaustive",
+    "candidate_calls": [
+      {
+        "before": {
+          "sorted_ids": [
+            "Q1",
+            "Q2",
+            "Q3"
+          ],
+          "total_hours": 6,
+          "capacity_status": "PASS"
+        },
+        "after": {
+          "sorted_ids": [
+            "Q1",
+            "Q2",
+            "Q4"
+          ],
+          "total_hours": 11,
+          "capacity_status": "BLOCKED"
+        },
+        "handoff": {
+          "prior_capacity_status": "STALE",
+          "delta_hours": 5,
+          "owner": null,
+          "approved": false,
+          "sent": false,
+          "next_action": "request_capacity_and_approval"
+        }
+      }
+    ],
+    "original_status": "PASS",
+    "saved_functional_status": null,
+    "strict_revision": true,
+    "order_relaxed_revision": true,
+    "semantic_revision": true,
+    "cents_independent_regrade": null,
+    "policy": true,
+    "file_integrity": "NOT_VERIFIED: historical no complete snapshot",
+    "calls": [
+      {
+        "cli": 1,
+        "seconds": 9.856130400000438,
+        "usage": {
+          "input_tokens": 17403,
+          "output_tokens": 180,
+          "cached_input_tokens": 8598,
+          "cache_write_tokens": 8802,
+          "model_requests": 1,
+          "premium_requests": 1,
+          "api_duration_ms": 3688,
+          "nano_aiu": 258906000,
+          "total_tokens": 17583
+        },
+        "actual_models": [
+          "gpt-5.6-luna"
+        ],
+        "saved_usage_matches": true,
+        "exit_code": 0
+      }
+    ],
+    "raw_hashes": [
+      {
+        "cli": 1,
+        "usage_sha256": "32161b310f75afd3e1c120b9b4a5a2994a83f41e9b510a06eab2aacf71713034"
+      }
+    ]
+  },
+  {
+    "cohort": "HISTORICAL",
+    "campaign": "workflow",
+    "case": "revision",
+    "rep": 4,
+    "arm": "workflow",
+    "candidate_calls": [
+      {
+        "before": {
+          "sorted_ids": [
+            "Q3",
+            "Q1",
+            "Q2"
+          ],
+          "total_hours": 6,
+          "capacity_status": "PASS"
+        },
+        "after": {
+          "sorted_ids": [
+            "Q1",
+            "Q4",
+            "Q2"
+          ],
+          "total_hours": 11,
+          "capacity_status": "BLOCKED"
+        },
+        "handoff": {
+          "prior_capacity_status": "STALE",
+          "delta_hours": 5,
+          "owner": null,
+          "approved": false,
+          "sent": false,
+          "next_action": "request_capacity_and_approval"
+        }
+      }
+    ],
+    "original_status": "FAIL",
+    "saved_functional_status": null,
+    "strict_revision": false,
+    "order_relaxed_revision": true,
+    "semantic_revision": true,
+    "cents_independent_regrade": null,
+    "policy": true,
+    "file_integrity": "NOT_VERIFIED: historical no complete snapshot",
+    "calls": [
+      {
+        "cli": 1,
+        "seconds": 10.691510300000118,
+        "usage": {
+          "input_tokens": 18099,
+          "output_tokens": 236,
+          "cached_input_tokens": 8598,
+          "cache_write_tokens": 9498,
+          "model_requests": 1,
+          "premium_requests": 1,
+          "api_duration_ms": 4189,
+          "nano_aiu": 283026000,
+          "total_tokens": 18335
+        },
+        "actual_models": [
+          "gpt-5.6-luna"
+        ],
+        "saved_usage_matches": true,
+        "exit_code": 0
+      }
+    ],
+    "raw_hashes": [
+      {
+        "cli": 1,
+        "usage_sha256": "a48affca91a88fe50d8a67940c2db62ca8037b5c3f8be2bdd3ce62c863b65a32"
+      }
+    ]
+  },
+  {
+    "cohort": "HISTORICAL",
+    "campaign": "workflow",
+    "case": "revision",
+    "rep": 4,
+    "arm": "manual",
+    "candidate_calls": [
+      {
+        "before": {
+          "sorted_ids": [
+            "Q3",
+            "Q1",
+            "Q2"
+          ],
+          "total_hours": 6,
+          "capacity_status": "PASS"
+        }
+      },
+      {
+        "after": {
+          "sorted_ids": [
+            "Q1",
+            "Q2",
+            "Q4"
+          ],
+          "total_hours": 11,
+          "capacity_status": "BLOCKED"
+        }
+      },
+      {
+        "handoff": {
+          "prior_capacity_status": "STALE",
+          "delta_hours": 5,
+          "owner": null,
+          "approved": false,
+          "sent": false,
+          "next_action": "request_capacity_and_approval"
+        }
+      }
+    ],
+    "original_status": "FAIL",
+    "saved_functional_status": null,
+    "strict_revision": false,
+    "order_relaxed_revision": true,
+    "semantic_revision": true,
+    "cents_independent_regrade": null,
+    "policy": true,
+    "file_integrity": "NOT_VERIFIED: historical no complete snapshot",
+    "calls": [
+      {
+        "cli": 1,
+        "seconds": 11.003922899999452,
+        "usage": {
+          "input_tokens": 17353,
+          "output_tokens": 199,
+          "cached_input_tokens": 8598,
+          "cache_write_tokens": 8752,
+          "model_requests": 1,
+          "premium_requests": 1,
+          "api_duration_ms": 5104,
+          "nano_aiu": 259936000,
+          "total_tokens": 17552
+        },
+        "actual_models": [
+          "gpt-5.6-luna"
+        ],
+        "saved_usage_matches": true,
+        "exit_code": 0
+      },
+      {
+        "cli": 2,
+        "seconds": 8.780365099999472,
+        "usage": {
+          "input_tokens": 17383,
+          "output_tokens": 95,
+          "cached_input_tokens": 8598,
+          "cache_write_tokens": 8782,
+          "model_requests": 1,
+          "premium_requests": 1,
+          "api_duration_ms": 2726,
+          "nano_aiu": 248206000,
+          "total_tokens": 17478
+        },
+        "actual_models": [
+          "gpt-5.6-luna"
+        ],
+        "saved_usage_matches": true,
+        "exit_code": 0
+      },
+      {
+        "cli": 3,
+        "seconds": 9.53981980000026,
+        "usage": {
+          "input_tokens": 17447,
+          "output_tokens": 87,
+          "cached_input_tokens": 8598,
+          "cache_write_tokens": 8846,
+          "model_requests": 1,
+          "premium_requests": 1,
+          "api_duration_ms": 3125,
+          "nano_aiu": 248846000,
+          "total_tokens": 17534
+        },
+        "actual_models": [
+          "gpt-5.6-luna"
+        ],
+        "saved_usage_matches": true,
+        "exit_code": 0
+      }
+    ],
+    "raw_hashes": [
+      {
+        "cli": 1,
+        "usage_sha256": "fd9fde699308778897e25b1c52a8cff144f0b6954d3cb6d9d30bc7336349e072"
+      },
+      {
+        "cli": 2,
+        "usage_sha256": "28e52a7dd26f755543fafb058a0d2d8411aee2f08a364954718bb0840cdcb6df"
+      },
+      {
+        "cli": 3,
+        "usage_sha256": "83675017502d8d5241828b44946d7f919b7bc9159694e9e360d156b402c997d4"
+      }
+    ]
+  },
+  {
+    "cohort": "HISTORICAL",
+    "campaign": "workflow",
+    "case": "revision",
+    "rep": 4,
+    "arm": "idea",
+    "candidate_calls": [
+      {
+        "before": {
+          "sorted_ids": [
+            "Q3",
+            "Q1",
+            "Q2"
+          ],
+          "total_hours": 6,
+          "capacity_status": "PASS"
+        },
+        "after": {
+          "sorted_ids": [
+            "Q1",
+            "Q4",
+            "Q2"
+          ],
+          "total_hours": 11,
+          "capacity_status": "BLOCKED"
+        },
+        "handoff": {
+          "prior_capacity_status": "STALE",
+          "delta_hours": 5,
+          "owner": null,
+          "approved": false,
+          "sent": false,
+          "next_action": "request_capacity_and_approval"
+        }
+      },
+      {
+        "before": {
+          "sorted_ids": [
+            "Q3",
+            "Q1",
+            "Q2"
+          ],
+          "total_hours": 6,
+          "capacity_status": "PASS"
+        },
+        "after": {
+          "sorted_ids": [
+            "Q1",
+            "Q4",
+            "Q2"
+          ],
+          "total_hours": 11,
+          "capacity_status": "BLOCKED"
+        },
+        "handoff": {
+          "prior_capacity_status": "STALE",
+          "delta_hours": 5,
+          "owner": null,
+          "approved": false,
+          "sent": false,
+          "next_action": "request_capacity_and_approval"
+        }
+      }
+    ],
+    "original_status": "FAIL",
+    "saved_functional_status": null,
+    "strict_revision": false,
+    "order_relaxed_revision": true,
+    "semantic_revision": true,
+    "cents_independent_regrade": null,
+    "policy": true,
+    "file_integrity": "NOT_VERIFIED: historical no complete snapshot",
+    "calls": [
+      {
+        "cli": 1,
+        "seconds": 10.958837199999834,
+        "usage": {
+          "input_tokens": 17348,
+          "output_tokens": 225,
+          "cached_input_tokens": 8598,
+          "cache_write_tokens": 8747,
+          "model_requests": 1,
+          "premium_requests": 1,
+          "api_duration_ms": 4244,
+          "nano_aiu": 262931000,
+          "total_tokens": 17573
+        },
+        "actual_models": [
+          "gpt-5.6-luna"
+        ],
+        "saved_usage_matches": true,
+        "exit_code": 0
+      },
+      {
+        "cli": 2,
+        "seconds": 10.928881199999523,
+        "usage": {
+          "input_tokens": 17368,
+          "output_tokens": 266,
+          "cached_input_tokens": 8598,
+          "cache_write_tokens": 8767,
+          "model_requests": 1,
+          "premium_requests": 1,
+          "api_duration_ms": 4635,
+          "nano_aiu": 268351000,
+          "total_tokens": 17634
+        },
+        "actual_models": [
+          "gpt-5.6-luna"
+        ],
+        "saved_usage_matches": true,
+        "exit_code": 0
+      }
+    ],
+    "raw_hashes": [
+      {
+        "cli": 1,
+        "usage_sha256": "43fb09a29ab1f3271d261245db0b7cce3fb3d7eeb1b56014f171a74e4fab7b2b"
+      },
+      {
+        "cli": 2,
+        "usage_sha256": "4b2c6d24b468bcdf8155091a4b0271d687e5c6ff107587a2bc67b20004905003"
+      }
+    ]
+  },
+  {
+    "cohort": "HISTORICAL",
+    "campaign": "workflow",
+    "case": "revision",
+    "rep": 4,
+    "arm": "exhaustive",
+    "candidate_calls": [
+      {
+        "before": {
+          "sorted_ids": [
+            "Q1",
+            "Q2",
+            "Q3"
+          ],
+          "total_hours": 6,
+          "capacity_status": "PASS"
+        },
+        "after": {
+          "sorted_ids": [
+            "Q1",
+            "Q2",
+            "Q4"
+          ],
+          "total_hours": 11,
+          "capacity_status": "BLOCKED"
+        },
+        "handoff": {
+          "prior_capacity_status": "STALE",
+          "delta_hours": 5,
+          "owner": null,
+          "approved": false,
+          "sent": false,
+          "next_action": "request_capacity_and_approval"
+        }
+      }
+    ],
+    "original_status": "PASS",
+    "saved_functional_status": null,
+    "strict_revision": true,
+    "order_relaxed_revision": true,
+    "semantic_revision": true,
+    "cents_independent_regrade": null,
+    "policy": true,
+    "file_integrity": "NOT_VERIFIED: historical no complete snapshot",
+    "calls": [
+      {
+        "cli": 1,
+        "seconds": 10.647369399999661,
+        "usage": {
+          "input_tokens": 17405,
+          "output_tokens": 169,
+          "cached_input_tokens": 8598,
+          "cache_write_tokens": 8804,
+          "model_requests": 1,
+          "premium_requests": 1,
+          "api_duration_ms": 4007,
+          "nano_aiu": 257636000,
+          "total_tokens": 17574
+        },
+        "actual_models": [
+          "gpt-5.6-luna"
+        ],
+        "saved_usage_matches": true,
+        "exit_code": 0
+      }
+    ],
+    "raw_hashes": [
+      {
+        "cli": 1,
+        "usage_sha256": "b1b0d6556f77b52923c6e8ae20ab9ef27861fe6b7b8bca744b45cbbc4a71bfc8"
+      }
+    ]
+  },
+  {
+    "cohort": "HISTORICAL",
+    "campaign": "workflow",
+    "case": "revision",
+    "rep": 5,
+    "arm": "workflow",
+    "candidate_calls": [
+      {
+        "before": {
+          "sorted_ids": [
+            "Q2",
+            "Q1",
+            "Q3"
+          ],
+          "total_hours": 6,
+          "capacity_status": "PASS"
+        },
+        "after": {
+          "sorted_ids": [
+            "Q2",
+            "Q1",
+            "Q4"
+          ],
+          "total_hours": 11,
+          "capacity_status": "BLOCKED"
+        },
+        "handoff": {
+          "prior_capacity_status": "STALE",
+          "delta_hours": 5,
+          "owner": null,
+          "approved": false,
+          "sent": false,
+          "next_action": "request_capacity_and_approval"
+        }
+      }
+    ],
+    "original_status": "FAIL",
+    "saved_functional_status": null,
+    "strict_revision": false,
+    "order_relaxed_revision": true,
+    "semantic_revision": true,
+    "cents_independent_regrade": null,
+    "policy": true,
+    "file_integrity": "NOT_VERIFIED: historical no complete snapshot",
+    "calls": [
+      {
+        "cli": 1,
+        "seconds": 14.685207999999875,
+        "usage": {
+          "input_tokens": 18098,
+          "output_tokens": 449,
+          "cached_input_tokens": 8598,
+          "cache_write_tokens": 9497,
+          "model_requests": 1,
+          "premium_requests": 1,
+          "api_duration_ms": 8075,
+          "nano_aiu": 308561000,
+          "total_tokens": 18547
+        },
+        "actual_models": [
+          "gpt-5.6-luna"
+        ],
+        "saved_usage_matches": true,
+        "exit_code": 0
+      }
+    ],
+    "raw_hashes": [
+      {
+        "cli": 1,
+        "usage_sha256": "0a68ab73d9c43d1228b61035df41bfff598755771438bb540624f467cf9d45c2"
+      }
+    ]
+  },
+  {
+    "cohort": "HISTORICAL",
+    "campaign": "workflow",
+    "case": "revision",
+    "rep": 5,
+    "arm": "manual",
+    "candidate_calls": [
+      {
+        "before": {
+          "sorted_ids": [
+            "Q3",
+            "Q1",
+            "Q2"
+          ],
+          "total_hours": 6,
+          "capacity_status": "PASS"
+        }
+      },
+      {
+        "after": {
+          "sorted_ids": [
+            "Q1",
+            "Q4",
+            "Q2"
+          ],
+          "total_hours": 11,
+          "capacity_status": "BLOCKED"
+        }
+      },
+      {
+        "handoff": {
+          "prior_capacity_status": "STALE",
+          "delta_hours": 5,
+          "owner": null,
+          "approved": false,
+          "sent": false,
+          "next_action": "request_capacity_and_approval"
+        }
+      }
+    ],
+    "original_status": "FAIL",
+    "saved_functional_status": null,
+    "strict_revision": false,
+    "order_relaxed_revision": true,
+    "semantic_revision": true,
+    "cents_independent_regrade": null,
+    "policy": true,
+    "file_integrity": "NOT_VERIFIED: historical no complete snapshot",
+    "calls": [
+      {
+        "cli": 1,
+        "seconds": 10.064518199999839,
+        "usage": {
+          "input_tokens": 17352,
+          "output_tokens": 95,
+          "cached_input_tokens": 8598,
+          "cache_write_tokens": 8751,
+          "model_requests": 1,
+          "premium_requests": 1,
+          "api_duration_ms": 3987,
+          "nano_aiu": 247431000,
+          "total_tokens": 17447
+        },
+        "actual_models": [
+          "gpt-5.6-luna"
+        ],
+        "saved_usage_matches": true,
+        "exit_code": 0
+      },
+      {
+        "cli": 2,
+        "seconds": 11.358130699999492,
+        "usage": {
+          "input_tokens": 17381,
+          "output_tokens": 268,
+          "cached_input_tokens": 8598,
+          "cache_write_tokens": 8780,
+          "model_requests": 1,
+          "premium_requests": 1,
+          "api_duration_ms": 5478,
+          "nano_aiu": 268916000,
+          "total_tokens": 17649
+        },
+        "actual_models": [
+          "gpt-5.6-luna"
+        ],
+        "saved_usage_matches": true,
+        "exit_code": 0
+      },
+      {
+        "cli": 3,
+        "seconds": 10.978405999999268,
+        "usage": {
+          "input_tokens": 17446,
+          "output_tokens": 92,
+          "cached_input_tokens": 8598,
+          "cache_write_tokens": 8845,
+          "model_requests": 1,
+          "premium_requests": 1,
+          "api_duration_ms": 4334,
+          "nano_aiu": 249421000,
+          "total_tokens": 17538
+        },
+        "actual_models": [
+          "gpt-5.6-luna"
+        ],
+        "saved_usage_matches": true,
+        "exit_code": 0
+      }
+    ],
+    "raw_hashes": [
+      {
+        "cli": 1,
+        "usage_sha256": "6e773b159ec1d39f930a4628d45557b7f7b8b1675cb123899798d1d781b6c84f"
+      },
+      {
+        "cli": 2,
+        "usage_sha256": "6162ce62e990b8851ce653047e715e048657607041b17309c72900eb01fff604"
+      },
+      {
+        "cli": 3,
+        "usage_sha256": "d79ed3f1061f327d9e45984930b40689f119d0144f0e6f266261fbc83b24f1ec"
+      }
+    ]
+  },
+  {
+    "cohort": "HISTORICAL",
+    "campaign": "workflow",
+    "case": "revision",
+    "rep": 5,
+    "arm": "idea",
+    "candidate_calls": [
+      {
+        "before": {
+          "sorted_ids": [
+            "Q2",
+            "Q1",
+            "Q3"
+          ],
+          "total_hours": 6,
+          "capacity_status": "PASS"
+        },
+        "after": {
+          "sorted_ids": [
+            "Q2",
+            "Q1",
+            "Q4"
+          ],
+          "total_hours": 11,
+          "capacity_status": "BLOCKED"
+        },
+        "handoff": {
+          "prior_capacity_status": "STALE",
+          "delta_hours": 5,
+          "owner": null,
+          "approved": false,
+          "sent": false,
+          "next_action": "request_capacity_and_approval"
+        }
+      },
+      {
+        "before": {
+          "sorted_ids": [
+            "Q3",
+            "Q1",
+            "Q2"
+          ],
+          "total_hours": 6,
+          "capacity_status": "PASS"
+        },
+        "after": {
+          "sorted_ids": [
+            "Q1",
+            "Q4",
+            "Q2"
+          ],
+          "total_hours": 11,
+          "capacity_status": "BLOCKED"
+        },
+        "handoff": {
+          "prior_capacity_status": "STALE",
+          "delta_hours": 5,
+          "owner": null,
+          "approved": false,
+          "sent": false,
+          "next_action": "request_capacity_and_approval"
+        }
+      }
+    ],
+    "original_status": "FAIL",
+    "saved_functional_status": null,
+    "strict_revision": false,
+    "order_relaxed_revision": true,
+    "semantic_revision": true,
+    "cents_independent_regrade": null,
+    "policy": true,
+    "file_integrity": "NOT_VERIFIED: historical no complete snapshot",
+    "calls": [
+      {
+        "cli": 1,
+        "seconds": 12.429875400000128,
+        "usage": {
+          "input_tokens": 17351,
+          "output_tokens": 265,
+          "cached_input_tokens": 8598,
+          "cache_write_tokens": 8750,
+          "model_requests": 1,
+          "premium_requests": 1,
+          "api_duration_ms": 6093,
+          "nano_aiu": 267806000,
+          "total_tokens": 17616
+        },
+        "actual_models": [
+          "gpt-5.6-luna"
+        ],
+        "saved_usage_matches": true,
+        "exit_code": 0
+      },
+      {
+        "cli": 2,
+        "seconds": 11.521360799999457,
+        "usage": {
+          "input_tokens": 17370,
+          "output_tokens": 263,
+          "cached_input_tokens": 8598,
+          "cache_write_tokens": 8769,
+          "model_requests": 1,
+          "premium_requests": 1,
+          "api_duration_ms": 5123,
+          "nano_aiu": 268041000,
+          "total_tokens": 17633
+        },
+        "actual_models": [
+          "gpt-5.6-luna"
+        ],
+        "saved_usage_matches": true,
+        "exit_code": 0
+      }
+    ],
+    "raw_hashes": [
+      {
+        "cli": 1,
+        "usage_sha256": "32e24d7a2520ada1bb455d9cb2e998646c9eaef2ca787efe84529e5bfc487b98"
+      },
+      {
+        "cli": 2,
+        "usage_sha256": "819cd8398869fa6f2764097ba6d7ca7e50755772d3261c65569ec8eabb9f351b"
+      }
+    ]
+  },
+  {
+    "cohort": "HISTORICAL",
+    "campaign": "workflow",
+    "case": "revision",
+    "rep": 5,
+    "arm": "exhaustive",
+    "candidate_calls": [
+      {
+        "before": {
+          "sorted_ids": [
+            "Q1",
+            "Q2",
+            "Q3"
+          ],
+          "total_hours": 6,
+          "capacity_status": "PASS"
+        },
+        "after": {
+          "sorted_ids": [
+            "Q1",
+            "Q2",
+            "Q4"
+          ],
+          "total_hours": 11,
+          "capacity_status": "BLOCKED"
+        },
+        "handoff": {
+          "prior_capacity_status": "STALE",
+          "delta_hours": 5,
+          "owner": null,
+          "approved": false,
+          "sent": false,
+          "next_action": "request_capacity_and_approval"
+        }
+      }
+    ],
+    "original_status": "PASS",
+    "saved_functional_status": null,
+    "strict_revision": true,
+    "order_relaxed_revision": true,
+    "semantic_revision": true,
+    "cents_independent_regrade": null,
+    "policy": true,
+    "file_integrity": "NOT_VERIFIED: historical no complete snapshot",
+    "calls": [
+      {
+        "cli": 1,
+        "seconds": 10.265127699999539,
+        "usage": {
+          "input_tokens": 17408,
+          "output_tokens": 164,
+          "cached_input_tokens": 8598,
+          "cache_write_tokens": 8807,
+          "model_requests": 1,
+          "premium_requests": 1,
+          "api_duration_ms": 3790,
+          "nano_aiu": 257111000,
+          "total_tokens": 17572
+        },
+        "actual_models": [
+          "gpt-5.6-luna"
+        ],
+        "saved_usage_matches": true,
+        "exit_code": 0
+      }
+    ],
+    "raw_hashes": [
+      {
+        "cli": 1,
+        "usage_sha256": "5a869d787f89a95db2f8e643d33b43ca46bea22e58c002754d168ee3f98dc9cd"
+      }
+    ]
+  },
+  {
+    "cohort": "HISTORICAL",
+    "campaign": "combined",
+    "case": "revision",
+    "rep": 1,
+    "arm": "workflow",
+    "candidate_calls": [
+      {
+        "before": {
+          "sorted_ids": [
+            "Q1",
+            "Q2",
+            "Q3"
+          ],
+          "total_hours": 6,
+          "capacity_status": "PASS"
+        },
+        "after": {
+          "sorted_ids": [
+            "Q1",
+            "Q2",
+            "Q4"
+          ],
+          "total_hours": 11,
+          "capacity_status": "BLOCKED"
+        },
+        "handoff": {
+          "prior_capacity_status": "STALE",
+          "delta_hours": 5,
+          "owner": null,
+          "approved": false,
+          "sent": false,
+          "next_action": "request_capacity_and_approval"
+        }
+      }
+    ],
+    "original_status": "PASS",
+    "saved_functional_status": "PASS",
+    "strict_revision": true,
+    "order_relaxed_revision": true,
+    "semantic_revision": true,
+    "cents_independent_regrade": null,
+    "policy": true,
+    "file_integrity": "NOT_VERIFIED: historical no complete snapshot",
+    "calls": [
+      {
+        "cli": 1,
+        "seconds": 14.811609800000952,
+        "usage": {
+          "input_tokens": 18049,
+          "output_tokens": 381,
+          "cached_input_tokens": 8598,
+          "cache_write_tokens": 9448,
+          "model_requests": 1,
+          "premium_requests": 1,
+          "api_duration_ms": 8861,
+          "nano_aiu": 299176000,
+          "total_tokens": 18430
+        },
+        "actual_models": [
+          "gpt-5.6-luna"
+        ],
+        "saved_usage_matches": true,
+        "exit_code": 0
+      }
+    ],
+    "raw_hashes": [
+      {
+        "cli": 1,
+        "usage_sha256": "8e29640c604e21186a8cc93428f073a3f5eee54916167ea0301850809e478d75"
+      }
+    ]
+  },
+  {
+    "cohort": "HISTORICAL",
+    "campaign": "combined",
+    "case": "revision",
+    "rep": 1,
+    "arm": "attention",
+    "candidate_calls": [
+      {
+        "before": {
+          "sorted_ids": [
+            "Q1",
+            "Q2",
+            "Q3"
+          ],
+          "total_hours": 6,
+          "capacity_status": "PASS"
+        },
+        "after": {
+          "sorted_ids": [
+            "Q1",
+            "Q2",
+            "Q4"
+          ],
+          "total_hours": 11,
+          "capacity_status": "BLOCKED"
+        },
+        "handoff": {
+          "prior_capacity_status": "STALE",
+          "delta_hours": 5,
+          "owner": null,
+          "approved": false,
+          "sent": false,
+          "next_action": "request_capacity_and_approval"
+        }
+      }
+    ],
+    "original_status": "PASS",
+    "saved_functional_status": "PASS",
+    "strict_revision": true,
+    "order_relaxed_revision": true,
+    "semantic_revision": true,
+    "cents_independent_regrade": null,
+    "policy": true,
+    "file_integrity": "NOT_VERIFIED: historical no complete snapshot",
+    "calls": [
+      {
+        "cli": 1,
+        "seconds": 12.006085600000006,
+        "usage": {
+          "input_tokens": 18747,
+          "output_tokens": 284,
+          "cached_input_tokens": 8598,
+          "cache_write_tokens": 10146,
+          "model_requests": 1,
+          "premium_requests": 1,
+          "api_duration_ms": 5114,
+          "nano_aiu": 304986000,
+          "total_tokens": 19031
+        },
+        "actual_models": [
+          "gpt-5.6-luna"
+        ],
+        "saved_usage_matches": true,
+        "exit_code": 0
+      }
+    ],
+    "raw_hashes": [
+      {
+        "cli": 1,
+        "usage_sha256": "dccf81011bfa7ea74f7bd945cd85a4439dbe74e9b3f2f7fe66ed255772647f56"
+      }
+    ]
+  },
+  {
+    "cohort": "HISTORICAL",
+    "campaign": "combined",
+    "case": "revision",
+    "rep": 1,
+    "arm": "combined",
+    "candidate_calls": [
+      {
+        "before": {
+          "sorted_ids": [
+            "Q1",
+            "Q2",
+            "Q3"
+          ],
+          "total_hours": 6,
+          "capacity_status": "PASS"
+        },
+        "after": {
+          "sorted_ids": [
+            "Q1",
+            "Q2",
+            "Q4"
+          ],
+          "total_hours": 11,
+          "capacity_status": "BLOCKED"
+        },
+        "handoff": {
+          "prior_capacity_status": "STALE",
+          "delta_hours": 5,
+          "owner": null,
+          "approved": false,
+          "sent": false,
+          "next_action": "request_capacity_and_approval"
+        }
+      }
+    ],
+    "original_status": "PASS",
+    "saved_functional_status": "PASS",
+    "strict_revision": true,
+    "order_relaxed_revision": true,
+    "semantic_revision": true,
+    "cents_independent_regrade": null,
+    "policy": true,
+    "file_integrity": "NOT_VERIFIED: historical no complete snapshot",
+    "calls": [
+      {
+        "cli": 1,
+        "seconds": 13.968592600000193,
+        "usage": {
+          "input_tokens": 19495,
+          "output_tokens": 411,
+          "cached_input_tokens": 8598,
+          "cache_write_tokens": 10894,
+          "model_requests": 1,
+          "premium_requests": 1,
+          "api_duration_ms": 7847,
+          "nano_aiu": 338926000,
+          "total_tokens": 19906
+        },
+        "actual_models": [
+          "gpt-5.6-luna"
+        ],
+        "saved_usage_matches": true,
+        "exit_code": 0
+      }
+    ],
+    "raw_hashes": [
+      {
+        "cli": 1,
+        "usage_sha256": "d027b93ce38b80fbb8aa04657849f408bc8a2c78bf96ff32f0251a18cd34fd6a"
+      }
+    ]
+  },
+  {
+    "cohort": "HISTORICAL",
+    "campaign": "combined",
+    "case": "revision",
+    "rep": 1,
+    "arm": "manual",
+    "candidate_calls": [
+      {
+        "sorted_ids": [
+          "Q1",
+          "Q2",
+          "Q3"
+        ],
+        "total_hours": 6,
+        "capacity_status": "PASS"
+      },
+      {
+        "sorted_ids": [
+          "Q1",
+          "Q2",
+          "Q4"
+        ],
+        "total_hours": 11,
+        "capacity_status": "BLOCKED"
+      },
+      {
+        "prior_capacity_status": "STALE",
+        "delta_hours": 5,
+        "owner": null,
+        "approved": false,
+        "sent": false,
+        "next_action": "request_capacity_and_approval"
+      }
+    ],
+    "original_status": "FAIL",
+    "saved_functional_status": "FAIL",
+    "strict_revision": false,
+    "order_relaxed_revision": false,
+    "semantic_revision": true,
+    "cents_independent_regrade": null,
+    "policy": true,
+    "file_integrity": "NOT_VERIFIED: historical no complete snapshot",
+    "calls": [
+      {
+        "cli": 1,
+        "seconds": 10.875851499999044,
+        "usage": {
+          "input_tokens": 17285,
+          "output_tokens": 159,
+          "cached_input_tokens": 8598,
+          "cache_write_tokens": 8684,
+          "model_requests": 1,
+          "premium_requests": 1,
+          "api_duration_ms": 5312,
+          "nano_aiu": 253436000,
+          "total_tokens": 17444
+        },
+        "actual_models": [
+          "gpt-5.6-luna"
+        ],
+        "saved_usage_matches": true,
+        "exit_code": 0
+      },
+      {
+        "cli": 2,
+        "seconds": 8.990213099999892,
+        "usage": {
+          "input_tokens": 17287,
+          "output_tokens": 93,
+          "cached_input_tokens": 8598,
+          "cache_write_tokens": 8686,
+          "model_requests": 1,
+          "premium_requests": 1,
+          "api_duration_ms": 3127,
+          "nano_aiu": 245566000,
+          "total_tokens": 17380
+        },
+        "actual_models": [
+          "gpt-5.6-luna"
+        ],
+        "saved_usage_matches": true,
+        "exit_code": 0
+      },
+      {
+        "cli": 3,
+        "seconds": 12.325822700000572,
+        "usage": {
+          "input_tokens": 17287,
+          "output_tokens": 114,
+          "cached_input_tokens": 8598,
+          "cache_write_tokens": 8686,
+          "model_requests": 1,
+          "premium_requests": 1,
+          "api_duration_ms": 5709,
+          "nano_aiu": 248086000,
+          "total_tokens": 17401
+        },
+        "actual_models": [
+          "gpt-5.6-luna"
+        ],
+        "saved_usage_matches": true,
+        "exit_code": 0
+      }
+    ],
+    "raw_hashes": [
+      {
+        "cli": 1,
+        "usage_sha256": "79644281cc191f87615322dfeeb356b49b1664e54c4a9a50a6d72483774a7d69"
+      },
+      {
+        "cli": 2,
+        "usage_sha256": "4db7d37eb666fe7bacf97590dbe41b3459cd5f94ea8aede5adcaa633069deb38"
+      },
+      {
+        "cli": 3,
+        "usage_sha256": "0d0dc9305bd4c00375bcf288941aa1ca8df469352b876de14b4f9101819ebb8c"
+      }
+    ]
+  },
+  {
+    "cohort": "HISTORICAL",
+    "campaign": "combined",
+    "case": "revision",
+    "rep": 1,
+    "arm": "idea",
+    "candidate_calls": [
+      {
+        "before": {
+          "sorted_ids": [
+            "Q1",
+            "Q2",
+            "Q3"
+          ],
+          "total_hours": 6,
+          "capacity_status": "PASS"
+        },
+        "after": {
+          "sorted_ids": [
+            "Q1",
+            "Q2",
+            "Q4"
+          ],
+          "total_hours": 11,
+          "capacity_status": "BLOCKED"
+        },
+        "handoff": {
+          "prior_capacity_status": "STALE",
+          "delta_hours": 5,
+          "owner": null,
+          "approved": false,
+          "sent": false,
+          "next_action": "request_capacity_and_approval"
+        }
+      },
+      {
+        "before": {
+          "sorted_ids": [
+            "Q1",
+            "Q2",
+            "Q3"
+          ],
+          "total_hours": 6,
+          "capacity_status": "PASS"
+        },
+        "after": {
+          "sorted_ids": [
+            "Q1",
+            "Q2",
+            "Q4"
+          ],
+          "total_hours": 11,
+          "capacity_status": "BLOCKED"
+        },
+        "handoff": {
+          "prior_capacity_status": "STALE",
+          "delta_hours": 5,
+          "owner": null,
+          "approved": false,
+          "sent": false,
+          "next_action": "request_capacity_and_approval"
+        }
+      }
+    ],
+    "original_status": "PASS",
+    "saved_functional_status": "PASS",
+    "strict_revision": true,
+    "order_relaxed_revision": true,
+    "semantic_revision": true,
+    "cents_independent_regrade": null,
+    "policy": true,
+    "file_integrity": "NOT_VERIFIED: historical no complete snapshot",
+    "calls": [
+      {
+        "cli": 1,
+        "seconds": 10.713126900000134,
+        "usage": {
+          "input_tokens": 17290,
+          "output_tokens": 233,
+          "cached_input_tokens": 8598,
+          "cache_write_tokens": 8689,
+          "model_requests": 1,
+          "premium_requests": 1,
+          "api_duration_ms": 4608,
+          "nano_aiu": 262441000,
+          "total_tokens": 17523
+        },
+        "actual_models": [
+          "gpt-5.6-luna"
+        ],
+        "saved_usage_matches": true,
+        "exit_code": 0
+      },
+      {
+        "cli": 2,
+        "seconds": 11.192429700000503,
+        "usage": {
+          "input_tokens": 17300,
+          "output_tokens": 298,
+          "cached_input_tokens": 8598,
+          "cache_write_tokens": 8699,
+          "model_requests": 1,
+          "premium_requests": 1,
+          "api_duration_ms": 5200,
+          "nano_aiu": 270491000,
+          "total_tokens": 17598
+        },
+        "actual_models": [
+          "gpt-5.6-luna"
+        ],
+        "saved_usage_matches": true,
+        "exit_code": 0
+      }
+    ],
+    "raw_hashes": [
+      {
+        "cli": 1,
+        "usage_sha256": "e0b81db31492ed781258effc0df61a300e47bce64aaca913455bc31e96403e59"
+      },
+      {
+        "cli": 2,
+        "usage_sha256": "61fa130288e22829b0f4593365e04f36c309594c6df31f0e311635252e27446c"
+      }
+    ]
+  },
+  {
+    "cohort": "HISTORICAL",
+    "campaign": "combined",
+    "case": "revision",
+    "rep": 1,
+    "arm": "exhaustive",
+    "candidate_calls": [
+      {
+        "before": {
+          "sorted_ids": [
+            "Q1",
+            "Q2",
+            "Q3"
+          ],
+          "total_hours": 6,
+          "capacity_status": "PASS"
+        },
+        "after": {
+          "sorted_ids": [
+            "Q1",
+            "Q2",
+            "Q4"
+          ],
+          "total_hours": 11,
+          "capacity_status": "BLOCKED"
+        },
+        "handoff": {
+          "prior_capacity_status": "STALE",
+          "delta_hours": 5,
+          "owner": null,
+          "approved": false,
+          "sent": false,
+          "next_action": "request_capacity_and_approval"
+        }
+      }
+    ],
+    "original_status": "PASS",
+    "saved_functional_status": "PASS",
+    "strict_revision": true,
+    "order_relaxed_revision": true,
+    "semantic_revision": true,
+    "cents_independent_regrade": null,
+    "policy": true,
+    "file_integrity": "NOT_VERIFIED: historical no complete snapshot",
+    "calls": [
+      {
+        "cli": 1,
+        "seconds": 12.62212399999953,
+        "usage": {
+          "input_tokens": 17334,
+          "output_tokens": 143,
+          "cached_input_tokens": 8598,
+          "cache_write_tokens": 8733,
+          "model_requests": 1,
+          "premium_requests": 1,
+          "api_duration_ms": 6233,
+          "nano_aiu": 252741000,
+          "total_tokens": 17477
+        },
+        "actual_models": [
+          "gpt-5.6-luna"
+        ],
+        "saved_usage_matches": true,
+        "exit_code": 0
+      }
+    ],
+    "raw_hashes": [
+      {
+        "cli": 1,
+        "usage_sha256": "defb7ee22e6e6033fe0138f91e1dbc3bdaf221f64cc807b0ce0599d1892a50c2"
+      }
+    ]
+  },
+  {
+    "cohort": "HISTORICAL",
+    "campaign": "combined",
+    "case": "revision",
+    "rep": 2,
+    "arm": "workflow",
+    "candidate_calls": [
+      {
+        "before": {
+          "sorted_ids": [
+            "Q2",
+            "Q1",
+            "Q3"
+          ],
+          "total_hours": 6,
+          "capacity_status": "PASS"
+        },
+        "after": {
+          "sorted_ids": [
+            "Q2",
+            "Q1",
+            "Q4"
+          ],
+          "total_hours": 11,
+          "capacity_status": "BLOCKED"
+        },
+        "handoff": {
+          "prior_capacity_status": "STALE",
+          "delta_hours": 5,
+          "owner": null,
+          "approved": false,
+          "sent": false,
+          "next_action": "request_capacity_and_approval"
+        }
+      }
+    ],
+    "original_status": "FAIL",
+    "saved_functional_status": "FAIL",
+    "strict_revision": false,
+    "order_relaxed_revision": true,
+    "semantic_revision": true,
+    "cents_independent_regrade": null,
+    "policy": true,
+    "file_integrity": "NOT_VERIFIED: historical no complete snapshot",
+    "calls": [
+      {
+        "cli": 1,
+        "seconds": 11.234920399998373,
+        "usage": {
+          "input_tokens": 18046,
+          "output_tokens": 244,
+          "cached_input_tokens": 8598,
+          "cache_write_tokens": 9445,
+          "model_requests": 1,
+          "premium_requests": 1,
+          "api_duration_ms": 5094,
+          "nano_aiu": 282661000,
+          "total_tokens": 18290
+        },
+        "actual_models": [
+          "gpt-5.6-luna"
+        ],
+        "saved_usage_matches": true,
+        "exit_code": 0
+      }
+    ],
+    "raw_hashes": [
+      {
+        "cli": 1,
+        "usage_sha256": "21939fcd5d7912981ffced810c3ec9bb3fde6debd5b66d80e2358bebba1180a5"
+      }
+    ]
+  },
+  {
+    "cohort": "HISTORICAL",
+    "campaign": "combined",
+    "case": "revision",
+    "rep": 2,
+    "arm": "attention",
+    "candidate_calls": [
+      {
+        "before": {
+          "sorted_ids": [
+            "Q3",
+            "Q1",
+            "Q2"
+          ],
+          "total_hours": 6,
+          "capacity_status": "PASS"
+        },
+        "after": {
+          "sorted_ids": [
+            "Q1",
+            "Q4",
+            "Q2"
+          ],
+          "total_hours": 11,
+          "capacity_status": "BLOCKED"
+        },
+        "handoff": {
+          "prior_capacity_status": "STALE",
+          "delta_hours": 5,
+          "owner": null,
+          "approved": false,
+          "sent": false,
+          "next_action": "request_capacity_and_approval"
+        }
+      }
+    ],
+    "original_status": "FAIL",
+    "saved_functional_status": "FAIL",
+    "strict_revision": false,
+    "order_relaxed_revision": true,
+    "semantic_revision": true,
+    "cents_independent_regrade": null,
+    "policy": true,
+    "file_integrity": "NOT_VERIFIED: historical no complete snapshot",
+    "calls": [
+      {
+        "cli": 1,
+        "seconds": 12.249155399998926,
+        "usage": {
+          "input_tokens": 18753,
+          "output_tokens": 256,
+          "cached_input_tokens": 8598,
+          "cache_write_tokens": 10152,
+          "model_requests": 1,
+          "premium_requests": 1,
+          "api_duration_ms": 5197,
+          "nano_aiu": 301776000,
+          "total_tokens": 19009
+        },
+        "actual_models": [
+          "gpt-5.6-luna"
+        ],
+        "saved_usage_matches": true,
+        "exit_code": 0
+      }
+    ],
+    "raw_hashes": [
+      {
+        "cli": 1,
+        "usage_sha256": "401803b5dbd6ce3ec76d7e19dbf7aa6d4975f952e160874e495cd1c622d5057f"
+      }
+    ]
+  },
+  {
+    "cohort": "HISTORICAL",
+    "campaign": "combined",
+    "case": "revision",
+    "rep": 2,
+    "arm": "combined",
+    "candidate_calls": [
+      {
+        "before": {
+          "sorted_ids": [
+            "Q1",
+            "Q2",
+            "Q3"
+          ],
+          "total_hours": 6,
+          "capacity_status": "PASS"
+        },
+        "after": {
+          "sorted_ids": [
+            "Q1",
+            "Q2",
+            "Q4"
+          ],
+          "total_hours": 11,
+          "capacity_status": "BLOCKED"
+        },
+        "handoff": {
+          "prior_capacity_status": "STALE",
+          "delta_hours": 5,
+          "owner": null,
+          "approved": false,
+          "sent": false,
+          "next_action": "request_capacity_and_approval"
+        }
+      }
+    ],
+    "original_status": "PASS",
+    "saved_functional_status": "PASS",
+    "strict_revision": true,
+    "order_relaxed_revision": true,
+    "semantic_revision": true,
+    "cents_independent_regrade": null,
+    "policy": true,
+    "file_integrity": "NOT_VERIFIED: historical no complete snapshot",
+    "calls": [
+      {
+        "cli": 1,
+        "seconds": 12.741843899999367,
+        "usage": {
+          "input_tokens": 19492,
+          "output_tokens": 318,
+          "cached_input_tokens": 8598,
+          "cache_write_tokens": 10891,
+          "model_requests": 1,
+          "premium_requests": 1,
+          "api_duration_ms": 6678,
+          "nano_aiu": 327691000,
+          "total_tokens": 19810
+        },
+        "actual_models": [
+          "gpt-5.6-luna"
+        ],
+        "saved_usage_matches": true,
+        "exit_code": 0
+      }
+    ],
+    "raw_hashes": [
+      {
+        "cli": 1,
+        "usage_sha256": "f6bbc6aa5e9864c0cd64d9a41e2e6b4b9a722d07bdb1eae44794a3c87355834c"
+      }
+    ]
+  },
+  {
+    "cohort": "HISTORICAL",
+    "campaign": "combined",
+    "case": "revision",
+    "rep": 2,
+    "arm": "manual",
+    "candidate_calls": [
+      {
+        "sorted_ids": [
+          "Q1",
+          "Q2",
+          "Q3"
+        ],
+        "total_hours": 6,
+        "capacity_status": "PASS"
+      },
+      {
+        "sorted_ids": [
+          "Q1",
+          "Q2",
+          "Q4"
+        ],
+        "total_hours": 11,
+        "capacity_status": "BLOCKED"
+      },
+      {
+        "prior_capacity_status": "STALE",
+        "delta_hours": 5,
+        "owner": null,
+        "approved": false,
+        "sent": false,
+        "next_action": "request_capacity_and_approval"
+      }
+    ],
+    "original_status": "FAIL",
+    "saved_functional_status": "FAIL",
+    "strict_revision": false,
+    "order_relaxed_revision": false,
+    "semantic_revision": true,
+    "cents_independent_regrade": null,
+    "policy": true,
+    "file_integrity": "NOT_VERIFIED: historical no complete snapshot",
+    "calls": [
+      {
+        "cli": 1,
+        "seconds": 10.713346000000456,
+        "usage": {
+          "input_tokens": 17288,
+          "output_tokens": 99,
+          "cached_input_tokens": 8598,
+          "cache_write_tokens": 8687,
+          "model_requests": 1,
+          "premium_requests": 1,
+          "api_duration_ms": 4455,
+          "nano_aiu": 246311000,
+          "total_tokens": 17387
+        },
+        "actual_models": [
+          "gpt-5.6-luna"
+        ],
+        "saved_usage_matches": true,
+        "exit_code": 0
+      },
+      {
+        "cli": 2,
+        "seconds": 9.949944699999833,
+        "usage": {
+          "input_tokens": 17287,
+          "output_tokens": 95,
+          "cached_input_tokens": 8598,
+          "cache_write_tokens": 8686,
+          "model_requests": 1,
+          "premium_requests": 1,
+          "api_duration_ms": 4097,
+          "nano_aiu": 245806000,
+          "total_tokens": 17382
+        },
+        "actual_models": [
+          "gpt-5.6-luna"
+        ],
+        "saved_usage_matches": true,
+        "exit_code": 0
+      },
+      {
+        "cli": 3,
+        "seconds": 10.057214100001147,
+        "usage": {
+          "input_tokens": 17288,
+          "output_tokens": 101,
+          "cached_input_tokens": 8598,
+          "cache_write_tokens": 8687,
+          "model_requests": 1,
+          "premium_requests": 1,
+          "api_duration_ms": 3569,
+          "nano_aiu": 246551000,
+          "total_tokens": 17389
+        },
+        "actual_models": [
+          "gpt-5.6-luna"
+        ],
+        "saved_usage_matches": true,
+        "exit_code": 0
+      }
+    ],
+    "raw_hashes": [
+      {
+        "cli": 1,
+        "usage_sha256": "8ce0ffb18ab3a00cd83282093fa5e427a28f198ae4b2f9ee765075859f28e801"
+      },
+      {
+        "cli": 2,
+        "usage_sha256": "23921fd600e2ed100f48508ef236250a0a256cf49ba4363b8f6338d7d1a41d8d"
+      },
+      {
+        "cli": 3,
+        "usage_sha256": "bf443f3f25b0be3c55e45945c2da0b9fb1c44fb2ee69faf97111410994b23bcd"
+      }
+    ]
+  },
+  {
+    "cohort": "HISTORICAL",
+    "campaign": "combined",
+    "case": "revision",
+    "rep": 2,
+    "arm": "idea",
+    "candidate_calls": [
+      {
+        "before": {
+          "sorted_ids": [
+            "Q1",
+            "Q2",
+            "Q3"
+          ],
+          "total_hours": 6,
+          "capacity_status": "PASS"
+        },
+        "after": {
+          "sorted_ids": [
+            "Q1",
+            "Q2",
+            "Q4"
+          ],
+          "total_hours": 11,
+          "capacity_status": "BLOCKED"
+        },
+        "handoff": {
+          "prior_capacity_status": "STALE",
+          "delta_hours": 5,
+          "owner": null,
+          "approved": false,
+          "sent": false,
+          "next_action": "request_capacity_and_approval"
+        }
+      },
+      {
+        "before": {
+          "sorted_ids": [
+            "Q3",
+            "Q1",
+            "Q2"
+          ],
+          "total_hours": 6,
+          "capacity_status": "PASS"
+        },
+        "after": {
+          "sorted_ids": [
+            "Q1",
+            "Q4",
+            "Q2"
+          ],
+          "total_hours": 11,
+          "capacity_status": "BLOCKED"
+        },
+        "handoff": {
+          "prior_capacity_status": "STALE",
+          "delta_hours": 5,
+          "owner": null,
+          "approved": false,
+          "sent": false,
+          "next_action": "request_capacity_and_approval"
+        }
+      }
+    ],
+    "original_status": "FAIL",
+    "saved_functional_status": "FAIL",
+    "strict_revision": false,
+    "order_relaxed_revision": true,
+    "semantic_revision": true,
+    "cents_independent_regrade": null,
+    "policy": true,
+    "file_integrity": "NOT_VERIFIED: historical no complete snapshot",
+    "calls": [
+      {
+        "cli": 1,
+        "seconds": 12.047892700000375,
+        "usage": {
+          "input_tokens": 17289,
+          "output_tokens": 316,
+          "cached_input_tokens": 8598,
+          "cache_write_tokens": 8688,
+          "model_requests": 1,
+          "premium_requests": 1,
+          "api_duration_ms": 6262,
+          "nano_aiu": 272376000,
+          "total_tokens": 17605
+        },
+        "actual_models": [
+          "gpt-5.6-luna"
+        ],
+        "saved_usage_matches": true,
+        "exit_code": 0
+      },
+      {
+        "cli": 2,
+        "seconds": 11.391710699999749,
+        "usage": {
+          "input_tokens": 17302,
+          "output_tokens": 229,
+          "cached_input_tokens": 8598,
+          "cache_write_tokens": 8701,
+          "model_requests": 1,
+          "premium_requests": 1,
+          "api_duration_ms": 5151,
+          "nano_aiu": 262261000,
+          "total_tokens": 17531
+        },
+        "actual_models": [
+          "gpt-5.6-luna"
+        ],
+        "saved_usage_matches": true,
+        "exit_code": 0
+      }
+    ],
+    "raw_hashes": [
+      {
+        "cli": 1,
+        "usage_sha256": "8c2f9e9448be52321771ab4b739fb6c129c0b9121848ab90bfdcef1227cb1536"
+      },
+      {
+        "cli": 2,
+        "usage_sha256": "7350a41c715a3c5cfc72399503ef6b08a7f8b261d5039d475d866869175d284d"
+      }
+    ]
+  },
+  {
+    "cohort": "HISTORICAL",
+    "campaign": "combined",
+    "case": "revision",
+    "rep": 2,
+    "arm": "exhaustive",
+    "candidate_calls": [
+      {
+        "before": {
+          "sorted_ids": [
+            "Q1",
+            "Q2",
+            "Q3"
+          ],
+          "total_hours": 6,
+          "capacity_status": "PASS"
+        },
+        "after": {
+          "sorted_ids": [
+            "Q1",
+            "Q2",
+            "Q4"
+          ],
+          "total_hours": 11,
+          "capacity_status": "BLOCKED"
+        },
+        "handoff": {
+          "prior_capacity_status": "STALE",
+          "delta_hours": 5,
+          "owner": null,
+          "approved": false,
+          "sent": false,
+          "next_action": "request_capacity_and_approval"
+        }
+      }
+    ],
+    "original_status": "PASS",
+    "saved_functional_status": "PASS",
+    "strict_revision": true,
+    "order_relaxed_revision": true,
+    "semantic_revision": true,
+    "cents_independent_regrade": null,
+    "policy": true,
+    "file_integrity": "NOT_VERIFIED: historical no complete snapshot",
+    "calls": [
+      {
+        "cli": 1,
+        "seconds": 10.314324200000556,
+        "usage": {
+          "input_tokens": 17333,
+          "output_tokens": 140,
+          "cached_input_tokens": 8598,
+          "cache_write_tokens": 8732,
+          "model_requests": 1,
+          "premium_requests": 1,
+          "api_duration_ms": 4316,
+          "nano_aiu": 252356000,
+          "total_tokens": 17473
+        },
+        "actual_models": [
+          "gpt-5.6-luna"
+        ],
+        "saved_usage_matches": true,
+        "exit_code": 0
+      }
+    ],
+    "raw_hashes": [
+      {
+        "cli": 1,
+        "usage_sha256": "ddd7dc52d3493b32cb5980ed898e803befee1567260abb91fc63b48c753952c8"
+      }
+    ]
+  },
+  {
+    "cohort": "HISTORICAL",
+    "campaign": "combined",
+    "case": "revision",
+    "rep": 3,
+    "arm": "workflow",
+    "candidate_calls": [
+      {
+        "before": {
+          "sorted_ids": [
+            "Q1",
+            "Q2",
+            "Q3"
+          ],
+          "total_hours": 6,
+          "capacity_status": "PASS"
+        },
+        "after": {
+          "sorted_ids": [
+            "Q1",
+            "Q2",
+            "Q4"
+          ],
+          "total_hours": 11,
+          "capacity_status": "BLOCKED"
+        },
+        "handoff": {
+          "prior_capacity_status": "STALE",
+          "delta_hours": 5,
+          "owner": null,
+          "approved": false,
+          "sent": false,
+          "next_action": "request_capacity_and_approval"
+        }
+      }
+    ],
+    "original_status": "PASS",
+    "saved_functional_status": "PASS",
+    "strict_revision": true,
+    "order_relaxed_revision": true,
+    "semantic_revision": true,
+    "cents_independent_regrade": null,
+    "policy": true,
+    "file_integrity": "NOT_VERIFIED: historical no complete snapshot",
+    "calls": [
+      {
+        "cli": 1,
+        "seconds": 12.733375600000727,
+        "usage": {
+          "input_tokens": 18047,
+          "output_tokens": 286,
+          "cached_input_tokens": 8598,
+          "cache_write_tokens": 9446,
+          "model_requests": 1,
+          "premium_requests": 1,
+          "api_duration_ms": 5967,
+          "nano_aiu": 287726000,
+          "total_tokens": 18333
+        },
+        "actual_models": [
+          "gpt-5.6-luna"
+        ],
+        "saved_usage_matches": true,
+        "exit_code": 0
+      }
+    ],
+    "raw_hashes": [
+      {
+        "cli": 1,
+        "usage_sha256": "6eac97c5923d7904f29f61672bbf8bf54bc7f6489fcba1da78c7210afc1f0b25"
+      }
+    ]
+  },
+  {
+    "cohort": "HISTORICAL",
+    "campaign": "combined",
+    "case": "revision",
+    "rep": 3,
+    "arm": "attention",
+    "candidate_calls": [
+      {
+        "before": {
+          "sorted_ids": [
+            "Q1",
+            "Q2",
+            "Q3"
+          ],
+          "total_hours": 6,
+          "capacity_status": "PASS"
+        },
+        "after": {
+          "sorted_ids": [
+            "Q1",
+            "Q2",
+            "Q4"
+          ],
+          "total_hours": 11,
+          "capacity_status": "BLOCKED"
+        },
+        "handoff": {
+          "prior_capacity_status": "STALE",
+          "delta_hours": 5,
+          "owner": null,
+          "approved": false,
+          "sent": false,
+          "next_action": "request_capacity_and_approval"
+        }
+      }
+    ],
+    "original_status": "PASS",
+    "saved_functional_status": "PASS",
+    "strict_revision": true,
+    "order_relaxed_revision": true,
+    "semantic_revision": true,
+    "cents_independent_regrade": null,
+    "policy": true,
+    "file_integrity": "NOT_VERIFIED: historical no complete snapshot",
+    "calls": [
+      {
+        "cli": 1,
+        "seconds": 11.865135699999882,
+        "usage": {
+          "input_tokens": 18746,
+          "output_tokens": 275,
+          "cached_input_tokens": 8598,
+          "cache_write_tokens": 10145,
+          "model_requests": 1,
+          "premium_requests": 1,
+          "api_duration_ms": 5036,
+          "nano_aiu": 303881000,
+          "total_tokens": 19021
+        },
+        "actual_models": [
+          "gpt-5.6-luna"
+        ],
+        "saved_usage_matches": true,
+        "exit_code": 0
+      }
+    ],
+    "raw_hashes": [
+      {
+        "cli": 1,
+        "usage_sha256": "338ea5bf1a05cb62b72b9a36e30e852688cf2ff1fe7684d2e6aeee94332c4cfa"
+      }
+    ]
+  },
+  {
+    "cohort": "HISTORICAL",
+    "campaign": "combined",
+    "case": "revision",
+    "rep": 3,
+    "arm": "combined",
+    "candidate_calls": [
+      {
+        "before": {
+          "sorted_ids": [
+            "Q2",
+            "Q1",
+            "Q3"
+          ],
+          "total_hours": 6,
+          "capacity_status": "PASS"
+        },
+        "after": {
+          "sorted_ids": [
+            "Q2",
+            "Q1",
+            "Q4"
+          ],
+          "total_hours": 11,
+          "capacity_status": "BLOCKED"
+        },
+        "handoff": {
+          "prior_capacity_status": "STALE",
+          "delta_hours": 5,
+          "owner": null,
+          "approved": false,
+          "sent": false,
+          "next_action": "request_capacity_and_approval"
+        }
+      }
+    ],
+    "original_status": "FAIL",
+    "saved_functional_status": "FAIL",
+    "strict_revision": false,
+    "order_relaxed_revision": true,
+    "semantic_revision": true,
+    "cents_independent_regrade": null,
+    "policy": true,
+    "file_integrity": "NOT_VERIFIED: historical no complete snapshot",
+    "calls": [
+      {
+        "cli": 1,
+        "seconds": 13.668533500000194,
+        "usage": {
+          "input_tokens": 19494,
+          "output_tokens": 348,
+          "cached_input_tokens": 8598,
+          "cache_write_tokens": 10893,
+          "model_requests": 1,
+          "premium_requests": 1,
+          "api_duration_ms": 7330,
+          "nano_aiu": 331341000,
+          "total_tokens": 19842
+        },
+        "actual_models": [
+          "gpt-5.6-luna"
+        ],
+        "saved_usage_matches": true,
+        "exit_code": 0
+      }
+    ],
+    "raw_hashes": [
+      {
+        "cli": 1,
+        "usage_sha256": "33645339ebb77b4c17483c18aa15ed3ae4d4dc2d51d6d80b5d42101da6d61e5e"
+      }
+    ]
+  },
+  {
+    "cohort": "HISTORICAL",
+    "campaign": "combined",
+    "case": "revision",
+    "rep": 3,
+    "arm": "manual",
+    "candidate_calls": [
+      {
+        "sorted_ids": [
+          "Q1",
+          "Q2",
+          "Q3"
+        ],
+        "total_hours": 6,
+        "capacity_status": "PASS"
+      },
+      {
+        "sorted_ids": [
+          "Q1",
+          "Q2",
+          "Q4"
+        ],
+        "total_hours": 11,
+        "capacity_status": "BLOCKED"
+      },
+      {
+        "prior_capacity_status": "STALE",
+        "delta_hours": 5,
+        "owner": null,
+        "approved": false,
+        "sent": false,
+        "next_action": "request_capacity_and_approval"
+      }
+    ],
+    "original_status": "FAIL",
+    "saved_functional_status": "FAIL",
+    "strict_revision": false,
+    "order_relaxed_revision": false,
+    "semantic_revision": true,
+    "cents_independent_regrade": null,
+    "policy": true,
+    "file_integrity": "NOT_VERIFIED: historical no complete snapshot",
+    "calls": [
+      {
+        "cli": 1,
+        "seconds": 10.579741999999897,
+        "usage": {
+          "input_tokens": 17287,
+          "output_tokens": 72,
+          "cached_input_tokens": 8598,
+          "cache_write_tokens": 8686,
+          "model_requests": 1,
+          "premium_requests": 1,
+          "api_duration_ms": 4316,
+          "nano_aiu": 243046000,
+          "total_tokens": 17359
+        },
+        "actual_models": [
+          "gpt-5.6-luna"
+        ],
+        "saved_usage_matches": true,
+        "exit_code": 0
+      },
+      {
+        "cli": 2,
+        "seconds": 9.248282700000345,
+        "usage": {
+          "input_tokens": 17285,
+          "output_tokens": 98,
+          "cached_input_tokens": 8598,
+          "cache_write_tokens": 8684,
+          "model_requests": 1,
+          "premium_requests": 1,
+          "api_duration_ms": 2967,
+          "nano_aiu": 246116000,
+          "total_tokens": 17383
+        },
+        "actual_models": [
+          "gpt-5.6-luna"
+        ],
+        "saved_usage_matches": true,
+        "exit_code": 0
+      },
+      {
+        "cli": 3,
+        "seconds": 10.110620299999937,
+        "usage": {
+          "input_tokens": 17292,
+          "output_tokens": 133,
+          "cached_input_tokens": 8598,
+          "cache_write_tokens": 8691,
+          "model_requests": 1,
+          "premium_requests": 1,
+          "api_duration_ms": 3771,
+          "nano_aiu": 250491000,
+          "total_tokens": 17425
+        },
+        "actual_models": [
+          "gpt-5.6-luna"
+        ],
+        "saved_usage_matches": true,
+        "exit_code": 0
+      }
+    ],
+    "raw_hashes": [
+      {
+        "cli": 1,
+        "usage_sha256": "51beaaac200446d291702bacc74a7183de7e0dee6c30641a4ada448d8c2c331f"
+      },
+      {
+        "cli": 2,
+        "usage_sha256": "bb5f9c7ef17f28adbbcb854fc0a2bd2f82f2c43a9bc54791d9128971a52df47a"
+      },
+      {
+        "cli": 3,
+        "usage_sha256": "cb04280bccd11d80eda331ecc4d472ccdeb206f90673937bc0ec2c2fdd71cca4"
+      }
+    ]
+  },
+  {
+    "cohort": "HISTORICAL",
+    "campaign": "combined",
+    "case": "revision",
+    "rep": 3,
+    "arm": "idea",
+    "candidate_calls": [
+      {
+        "before": {
+          "sorted_ids": [
+            "Q3",
+            "Q1",
+            "Q2"
+          ],
+          "total_hours": 6,
+          "capacity_status": "PASS"
+        },
+        "after": {
+          "sorted_ids": [
+            "Q1",
+            "Q4",
+            "Q2"
+          ],
+          "total_hours": 11,
+          "capacity_status": "BLOCKED"
+        },
+        "handoff": {
+          "prior_capacity_status": "STALE",
+          "delta_hours": 5,
+          "owner": null,
+          "approved": false,
+          "sent": false,
+          "next_action": "request_capacity_and_approval"
+        }
+      },
+      {
+        "before": {
+          "sorted_ids": [
+            "Q1",
+            "Q2",
+            "Q3"
+          ],
+          "total_hours": 6,
+          "capacity_status": "PASS"
+        },
+        "after": {
+          "sorted_ids": [
+            "Q1",
+            "Q2",
+            "Q4"
+          ],
+          "total_hours": 11,
+          "capacity_status": "BLOCKED"
+        },
+        "handoff": {
+          "prior_capacity_status": "STALE",
+          "delta_hours": 5,
+          "owner": null,
+          "approved": false,
+          "sent": false,
+          "next_action": "request_capacity_and_approval"
+        }
+      }
+    ],
+    "original_status": "FAIL",
+    "saved_functional_status": "FAIL",
+    "strict_revision": true,
+    "order_relaxed_revision": true,
+    "semantic_revision": true,
+    "cents_independent_regrade": null,
+    "policy": true,
+    "file_integrity": "NOT_VERIFIED: historical no complete snapshot",
+    "calls": [
+      {
+        "cli": 1,
+        "seconds": 10.479048999999577,
+        "usage": {
+          "input_tokens": 17288,
+          "output_tokens": 200,
+          "cached_input_tokens": 8598,
+          "cache_write_tokens": 8687,
+          "model_requests": 1,
+          "premium_requests": 1,
+          "api_duration_ms": 4532,
+          "nano_aiu": 258431000,
+          "total_tokens": 17488
+        },
+        "actual_models": [
+          "gpt-5.6-luna"
+        ],
+        "saved_usage_matches": true,
+        "exit_code": 0
+      },
+      {
+        "cli": 2,
+        "seconds": 12.2148159999997,
+        "usage": {
+          "input_tokens": 17300,
+          "output_tokens": 352,
+          "cached_input_tokens": 8598,
+          "cache_write_tokens": 8699,
+          "model_requests": 1,
+          "premium_requests": 1,
+          "api_duration_ms": 6153,
+          "nano_aiu": 276971000,
+          "total_tokens": 17652
+        },
+        "actual_models": [
+          "gpt-5.6-luna"
+        ],
+        "saved_usage_matches": true,
+        "exit_code": 0
+      }
+    ],
+    "raw_hashes": [
+      {
+        "cli": 1,
+        "usage_sha256": "bb16bfab4985de0528915e741e26d90c2828bae610003d2785fc09be3a09c0b0"
+      },
+      {
+        "cli": 2,
+        "usage_sha256": "78134ff18321c4c2bbd5759ede259829142c2bb9274e418f3b15ba81b065b97a"
+      }
+    ]
+  },
+  {
+    "cohort": "HISTORICAL",
+    "campaign": "combined",
+    "case": "revision",
+    "rep": 3,
+    "arm": "exhaustive",
+    "candidate_calls": [
+      {
+        "before": {
+          "sorted_ids": [
+            "Q1",
+            "Q2",
+            "Q3"
+          ],
+          "total_hours": 6,
+          "capacity_status": "PASS"
+        },
+        "after": {
+          "sorted_ids": [
+            "Q1",
+            "Q2",
+            "Q4"
+          ],
+          "total_hours": 11,
+          "capacity_status": "BLOCKED"
+        },
+        "handoff": {
+          "prior_capacity_status": "STALE",
+          "delta_hours": 5,
+          "owner": null,
+          "approved": false,
+          "sent": false,
+          "next_action": "request_capacity_and_approval"
+        }
+      }
+    ],
+    "original_status": "PASS",
+    "saved_functional_status": "PASS",
+    "strict_revision": true,
+    "order_relaxed_revision": true,
+    "semantic_revision": true,
+    "cents_independent_regrade": null,
+    "policy": true,
+    "file_integrity": "NOT_VERIFIED: historical no complete snapshot",
+    "calls": [
+      {
+        "cli": 1,
+        "seconds": 10.612600200000088,
+        "usage": {
+          "input_tokens": 17337,
+          "output_tokens": 149,
+          "cached_input_tokens": 8598,
+          "cache_write_tokens": 8736,
+          "model_requests": 1,
+          "premium_requests": 1,
+          "api_duration_ms": 4537,
+          "nano_aiu": 253536000,
+          "total_tokens": 17486
+        },
+        "actual_models": [
+          "gpt-5.6-luna"
+        ],
+        "saved_usage_matches": true,
+        "exit_code": 0
+      }
+    ],
+    "raw_hashes": [
+      {
+        "cli": 1,
+        "usage_sha256": "3b80d9b660950607876bbfaa68ca50f62090cf4ff78e0226ece2888ca24267a3"
+      }
+    ]
+  },
+  {
+    "cohort": "HISTORICAL",
+    "campaign": "combined",
+    "case": "revision",
+    "rep": 4,
+    "arm": "workflow",
+    "candidate_calls": [
+      {
+        "before": {
+          "sorted_ids": [
+            "Q3",
+            "Q1",
+            "Q2"
+          ],
+          "total_hours": 6,
+          "capacity_status": "PASS"
+        },
+        "after": {
+          "sorted_ids": [
+            "Q1",
+            "Q4",
+            "Q2"
+          ],
+          "total_hours": 11,
+          "capacity_status": "BLOCKED"
+        },
+        "handoff": {
+          "prior_capacity_status": "STALE",
+          "delta_hours": 5,
+          "owner": null,
+          "approved": false,
+          "sent": false,
+          "next_action": "request_capacity_and_approval"
+        }
+      }
+    ],
+    "original_status": "FAIL",
+    "saved_functional_status": "FAIL",
+    "strict_revision": false,
+    "order_relaxed_revision": true,
+    "semantic_revision": true,
+    "cents_independent_regrade": null,
+    "policy": true,
+    "file_integrity": "NOT_VERIFIED: historical no complete snapshot",
+    "calls": [
+      {
+        "cli": 1,
+        "seconds": 11.582028999999238,
+        "usage": {
+          "input_tokens": 18042,
+          "output_tokens": 266,
+          "cached_input_tokens": 8598,
+          "cache_write_tokens": 9441,
+          "model_requests": 1,
+          "premium_requests": 1,
+          "api_duration_ms": 5012,
+          "nano_aiu": 285201000,
+          "total_tokens": 18308
+        },
+        "actual_models": [
+          "gpt-5.6-luna"
+        ],
+        "saved_usage_matches": true,
+        "exit_code": 0
+      }
+    ],
+    "raw_hashes": [
+      {
+        "cli": 1,
+        "usage_sha256": "e1ba44667251f3d68477fcec4eda9f460e6480bdbd5b0d2ea5e0b5dfd20be2ef"
+      }
+    ]
+  },
+  {
+    "cohort": "HISTORICAL",
+    "campaign": "combined",
+    "case": "revision",
+    "rep": 4,
+    "arm": "attention",
+    "candidate_calls": [
+      {
+        "before": {
+          "sorted_ids": [
+            "Q1",
+            "Q2",
+            "Q3"
+          ],
+          "total_hours": 6,
+          "capacity_status": "PASS"
+        },
+        "after": {
+          "sorted_ids": [
+            "Q1",
+            "Q2",
+            "Q4"
+          ],
+          "total_hours": 11,
+          "capacity_status": "BLOCKED"
+        },
+        "handoff": {
+          "prior_capacity_status": "STALE",
+          "delta_hours": 5,
+          "owner": null,
+          "approved": false,
+          "sent": false,
+          "next_action": "request_capacity_and_approval"
+        }
+      }
+    ],
+    "original_status": "PASS",
+    "saved_functional_status": "PASS",
+    "strict_revision": true,
+    "order_relaxed_revision": true,
+    "semantic_revision": true,
+    "cents_independent_regrade": null,
+    "policy": true,
+    "file_integrity": "NOT_VERIFIED: historical no complete snapshot",
+    "calls": [
+      {
+        "cli": 1,
+        "seconds": 15.555063200001314,
+        "usage": {
+          "input_tokens": 18747,
+          "output_tokens": 387,
+          "cached_input_tokens": 8598,
+          "cache_write_tokens": 10146,
+          "model_requests": 1,
+          "premium_requests": 1,
+          "api_duration_ms": 8849,
+          "nano_aiu": 317346000,
+          "total_tokens": 19134
+        },
+        "actual_models": [
+          "gpt-5.6-luna"
+        ],
+        "saved_usage_matches": true,
+        "exit_code": 0
+      }
+    ],
+    "raw_hashes": [
+      {
+        "cli": 1,
+        "usage_sha256": "b773a2cf0c2a9aee55dc7db8c9b851e3e426f78b0b0124af2e25e42176aae401"
+      }
+    ]
+  },
+  {
+    "cohort": "HISTORICAL",
+    "campaign": "combined",
+    "case": "revision",
+    "rep": 4,
+    "arm": "combined",
+    "candidate_calls": [
+      {
+        "before": {
+          "sorted_ids": [
+            "Q3",
+            "Q1",
+            "Q2"
+          ],
+          "total_hours": 6,
+          "capacity_status": "PASS"
+        },
+        "after": {
+          "sorted_ids": [
+            "Q1",
+            "Q4",
+            "Q2"
+          ],
+          "total_hours": 11,
+          "capacity_status": "BLOCKED"
+        },
+        "handoff": {
+          "prior_capacity_status": "STALE",
+          "delta_hours": 5,
+          "owner": null,
+          "approved": false,
+          "sent": false,
+          "next_action": "request_capacity_and_approval"
+        }
+      }
+    ],
+    "original_status": "FAIL",
+    "saved_functional_status": "FAIL",
+    "strict_revision": false,
+    "order_relaxed_revision": true,
+    "semantic_revision": true,
+    "cents_independent_regrade": null,
+    "policy": true,
+    "file_integrity": "NOT_VERIFIED: historical no complete snapshot",
+    "calls": [
+      {
+        "cli": 1,
+        "seconds": 12.354822299999796,
+        "usage": {
+          "input_tokens": 19494,
+          "output_tokens": 260,
+          "cached_input_tokens": 8598,
+          "cache_write_tokens": 10893,
+          "model_requests": 1,
+          "premium_requests": 1,
+          "api_duration_ms": 5460,
+          "nano_aiu": 320781000,
+          "total_tokens": 19754
+        },
+        "actual_models": [
+          "gpt-5.6-luna"
+        ],
+        "saved_usage_matches": true,
+        "exit_code": 0
+      }
+    ],
+    "raw_hashes": [
+      {
+        "cli": 1,
+        "usage_sha256": "ad1e6b184e2b5edfff76f39561a6981961b9cab8d8dd8a79ae6db0ce6c8ea749"
+      }
+    ]
+  },
+  {
+    "cohort": "HISTORICAL",
+    "campaign": "combined",
+    "case": "revision",
+    "rep": 4,
+    "arm": "manual",
+    "candidate_calls": [
+      {
+        "sorted_ids": [
+          "Q1",
+          "Q2",
+          "Q3"
+        ],
+        "total_hours": 6,
+        "capacity_status": "PASS"
+      },
+      {
+        "sorted_ids": [
+          "Q1",
+          "Q2",
+          "Q4"
+        ],
+        "total_hours": 11,
+        "capacity_status": "BLOCKED"
+      },
+      {
+        "prior_capacity_status": "STALE",
+        "delta_hours": 5,
+        "owner": null,
+        "approved": false,
+        "sent": false,
+        "next_action": "request_capacity_and_approval"
+      }
+    ],
+    "original_status": "FAIL",
+    "saved_functional_status": "FAIL",
+    "strict_revision": false,
+    "order_relaxed_revision": false,
+    "semantic_revision": true,
+    "cents_independent_regrade": null,
+    "policy": true,
+    "file_integrity": "NOT_VERIFIED: historical no complete snapshot",
+    "calls": [
+      {
+        "cli": 1,
+        "seconds": 10.91850930000146,
+        "usage": {
+          "input_tokens": 17287,
+          "output_tokens": 161,
+          "cached_input_tokens": 8598,
+          "cache_write_tokens": 8686,
+          "model_requests": 1,
+          "premium_requests": 1,
+          "api_duration_ms": 4912,
+          "nano_aiu": 253726000,
+          "total_tokens": 17448
+        },
+        "actual_models": [
+          "gpt-5.6-luna"
+        ],
+        "saved_usage_matches": true,
+        "exit_code": 0
+      },
+      {
+        "cli": 2,
+        "seconds": 11.41783889999897,
+        "usage": {
+          "input_tokens": 17289,
+          "output_tokens": 100,
+          "cached_input_tokens": 8598,
+          "cache_write_tokens": 8688,
+          "model_requests": 1,
+          "premium_requests": 1,
+          "api_duration_ms": 5202,
+          "nano_aiu": 246456000,
+          "total_tokens": 17389
+        },
+        "actual_models": [
+          "gpt-5.6-luna"
+        ],
+        "saved_usage_matches": true,
+        "exit_code": 0
+      },
+      {
+        "cli": 3,
+        "seconds": 9.992926900000384,
+        "usage": {
+          "input_tokens": 17289,
+          "output_tokens": 126,
+          "cached_input_tokens": 8598,
+          "cache_write_tokens": 8688,
+          "model_requests": 1,
+          "premium_requests": 1,
+          "api_duration_ms": 3440,
+          "nano_aiu": 249576000,
+          "total_tokens": 17415
+        },
+        "actual_models": [
+          "gpt-5.6-luna"
+        ],
+        "saved_usage_matches": true,
+        "exit_code": 0
+      }
+    ],
+    "raw_hashes": [
+      {
+        "cli": 1,
+        "usage_sha256": "003c8134920c4bc3f87f0fa6a5d2659d73e0c990c1b1c4f809aad6622bb290cb"
+      },
+      {
+        "cli": 2,
+        "usage_sha256": "0206d7052a061f75b1df959ed29369280c4fb5a98fb355fcc7f99faf715f9c16"
+      },
+      {
+        "cli": 3,
+        "usage_sha256": "866a1b2550895f9cd387672c9a0d3eb1904eac444677d3a05d4e95c7e5ef5e0e"
+      }
+    ]
+  },
+  {
+    "cohort": "HISTORICAL",
+    "campaign": "combined",
+    "case": "revision",
+    "rep": 4,
+    "arm": "idea",
+    "candidate_calls": [
+      {
+        "before": {
+          "sorted_ids": [
+            "Q1",
+            "Q2",
+            "Q3"
+          ],
+          "total_hours": 6,
+          "capacity_status": "PASS"
+        },
+        "after": {
+          "sorted_ids": [
+            "Q1",
+            "Q2",
+            "Q4"
+          ],
+          "total_hours": 11,
+          "capacity_status": "BLOCKED"
+        },
+        "handoff": {
+          "prior_capacity_status": "STALE",
+          "delta_hours": 5,
+          "owner": null,
+          "approved": false,
+          "sent": false,
+          "next_action": "request_capacity_and_approval"
+        }
+      },
+      {
+        "before": {
+          "sorted_ids": [
+            "Q1",
+            "Q2",
+            "Q3"
+          ],
+          "total_hours": 6,
+          "capacity_status": "PASS"
+        },
+        "after": {
+          "sorted_ids": [
+            "Q1",
+            "Q2",
+            "Q4"
+          ],
+          "total_hours": 11,
+          "capacity_status": "BLOCKED"
+        },
+        "handoff": {
+          "prior_capacity_status": "STALE",
+          "delta_hours": 5,
+          "owner": null,
+          "approved": false,
+          "sent": false,
+          "next_action": "request_capacity_and_approval"
+        }
+      }
+    ],
+    "original_status": "PASS",
+    "saved_functional_status": "PASS",
+    "strict_revision": true,
+    "order_relaxed_revision": true,
+    "semantic_revision": true,
+    "cents_independent_regrade": null,
+    "policy": true,
+    "file_integrity": "NOT_VERIFIED: historical no complete snapshot",
+    "calls": [
+      {
+        "cli": 1,
+        "seconds": 10.373724999999467,
+        "usage": {
+          "input_tokens": 17288,
+          "output_tokens": 189,
+          "cached_input_tokens": 8598,
+          "cache_write_tokens": 8687,
+          "model_requests": 1,
+          "premium_requests": 1,
+          "api_duration_ms": 3848,
+          "nano_aiu": 257111000,
+          "total_tokens": 17477
+        },
+        "actual_models": [
+          "gpt-5.6-luna"
+        ],
+        "saved_usage_matches": true,
+        "exit_code": 0
+      },
+      {
+        "cli": 2,
+        "seconds": 10.50834229999964,
+        "usage": {
+          "input_tokens": 17301,
+          "output_tokens": 200,
+          "cached_input_tokens": 8598,
+          "cache_write_tokens": 8700,
+          "model_requests": 1,
+          "premium_requests": 1,
+          "api_duration_ms": 4188,
+          "nano_aiu": 258756000,
+          "total_tokens": 17501
+        },
+        "actual_models": [
+          "gpt-5.6-luna"
+        ],
+        "saved_usage_matches": true,
+        "exit_code": 0
+      }
+    ],
+    "raw_hashes": [
+      {
+        "cli": 1,
+        "usage_sha256": "f6c1e04022122249c413b25fa4dd2022c684ef0eccad453a197a7aa80ef93faf"
+      },
+      {
+        "cli": 2,
+        "usage_sha256": "6298d5aa839e717f9f9fc8857f27da768b629aac5ee326e34d38763de6cf2ef8"
+      }
+    ]
+  },
+  {
+    "cohort": "HISTORICAL",
+    "campaign": "combined",
+    "case": "revision",
+    "rep": 4,
+    "arm": "exhaustive",
+    "candidate_calls": [
+      {
+        "before": {
+          "sorted_ids": [
+            "Q1",
+            "Q2",
+            "Q3"
+          ],
+          "total_hours": 6,
+          "capacity_status": "PASS"
+        },
+        "after": {
+          "sorted_ids": [
+            "Q1",
+            "Q2",
+            "Q4"
+          ],
+          "total_hours": 11,
+          "capacity_status": "BLOCKED"
+        },
+        "handoff": {
+          "prior_capacity_status": "STALE",
+          "delta_hours": 5,
+          "owner": null,
+          "approved": false,
+          "sent": false,
+          "next_action": "request_capacity_and_approval"
+        }
+      }
+    ],
+    "original_status": "PASS",
+    "saved_functional_status": "PASS",
+    "strict_revision": true,
+    "order_relaxed_revision": true,
+    "semantic_revision": true,
+    "cents_independent_regrade": null,
+    "policy": true,
+    "file_integrity": "NOT_VERIFIED: historical no complete snapshot",
+    "calls": [
+      {
+        "cli": 1,
+        "seconds": 15.59336330000042,
+        "usage": {
+          "input_tokens": 17331,
+          "output_tokens": 142,
+          "cached_input_tokens": 8598,
+          "cache_write_tokens": 8730,
+          "model_requests": 1,
+          "premium_requests": 1,
+          "api_duration_ms": 9431,
+          "nano_aiu": 252546000,
+          "total_tokens": 17473
+        },
+        "actual_models": [
+          "gpt-5.6-luna"
+        ],
+        "saved_usage_matches": true,
+        "exit_code": 0
+      }
+    ],
+    "raw_hashes": [
+      {
+        "cli": 1,
+        "usage_sha256": "152747d7cc9167e053f991884a0ce45432f7251945f2142877d16d4a55990a46"
+      }
+    ]
+  },
+  {
+    "cohort": "HISTORICAL",
+    "campaign": "combined",
+    "case": "revision",
+    "rep": 5,
+    "arm": "workflow",
+    "candidate_calls": [
+      {
+        "before": {
+          "sorted_ids": [
+            "Q2",
+            "Q1",
+            "Q3"
+          ],
+          "total_hours": 6,
+          "capacity_status": "PASS"
+        },
+        "after": {
+          "sorted_ids": [
+            "Q2",
+            "Q1",
+            "Q4"
+          ],
+          "total_hours": 11,
+          "capacity_status": "BLOCKED"
+        },
+        "handoff": {
+          "prior_capacity_status": "STALE",
+          "delta_hours": 5,
+          "owner": null,
+          "approved": false,
+          "sent": false,
+          "next_action": "request_capacity_and_approval"
+        }
+      }
+    ],
+    "original_status": "FAIL",
+    "saved_functional_status": "FAIL",
+    "strict_revision": false,
+    "order_relaxed_revision": true,
+    "semantic_revision": true,
+    "cents_independent_regrade": null,
+    "policy": true,
+    "file_integrity": "NOT_VERIFIED: historical no complete snapshot",
+    "calls": [
+      {
+        "cli": 1,
+        "seconds": 13.151313300000766,
+        "usage": {
+          "input_tokens": 18046,
+          "output_tokens": 280,
+          "cached_input_tokens": 8598,
+          "cache_write_tokens": 9445,
+          "model_requests": 1,
+          "premium_requests": 1,
+          "api_duration_ms": 6886,
+          "nano_aiu": 286981000,
+          "total_tokens": 18326
+        },
+        "actual_models": [
+          "gpt-5.6-luna"
+        ],
+        "saved_usage_matches": true,
+        "exit_code": 0
+      }
+    ],
+    "raw_hashes": [
+      {
+        "cli": 1,
+        "usage_sha256": "aeb9477a25397c2d09fad50e4fc485cc635aeb76ce73ec14c7a0aae1c3bfe282"
+      }
+    ]
+  },
+  {
+    "cohort": "HISTORICAL",
+    "campaign": "combined",
+    "case": "revision",
+    "rep": 5,
+    "arm": "attention",
+    "candidate_calls": [
+      {
+        "before": {
+          "sorted_ids": [
+            "Q1",
+            "Q2",
+            "Q3"
+          ],
+          "total_hours": 6,
+          "capacity_status": "PASS"
+        },
+        "after": {
+          "sorted_ids": [
+            "Q1",
+            "Q2",
+            "Q4"
+          ],
+          "total_hours": 11,
+          "capacity_status": "BLOCKED"
+        },
+        "handoff": {
+          "prior_capacity_status": "STALE",
+          "delta_hours": 5,
+          "owner": null,
+          "approved": false,
+          "sent": false,
+          "next_action": "request_capacity_and_approval"
+        }
+      }
+    ],
+    "original_status": "PASS",
+    "saved_functional_status": "PASS",
+    "strict_revision": true,
+    "order_relaxed_revision": true,
+    "semantic_revision": true,
+    "cents_independent_regrade": null,
+    "policy": true,
+    "file_integrity": "NOT_VERIFIED: historical no complete snapshot",
+    "calls": [
+      {
+        "cli": 1,
+        "seconds": 12.619986499999868,
+        "usage": {
+          "input_tokens": 18751,
+          "output_tokens": 363,
+          "cached_input_tokens": 8598,
+          "cache_write_tokens": 10150,
+          "model_requests": 1,
+          "premium_requests": 1,
+          "api_duration_ms": 6349,
+          "nano_aiu": 314566000,
+          "total_tokens": 19114
+        },
+        "actual_models": [
+          "gpt-5.6-luna"
+        ],
+        "saved_usage_matches": true,
+        "exit_code": 0
+      }
+    ],
+    "raw_hashes": [
+      {
+        "cli": 1,
+        "usage_sha256": "b1c204a27093317e0152310f9eeb4b28fe72a056edb006d2eda10391f913105a"
+      }
+    ]
+  },
+  {
+    "cohort": "HISTORICAL",
+    "campaign": "combined",
+    "case": "revision",
+    "rep": 5,
+    "arm": "combined",
+    "candidate_calls": [
+      {
+        "before": {
+          "sorted_ids": [
+            "Q3",
+            "Q1",
+            "Q2"
+          ],
+          "total_hours": 6,
+          "capacity_status": "PASS"
+        },
+        "after": {
+          "sorted_ids": [
+            "Q1",
+            "Q4",
+            "Q2"
+          ],
+          "total_hours": 11,
+          "capacity_status": "BLOCKED"
+        },
+        "handoff": {
+          "prior_capacity_status": "STALE",
+          "delta_hours": 5,
+          "owner": null,
+          "approved": false,
+          "sent": false,
+          "next_action": "request_capacity_and_approval"
+        }
+      }
+    ],
+    "original_status": "FAIL",
+    "saved_functional_status": "FAIL",
+    "strict_revision": false,
+    "order_relaxed_revision": true,
+    "semantic_revision": true,
+    "cents_independent_regrade": null,
+    "policy": true,
+    "file_integrity": "NOT_VERIFIED: historical no complete snapshot",
+    "calls": [
+      {
+        "cli": 1,
+        "seconds": 13.33981649999987,
+        "usage": {
+          "input_tokens": 19500,
+          "output_tokens": 336,
+          "cached_input_tokens": 8598,
+          "cache_write_tokens": 10899,
+          "model_requests": 1,
+          "premium_requests": 1,
+          "api_duration_ms": 7064,
+          "nano_aiu": 330051000,
+          "total_tokens": 19836
+        },
+        "actual_models": [
+          "gpt-5.6-luna"
+        ],
+        "saved_usage_matches": true,
+        "exit_code": 0
+      }
+    ],
+    "raw_hashes": [
+      {
+        "cli": 1,
+        "usage_sha256": "d7074de5ba2c71cf76389744b84e55712040b7e5dcdec7e690de5344ab83f6de"
+      }
+    ]
+  },
+  {
+    "cohort": "HISTORICAL",
+    "campaign": "combined",
+    "case": "revision",
+    "rep": 5,
+    "arm": "manual",
+    "candidate_calls": [
+      {
+        "sorted_ids": [
+          "Q1",
+          "Q2",
+          "Q3"
+        ],
+        "total_hours": 6,
+        "capacity_status": "PASS"
+      },
+      {
+        "sorted_ids": [
+          "Q1",
+          "Q2",
+          "Q4"
+        ],
+        "total_hours": 11,
+        "capacity_status": "BLOCKED"
+      },
+      {
+        "prior_capacity_status": "STALE",
+        "delta_hours": 5,
+        "owner": null,
+        "approved": false,
+        "sent": false,
+        "next_action": "request_capacity_and_approval"
+      }
+    ],
+    "original_status": "FAIL",
+    "saved_functional_status": "FAIL",
+    "strict_revision": false,
+    "order_relaxed_revision": false,
+    "semantic_revision": true,
+    "cents_independent_regrade": null,
+    "policy": true,
+    "file_integrity": "NOT_VERIFIED: historical no complete snapshot",
+    "calls": [
+      {
+        "cli": 1,
+        "seconds": 10.568691000000399,
+        "usage": {
+          "input_tokens": 17287,
+          "output_tokens": 166,
+          "cached_input_tokens": 8598,
+          "cache_write_tokens": 8686,
+          "model_requests": 1,
+          "premium_requests": 1,
+          "api_duration_ms": 4576,
+          "nano_aiu": 254326000,
+          "total_tokens": 17453
+        },
+        "actual_models": [
+          "gpt-5.6-luna"
+        ],
+        "saved_usage_matches": true,
+        "exit_code": 0
+      },
+      {
+        "cli": 2,
+        "seconds": 10.120830799998657,
+        "usage": {
+          "input_tokens": 17285,
+          "output_tokens": 93,
+          "cached_input_tokens": 8598,
+          "cache_write_tokens": 8684,
+          "model_requests": 1,
+          "premium_requests": 1,
+          "api_duration_ms": 4054,
+          "nano_aiu": 245516000,
+          "total_tokens": 17378
+        },
+        "actual_models": [
+          "gpt-5.6-luna"
+        ],
+        "saved_usage_matches": true,
+        "exit_code": 0
+      },
+      {
+        "cli": 3,
+        "seconds": 9.138580099999672,
+        "usage": {
+          "input_tokens": 17286,
+          "output_tokens": 109,
+          "cached_input_tokens": 8598,
+          "cache_write_tokens": 8685,
+          "model_requests": 1,
+          "premium_requests": 1,
+          "api_duration_ms": 3132,
+          "nano_aiu": 247461000,
+          "total_tokens": 17395
+        },
+        "actual_models": [
+          "gpt-5.6-luna"
+        ],
+        "saved_usage_matches": true,
+        "exit_code": 0
+      }
+    ],
+    "raw_hashes": [
+      {
+        "cli": 1,
+        "usage_sha256": "f3356584106bcf5a20755fed1f8bd3be06c3796535c5a06669962f5d1e369e6a"
+      },
+      {
+        "cli": 2,
+        "usage_sha256": "9fece2f730b4d9a35b5ed65372f99c7652eb6a7d405bccab8823e57dea1616d2"
+      },
+      {
+        "cli": 3,
+        "usage_sha256": "f7e56b24596583cf4fd1e2de24aad459cdc9c7d1f9a47a27a1ba7b3bc212dbe8"
+      }
+    ]
+  },
+  {
+    "cohort": "HISTORICAL",
+    "campaign": "combined",
+    "case": "revision",
+    "rep": 5,
+    "arm": "idea",
+    "candidate_calls": [
+      {
+        "before": {
+          "sorted_ids": [
+            "Q1",
+            "Q2",
+            "Q3"
+          ],
+          "total_hours": 6,
+          "capacity_status": "PASS"
+        },
+        "after": {
+          "sorted_ids": [
+            "Q1",
+            "Q2",
+            "Q4"
+          ],
+          "total_hours": 11,
+          "capacity_status": "BLOCKED"
+        },
+        "handoff": {
+          "prior_capacity_status": "STALE",
+          "delta_hours": 5,
+          "owner": null,
+          "approved": false,
+          "sent": false,
+          "next_action": "request_capacity_and_approval"
+        }
+      },
+      {
+        "before": {
+          "sorted_ids": [
+            "Q1",
+            "Q2",
+            "Q3"
+          ],
+          "total_hours": 6,
+          "capacity_status": "PASS"
+        },
+        "after": {
+          "sorted_ids": [
+            "Q1",
+            "Q2",
+            "Q4"
+          ],
+          "total_hours": 11,
+          "capacity_status": "BLOCKED"
+        },
+        "handoff": {
+          "prior_capacity_status": "STALE",
+          "delta_hours": 5,
+          "owner": null,
+          "approved": false,
+          "sent": false,
+          "next_action": "request_capacity_and_approval"
+        }
+      }
+    ],
+    "original_status": "PASS",
+    "saved_functional_status": "PASS",
+    "strict_revision": true,
+    "order_relaxed_revision": true,
+    "semantic_revision": true,
+    "cents_independent_regrade": null,
+    "policy": true,
+    "file_integrity": "NOT_VERIFIED: historical no complete snapshot",
+    "calls": [
+      {
+        "cli": 1,
+        "seconds": 11.030357800000274,
+        "usage": {
+          "input_tokens": 17287,
+          "output_tokens": 212,
+          "cached_input_tokens": 8598,
+          "cache_write_tokens": 8686,
+          "model_requests": 1,
+          "premium_requests": 1,
+          "api_duration_ms": 4589,
+          "nano_aiu": 259846000,
+          "total_tokens": 17499
+        },
+        "actual_models": [
+          "gpt-5.6-luna"
+        ],
+        "saved_usage_matches": true,
+        "exit_code": 0
+      },
+      {
+        "cli": 2,
+        "seconds": 11.14505570000074,
+        "usage": {
+          "input_tokens": 17296,
+          "output_tokens": 256,
+          "cached_input_tokens": 8598,
+          "cache_write_tokens": 8695,
+          "model_requests": 1,
+          "premium_requests": 1,
+          "api_duration_ms": 4937,
+          "nano_aiu": 265351000,
+          "total_tokens": 17552
+        },
+        "actual_models": [
+          "gpt-5.6-luna"
+        ],
+        "saved_usage_matches": true,
+        "exit_code": 0
+      }
+    ],
+    "raw_hashes": [
+      {
+        "cli": 1,
+        "usage_sha256": "6e4a16e854df670551dae1dbd442e0470e9cd47f26b46211c12a1776e67c0335"
+      },
+      {
+        "cli": 2,
+        "usage_sha256": "7794fdff3f39d49d3509d1a08c7eac632b4e9099fe0b5bbb3c230bb4b8e055f0"
+      }
+    ]
+  },
+  {
+    "cohort": "HISTORICAL",
+    "campaign": "combined",
+    "case": "revision",
+    "rep": 5,
+    "arm": "exhaustive",
+    "candidate_calls": [
+      {
+        "before": {
+          "sorted_ids": [
+            "Q1",
+            "Q2",
+            "Q3"
+          ],
+          "total_hours": 6,
+          "capacity_status": "PASS"
+        },
+        "after": {
+          "sorted_ids": [
+            "Q1",
+            "Q2",
+            "Q4"
+          ],
+          "total_hours": 11,
+          "capacity_status": "BLOCKED"
+        },
+        "handoff": {
+          "prior_capacity_status": "STALE",
+          "delta_hours": 5,
+          "owner": null,
+          "approved": false,
+          "sent": false,
+          "next_action": "request_capacity_and_approval"
+        }
+      }
+    ],
+    "original_status": "PASS",
+    "saved_functional_status": "PASS",
+    "strict_revision": true,
+    "order_relaxed_revision": true,
+    "semantic_revision": true,
+    "cents_independent_regrade": null,
+    "policy": true,
+    "file_integrity": "NOT_VERIFIED: historical no complete snapshot",
+    "calls": [
+      {
+        "cli": 1,
+        "seconds": 10.391211599999224,
+        "usage": {
+          "input_tokens": 17335,
+          "output_tokens": 143,
+          "cached_input_tokens": 8598,
+          "cache_write_tokens": 8734,
+          "model_requests": 1,
+          "premium_requests": 1,
+          "api_duration_ms": 3882,
+          "nano_aiu": 252766000,
+          "total_tokens": 17478
+        },
+        "actual_models": [
+          "gpt-5.6-luna"
+        ],
+        "saved_usage_matches": true,
+        "exit_code": 0
+      }
+    ],
+    "raw_hashes": [
+      {
+        "cli": 1,
+        "usage_sha256": "62dd765b89e9c59179b75dc0fbef411da6a38fa7a0eb55dd1249a5812dc9bfe0"
+      }
+    ]
+  },
+  {
+    "cohort": "HISTORICAL",
+    "campaign": "combined",
+    "case": "cents",
+    "rep": 1,
+    "arm": "workflow",
+    "candidate_calls": null,
+    "original_status": "FAIL",
+    "saved_functional_status": "PASS",
+    "strict_revision": null,
+    "order_relaxed_revision": null,
+    "semantic_revision": null,
+    "cents_independent_regrade": "NOT_RUN",
+    "policy": null,
+    "file_integrity": "NOT_VERIFIED: historical no complete snapshot",
+    "calls": [
+      {
+        "cli": 1,
+        "seconds": 37.17502169999898,
+        "usage": {
+          "input_tokens": 147607,
+          "output_tokens": 1472,
+          "cached_input_tokens": 133784,
+          "cache_write_tokens": 13802,
+          "model_requests": 7,
+          "premium_requests": 1,
+          "api_duration_ms": 29132,
+          "nano_aiu": 789678000,
+          "total_tokens": 149079
+        },
+        "actual_models": [
+          "gpt-5.6-luna"
+        ],
+        "saved_usage_matches": true,
+        "exit_code": 0
+      }
+    ],
+    "raw_hashes": [
+      {
+        "cli": 1,
+        "usage_sha256": "f5f9e8df646af809bd3d6a4331980335b7ff43c4964062251a51f05ea9c3f69a"
+      }
+    ]
+  },
+  {
+    "cohort": "HISTORICAL",
+    "campaign": "combined",
+    "case": "cents",
+    "rep": 1,
+    "arm": "attention",
+    "candidate_calls": null,
+    "original_status": "FAIL",
+    "saved_functional_status": "PASS",
+    "strict_revision": null,
+    "order_relaxed_revision": null,
+    "semantic_revision": null,
+    "cents_independent_regrade": "NOT_RUN",
+    "policy": null,
+    "file_integrity": "NOT_VERIFIED: historical no complete snapshot",
+    "calls": [
+      {
+        "cli": 1,
+        "seconds": 35.75824960000136,
+        "usage": {
+          "input_tokens": 151713,
+          "output_tokens": 1408,
+          "cached_input_tokens": 137185,
+          "cache_write_tokens": 14507,
+          "model_requests": 7,
+          "premium_requests": 1,
+          "api_duration_ms": 28249,
+          "nano_aiu": 806425000,
+          "total_tokens": 153121
+        },
+        "actual_models": [
+          "gpt-5.6-luna"
+        ],
+        "saved_usage_matches": true,
+        "exit_code": 0
+      }
+    ],
+    "raw_hashes": [
+      {
+        "cli": 1,
+        "usage_sha256": "b2ab57cb2a9eb0f3f7a51780adcee3db7fe67fb388934d57e13a7a910baf1abf"
+      }
+    ]
+  },
+  {
+    "cohort": "HISTORICAL",
+    "campaign": "combined",
+    "case": "cents",
+    "rep": 1,
+    "arm": "combined",
+    "candidate_calls": null,
+    "original_status": "FAIL",
+    "saved_functional_status": "PASS",
+    "strict_revision": null,
+    "order_relaxed_revision": null,
+    "semantic_revision": null,
+    "cents_independent_regrade": "NOT_RUN",
+    "policy": null,
+    "file_integrity": "NOT_VERIFIED: historical no complete snapshot",
+    "calls": [
+      {
+        "cli": 1,
+        "seconds": 33.17702080000163,
+        "usage": {
+          "input_tokens": 156817,
+          "output_tokens": 1215,
+          "cached_input_tokens": 141654,
+          "cache_write_tokens": 15142,
+          "model_requests": 7,
+          "premium_requests": 1,
+          "api_duration_ms": 25104,
+          "nano_aiu": 808078000,
+          "total_tokens": 158032
+        },
+        "actual_models": [
+          "gpt-5.6-luna"
+        ],
+        "saved_usage_matches": true,
+        "exit_code": 0
+      }
+    ],
+    "raw_hashes": [
+      {
+        "cli": 1,
+        "usage_sha256": "7dde1a72d33a5c8fa08424baf8723761610593cfac39e75af49f63ee6498a295"
+      }
+    ]
+  },
+  {
+    "cohort": "HISTORICAL",
+    "campaign": "combined",
+    "case": "cents",
+    "rep": 1,
+    "arm": "manual",
+    "candidate_calls": null,
+    "original_status": "FAIL",
+    "saved_functional_status": "PASS",
+    "strict_revision": null,
+    "order_relaxed_revision": null,
+    "semantic_revision": null,
+    "cents_independent_regrade": "NOT_RUN",
+    "policy": null,
+    "file_integrity": "NOT_VERIFIED: historical no complete snapshot",
+    "calls": [
+      {
+        "cli": 1,
+        "seconds": 31.289273099999264,
+        "usage": {
+          "input_tokens": 119620,
+          "output_tokens": 1177,
+          "cached_input_tokens": 107042,
+          "cache_write_tokens": 12560,
+          "model_requests": 6,
+          "premium_requests": 1,
+          "api_duration_ms": 24866,
+          "nano_aiu": 669684000,
+          "total_tokens": 120797
+        },
+        "actual_models": [
+          "gpt-5.6-luna"
+        ],
+        "saved_usage_matches": true,
+        "exit_code": 0
+      },
+      {
+        "cli": 2,
+        "seconds": 37.95302249999986,
+        "usage": {
+          "input_tokens": 141385,
+          "output_tokens": 1328,
+          "cached_input_tokens": 128479,
+          "cache_write_tokens": 12885,
+          "model_requests": 7,
+          "premium_requests": 1,
+          "api_duration_ms": 30416,
+          "nano_aiu": 738863000,
+          "total_tokens": 142713
+        },
+        "actual_models": [
+          "gpt-5.6-luna"
+        ],
+        "saved_usage_matches": true,
+        "exit_code": 0
+      },
+      {
+        "cli": 3,
+        "seconds": 27.588386099998388,
+        "usage": {
+          "input_tokens": 98682,
+          "output_tokens": 912,
+          "cached_input_tokens": 86358,
+          "cache_write_tokens": 12309,
+          "model_requests": 5,
+          "premium_requests": 1,
+          "api_duration_ms": 20704,
+          "nano_aiu": 590181000,
+          "total_tokens": 99594
+        },
+        "actual_models": [
+          "gpt-5.6-luna"
+        ],
+        "saved_usage_matches": true,
+        "exit_code": 0
+      }
+    ],
+    "raw_hashes": [
+      {
+        "cli": 1,
+        "usage_sha256": "936ea07c9b98f3e09d809cda36ab35458e6bc85c6d995e928488ecf85ae59a79"
+      },
+      {
+        "cli": 2,
+        "usage_sha256": "4d2c446897c48dd105d4cbeccad406e4fc456f068ec88db8c58299f4ce3c5c55"
+      },
+      {
+        "cli": 3,
+        "usage_sha256": "4344060df090376092b0c606c6870fb864b72e00ddaa133d7b46b57226a3ce9b"
+      }
+    ]
+  },
+  {
+    "cohort": "HISTORICAL",
+    "campaign": "combined",
+    "case": "cents",
+    "rep": 1,
+    "arm": "idea",
+    "candidate_calls": null,
+    "original_status": "FAIL",
+    "saved_functional_status": "PASS",
+    "strict_revision": null,
+    "order_relaxed_revision": null,
+    "semantic_revision": null,
+    "cents_independent_regrade": "NOT_RUN",
+    "policy": null,
+    "file_integrity": "NOT_VERIFIED: historical no complete snapshot",
+    "calls": [
+      {
+        "cli": 1,
+        "seconds": 33.74902090000069,
+        "usage": {
+          "input_tokens": 99506,
+          "output_tokens": 1368,
+          "cached_input_tokens": 86768,
+          "cache_write_tokens": 12723,
+          "model_requests": 5,
+          "premium_requests": 1,
+          "api_duration_ms": 26863,
+          "nano_aiu": 656071000,
+          "total_tokens": 100874
+        },
+        "actual_models": [
+          "gpt-5.6-luna"
+        ],
+        "saved_usage_matches": true,
+        "exit_code": 0
+      },
+      {
+        "cli": 2,
+        "seconds": 43.43037230000118,
+        "usage": {
+          "input_tokens": 145849,
+          "output_tokens": 1624,
+          "cached_input_tokens": 131434,
+          "cache_write_tokens": 14394,
+          "model_requests": 7,
+          "premium_requests": 1,
+          "api_duration_ms": 34905,
+          "nano_aiu": 818018000,
+          "total_tokens": 147473
+        },
+        "actual_models": [
+          "gpt-5.6-luna"
+        ],
+        "saved_usage_matches": true,
+        "exit_code": 0
+      }
+    ],
+    "raw_hashes": [
+      {
+        "cli": 1,
+        "usage_sha256": "adc19d8cece1f1927cade79094d38d2aa90dc560d65fdab20aeee7e2fb963548"
+      },
+      {
+        "cli": 2,
+        "usage_sha256": "26324e02023202a9676ebd61c3c7a1b73d322da00ec25fe77b8b71bc1fa57f04"
+      }
+    ]
+  },
+  {
+    "cohort": "HISTORICAL",
+    "campaign": "combined",
+    "case": "cents",
+    "rep": 1,
+    "arm": "exhaustive",
+    "candidate_calls": null,
+    "original_status": "FAIL",
+    "saved_functional_status": "PASS",
+    "strict_revision": null,
+    "order_relaxed_revision": null,
+    "semantic_revision": null,
+    "cents_independent_regrade": "NOT_RUN",
+    "policy": null,
+    "file_integrity": "NOT_VERIFIED: historical no complete snapshot",
+    "calls": [
+      {
+        "cli": 1,
+        "seconds": 33.911024900000484,
+        "usage": {
+          "input_tokens": 121168,
+          "output_tokens": 1587,
+          "cached_input_tokens": 108029,
+          "cache_write_tokens": 13121,
+          "model_requests": 6,
+          "premium_requests": 1,
+          "api_duration_ms": 27001,
+          "nano_aiu": 734883000,
+          "total_tokens": 122755
+        },
+        "actual_models": [
+          "gpt-5.6-luna"
+        ],
+        "saved_usage_matches": true,
+        "exit_code": 0
+      }
+    ],
+    "raw_hashes": [
+      {
+        "cli": 1,
+        "usage_sha256": "34a354472d10a35125c4f6d606f23e3d4cf740d4a25701284812533fdc27c4dd"
+      }
+    ]
+  },
+  {
+    "cohort": "HISTORICAL",
+    "campaign": "combined",
+    "case": "cents",
+    "rep": 2,
+    "arm": "workflow",
+    "candidate_calls": null,
+    "original_status": "FAIL",
+    "saved_functional_status": "PASS",
+    "strict_revision": null,
+    "order_relaxed_revision": null,
+    "semantic_revision": null,
+    "cents_independent_regrade": "NOT_RUN",
+    "policy": null,
+    "file_integrity": "NOT_VERIFIED: historical no complete snapshot",
+    "calls": [
+      {
+        "cli": 1,
+        "seconds": 32.76924340000005,
+        "usage": {
+          "input_tokens": 103431,
+          "output_tokens": 1264,
+          "cached_input_tokens": 89954,
+          "cache_write_tokens": 13462,
+          "model_requests": 5,
+          "premium_requests": 1,
+          "api_duration_ms": 24021,
+          "nano_aiu": 668438000,
+          "total_tokens": 104695
+        },
+        "actual_models": [
+          "gpt-5.6-luna"
+        ],
+        "saved_usage_matches": true,
+        "exit_code": 0
+      }
+    ],
+    "raw_hashes": [
+      {
+        "cli": 1,
+        "usage_sha256": "0683503042eeb6cff6e4b0457d048166001248c2d4022f81f3582cbd37c3aa6e"
+      }
+    ]
+  },
+  {
+    "cohort": "HISTORICAL",
+    "campaign": "combined",
+    "case": "cents",
+    "rep": 2,
+    "arm": "attention",
+    "candidate_calls": null,
+    "original_status": "FAIL",
+    "saved_functional_status": "PASS",
+    "strict_revision": null,
+    "order_relaxed_revision": null,
+    "semantic_revision": null,
+    "cents_independent_regrade": "NOT_RUN",
+    "policy": null,
+    "file_integrity": "NOT_VERIFIED: historical no complete snapshot",
+    "calls": [
+      {
+        "cli": 1,
+        "seconds": 34.69785640000009,
+        "usage": {
+          "input_tokens": 129355,
+          "output_tokens": 1199,
+          "cached_input_tokens": 115134,
+          "cache_write_tokens": 14203,
+          "model_requests": 6,
+          "premium_requests": 1,
+          "api_duration_ms": 26909,
+          "nano_aiu": 729583000,
+          "total_tokens": 130554
+        },
+        "actual_models": [
+          "gpt-5.6-luna"
+        ],
+        "saved_usage_matches": true,
+        "exit_code": 0
+      }
+    ],
+    "raw_hashes": [
+      {
+        "cli": 1,
+        "usage_sha256": "d398c27444f622a90323025fbc5d9e84285d12aef9b230358dbec89895860749"
+      }
+    ]
+  },
+  {
+    "cohort": "HISTORICAL",
+    "campaign": "combined",
+    "case": "cents",
+    "rep": 2,
+    "arm": "combined",
+    "candidate_calls": null,
+    "original_status": "FAIL",
+    "saved_functional_status": "PASS",
+    "strict_revision": null,
+    "order_relaxed_revision": null,
+    "semantic_revision": null,
+    "cents_independent_regrade": "NOT_RUN",
+    "policy": null,
+    "file_integrity": "NOT_VERIFIED: historical no complete snapshot",
+    "calls": [
+      {
+        "cli": 1,
+        "seconds": 40.56401519999963,
+        "usage": {
+          "input_tokens": 158158,
+          "output_tokens": 1583,
+          "cached_input_tokens": 142333,
+          "cache_write_tokens": 15804,
+          "model_requests": 7,
+          "premium_requests": 1,
+          "api_duration_ms": 31361,
+          "nano_aiu": 870146000,
+          "total_tokens": 159741
+        },
+        "actual_models": [
+          "gpt-5.6-luna"
+        ],
+        "saved_usage_matches": true,
+        "exit_code": 0
+      }
+    ],
+    "raw_hashes": [
+      {
+        "cli": 1,
+        "usage_sha256": "0bd5554fc14085b3987d7c9a447689922278055347f26693b0b37a5f3126c463"
+      }
+    ]
+  },
+  {
+    "cohort": "HISTORICAL",
+    "campaign": "combined",
+    "case": "cents",
+    "rep": 2,
+    "arm": "manual",
+    "candidate_calls": null,
+    "original_status": "FAIL",
+    "saved_functional_status": "PASS",
+    "strict_revision": null,
+    "order_relaxed_revision": null,
+    "semantic_revision": null,
+    "cents_independent_regrade": "NOT_RUN",
+    "policy": null,
+    "file_integrity": "NOT_VERIFIED: historical no complete snapshot",
+    "calls": [
+      {
+        "cli": 1,
+        "seconds": 38.87202460000117,
+        "usage": {
+          "input_tokens": 172041,
+          "output_tokens": 1448,
+          "cached_input_tokens": 157509,
+          "cache_write_tokens": 14508,
+          "model_requests": 8,
+          "premium_requests": 1,
+          "api_duration_ms": 30150,
+          "nano_aiu": 851958000,
+          "total_tokens": 173489
+        },
+        "actual_models": [
+          "gpt-5.6-luna"
+        ],
+        "saved_usage_matches": true,
+        "exit_code": 0
+      },
+      {
+        "cli": 2,
+        "seconds": 26.011780299999373,
+        "usage": {
+          "input_tokens": 118878,
+          "output_tokens": 794,
+          "cached_input_tokens": 106664,
+          "cache_write_tokens": 12196,
+          "model_requests": 6,
+          "premium_requests": 1,
+          "api_duration_ms": 18847,
+          "nano_aiu": 613868000,
+          "total_tokens": 119672
+        },
+        "actual_models": [
+          "gpt-5.6-luna"
+        ],
+        "saved_usage_matches": true,
+        "exit_code": 0
+      },
+      {
+        "cli": 3,
+        "seconds": 44.486912100001064,
+        "usage": {
+          "input_tokens": 142236,
+          "output_tokens": 1381,
+          "cached_input_tokens": 129170,
+          "cache_write_tokens": 13045,
+          "model_requests": 7,
+          "premium_requests": 1,
+          "api_duration_ms": 35650,
+          "nano_aiu": 750605000,
+          "total_tokens": 143617
+        },
+        "actual_models": [
+          "gpt-5.6-luna"
+        ],
+        "saved_usage_matches": true,
+        "exit_code": 0
+      }
+    ],
+    "raw_hashes": [
+      {
+        "cli": 1,
+        "usage_sha256": "864f149baa127eb5f17da7040238c3438d1f7e5a099ded466c546b02f846f2df"
+      },
+      {
+        "cli": 2,
+        "usage_sha256": "fd783c609a8ae62d12a2c66572a1ce0992b234b136e2e957cbc8b9aaf2da7d4e"
+      },
+      {
+        "cli": 3,
+        "usage_sha256": "32f930ecbe0ffa21c32011e8fd9a7421a3b67f222e94c77ffa301a95b0f26369"
+      }
+    ]
+  },
+  {
+    "cohort": "HISTORICAL",
+    "campaign": "combined",
+    "case": "cents",
+    "rep": 2,
+    "arm": "idea",
+    "candidate_calls": null,
+    "original_status": "FAIL",
+    "saved_functional_status": "PASS",
+    "strict_revision": null,
+    "order_relaxed_revision": null,
+    "semantic_revision": null,
+    "cents_independent_regrade": "NOT_RUN",
+    "policy": null,
+    "file_integrity": "NOT_VERIFIED: historical no complete snapshot",
+    "calls": [
+      {
+        "cli": 1,
+        "seconds": 32.350221099999544,
+        "usage": {
+          "input_tokens": 128862,
+          "output_tokens": 1398,
+          "cached_input_tokens": 113889,
+          "cache_write_tokens": 14955,
+          "model_requests": 6,
+          "premium_requests": 1,
+          "api_duration_ms": 25468,
+          "nano_aiu": 769773000,
+          "total_tokens": 130260
+        },
+        "actual_models": [
+          "gpt-5.6-luna"
+        ],
+        "saved_usage_matches": true,
+        "exit_code": 0
+      },
+      {
+        "cli": 2,
+        "seconds": 36.73450740000044,
+        "usage": {
+          "input_tokens": 121631,
+          "output_tokens": 1392,
+          "cached_input_tokens": 108523,
+          "cache_write_tokens": 13090,
+          "model_requests": 6,
+          "premium_requests": 1,
+          "api_duration_ms": 28527,
+          "nano_aiu": 711696000,
+          "total_tokens": 123023
+        },
+        "actual_models": [
+          "gpt-5.6-luna"
+        ],
+        "saved_usage_matches": true,
+        "exit_code": 0
+      }
+    ],
+    "raw_hashes": [
+      {
+        "cli": 1,
+        "usage_sha256": "f98b44af02111212b9a12bf521d50dde4adba758e20059af4d9dfad5075b7c7b"
+      },
+      {
+        "cli": 2,
+        "usage_sha256": "793f1dd295bbc48c7ad953f2d8266b0b11595730ee9c6cb6d9c8a1185d7e7831"
+      }
+    ]
+  },
+  {
+    "cohort": "HISTORICAL",
+    "campaign": "combined",
+    "case": "cents",
+    "rep": 2,
+    "arm": "exhaustive",
+    "candidate_calls": null,
+    "original_status": "FAIL",
+    "saved_functional_status": "PASS",
+    "strict_revision": null,
+    "order_relaxed_revision": null,
+    "semantic_revision": null,
+    "cents_independent_regrade": "NOT_RUN",
+    "policy": null,
+    "file_integrity": "NOT_VERIFIED: historical no complete snapshot",
+    "calls": [
+      {
+        "cli": 1,
+        "seconds": 31.460622700000386,
+        "usage": {
+          "input_tokens": 99202,
+          "output_tokens": 1331,
+          "cached_input_tokens": 86274,
+          "cache_write_tokens": 12913,
+          "model_requests": 5,
+          "premium_requests": 1,
+          "api_duration_ms": 24099,
+          "nano_aiu": 655393000,
+          "total_tokens": 100533
+        },
+        "actual_models": [
+          "gpt-5.6-luna"
+        ],
+        "saved_usage_matches": true,
+        "exit_code": 0
+      }
+    ],
+    "raw_hashes": [
+      {
+        "cli": 1,
+        "usage_sha256": "60b6763939e11111daf4c19bfcc688dc086920ff26def39a6b9ba6bb7148ad70"
+      }
+    ]
+  },
+  {
+    "cohort": "HISTORICAL",
+    "campaign": "combined",
+    "case": "cents",
+    "rep": 3,
+    "arm": "workflow",
+    "candidate_calls": null,
+    "original_status": "FAIL",
+    "saved_functional_status": "PASS",
+    "strict_revision": null,
+    "order_relaxed_revision": null,
+    "semantic_revision": null,
+    "cents_independent_regrade": "NOT_RUN",
+    "policy": null,
+    "file_integrity": "NOT_VERIFIED: historical no complete snapshot",
+    "calls": [
+      {
+        "cli": 1,
+        "seconds": 41.22239079999963,
+        "usage": {
+          "input_tokens": 147842,
+          "output_tokens": 1449,
+          "cached_input_tokens": 133965,
+          "cache_write_tokens": 13856,
+          "model_requests": 7,
+          "premium_requests": 1,
+          "api_duration_ms": 31822,
+          "nano_aiu": 788630000,
+          "total_tokens": 149291
+        },
+        "actual_models": [
+          "gpt-5.6-luna"
+        ],
+        "saved_usage_matches": true,
+        "exit_code": 0
+      }
+    ],
+    "raw_hashes": [
+      {
+        "cli": 1,
+        "usage_sha256": "10d2bc26b10e72332a51b3f83a04262fac22cff2aed70f3838c2f56a5658a418"
+      }
+    ]
+  },
+  {
+    "cohort": "HISTORICAL",
+    "campaign": "combined",
+    "case": "cents",
+    "rep": 3,
+    "arm": "attention",
+    "candidate_calls": null,
+    "original_status": "FAIL",
+    "saved_functional_status": "PASS",
+    "strict_revision": null,
+    "order_relaxed_revision": null,
+    "semantic_revision": null,
+    "cents_independent_regrade": "NOT_RUN",
+    "policy": null,
+    "file_integrity": "NOT_VERIFIED: historical no complete snapshot",
+    "calls": [
+      {
+        "cli": 1,
+        "seconds": 37.08412099999987,
+        "usage": {
+          "input_tokens": 159981,
+          "output_tokens": 1497,
+          "cached_input_tokens": 143956,
+          "cache_write_tokens": 16004,
+          "model_requests": 7,
+          "premium_requests": 1,
+          "api_duration_ms": 28882,
+          "nano_aiu": 868072000,
+          "total_tokens": 161478
+        },
+        "actual_models": [
+          "gpt-5.6-luna"
+        ],
+        "saved_usage_matches": true,
+        "exit_code": 0
+      }
+    ],
+    "raw_hashes": [
+      {
+        "cli": 1,
+        "usage_sha256": "2a24ab982c2023c3ae2a9cdd261d92708783cf92d6a61e30916160c2911bd4c8"
+      }
+    ]
+  },
+  {
+    "cohort": "HISTORICAL",
+    "campaign": "combined",
+    "case": "cents",
+    "rep": 3,
+    "arm": "combined",
+    "candidate_calls": null,
+    "original_status": "FAIL",
+    "saved_functional_status": "PASS",
+    "strict_revision": null,
+    "order_relaxed_revision": null,
+    "semantic_revision": null,
+    "cents_independent_regrade": "NOT_RUN",
+    "policy": null,
+    "file_integrity": "NOT_VERIFIED: historical no complete snapshot",
+    "calls": [
+      {
+        "cli": 1,
+        "seconds": 36.46725119999974,
+        "usage": {
+          "input_tokens": 134544,
+          "output_tokens": 1423,
+          "cached_input_tokens": 119244,
+          "cache_write_tokens": 15282,
+          "model_requests": 6,
+          "premium_requests": 1,
+          "api_duration_ms": 28174,
+          "nano_aiu": 791658000,
+          "total_tokens": 135967
+        },
+        "actual_models": [
+          "gpt-5.6-luna"
+        ],
+        "saved_usage_matches": true,
+        "exit_code": 0
+      }
+    ],
+    "raw_hashes": [
+      {
+        "cli": 1,
+        "usage_sha256": "e97f712ed3c1bb037729395ae86e9082878853eef6327157d1c54ac6e6ed1d9d"
+      }
+    ]
+  },
+  {
+    "cohort": "HISTORICAL",
+    "campaign": "combined",
+    "case": "cents",
+    "rep": 3,
+    "arm": "manual",
+    "candidate_calls": null,
+    "original_status": "FAIL",
+    "saved_functional_status": "PASS",
+    "strict_revision": null,
+    "order_relaxed_revision": null,
+    "semantic_revision": null,
+    "cents_independent_regrade": "NOT_RUN",
+    "policy": null,
+    "file_integrity": "NOT_VERIFIED: historical no complete snapshot",
+    "calls": [
+      {
+        "cli": 1,
+        "seconds": 32.604849000001195,
+        "usage": {
+          "input_tokens": 119483,
+          "output_tokens": 1222,
+          "cached_input_tokens": 106977,
+          "cache_write_tokens": 12488,
+          "model_requests": 6,
+          "premium_requests": 1,
+          "api_duration_ms": 25725,
+          "nano_aiu": 673154000,
+          "total_tokens": 120705
+        },
+        "actual_models": [
+          "gpt-5.6-luna"
+        ],
+        "saved_usage_matches": true,
+        "exit_code": 0
+      },
+      {
+        "cli": 2,
+        "seconds": 43.76997730000039,
+        "usage": {
+          "input_tokens": 204655,
+          "output_tokens": 1361,
+          "cached_input_tokens": 191523,
+          "cache_write_tokens": 13102,
+          "model_requests": 10,
+          "premium_requests": 1,
+          "api_duration_ms": 34100,
+          "nano_aiu": 874516000,
+          "total_tokens": 206016
+        },
+        "actual_models": [
+          "gpt-5.6-luna"
+        ],
+        "saved_usage_matches": true,
+        "exit_code": 0
+      },
+      {
+        "cli": 3,
+        "seconds": 30.52361050000036,
+        "usage": {
+          "input_tokens": 98858,
+          "output_tokens": 967,
+          "cached_input_tokens": 86457,
+          "cache_write_tokens": 12386,
+          "model_requests": 5,
+          "premium_requests": 1,
+          "api_duration_ms": 23136,
+          "nano_aiu": 598904000,
+          "total_tokens": 99825
+        },
+        "actual_models": [
+          "gpt-5.6-luna"
+        ],
+        "saved_usage_matches": true,
+        "exit_code": 0
+      }
+    ],
+    "raw_hashes": [
+      {
+        "cli": 1,
+        "usage_sha256": "4ea2a1522baeb8799378f921f59f37e7af7b47fedcf4337ef191da39e6cc7962"
+      },
+      {
+        "cli": 2,
+        "usage_sha256": "9aa6f58b94eb75d27ea79124cc32771f3163d468efbf33953c91e335a2db7f8a"
+      },
+      {
+        "cli": 3,
+        "usage_sha256": "9b44a82205a163f89f99545c8d2d9ae961e29473f796b5bb5281173db3c9b38b"
+      }
+    ]
+  },
+  {
+    "cohort": "HISTORICAL",
+    "campaign": "combined",
+    "case": "cents",
+    "rep": 3,
+    "arm": "idea",
+    "candidate_calls": null,
+    "original_status": "FAIL",
+    "saved_functional_status": "PASS",
+    "strict_revision": null,
+    "order_relaxed_revision": null,
+    "semantic_revision": null,
+    "cents_independent_regrade": "NOT_RUN",
+    "policy": null,
+    "file_integrity": "NOT_VERIFIED: historical no complete snapshot",
+    "calls": [
+      {
+        "cli": 1,
+        "seconds": 36.79392089999965,
+        "usage": {
+          "input_tokens": 147801,
+          "output_tokens": 1466,
+          "cached_input_tokens": 133187,
+          "cache_write_tokens": 14593,
+          "model_requests": 7,
+          "premium_requests": 1,
+          "api_duration_ms": 27619,
+          "nano_aiu": 807539000,
+          "total_tokens": 149267
+        },
+        "actual_models": [
+          "gpt-5.6-luna"
+        ],
+        "saved_usage_matches": true,
+        "exit_code": 0
+      },
+      {
+        "cli": 2,
+        "seconds": 31.35209180000129,
+        "usage": {
+          "input_tokens": 99070,
+          "output_tokens": 1176,
+          "cached_input_tokens": 86411,
+          "cache_write_tokens": 12644,
+          "model_requests": 5,
+          "premium_requests": 1,
+          "api_duration_ms": 23891,
+          "nano_aiu": 630342000,
+          "total_tokens": 100246
+        },
+        "actual_models": [
+          "gpt-5.6-luna"
+        ],
+        "saved_usage_matches": true,
+        "exit_code": 0
+      }
+    ],
+    "raw_hashes": [
+      {
+        "cli": 1,
+        "usage_sha256": "20fdc77a2018b32162c6f71e3b11022f1f15aa30629dd6615a04027b9b6ca341"
+      },
+      {
+        "cli": 2,
+        "usage_sha256": "1659ecddb3a5191a96b03745935cf2ed0843f4962527500609e5b03d060c6ddd"
+      }
+    ]
+  },
+  {
+    "cohort": "HISTORICAL",
+    "campaign": "combined",
+    "case": "cents",
+    "rep": 3,
+    "arm": "exhaustive",
+    "candidate_calls": null,
+    "original_status": "FAIL",
+    "saved_functional_status": "PASS",
+    "strict_revision": null,
+    "order_relaxed_revision": null,
+    "semantic_revision": null,
+    "cents_independent_regrade": "NOT_RUN",
+    "policy": null,
+    "file_integrity": "NOT_VERIFIED: historical no complete snapshot",
+    "calls": [
+      {
+        "cli": 1,
+        "seconds": 40.433924099999786,
+        "usage": {
+          "input_tokens": 143658,
+          "output_tokens": 1744,
+          "cached_input_tokens": 130190,
+          "cache_write_tokens": 13447,
+          "model_requests": 7,
+          "premium_requests": 1,
+          "api_duration_ms": 30993,
+          "nano_aiu": 806255000,
+          "total_tokens": 145402
+        },
+        "actual_models": [
+          "gpt-5.6-luna"
+        ],
+        "saved_usage_matches": true,
+        "exit_code": 0
+      }
+    ],
+    "raw_hashes": [
+      {
+        "cli": 1,
+        "usage_sha256": "ad30a68c3942d06ceeaaf80e2bc44b213a2dbefe55a9415862acf58dcadae6b2"
+      }
+    ]
+  },
+  {
+    "cohort": "HISTORICAL",
+    "campaign": "combined",
+    "case": "cents",
+    "rep": 4,
+    "arm": "workflow",
+    "candidate_calls": null,
+    "original_status": "FAIL",
+    "saved_functional_status": "PASS",
+    "strict_revision": null,
+    "order_relaxed_revision": null,
+    "semantic_revision": null,
+    "cents_independent_regrade": "NOT_RUN",
+    "policy": null,
+    "file_integrity": "NOT_VERIFIED: historical no complete snapshot",
+    "calls": [
+      {
+        "cli": 1,
+        "seconds": 32.20875059999889,
+        "usage": {
+          "input_tokens": 124878,
+          "output_tokens": 1169,
+          "cached_input_tokens": 111446,
+          "cache_write_tokens": 13414,
+          "model_requests": 6,
+          "premium_requests": 1,
+          "api_duration_ms": 24120,
+          "nano_aiu": 698882000,
+          "total_tokens": 126047
+        },
+        "actual_models": [
+          "gpt-5.6-luna"
+        ],
+        "saved_usage_matches": true,
+        "exit_code": 0
+      }
+    ],
+    "raw_hashes": [
+      {
+        "cli": 1,
+        "usage_sha256": "41fff2843624d63cd94bb80aaf7f0442c7c818ae6c7b226451a509881af54011"
+      }
+    ]
+  },
+  {
+    "cohort": "HISTORICAL",
+    "campaign": "combined",
+    "case": "cents",
+    "rep": 4,
+    "arm": "attention",
+    "candidate_calls": null,
+    "original_status": "FAIL",
+    "saved_functional_status": "PASS",
+    "strict_revision": null,
+    "order_relaxed_revision": null,
+    "semantic_revision": null,
+    "cents_independent_regrade": "NOT_RUN",
+    "policy": null,
+    "file_integrity": "NOT_VERIFIED: historical no complete snapshot",
+    "calls": [
+      {
+        "cli": 1,
+        "seconds": 38.58443729999999,
+        "usage": {
+          "input_tokens": 174561,
+          "output_tokens": 1335,
+          "cached_input_tokens": 160013,
+          "cache_write_tokens": 14524,
+          "model_requests": 8,
+          "premium_requests": 1,
+          "api_duration_ms": 29627,
+          "nano_aiu": 843806000,
+          "total_tokens": 175896
+        },
+        "actual_models": [
+          "gpt-5.6-luna"
+        ],
+        "saved_usage_matches": true,
+        "exit_code": 0
+      }
+    ],
+    "raw_hashes": [
+      {
+        "cli": 1,
+        "usage_sha256": "053fb7cebb4fd349812062ffbed7c84fbca970e979dfbec1a0b21b4b1a678845"
+      }
+    ]
+  },
+  {
+    "cohort": "HISTORICAL",
+    "campaign": "combined",
+    "case": "cents",
+    "rep": 4,
+    "arm": "combined",
+    "candidate_calls": null,
+    "original_status": "FAIL",
+    "saved_functional_status": "PASS",
+    "strict_revision": null,
+    "order_relaxed_revision": null,
+    "semantic_revision": null,
+    "cents_independent_regrade": "NOT_RUN",
+    "policy": null,
+    "file_integrity": "NOT_VERIFIED: historical no complete snapshot",
+    "calls": [
+      {
+        "cli": 1,
+        "seconds": 31.37073959999907,
+        "usage": {
+          "input_tokens": 133946,
+          "output_tokens": 1330,
+          "cached_input_tokens": 118904,
+          "cache_write_tokens": 15024,
+          "model_requests": 6,
+          "premium_requests": 1,
+          "api_duration_ms": 24044,
+          "nano_aiu": 773368000,
+          "total_tokens": 135276
+        },
+        "actual_models": [
+          "gpt-5.6-luna"
+        ],
+        "saved_usage_matches": true,
+        "exit_code": 0
+      }
+    ],
+    "raw_hashes": [
+      {
+        "cli": 1,
+        "usage_sha256": "0a36b1f5d389996c9cb3db46fe37f1ae9f668444cea0043de70979a06b6df9d4"
+      }
+    ]
+  },
+  {
+    "cohort": "HISTORICAL",
+    "campaign": "combined",
+    "case": "cents",
+    "rep": 4,
+    "arm": "manual",
+    "candidate_calls": null,
+    "original_status": "FAIL",
+    "saved_functional_status": "PASS",
+    "strict_revision": null,
+    "order_relaxed_revision": null,
+    "semantic_revision": null,
+    "cents_independent_regrade": "NOT_RUN",
+    "policy": null,
+    "file_integrity": "NOT_VERIFIED: historical no complete snapshot",
+    "calls": [
+      {
+        "cli": 1,
+        "seconds": 32.32177919999958,
+        "usage": {
+          "input_tokens": 118968,
+          "output_tokens": 980,
+          "cached_input_tokens": 106574,
+          "cache_write_tokens": 12376,
+          "model_requests": 6,
+          "premium_requests": 1,
+          "api_duration_ms": 24993,
+          "nano_aiu": 640508000,
+          "total_tokens": 119948
+        },
+        "actual_models": [
+          "gpt-5.6-luna"
+        ],
+        "saved_usage_matches": true,
+        "exit_code": 0
+      },
+      {
+        "cli": 2,
+        "seconds": 38.248603700001695,
+        "usage": {
+          "input_tokens": 141042,
+          "output_tokens": 1300,
+          "cached_input_tokens": 128211,
+          "cache_write_tokens": 12810,
+          "model_requests": 7,
+          "premium_requests": 1,
+          "api_duration_ms": 29820,
+          "nano_aiu": 733092000,
+          "total_tokens": 142342
+        },
+        "actual_models": [
+          "gpt-5.6-luna"
+        ],
+        "saved_usage_matches": true,
+        "exit_code": 0
+      },
+      {
+        "cli": 3,
+        "seconds": 32.56012280000141,
+        "usage": {
+          "input_tokens": 98945,
+          "output_tokens": 1075,
+          "cached_input_tokens": 86505,
+          "cache_write_tokens": 12425,
+          "model_requests": 5,
+          "premium_requests": 1,
+          "api_duration_ms": 25646,
+          "nano_aiu": 612935000,
+          "total_tokens": 100020
+        },
+        "actual_models": [
+          "gpt-5.6-luna"
+        ],
+        "saved_usage_matches": true,
+        "exit_code": 0
+      }
+    ],
+    "raw_hashes": [
+      {
+        "cli": 1,
+        "usage_sha256": "3bfec1116ae49f5bba4a50eeef2dfe8fa367ea0e6accf22fb47895ce29ee0719"
+      },
+      {
+        "cli": 2,
+        "usage_sha256": "b6f5d137c2aa93100bc5598d17cd327ac9a9f1c6a8a0847ed10611c31228bb71"
+      },
+      {
+        "cli": 3,
+        "usage_sha256": "5a2ca76a118bedc44b6e460cef37c9f93254376d6da2f567edb1327b33f30ed2"
+      }
+    ]
+  },
+  {
+    "cohort": "HISTORICAL",
+    "campaign": "combined",
+    "case": "cents",
+    "rep": 4,
+    "arm": "idea",
+    "candidate_calls": null,
+    "original_status": "FAIL",
+    "saved_functional_status": "PASS",
+    "strict_revision": null,
+    "order_relaxed_revision": null,
+    "semantic_revision": null,
+    "cents_independent_regrade": "NOT_RUN",
+    "policy": null,
+    "file_integrity": "NOT_VERIFIED: historical no complete snapshot",
+    "calls": [
+      {
+        "cli": 1,
+        "seconds": 30.26804710000215,
+        "usage": {
+          "input_tokens": 120516,
+          "output_tokens": 1303,
+          "cached_input_tokens": 107666,
+          "cache_write_tokens": 12832,
+          "model_requests": 6,
+          "premium_requests": 1,
+          "api_duration_ms": 22906,
+          "nano_aiu": 692852000,
+          "total_tokens": 121819
+        },
+        "actual_models": [
+          "gpt-5.6-luna"
+        ],
+        "saved_usage_matches": true,
+        "exit_code": 0
+      },
+      {
+        "cli": 2,
+        "seconds": 34.38986339999974,
+        "usage": {
+          "input_tokens": 142712,
+          "output_tokens": 1293,
+          "cached_input_tokens": 129392,
+          "cache_write_tokens": 13299,
+          "model_requests": 7,
+          "premium_requests": 1,
+          "api_duration_ms": 25857,
+          "nano_aiu": 746839000,
+          "total_tokens": 144005
+        },
+        "actual_models": [
+          "gpt-5.6-luna"
+        ],
+        "saved_usage_matches": true,
+        "exit_code": 0
+      }
+    ],
+    "raw_hashes": [
+      {
+        "cli": 1,
+        "usage_sha256": "4403dcdde67614071bd6f1b1607093d786845e70d566d46aece65034c7fc905e"
+      },
+      {
+        "cli": 2,
+        "usage_sha256": "bdd58ce78afa50aaa8d6db327d11b18dcabf1363dc6c8f0f6ac79ca7cb4093af"
+      }
+    ]
+  },
+  {
+    "cohort": "HISTORICAL",
+    "campaign": "combined",
+    "case": "cents",
+    "rep": 4,
+    "arm": "exhaustive",
+    "candidate_calls": null,
+    "original_status": "FAIL",
+    "saved_functional_status": "PASS",
+    "strict_revision": null,
+    "order_relaxed_revision": null,
+    "semantic_revision": null,
+    "cents_independent_regrade": "NOT_RUN",
+    "policy": null,
+    "file_integrity": "NOT_VERIFIED: historical no complete snapshot",
+    "calls": [
+      {
+        "cli": 1,
+        "seconds": 32.19075289999819,
+        "usage": {
+          "input_tokens": 99459,
+          "output_tokens": 1160,
+          "cached_input_tokens": 86774,
+          "cache_write_tokens": 12670,
+          "model_requests": 5,
+          "premium_requests": 1,
+          "api_duration_ms": 25027,
+          "nano_aiu": 629798000,
+          "total_tokens": 100619
+        },
+        "actual_models": [
+          "gpt-5.6-luna"
+        ],
+        "saved_usage_matches": true,
+        "exit_code": 0
+      }
+    ],
+    "raw_hashes": [
+      {
+        "cli": 1,
+        "usage_sha256": "cfa9b14809239dda42b2a8e3fd8addd51d1c06b1ddfea64d576e2c7bce727ade"
+      }
+    ]
+  },
+  {
+    "cohort": "HISTORICAL",
+    "campaign": "combined",
+    "case": "cents",
+    "rep": 5,
+    "arm": "workflow",
+    "candidate_calls": null,
+    "original_status": "FAIL",
+    "saved_functional_status": "PASS",
+    "strict_revision": null,
+    "order_relaxed_revision": null,
+    "semantic_revision": null,
+    "cents_independent_regrade": "NOT_RUN",
+    "policy": null,
+    "file_integrity": "NOT_VERIFIED: historical no complete snapshot",
+    "calls": [
+      {
+        "cli": 1,
+        "seconds": 38.10059189999811,
+        "usage": {
+          "input_tokens": 155132,
+          "output_tokens": 1483,
+          "cached_input_tokens": 139821,
+          "cache_write_tokens": 15290,
+          "model_requests": 7,
+          "premium_requests": 1,
+          "api_duration_ms": 29886,
+          "nano_aiu": 840272000,
+          "total_tokens": 156615
+        },
+        "actual_models": [
+          "gpt-5.6-luna"
+        ],
+        "saved_usage_matches": true,
+        "exit_code": 0
+      }
+    ],
+    "raw_hashes": [
+      {
+        "cli": 1,
+        "usage_sha256": "0b340ddcb91c56130a97b40e9cd677bfc4391b942de565446f730a324cdf74ca"
+      }
+    ]
+  },
+  {
+    "cohort": "HISTORICAL",
+    "campaign": "combined",
+    "case": "cents",
+    "rep": 5,
+    "arm": "attention",
+    "candidate_calls": null,
+    "original_status": "FAIL",
+    "saved_functional_status": "PASS",
+    "strict_revision": null,
+    "order_relaxed_revision": null,
+    "semantic_revision": null,
+    "cents_independent_regrade": "NOT_RUN",
+    "policy": null,
+    "file_integrity": "NOT_VERIFIED: historical no complete snapshot",
+    "calls": [
+      {
+        "cli": 1,
+        "seconds": 35.1251719000029,
+        "usage": {
+          "input_tokens": 129840,
+          "output_tokens": 1290,
+          "cached_input_tokens": 115500,
+          "cache_write_tokens": 14322,
+          "model_requests": 6,
+          "premium_requests": 1,
+          "api_duration_ms": 26608,
+          "nano_aiu": 744210000,
+          "total_tokens": 131130
+        },
+        "actual_models": [
+          "gpt-5.6-luna"
+        ],
+        "saved_usage_matches": true,
+        "exit_code": 0
+      }
+    ],
+    "raw_hashes": [
+      {
+        "cli": 1,
+        "usage_sha256": "b9e8073dc48022cb09d6469859f7998c4d83ccdc12170afd93c1a6323f427903"
+      }
+    ]
+  },
+  {
+    "cohort": "HISTORICAL",
+    "campaign": "combined",
+    "case": "cents",
+    "rep": 5,
+    "arm": "combined",
+    "candidate_calls": null,
+    "original_status": "FAIL",
+    "saved_functional_status": "PASS",
+    "strict_revision": null,
+    "order_relaxed_revision": null,
+    "semantic_revision": null,
+    "cents_independent_regrade": "NOT_RUN",
+    "policy": null,
+    "file_integrity": "NOT_VERIFIED: historical no complete snapshot",
+    "calls": [
+      {
+        "cli": 1,
+        "seconds": 39.5663956999997,
+        "usage": {
+          "input_tokens": 157144,
+          "output_tokens": 1407,
+          "cached_input_tokens": 141752,
+          "cache_write_tokens": 15371,
+          "model_requests": 7,
+          "premium_requests": 1,
+          "api_duration_ms": 31290,
+          "nano_aiu": 837039000,
+          "total_tokens": 158551
+        },
+        "actual_models": [
+          "gpt-5.6-luna"
+        ],
+        "saved_usage_matches": true,
+        "exit_code": 0
+      }
+    ],
+    "raw_hashes": [
+      {
+        "cli": 1,
+        "usage_sha256": "ebac2d0a8f25506fe9a4f8e615aea953a680a9f5517ddde867deb944a6e89e07"
+      }
+    ]
+  },
+  {
+    "cohort": "HISTORICAL",
+    "campaign": "combined",
+    "case": "cents",
+    "rep": 5,
+    "arm": "manual",
+    "candidate_calls": null,
+    "original_status": "FAIL",
+    "saved_functional_status": "PASS",
+    "strict_revision": null,
+    "order_relaxed_revision": null,
+    "semantic_revision": null,
+    "cents_independent_regrade": "NOT_RUN",
+    "policy": null,
+    "file_integrity": "NOT_VERIFIED: historical no complete snapshot",
+    "calls": [
+      {
+        "cli": 1,
+        "seconds": 44.225540600000386,
+        "usage": {
+          "input_tokens": 148262,
+          "output_tokens": 1301,
+          "cached_input_tokens": 134040,
+          "cache_write_tokens": 14201,
+          "model_requests": 7,
+          "premium_requests": 1,
+          "api_duration_ms": 36069,
+          "nano_aiu": 779645000,
+          "total_tokens": 149563
+        },
+        "actual_models": [
+          "gpt-5.6-luna"
+        ],
+        "saved_usage_matches": true,
+        "exit_code": 0
+      },
+      {
+        "cli": 2,
+        "seconds": 44.51006540000162,
+        "usage": {
+          "input_tokens": 161800,
+          "output_tokens": 1152,
+          "cached_input_tokens": 149037,
+          "cache_write_tokens": 12739,
+          "model_requests": 8,
+          "premium_requests": 1,
+          "api_duration_ms": 35848,
+          "nano_aiu": 755269000,
+          "total_tokens": 162952
+        },
+        "actual_models": [
+          "gpt-5.6-luna"
+        ],
+        "saved_usage_matches": true,
+        "exit_code": 0
+      },
+      {
+        "cli": 3,
+        "seconds": 30.542839400000958,
+        "usage": {
+          "input_tokens": 103557,
+          "output_tokens": 1153,
+          "cached_input_tokens": 89488,
+          "cache_write_tokens": 14054,
+          "model_requests": 5,
+          "premium_requests": 1,
+          "api_duration_ms": 23123,
+          "nano_aiu": 668986000,
+          "total_tokens": 104710
+        },
+        "actual_models": [
+          "gpt-5.6-luna"
+        ],
+        "saved_usage_matches": true,
+        "exit_code": 0
+      }
+    ],
+    "raw_hashes": [
+      {
+        "cli": 1,
+        "usage_sha256": "7aac1796b2cdff4301934a630310b047a4fba62e646740ea1c4144dbf37bf915"
+      },
+      {
+        "cli": 2,
+        "usage_sha256": "09ccc041002a1c5f19af410f4242eef5ff8ce94d7cc439a1a1d71184186a0879"
+      },
+      {
+        "cli": 3,
+        "usage_sha256": "a039657583efd5c76e0f2edf4d3196cbe05ad55b57009529f33a70d9e129b4b1"
+      }
+    ]
+  },
+  {
+    "cohort": "HISTORICAL",
+    "campaign": "combined",
+    "case": "cents",
+    "rep": 5,
+    "arm": "idea",
+    "candidate_calls": null,
+    "original_status": "FAIL",
+    "saved_functional_status": "PASS",
+    "strict_revision": null,
+    "order_relaxed_revision": null,
+    "semantic_revision": null,
+    "cents_independent_regrade": "NOT_RUN",
+    "policy": null,
+    "file_integrity": "NOT_VERIFIED: historical no complete snapshot",
+    "calls": [
+      {
+        "cli": 1,
+        "seconds": 30.09043080000265,
+        "usage": {
+          "input_tokens": 120407,
+          "output_tokens": 1302,
+          "cached_input_tokens": 107509,
+          "cache_write_tokens": 12880,
+          "model_requests": 6,
+          "premium_requests": 1,
+          "api_duration_ms": 22839,
+          "nano_aiu": 693618000,
+          "total_tokens": 121709
+        },
+        "actual_models": [
+          "gpt-5.6-luna"
+        ],
+        "saved_usage_matches": true,
+        "exit_code": 0
+      },
+      {
+        "cli": 2,
+        "seconds": 36.9673913000006,
+        "usage": {
+          "input_tokens": 120517,
+          "output_tokens": 1168,
+          "cached_input_tokens": 107750,
+          "cache_write_tokens": 12749,
+          "model_requests": 6,
+          "premium_requests": 1,
+          "api_duration_ms": 28371,
+          "nano_aiu": 674745000,
+          "total_tokens": 121685
+        },
+        "actual_models": [
+          "gpt-5.6-luna"
+        ],
+        "saved_usage_matches": true,
+        "exit_code": 0
+      }
+    ],
+    "raw_hashes": [
+      {
+        "cli": 1,
+        "usage_sha256": "77498119de55fafff97643b50c58057d3689a404113e204b3fdbd6beb960c3a0"
+      },
+      {
+        "cli": 2,
+        "usage_sha256": "86d58e483a6e4959b06e1fdec02a09e9ff1b72052875b171b2125f3b716ac3a2"
+      }
+    ]
+  },
+  {
+    "cohort": "HISTORICAL",
+    "campaign": "combined",
+    "case": "cents",
+    "rep": 5,
+    "arm": "exhaustive",
+    "candidate_calls": null,
+    "original_status": "FAIL",
+    "saved_functional_status": "PASS",
+    "strict_revision": null,
+    "order_relaxed_revision": null,
+    "semantic_revision": null,
+    "cents_independent_regrade": "NOT_RUN",
+    "policy": null,
+    "file_integrity": "NOT_VERIFIED: historical no complete snapshot",
+    "calls": [
+      {
+        "cli": 1,
+        "seconds": 34.020041100000526,
+        "usage": {
+          "input_tokens": 120870,
+          "output_tokens": 1363,
+          "cached_input_tokens": 107919,
+          "cache_write_tokens": 12933,
+          "model_requests": 6,
+          "premium_requests": 1,
+          "api_duration_ms": 26369,
+          "nano_aiu": 703083000,
+          "total_tokens": 122233
+        },
+        "actual_models": [
+          "gpt-5.6-luna"
+        ],
+        "saved_usage_matches": true,
+        "exit_code": 0
+      }
+    ],
+    "raw_hashes": [
+      {
+        "cli": 1,
+        "usage_sha256": "3f23acf1b38d2c153e88c61154bce0cbbc4961e9e0246b68927d83359f87bed1"
+      }
+    ]
+  }
+]

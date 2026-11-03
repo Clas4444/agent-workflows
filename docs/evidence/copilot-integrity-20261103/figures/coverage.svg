@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="920" viewBox="0 0 1440 920">
+<rect width="100%" height="100%" fill="#fafbf9"/>
+<g font-family="Arial, sans-serif" fill="#182a35">
+<text x="52" y="48" font-size="26" font-weight="bold" fill="#182a35" text-anchor="start">Coverage and missingness: historical records versus new pilot</text>
+<text x="52" y="78" font-size="15" font-weight="normal" fill="#182a35" text-anchor="start">NOT_RUN is missing evidence, never zero measured cost. Historical and new planned denominators remain separate.</text>
+<text x="52" y="170" font-size="20" font-weight="bold" fill="#182a35" text-anchor="start">Historical original labels, 80 packages</text>
+<rect x="52" y="198" width="403.0" height="58" fill="#127d79"/>
+<text x="64" y="234" font-size="18" font-weight="normal" fill="white" text-anchor="start">PASS: 26/80</text>
+<rect x="455.0" y="198" width="837.0" height="58" fill="#9b3f4b"/>
+<text x="467.0" y="234" font-size="18" font-weight="normal" fill="white" text-anchor="start">FAIL: 54/80</text>
+<text x="52" y="350" font-size="20" font-weight="bold" fill="#182a35" text-anchor="start">Historical combined saved functional, 60 packages</text>
+<rect x="52" y="378" width="950.6666666666666" height="58" fill="#127d79"/>
+<text x="64" y="414" font-size="18" font-weight="normal" fill="white" text-anchor="start">PASS: 46/60</text>
+<rect x="1002.6666666666666" y="378" width="289.3333333333333" height="58" fill="#9b3f4b"/>
+<text x="1014.6666666666666" y="414" font-size="18" font-weight="normal" fill="white" text-anchor="start">FAIL: 14/60</text>
+<text x="52" y="530" font-size="20" font-weight="bold" fill="#182a35" text-anchor="start">New pilot, 12 planned slots</text>
+<rect x="52" y="558" width="1240.0" height="58" fill="#657783"/>
+<text x="64" y="594" font-size="18" font-weight="normal" fill="white" text-anchor="start">NOT_RUN: 12/12</text>
+<text x="52" y="770" font-size="18" font-weight="normal" fill="#182a35" text-anchor="start">Historical: 125 CLI invocations; 367 internal model requests.</text>
+<text x="52" y="807" font-size="18" font-weight="normal" fill="#182a35" text-anchor="start">New pilot: 0 CLI invocations. Planned slots retained; missing time/usage is not zero cost.</text>
+<text x="52" y="865" font-size="14" font-weight="normal" fill="#182a35" text-anchor="start">Cohorts stay separate. Blocked sibling attempts belong to the other repository and are not workflow pilot observations.</text>
+</g></svg>

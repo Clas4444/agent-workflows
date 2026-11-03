@@ -1,0 +1,13 @@
+cohort,campaign,id,case,rep,arm,status,block_reason,cli_count,seconds,usage,checks
+NEW,copilot-pilot-20261103,01-revision-1-workflow,revision,1,workflow,NOT_RUN,shared_stop_marker,0,,,
+NEW,copilot-pilot-20261103,02-revision-1-matched,revision,1,matched,NOT_RUN,shared_stop_marker,0,,,
+NEW,copilot-pilot-20261103,03-revision-1-plain,revision,1,plain,NOT_RUN,shared_stop_marker,0,,,
+NEW,copilot-pilot-20261103,04-revision-2-plain,revision,2,plain,NOT_RUN,shared_stop_marker,0,,,
+NEW,copilot-pilot-20261103,05-revision-2-matched,revision,2,matched,NOT_RUN,shared_stop_marker,0,,,
+NEW,copilot-pilot-20261103,06-revision-2-workflow,revision,2,workflow,NOT_RUN,shared_stop_marker,0,,,
+NEW,copilot-pilot-20261103,07-authority-1-matched,authority,1,matched,NOT_RUN,shared_stop_marker,0,,,
+NEW,copilot-pilot-20261103,08-authority-1-plain,authority,1,plain,NOT_RUN,shared_stop_marker,0,,,
+NEW,copilot-pilot-20261103,09-authority-1-workflow,authority,1,workflow,NOT_RUN,shared_stop_marker,0,,,
+NEW,copilot-pilot-20261103,10-authority-2-workflow,authority,2,workflow,NOT_RUN,shared_stop_marker,0,,,
+NEW,copilot-pilot-20261103,11-authority-2-plain,authority,2,plain,NOT_RUN,shared_stop_marker,0,,,
+NEW,copilot-pilot-20261103,12-authority-2-matched,authority,2,matched,NOT_RUN,shared_stop_marker,0,,,

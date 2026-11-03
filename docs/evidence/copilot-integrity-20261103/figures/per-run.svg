@@ -1,0 +1,176 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="920" viewBox="0 0 1440 920">
+<rect width="100%" height="100%" fill="#fafbf9"/>
+<g font-family="Arial, sans-serif" fill="#182a35">
+<text x="52" y="48" font-size="26" font-weight="bold" fill="#182a35" text-anchor="start">Historical per-package resource use, all five repeats retained</text>
+<text x="52" y="78" font-size="15" font-weight="normal" fill="#182a35" text-anchor="start">Workflow-only revision campaign. One package may contain multiple restarted CLI calls; cache is not added to total tokens.</text>
+<text x="52" y="135" font-size="18" font-weight="bold" fill="#182a35" text-anchor="start">Total tokens (input + output)</text>
+<line x1="145" y1="295" x2="1320" y2="295" stroke="#ced7da"/>
+<text x="135" y="300" font-size="12" font-weight="normal" fill="#182a35" text-anchor="end">0</text>
+<line x1="145" y1="260" x2="1320" y2="260" stroke="#ced7da"/>
+<text x="135" y="265" font-size="12" font-weight="normal" fill="#182a35" text-anchor="end">15,000</text>
+<line x1="145" y1="225" x2="1320" y2="225" stroke="#ced7da"/>
+<text x="135" y="230" font-size="12" font-weight="normal" fill="#182a35" text-anchor="end">30,000</text>
+<line x1="145" y1="190" x2="1320" y2="190" stroke="#ced7da"/>
+<text x="135" y="195" font-size="12" font-weight="normal" fill="#182a35" text-anchor="end">45,000</text>
+<line x1="145" y1="155" x2="1320" y2="155" stroke="#ced7da"/>
+<text x="135" y="160" font-size="12" font-weight="normal" fill="#182a35" text-anchor="end">60,000</text>
+<circle cx="252" cy="253.994" r="5" fill="#4554a0"/>
+<text x="252" y="244.994" font-size="11" font-weight="normal" fill="#182a35" text-anchor="middle">1</text>
+<circle cx="276" cy="253.994" r="5" fill="#4554a0"/>
+<text x="276" y="244.994" font-size="11" font-weight="normal" fill="#182a35" text-anchor="middle">2</text>
+<circle cx="300" cy="253.973" r="5" fill="#4554a0"/>
+<text x="300" y="244.973" font-size="11" font-weight="normal" fill="#182a35" text-anchor="middle">3</text>
+<circle cx="324" cy="253.994" r="5" fill="#4554a0"/>
+<text x="324" y="244.994" font-size="11" font-weight="normal" fill="#182a35" text-anchor="middle">4</text>
+<circle cx="348" cy="253.99866666666668" r="5" fill="#4554a0"/>
+<text x="348" y="244.99866666666668" font-size="11" font-weight="normal" fill="#182a35" text-anchor="middle">5</text>
+<text x="300" y="320" font-size="14" font-weight="normal" fill="#182a35" text-anchor="middle">exhaustive</text>
+<text x="300" y="340" font-size="12" font-weight="normal" fill="#182a35" text-anchor="middle">1 CLI/package</text>
+<circle cx="542" cy="212.54466666666667" r="5" fill="#bc7b24"/>
+<text x="542" y="203.54466666666667" font-size="11" font-weight="normal" fill="#182a35" text-anchor="middle">1</text>
+<circle cx="566" cy="212.24833333333333" r="5" fill="#bc7b24"/>
+<text x="566" y="203.24833333333333" font-size="11" font-weight="normal" fill="#182a35" text-anchor="middle">2</text>
+<circle cx="590" cy="212.77566666666667" r="5" fill="#bc7b24"/>
+<text x="590" y="203.77566666666667" font-size="11" font-weight="normal" fill="#182a35" text-anchor="middle">3</text>
+<circle cx="614" cy="212.85033333333334" r="5" fill="#bc7b24"/>
+<text x="614" y="203.85033333333334" font-size="11" font-weight="normal" fill="#182a35" text-anchor="middle">4</text>
+<circle cx="638" cy="212.75233333333333" r="5" fill="#bc7b24"/>
+<text x="638" y="203.75233333333333" font-size="11" font-weight="normal" fill="#182a35" text-anchor="middle">5</text>
+<text x="590" y="320" font-size="14" font-weight="normal" fill="#182a35" text-anchor="middle">idea</text>
+<text x="590" y="340" font-size="12" font-weight="normal" fill="#182a35" text-anchor="middle">2 CLI/package</text>
+<circle cx="832" cy="172.34366666666665" r="5" fill="#9b3f4b"/>
+<text x="832" y="163.34366666666665" font-size="11" font-weight="normal" fill="#182a35" text-anchor="middle">1</text>
+<circle cx="856" cy="172.101" r="5" fill="#9b3f4b"/>
+<text x="856" y="163.101" font-size="11" font-weight="normal" fill="#182a35" text-anchor="middle">2</text>
+<circle cx="880" cy="172.5" r="5" fill="#9b3f4b"/>
+<text x="880" y="163.5" font-size="11" font-weight="normal" fill="#182a35" text-anchor="middle">3</text>
+<circle cx="904" cy="172.35066666666665" r="5" fill="#9b3f4b"/>
+<text x="904" y="163.35066666666665" font-size="11" font-weight="normal" fill="#182a35" text-anchor="middle">4</text>
+<circle cx="928" cy="172.18733333333336" r="5" fill="#9b3f4b"/>
+<text x="928" y="163.18733333333336" font-size="11" font-weight="normal" fill="#182a35" text-anchor="middle">5</text>
+<text x="880" y="320" font-size="14" font-weight="normal" fill="#182a35" text-anchor="middle">manual</text>
+<text x="880" y="340" font-size="12" font-weight="normal" fill="#182a35" text-anchor="middle">3 CLI/package</text>
+<circle cx="1122" cy="251.90333333333334" r="5" fill="#127d79"/>
+<text x="1122" y="242.90333333333334" font-size="11" font-weight="normal" fill="#182a35" text-anchor="middle">1</text>
+<circle cx="1146" cy="252.11333333333334" r="5" fill="#127d79"/>
+<text x="1146" y="243.11333333333334" font-size="11" font-weight="normal" fill="#182a35" text-anchor="middle">2</text>
+<circle cx="1170" cy="252.01066666666668" r="5" fill="#127d79"/>
+<text x="1170" y="243.01066666666668" font-size="11" font-weight="normal" fill="#182a35" text-anchor="middle">3</text>
+<circle cx="1194" cy="252.21833333333333" r="5" fill="#127d79"/>
+<text x="1194" y="243.21833333333333" font-size="11" font-weight="normal" fill="#182a35" text-anchor="middle">4</text>
+<circle cx="1218" cy="251.72366666666667" r="5" fill="#127d79"/>
+<text x="1218" y="242.72366666666667" font-size="11" font-weight="normal" fill="#182a35" text-anchor="middle">5</text>
+<text x="1170" y="320" font-size="14" font-weight="normal" fill="#182a35" text-anchor="middle">workflow</text>
+<text x="1170" y="340" font-size="12" font-weight="normal" fill="#182a35" text-anchor="middle">1 CLI/package</text>
+<text x="52" y="365" font-size="18" font-weight="bold" fill="#182a35" text-anchor="start">Elapsed wall seconds</text>
+<line x1="145" y1="525" x2="1320" y2="525" stroke="#ced7da"/>
+<text x="135" y="530" font-size="12" font-weight="normal" fill="#182a35" text-anchor="end">0</text>
+<line x1="145" y1="490" x2="1320" y2="490" stroke="#ced7da"/>
+<text x="135" y="495" font-size="12" font-weight="normal" fill="#182a35" text-anchor="end">10</text>
+<line x1="145" y1="455" x2="1320" y2="455" stroke="#ced7da"/>
+<text x="135" y="460" font-size="12" font-weight="normal" fill="#182a35" text-anchor="end">20</text>
+<line x1="145" y1="420" x2="1320" y2="420" stroke="#ced7da"/>
+<text x="135" y="425" font-size="12" font-weight="normal" fill="#182a35" text-anchor="end">30</text>
+<line x1="145" y1="385" x2="1320" y2="385" stroke="#ced7da"/>
+<text x="135" y="390" font-size="12" font-weight="normal" fill="#182a35" text-anchor="end">40</text>
+<circle cx="252" cy="491.2348433999982" r="5" fill="#4554a0"/>
+<text x="252" y="482.2348433999982" font-size="11" font-weight="normal" fill="#182a35" text-anchor="middle">1</text>
+<circle cx="276" cy="482.075050800001" r="5" fill="#4554a0"/>
+<text x="276" y="473.075050800001" font-size="11" font-weight="normal" fill="#182a35" text-anchor="middle">2</text>
+<circle cx="300" cy="490.50354359999847" r="5" fill="#4554a0"/>
+<text x="300" y="481.50354359999847" font-size="11" font-weight="normal" fill="#182a35" text-anchor="middle">3</text>
+<circle cx="324" cy="487.7342071000012" r="5" fill="#4554a0"/>
+<text x="324" y="478.7342071000012" font-size="11" font-weight="normal" fill="#182a35" text-anchor="middle">4</text>
+<circle cx="348" cy="489.0720530500016" r="5" fill="#4554a0"/>
+<text x="348" y="480.0720530500016" font-size="11" font-weight="normal" fill="#182a35" text-anchor="middle">5</text>
+<text x="300" y="550" font-size="14" font-weight="normal" fill="#182a35" text-anchor="middle">exhaustive</text>
+<circle cx="542" cy="442.46025775000317" r="5" fill="#bc7b24"/>
+<text x="542" y="433.46025775000317" font-size="11" font-weight="normal" fill="#182a35" text-anchor="middle">1</text>
+<circle cx="566" cy="443.2551217499986" r="5" fill="#bc7b24"/>
+<text x="566" y="434.2551217499986" font-size="11" font-weight="normal" fill="#182a35" text-anchor="middle">2</text>
+<circle cx="590" cy="446.7457477000039" r="5" fill="#bc7b24"/>
+<text x="590" y="437.7457477000039" font-size="11" font-weight="normal" fill="#182a35" text-anchor="middle">3</text>
+<circle cx="614" cy="448.39298560000225" r="5" fill="#bc7b24"/>
+<text x="614" y="439.39298560000225" font-size="11" font-weight="normal" fill="#182a35" text-anchor="middle">4</text>
+<circle cx="638" cy="441.17067330000145" r="5" fill="#bc7b24"/>
+<text x="638" y="432.17067330000145" font-size="11" font-weight="normal" fill="#182a35" text-anchor="middle">5</text>
+<text x="590" y="550" font-size="14" font-weight="normal" fill="#182a35" text-anchor="middle">idea</text>
+<circle cx="832" cy="418.79374215000007" r="5" fill="#9b3f4b"/>
+<text x="832" y="409.79374215000007" font-size="11" font-weight="normal" fill="#182a35" text-anchor="middle">1</text>
+<circle cx="856" cy="413.8712199999968" r="5" fill="#9b3f4b"/>
+<text x="856" y="404.8712199999968" font-size="11" font-weight="normal" fill="#182a35" text-anchor="middle">2</text>
+<circle cx="880" cy="418.8905276500004" r="5" fill="#9b3f4b"/>
+<text x="880" y="409.8905276500004" font-size="11" font-weight="normal" fill="#182a35" text-anchor="middle">3</text>
+<circle cx="904" cy="422.36562270000286" r="5" fill="#9b3f4b"/>
+<text x="904" y="413.36562270000286" font-size="11" font-weight="normal" fill="#182a35" text-anchor="middle">4</text>
+<circle cx="928" cy="411.5963078500049" r="5" fill="#9b3f4b"/>
+<text x="928" y="402.5963078500049" font-size="11" font-weight="normal" fill="#182a35" text-anchor="middle">5</text>
+<text x="880" y="550" font-size="14" font-weight="normal" fill="#182a35" text-anchor="middle">manual</text>
+<circle cx="1122" cy="482.7246886000016" r="5" fill="#127d79"/>
+<text x="1122" y="473.7246886000016" font-size="11" font-weight="normal" fill="#182a35" text-anchor="middle">1</text>
+<circle cx="1146" cy="487.5275429500016" r="5" fill="#127d79"/>
+<text x="1146" y="478.5275429500016" font-size="11" font-weight="normal" fill="#182a35" text-anchor="middle">2</text>
+<circle cx="1170" cy="479.46705870000096" r="5" fill="#127d79"/>
+<text x="1170" y="470.46705870000096" font-size="11" font-weight="normal" fill="#182a35" text-anchor="middle">3</text>
+<circle cx="1194" cy="487.5797139499996" r="5" fill="#127d79"/>
+<text x="1194" y="478.5797139499996" font-size="11" font-weight="normal" fill="#182a35" text-anchor="middle">4</text>
+<circle cx="1218" cy="473.60177200000044" r="5" fill="#127d79"/>
+<text x="1218" y="464.60177200000044" font-size="11" font-weight="normal" fill="#182a35" text-anchor="middle">5</text>
+<text x="1170" y="550" font-size="14" font-weight="normal" fill="#182a35" text-anchor="middle">workflow</text>
+<text x="52" y="595" font-size="18" font-weight="bold" fill="#182a35" text-anchor="start">Cache-read tokens (input subset)</text>
+<line x1="145" y1="755" x2="1320" y2="755" stroke="#ced7da"/>
+<text x="135" y="760" font-size="12" font-weight="normal" fill="#182a35" text-anchor="end">0</text>
+<line x1="145" y1="720" x2="1320" y2="720" stroke="#ced7da"/>
+<text x="135" y="725" font-size="12" font-weight="normal" fill="#182a35" text-anchor="end">7,500</text>
+<line x1="145" y1="685" x2="1320" y2="685" stroke="#ced7da"/>
+<text x="135" y="690" font-size="12" font-weight="normal" fill="#182a35" text-anchor="end">15,000</text>
+<line x1="145" y1="650" x2="1320" y2="650" stroke="#ced7da"/>
+<text x="135" y="655" font-size="12" font-weight="normal" fill="#182a35" text-anchor="end">22,500</text>
+<line x1="145" y1="615" x2="1320" y2="615" stroke="#ced7da"/>
+<text x="135" y="620" font-size="12" font-weight="normal" fill="#182a35" text-anchor="end">30,000</text>
+<circle cx="252" cy="714.876" r="5" fill="#4554a0"/>
+<text x="252" y="705.876" font-size="11" font-weight="normal" fill="#182a35" text-anchor="middle">1</text>
+<circle cx="276" cy="714.876" r="5" fill="#4554a0"/>
+<text x="276" y="705.876" font-size="11" font-weight="normal" fill="#182a35" text-anchor="middle">2</text>
+<circle cx="300" cy="714.876" r="5" fill="#4554a0"/>
+<text x="300" y="705.876" font-size="11" font-weight="normal" fill="#182a35" text-anchor="middle">3</text>
+<circle cx="324" cy="714.876" r="5" fill="#4554a0"/>
+<text x="324" y="705.876" font-size="11" font-weight="normal" fill="#182a35" text-anchor="middle">4</text>
+<circle cx="348" cy="714.876" r="5" fill="#4554a0"/>
+<text x="348" y="705.876" font-size="11" font-weight="normal" fill="#182a35" text-anchor="middle">5</text>
+<text x="300" y="780" font-size="14" font-weight="normal" fill="#182a35" text-anchor="middle">exhaustive</text>
+<circle cx="542" cy="674.752" r="5" fill="#bc7b24"/>
+<text x="542" y="665.752" font-size="11" font-weight="normal" fill="#182a35" text-anchor="middle">1</text>
+<circle cx="566" cy="674.752" r="5" fill="#bc7b24"/>
+<text x="566" y="665.752" font-size="11" font-weight="normal" fill="#182a35" text-anchor="middle">2</text>
+<circle cx="590" cy="674.752" r="5" fill="#bc7b24"/>
+<text x="590" y="665.752" font-size="11" font-weight="normal" fill="#182a35" text-anchor="middle">3</text>
+<circle cx="614" cy="674.752" r="5" fill="#bc7b24"/>
+<text x="614" y="665.752" font-size="11" font-weight="normal" fill="#182a35" text-anchor="middle">4</text>
+<circle cx="638" cy="674.752" r="5" fill="#bc7b24"/>
+<text x="638" y="665.752" font-size="11" font-weight="normal" fill="#182a35" text-anchor="middle">5</text>
+<text x="590" y="780" font-size="14" font-weight="normal" fill="#182a35" text-anchor="middle">idea</text>
+<circle cx="832" cy="634.628" r="5" fill="#9b3f4b"/>
+<text x="832" y="625.628" font-size="11" font-weight="normal" fill="#182a35" text-anchor="middle">1</text>
+<circle cx="856" cy="634.628" r="5" fill="#9b3f4b"/>
+<text x="856" y="625.628" font-size="11" font-weight="normal" fill="#182a35" text-anchor="middle">2</text>
+<circle cx="880" cy="634.628" r="5" fill="#9b3f4b"/>
+<text x="880" y="625.628" font-size="11" font-weight="normal" fill="#182a35" text-anchor="middle">3</text>
+<circle cx="904" cy="634.628" r="5" fill="#9b3f4b"/>
+<text x="904" y="625.628" font-size="11" font-weight="normal" fill="#182a35" text-anchor="middle">4</text>
+<circle cx="928" cy="634.628" r="5" fill="#9b3f4b"/>
+<text x="928" y="625.628" font-size="11" font-weight="normal" fill="#182a35" text-anchor="middle">5</text>
+<text x="880" y="780" font-size="14" font-weight="normal" fill="#182a35" text-anchor="middle">manual</text>
+<circle cx="1122" cy="714.876" r="5" fill="#127d79"/>
+<text x="1122" y="705.876" font-size="11" font-weight="normal" fill="#182a35" text-anchor="middle">1</text>
+<circle cx="1146" cy="714.876" r="5" fill="#127d79"/>
+<text x="1146" y="705.876" font-size="11" font-weight="normal" fill="#182a35" text-anchor="middle">2</text>
+<circle cx="1170" cy="714.876" r="5" fill="#127d79"/>
+<text x="1170" y="705.876" font-size="11" font-weight="normal" fill="#182a35" text-anchor="middle">3</text>
+<circle cx="1194" cy="714.876" r="5" fill="#127d79"/>
+<text x="1194" y="705.876" font-size="11" font-weight="normal" fill="#182a35" text-anchor="middle">4</text>
+<circle cx="1218" cy="714.876" r="5" fill="#127d79"/>
+<text x="1218" y="705.876" font-size="11" font-weight="normal" fill="#182a35" text-anchor="middle">5</text>
+<text x="1170" y="780" font-size="14" font-weight="normal" fill="#182a35" text-anchor="middle">workflow</text>
+<text x="52" y="875" font-size="14" font-weight="normal" fill="#182a35" text-anchor="start">Labels identify repeat 1–5. Per-run input/output/cache-write/CLI/internal-request counters are in historical-runs.csv.</text>
+</g></svg>

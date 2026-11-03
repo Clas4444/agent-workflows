@@ -1,0 +1,17 @@
+campaign,case,arm,n,original_pass,saved_functional_pass,order_relaxed_pass,semantic_pass,cli_count,mean_seconds,mean_total_tokens
+combined,cents,attention,5,0,5,,,5,36.24996724000084,150435.8
+combined,cents,combined,5,0,5,,,5,36.229084499999956,149513.4
+combined,cents,exhaustive,5,0,5,,,5,34.403273139999875,118308.4
+combined,cents,idea,5,0,5,,,10,69.22517340000158,252072.2
+combined,cents,manual,5,0,5,,,15,107.10175732000134,401192.6
+combined,cents,workflow,5,0,5,,,5,36.29519967999913,137145.4
+combined,revision,attention,5,4,4,5,5,5,12.859085279999999,19061.8
+combined,revision,combined,5,2,2,5,5,5,13.214721759999884,19829.6
+combined,revision,exhaustive,5,5,5,5,5,5,11.906724659999963,17477.4
+combined,revision,idea,5,3,3,5,5,10,22.219301160000033,35085.2
+combined,revision,manual,5,0,0,0,5,15,31.001682820000134,52205.6
+combined,revision,workflow,5,2,2,5,5,5,12.702649620000011,18337.4
+workflow,revision,exhaustive,5,5,,5,5,5,10.536017259999971,17575.4
+workflow,revision,idea,5,2,,5,5,10,23.027155079999467,35299.6
+workflow,revision,manual,5,0,,4,4,15,30.82757597999971,52587.2
+workflow,revision,workflow,5,3,,5,5,5,12.23424135999976,18431.2

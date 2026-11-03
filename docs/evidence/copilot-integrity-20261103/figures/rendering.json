@@ -1,0 +1,6 @@
+{
+  "node": "v24.22.1",
+  "sharp": "0.35.5",
+  "svgRenderer": "sharp/librsvg",
+  "svgSource": "scripts/empirical_figures.py"
+}

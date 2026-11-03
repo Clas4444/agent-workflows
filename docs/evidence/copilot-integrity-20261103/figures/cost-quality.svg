@@ -1,0 +1,135 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="920" viewBox="0 0 1440 920">
+<rect width="100%" height="100%" fill="#fafbf9"/>
+<g font-family="Arial, sans-serif" fill="#182a35">
+<text x="52" y="48" font-size="26" font-weight="bold" fill="#182a35" text-anchor="start">Historical cost–quality: read each case and scoring layer separately</text>
+<text x="52" y="78" font-size="15" font-weight="normal" fill="#182a35" text-anchor="start">Points are arm/case means, n=5. No billing currency conversion, uncertainty interval or general superiority claim.</text>
+<text x="85" y="130" font-size="18" font-weight="bold" fill="#182a35" text-anchor="start">workflow / revision</text>
+<line x1="85.0" y1="185" x2="85.0" y2="655" stroke="#ced7da"/>
+<text x="85.0" y="683" font-size="12" font-weight="normal" fill="#182a35" text-anchor="middle">0k</text>
+<line x1="85" y1="655.0" x2="435" y2="655.0" stroke="#ced7da"/>
+<text x="75" y="660.0" font-size="12" font-weight="normal" fill="#182a35" text-anchor="end">0%</text>
+<line x1="155.0" y1="185" x2="155.0" y2="655" stroke="#ced7da"/>
+<text x="155.0" y="683" font-size="12" font-weight="normal" fill="#182a35" text-anchor="middle">12k</text>
+<line x1="85" y1="561.0" x2="435" y2="561.0" stroke="#ced7da"/>
+<text x="75" y="566.0" font-size="12" font-weight="normal" fill="#182a35" text-anchor="end">20%</text>
+<line x1="225.0" y1="185" x2="225.0" y2="655" stroke="#ced7da"/>
+<text x="225.0" y="683" font-size="12" font-weight="normal" fill="#182a35" text-anchor="middle">24k</text>
+<line x1="85" y1="467.0" x2="435" y2="467.0" stroke="#ced7da"/>
+<text x="75" y="472.0" font-size="12" font-weight="normal" fill="#182a35" text-anchor="end">40%</text>
+<line x1="295.0" y1="185" x2="295.0" y2="655" stroke="#ced7da"/>
+<text x="295.0" y="683" font-size="12" font-weight="normal" fill="#182a35" text-anchor="middle">36k</text>
+<line x1="85" y1="373.0" x2="435" y2="373.0" stroke="#ced7da"/>
+<text x="75" y="378.0" font-size="12" font-weight="normal" fill="#182a35" text-anchor="end">60%</text>
+<line x1="365.0" y1="185" x2="365.0" y2="655" stroke="#ced7da"/>
+<text x="365.0" y="683" font-size="12" font-weight="normal" fill="#182a35" text-anchor="middle">48k</text>
+<line x1="85" y1="279.0" x2="435" y2="279.0" stroke="#ced7da"/>
+<text x="75" y="284.0" font-size="12" font-weight="normal" fill="#182a35" text-anchor="end">80%</text>
+<line x1="435.0" y1="185" x2="435.0" y2="655" stroke="#ced7da"/>
+<text x="435.0" y="683" font-size="12" font-weight="normal" fill="#182a35" text-anchor="middle">60k</text>
+<line x1="85" y1="185.0" x2="435" y2="185.0" stroke="#ced7da"/>
+<text x="75" y="190.0" font-size="12" font-weight="normal" fill="#182a35" text-anchor="end">100%</text>
+<circle cx="187.52316666666667" cy="185.0" r="6" fill="#4554a0"/>
+<text x="193.52316666666667" y="173.0" font-size="12" font-weight="normal" fill="#4554a0" text-anchor="start">1</text>
+<text x="85" y="750" font-size="13" font-weight="normal" fill="#4554a0" text-anchor="start">1: exhaustive</text>
+<circle cx="290.91433333333333" cy="467.0" r="6" fill="#bc7b24"/>
+<text x="296.91433333333333" y="439.0" font-size="12" font-weight="normal" fill="#bc7b24" text-anchor="start">2</text>
+<text x="85" y="772" font-size="13" font-weight="normal" fill="#bc7b24" text-anchor="start">2: idea</text>
+<circle cx="391.75866666666667" cy="655.0" r="6" fill="#9b3f4b"/>
+<text x="397.75866666666667" y="643.0" font-size="12" font-weight="normal" fill="#9b3f4b" text-anchor="start">3</text>
+<text x="85" y="794" font-size="13" font-weight="normal" fill="#9b3f4b" text-anchor="start">3: manual</text>
+<circle cx="192.51533333333333" cy="373.0" r="6" fill="#127d79"/>
+<text x="198.51533333333333" y="345.0" font-size="12" font-weight="normal" fill="#127d79" text-anchor="start">4</text>
+<text x="85" y="816" font-size="13" font-weight="normal" fill="#127d79" text-anchor="start">4: workflow</text>
+<text x="85" y="160" font-size="14" font-weight="normal" fill="#182a35" text-anchor="start">Original PASS rate</text>
+<text x="260.0" y="720" font-size="14" font-weight="normal" fill="#182a35" text-anchor="middle">Mean total tokens/package</text>
+<text x="555" y="130" font-size="18" font-weight="bold" fill="#182a35" text-anchor="start">combined / revision</text>
+<line x1="555.0" y1="185" x2="555.0" y2="655" stroke="#ced7da"/>
+<text x="555.0" y="683" font-size="12" font-weight="normal" fill="#182a35" text-anchor="middle">0k</text>
+<line x1="555" y1="655.0" x2="905" y2="655.0" stroke="#ced7da"/>
+<text x="545" y="660.0" font-size="12" font-weight="normal" fill="#182a35" text-anchor="end">0%</text>
+<line x1="625.0" y1="185" x2="625.0" y2="655" stroke="#ced7da"/>
+<text x="625.0" y="683" font-size="12" font-weight="normal" fill="#182a35" text-anchor="middle">12k</text>
+<line x1="555" y1="561.0" x2="905" y2="561.0" stroke="#ced7da"/>
+<text x="545" y="566.0" font-size="12" font-weight="normal" fill="#182a35" text-anchor="end">20%</text>
+<line x1="695.0" y1="185" x2="695.0" y2="655" stroke="#ced7da"/>
+<text x="695.0" y="683" font-size="12" font-weight="normal" fill="#182a35" text-anchor="middle">24k</text>
+<line x1="555" y1="467.0" x2="905" y2="467.0" stroke="#ced7da"/>
+<text x="545" y="472.0" font-size="12" font-weight="normal" fill="#182a35" text-anchor="end">40%</text>
+<line x1="765.0" y1="185" x2="765.0" y2="655" stroke="#ced7da"/>
+<text x="765.0" y="683" font-size="12" font-weight="normal" fill="#182a35" text-anchor="middle">36k</text>
+<line x1="555" y1="373.0" x2="905" y2="373.0" stroke="#ced7da"/>
+<text x="545" y="378.0" font-size="12" font-weight="normal" fill="#182a35" text-anchor="end">60%</text>
+<line x1="835.0" y1="185" x2="835.0" y2="655" stroke="#ced7da"/>
+<text x="835.0" y="683" font-size="12" font-weight="normal" fill="#182a35" text-anchor="middle">48k</text>
+<line x1="555" y1="279.0" x2="905" y2="279.0" stroke="#ced7da"/>
+<text x="545" y="284.0" font-size="12" font-weight="normal" fill="#182a35" text-anchor="end">80%</text>
+<line x1="905.0" y1="185" x2="905.0" y2="655" stroke="#ced7da"/>
+<text x="905.0" y="683" font-size="12" font-weight="normal" fill="#182a35" text-anchor="middle">60k</text>
+<line x1="555" y1="185.0" x2="905" y2="185.0" stroke="#ced7da"/>
+<text x="545" y="190.0" font-size="12" font-weight="normal" fill="#182a35" text-anchor="end">100%</text>
+<circle cx="666.1938333333333" cy="279.0" r="6" fill="#2672a0"/>
+<text x="672.1938333333333" y="267.0" font-size="12" font-weight="normal" fill="#2672a0" text-anchor="start">1</text>
+<text x="555" y="750" font-size="13" font-weight="normal" fill="#2672a0" text-anchor="start">1: attention</text>
+<circle cx="670.6726666666666" cy="467.0" r="6" fill="#734c94"/>
+<text x="676.6726666666666" y="439.0" font-size="12" font-weight="normal" fill="#734c94" text-anchor="start">2</text>
+<text x="555" y="772" font-size="13" font-weight="normal" fill="#734c94" text-anchor="start">2: combined</text>
+<circle cx="656.9515" cy="185.0" r="6" fill="#4554a0"/>
+<text x="662.9515" y="173.0" font-size="12" font-weight="normal" fill="#4554a0" text-anchor="start">3</text>
+<text x="555" y="794" font-size="13" font-weight="normal" fill="#4554a0" text-anchor="start">3: exhaustive</text>
+<circle cx="759.6636666666666" cy="373.0" r="6" fill="#bc7b24"/>
+<text x="765.6636666666666" y="345.0" font-size="12" font-weight="normal" fill="#bc7b24" text-anchor="start">4</text>
+<text x="555" y="816" font-size="13" font-weight="normal" fill="#bc7b24" text-anchor="start">4: idea</text>
+<circle cx="859.5326666666667" cy="655.0" r="6" fill="#9b3f4b"/>
+<text x="865.5326666666667" y="643.0" font-size="12" font-weight="normal" fill="#9b3f4b" text-anchor="start">5</text>
+<text x="555" y="838" font-size="13" font-weight="normal" fill="#9b3f4b" text-anchor="start">5: manual</text>
+<circle cx="661.9681666666667" cy="467.0" r="6" fill="#127d79"/>
+<text x="667.9681666666667" y="439.0" font-size="12" font-weight="normal" fill="#127d79" text-anchor="start">6</text>
+<text x="555" y="860" font-size="13" font-weight="normal" fill="#127d79" text-anchor="start">6: workflow</text>
+<text x="555" y="160" font-size="14" font-weight="normal" fill="#182a35" text-anchor="start">Original PASS rate</text>
+<text x="730.0" y="720" font-size="14" font-weight="normal" fill="#182a35" text-anchor="middle">Mean total tokens/package</text>
+<text x="1025" y="130" font-size="18" font-weight="bold" fill="#182a35" text-anchor="start">combined / cents</text>
+<line x1="1025.0" y1="185" x2="1025.0" y2="655" stroke="#ced7da"/>
+<text x="1025.0" y="683" font-size="12" font-weight="normal" fill="#182a35" text-anchor="middle">0k</text>
+<line x1="1025" y1="655.0" x2="1375" y2="655.0" stroke="#ced7da"/>
+<text x="1015" y="660.0" font-size="12" font-weight="normal" fill="#182a35" text-anchor="end">0%</text>
+<line x1="1095.0" y1="185" x2="1095.0" y2="655" stroke="#ced7da"/>
+<text x="1095.0" y="683" font-size="12" font-weight="normal" fill="#182a35" text-anchor="middle">90k</text>
+<line x1="1025" y1="561.0" x2="1375" y2="561.0" stroke="#ced7da"/>
+<text x="1015" y="566.0" font-size="12" font-weight="normal" fill="#182a35" text-anchor="end">20%</text>
+<line x1="1165.0" y1="185" x2="1165.0" y2="655" stroke="#ced7da"/>
+<text x="1165.0" y="683" font-size="12" font-weight="normal" fill="#182a35" text-anchor="middle">180k</text>
+<line x1="1025" y1="467.0" x2="1375" y2="467.0" stroke="#ced7da"/>
+<text x="1015" y="472.0" font-size="12" font-weight="normal" fill="#182a35" text-anchor="end">40%</text>
+<line x1="1235.0" y1="185" x2="1235.0" y2="655" stroke="#ced7da"/>
+<text x="1235.0" y="683" font-size="12" font-weight="normal" fill="#182a35" text-anchor="middle">270k</text>
+<line x1="1025" y1="373.0" x2="1375" y2="373.0" stroke="#ced7da"/>
+<text x="1015" y="378.0" font-size="12" font-weight="normal" fill="#182a35" text-anchor="end">60%</text>
+<line x1="1305.0" y1="185" x2="1305.0" y2="655" stroke="#ced7da"/>
+<text x="1305.0" y="683" font-size="12" font-weight="normal" fill="#182a35" text-anchor="middle">360k</text>
+<line x1="1025" y1="279.0" x2="1375" y2="279.0" stroke="#ced7da"/>
+<text x="1015" y="284.0" font-size="12" font-weight="normal" fill="#182a35" text-anchor="end">80%</text>
+<line x1="1375.0" y1="185" x2="1375.0" y2="655" stroke="#ced7da"/>
+<text x="1375.0" y="683" font-size="12" font-weight="normal" fill="#182a35" text-anchor="middle">450k</text>
+<line x1="1025" y1="185.0" x2="1375" y2="185.0" stroke="#ced7da"/>
+<text x="1015" y="190.0" font-size="12" font-weight="normal" fill="#182a35" text-anchor="end">100%</text>
+<circle cx="1142.0056222222222" cy="655.0" r="6" fill="#2672a0"/>
+<text x="1148.0056222222222" y="643.0" font-size="12" font-weight="normal" fill="#2672a0" text-anchor="start">1</text>
+<text x="1025" y="750" font-size="13" font-weight="normal" fill="#2672a0" text-anchor="start">1: attention</text>
+<circle cx="1141.2882" cy="655.0" r="6" fill="#734c94"/>
+<text x="1147.2882" y="627.0" font-size="12" font-weight="normal" fill="#734c94" text-anchor="start">2</text>
+<text x="1025" y="772" font-size="13" font-weight="normal" fill="#734c94" text-anchor="start">2: combined</text>
+<circle cx="1117.0176444444444" cy="655.0" r="6" fill="#4554a0"/>
+<text x="1123.0176444444444" y="643.0" font-size="12" font-weight="normal" fill="#4554a0" text-anchor="start">3</text>
+<text x="1025" y="794" font-size="13" font-weight="normal" fill="#4554a0" text-anchor="start">3: exhaustive</text>
+<circle cx="1221.0561555555555" cy="655.0" r="6" fill="#bc7b24"/>
+<text x="1227.0561555555555" y="627.0" font-size="12" font-weight="normal" fill="#bc7b24" text-anchor="start">4</text>
+<text x="1025" y="816" font-size="13" font-weight="normal" fill="#bc7b24" text-anchor="start">4: idea</text>
+<circle cx="1337.0386888888888" cy="655.0" r="6" fill="#9b3f4b"/>
+<text x="1343.0386888888888" y="643.0" font-size="12" font-weight="normal" fill="#9b3f4b" text-anchor="start">5</text>
+<text x="1025" y="838" font-size="13" font-weight="normal" fill="#9b3f4b" text-anchor="start">5: manual</text>
+<circle cx="1131.6686444444445" cy="655.0" r="6" fill="#127d79"/>
+<text x="1137.6686444444445" y="627.0" font-size="12" font-weight="normal" fill="#127d79" text-anchor="start">6</text>
+<text x="1025" y="860" font-size="13" font-weight="normal" fill="#127d79" text-anchor="start">6: workflow</text>
+<text x="1025" y="160" font-size="14" font-weight="normal" fill="#182a35" text-anchor="start">Original PASS rate</text>
+<text x="1200.0" y="720" font-size="14" font-weight="normal" fill="#182a35" text-anchor="middle">Mean total tokens/package</text>
+</g></svg>
