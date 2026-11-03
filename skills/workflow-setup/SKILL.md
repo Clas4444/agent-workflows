@@ -5,6 +5,11 @@ description: "Design a conditional workflow with steps, skill choices, result ro
 
 # Workflow Setup
 
+Use setup for conditional multi-step work that needs failure recovery, resume or
+bounded cycles. For one clear, stateless step, perform the authorized task with
+its focused skill or direct prompt; skip graph/map creation and the setup interview.
+Setup adds design and bookkeeping overhead; it does not promise lower token cost.
+
 ## Inputs
 
 The user's setup request, existing task facts and authorized project scope.
@@ -31,9 +36,19 @@ Source pointers name exact files, not directories that hide an unbounded scan.
 Before following a saved map, use the bundled helper's `check-map` with the graph,
 map file and selected project. A match checks design identity, not source freshness
 or task success. Re-read current sources before reusing prior facts or a PASS.
+For resumable execution, start with `start --project`, use `record --project`
+after each observed step, and run `resume --project` before reusing a checkpoint.
+Review its invalidated suffix; preserve unaffected work and spent budgets. Recheck
+facts against changed sources; a helper pin cannot resolve contradictory authority.
+Keep STOP stopped and hand off the missing decision. Legacy start/advance remains
+available without source-freshness tracking; do not call it verified resume.
 
 Workflow setup designs work order, skill choices and result routes. It does not
 require agent-attention. Attention levels are a separate optional setup.
+Attach attention only on explicit request using the versioned contract. A lower
+attention level never removes mandatory checks or changes workflow routes,
+selected skills, stopping conditions or authorization. Keep the override scoped
+and restore it when that scope exits; diagnose unsupported or conflicting data.
 
 ## Output and boundaries
 

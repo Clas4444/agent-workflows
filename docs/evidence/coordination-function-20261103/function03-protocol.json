@@ -1,0 +1,85 @@
+{
+  "task": "FUNCTION-03",
+  "campaign": "function03-workflow",
+  "contract_version": 1,
+  "provider": "codex",
+  "account_domain": null,
+  "max_cli": 12,
+  "planned_cli": 6,
+  "max_inflight": 1,
+  "schedule": [
+    {
+      "id": "01-repair-workflow",
+      "case": "repair",
+      "arm": "workflow",
+      "rep": 1
+    },
+    {
+      "id": "02-repair-baseline",
+      "case": "repair",
+      "arm": "baseline",
+      "rep": 1
+    },
+    {
+      "id": "03-resume-baseline",
+      "case": "resume",
+      "arm": "baseline",
+      "rep": 1
+    },
+    {
+      "id": "04-resume-workflow",
+      "case": "resume",
+      "arm": "workflow",
+      "rep": 1
+    },
+    {
+      "id": "05-conflict-workflow",
+      "case": "conflict",
+      "arm": "workflow",
+      "rep": 1
+    },
+    {
+      "id": "06-conflict-baseline",
+      "case": "conflict",
+      "arm": "baseline",
+      "rep": 1
+    }
+  ],
+  "model_requested": "gpt-6.1-sol",
+  "reasoning_requested": "low",
+  "timeout_seconds": 240,
+  "source_pins": {
+    "scripts/workflow_setup.py": "a6c666e4612643cb98d0770bb658c7b5c49aebf927131eb6357522b147e7d9c7",
+    "scripts/function03_cases.py": "c82724e70365e4b8fc806e8e8bcb0d96827a69971a56fa921f30623e7ec4538e",
+    "scripts/function03_pilot.py": "eba737d11111471dc49ec7a43be9d1db90729e6587b94884a978092d15600075",
+    "scripts/campaign_coordination.py": "25a301df0b1b3ba3ef9ddd854d17bcf06a613db64d5ba20e323d8c70b7d3afe0",
+    "skills/workflow-setup/SKILL.md": "ef159eaaccd24c1f2ad15445cd9bf4c9356188e00c905bf32a727e8ef0f3bb37",
+    ".github/skills/loop/SKILL.md": "50ebfcf69a9f630ad6db8747b07c4cf0a137a423b9a2d281cc073132393f3af6",
+    ".github/skills/loop-debug/SKILL.md": "0f3404bcdf152aa8d8cbd808bfaa90409912587373c9fb915fcb7609216a6d0e",
+    ".github/skills/loop-code/SKILL.md": "d7e2a9be0e8331c0e92c26b89630a02914e53a879aa9dab1fd3cc00d1a5c1b1c",
+    ".github/skills/loop-intake/SKILL.md": "f6de23a24f8e5116d75371ec11b70472d83718b9d00570d86945c41d05927add",
+    ".github/skills/loop-review/SKILL.md": "fd77f2fc1f49b40af545b8fb62cc15368e257a07bf703dff2a59a273d65c70f7",
+    ".github/skills/loop-test/SKILL.md": "26f5e9e1c0e6e1e7189a9c6cdc54f3c4fef26512d918a365f8d242fa0c33bded"
+  },
+  "cli_sha256": "3097c909fb6d5cd63510d44aceb1d42df9f6e85722a3e447e477def1ecf60e16",
+  "workspace_pins": {
+    "01-repair-workflow": "1736bd6117562b6e7b4a99ec77d5ed8e84fe3fc7cd96c0bd4e4c713a73cbe91e",
+    "02-repair-baseline": "1736bd6117562b6e7b4a99ec77d5ed8e84fe3fc7cd96c0bd4e4c713a73cbe91e",
+    "03-resume-baseline": "2b5116fe1f35697c888cada155af72b89d20b2ea5723a78558d11233f6081933",
+    "04-resume-workflow": "2b5116fe1f35697c888cada155af72b89d20b2ea5723a78558d11233f6081933",
+    "05-conflict-workflow": "732b045b577b4d71f0cbb310bad6788366bef0365cf07fa68e9189f960e73b32",
+    "06-conflict-baseline": "732b045b577b4d71f0cbb310bad6788366bef0365cf07fa68e9189f960e73b32"
+  },
+  "prompt_pins": {
+    "01-repair-workflow": "48f42bfe570e3d6902ae2110ff0ea17fb3ac089b30e6888b39db802c492bdaa2",
+    "02-repair-baseline": "77042f15929f0daddd7f3db2a141e0b3f8dfb12904d5b3b91f427a19f585affa",
+    "03-resume-baseline": "cf1b30fb4f9db44ef8904fb9be40a109557b3c47a1881711d59c68cf9d3ed34f",
+    "04-resume-workflow": "3c4d800c6e56912cfa413d52fb6d7ff85eac85c33cbe6337778d64aeaa40e9b9",
+    "05-conflict-workflow": "08629324e74858ddb43670823d5b3eb1bf4c0c7bea63f8b048bf1d505f47d0f6",
+    "06-conflict-baseline": "3b34464e2e15cb4ccea1c8eb57f6d3bb5f022af38f69c85ae6ef6af91b4a242e"
+  },
+  "primary": "Independent artifact correctness, evidence reuse and authorized stopping; helper adherence separate.",
+  "analysis": "One repetition/case/arm. Cost secondary; no statistical savings or causal clean-A/B claim without verified isolation.",
+  "isolation": "Same seeded files/context/tools/authority; workflow prompt adds explicit setup/route treatment. Candidate instructions do not autoload by requested flags; actual host isolation NOT_VERIFIED until observed.",
+  "rubric": "function03_cases.grade frozen before calls; oracle never copied into workspaces. All failures/timeouts consume cap; no provider/account switching."
+}

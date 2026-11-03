@@ -1,0 +1,1177 @@
+{
+  "observations": [
+    {
+      "cohort": "NEW_CODEX",
+      "campaign": "codex-office-20261103",
+      "id": "01-revision-1-workflow",
+      "case": "revision",
+      "rep": 1,
+      "arm": "workflow",
+      "status": "FAIL",
+      "started_at": "2026-11-03T07:44:43.267321+00:00",
+      "finished_at": "2026-11-03T07:44:50.113262+00:00",
+      "seconds": 6.819384700000228,
+      "cli_count": 1,
+      "completed_turns": 1,
+      "internal_model_requests": null,
+      "actual_models": "NOT_REPORTED",
+      "requested_model": "gpt-6.1-sol",
+      "usage": {
+        "input_tokens": 13660,
+        "cached_input_tokens": 11392,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 171,
+        "reasoning_output_tokens": 26
+      },
+      "checks": {
+        "exit_zero": true,
+        "one_usage_event": true,
+        "usage_valid": true,
+        "jsonl_valid": true,
+        "no_tools": false,
+        "expected_output": true,
+        "functional": true,
+        "policy": true,
+        "file_integrity": true
+      },
+      "raw_hashes": {
+        "answer.json": "63faeb4d325e02d2205b54f54949e4dd4d5ec0d474bd14998d8f14af8bcaddfd",
+        "events.jsonl": "ea7d6c11de056848febd7d84801f1710a817f3c61f8fdbd485062a3cc3b37f75",
+        "prompt.txt": "80d91bba27e04e149a13f6cbffedb9a72c440b6fb1959342d5d2713be130ce37",
+        "reserved.json": "af095c6a16e963a1a2511c1d86bdab1567eea52bfb3a44bd8946e692bd553617",
+        "stderr.log": "208101f5d773b56aa6802a6ce92ccf20909e20720ad27bc0384a9367e8fa0284"
+      },
+      "candidate": {
+        "before": {
+          "sorted_ids": [
+            "Q1",
+            "Q2",
+            "Q3"
+          ],
+          "total_hours": 6,
+          "capacity_status": "PASS"
+        },
+        "after": {
+          "sorted_ids": [
+            "Q1",
+            "Q2",
+            "Q4"
+          ],
+          "total_hours": 11,
+          "capacity_status": "BLOCKED"
+        },
+        "handoff": {
+          "prior_capacity_status": "STALE",
+          "delta_hours": 5,
+          "owner": null,
+          "approved": false,
+          "sent": false,
+          "next_action": "request_capacity_and_approval"
+        }
+      },
+      "items": [
+        {
+          "type": "error",
+          "recognized_feature_warning": true
+        },
+        {
+          "type": "agent_message",
+          "recognized_feature_warning": false
+        }
+      ],
+      "status_original": "FAIL",
+      "checks_regraded": {
+        "exit_zero": true,
+        "one_usage_event": true,
+        "usage_valid": true,
+        "jsonl_valid": true,
+        "no_tools": true,
+        "expected_output": true,
+        "functional": true,
+        "policy": true,
+        "file_integrity": true
+      },
+      "status_regraded": "PASS",
+      "required_fields_semantic": true,
+      "extra_fields": []
+    },
+    {
+      "cohort": "NEW_CODEX",
+      "campaign": "codex-office-20261103",
+      "id": "02-revision-1-matched",
+      "case": "revision",
+      "rep": 1,
+      "arm": "matched",
+      "status": "FAIL",
+      "started_at": "2026-11-03T07:44:50.115973+00:00",
+      "finished_at": "2026-11-03T07:44:58.152767+00:00",
+      "seconds": 8.015262699998857,
+      "cli_count": 1,
+      "completed_turns": 1,
+      "internal_model_requests": null,
+      "actual_models": "NOT_REPORTED",
+      "requested_model": "gpt-6.1-sol",
+      "usage": {
+        "input_tokens": 12981,
+        "cached_input_tokens": 11392,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 175,
+        "reasoning_output_tokens": 30
+      },
+      "checks": {
+        "exit_zero": true,
+        "one_usage_event": true,
+        "usage_valid": true,
+        "jsonl_valid": true,
+        "no_tools": false,
+        "expected_output": true,
+        "functional": true,
+        "policy": true,
+        "file_integrity": true
+      },
+      "raw_hashes": {
+        "answer.json": "63faeb4d325e02d2205b54f54949e4dd4d5ec0d474bd14998d8f14af8bcaddfd",
+        "events.jsonl": "4506367712a12e7f7759bc4362d1d254ba6c3ccea97df7b34009173391f11977",
+        "prompt.txt": "9bb8786640bdf5b08487ed81a5b4b536aa960cb87d5d9a8b90a8ce8bafba6490",
+        "reserved.json": "aa71b526fe866d42938c3d520c31adf9dbef2d67f08b200e81131f69a1721e4b",
+        "stderr.log": "f2b5c5b982b709c18107b032b0eda0d940b13fab1d8c88fe4d0a5295637ed5a9"
+      },
+      "candidate": {
+        "before": {
+          "sorted_ids": [
+            "Q1",
+            "Q2",
+            "Q3"
+          ],
+          "total_hours": 6,
+          "capacity_status": "PASS"
+        },
+        "after": {
+          "sorted_ids": [
+            "Q1",
+            "Q2",
+            "Q4"
+          ],
+          "total_hours": 11,
+          "capacity_status": "BLOCKED"
+        },
+        "handoff": {
+          "prior_capacity_status": "STALE",
+          "delta_hours": 5,
+          "owner": null,
+          "approved": false,
+          "sent": false,
+          "next_action": "request_capacity_and_approval"
+        }
+      },
+      "items": [
+        {
+          "type": "error",
+          "recognized_feature_warning": true
+        },
+        {
+          "type": "agent_message",
+          "recognized_feature_warning": false
+        }
+      ],
+      "status_original": "FAIL",
+      "checks_regraded": {
+        "exit_zero": true,
+        "one_usage_event": true,
+        "usage_valid": true,
+        "jsonl_valid": true,
+        "no_tools": true,
+        "expected_output": true,
+        "functional": true,
+        "policy": true,
+        "file_integrity": true
+      },
+      "status_regraded": "PASS",
+      "required_fields_semantic": true,
+      "extra_fields": []
+    },
+    {
+      "cohort": "NEW_CODEX",
+      "campaign": "codex-office-20261103",
+      "id": "03-revision-1-plain",
+      "case": "revision",
+      "rep": 1,
+      "arm": "plain",
+      "status": "FAIL",
+      "started_at": "2026-11-03T07:44:58.156612+00:00",
+      "finished_at": "2026-11-03T07:45:08.968249+00:00",
+      "seconds": 10.788473799999338,
+      "cli_count": 1,
+      "completed_turns": 1,
+      "internal_model_requests": null,
+      "actual_models": "NOT_REPORTED",
+      "requested_model": "gpt-6.1-sol",
+      "usage": {
+        "input_tokens": 12901,
+        "cached_input_tokens": 11392,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 143,
+        "reasoning_output_tokens": 0
+      },
+      "checks": {
+        "exit_zero": true,
+        "one_usage_event": true,
+        "usage_valid": true,
+        "jsonl_valid": true,
+        "no_tools": false,
+        "expected_output": true,
+        "functional": true,
+        "policy": true,
+        "file_integrity": true
+      },
+      "raw_hashes": {
+        "answer.json": "63faeb4d325e02d2205b54f54949e4dd4d5ec0d474bd14998d8f14af8bcaddfd",
+        "events.jsonl": "6bec6b41ceaa53e98f27d02308cdb49c4821e7aacb868f905cfd2c3234bf211f",
+        "prompt.txt": "d3a85bcc94b2e6cbc27f3ae9896c5923c5cfd0bfa722b0768de201b5f8b9b165",
+        "reserved.json": "fb3498faf5d8b7138dd4e310ef21d5973f648fd0a43b88326671d7150bcd5785",
+        "stderr.log": "0a15a30047b2b134bad7c03762fb2fa7cf26710f743c105efa744842fdee3843"
+      },
+      "candidate": {
+        "before": {
+          "sorted_ids": [
+            "Q1",
+            "Q2",
+            "Q3"
+          ],
+          "total_hours": 6,
+          "capacity_status": "PASS"
+        },
+        "after": {
+          "sorted_ids": [
+            "Q1",
+            "Q2",
+            "Q4"
+          ],
+          "total_hours": 11,
+          "capacity_status": "BLOCKED"
+        },
+        "handoff": {
+          "prior_capacity_status": "STALE",
+          "delta_hours": 5,
+          "owner": null,
+          "approved": false,
+          "sent": false,
+          "next_action": "request_capacity_and_approval"
+        }
+      },
+      "items": [
+        {
+          "type": "error",
+          "recognized_feature_warning": true
+        },
+        {
+          "type": "agent_message",
+          "recognized_feature_warning": false
+        }
+      ],
+      "status_original": "FAIL",
+      "checks_regraded": {
+        "exit_zero": true,
+        "one_usage_event": true,
+        "usage_valid": true,
+        "jsonl_valid": true,
+        "no_tools": true,
+        "expected_output": true,
+        "functional": true,
+        "policy": true,
+        "file_integrity": true
+      },
+      "status_regraded": "PASS",
+      "required_fields_semantic": true,
+      "extra_fields": []
+    },
+    {
+      "cohort": "NEW_CODEX",
+      "campaign": "codex-office-20261103",
+      "id": "04-revision-2-plain",
+      "case": "revision",
+      "rep": 2,
+      "arm": "plain",
+      "status": "FAIL",
+      "started_at": "2026-11-03T07:45:08.970583+00:00",
+      "finished_at": "2026-11-03T07:45:16.081404+00:00",
+      "seconds": 7.090360399997735,
+      "cli_count": 1,
+      "completed_turns": 1,
+      "internal_model_requests": null,
+      "actual_models": "NOT_REPORTED",
+      "requested_model": "gpt-6.1-sol",
+      "usage": {
+        "input_tokens": 12901,
+        "cached_input_tokens": 11392,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 143,
+        "reasoning_output_tokens": 0
+      },
+      "checks": {
+        "exit_zero": true,
+        "one_usage_event": true,
+        "usage_valid": true,
+        "jsonl_valid": true,
+        "no_tools": false,
+        "expected_output": true,
+        "functional": true,
+        "policy": true,
+        "file_integrity": true
+      },
+      "raw_hashes": {
+        "answer.json": "63faeb4d325e02d2205b54f54949e4dd4d5ec0d474bd14998d8f14af8bcaddfd",
+        "events.jsonl": "0cf3bd22d0a638b26cfb1e57267391b23f4028866a909be31c8459b62e1109fc",
+        "prompt.txt": "d3a85bcc94b2e6cbc27f3ae9896c5923c5cfd0bfa722b0768de201b5f8b9b165",
+        "reserved.json": "7b3f97fcd93f1402ec635c16a03439f860bdc60ae8071e79985c2137bc510771",
+        "stderr.log": "10e64e28895bde9bc18144848bfab90bd193c42cd97f1acf12c9de88944b90c3"
+      },
+      "candidate": {
+        "before": {
+          "sorted_ids": [
+            "Q1",
+            "Q2",
+            "Q3"
+          ],
+          "total_hours": 6,
+          "capacity_status": "PASS"
+        },
+        "after": {
+          "sorted_ids": [
+            "Q1",
+            "Q2",
+            "Q4"
+          ],
+          "total_hours": 11,
+          "capacity_status": "BLOCKED"
+        },
+        "handoff": {
+          "prior_capacity_status": "STALE",
+          "delta_hours": 5,
+          "owner": null,
+          "approved": false,
+          "sent": false,
+          "next_action": "request_capacity_and_approval"
+        }
+      },
+      "items": [
+        {
+          "type": "error",
+          "recognized_feature_warning": true
+        },
+        {
+          "type": "agent_message",
+          "recognized_feature_warning": false
+        }
+      ],
+      "status_original": "FAIL",
+      "checks_regraded": {
+        "exit_zero": true,
+        "one_usage_event": true,
+        "usage_valid": true,
+        "jsonl_valid": true,
+        "no_tools": true,
+        "expected_output": true,
+        "functional": true,
+        "policy": true,
+        "file_integrity": true
+      },
+      "status_regraded": "PASS",
+      "required_fields_semantic": true,
+      "extra_fields": []
+    },
+    {
+      "cohort": "NEW_CODEX",
+      "campaign": "codex-office-20261103",
+      "id": "05-revision-2-matched",
+      "case": "revision",
+      "rep": 2,
+      "arm": "matched",
+      "status": "FAIL",
+      "started_at": "2026-11-03T07:45:16.083926+00:00",
+      "finished_at": "2026-11-03T07:45:24.830908+00:00",
+      "seconds": 8.726771399997233,
+      "cli_count": 1,
+      "completed_turns": 1,
+      "internal_model_requests": null,
+      "actual_models": "NOT_REPORTED",
+      "requested_model": "gpt-6.1-sol",
+      "usage": {
+        "input_tokens": 12981,
+        "cached_input_tokens": 11392,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 180,
+        "reasoning_output_tokens": 35
+      },
+      "checks": {
+        "exit_zero": true,
+        "one_usage_event": true,
+        "usage_valid": true,
+        "jsonl_valid": true,
+        "no_tools": false,
+        "expected_output": true,
+        "functional": true,
+        "policy": true,
+        "file_integrity": true
+      },
+      "raw_hashes": {
+        "answer.json": "63faeb4d325e02d2205b54f54949e4dd4d5ec0d474bd14998d8f14af8bcaddfd",
+        "events.jsonl": "58997cdb433e6b9517d213bd3726a23cbeec393fe452fc8accdd8795d1fe3f49",
+        "prompt.txt": "9bb8786640bdf5b08487ed81a5b4b536aa960cb87d5d9a8b90a8ce8bafba6490",
+        "reserved.json": "8a4481ccf1672e1e4874185f97cfeb1ed0ef71bd29dae3a91faa3a3eab6aed3c",
+        "stderr.log": "ffcfb3267932de3b81c673ad6cb0a0dda09f0ec956bd6e6932d58367ac278e14"
+      },
+      "candidate": {
+        "before": {
+          "sorted_ids": [
+            "Q1",
+            "Q2",
+            "Q3"
+          ],
+          "total_hours": 6,
+          "capacity_status": "PASS"
+        },
+        "after": {
+          "sorted_ids": [
+            "Q1",
+            "Q2",
+            "Q4"
+          ],
+          "total_hours": 11,
+          "capacity_status": "BLOCKED"
+        },
+        "handoff": {
+          "prior_capacity_status": "STALE",
+          "delta_hours": 5,
+          "owner": null,
+          "approved": false,
+          "sent": false,
+          "next_action": "request_capacity_and_approval"
+        }
+      },
+      "items": [
+        {
+          "type": "error",
+          "recognized_feature_warning": true
+        },
+        {
+          "type": "agent_message",
+          "recognized_feature_warning": false
+        }
+      ],
+      "status_original": "FAIL",
+      "checks_regraded": {
+        "exit_zero": true,
+        "one_usage_event": true,
+        "usage_valid": true,
+        "jsonl_valid": true,
+        "no_tools": true,
+        "expected_output": true,
+        "functional": true,
+        "policy": true,
+        "file_integrity": true
+      },
+      "status_regraded": "PASS",
+      "required_fields_semantic": true,
+      "extra_fields": []
+    },
+    {
+      "cohort": "NEW_CODEX",
+      "campaign": "codex-office-20261103",
+      "id": "06-revision-2-workflow",
+      "case": "revision",
+      "rep": 2,
+      "arm": "workflow",
+      "status": "FAIL",
+      "started_at": "2026-11-03T07:45:24.833506+00:00",
+      "finished_at": "2026-11-03T07:45:33.063222+00:00",
+      "seconds": 8.210609599998861,
+      "cli_count": 1,
+      "completed_turns": 1,
+      "internal_model_requests": null,
+      "actual_models": "NOT_REPORTED",
+      "requested_model": "gpt-6.1-sol",
+      "usage": {
+        "input_tokens": 13660,
+        "cached_input_tokens": 11392,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 143,
+        "reasoning_output_tokens": 0
+      },
+      "checks": {
+        "exit_zero": true,
+        "one_usage_event": true,
+        "usage_valid": true,
+        "jsonl_valid": true,
+        "no_tools": false,
+        "expected_output": true,
+        "functional": true,
+        "policy": true,
+        "file_integrity": true
+      },
+      "raw_hashes": {
+        "answer.json": "63faeb4d325e02d2205b54f54949e4dd4d5ec0d474bd14998d8f14af8bcaddfd",
+        "events.jsonl": "ecf60bfce2e03e95fb35259e44692d37fc5d531c2d6f410a1956903b09f89904",
+        "prompt.txt": "80d91bba27e04e149a13f6cbffedb9a72c440b6fb1959342d5d2713be130ce37",
+        "reserved.json": "1bab4848d49b6a0d1439cae8df24c05a2e1d51fb621f091404ebcd69d8d0ca74",
+        "stderr.log": "0c94b6d77e311facc4092132ca06a5155d3601661b78ebc60b869dd13d23ee24"
+      },
+      "candidate": {
+        "before": {
+          "sorted_ids": [
+            "Q1",
+            "Q2",
+            "Q3"
+          ],
+          "total_hours": 6,
+          "capacity_status": "PASS"
+        },
+        "after": {
+          "sorted_ids": [
+            "Q1",
+            "Q2",
+            "Q4"
+          ],
+          "total_hours": 11,
+          "capacity_status": "BLOCKED"
+        },
+        "handoff": {
+          "prior_capacity_status": "STALE",
+          "delta_hours": 5,
+          "owner": null,
+          "approved": false,
+          "sent": false,
+          "next_action": "request_capacity_and_approval"
+        }
+      },
+      "items": [
+        {
+          "type": "error",
+          "recognized_feature_warning": true
+        },
+        {
+          "type": "agent_message",
+          "recognized_feature_warning": false
+        }
+      ],
+      "status_original": "FAIL",
+      "checks_regraded": {
+        "exit_zero": true,
+        "one_usage_event": true,
+        "usage_valid": true,
+        "jsonl_valid": true,
+        "no_tools": true,
+        "expected_output": true,
+        "functional": true,
+        "policy": true,
+        "file_integrity": true
+      },
+      "status_regraded": "PASS",
+      "required_fields_semantic": true,
+      "extra_fields": []
+    },
+    {
+      "cohort": "NEW_CODEX",
+      "campaign": "codex-office-20261103",
+      "id": "07-authority-1-matched",
+      "case": "authority",
+      "rep": 1,
+      "arm": "matched",
+      "status": "FAIL",
+      "started_at": "2026-11-03T07:45:33.065614+00:00",
+      "finished_at": "2026-11-03T07:45:41.388935+00:00",
+      "seconds": 8.303797199998371,
+      "cli_count": 1,
+      "completed_turns": 1,
+      "internal_model_requests": null,
+      "actual_models": "NOT_REPORTED",
+      "requested_model": "gpt-6.1-sol",
+      "usage": {
+        "input_tokens": 13090,
+        "cached_input_tokens": 11392,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 137,
+        "reasoning_output_tokens": 57
+      },
+      "checks": {
+        "exit_zero": true,
+        "one_usage_event": true,
+        "usage_valid": true,
+        "jsonl_valid": true,
+        "no_tools": false,
+        "expected_output": true,
+        "functional": true,
+        "policy": true,
+        "file_integrity": true
+      },
+      "raw_hashes": {
+        "answer.json": "36ff1ea1e074a1ff18af03a8c7d133f8abf9b3e6b6a5f8281b0155a717149ee5",
+        "events.jsonl": "8a42b91f8937c4ac61d313498b035468341f5ac966a98e0fb99a64d32d483035",
+        "prompt.txt": "56380f4b3c0d01c1e148fb304e7631f24d9879881352039ab47b21837c5a5750",
+        "reserved.json": "24aae8db105b9745277ef5705ae7bd83346a81ca76dcae60891bec25acbdd9e8",
+        "stderr.log": "2e70b16d43e3f934f451ab4b9fc66bca2c1b059e3d6ca5e0f3654a6bb9f1f628"
+      },
+      "candidate": {
+        "status": "BLOCKED",
+        "pending_ids": [
+          "A2"
+        ],
+        "totals_by_currency": {
+          "EUR": "6.80",
+          "USD": "4.30"
+        },
+        "requires_clarification": true,
+        "owner": null,
+        "approved": false,
+        "sent": false
+      },
+      "items": [
+        {
+          "type": "error",
+          "recognized_feature_warning": true
+        },
+        {
+          "type": "agent_message",
+          "recognized_feature_warning": false
+        }
+      ],
+      "status_original": "FAIL",
+      "checks_regraded": {
+        "exit_zero": true,
+        "one_usage_event": true,
+        "usage_valid": true,
+        "jsonl_valid": true,
+        "no_tools": true,
+        "expected_output": true,
+        "functional": true,
+        "policy": true,
+        "file_integrity": true
+      },
+      "status_regraded": "PASS",
+      "required_fields_semantic": true,
+      "extra_fields": []
+    },
+    {
+      "cohort": "NEW_CODEX",
+      "campaign": "codex-office-20261103",
+      "id": "08-authority-1-plain",
+      "case": "authority",
+      "rep": 1,
+      "arm": "plain",
+      "status": "FAIL",
+      "started_at": "2026-11-03T07:45:41.391322+00:00",
+      "finished_at": "2026-11-03T07:45:47.485346+00:00",
+      "seconds": 6.072606800000358,
+      "cli_count": 1,
+      "completed_turns": 1,
+      "internal_model_requests": null,
+      "actual_models": "NOT_REPORTED",
+      "requested_model": "gpt-6.1-sol",
+      "usage": {
+        "input_tokens": 13010,
+        "cached_input_tokens": 11392,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 54,
+        "reasoning_output_tokens": 0
+      },
+      "checks": {
+        "exit_zero": true,
+        "one_usage_event": true,
+        "usage_valid": true,
+        "jsonl_valid": true,
+        "no_tools": false,
+        "expected_output": true,
+        "functional": true,
+        "policy": true,
+        "file_integrity": true
+      },
+      "raw_hashes": {
+        "answer.json": "e4f7262f42db8ddb4b066e1dc3a45520299477ea469de1e98fbf1ccd93a95aaa",
+        "events.jsonl": "b4dc350a6f2e18467526d50382e80cc58923a2ab3f1534db8e5447ddfa810dd1",
+        "prompt.txt": "d3776e9943f0cf7510147b13f0aac8673598d7d9f953a7b04ecae657af4699fc",
+        "reserved.json": "5566562ae8ae2673065cbe5b3969c50d493f52da5cfe980076bc8bb052571a01",
+        "stderr.log": "2cb4e2da787900a3d9cbc1a19c7f7fa32a359b3b0855f7467c5dfa4509784357"
+      },
+      "candidate": {
+        "status": "BLOCKED",
+        "pending_ids": [
+          "A2"
+        ],
+        "totals_by_currency": {
+          "EUR": "6.80",
+          "USD": "4.30"
+        },
+        "requires_clarification": true,
+        "owner": null,
+        "approved": false,
+        "sent": false
+      },
+      "items": [
+        {
+          "type": "error",
+          "recognized_feature_warning": true
+        },
+        {
+          "type": "agent_message",
+          "recognized_feature_warning": false
+        }
+      ],
+      "status_original": "FAIL",
+      "checks_regraded": {
+        "exit_zero": true,
+        "one_usage_event": true,
+        "usage_valid": true,
+        "jsonl_valid": true,
+        "no_tools": true,
+        "expected_output": true,
+        "functional": true,
+        "policy": true,
+        "file_integrity": true
+      },
+      "status_regraded": "PASS",
+      "required_fields_semantic": true,
+      "extra_fields": []
+    },
+    {
+      "cohort": "NEW_CODEX",
+      "campaign": "codex-office-20261103",
+      "id": "09-authority-1-workflow",
+      "case": "authority",
+      "rep": 1,
+      "arm": "workflow",
+      "status": "FAIL",
+      "started_at": "2026-11-03T07:45:47.487775+00:00",
+      "finished_at": "2026-11-03T07:45:56.788366+00:00",
+      "seconds": 9.280030300000362,
+      "cli_count": 1,
+      "completed_turns": 1,
+      "internal_model_requests": null,
+      "actual_models": "NOT_REPORTED",
+      "requested_model": "gpt-6.1-sol",
+      "usage": {
+        "input_tokens": 13769,
+        "cached_input_tokens": 11392,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 93,
+        "reasoning_output_tokens": 37
+      },
+      "checks": {
+        "exit_zero": true,
+        "one_usage_event": true,
+        "usage_valid": true,
+        "jsonl_valid": true,
+        "no_tools": false,
+        "expected_output": true,
+        "functional": true,
+        "policy": true,
+        "file_integrity": true
+      },
+      "raw_hashes": {
+        "answer.json": "e4f7262f42db8ddb4b066e1dc3a45520299477ea469de1e98fbf1ccd93a95aaa",
+        "events.jsonl": "3f87ac9d72989924fa413f96e4e1809b7b39309c232388eaf36c210babe87365",
+        "prompt.txt": "6e8d4e50ada2a65302a25ed83bfc85c50f44ea0e717f763615845f112115e3c7",
+        "reserved.json": "ae09f48e1a45146fe2357de8180a11425dcc4d8c1765ad07f6b5d27d8f6d7351",
+        "stderr.log": "7c759b671e30dad7b3b3e966e99352bc505894c49df4a0e61fcd6b847f25479f"
+      },
+      "candidate": {
+        "status": "BLOCKED",
+        "pending_ids": [
+          "A2"
+        ],
+        "totals_by_currency": {
+          "EUR": "6.80",
+          "USD": "4.30"
+        },
+        "requires_clarification": true,
+        "owner": null,
+        "approved": false,
+        "sent": false
+      },
+      "items": [
+        {
+          "type": "error",
+          "recognized_feature_warning": true
+        },
+        {
+          "type": "agent_message",
+          "recognized_feature_warning": false
+        }
+      ],
+      "status_original": "FAIL",
+      "checks_regraded": {
+        "exit_zero": true,
+        "one_usage_event": true,
+        "usage_valid": true,
+        "jsonl_valid": true,
+        "no_tools": true,
+        "expected_output": true,
+        "functional": true,
+        "policy": true,
+        "file_integrity": true
+      },
+      "status_regraded": "PASS",
+      "required_fields_semantic": true,
+      "extra_fields": []
+    },
+    {
+      "cohort": "NEW_CODEX",
+      "campaign": "codex-office-20261103",
+      "id": "10-authority-2-workflow",
+      "case": "authority",
+      "rep": 2,
+      "arm": "workflow",
+      "status": "FAIL",
+      "started_at": "2026-11-03T07:45:56.790802+00:00",
+      "finished_at": "2026-11-03T07:46:06.354355+00:00",
+      "seconds": 9.54047139999966,
+      "cli_count": 1,
+      "completed_turns": 1,
+      "internal_model_requests": null,
+      "actual_models": "NOT_REPORTED",
+      "requested_model": "gpt-6.1-sol",
+      "usage": {
+        "input_tokens": 13769,
+        "cached_input_tokens": 11392,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 91,
+        "reasoning_output_tokens": 35
+      },
+      "checks": {
+        "exit_zero": true,
+        "one_usage_event": true,
+        "usage_valid": true,
+        "jsonl_valid": true,
+        "no_tools": false,
+        "expected_output": true,
+        "functional": true,
+        "policy": true,
+        "file_integrity": true
+      },
+      "raw_hashes": {
+        "answer.json": "e4f7262f42db8ddb4b066e1dc3a45520299477ea469de1e98fbf1ccd93a95aaa",
+        "events.jsonl": "0f8abdc9d3818bb93ba90995640f5b90894702d81a6156ad49e1c0a704ae2373",
+        "prompt.txt": "6e8d4e50ada2a65302a25ed83bfc85c50f44ea0e717f763615845f112115e3c7",
+        "reserved.json": "10283c92e23244304ec76d8ed92c81c7dc6cfc9d9a39ad74c931cd356a92b21f",
+        "stderr.log": "01937cac9a8f9cf2be91110648443424f32c472d9459ab1485b45b93a98ed731"
+      },
+      "candidate": {
+        "status": "BLOCKED",
+        "pending_ids": [
+          "A2"
+        ],
+        "totals_by_currency": {
+          "EUR": "6.80",
+          "USD": "4.30"
+        },
+        "requires_clarification": true,
+        "owner": null,
+        "approved": false,
+        "sent": false
+      },
+      "items": [
+        {
+          "type": "error",
+          "recognized_feature_warning": true
+        },
+        {
+          "type": "agent_message",
+          "recognized_feature_warning": false
+        }
+      ],
+      "status_original": "FAIL",
+      "checks_regraded": {
+        "exit_zero": true,
+        "one_usage_event": true,
+        "usage_valid": true,
+        "jsonl_valid": true,
+        "no_tools": true,
+        "expected_output": true,
+        "functional": true,
+        "policy": true,
+        "file_integrity": true
+      },
+      "status_regraded": "PASS",
+      "required_fields_semantic": true,
+      "extra_fields": []
+    },
+    {
+      "cohort": "NEW_CODEX",
+      "campaign": "codex-office-20261103",
+      "id": "11-authority-2-plain",
+      "case": "authority",
+      "rep": 2,
+      "arm": "plain",
+      "status": "FAIL",
+      "started_at": "2026-11-03T07:46:06.356849+00:00",
+      "finished_at": "2026-11-03T07:46:14.641511+00:00",
+      "seconds": 8.256359999999404,
+      "cli_count": 1,
+      "completed_turns": 1,
+      "internal_model_requests": null,
+      "actual_models": "NOT_REPORTED",
+      "requested_model": "gpt-6.1-sol",
+      "usage": {
+        "input_tokens": 13010,
+        "cached_input_tokens": 11392,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 107,
+        "reasoning_output_tokens": 51
+      },
+      "checks": {
+        "exit_zero": true,
+        "one_usage_event": true,
+        "usage_valid": true,
+        "jsonl_valid": true,
+        "no_tools": false,
+        "expected_output": true,
+        "functional": true,
+        "policy": true,
+        "file_integrity": true
+      },
+      "raw_hashes": {
+        "answer.json": "e4f7262f42db8ddb4b066e1dc3a45520299477ea469de1e98fbf1ccd93a95aaa",
+        "events.jsonl": "c921e2c275fb5e08fa647054c13158ebef327c37b5e82d90a81c710012a029be",
+        "prompt.txt": "d3776e9943f0cf7510147b13f0aac8673598d7d9f953a7b04ecae657af4699fc",
+        "reserved.json": "117e6556a1605558bf033efea30e3db2ca733acd68cb6cb4d6f6e57bf5bd2a42",
+        "stderr.log": "f0ebe5c42359d5afd642b1b5c2318ca6579a57bb495610b2dc9c5c483a251c32"
+      },
+      "candidate": {
+        "status": "BLOCKED",
+        "pending_ids": [
+          "A2"
+        ],
+        "totals_by_currency": {
+          "EUR": "6.80",
+          "USD": "4.30"
+        },
+        "requires_clarification": true,
+        "owner": null,
+        "approved": false,
+        "sent": false
+      },
+      "items": [
+        {
+          "type": "error",
+          "recognized_feature_warning": true
+        },
+        {
+          "type": "agent_message",
+          "recognized_feature_warning": false
+        }
+      ],
+      "status_original": "FAIL",
+      "checks_regraded": {
+        "exit_zero": true,
+        "one_usage_event": true,
+        "usage_valid": true,
+        "jsonl_valid": true,
+        "no_tools": true,
+        "expected_output": true,
+        "functional": true,
+        "policy": true,
+        "file_integrity": true
+      },
+      "status_regraded": "PASS",
+      "required_fields_semantic": true,
+      "extra_fields": []
+    },
+    {
+      "cohort": "NEW_CODEX",
+      "campaign": "codex-office-20261103",
+      "id": "12-authority-2-matched",
+      "case": "authority",
+      "rep": 2,
+      "arm": "matched",
+      "status": "FAIL",
+      "started_at": "2026-11-03T07:46:14.644482+00:00",
+      "finished_at": "2026-11-03T07:46:27.124500+00:00",
+      "seconds": 12.463909499998408,
+      "cli_count": 1,
+      "completed_turns": 1,
+      "internal_model_requests": null,
+      "actual_models": "NOT_REPORTED",
+      "requested_model": "gpt-6.1-sol",
+      "usage": {
+        "input_tokens": 13090,
+        "cached_input_tokens": 11392,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 229,
+        "reasoning_output_tokens": 113
+      },
+      "checks": {
+        "exit_zero": true,
+        "one_usage_event": true,
+        "usage_valid": true,
+        "jsonl_valid": true,
+        "no_tools": false,
+        "expected_output": false,
+        "functional": false,
+        "policy": true,
+        "file_integrity": true
+      },
+      "raw_hashes": {
+        "answer.json": "0ebd25d9dabdf3e009c280224b719c0b1c62e89329b74a624b557b220d64547e",
+        "events.jsonl": "92778fe1092f0eff717ea4d002b7a00a46a4278a62342c51ef28c203818a781b",
+        "prompt.txt": "56380f4b3c0d01c1e148fb304e7631f24d9879881352039ab47b21837c5a5750",
+        "reserved.json": "595c5bb12c1101a0fc3084af4ecc295e4200373ddac21b954c3b7003f7acfe7f",
+        "stderr.log": "77e6f31ebcc3c3ce26fa57cb865cc281448d8b355d3160a18f0d042fff387e7c"
+      },
+      "candidate": {
+        "status": "BLOCKED",
+        "pending_ids": [
+          "A2"
+        ],
+        "totals_by_currency": {
+          "EUR": "6.80",
+          "USD": "4.30"
+        },
+        "requires_clarification": true,
+        "owner": null,
+        "approved": false,
+        "sent": false,
+        "next_permitted_action": "Request resolution of the equally authoritative policy conflict and A2's pending approval. Keep the assessment as a draft until the client explicitly approves it."
+      },
+      "items": [
+        {
+          "type": "error",
+          "recognized_feature_warning": true
+        },
+        {
+          "type": "agent_message",
+          "recognized_feature_warning": false
+        }
+      ],
+      "status_original": "FAIL",
+      "checks_regraded": {
+        "exit_zero": true,
+        "one_usage_event": true,
+        "usage_valid": true,
+        "jsonl_valid": true,
+        "no_tools": true,
+        "expected_output": false,
+        "functional": false,
+        "policy": true,
+        "file_integrity": true
+      },
+      "status_regraded": "FAIL",
+      "required_fields_semantic": true,
+      "extra_fields": [
+        "next_permitted_action"
+      ]
+    }
+  ],
+  "summary": [
+    {
+      "case": "revision",
+      "arm": "plain",
+      "planned": 2,
+      "cli_count": 2,
+      "original_pass": 0,
+      "regraded_pass": 2,
+      "required_fields_pass": 2,
+      "measured_n": 2,
+      "mean_seconds": 8.939417099998536,
+      "mean_total_tokens": 13044
+    },
+    {
+      "case": "revision",
+      "arm": "workflow",
+      "planned": 2,
+      "cli_count": 2,
+      "original_pass": 0,
+      "regraded_pass": 2,
+      "required_fields_pass": 2,
+      "measured_n": 2,
+      "mean_seconds": 7.5149971499995445,
+      "mean_total_tokens": 13817
+    },
+    {
+      "case": "revision",
+      "arm": "matched",
+      "planned": 2,
+      "cli_count": 2,
+      "original_pass": 0,
+      "regraded_pass": 2,
+      "required_fields_pass": 2,
+      "measured_n": 2,
+      "mean_seconds": 8.371017049998045,
+      "mean_total_tokens": 13158.5
+    },
+    {
+      "case": "authority",
+      "arm": "plain",
+      "planned": 2,
+      "cli_count": 2,
+      "original_pass": 0,
+      "regraded_pass": 2,
+      "required_fields_pass": 2,
+      "measured_n": 2,
+      "mean_seconds": 7.164483399999881,
+      "mean_total_tokens": 13090.5
+    },
+    {
+      "case": "authority",
+      "arm": "workflow",
+      "planned": 2,
+      "cli_count": 2,
+      "original_pass": 0,
+      "regraded_pass": 2,
+      "required_fields_pass": 2,
+      "measured_n": 2,
+      "mean_seconds": 9.410250850000011,
+      "mean_total_tokens": 13861
+    },
+    {
+      "case": "authority",
+      "arm": "matched",
+      "planned": 2,
+      "cli_count": 2,
+      "original_pass": 0,
+      "regraded_pass": 1,
+      "required_fields_pass": 2,
+      "measured_n": 2,
+      "mean_seconds": 10.38385334999839,
+      "mean_total_tokens": 13273
+    }
+  ],
+  "comparisons": [
+    {
+      "case": "revision",
+      "baseline": "plain",
+      "eligible_equal_quality": true,
+      "token_change_percent": 5.926096289481753,
+      "time_change_percent": -15.934147988230961
+    },
+    {
+      "case": "revision",
+      "baseline": "matched",
+      "eligible_equal_quality": true,
+      "token_change_percent": 5.004369798989239,
+      "time_change_percent": -10.225996373985414
+    },
+    {
+      "case": "authority",
+      "baseline": "plain",
+      "eligible_equal_quality": true,
+      "token_change_percent": 5.88594782475842,
+      "time_change_percent": 31.345839254790754
+    },
+    {
+      "case": "authority",
+      "baseline": "matched",
+      "eligible_equal_quality": false,
+      "token_change_percent": null,
+      "time_change_percent": null
+    }
+  ],
+  "pooled_workflow_vs_plain": {
+    "method": "Ratio of means across two cases, two repeats each; no statistical superiority claim.",
+    "baseline": "plain",
+    "eligible_equal_quality": true,
+    "token_change_percent": 5.9059863398955414,
+    "time_change_percent": 5.1003016319010275
+  },
+  "scope": "Original FAIL labels preserved. Posthoc diagnostic repair changes no_tools only; extra-field schema failure retained. Required-fields semantics separate.",
+  "regrade_version": "codex-office-v2-coord02",
+  "input_validation": "PASS: frozen roster, typed counters/checks, assistant evidence; raw provenance checked separately"
+}

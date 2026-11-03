@@ -1,0 +1,183 @@
+{
+  "repo": "agent-workflows",
+  "state": "LOCAL_VERIFIED_PENDING_PUSH",
+  "product_state": "READY_FOR_REVIEW",
+  "delivery_policy": "USER_AUTHORIZED_REVIEW_FIX_COMMIT_PUSH; no additional model calls or release/tag",
+  "base_sha": "0b038de0a13c9b2da5463f832facdcd853be8696",
+  "continued_diff": "COORD-02",
+  "changed_paths": [
+    ".agents/skills/loop/SKILL.md",
+    ".agents/skills/loop/references/setup.md",
+    ".agents/skills/loop/scripts/workflow_setup.py",
+    ".claude/skills/loop/SKILL.md",
+    ".claude/skills/loop/references/setup.md",
+    ".claude/skills/loop/scripts/workflow_setup.py",
+    ".gitattributes",
+    ".github/skills/loop/SKILL.md",
+    ".github/skills/loop/references/setup.md",
+    ".github/skills/loop/scripts/workflow_setup.py",
+    "CHANGELOG.md",
+    "README.md",
+    "docs/evidence/coordination-function-20261103/README.md",
+    "docs/evidence/coordination-function-20261103/coord02-audit.json",
+    "docs/evidence/coordination-function-20261103/coord02-regrade-v2.json",
+    "docs/evidence/coordination-function-20261103/coordination-v1.json",
+    "docs/evidence/coordination-function-20261103/function03-budget.json",
+    "docs/evidence/coordination-function-20261103/function03-events-sanitized.json",
+    "docs/evidence/coordination-function-20261103/function03-measured-controller.py",
+    "docs/evidence/coordination-function-20261103/function03-measured-helper.py",
+    "docs/evidence/coordination-function-20261103/function03-model.csv",
+    "docs/evidence/coordination-function-20261103/function03-model.json",
+    "docs/evidence/coordination-function-20261103/function03-protocol.json",
+    "docs/evidence/coordination-function-20261103/published-hashes.json",
+    "docs/evidence/coordination-function-20261103/review-controls.json",
+    "docs/evidence/coordination-function-20261103/workflow-attention-v1.json",
+    "docs/guides/workflow-setup.md",
+    "docs/reference/coordination-contract.md",
+    "docs/testing/README.md",
+    "docs/testing/experiments/2026-11-03-coordination.md",
+    "docs/testing/experiments/2026-11-03-functional-workflow.md",
+    "docs/testing/sessions/coordination-function-local-20261103.json",
+    "scripts/campaign_coordination.py",
+    "scripts/codex_office_analysis.py",
+    "scripts/codex_office_pilot.py",
+    "scripts/coord02_audit.py",
+    "scripts/coordination_evidence.py",
+    "scripts/empirical_pilot.py",
+    "scripts/function03_cases.py",
+    "scripts/function03_pilot.py",
+    "scripts/workflow_assets.py",
+    "scripts/workflow_setup.py",
+    "skills-manifest.json",
+    "skills/workflow-setup/SKILL.md",
+    "skills/workflow-setup/references/setup.md",
+    "skills/workflow-setup/scripts/workflow_setup.py",
+    "task/COORD-02-RESULTS.json",
+    "task/COORD-02.md",
+    "task/FUNCTION-03-RESULTS.json",
+    "task/FUNCTION-03.md",
+    "task/TASK-STATUS.md",
+    "tests/fixtures/coordination-v1.json",
+    "tests/fixtures/workflow-attention-v1.json",
+    "tests/test_campaign_coordination.py",
+    "tests/test_codex_office_pilot.py",
+    "tests/test_coord02_regrade.py",
+    "tests/test_coordination_evidence.py",
+    "tests/test_coordination_product.py",
+    "tests/test_empirical.py",
+    "tests/test_function03.py",
+    "tests/test_workflow_resume.py"
+  ],
+  "experiments": {
+    "new_model_cli_consumed": 3,
+    "completed": 2,
+    "cancelled_unknown": 1,
+    "planned_not_run": 3,
+    "max_cli": 12,
+    "remaining_ceiling": 9,
+    "calls_paused": true,
+    "requested_model": "gpt-6.1-sol",
+    "requested_effort": "low",
+    "actual_model": "NOT_REPORTED",
+    "result_table": "docs/evidence/coordination-function-20261103/function03-model.json",
+    "cost_comparison": "NOT_ELIGIBLE_PREREQUISITE_FAILED"
+  },
+  "findings": [
+    {
+      "status": "FIXED",
+      "file": "scripts/workflow_setup.py:321",
+      "item": "Tracked source invalidation and suffix rewind preserve unaffected work, consumed budgets and stopped state."
+    },
+    {
+      "status": "PASS",
+      "file": "skills/workflow-setup/SKILL.md:9",
+      "item": "Quick direct path and conditional/resumable workflow use aligned with implementation and guide."
+    },
+    {
+      "status": "FIXED",
+      "file": "scripts/function03_pilot.py:72",
+      "item": "Conservative local pause for model-reported policy blocker with no command events; original failure records retained."
+    }
+  ],
+  "evidence_paths": [
+    "docs/evidence/coordination-function-20261103/README.md",
+    "docs/evidence/coordination-function-20261103/published-hashes.json",
+    "docs/testing/sessions/coordination-function-local-20261103.json"
+  ],
+  "peer_contract_version": "coordination-v1 / workflow-attention-v1",
+  "fixture_sha256": {
+    "tests\\fixtures\\coordination-v1.json": "4d67c53d7b2fbe13c5fc5c9630e3cd8c0b307e2112adbb061bb959b3ed424a81",
+    "tests\\fixtures\\workflow-attention-v1.json": "0d5ddac214f0f757e1b70a0295cc50b1fdd3a82d408b0fa2759e5db6e7516cac"
+  },
+  "peer_comparison": "Parent reports common-v1 hash-match; local fixtures unchanged, peer not read in this task",
+  "report": "docs/testing/experiments/2026-11-03-functional-workflow.md",
+  "delivery": {
+    "commit": null,
+    "pushed": false,
+    "checks": {
+      "local": "PASS14/14;461 tests459 PASS+2 skips",
+      "receipt": "docs/testing/sessions/coordination-function-local-20261103.json",
+      "remote": "NOT_RUN"
+    },
+    "limitations": [
+      "No additional model calls. FUNCTION-03 consumed3/12 and paused; no live adherence or cost comparison.",
+      "Private raw traces are unavailable for public replay; sanitized packet and hashes are public.",
+      "Patch1.11.5 for authorized behavior corrections; no tag/GitHub release or global install."
+    ],
+    "review": "LAND after deterministic repair of observation alias, invalidated-budget validation and runtime-item quota false PASS.",
+    "packet_index": "docs/evidence/coordination-function-20261103/published-hashes.json"
+  },
+  "historical_tests": {
+    "session": "function03-20261103-final",
+    "status": "PASS",
+    "gates": 14,
+    "discovered": 455,
+    "passed": 453,
+    "skipped": 2,
+    "input_fingerprint": "40e97c0fc7e5b7ca829d2e10fedf6f1652d4f46c8d935c27121b5a73f7148279",
+    "cli_journeys_pass": 7,
+    "oracle_diagnostic_controls_pass": 4,
+    "negative_feature_controls_before": {
+      "fail": 5,
+      "scope": "new unsupported CLI capability; originals retained"
+    }
+  },
+  "tests": {
+    "session": "coordination-function-staged-final-20261103",
+    "status": "PASS",
+    "gates": 14,
+    "discovered": 461,
+    "passed": 459,
+    "skipped": 2,
+    "input_fingerprint": "28b72eefa986888be5c4c8889f4ac6643e3d09b44413c442fcb3774a5b2c36f2",
+    "receipt": "docs/testing/sessions/coordination-function-local-20261103.json"
+  },
+  "historical_unresolved": [
+    {
+      "status": "BLOCKED",
+      "item": "FUNCTION-03 model-reported local restriction: zero command events, no delivered artifacts; OS cause unverified. No additional calls."
+    },
+    {
+      "status": "NOT_VERIFIED",
+      "item": "Live combined/model adherence, clean A/B host isolation and general token savings."
+    },
+    {
+      "status": "NOT_RUN",
+      "item": "Exact-SHA remote CI and byte verification pending push."
+    }
+  ],
+  "unresolved": [
+    {
+      "status": "BLOCKED",
+      "item": "FUNCTION-03 model-reported local restriction: zero command events, no delivered artifacts; OS cause unverified. No additional calls."
+    },
+    {
+      "status": "NOT_VERIFIED",
+      "item": "Live combined/model adherence, clean A/B host isolation and general token savings."
+    },
+    {
+      "status": "NOT_RUN",
+      "item": "Exact-SHA remote CI and byte verification pending push."
+    }
+  ]
+}

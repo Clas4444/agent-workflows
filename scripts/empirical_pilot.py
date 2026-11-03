@@ -13,17 +13,20 @@ import random
 import subprocess
 import sys
 import time
+import uuid
 
 if __package__:
     from .empirical_audit import read, write, sha, usage, loads_json
     from .empirical_cases import controls, fixtures, grade
+    from .campaign_coordination import stop_file,fault,record_marker,classify_failure
 else:
     sys.path.insert(0, str(Path(__file__).resolve().parent))
     from empirical_audit import read, write, sha, usage, loads_json
     from empirical_cases import controls, fixtures, grade
+    from campaign_coordination import stop_file,fault,record_marker,classify_failure
 
 ROOT = Path(__file__).resolve().parents[1]
-SOURCES = ('empirical_pilot.py', 'empirical_cases.py', 'empirical_audit.py')
+SOURCES = ('empirical_pilot.py', 'empirical_cases.py', 'empirical_audit.py','campaign_coordination.py')
 ARMS = ('plain', 'workflow', 'matched')
 
 
@@ -70,7 +73,7 @@ def freeze(folder, launcher, model='gpt-5.6-luna', effort='low', seed=20261103, 
             for arm in arms:
                 schedule.append({'id': f'{len(schedule)+1:02d}-{case}-{rep}-{arm}', 'case': case, 'rep': rep, 'arm': arm})
         order = order[1:]+order[:1]
-    protocol = {'schema': 1, 'frozen_at': now(), 'campaign': 'copilot-pilot-20261103', 'seed': seed,
+    protocol = {'schema': 1, 'frozen_at': now(), 'campaign': 'copilot-office-'+uuid.uuid4().hex[:12], 'seed': seed,
                 'cli_version': cli_version, 'runtime_version': runtime_version, 'controller_python': sys.version.split()[0],
                 'schedule': schedule, 'planned_packages': 12, 'max_cli_attempts': 12,
                 'cli_per_package': 1, 'history': 'single-shot independent calls; no continuation',
@@ -84,7 +87,8 @@ def freeze(folder, launcher, model='gpt-5.6-luna', effort='low', seed=20261103, 
                 'secondary': 'total input+output tokens, cache subsets, elapsed seconds, CLI/internal request counts, policy and file integrity',
                 'comparison': 'Matched adds equivalent general process guidance, never expected values/hidden tests; plain has neither candidate text nor candidate skill file/cue.',
                 'isolation': 'Empty per-call workspace and COPILOT_HOME; custom instructions/MCP/memory off, tools denied; host skill inventory must be checked independently. No clean causal claim without that inventory.',
-                'stop': 'Before every CLI check shared marker. On auth/quota/capacity/timeout/missing or malformed cost accounting, create shared marker exclusively and stop. Never retry a reservation. Other in-flight request may finish.',
+                'coordination_contract_version':1,
+                'stop': 'Campaign-local marker by default; explicitly supplied contract1 markers are scoped by provider/account-domain/campaign. Local faults never prove global quota. Unknown global domain pauses the same provider only. Never clear a marker, retry an uncertain reservation or switch identity to evade a stop.',
                 'contention': 'Other repository may run one CLI concurrently; no cross-repository timing inference.',
                 'analysis': 'Descriptive pilot only; no confidence/general-superiority claims. Never treat NOT_RUN as zero tokens or PASS.'}
     write(folder/'protocol.json', protocol)
@@ -118,6 +122,7 @@ def event_answer(text):
 
 def _run(folder, launcher, stop_marker):
     protocol = check_pin(folder); rows = []
+    campaign=protocol['campaign']
     if [sha(Path(x)) if Path(x).is_file() else None for x in launcher] != protocol['launcher_hashes']:
         raise ValueError('STALE launcher')
     reserved = folder/'attempts'; reserved.mkdir(exist_ok=True)
@@ -132,10 +137,12 @@ def _run(folder, launcher, stop_marker):
             rows.append({'cohort': 'NEW', 'campaign': protocol['campaign'], **item,
                          'status': 'BLOCKED_ENVIRONMENT', 'block_reason': 'incomplete_reservation',
                          'cli_count': 1, 'seconds': None, 'usage': None, 'checks': None})
-            try: exclusive(stop_marker, {'owner': 'agent-workflows', 'at': now(), 'attempt': item['id'], 'reason': 'incomplete_reservation'})
+            marker=fault('copilot',None,campaign,'process',['attempts/'+item['id']+'/reserved.json'])
+            record_marker(folder/'faults',marker)
+            try: exclusive(stop_marker, marker)
             except FileExistsError: pass
             break
-        if stop_marker.exists(): break
+        if stop_file(stop_marker,provider='copilot',account_domain=None,campaign=campaign)['blocked']: break
         if len(list(reserved.iterdir())) >= protocol['max_cli_attempts']: break
         attempt.mkdir(); exclusive(attempt/'reserved.json', {'at': now(), **item})
         work = attempt/'workspace'; work.mkdir(); home = attempt/'home'; home.mkdir()
@@ -161,7 +168,7 @@ def _run(folder, launcher, stop_marker):
         try: metrics, actual = usage(read(attempt/'usage.json'))
         except (OSError, ValueError, TypeError, KeyError): reason = 'missing_or_invalid_accounting'
         try: answer, events = event_answer(stdout.decode(errors='replace'))
-        except (ValueError, TypeError, KeyError): pass
+        except (ValueError, TypeError, KeyError): reason=reason or 'event_parse'
         # Only transport/event messages can trigger service limits, not answer/source text.
         errors = [e for e in events if e.get('type') in ('session.error', 'error')]
         error_text = stderr.decode(errors='replace').lower()+' '+json.dumps(errors).lower()
@@ -187,7 +194,9 @@ def _run(folder, launcher, stop_marker):
                'raw_hashes': {p.name: sha(p) for p in attempt.iterdir() if p.is_file()}}
         exclusive(result, row); rows.append(row); write(folder/'observations.json', rows)
         if reason:
-            try: exclusive(stop_marker, {'owner': 'agent-workflows', 'at': now(), 'attempt': item['id'], 'reason': reason})
+            marker=fault('copilot',None,campaign,classify_failure(reason,error_text),['attempts/'+item['id']+'/stderr.log'])
+            record_marker(folder/'faults',marker)
+            try: exclusive(stop_marker, marker)
             except FileExistsError: pass
             break
     done = {r['id'] for r in rows}
@@ -200,7 +209,9 @@ def _run(folder, launcher, stop_marker):
     return rows
 
 
-def run(folder, launcher, stop_marker):
+def run(folder, launcher, stop_marker=None):
+    folder=Path(folder).resolve()
+    stop_marker=Path(stop_marker).resolve() if stop_marker else folder/'STOP-MODEL-CALLS.json'
     lock = folder/'active.lock'
     exclusive(lock, {'pid': os.getpid(), 'at': now()})
     try: return _run(folder, launcher, stop_marker)
@@ -216,8 +227,8 @@ def main():
     a = p.parse_args(); folder = a.output.resolve()
     if a.mode == 'freeze': freeze(folder, a.launcher, cli_version=a.cli_version, runtime_version=a.runtime_version)
     else:
-        if not a.execute or not a.stop_marker: p.error('run requires --execute and --stop-marker')
-        run(folder, a.launcher, a.stop_marker.resolve())
+        if not a.execute: p.error('run requires --execute')
+        run(folder, a.launcher, a.stop_marker.resolve() if a.stop_marker else None)
 
 
 if __name__ == '__main__': main()

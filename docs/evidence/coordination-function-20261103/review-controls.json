@@ -1,0 +1,41 @@
+{
+  "scope": "Deterministic before/after controls, never model sessions. Original private logs retain machine paths and are not published.",
+  "controls": [
+    {
+      "id": "selected-view-alias",
+      "before": "FAIL",
+      "after": "PASS",
+      "contract": "Selected lists do not mutate graph intent."
+    },
+    {
+      "id": "legacy-telemetry-false-pass",
+      "before": "Legacy v1 PASS with empty checks/items",
+      "after": "Versioned v2 rejects malformed input; original labels unchanged"
+    },
+    {
+      "id": "tracked-observation-alias",
+      "before": "FAIL: editing current facts changes retained observation",
+      "after": "PASS: independent snapshot"
+    },
+    {
+      "id": "invalidated-budget-refund",
+      "before": "FAIL: refunded steps accepted after suffix invalidation",
+      "after": "PASS: invalidated observations count toward spent budget"
+    },
+    {
+      "id": "unknown-tracking-fields",
+      "before": "FAIL: unknown fields accepted",
+      "after": "PASS: explicit diagnostic"
+    },
+    {
+      "id": "windows-reservation-lock-transition",
+      "before": "PermissionError during exclusive lock transition",
+      "after": "Explicit blocked diagnostic, no lock bypass"
+    },
+    {
+      "id": "runtime-item-quota-error",
+      "before": "False PASS with valid handoff despite runtime quota diagnostic",
+      "after": "BLOCKED_ENVIRONMENT and provider/account quota marker; deterministic fake transport only"
+    }
+  ]
+}

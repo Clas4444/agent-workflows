@@ -1,0 +1,187 @@
+{
+  "repo": "agent-workflows",
+  "state": "LOCAL_VERIFIED_PENDING_PUSH",
+  "delivery_policy": "USER_AUTHORIZED_REVIEW_FIX_COMMIT_PUSH; no additional model calls or release/tag",
+  "base_sha": "0b038de0a13c9b2da5463f832facdcd853be8696",
+  "changed_paths": [
+    ".agents/skills/loop/SKILL.md",
+    ".agents/skills/loop/references/setup.md",
+    ".agents/skills/loop/scripts/workflow_setup.py",
+    ".claude/skills/loop/SKILL.md",
+    ".claude/skills/loop/references/setup.md",
+    ".claude/skills/loop/scripts/workflow_setup.py",
+    ".gitattributes",
+    ".github/skills/loop/SKILL.md",
+    ".github/skills/loop/references/setup.md",
+    ".github/skills/loop/scripts/workflow_setup.py",
+    "CHANGELOG.md",
+    "README.md",
+    "docs/evidence/coordination-function-20261103/README.md",
+    "docs/evidence/coordination-function-20261103/coord02-audit.json",
+    "docs/evidence/coordination-function-20261103/coord02-regrade-v2.json",
+    "docs/evidence/coordination-function-20261103/coordination-v1.json",
+    "docs/evidence/coordination-function-20261103/function03-budget.json",
+    "docs/evidence/coordination-function-20261103/function03-events-sanitized.json",
+    "docs/evidence/coordination-function-20261103/function03-measured-controller.py",
+    "docs/evidence/coordination-function-20261103/function03-measured-helper.py",
+    "docs/evidence/coordination-function-20261103/function03-model.csv",
+    "docs/evidence/coordination-function-20261103/function03-model.json",
+    "docs/evidence/coordination-function-20261103/function03-protocol.json",
+    "docs/evidence/coordination-function-20261103/published-hashes.json",
+    "docs/evidence/coordination-function-20261103/review-controls.json",
+    "docs/evidence/coordination-function-20261103/workflow-attention-v1.json",
+    "docs/guides/workflow-setup.md",
+    "docs/reference/coordination-contract.md",
+    "docs/testing/README.md",
+    "docs/testing/experiments/2026-11-03-coordination.md",
+    "docs/testing/experiments/2026-11-03-functional-workflow.md",
+    "docs/testing/sessions/coordination-function-local-20261103.json",
+    "scripts/campaign_coordination.py",
+    "scripts/codex_office_analysis.py",
+    "scripts/codex_office_pilot.py",
+    "scripts/coord02_audit.py",
+    "scripts/coordination_evidence.py",
+    "scripts/empirical_pilot.py",
+    "scripts/function03_cases.py",
+    "scripts/function03_pilot.py",
+    "scripts/workflow_assets.py",
+    "scripts/workflow_setup.py",
+    "skills-manifest.json",
+    "skills/workflow-setup/SKILL.md",
+    "skills/workflow-setup/references/setup.md",
+    "skills/workflow-setup/scripts/workflow_setup.py",
+    "task/COORD-02-RESULTS.json",
+    "task/COORD-02.md",
+    "task/FUNCTION-03-RESULTS.json",
+    "task/FUNCTION-03.md",
+    "task/TASK-STATUS.md",
+    "tests/fixtures/coordination-v1.json",
+    "tests/fixtures/workflow-attention-v1.json",
+    "tests/test_campaign_coordination.py",
+    "tests/test_codex_office_pilot.py",
+    "tests/test_coord02_regrade.py",
+    "tests/test_coordination_evidence.py",
+    "tests/test_coordination_product.py",
+    "tests/test_empirical.py",
+    "tests/test_function03.py",
+    "tests/test_workflow_resume.py"
+  ],
+  "experiments": {
+    "new_model_sessions": 0,
+    "budget_remaining": 0,
+    "historical_codex_cli": 12,
+    "original_fail": 12,
+    "regrade_strict_pass": 11,
+    "required_fields_pass": 12,
+    "workflow_token_change_percent": 5.9059863398955414,
+    "workflow_time_change_percent": 5.1003016319010275,
+    "scope": "Historical offline reconciliation only; n2/case/arm, no general savings claim"
+  },
+  "findings": [
+    {
+      "status": "FIXED",
+      "source": "scripts/workflow_setup.py:217",
+      "finding": "select returned aliased graph lists; deep copy now protects skills, checks and source paths."
+    },
+    {
+      "status": "PASS",
+      "source": "scripts/workflow_setup.py:400",
+      "finding": "Versioned opt-in rejects workflow intent edits; scoped caller profile restores on normal, exception, nested and early exit."
+    },
+    {
+      "status": "FIXED",
+      "source": "scripts/campaign_coordination.py:137",
+      "finding": "Windows exclusive-lock transition PermissionError now blocks explicitly; no lock bypass or automatic stale deletion."
+    },
+    {
+      "status": "PASS",
+      "source": "scripts/campaign_coordination.py:61",
+      "finding": "Local faults remain campaign-local; global faults respect provider and verified domain, unknown domain pauses same provider."
+    },
+    {
+      "status": "FIXED",
+      "source": "scripts/codex_office_analysis.py:85",
+      "finding": "Versioned regrade rejects missing telemetry/checks accepted by legacy control; unequal-quality pooled deltas are unavailable."
+    },
+    {
+      "status": "PASS",
+      "source": ".github/skills/loop-work/SKILL.md:16",
+      "finding": "Existing scope excludes small requests from unnecessary process; tiny JSON pilot measures instruction overhead, not broad coordination value."
+    }
+  ],
+  "evidence_paths": [
+    "docs/evidence/coordination-function-20261103/README.md",
+    "docs/evidence/coordination-function-20261103/published-hashes.json",
+    "docs/testing/sessions/coordination-function-local-20261103.json"
+  ],
+  "peer_contract_version": "coordination-v1 / workflow-attention-v1",
+  "fixture_sha256": {
+    "tests\\fixtures\\coordination-v1.json": "4d67c53d7b2fbe13c5fc5c9630e3cd8c0b307e2112adbb061bb959b3ed424a81",
+    "tests\\fixtures\\workflow-attention-v1.json": "0d5ddac214f0f757e1b70a0295cc50b1fdd3a82d408b0fa2759e5db6e7516cac"
+  },
+  "report": "docs/testing/experiments/2026-11-03-coordination.md",
+  "delivery": {
+    "commit": null,
+    "pushed": false,
+    "checks": {
+      "local": "PASS14/14;461 tests459 PASS+2 skips",
+      "receipt": "docs/testing/sessions/coordination-function-local-20261103.json",
+      "remote": "NOT_RUN"
+    },
+    "limitations": [
+      "No additional model calls. FUNCTION-03 consumed3/12 and paused; no live adherence or cost comparison.",
+      "Private raw traces are unavailable for public replay; sanitized packet and hashes are public.",
+      "Patch1.11.5 for authorized behavior corrections; no tag/GitHub release or global install."
+    ],
+    "review": "LAND after deterministic repair of observation alias, invalidated-budget validation and runtime-item quota false PASS.",
+    "packet_index": "docs/evidence/coordination-function-20261103/published-hashes.json"
+  },
+  "historical_tests": {
+    "session": "coord02-20261103-host-temp",
+    "status": "PASS",
+    "gates": 14,
+    "discovered": 444,
+    "skipped": 2,
+    "input_fingerprint": "08048269ecc8f426d8913841aeb3de8c25cf9da564a470254c18fa8dce2a5940",
+    "assets_docs_sync_diff": "PASS",
+    "initial_sandbox_attempt": "FAIL: Windows temp permissions; retained, not product effectiveness evidence"
+  },
+  "tests": {
+    "session": "coordination-function-staged-final-20261103",
+    "status": "PASS",
+    "gates": 14,
+    "discovered": 461,
+    "passed": 459,
+    "skipped": 2,
+    "input_fingerprint": "28b72eefa986888be5c4c8889f4ac6643e3d09b44413c442fcb3774a5b2c36f2",
+    "receipt": "docs/testing/sessions/coordination-function-local-20261103.json"
+  },
+  "historical_unresolved": [
+    {
+      "status": "BLOCKED",
+      "item": "FUNCTION-03 model-reported local restriction: zero command events, no delivered artifacts; OS cause unverified. No additional calls."
+    },
+    {
+      "status": "NOT_VERIFIED",
+      "item": "Live combined/model adherence, clean A/B host isolation and general token savings."
+    },
+    {
+      "status": "NOT_RUN",
+      "item": "Exact-SHA remote CI and byte verification pending push."
+    }
+  ],
+  "unresolved": [
+    {
+      "status": "BLOCKED",
+      "item": "FUNCTION-03 model-reported local restriction: zero command events, no delivered artifacts; OS cause unverified. No additional calls."
+    },
+    {
+      "status": "NOT_VERIFIED",
+      "item": "Live combined/model adherence, clean A/B host isolation and general token savings."
+    },
+    {
+      "status": "NOT_RUN",
+      "item": "Exact-SHA remote CI and byte verification pending push."
+    }
+  ]
+}

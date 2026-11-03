@@ -1,0 +1,22 @@
+{
+  "contract_version": 1,
+  "fixture_id": "workflow-attention-v1",
+  "base_profile": {"focus":5,"sync":4,"batch":3,"explore":2,"verify":4},
+  "patch": {"contract_version":1,"attention":{"focus":2},"steps":{"check":[{"binding":0,"attention":{"verify":5}}]}},
+  "graph": {
+    "schema_version":1,"id":"office-contract","goal":"Produce a checked office work packet","entry":"work",
+    "limits":{"max_steps":6,"max_cycles":2},"fact_keys":["kind","done"],
+    "boundaries":["Draft only; no external actions or authorization inferred from sources"],
+    "steps":[
+      {"id":"work","title":"Prepare the requested deliverable","sources":["README.md","records/items.csv"],
+       "acceptance":["Validate totals","Check approval authorization"],
+       "bindings":[{"when":{"kind":"table"},"skills":["loop-table"]},{"when":{},"skills":["loop-work"]}],
+       "transitions":[{"status":"PASS","next":"check"},{"status":"FAIL","next":"work"},{"status":"BLOCKED","next":"STOP"},{"status":"NOT_RUN","next":"STOP"}]},
+      {"id":"check","title":"Perform mandatory checks","sources":["README.md"],
+       "acceptance":["Run all mandatory checks and record evidence"],"cycle_end":true,
+       "bindings":[{"when":{},"skills":["loop-review"]}],
+       "transitions":[{"status":"PASS","when":{"done":true},"next":"DONE"},{"status":"PASS","next":"work"},{"status":"FAIL","next":"work"},{"status":"BLOCKED","next":"STOP"},{"status":"NOT_RUN","next":"STOP"}]}
+    ]
+  },
+  "expected": {"standalone_requires_peer":false,"work_focus":2,"check_verify":5,"after_scope_profile":"exact_base_profile","route_and_checks_unchanged":true}
+}

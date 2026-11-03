@@ -1,3 +1,40 @@
+# Current delivery review — 2026-11-03
+
+- User authorized review/fix/commit/push, superseding prior NO_PUSH statements.
+- No additional model calls. FUNCTION-03 consumed3/12; calls paused with local blocker.
+- Delivery review fixed current-record aliasing and invalidated-budget validation; nine resume tests PASS.
+- Patch1.11.5; no tag/release, peer/global edits or installation.
+- Public reports: [COORD-02](../docs/testing/experiments/2026-11-03-coordination.md), [FUNCTION-03](../docs/testing/experiments/2026-11-03-functional-workflow.md).
+- Final local14/14 gates PASS;461 tests459 PASS+2 skips. [Public local receipt](../docs/testing/sessions/coordination-function-local-20261103.json). Exact-SHA remote checks pending push; delivery not yet claimed pushed.
+
+## Earlier task timeline — historical, superseded restrictions retained
+
+# Current task — FUNCTION-03
+
+- State: PARTIAL_BLOCKED_MODEL; product offline READY_FOR_REVIEW. NO_COMMIT / NO_PUSH / NO_RELEASE.
+- Product: explicit tracked source checkpoint/resume and quick path; legacy start/advance retained.
+- Fresh offline14/14 gates PASS;455 tests,453 PASS+2skips; receipt historical private receipt (public delivery report supersedes it).
+- New model budget3/12 consumed:2 completed original FAIL with separate prerequisite-v2 BLOCKED;1 CANCELLED_UNKNOWN;3 remaining planned slots NOT_RUN. Ceiling9, calls paused; no reset.
+- Model reports policy/read-only restriction; zero command events/artifacts; OS cause NOT_VERIFIED. Campaign-local marker retained; no peer/global changes.
+- Requested gpt-6.1-sol/low; actual model NOT_REPORTED. No eligible efficiency or live adherence claim.
+- Details: [FUNCTION-03.md](FUNCTION-03.md), [FUNCTION-03-RESULTS.json](FUNCTION-03-RESULTS.json).
+
+## Earlier task states — historical
+
+# Current task — COORD-02
+
+- State: READY_FOR_REVIEW; NO_PUSH / NO_COMMIT / NO_RELEASE.
+- Offline: 14/14 gates PASS; 444 tests, 2 skips. Fresh receipt: `.loop\coord02-verification-host-temp\verification.json`.
+- New model calls:0; historical Codex12 audited, budget0 remaining.
+- Original FAIL12 retained; separate v2 strict11/12, required-fields12/12. No general savings claim.
+- Source fixes: selection aliasing, scoped attention restoration, campaign fault domains, fail-closed reservation race, telemetry regrade controls.
+- Peer fixture byte comparison awaits parent review; live combined/native discovery and new remote CI NOT_RUN.
+- Details and next action: [COORD-02.md](COORD-02.md), [COORD-02-RESULTS.json](COORD-02-RESULTS.json).
+
+## Historical timeline — superseded statuses retained
+
+The NOT_RUN and pending-approval statements below describe earlier Copilot/recovery stages, not current Codex execution. Codex completed12 CLI; approval is no longer pending. Published receipts certify their original pins, not this diff.
+
 # Task status
 
 - State: CODEX_12_CALLS_DELIVERED_SOURCE_CI_VERIFIED
@@ -22,7 +59,7 @@ Offline deliverables complete. Pilot remains NOT_RUN; no efficiency/quality clai
 
 - Line-chart publication: all 14 local gates PASS, 407 tests (405 PASS, two skips), unchanged input pin. New nine-artifact byte index matches staged Git blobs; original packet unchanged. Remote CI for this follow-up is checked after push.
 
-## User-directed switch to Codex â€” actual pilot complete
+## User-directed switch to Codex — actual pilot complete
 
 - User approved max12 CLI and explicitly switched the destination to Codex CLI because Copilot quota was exhausted. Copilot device login cancelled; all old markers/results retained.
 - Codex: 12/12 CLI completed, valid usage, no transport/auth/quota failure. Remaining budget0. No further model calls after classifier repair. Requested model gpt-6.1-sol / low; actual model and internal request count NOT_REPORTED.

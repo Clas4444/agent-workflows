@@ -1,0 +1,15 @@
+{
+  "coord02-audit.json": "7c88178b64556f7d6be0aa0739fda3771db76d6ec67aa45b43d8ef9563234791",
+  "coord02-regrade-v2.json": "8832cb5254b4b513d374379f28df0eed24e4166aecac2e0d8754ca8be2da5c38",
+  "coordination-v1.json": "4d67c53d7b2fbe13c5fc5c9630e3cd8c0b307e2112adbb061bb959b3ed424a81",
+  "function03-budget.json": "80c0cb1ecbdd247238aa582c7373dead16177a6d3be3a4abf12f996e75687511",
+  "function03-events-sanitized.json": "a468eb09dfe8629b31624eb5ed82bf80b386ca312ec4bd85094b94cc45fa8f31",
+  "function03-measured-controller.py": "eba737d11111471dc49ec7a43be9d1db90729e6587b94884a978092d15600075",
+  "function03-measured-helper.py": "a6c666e4612643cb98d0770bb658c7b5c49aebf927131eb6357522b147e7d9c7",
+  "function03-model.csv": "799e2a68c41694e9033d65002c077d47ffdca4029311b23234844f99f67f7c6c",
+  "function03-model.json": "a512111ebe211233e7b4bf0a3e82366ba659aab5f53540e4eea9c8c02ac07920",
+  "function03-protocol.json": "f1c49700083fffc16ec613b4ae3460298e85187e6e48f511fc370f5599e260fd",
+  "README.md": "3513b3be45a9977a4931fa5db7dd7efe4246faf348f454ea6ec87a3345100af4",
+  "review-controls.json": "61a6c60efa213c2ce986542195e8df6849a08e7d1078ba40fdad8005a7917c77",
+  "workflow-attention-v1.json": "0d5ddac214f0f757e1b70a0295cc50b1fdd3a82d408b0fa2759e5db6e7516cac"
+}

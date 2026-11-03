@@ -1,0 +1,194 @@
+{
+  "repo": "agent-workflows",
+  "task": "COORD-02",
+  "delivery_policy": "NO_PUSH",
+  "new_model_sessions": 0,
+  "historical_cli_checked": 12,
+  "historical_distinct_threads": 12,
+  "regrade_version": "codex-office-v2-coord02",
+  "original_labels_immutable": true,
+  "original_fail": 12,
+  "regraded_pass": 11,
+  "required_fields_pass": 12,
+  "source_pins": [
+    {
+      "name": "codex_office_pilot.py",
+      "measured_source": "measured-controller.py",
+      "measured_pin_matches": true,
+      "current_canonical_matches": false
+    },
+    {
+      "name": "empirical_cases.py",
+      "measured_source": "base-git-object",
+      "measured_pin_matches": true,
+      "current_canonical_matches": true
+    },
+    {
+      "name": "empirical_audit.py",
+      "measured_source": "base-git-object",
+      "measured_pin_matches": true,
+      "current_canonical_matches": true
+    },
+    {
+      "name": "empirical_pilot.py",
+      "measured_source": "base-git-object",
+      "measured_pin_matches": true,
+      "current_canonical_matches": false
+    },
+    {
+      "name": "workflow_cost.py",
+      "measured_source": "base-git-object",
+      "measured_pin_matches": true,
+      "current_canonical_matches": true
+    },
+    {
+      "name": "workflow_cost_cases.py",
+      "measured_source": "base-git-object",
+      "measured_pin_matches": true,
+      "current_canonical_matches": true
+    }
+  ],
+  "traces": [
+    {
+      "id": "01-revision-1-workflow",
+      "raw_hashes_match": true,
+      "prompt_matches_frozen_fixture": true,
+      "original_status_reproduced": "FAIL",
+      "candidate_matches_final_message": true,
+      "usage_matches": true,
+      "completed_turns": 1,
+      "workspace_still_empty": true,
+      "exit_code_provenance": "recorded checks.exit_zero; integer process return code was not separately persisted"
+    },
+    {
+      "id": "02-revision-1-matched",
+      "raw_hashes_match": true,
+      "prompt_matches_frozen_fixture": true,
+      "original_status_reproduced": "FAIL",
+      "candidate_matches_final_message": true,
+      "usage_matches": true,
+      "completed_turns": 1,
+      "workspace_still_empty": true,
+      "exit_code_provenance": "recorded checks.exit_zero; integer process return code was not separately persisted"
+    },
+    {
+      "id": "03-revision-1-plain",
+      "raw_hashes_match": true,
+      "prompt_matches_frozen_fixture": true,
+      "original_status_reproduced": "FAIL",
+      "candidate_matches_final_message": true,
+      "usage_matches": true,
+      "completed_turns": 1,
+      "workspace_still_empty": true,
+      "exit_code_provenance": "recorded checks.exit_zero; integer process return code was not separately persisted"
+    },
+    {
+      "id": "04-revision-2-plain",
+      "raw_hashes_match": true,
+      "prompt_matches_frozen_fixture": true,
+      "original_status_reproduced": "FAIL",
+      "candidate_matches_final_message": true,
+      "usage_matches": true,
+      "completed_turns": 1,
+      "workspace_still_empty": true,
+      "exit_code_provenance": "recorded checks.exit_zero; integer process return code was not separately persisted"
+    },
+    {
+      "id": "05-revision-2-matched",
+      "raw_hashes_match": true,
+      "prompt_matches_frozen_fixture": true,
+      "original_status_reproduced": "FAIL",
+      "candidate_matches_final_message": true,
+      "usage_matches": true,
+      "completed_turns": 1,
+      "workspace_still_empty": true,
+      "exit_code_provenance": "recorded checks.exit_zero; integer process return code was not separately persisted"
+    },
+    {
+      "id": "06-revision-2-workflow",
+      "raw_hashes_match": true,
+      "prompt_matches_frozen_fixture": true,
+      "original_status_reproduced": "FAIL",
+      "candidate_matches_final_message": true,
+      "usage_matches": true,
+      "completed_turns": 1,
+      "workspace_still_empty": true,
+      "exit_code_provenance": "recorded checks.exit_zero; integer process return code was not separately persisted"
+    },
+    {
+      "id": "07-authority-1-matched",
+      "raw_hashes_match": true,
+      "prompt_matches_frozen_fixture": true,
+      "original_status_reproduced": "FAIL",
+      "candidate_matches_final_message": true,
+      "usage_matches": true,
+      "completed_turns": 1,
+      "workspace_still_empty": true,
+      "exit_code_provenance": "recorded checks.exit_zero; integer process return code was not separately persisted"
+    },
+    {
+      "id": "08-authority-1-plain",
+      "raw_hashes_match": true,
+      "prompt_matches_frozen_fixture": true,
+      "original_status_reproduced": "FAIL",
+      "candidate_matches_final_message": true,
+      "usage_matches": true,
+      "completed_turns": 1,
+      "workspace_still_empty": true,
+      "exit_code_provenance": "recorded checks.exit_zero; integer process return code was not separately persisted"
+    },
+    {
+      "id": "09-authority-1-workflow",
+      "raw_hashes_match": true,
+      "prompt_matches_frozen_fixture": true,
+      "original_status_reproduced": "FAIL",
+      "candidate_matches_final_message": true,
+      "usage_matches": true,
+      "completed_turns": 1,
+      "workspace_still_empty": true,
+      "exit_code_provenance": "recorded checks.exit_zero; integer process return code was not separately persisted"
+    },
+    {
+      "id": "10-authority-2-workflow",
+      "raw_hashes_match": true,
+      "prompt_matches_frozen_fixture": true,
+      "original_status_reproduced": "FAIL",
+      "candidate_matches_final_message": true,
+      "usage_matches": true,
+      "completed_turns": 1,
+      "workspace_still_empty": true,
+      "exit_code_provenance": "recorded checks.exit_zero; integer process return code was not separately persisted"
+    },
+    {
+      "id": "11-authority-2-plain",
+      "raw_hashes_match": true,
+      "prompt_matches_frozen_fixture": true,
+      "original_status_reproduced": "FAIL",
+      "candidate_matches_final_message": true,
+      "usage_matches": true,
+      "completed_turns": 1,
+      "workspace_still_empty": true,
+      "exit_code_provenance": "recorded checks.exit_zero; integer process return code was not separately persisted"
+    },
+    {
+      "id": "12-authority-2-matched",
+      "raw_hashes_match": true,
+      "prompt_matches_frozen_fixture": true,
+      "original_status_reproduced": "FAIL",
+      "candidate_matches_final_message": true,
+      "usage_matches": true,
+      "completed_turns": 1,
+      "workspace_still_empty": true,
+      "exit_code_provenance": "recorded checks.exit_zero; integer process return code was not separately persisted"
+    }
+  ],
+  "pooled_workflow_vs_plain": {
+    "method": "Ratio of means across two cases, two repeats each; no statistical superiority claim.",
+    "baseline": "plain",
+    "eligible_equal_quality": true,
+    "token_change_percent": 5.9059863398955414,
+    "time_change_percent": 5.1003016319010275
+  },
+  "offline_audit_seconds": 0.1767428999992262,
+  "scope": "Read-only historical trace reconciliation and versioned regrade; not a new experiment or proof of live combined semantics."
+}

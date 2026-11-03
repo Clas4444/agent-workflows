@@ -140,6 +140,21 @@ class EmpiricalTests(unittest.TestCase):
                 again = run(folder, ['none'], marker); invoke.assert_not_called()
             self.assertEqual(again[0]['status'], 'BLOCKED_ENVIRONMENT')
 
+    def test_default_marker_is_local_and_parse_accounting_fault_does_not_block_peer(self):
+        from scripts.campaign_coordination import decision
+        with tempfile.TemporaryDirectory() as directory:
+            base=Path(directory);folder=base/'pilot';freeze(folder,['none'])
+            old_shared=base/'legacy-shared-stop.json';old_shared.write_text('{"reason":"MALFORMED_USAGE"}')
+            original=old_shared.read_bytes()
+            proc=SimpleNamespace(returncode=1,stdout=b'',stderr=b'no authentication information')
+            with patch('scripts.empirical_pilot.subprocess.run',return_value=proc) as invoke:
+                rows=run(folder,['none']);self.assertEqual(invoke.call_count,1)
+            marker=json.loads((folder/'STOP-MODEL-CALLS.json').read_text())
+            self.assertEqual(marker['scope'],'campaign');self.assertEqual(marker['reason'],'auth_home')
+            self.assertFalse(decision(marker,provider='copilot',account_domain=None,campaign='peer')['blocked'])
+            self.assertFalse(decision(marker,provider='codex',account_domain=None,campaign='peer')['blocked'])
+            self.assertEqual(rows[0]['status'],'BLOCKED_ENVIRONMENT');self.assertEqual(old_shared.read_bytes(),original)
+
     def test_functional_pass_cannot_hide_extra_files_or_tool_attempts(self):
         with tempfile.TemporaryDirectory() as directory:
             base=Path(directory);folder=base/'pilot';protocol=freeze(folder,['none'])

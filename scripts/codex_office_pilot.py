@@ -7,6 +7,7 @@ import shutil
 import subprocess
 import sys
 import time
+import uuid
 
 if not __package__:sys.path.insert(0,str(Path(__file__).resolve().parent))
 if __package__:
@@ -15,15 +16,17 @@ if __package__:
     from .empirical_pilot import prompt,exclusive,now,snapshot
     from .workflow_cost import inspect_call
     from .codex_office_analysis import item_summary,no_tools,unexpected_error
+    from .campaign_coordination import stop_file,fault,record_marker,classify_failure
 else:
     from empirical_audit import read,write,sha
     from empirical_cases import fixtures,oracle,grade,controls
     from empirical_pilot import prompt,exclusive,now,snapshot
     from workflow_cost import inspect_call
     from codex_office_analysis import item_summary,no_tools,unexpected_error
+    from campaign_coordination import stop_file,fault,record_marker,classify_failure
 
 ROOT=Path(__file__).resolve().parents[1]
-SOURCES=('codex_office_pilot.py','codex_office_analysis.py','empirical_cases.py','empirical_audit.py','empirical_pilot.py','workflow_cost.py','workflow_cost_cases.py')
+SOURCES=('codex_office_pilot.py','codex_office_analysis.py','empirical_cases.py','empirical_audit.py','empirical_pilot.py','workflow_cost.py','workflow_cost_cases.py','campaign_coordination.py')
 OVERRIDES=['--enable','skip_host_skill_discovery','--disable','plugins','--disable','apps',
            '--disable','shell_tool','--disable','unified_exec','-c','project_doc_max_bytes=0',
            '-c','skills.bundled.enabled=false','-c','skills.include_instructions=false','-c','developer_instructions=""']
@@ -44,7 +47,7 @@ def freeze(folder,cli):
     value=json.loads(pre.stdout);leaks=isolation_checks(json.dumps(value))
     if pre.returncode or not all(leaks.values()):raise ValueError('preflight leakage or startup failure')
     version=subprocess.check_output([cli,'--version'],text=True).strip()
-    protocol={'campaign':'codex-office-20261103','frozen_at':now(),'provider':'Codex CLI configured OpenAI service',
+    protocol={'campaign':'codex-office-'+uuid.uuid4().hex[:12],'frozen_at':now(),'provider':'Codex CLI configured OpenAI service',
               'cli_version':version,'cli_sha256':sha(Path(cli)),'model_requested':'gpt-6.1-sol','reasoning':'low',
               'max_cli':12,'schedule':old['schedule'],'seed':old['seed'],'fixtures':old['fixtures'],
               'skill_text':old['skill_text'],'skill_sha256':old['skill_sha256'],'controls':checks,
@@ -54,7 +57,8 @@ def freeze(folder,cli):
               'method':'New provider campaign, single-shot fresh ephemeral workspaces, auth retained with --ignore-user-config. No changes to home or global skills; no Copilot marker cleared.',
               'hypothesis':old['hypothesis'],'primary':old['primary'],'secondary':old['secondary'],
               'analysis':'Report each case/arm and all attempts. Tokens=input+output, cache subset. No general superiority from n=2. Do not pool with Copilot.',
-              'stop':'Serial max12, reserve before call. Stop on transport/auth/quota/accounting failure using campaign-local marker; never retry uncertain attempts.',
+              'coordination_contract_version':1,
+              'stop':'Serial max12, reserve before call. Campaign-local marker by default; contract1 faults distinguish local environment and provider/account quota. Unknown global domain pauses same-provider calls only when marker exchange is explicit. Never retry uncertain attempts or switch identity to evade a stop.',
               'actual_model':'Only if emitted by CLI events; otherwise NOT_REPORTED, never infer it from requested model.'}
     write(folder/'protocol.json',protocol);write(folder/'seal.json',{'protocol_sha256':sha(folder/'protocol.json')})
     return protocol
@@ -84,9 +88,11 @@ def run(folder,cli):
             if attempt.exists():
                 rows.append({'cohort':'NEW_CODEX','campaign':p['campaign'],**item,'status':'BLOCKED_ENVIRONMENT',
                              'cli_count':1,'seconds':None,'usage':None,'reason':'incomplete_reservation'})
-                if not marker.exists():exclusive(marker,{'reason':'incomplete_reservation','attempt':item['id']})
+                observation=fault('codex',None,p['campaign'],'process',['attempts/'+item['id']+'/reserved.json'])
+                record_marker(folder/'faults',observation)
+                if not marker.exists():exclusive(marker,observation)
                 break
-            if marker.exists():break
+            if stop_file(marker,provider='codex',account_domain=None,campaign=p['campaign'])['blocked']:break
             attempt.mkdir(parents=True);exclusive(attempt/'reserved.json',{'at':now(),**item})
             work=attempt/'workspace';work.mkdir();before=snapshot(work)
             request=prompt(p['fixtures'][item['case']],item['arm'],p['skill_text'])
@@ -102,10 +108,13 @@ def run(folder,cli):
             observed,answer=inspect_call(attempt,oracle(item['case'],p['fixtures'][item['case']]['source']),code,seconds)
             business=grade(item['case'],p['fixtures'][item['case']]['source'],answer)
             integrity=before==snapshot(work)
-            events=[]
+            events=[];stream_parse_failure=False
             for line in (attempt/'events.jsonl').read_text(encoding='utf-8').splitlines():
-                try:events.append(json.loads(line))
-                except ValueError:pass
+                try:
+                    event=json.loads(line)
+                    if not isinstance(event,dict):raise ValueError('event must be an object')
+                    events.append(event)
+                except ValueError:stream_parse_failure=True
             models=sorted({e['model'] for e in events if isinstance(e.get('model'),str)})
             # CLI startup diagnostics are not tool invocations. Unknown errors still fail.
             observed['checks']['no_tools']=no_tools(item_summary(events))
@@ -120,7 +129,11 @@ def run(folder,cli):
             exclusive(attempt/'result.json',row);rows.append(row);write(folder/'observations.json',rows)
             print(json.dumps({k:row[k] for k in ('id','status','seconds','usage')}),flush=True)
             if status=='BLOCKED_ENVIRONMENT':
-                exclusive(marker,{'reason':'transport_auth_quota_or_accounting_failure','attempt':item['id']});break
+                error_text=(attempt/'stderr.log').read_text(encoding='utf-8',errors='replace')+' '+json.dumps([e for e in events if e.get('type') in ('error','turn.failed') or e.get('item',{}).get('type')=='error'])
+                observation=fault('codex',None,p['campaign'],classify_failure('event_parse' if stream_parse_failure else 'missing_or_invalid_accounting',error_text),['attempts/'+item['id']+'/stderr.log'])
+                record_marker(folder/'faults',observation)
+                if not marker.exists():exclusive(marker,observation)
+                break
         done={r['id'] for r in rows}
         for item in p['schedule']:
             if item['id'] not in done:rows.append({'cohort':'NEW_CODEX','campaign':p['campaign'],**item,'status':'NOT_RUN','cli_count':0,'seconds':None,'usage':None})

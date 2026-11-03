@@ -16,6 +16,8 @@ checks, model output checks, host discovery and remote CI establish different th
 
 | Date | Record | Scope |
 |---|---|---|
+| 2026-11-03 | [Independent coordination](experiments/2026-11-03-coordination.md) | COORD-02 product boundaries, scoped experiment faults and historical12-trace audit; no new model calls |
+| 2026-11-03 | [Functional workflow checks](experiments/2026-11-03-functional-workflow.md) | Real-file checkpoint/repair tests; new3 consumed Codex attempts blocked before executed work; no eligible cost comparison |
 | 2026-11-03 | [New Codex office pilot](experiments/2026-11-03-codex-office.md) | 12 completed Codex CLI calls, warning-classifier repair, strict 11/12 and separate required-field semantics; not pooled with Copilot |
 | 2026-11-03 | [Requested line charts and recovery](experiments/2026-11-03-copilot-recovery.md) | Six-arm historical combined/cents token/time lines; separate approval/accounting blockers for a new bounded pilot |
 | 2026-11-03 | [Copilot measurement integrity](experiments/2026-11-03-copilot-integrity.md) | Audit of 80 historical packages; reproducible scoring sensitivities and figures; new 12-slot pilot NOT_RUN after shared accounting stop |

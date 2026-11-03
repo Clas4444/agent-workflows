@@ -1,5 +1,17 @@
 # Changelog
 
+## 1.11.5 — 2026-11-03
+
+- Add opt-in source-tracked checkpoints: invalidate affected evidence, preserve
+  unaffected work and consumed budgets, and keep STOP stopped.
+- Isolate selected/recorded workflow data from caller mutation; reject malformed
+  tracking and refunded invalidated budgets.
+- Keep Workflow Setup independent; bound optional attention overrides to selected
+  processing scopes without changing routes, authority or mandatory checks.
+- Scope experimental stop markers by campaign/provider/account domain and retain
+  uncertain reservations. Publish versioned audits and blocked Codex attempts
+  separately; no general token-savings or live combined-model claim.
+
 ## 1.11.4 — 2026-11-03
 
 - Honor the selected project when rendering workflow maps; add full map/graph/project identity checks and reject directory source pointers.

@@ -1,5 +1,31 @@
 # Workflow setup
 
+For one clear stateless step, use a direct prompt or focused skill. Workflow Setup
+is useful when conditional steps, repair limits or resumable evidence justify its
+design and bookkeeping cost. It does not promise token savings. Workflow controls
+WHAT/NEXT/STOP; optional Agent Attention controls HOW within a selected step.
+
+## Resume with source evidence
+
+The helper remains read-only. For execution that needs checkpoints, opt in with
+`start --file workflow.json --project <project>`. Save its output as a new cursor.
+After doing and independently checking the selected step, use `record --file
+workflow.json --project <project> --state cursor.json --status PASS --evidence
+"observed check"`; FAIL/BLOCKED/NOT_RUN remain explicit observations.
+
+Before reuse, run `resume --file workflow.json --project <project> --state
+cursor.json`. It preserves unaffected completed work, invalidates the earliest
+changed completed PASS and its downstream observations, and restores pre-step facts.
+Spent step/cycle limits remain spent; STOP cannot automatically reopen. Review
+changed requirements and authorization before continuing. Unknown or contradictory
+authority needs STOP/handoff, never guessed permission. Missing/aliased files,
+unsupported tracking and changed graph identities produce errors.
+
+Only the exact listed sources are pinned; omitted dependencies are outside the
+check. Caller observations are not authenticated. Legacy start/advance and select
+do not establish evidence freshness. See the bundled reference for complete
+commands and limitations. No peer repository or installed global setting is needed.
+
 ## Direct setup skill
 
 Install the complete `skills/workflow-setup` folder into your host skill directory

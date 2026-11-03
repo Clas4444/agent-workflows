@@ -8,6 +8,8 @@ import os
 from pathlib import Path, PurePosixPath
 import re
 import stat
+import sys
+from contextlib import contextmanager
 
 AXES = ('focus', 'sync', 'batch', 'explore', 'verify')
 STATUSES = ('PASS', 'FAIL', 'BLOCKED', 'NOT_RUN')
@@ -217,14 +219,14 @@ def select(document, state):
     binding = choose(steps[state['step']]['bindings'], state['facts'])
     effective = dict.fromkeys(AXES, 3)
     effective.update(document.get('attention', {})); effective.update(binding.get('attention', {}))
-    return {'step': state['step'], 'skills': binding.get('skills', []), 'attention': effective,
+    return copy.deepcopy({'step': state['step'], 'skills': binding.get('skills', []), 'attention': effective,
             'attention_requested': bool(document.get('attention') or binding.get('attention')),
             'instruction_paths': [document.get('skill_root', '.agents/skills')+'/'+name+'/SKILL.md'
                                   for name in binding.get('skills', [])],
             'skill_availability': 'NOT_RUN',
             'goal': document['goal'], 'boundaries': document.get('boundaries', []),
             'sources': steps[state['step']]['sources'], 'acceptance': steps[state['step']]['acceptance'],
-            'execution': 'NONE', 'scope': 'Read only listed sources and selected installed instructions; no permissions granted.'}
+            'execution': 'NONE', 'scope': 'Read only listed sources and selected installed instructions; no permissions granted.'})
 
 
 def advance(document, state, status, evidence, facts=None):
@@ -246,6 +248,115 @@ def advance(document, state, status, evidence, facts=None):
             'cycles_completed': cycles, 'status': target if target in TERMINALS else 'ACTIVE',
             'facts': observed, 'last': {'step': state['step'], 'status': status, 'evidence': evidence, 'reason': reason},
             'execution': 'NONE', 'evidence_scope': 'Caller-supplied observation; routing does not verify task execution.'}
+
+
+def source_pins(document, project, step):
+    """Pin exact ordinary files, never directories/aliases or another project."""
+    project = Path(project).resolve()
+    if not project.is_dir(): raise ValueError('project root must exist')
+    result = {}
+    for name in validate(document)[step]['sources']:
+        path = project
+        for part in PurePosixPath(name).parts:
+            path = path/part; plain_entry(path)
+        if not path.is_file() or not path.resolve().is_relative_to(project):
+            raise ValueError('tracked source must be an existing project file: '+name)
+        if path.stat().st_nlink != 1: raise ValueError('tracked sources cannot be hardlinked: '+name)
+        digest = hashlib.sha256()
+        with path.open('rb') as stream:
+            for block in iter(lambda: stream.read(65536), b''): digest.update(block)
+        result[name] = digest.hexdigest()
+    return result
+
+
+def tracked_start(document, facts=None):
+    return {**start(document, facts), 'tracking_version': 1, 'records': [], 'invalidations': []}
+
+
+def tracked_records(document, state):
+    steps = validate(document)
+    allowed = {'workflow_sha256','step','steps_completed','cycles_completed','status','facts',
+               'last','execution','evidence_scope','tracking_version','records','invalidations','resume'}
+    if not isinstance(state,dict) or set(state)-allowed:
+        raise ValueError('unknown tracked cursor fields')
+    if type(state.get('tracking_version')) is not int or state['tracking_version'] != 1:
+        raise ValueError('resume/record requires a tracked cursor; use start --project for new work')
+    if state.get('workflow_sha256') != fingerprint(document):
+        raise ValueError('changed workflow requires reviewed new cursor; preserve spent budget separately')
+    for key, limit in (('steps_completed','max_steps'),('cycles_completed','max_cycles')):
+        if type(state.get(key)) is not int or not 0 <= state[key] <= document['limits'][limit]:
+            raise ValueError('invalid tracked budget counters')
+    if (state.get('status') not in ('ACTIVE', *TERMINALS)
+            or (state['status'] == 'ACTIVE' and state.get('step') not in steps)
+            or (state['status'] in TERMINALS and state.get('step') != state['status'])):
+        raise ValueError('invalid tracked cursor')
+    facts_check(document, state.get('facts'))
+    records = state.get('records')
+    if not isinstance(records,list) or not isinstance(state.get('invalidations'),list):
+        raise ValueError('invalid tracked records')
+    historical = []
+    for invalidation in state['invalidations']:
+        if (not isinstance(invalidation,dict) or set(invalidation) != {'reason','records'}
+                or invalidation['reason'] != 'SOURCE_CHANGED' or not isinstance(invalidation['records'],list)):
+            raise ValueError('invalid source invalidation record')
+        historical.extend(invalidation['records'])
+    for observation in [*records,*historical]:
+        if not isinstance(observation,dict) or set(observation) != {'before','after','source_sha256'}:
+            raise ValueError('invalid tracked record fields')
+        before, after, pins = observation['before'], observation['after'], observation['source_sha256']
+        cursor(document,before)
+        if not isinstance(after,dict) or after.get('workflow_sha256') != fingerprint(document):
+            raise ValueError('invalid tracked observation')
+        last=after.get('last',{})
+        expected=advance(document,before,last.get('status'),last.get('evidence'),after.get('facts'))
+        if (after != expected or after['steps_completed'] > state['steps_completed']
+                or after['cycles_completed'] > state['cycles_completed']):
+            raise ValueError('tracked observation does not match route/counters')
+        if (not isinstance(pins,dict) or set(pins) != set(steps[before['step']]['sources'])
+                or any(not isinstance(v,str) or not re.fullmatch('[0-9a-f]{64}',v) for v in pins.values())):
+            raise ValueError('invalid tracked source pins')
+    return records
+
+
+def resume(document, state, project):
+    records = tracked_records(document,state)
+    changed = set(); earliest = None
+    for index, observation in enumerate(records):
+        # Failed/blocked observations are retained, never reused as PASS evidence.
+        if observation['after']['last']['status'] != 'PASS': continue
+        current = source_pins(document,project,observation['before']['step'])
+        differences = {key for key in current if current[key] != observation['source_sha256'][key]}
+        if differences and earliest is None: earliest = index
+        changed.update(differences)
+    result = copy.deepcopy(state)
+    if earliest is not None:
+        before = records[earliest]['before']
+        result.update(step=before['step'], facts=copy.deepcopy(before['facts']), status='ACTIVE')
+        result.pop('last',None)
+        result['invalidations'].append({'reason':'SOURCE_CHANGED','records':result['records'][earliest:]})
+        result['records'] = result['records'][:earliest]
+        # Never refund consumed steps/cycles, including a previously completed run.
+        if (result['steps_completed'] >= document['limits']['max_steps']
+                or result['cycles_completed'] >= document['limits']['max_cycles']
+                or state['status'] == 'STOP'):
+            result.update(step='STOP',status='STOP')
+    result['resume'] = {'reason':'SOURCE_CHANGED' if earliest is not None else 'UNCHANGED',
+                        'changed_sources':sorted(changed), 'execution':'NONE',
+                        'scope':'Exact listed source pins only; caller observations are not authenticated.'}
+    return result
+
+
+def record(document, state, project, status, evidence, facts=None):
+    refreshed = resume(document,state,project)
+    if refreshed['resume']['reason'] != 'UNCHANGED':
+        raise ValueError('stale completed evidence; run resume and review invalidation before continuing')
+    before = {k:copy.deepcopy(v) for k,v in state.items()
+              if k not in ('tracking_version','records','invalidations','resume')}
+    after = advance(document,before,status,evidence,facts)
+    pins = source_pins(document,project,before['step'])
+    return {**copy.deepcopy(after),'tracking_version':1,
+            'records':copy.deepcopy(state['records'])+[{'before':before,'after':after,'source_sha256':pins}],
+            'invalidations':copy.deepcopy(state['invalidations'])}
 
 
 def template(layer='skills'):
@@ -289,8 +400,13 @@ def questions(layer):
 def attach_attention(document, patch):
     """Attach explicit profiles to existing binding indexes; preserve routing/skills."""
     validate(document)
-    if not isinstance(patch, dict) or set(patch)-{'attention', 'steps'}:
-        raise ValueError('attention patch accepts only attention and steps')
+    if not isinstance(patch, dict) or set(patch)-{'contract_version', 'attention', 'steps'}:
+        raise ValueError('attention patch accepts contract_version, attention and steps only; workflow intent is immutable')
+    if 'contract_version' in patch:
+        if type(patch['contract_version']) is not int or patch['contract_version'] != 1:
+            raise ValueError('unsupported attention contract_version; expected integer1')
+        if 'attention' not in patch and not patch.get('steps'):
+            raise ValueError('versioned attention patch is missing a profile or binding changes')
     updated = copy.deepcopy(document)
     if 'attention' in patch:
         profile(patch['attention']); updated['attention'] = patch['attention'].copy()
@@ -310,6 +426,32 @@ def attach_attention(document, patch):
             steps[name]['bindings'][index]['attention'] = change['attention'].copy()
     validate(updated)
     return updated
+
+
+@contextmanager
+def attention_scope(document, state, current):
+    """Explicit in-memory opt-in. Restore exactly, even on exceptions/early exit.
+
+    This changes only the caller's attention mapping, not a host or peer setting.
+    Re-enter after selecting a different step; no cursor or task execution occurs.
+    """
+    profile(current)
+    chosen = select(document, state)
+    original = dict(current)
+    effective = dict.fromkeys(AXES, 3); effective.update(original)
+    if chosen['attention_requested']:
+        binding = choose(validate(document)[state['step']]['bindings'], state['facts'])
+        effective.update(document.get('attention', {})); effective.update(binding.get('attention', {}))
+    chosen = dict(chosen, attention=effective)
+    if not chosen['attention_requested']:
+        # No workflow-owned override exists. Leave independent caller changes alone.
+        yield chosen
+        return
+    try:
+        current.clear(); current.update(effective)
+        yield chosen
+    finally:
+        current.clear(); current.update(original)
 
 
 def diagram(document):
@@ -418,7 +560,7 @@ def export(document, project, output=None):
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('command', choices=('questions', 'template', 'check', 'check-map', 'export', 'start', 'select', 'advance', 'map', 'attach'))
+    parser.add_argument('command', choices=('questions', 'template', 'check', 'check-map', 'export', 'start', 'select', 'advance', 'record', 'resume', 'map', 'attach'))
     parser.add_argument('--layer', choices=('skills', 'attention', 'both'), default='skills')
     parser.add_argument('--file', type=Path); parser.add_argument('--catalog', type=Path)
     parser.add_argument('--project', type=Path); parser.add_argument('--output')
@@ -430,6 +572,8 @@ def main():
     parser.add_argument('--patch', type=Path)
     parser.add_argument('--map-file', type=Path)
     args = parser.parse_args()
+    if args.command in ('questions','template') and args.layer != 'skills':
+        print('NOTE: legacy graph-layer compatibility only; this is workflow design, not standalone Attention Setup.',file=sys.stderr)
     try:
         if args.command == 'questions': result = questions(args.layer)
         elif args.command == 'template': result = template(args.layer)
@@ -456,12 +600,18 @@ def main():
             elif args.command == 'export':
                 if args.project is None: raise ValueError('--project is required')
                 result = export(document, args.project, args.output)
-            elif args.command == 'start': result = start(document, facts)
+            elif args.command == 'start': result = tracked_start(document, facts) if args.project else start(document, facts)
             else:
                 if args.state is None: raise ValueError('--state is required')
                 state = load(args.state)
-                if args.command == 'select': result = select(document, state)
-                else: result = advance(document, state, args.status, args.evidence, facts)
+                if args.command in ('record','resume'):
+                    if args.project is None: raise ValueError('--project is required for tracked evidence')
+                    result = (resume(document,state,args.project) if args.command == 'resume' else
+                              record(document,state,args.project,args.status,args.evidence,facts))
+                elif args.command == 'select': result = select(document,state)
+                else:
+                    if 'tracking_version' in state: raise ValueError('tracked cursor requires record --project, not advance')
+                    result = advance(document,state,args.status,args.evidence,facts)
         print(json.dumps(result, indent=2, ensure_ascii=True)); return 0
     except MissingFacts as error:
         print(json.dumps({'status':'BLOCKED','missing_facts':error.keys,'execution':'NONE'}))

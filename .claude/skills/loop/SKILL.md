@@ -13,6 +13,9 @@ disable-model-invocation: false
 The user wants to find a Loop workflow, a need-based bundle, or explicitly set up
 a conditional loop. Setup is optional; ordinary direct skill use stays available.
 Use a known focused skill directly when selection is already clear.
+For one clear stateless step, skip setup and use the direct prompt/focused skill.
+Conditional multi-step work with recovery or checkpoints can justify graph overhead;
+token savings are not a default guarantee.
 
 ## Inputs
 
@@ -23,6 +26,10 @@ Separate the selector from task text; never pass task text as a shell command.
 
 Workflow setup designs steps, skill selection, result routes and bounded cycles.
 It works without agent-attention; configuring attention is a separate optional task.
+An explicit attention attachment may adjust processing only within the selected
+step. It cannot add steps, change routes/skills, grant authority or omit mandatory
+checks. Recompute/restore overrides when leaving their scope; unsupported or
+conflicting integration data needs a diagnostic rather than a guessed repair.
 
 For **setup**, use [the setup interview and graph contract](references/setup.md)
 and bundled [workflow helper](scripts/workflow_setup.py). Ask outcome/steps first,
@@ -32,7 +39,9 @@ as the checklist, not a demand to ask everything again. Resolve skill choices fr
 the catalog, preserve existing authorization, and validate with --catalog before
 exporting a NEW local graph/map. Explicit setup authorizes local design artifacts,
 not execution or external actions. If execution is also requested, follow the
-authorized graph using select/advance and actual evidence. Missing facts are
+authorized graph using select/advance and actual evidence. For tracked checkpoints use start/record/resume
+with --project; review source invalidations before reusing a completed step, keep
+unaffected work and consumed budgets, and never reopen STOP automatically. Missing facts are
 BLOCKED, never a guessed branch. End on DONE/STOP, budget, deadline, safety boundary
 or repeated non-progress; do not run minimum cycles. A planned graph is not runtime
 PASS. Setup facts and paths never become shell commands. Do not run the finder on

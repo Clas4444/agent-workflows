@@ -107,7 +107,44 @@ cursor rather than resetting counters secretly. Also stop on user request,
 deadline, safety boundary or repeated non-progress; these host-level facts are
 not autonomously observed by this read-only routing helper.
 
+## Optional source-tracked checkpoints
+
+For a resumable multi-step task, `start --project <project>` opts into tracking v1.
+Use `record --project <project> --state cursor.json --status <observed-status>
+--evidence <observed-result>` instead of advance. It pins exact current source
+files after the caller's observation; it does not execute or authenticate a check.
+All commands print a new cursor; save to a NEW file before replacing local state.
+Legacy start without --project and advance retain their existing behavior and
+do not establish source freshness. select alone never checks recorded source pins.
+
+Before reuse run `resume --project <project> --state cursor.json`. Unchanged pins
+retain the pending step. A changed completed PASS source invalidates that record
+and its downstream suffix, rewinds to the affected step, restores pre-step facts
+and retains invalidated records. Consumed budgets are never refunded. Review facts
+and criteria after changes; unknown/conflicting authority must pause and hand off.
+STOP never reopens automatically. Changed graph, missing/aliased source, malformed
+tracking or unsupported version gives an explicit error, never fresh PASS.
+Only listed exact sources are covered; omitted dependencies and forged caller
+observations cannot be detected. Step sources should include requirement/evidence
+files that materially affect acceptance. This facility does not need a peer repo.
+
 ## Attach attention to an existing skills graph
+
+This is optional contract v1 data exchange, never a dependency on another repo.
+Prefer patches with `contract_version: 1`; versionless attention/steps patches
+remain the legacy v1 format. Unsupported versions, missing versioned profiles
+and route/skill/check/permission edits are errors. An explicit empty profile
+clears that override layer; it does not remove mandatory checks.
+Workflow Setup owns steps, routes, skill choices and stopping. Agent Attention
+owns processing levels within a selected step; it cannot grant authority.
+
+Python callers may explicitly use `attention_scope(graph, cursor, current)`.
+It overlays graph/binding levels on the caller-provided attention base, then
+restores the exact base on normal exit, exception, nested scope or early return.
+Without an attention request it changes nothing. It never writes host settings,
+calls a peer helper, advances the graph or executes a check. The older `select`
+API retains its balanced-default metadata; the scoped API reports its supplied
+base instead. Re-enter the scope after every new selection.
 
 agent-attention can reuse agent-workflows's graph. Use `attach --file workflow.json --patch modes.json`.
 A patch contains optional task attention and steps keyed by step ID, for example:

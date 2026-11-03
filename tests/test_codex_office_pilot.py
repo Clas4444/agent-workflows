@@ -6,6 +6,7 @@ from unittest.mock import patch
 from scripts.codex_office_pilot import isolation_checks,run
 from scripts.empirical_audit import sha,write
 from scripts.empirical_cases import fixtures,oracle
+from scripts.campaign_coordination import decision
 
 
 class CodexOfficeTests(unittest.TestCase):
@@ -47,6 +48,20 @@ class CodexOfficeTests(unittest.TestCase):
             self.assertEqual(rows[0]['status'],'BLOCKED_ENVIRONMENT')
             self.assertEqual(sum(r['cli_count'] for r in rows),1)
             self.assertEqual(sum(r['status']=='NOT_RUN' for r in rows),11)
+
+    def test_non_object_json_event_is_local_parse_fault_not_global_quota(self):
+        with tempfile.TemporaryDirectory() as directory:
+            folder=Path(directory)
+            def malformed(command,**kw):
+                kw['stdout'].write(b'[]\n')
+                class Result:returncode=1
+                return Result()
+            with patch('scripts.codex_office_pilot.pin',return_value=self.protocol(folder)),patch('scripts.codex_office_pilot.subprocess.run',side_effect=malformed) as invoke:
+                rows=run(folder,'none');self.assertEqual(invoke.call_count,1)
+            marker=json.loads((folder/'STOP-MODEL-CALLS.json').read_text())
+            self.assertEqual(marker['scope'],'campaign');self.assertEqual(marker['reason'],'parse')
+            self.assertFalse(decision(marker,provider='codex',account_domain=None,campaign='peer')['blocked'])
+            self.assertEqual(rows[0]['status'],'BLOCKED_ENVIRONMENT')
 
     def test_candidate_correctness_cannot_hide_unexpected_workspace_writes(self):
         with tempfile.TemporaryDirectory() as directory:

@@ -6,6 +6,7 @@ import io
 import json
 from pathlib import Path
 import statistics
+import math
 import sys
 if not __package__:sys.path.insert(0,str(Path(__file__).resolve().parent))
 if __package__:
@@ -73,11 +74,47 @@ def analyze(rows,protocol):
                 'token_change_percent':100*(work['mean_total_tokens']/base['mean_total_tokens']-1) if eligible else None,
                 'time_change_percent':100*(work['mean_seconds']/base['mean_seconds']-1) if eligible else None})
     work=[r for r in summary if r['arm']=='workflow'];base=[r for r in summary if r['arm']=='plain']
+    eligible=all(r['regraded_pass']==2 for r in work+base)
     pooled={'method':'Ratio of means across two cases, two repeats each; no statistical superiority claim.',
-            'baseline':'plain','eligible_equal_quality':all(r['regraded_pass']==2 for r in work+base),
-            'token_change_percent':100*(statistics.mean(r['mean_total_tokens'] for r in work)/statistics.mean(r['mean_total_tokens'] for r in base)-1),
-            'time_change_percent':100*(statistics.mean(r['mean_seconds'] for r in work)/statistics.mean(r['mean_seconds'] for r in base)-1)}
+            'baseline':'plain','eligible_equal_quality':eligible,
+            'token_change_percent':100*(statistics.mean(r['mean_total_tokens'] for r in work)/statistics.mean(r['mean_total_tokens'] for r in base)-1) if eligible else None,
+            'time_change_percent':100*(statistics.mean(r['mean_seconds'] for r in work)/statistics.mean(r['mean_seconds'] for r in base)-1) if eligible else None}
     return {'observations':results,'summary':summary,'comparisons':comparisons,'pooled_workflow_vs_plain':pooled,'scope':'Original FAIL labels preserved. Posthoc diagnostic repair changes no_tools only; extra-field schema failure retained. Required-fields semantics separate.'}
+
+
+def analyze_versioned(rows,protocol,version=2):
+    """v1 reproduces retained artifacts. v2 rejects missing telemetry/evidence.
+
+    Sanitized telemetry is not an attestation; COORD-02 separately matches raw
+    hashes and events. Never promote absent records into successful model runs.
+    """
+    if type(version) is not int or version not in (1,2):raise ValueError('unsupported regrade version')
+    if version==1:return analyze(rows,protocol)
+    expected={(r['id'],r['case'],r['arm'],r['rep']) for r in protocol['schedule']}
+    actual={(r['id'],r['case'],r['arm'],r['rep']) for r in rows}
+    if len(rows)!=12 or expected!=actual or len(actual)!=12:raise ValueError('records do not match frozen schedule')
+    required={'exit_zero','expected_output','file_integrity','functional','jsonl_valid','no_tools','one_usage_event','policy','usage_valid'}
+    for row in rows:
+        if type(row['rep']) is not int or type(row['cli_count']) is not int:raise ValueError('repetition/CLI counters must be integers, not booleans')
+        if row['status']=='NOT_RUN':
+            if row['cli_count']!=0 or row['usage'] is not None or row['seconds'] is not None:raise ValueError('NOT_RUN cannot contain measured usage/time')
+            continue
+        if row['status']=='BLOCKED_ENVIRONMENT':continue
+        if row['cli_count']!=1 or type(row['seconds']) not in (int,float) or not math.isfinite(row['seconds']) or row['seconds']<0:raise ValueError('invalid CLI/time counter')
+        checks=row.get('checks',{})
+        if not required<=set(checks) or any(type(checks[k]) is not bool for k in required):raise ValueError('missing typed acceptance checks')
+        usage=row.get('usage')
+        if not isinstance(usage,dict) or any(type(usage.get(k)) is not int or usage[k]<0 for k in ('input_tokens','output_tokens','cached_input_tokens')):raise ValueError('missing or malformed usage')
+        if usage['cached_input_tokens']>usage['input_tokens']:raise ValueError('cache exceeds input')
+        if 'cache_write_input_tokens' in usage and (type(usage['cache_write_input_tokens']) is not int or usage['cache_write_input_tokens']<0 or usage['cached_input_tokens']+usage['cache_write_input_tokens']>usage['input_tokens']):raise ValueError('invalid cache-write subset')
+        if 'reasoning_output_tokens' in usage and (type(usage['reasoning_output_tokens']) is not int or not 0<=usage['reasoning_output_tokens']<=usage['output_tokens']):raise ValueError('invalid reasoning subset')
+        items=row.get('items')
+        if not isinstance(items,list) or any(not isinstance(i,dict) for i in items) or not any(i.get('type')=='agent_message' for i in items):raise ValueError('missing final assistant evidence')
+        if any(i.get('type')=='error' and not i.get('recognized_feature_warning') for i in items):raise ValueError('unclassified runtime error needs review')
+    result=analyze(rows,protocol)
+    result['regrade_version']='codex-office-v2-coord02'
+    result['input_validation']='PASS: frozen roster, typed counters/checks, assistant evidence; raw provenance checked separately'
+    return result
 
 
 def render(data,output):
@@ -137,8 +174,12 @@ def render(data,output):
 
 
 def main():
-    a=argparse.ArgumentParser(description=__doc__);a.add_argument('--packet',type=Path,required=True);a.add_argument('--output',type=Path,required=True);args=a.parse_args()
-    render(analyze(read(args.packet/'observations.json'),read(args.packet/'protocol.json')),args.output)
+    a=argparse.ArgumentParser(description=__doc__);a.add_argument('--packet',type=Path,required=True);a.add_argument('--output',type=Path,required=True)
+    a.add_argument('--regrade-version',type=int,choices=(1,2),default=1,help='v1 retains published reproduction; v2 validates the full frozen roster and telemetry')
+    args=a.parse_args()
+    if args.regrade_version==1:
+        print('NOTE: legacy v1 reproduces retained artifacts; use --regrade-version 2 for strict telemetry validation.',file=sys.stderr)
+    render(analyze_versioned(read(args.packet/'observations.json'),read(args.packet/'protocol.json'),args.regrade_version),args.output)
 
 
 if __name__=='__main__':main()

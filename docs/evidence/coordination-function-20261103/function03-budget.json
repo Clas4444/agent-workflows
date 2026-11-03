@@ -1,0 +1,31 @@
+{
+  "max_cli": 12,
+  "max_inflight": 1,
+  "consumed": 3,
+  "calls_paused": true,
+  "tickets": [
+    {
+      "id": "attempt-0001",
+      "time": "2026-11-03T13:20:40.518333+00:00",
+      "result": {
+        "status": "FAIL"
+      }
+    },
+    {
+      "id": "attempt-0002",
+      "time": "2026-11-03T13:20:56.623307+00:00",
+      "result": {
+        "status": "FAIL"
+      }
+    },
+    {
+      "id": "attempt-0003",
+      "time": "2026-11-03T13:21:14.261640+00:00",
+      "result": {
+        "status": "CANCELLED_UNKNOWN"
+      }
+    }
+  ],
+  "stop_scope": "campaign-local process prerequisite; other campaign/provider unaffected",
+  "retry": "NOT_AUTHORIZED_WITH_UNRESOLVED_LOCAL_BLOCKER"
+}
